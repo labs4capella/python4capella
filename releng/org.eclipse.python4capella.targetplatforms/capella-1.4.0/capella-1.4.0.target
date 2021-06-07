@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="Capella 1.4.0 Target Platform" sequenceNumber="1623069224">
+  <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.transaction.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
+      <unit id="com.ibm.icu" version="0.0.0"/>
+      <unit id="org.eclipse.viatra.query.sdk.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.jgit.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.jgit.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egit.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn_feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.commons.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.commons.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.context_feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.monitor.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.team_feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.ide_feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.help.ui" version="0.0.0"/>
+      <unit id="org.eclipse.platform.sdk" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.core.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.core.runtime" version="0.0.0"/>
+      <unit id="org.eclipse.ui" version="0.0.0"/>
+      <unit id="org.eclipse.ui.views.log" version="0.0.0"/>
+      <unit id="org.eclipse.epp.mpc.feature.group" version="0.0.0"/>
+      <unit id="org.junit" version="4.12.0.v201504281640"/>
+      <unit id="org.eclipse.gmf" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.diagram.ui" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.diagram.ui.render" version="0.0.0"/>
+      <unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.mylyn.wikitext" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.asciidoc" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.confluence" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.html" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.markdown" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.mediawiki" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.textile" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.tracwiki" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.mylyn.wikitext.twiki" version="3.0.29.20181217192207"/>
+      <unit id="org.eclipse.uml2.feature.group" version="0.0.0"/>
+      <repository id="eclipse" location="https://download.eclipse.org/releases/2019-06"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.doc.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.aql.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.interpreter.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.ui.interpreter.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.ui.interpreter.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.aql.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.aql.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.query.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/6.3.0/2019-06/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.cadence.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.common.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.emde.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.emde.ui.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.massactions.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.massactions.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.model.common.share.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.model.common.commands.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.model.common.scrutiny.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.model.detachment.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.model.detachment.ui.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.patterns.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.report.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.report.ui.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.resourcereuse.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.resourcereuse.ui.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.transposer.feature.feature.group" version="0.0.0"/>
+      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/release/runtimecore/1.4.0"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.polarsys.kitalpha.doc.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.emde.sdk.feature.feature.group" version="0.0.0"/>
+      <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/release/sdk/1.4.0"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.sirius.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.sirius.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.gmf.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.gmf.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.egit.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.egit.feature.source.feature.group" version="0.0.0"/>
+      <repository id="diffmerge-core-master" location="https://download.eclipse.org/diffmerge/releases/0.12.0/emf-diffmerge-site"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group" version="0.0.0"/>
+      <repository id="diffmerge-patterns-master" location="https://download.eclipse.org/diffmerge/releases/0.12.0/edm-patterns-site"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="0.0.0"/>
+      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20191007/capella"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sirius.query.legacy.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.query.legacy.feature.source.feature.group" version="0.0.0"/>
+      <repository id="sirius-query-legacy" location="https://download.eclipse.org/sirius/updates/legacy/1.1.0"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>
+      <repository id="egf" location="https://download.eclipse.org/egf/updates/1.6.1/2019-06/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>
+      <repository id="nebula" location="https://download.eclipse.org/nebula/releases/1.4.0/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
+      <repository id="eclipse-shared-license" location="https://download.eclipse.org/cbi/updates/license"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.apache.log4j" version="1.2.15.v201012070815"/>
+      <unit id="org.apache.commons.lang" version="2.4.0.v201005080502"/>
+      <unit id="org.apache.commons.net" version="3.2.0.v201305141515"/>
+      <repository id="orbit-R20130827064939" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20140114142710/repository"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="com.google.guava" version="15.0.0.v201403281430"/>
+      <repository id="orbit-R20180905201904" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20180905201904/repository"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
+      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/1.4.0-R20191121-173601/org.polarsys.capella.rcp.site/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.ease.lang.scriptarchive.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ease.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ease.ui.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ease.lang.python.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ease.lang.python.py4j.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ease.lang.jvm.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ease.modules.feature.feature.group" version="0.0.0"/>
+      <repository id="EASE" location="https://download.eclipse.org/ease/release/0.7.0/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.py4j.feature.feature.group" version="0.0.0"/>
+      <repository id="py4j" location="http://eclipse.py4j.org/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.python.pydev.feature.feature.group" version="0.0.0"/>
+      <repository id="PyDev" location="http://www.pydev.org/updates"/>
+    </location>
+  </locations>
+</target>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ease.modules">
+      <category
+            id="org.eclipse.python4capella.module.category"
+            name="Capella">
+      </category>
+      <module
+            category="org.eclipse.python4capella.module.category"
+            class="org.eclipse.python4capella.modules.CapellaModule"
+            id="org.eclipse.python4capella.module.capella"
+            name="Capella"
+            visible="true">
+      </module>
+      <module
+            category="org.eclipse.python4capella.module.category"
+            class="org.eclipse.python4capella.modules.EMFModule"
+            id="org.eclipse.python4capella.module.emf"
+            name="EMF"
+            visible="true">
+      </module>
+      <module
+            category="org.eclipse.python4capella.module.category"
+            class="org.eclipse.python4capella.modules.JavaModule"
+            id="org.eclipse.python4capella.module.java"
+            name="Java"
+            visible="true">
+      </module>
+      <module
+            category="org.eclipse.python4capella.module.category"
+            class="org.eclipse.python4capella.modules.SiriusModule"
+            id="org.eclipse.python4capella.module.sirius"
+            name="Sirius"
+            visible="true">
+      </module>
+   </extension>
+
+</plugin>
