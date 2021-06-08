@@ -13,9 +13,9 @@ You will need to add the following update site to your Capella installation:
 
 TODO add the update site URL
 
-Then select the following feature:
+Then select the Python4Capella feature:
 
-TODO image
+![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install.png)
 
 Then click the next button and complet the installation by clicking the finish button.
 
