@@ -19,3 +19,5 @@ hs_err_pid*
 
 # Mac OS hidden resources
 .DS_Store
+
+plugins/org.eclipse.python4capella/zips/

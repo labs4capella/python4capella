@@ -36,5 +36,33 @@
             visible="true">
       </module>
    </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.python4capella.category"
+            name="Python4Capella">
+      </category>
+      <wizard
+            category="org.eclipse.python4capella.category"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            icon="icons/Python4Capella.png"
+            id="org.eclipse.python4capella.wizard"
+            name="Python4Capella project"
+            project="true">
+         <description>
+            Creates the Python4Capella project with Python API to interact with Capella models.
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.emf.common.ui.examples">
+      <example
+            wizardID="org.eclipse.python4capella.wizard">
+         <projectDescriptor
+               contentURI="zips/Python4Capella.zip"
+               name="Python4Capella">
+         </projectDescriptor>
+      </example>
+   </extension>
 
 </plugin>
