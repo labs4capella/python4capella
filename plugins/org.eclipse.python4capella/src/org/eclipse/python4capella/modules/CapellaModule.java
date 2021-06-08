@@ -14,13 +14,18 @@ package org.eclipse.python4capella.modules;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.ease.modules.WrapToScript;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.polarsys.capella.common.helpers.query.IQuery;
+import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
+import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
@@ -78,138 +83,56 @@ public class CapellaModule {
 		}
 	}
 
-//	@WrapToScript
-//	public boolean isInstanceOf(Object element, String className) {
-//		if (element != null && className != null) {
-//			try {
-//				Class<?> forName = Class.forName(className);
-//				return forName.isAssignableFrom(element.getClass());
-//			} catch (ClassNotFoundException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		return false;
-//	}
-//
-//	@WrapToScript
-//	public boolean isCapellaRootElement(Object element) {
-//		return element instanceof SystemEngineering;
-//	}
-//
-//	@WrapToScript
-//	public ComponentArchitecture getPackage(SystemEngineering se, String packageName) {
-//		if (se != null) {
-//			return se.getContainedPhysicalArchitectures().get(0);
-//		}
-//		return null;
-//	}
-//
-//	@WrapToScript
-//	public PhysicalComponent getPhysicalSystem(ComponentArchitecture pa) {
-//		if (pa instanceof PhysicalArchitecture) {
-//			return ((PhysicalArchitecture) pa).getOwnedPhysicalComponentPkg().getOwnedPhysicalComponents().get(0);
-//		}
-//		return null;
-//	}
-//
-//	@WrapToScript
-//	public Collection<PhysicalComponent> getPhysicalComponents(PhysicalComponent ps) {
-//		if (ps != null) {
-//			Collection<PhysicalComponent> temp = new ArrayList<PhysicalComponent>();
-//			Collection<PhysicalComponent> result = new ArrayList<PhysicalComponent>();
-//			temp.addAll(ps.getSubPhysicalComponents().get(0).getOwnedPhysicalComponents());
-//			result.addAll(ps.getSubPhysicalComponents().get(0).getOwnedPhysicalComponents());
-//			for (PhysicalComponent pc : temp) {
-//				if (pc != null) {
-//					result.addAll(pc.getOwnedPhysicalComponents());
-//				}
-//			}
-//			return result;
-//		}
-//		return Collections.emptyList();
-//	}
-//
-//	@WrapToScript
-//	public boolean isComponentLinkedTo(PhysicalComponent pc1, PhysicalComponent pc2) {
-//		if (pc1 != null && pc2 != null && !pc1.equals(pc2)) {
-//			EList<PhysicalPort> sourcePorts = pc1.getContainedPhysicalPorts();
-//			EList<PhysicalPort> targetPorts = pc2.getContainedPhysicalPorts();
-//			for (PhysicalPort sourcePort : sourcePorts) {
-//				EList<PhysicalLink> links = sourcePort.getInvolvedLinks();
-//				for (PhysicalLink link : links) {
-//					PhysicalPort targetPhysicalPort = link.getTargetPhysicalPort();
-//					if (sourcePort.equals(link.getSourcePhysicalPort()) && targetPhysicalPort != null
-//							&& targetPorts.contains(targetPhysicalPort)) {
-//						return true;
-//					}
-//				}
-//			}
-//		}
-//		return false;
-//	}
-//
-//	@WrapToScript
-//	public HSSFWorkbook createExcel() {
-//		HSSFWorkbook book = new HSSFWorkbook();
-//		book.createSheet("Capella");
-//		return book;
-//	}
-//
-//	@WrapToScript
-//	public void addLine(HSSFWorkbook book, int i, EObject e) {
-//		HSSFSheet sheet = book.getSheet("Capella");
-//		HSSFRow row = sheet.createRow(i + 1);
-//		HSSFCell cell = row.createCell(0);
-//		cell.setCellValue(getName(e));
-//	}
-//
-//	@WrapToScript
-//	public void addColumn(HSSFWorkbook book, int i, EObject e) {
-//		HSSFSheet sheet = book.getSheet("Capella");
-//		HSSFRow row = sheet.getRow(0);
-//		if (row == null) {
-//			row = sheet.createRow(0);
-//		}
-//		HSSFCell cell = row.createCell(i + 1);
-//		cell.setCellValue(getName(e));
-//	}
-//
-//	@WrapToScript
-//	public void addCell(HSSFWorkbook book, int rowIndex, int columnIndex, String value) {
-//		HSSFSheet sheet = book.getSheet("Capella");
-//		HSSFRow row = sheet.getRow(rowIndex + 1);
-//		if (row == null) {
-//			row = sheet.createRow(rowIndex + 1);
-//		}
-//		HSSFCell cell = row.getCell(columnIndex + 1);
-//		if (cell == null) {
-//			cell = row.createCell(columnIndex + 1);
-//		}
-//		cell.setCellValue(value);
-//	}
-//
-//	@WrapToScript
-//	public void writeExcel(HSSFWorkbook book, String absolutePath) {
-//		try {
-//			File f = new File(absolutePath);
-//			f.createNewFile();
-//			FileOutputStream outputStream = new FileOutputStream(absolutePath);
-//			book.write(outputStream);
-//			outputStream.close();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	private String getName(EObject e) {
-//		EAttribute namingAttribute = NameHelper.getNamingAttribute(e);
-//		if (namingAttribute != null) {
-//			Object name = e.eGet(namingAttribute);
-//			if (name != null) {
-//				return name.toString();
-//			}
-//		}
-//		return "NO NAME";
-//	}
+	/**
+	 * Gets the list of available semantic browser queries for the given
+	 * {@link EObject}.
+	 * 
+	 * @param obj the {@link EObject}
+	 * @return the list of available semantic browser queries for the given
+	 *         {@link EObject}
+	 */
+	@WrapToScript
+	public List<String> getAvailableSBQueries(EObject obj) {
+		List<String> result = new ArrayList<String>();
+		Collection<EObject> col = new ArrayList<EObject>();
+		col.add(obj);
+		Set<ICategory> SBQueries = SemanticBrowserHelper.getCommonObjectCategories(col);
+		for (ICategory cat : SBQueries) {
+			result.add(cat.getName());
+		}
+		return result;
+	}
+
+	/**
+	 * Gets the result of the given semantic browser query for the given
+	 * {@link EObject}.
+	 * 
+	 * @param obj   the {@link EObject}
+	 * @param query the semantic browser query
+	 * @return the list of available semantic browser queries for the given
+	 *         {@link EObject}
+	 */
+	@WrapToScript
+	public List<EObject> getSBQuery(EObject obj, String query) {
+		List<EObject> queryResult = new ArrayList<EObject>();
+		Collection<EObject> col = new ArrayList<EObject>();
+		col.add(obj);
+		Set<ICategory> SBQueries = SemanticBrowserHelper.getCommonObjectCategories(col);
+		ICategory category = null;
+		for (ICategory cat : SBQueries) {
+			if (cat.getName().equals(query)) {
+				category = cat;
+				break;
+			}
+		}
+		if (category != null) {
+			for (Object object : category.compute(obj)) {
+				if (object instanceof EObject) {
+					queryResult.add((EObject) object);
+				}
+			}
+		}
+		return queryResult;
+	}
 
 }
