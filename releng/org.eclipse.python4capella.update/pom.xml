@@ -45,7 +45,7 @@
           <createArtifactRepository>true</createArtifactRepository>
           <finalName>repository/${project.artifactId}</finalName>
           <compress>true</compress>
-          <repositoryName>Python Scripting for Capella ${unqualifiedVersion}.${buildQualifier}</repositoryName>
+          <repositoryName>Python4Capella ${unqualifiedVersion}.${buildQualifier}</repositoryName>
         </configuration>
       </plugin>
       <plugin>

@@ -19,6 +19,8 @@
     <module>plugins/org.eclipse.python4capella</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
+
+    <module>releng/org.eclipse.python4capella.update</module>
   </modules>
 
   <properties>
