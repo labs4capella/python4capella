@@ -16,13 +16,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.eclipse.python4capella.python</groupId>
-		<artifactId>org.eclipse.python4capella.python.parent</artifactId>
+		<groupId>org.eclipse.python4capella</groupId>
+		<artifactId>org.eclipse.python4capella.parent</artifactId>
 		<relativePath>../..</relativePath>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
-  <groupId>org.eclipse.python4capella.python</groupId>
-  <artifactId>org.eclipse.python4capella.python.tests</artifactId>
+  <groupId>org.eclipse.python4capella</groupId>
+  <artifactId>org.eclipse.python4capella.tests</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
   <build>

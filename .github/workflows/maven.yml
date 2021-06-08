@@ -1,0 +1,91 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Java CI with Maven
+
+on: [push, pull_request]
+
+jobs:
+
+  matrix_prep:
+    # Using a separate job and agent so as to be able to use tools like 'sed' and 'jq'
+    runs-on: ubuntu-20.04
+    # Defining outputs of a job allows for easier consumption and use
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+    # Checking out code as the set-matrix step utilizes a file named matrix_includes.json
+    - name: Check out code
+      uses: actions/checkout@v2
+    # This step is explained more in a following section
+    - id: set-matrix
+      run: |
+        matrix=$(jq . .github/workflows/matrix_includes.json)
+        echo ::set-output name=matrix::{\"include\":$(echo $matrix)}\"
+
+  build:
+    needs: matrix_prep
+    runs-on: ubuntu-20.04
+    strategy:
+      # We need to convert the json string output into an object that the GitHub Workflow expects.
+      # Thankfully, the json-schema for Workflows allows 'matrix' to be set to an expression.
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+
+    steps:
+    - name: Environment
+      run: |
+        echo GITHUB_WORKSPACE $GITHUB_WORKSPACE
+        echo GITHUB_REF $GITHUB_REF
+        echo GITHUB_SHA $GITHUB_SHA
+        echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
+        echo PROFILE ${{ matrix.profile }}
+
+    - name: Check if update site is needed
+      id: updatesite_check
+      env:
+        PROFILE: ${{ matrix.profile }}
+      run: |
+        if [[ "$PROFILE" == *"updatesites"* ]]; then export UPDATE_SITES=true; fi
+        echo ::set-output name=UPDATE_SITES::${UPDATE_SITES}
+
+    - name: Check out code
+      uses: actions/checkout@v2
+    - name: Set up JDK ${{ matrix.java }}
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.java }}
+    - uses: actions/cache@v1
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml', '**/*.product') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+#    - name: Install metacity
+#      if: ${{ steps.updatesite_check.outputs.UPDATE_SITES }}
+#      run: |
+#        sudo apt install metacity
+
+    - name: Build with Maven (${{ matrix.profile }})
+      env:
+        MAVEN_OPTS: -XX:MaxPermSize=512m -Xmx2048m -Xms1024m
+      uses: GabrielBB/xvfb-action@v1
+      with:
+        run: mvn clean verify -fae -P${{ matrix.profile }}
+
+    - name: Prepare deploy local directory
+      id: prepare_deploy
+      if: ${{ steps.updatesite_check.outputs.UPDATE_SITES }}
+      run: |
+        export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)/nightly"
+        if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
+        chmod a+x ./scripts/prepare-deploy-local-dir.sh
+        ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
+        echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
+
+#
+#    - name: Deploy to TODO
+#      if: ${{ steps.updatesite_check.outputs.UPDATE_SITES }}
+#      TODO deploy ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }} somewhere
+#
+
