@@ -17,6 +17,7 @@
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-5.0.0</module>
 
     <module>plugins/org.eclipse.python4capella</module>
+    <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
   </modules>

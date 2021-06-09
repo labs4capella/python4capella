@@ -1,0 +1,10 @@
+<toc label="Python4Capella">
+  <topic href="doc/user/UserManual.html" label="Python4Capella User Manual">
+    <topic href="doc/user/general/Python4CapellaProjectSturcture.html" label="Python4Capella project sturcture">
+    </topic>
+  </topic>
+  <topic href="doc/developer/DeveloperManual.html" label="Python4Capella Developer Manual">
+    <topic href="doc/developer/python/CreateWindowsPythonFile.html" label="Recreate the Windows Python 2.7 folder">
+    </topic>
+  </topic>
+</toc>

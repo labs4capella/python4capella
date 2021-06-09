@@ -1,0 +1,17 @@
+h1. Main title
+
+This document explains how to TODO.
+
+{toc:style=disc|minLevel=2|maxLevel=3}
+
+h2(#section). section
+
+TODO.
+
+	!images/diagram_sample1.png!
+
+<div style="display:none">*TODO* add todos here (won't be display to end-users).</div>
+
+h3. sub-section
+
+

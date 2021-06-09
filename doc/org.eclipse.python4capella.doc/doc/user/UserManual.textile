@@ -1,0 +1,6 @@
+h1. Python4Capella User Manual
+
+This document describes how to use Python4Capella.
+
+You will find the following sections:
+* "*Python4Capella project sturcture*":general/Python4CapellaProjectSturcture.html describes all elements from the Python4Capella project.

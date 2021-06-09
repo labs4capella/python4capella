@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2021 THALES GLOBAL SERVICES
+  This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License 2.0
+  which accompanies this distribution, and is available at
+  https://www.eclipse.org/legal/epl-2.0/
+
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+       Obeo - Initial API and implementation
+ -->
+
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.eclipse.python4capella</groupId>
+    <artifactId>org.eclipse.python4capella.parent</artifactId>
+    <relativePath>../..</relativePath>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>org.eclipse.python4capella</groupId>
+  <artifactId>org.eclipse.python4capella.doc</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>eclipse-plugin</packaging>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho.extras</groupId>
+        <artifactId>tycho-eclipserun-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+        <repositories>
+            <repository>
+              <id>juno</id>
+              <layout>p2</layout>
+              <url>http://download.eclipse.org/releases/photon</url>
+            </repository>
+          </repositories>
+          <jvmArgs>
+            <args>-Dfile.encoding=UTF-8</args>
+            <args>-Duser.language=en</args>
+            <args>-Duser.country=US</args>
+          </jvmArgs>
+          <appArgLine>-application org.eclipse.ant.core.antRunner -buildfile build-doc.xml -data target/eclipserun-workspace</appArgLine>
+          <dependencies>
+            <dependency>
+              <artifactId>org.apache.ant</artifactId>
+              <type>eclipse-plugin</type>
+            </dependency>
+            <dependency>
+              <artifactId>org.eclipse.ant.core</artifactId>
+              <type>eclipse-plugin</type>
+            </dependency>
+            <dependency>
+              <artifactId>org.eclipse.help.base</artifactId>
+              <type>eclipse-plugin</type>
+            </dependency>
+          </dependencies>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>eclipse-run</goal>
+            </goals>
+            <phase>compile</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

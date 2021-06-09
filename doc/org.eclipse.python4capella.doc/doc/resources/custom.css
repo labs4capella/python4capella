@@ -1,0 +1,176 @@
+/*
+ Sections padding customizations.
+*/
+body {
+	background-color: #fff;
+	width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	color: #383838;
+}
+
+@media (max-width : 1224px) {	
+	body {
+		background-color: #fff;
+	width: 690px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	color: #383838;
+}
+	
+img {
+	max-width: 70%;
+	}
+}
+
+a:hover {
+	color: #383838;
+}
+
+h1,h2,h3,h4,h5 {
+	padding: 12px 0;
+	color: #000;
+}
+
+p,dl {
+	
+}
+
+ul,ol {
+	
+}
+
+ul ul {
+	padding-left: 15px;
+}
+
+li {
+	line-height: 22px;
+}
+
+
+ol ol {
+	padding-left: 20px;
+}
+
+ol {
+	margin: 0 0 30px 0;
+}
+
+table {
+	margin-left: 50px;
+}
+
+img {
+	box-shadow: 0 2px 6px #999;
+	margin: 1.5em auto 3em auto;
+	display: block;
+}
+
+pre {
+	left: 50px;
+	width: 90%;
+	position: relative;
+}
+
+/*
+ Color customizations.
+*/
+td,th {
+	border: 1px solid #ddd;
+}
+
+.toc {
+	margin: 10px 0;
+	padding: 10px 30px;
+	border: 1px solid #ddd;
+}
+
+ol li {
+	
+}
+
+code,pre {
+	color: #25587E;
+}
+
+/*
+ Welcome page & header customizations.
+*/
+#header {
+	width: inherit;
+	height: 70px;;
+	padding: 20px 0 0 0;
+	margin-bottom: 50px;
+}
+
+.clear {
+	clear: both;
+}
+
+#logo {
+	position: relative;
+	background: url("images/logo.png") no-repeat;
+	display: block;
+	height: 95px;
+	width: 229px;
+}
+
+#logo img {
+	width: 190px;
+	height: auto;
+	box-shadow: none !important;
+	border: none;
+	margin: 0 !important;
+}
+
+.visit a {
+	display: block;
+	width: 180px;
+	height: 35px;
+	text-align: center;
+	color: #fbbf52;
+	background-color: #292253;
+	font-size: 14px;
+	margin: 30px 0 0 0;
+	line-height: 35px;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.visit a:hover {
+	color: #292253;
+	background-color: #fbbf52;
+}
+
+.col1,.col2 {
+	display: 0;
+	margin: 20px 0;
+	padding: 0;
+	border: none;
+}
+
+.col1 {
+	width: 40%;
+}
+
+.col2 {
+	width: 60%;
+}
+
+.left {
+	float: left !important;
+}
+
+.right {
+	float: right !important;
+}
+
+code {
+  background-color: #fafafc !important;
+  border: none !important;
+}
+
+.label-danger {
+  background-color: #d9534f;
+}

@@ -1,0 +1,6 @@
+h1. Python4Capella User Manual
+
+This document describes how to use Python4Capella.
+
+You will find the following sections:
+* "*Python4Capella project sturcture*":python/CreateWindowsPythonFile.html describes how you can recreate the Python interpreter zip file for Windows.

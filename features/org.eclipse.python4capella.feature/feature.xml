@@ -28,4 +28,8 @@ Contributors:
          id="org.eclipse.python4capella"
          version="0.0.0"/>
 
+   <plugin
+         id="org.eclipse.python4capella.doc"
+         version="0.0.0"/>
+
 </feature>
