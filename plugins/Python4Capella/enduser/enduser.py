@@ -5,10 +5,10 @@
 
 loadModule('/System/Platform')
 loadModule('/System/UI')
-include('workspace://CapellaScripting/advanced/capella.py')
+include('workspace://Python4Capella/advanced/capella.py')
 if False:
     from advanced.capella import *
-include('workspace://CapellaScripting/advanced/requirement.py')
+include('workspace://Python4Capella/advanced/requirement.py')
 if False:
     from advanced.requirement import *
 

@@ -1,10 +1,10 @@
-include('workspace://CapellaScripting/api/EMF_API.py')
+include('workspace://Python4Capella/api/EMF_API.py')
 if False:
     from api.EMF_API import *
-include('workspace://CapellaScripting/api/Capella_API.py')
+include('workspace://Python4Capella/api/Capella_API.py')
 if False:
     from api.Capella_API import *
-include('workspace://CapellaScripting/advanced/sirius.py')
+include('workspace://Python4Capella/advanced/sirius.py')
 if False:
     from advanced.sirius import *
 

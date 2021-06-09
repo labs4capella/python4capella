@@ -1,5 +1,5 @@
 loadModule('/Capella/EMF')
-include('workspace://CapellaScripting/api/Java_API.py')
+include('workspace://Python4Capella/api/Java_API.py')
 if False:
     from api.Java_API import *
 import sys

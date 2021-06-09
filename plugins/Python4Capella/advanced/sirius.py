@@ -1,7 +1,7 @@
-include('workspace://CapellaScripting/api/EMF_API.py')
+include('workspace://Python4Capella/api/EMF_API.py')
 if False:
     from api.EMF_API import *
-include('workspace://CapellaScripting/api/Sirius_API.py')
+include('workspace://Python4Capella/api/Sirius_API.py')
 if False:
     from api.Sirius_API import *
 

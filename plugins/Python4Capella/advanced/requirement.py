@@ -1,4 +1,4 @@
-include('workspace://CapellaScripting/advanced/capella.py')
+include('workspace://Python4Capella/advanced/capella.py')
 if False:
     from advanced.capella import *
 
