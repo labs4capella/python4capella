@@ -2,4 +2,28 @@ h1. Create Windows Python interpreter zip file
 
 This section describes how you can recreate the Python interpreter zip file for Windows.
 
-TODO
+The first step is to download the Python 2.7.x installer from the python web site:
+
+"https://www.python.org/downloads/":https://www.python.org/downloads/
+
+Once you have the .msi file, you will need to extract its contents using the msiexec command:
+
+bc. msiexec /a c:\Users\user\Downloads\python-2.7.18.amd64.msi /qb TARGETDIR=c:\Users\user\Downloads\python
+
+Note: both the .msi file path and TARGETDIR path need to be absolute.
+
+At this point pip is not installed but it will be needed later to install packages. So we will install it using the following command inside the python folder:
+
+bc. python -m ensurepip
+
+Python will proceed with the installation of pip. Now we can install new packages. By default we are going to install a library to write to xlsx documents:
+
+bc. Scripts\pip install XlsxWriter
+
+Now you can import XlsxWriter in your Python scripts by adding the following import directive at the beginning of your script:
+
+bc. import xlsxwriter
+
+You can have a look "here":https://pypi.org/project/XlsxWriter/ for more information on XlsxWriter.
+
+You can find more packages to install "here":https://pypi.org/.

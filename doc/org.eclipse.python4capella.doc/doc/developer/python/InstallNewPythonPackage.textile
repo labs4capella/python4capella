@@ -1,0 +1,11 @@
+h1. Install new Python package
+
+To install new Python packages on Linux or Mac OS X, please refere to your distribution documentation.
+
+If you are using Windows and the python27.zip file provided with Python4Capella, you can install a new package using the following command:
+
+bc. Scripts\pip install *package name*
+
+This will install the package and make it available to import in your scripts. For more details on importing the newly installed package please refere to its documentation.
+
+You can find packages "here":https://pypi.org/.

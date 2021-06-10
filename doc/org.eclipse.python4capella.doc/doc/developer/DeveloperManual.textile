@@ -1,6 +1,11 @@
 h1. Python4Capella User Manual
 
-This document describes how to use Python4Capella.
+This document describes how to manage and improve technical aspects of your version of Python4Capella. It will be divided into two sections, one for advanced Python users and one for contributors.
 
-You will find the following sections:
-* "*Python4Capella project sturcture*":python/CreateWindowsPythonFile.html describes how you can recreate the Python interpreter zip file for Windows.
+h2. Advanced Python users
+
+* "*Install new Python packages*":python/InstallNewPythonPackage.html Describes how you can install new Python packages.
+
+h2. Python4Capella contributors
+
+* "*Create a Python interpreter distribution for Windows*":python/CreateWindowsPythonFile.html Describes how you can recreate the Python interpreter zip file for Windows.
