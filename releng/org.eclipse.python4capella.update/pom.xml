@@ -50,6 +50,35 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>${antrun-version}</version>
+        <executions>
+          <execution>
+            <id>package-Python4Cpaella</id>
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <copy todir="${project.build.directory}/dropins/Python4Capella/eclipse/">
+                  <fileset dir="${project.build.directory}/repository">
+                    <include name="features/**"/>
+                    <include name="plugins/**"/>
+                  </fileset>
+                </copy>
+                <zip destfile="${project.build.directory}/repository/org.eclipse.python4capella.dropins.zip">
+                  <fileset dir="${project.build.directory}/dropins">
+                    <include name="Python4Capella/**"/>
+                  </fileset>
+                </zip>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>

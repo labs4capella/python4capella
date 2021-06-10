@@ -27,6 +27,7 @@
     <tycho-extras-version>1.7.0</tycho-extras-version>
     <resource-encoding>UTF-8</resource-encoding>
     <maven-resources-version>2.6</maven-resources-version>
+    <antrun-version>1.7</antrun-version>
   </properties>
 
   <build>

@@ -29,22 +29,25 @@
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.5.2</version>
-        <configuration>
-          <appendAssemblyId>false</appendAssemblyId>
-          <finalName>../zips/Python4Capella</finalName>
-          <descriptors>
-            <descriptor>${basedir}/assembly.xml</descriptor>
-          </descriptors>
-        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>${antrun-version}</version>
         <executions>
           <execution>
-            <id>create-archive</id>
+            <id>package-Python4Cpaella</id>
             <phase>process-sources</phase>
             <goals>
-              <goal>single</goal>
+              <goal>run</goal>
             </goals>
+            <configuration>
+              <target>
+                <zip destfile="${basedir}/zips/Python4Capella.zip">
+                  <fileset dir="${basedir}/../Python4Capella/">
+                    <include name="**"/>
+                  </fileset>
+                </zip>
+              </target>
+            </configuration>
           </execution>
         </executions>
       </plugin>
