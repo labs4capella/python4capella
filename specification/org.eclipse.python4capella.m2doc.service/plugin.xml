@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.obeonetwork.m2doc.ide.services.register">
+      <token
+            name="Python4CapellaServices">
+         <service
+               class="org.eclipse.python4capella.m2doc.service.ClassServices">
+         </service>
+      </token>
+   </extension>
+
+</plugin>

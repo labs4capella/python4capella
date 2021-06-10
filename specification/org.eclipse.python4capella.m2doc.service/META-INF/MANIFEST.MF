@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Service
+Bundle-SymbolicName: org.eclipse.python4capella.m2doc.service;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.eclipse.python4capella.m2doc.service
+Bundle-RequiredExecutionEnvironment: JavaSE-14
+Require-Bundle: org.obeonetwork.m2doc.ide,
+ org.polarsys.capella.core.data.gen

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genconf:Generation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genconf="http://www.obeonetwork.org/m2doc/genconf/1.0" templateFileName="template.docx" resultFileName="Python4Capella Simplified Metamodel.docx" validationFileName="template.validation.docx">
+  <definitions xsi:type="genconf:ModelDefinition" key="rootPkg">
+    <value href="../Capella%20Light%20Metamodel/Capella%20Light%20Metamodel.capella#532bb9ca-7e9f-45ef-9326-4cc59106e08d"/>
+  </definitions>
+  <definitions xsi:type="genconf:ModelDefinition" key="se">
+    <value href="../Capella%20Light%20Metamodel/Capella%20Light%20Metamodel.capella#3f860a6a-aaaf-4e98-9ffc-49c9394fa0c4"/>
+  </definitions>
+  <options name="UpdateFields" value="false"/>
+  <options name="SiriusSession" value="../Capella Light Metamodel/Capella Light Metamodel.aird"/>
+</genconf:Generation>
