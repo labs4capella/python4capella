@@ -19,9 +19,6 @@ for rc in lc.get_realizing_physical_components():
     print(" - " + rc.get_name())
 print("")
 
-print(str(len(lc.get_requirements())) + " attached requirements")
-print("")
-
 for rd in lc.get_representation_descriptors():
     rd = DRepresentationDescriptor(rd)
     print("exporting " + rd.get_name())
