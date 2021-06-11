@@ -2,6 +2,10 @@
   <topic href="doc/user/UserManual.html" label="Python4Capella User Manual">
     <topic href="doc/user/general/Python4CapellaProjectSturcture.html" label="Python4Capella project sturcture">
     </topic>
+    <topic href="doc/user/general/Run.html" label="Run a Python4Capella script">
+    </topic>
+    <topic href="doc/user/general/Debug.html" label="Debug a Python4Capella script">
+    </topic>
   </topic>
   <topic href="doc/developer/DeveloperManual.html" label="Python4Capella Developer Manual">
     <topic href="doc/developer/python/InstallNewPythonPackage.textile" label="Install new Python packages">

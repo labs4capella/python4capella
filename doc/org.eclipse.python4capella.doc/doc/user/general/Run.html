@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Run</title>
+		<link type="text/css" rel="stylesheet" href="../../resources/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="../../resources/custom.css"/>
+	</head>
+	<body>
+		<h1 id="RunaPyhtonscript">Run a Pyhton script</h1>
+		<p>This section explains how you can run your Python4Capella script either within Capella or from the command line.</p>
+		<h2 id="WithinCapella">Within Capella</h2>
+		<p>You will need to 
+			<a href="EnableDevelopmentCapabilities.html">enable Development capabilities</a> if it&#8217;s not already done.
+		</p>
+		<p>You can now select your script and right click on it:
+			<br/> - select the Run As / EASE Script menu
+		</p>
+		<p>If your script take some arguments, you can change the launch configuration by right clicking on your script:
+			<br/> - select the Run As / EASE Script menu with the CTRL (COMMAND for Mac OS) key pressed.
+		</p>
+		<p>This will open the launch configuration for your script and you can edit it to add parameters for instance.</p>
+		<h2 id="Commandline">Command line</h2>
+		<p>You can also run your Python4Capella script from the command line:</p>
+		<p>Windows</p>
+		<pre><code>eclipse -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+</code></pre>
+		<p>Linux and Mac OS X</p>
+		<pre><code>./eclipse -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+</code></pre>
+		<p>Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:</p>
+		<p>Windows</p>
+		<pre><code>capella -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+</code></pre>
+		<p>Linux and Mac OS X</p>
+		<pre><code>./capella -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+</code></pre>
+	</body>
+</html>
