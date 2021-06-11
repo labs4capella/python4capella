@@ -49,18 +49,24 @@ In the New dialog, select the Python4Capella project under the Python4Capella ca
 
 You can click the next then finish buttons to complet the wizard.
 
-You now have the following Python4Capella project in your workspace:
+At this point you will be prompted to configure your python environment, you can ignore the dialog for the moment and follow the next steps to setup your environment.
 
 ![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-03.png)
+
+You now have the following Python4Capella project in your workspace:
+
+![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-04.png)
 
 Now you need to refence your Python 2.7 interpreter:
 
 Select the Window > preferences menu
-  - select the PyDev / Interpreters / Python Interpreter node
-    - select the python executable from your system
+  - select the PyDev / Interpreters / Python Interpreter
+    - select the python executable from the [Python 2.7 installation section](#python-27-installation) by clicking the New button
   - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
-    - select the python executable from your system
+    - select the python executable from the [Python 2.7 installation section](#python-27-installation) by clicking the Browse button
   - select the Scripting / Scripting Locations
-    - add /Python4Capella/enduser
+    - add /Python4Capella/enduser by clicking the Add Workspace button
 
-You can refere to the plugin documentation for usage reference.
+You can click the Apply and close button to finish your setup.
+
+You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from capella, then on the right tree, you can select Python4Capella.
