@@ -3,4 +3,7 @@ h1. Python4Capella User Manual
 This document describes how to use Python4Capella.
 
 You will find the following sections:
-* "*Python4Capella project sturcture*":general/Python4CapellaProjectSturcture.html describes all elements from the Python4Capella project.
+* "*Python4Capella project structure*":general/Python4CapellaProjectSturcture.html Describes all elements from the Python4Capella project.
+* "*Run a script*":general/Run.html Describes how you can run your Python scripts (Within Capella, from the command line).
+* "*Debug a script*":general/Debug.html Describes how you can run your Python scripts.
+
