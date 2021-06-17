@@ -143,6 +143,7 @@ location EASE "https://download.eclipse.org/ease/release/0.7.0/" {
 	org.eclipse.ease.lang.python.py4j.feature.feature.group lazy
 	org.eclipse.ease.lang.jvm.feature.feature.group lazy
 	org.eclipse.ease.modules.feature.feature.group lazy
+	org.eclipse.ease.lang.unittest.feature.feature.group lazy
 }
 
 location py4j "http://eclipse.py4j.org/" {
