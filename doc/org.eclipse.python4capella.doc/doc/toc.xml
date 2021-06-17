@@ -1,6 +1,6 @@
 <toc label="Python4Capella">
   <topic href="doc/user/UserManual.html" label="Python4Capella User Manual">
-    <topic href="doc/user/general/Python4CapellaProjectSturcture.html" label="Python4Capella project sturcture">
+    <topic href="doc/user/general/Python4CapellaProjectSturcture.html" label="Python4Capella project structure">
     </topic>
     <topic href="doc/user/general/Run.html" label="Run a Python4Capella script">
     </topic>
