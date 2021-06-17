@@ -1,9 +1,9 @@
-include('workspace://Python4Capella/api/EMF_API.py')
+include('workspace://Python4Capella/java_api/EMF_API.py')
 if False:
-    from api.EMF_API import *
-include('workspace://Python4Capella/api/Sirius_API.py')
+    from java_api.EMF_API import *
+include('workspace://Python4Capella/java_api/Sirius_API.py')
 if False:
-    from api.Sirius_API import *
+    from java_api.Sirius_API import *
 
 class DRepresentationDescriptor(EObject):
     def __init__(self, java_object = None):

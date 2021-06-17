@@ -1,6 +1,6 @@
-include('workspace://Python4Capella/advanced/capella.py')
+include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
-    from advanced.capella import *
+    from simplified_api.capella import *
 
 class Requirement(EObject):
     def __init__(self, java_object = None):

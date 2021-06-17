@@ -1,7 +1,7 @@
 loadModule('/Capella/EMF')
-include('workspace://Python4Capella/api/Java_API.py')
+include('workspace://Python4Capella/java_api/Java_API.py')
 if False:
-    from api.Java_API import *
+    from java_api.Java_API import *
 import sys
 
 class EObject(JavaObject):

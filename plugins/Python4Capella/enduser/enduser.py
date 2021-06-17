@@ -5,12 +5,9 @@
 
 loadModule('/System/Platform')
 loadModule('/System/UI')
-include('workspace://Python4Capella/advanced/capella.py')
+include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
-    from advanced.capella import *
-include('workspace://Python4Capella/advanced/requirement.py')
-if False:
-    from advanced.requirement import *
+    from simplified_api.capella import *
 
 lc = LogicalComponent(getSelection().getFirstElement())
 print(lc.get_name() + "'s realizing components")

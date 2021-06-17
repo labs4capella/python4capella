@@ -1,12 +1,12 @@
-include('workspace://Python4Capella/api/EMF_API.py')
+include('workspace://Python4Capella/java_api/EMF_API.py')
 if False:
-    from api.EMF_API import *
-include('workspace://Python4Capella/api/Capella_API.py')
+    from java_api.EMF_API import *
+include('workspace://Python4Capella/java_api/Capella_API.py')
 if False:
-    from api.Capella_API import *
-include('workspace://Python4Capella/advanced/sirius.py')
+    from java_api.Capella_API import *
+include('workspace://Python4Capella/simplified_api/sirius.py')
 if False:
-    from advanced.sirius import *
+    from simplified_api.sirius import *
 
 
 class Element(EObject):
