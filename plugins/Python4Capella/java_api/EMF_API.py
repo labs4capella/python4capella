@@ -19,7 +19,7 @@ class EObject(JavaObject):
         """Gets all elements of the given Class contained directly and indirectly in the EObject"""
         res = []
         for e in e_all_contents(self.get_java_object(), cls.get_e_class()):
-            specific_cls = getattr(sys.modules[cls.__module__], e.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], e.eClass().getName())
             res.append(specific_cls(e))
         return res
     def e_container(self):
@@ -28,7 +28,7 @@ class EObject(JavaObject):
         if e is None:
             return e
         else:
-            specific_cls = getattr(sys.modules[self.__module__], e.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], e.eClass().getName())
             return specific_cls(e)
         
 def e_all_contents(e_obj, e_class):
