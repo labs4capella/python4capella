@@ -19,11 +19,14 @@ import java.util.List;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.ease.modules.WrapToScript;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.query.DRepresentationDescriptorQuery;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.dialect.ExportFormat;
@@ -32,6 +35,9 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.swt.widgets.Display;
+import org.polarsys.capella.core.data.capellamodeller.ModelRoot;
+import org.polarsys.capella.core.data.capellamodeller.Project;
+import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
 
 /**
  * EASE module for Sirius.
@@ -100,6 +106,52 @@ public class SiriusModule {
 				}
 			}
 		});
+	}
+
+	/**
+	 * Loads the {@link Session} at the given aird file path.
+	 * 
+	 * @param airdPath the aird path
+	 * @return the loaded {@link Session}
+	 */
+	@WrapToScript
+	public Session loadSiriusSession(String airdPath) {
+		final Session session = SessionManager.INSTANCE.getSession(URI.createPlatformResourceURI(airdPath, true),
+				new NullProgressMonitor());
+
+		if (session != null && !session.isOpen()) {
+			session.open(new NullProgressMonitor());
+		}
+
+		return session;
+	}
+
+	/**
+	 * Gets the first {@link SystemEngineering} contained by the given
+	 * {@link Session}.
+	 * 
+	 * @param session the {@link Session}
+	 * @return the first {@link SystemEngineering} contained by the given
+	 *         {@link Session} if any, <code>null</code> otherwise
+	 */
+	@WrapToScript
+	public SystemEngineering getEngineering(Session session) {
+		SystemEngineering res = null;
+
+		found: for (Resource resource : session.getSemanticResources()) {
+			for (EObject root : resource.getContents()) {
+				if (root instanceof Project) {
+					for (ModelRoot modelRoot : ((Project) root).getOwnedModelRoots()) {
+						if (modelRoot instanceof SystemEngineering) {
+							res = (SystemEngineering) modelRoot;
+							break found;
+						}
+					}
+				}
+			}
+		}
+
+		return res;
 	}
 
 }

@@ -285,7 +285,7 @@ class CapellaElement(TraceableElement, PublishableElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_status(self, value):
         return self.e_set("status", value.get_java_object())
@@ -606,7 +606,7 @@ class TypedElement(AbstractTypedElement, NamedElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class MultiplicityElement(CapellaElement):
@@ -1337,7 +1337,7 @@ class DataValue(NamedElement, ValueSpecification):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def get_value(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PropertyValue_applying_valued_element_DataValue", self)
@@ -1656,14 +1656,14 @@ class RequirementsTrace(Trace):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def get_target(self):
         value =  self.e_get("target")
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class Requirement(Namespace):
@@ -1884,7 +1884,7 @@ class Generalization(Relationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_super(self, value):
         return self.e_set("super", value.get_java_object())
@@ -1893,7 +1893,7 @@ class Generalization(Relationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_sub(self, value):
         return self.e_set("sub", value.get_java_object())
@@ -1998,7 +1998,7 @@ class EnumerationPropertyValue(AbstractPropertyValue):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_type(self, value):
         return self.e_set("type", value.get_java_object())
@@ -2007,7 +2007,7 @@ class EnumerationPropertyValue(AbstractPropertyValue):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_value(self, value):
         return self.e_set("value", value.get_java_object())
@@ -2168,7 +2168,7 @@ class RecCatalog(CatalogElementPkg, ElementExtension):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_owned_compliancy_definition_pkg(self, value):
         return self.e_set("ownedCompliancyDefinitionPkg", value.get_java_object())
@@ -2201,7 +2201,7 @@ class CatalogElementLink(ReAbstractElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_source(self, value):
         return self.e_set("source", value.get_java_object())
@@ -2210,7 +2210,7 @@ class CatalogElementLink(ReAbstractElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_target(self, value):
         return self.e_set("target", value.get_java_object())
@@ -2219,7 +2219,7 @@ class CatalogElementLink(ReAbstractElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_origin(self, value):
         return self.e_set("origin", value.get_java_object())
@@ -2266,7 +2266,7 @@ class CatalogElement(ReDescriptionElement, ReElementContainer):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_origin(self, value):
         return self.e_set("origin", value.get_java_object())
@@ -2275,7 +2275,7 @@ class CatalogElement(ReDescriptionElement, ReElementContainer):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_current_compliancy(self, value):
         return self.e_set("currentCompliancy", value.get_java_object())
@@ -2284,7 +2284,7 @@ class CatalogElement(ReDescriptionElement, ReElementContainer):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_default_replica_compliancy(self, value):
         return self.e_set("defaultReplicaCompliancy", value.get_java_object())
@@ -2533,7 +2533,7 @@ class CommunicationLink(CapellaElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_exchange_item(self, value):
         return self.e_set("exchangeItem", value.get_java_object())
@@ -2604,7 +2604,7 @@ class Scenario(Namespace, AbstractBehavior):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_pre_condition(self, value):
         return self.e_set("preCondition", value.get_java_object())
@@ -2613,7 +2613,7 @@ class Scenario(Namespace, AbstractBehavior):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_post_condition(self, value):
         return self.e_set("postCondition", value.get_java_object())
@@ -2864,7 +2864,7 @@ class AbstractCapability(Structure, InvolverElement, AbstractFunctionalChainCont
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_pre_condition(self, value):
         return self.e_set("preCondition", value.get_java_object())
@@ -2873,7 +2873,7 @@ class AbstractCapability(Structure, InvolverElement, AbstractFunctionalChainCont
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_post_condition(self, value):
         return self.e_set("postCondition", value.get_java_object())
@@ -2944,7 +2944,7 @@ class AbstractCapabilityExtensionPoint(NamedRelationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class AbstractCapabilityGeneralization(Relationship):
@@ -2963,7 +2963,7 @@ class AbstractCapabilityGeneralization(Relationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_super(self, value):
         return self.e_set("super", value.get_java_object())
@@ -2972,7 +2972,7 @@ class AbstractCapabilityGeneralization(Relationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsAbstractCapabilityGeneralizationTarget", self)
@@ -3075,7 +3075,7 @@ class InteractionOperand(InteractionFragment):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_guard(self, value):
         return self.e_set("guard", value.get_java_object())
@@ -3108,7 +3108,7 @@ class FunctionalChainAbstractCapabilityInvolvement(Involvement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class AbstractFunctionAbstractCapabilityInvolvement(Involvement):
@@ -3203,7 +3203,7 @@ class SequenceMessageValuation(CapellaElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_value(self, value):
         return self.e_set("value", value.get_java_object())
@@ -3280,7 +3280,7 @@ class Collection(Classifier, MultiplicityElement, DataValueContainer, Finalizabl
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_type(self, value):
         return self.e_set("type", value.get_java_object())
@@ -3989,7 +3989,7 @@ class FunctionalChain(NamedElement, InvolverElement, InvolvedElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_pre_condition(self, value):
         return self.e_set("preCondition", value.get_java_object())
@@ -3998,7 +3998,7 @@ class FunctionalChain(NamedElement, InvolverElement, InvolvedElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_post_condition(self, value):
         return self.e_set("postCondition", value.get_java_object())
@@ -4195,7 +4195,7 @@ class RoleAllocation(Allocation):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class EntityPkg(ComponentPkg):
@@ -4392,7 +4392,7 @@ class AbstractInformationFlow(AbstractNamedElement, AbstractRelationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_source(self, value):
         return self.e_set("source", value.get_java_object())
@@ -4401,7 +4401,7 @@ class AbstractInformationFlow(AbstractNamedElement, AbstractRelationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_target(self, value):
         return self.e_set("target", value.get_java_object())
@@ -4496,14 +4496,14 @@ class CommunicationMean(NamedRelationship, ComponentExchange):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def get_target_entity(self):
         value =  self.e_get("targetEntity")
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def get_allocated_interactions(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CommunicationMean_AllocatedExchanges", self)
@@ -4528,7 +4528,7 @@ class EntityOperationalCapabilityInvolvement(Involvement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class PhysicalArchitecturePkg(BlockArchitecturePkg):
@@ -4723,7 +4723,7 @@ class ComponentInstance(AbstractPhysicalInstance, DeployableElement, DeploymentT
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_type(self, value):
         return self.e_set("type", value.get_java_object())
@@ -4744,7 +4744,7 @@ class ConnectionInstance(AbstractPhysicalInstance):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_type(self, value):
         return self.e_set("type", value.get_java_object())
@@ -4813,7 +4813,7 @@ class PortInstance(AbstractPhysicalInstance):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_type(self, value):
         return self.e_set("type", value.get_java_object())
@@ -5348,7 +5348,7 @@ class ActivityEdge(AbstractRelationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_target(self, value):
         return self.e_set("target", value.get_java_object())
@@ -5357,7 +5357,7 @@ class ActivityEdge(AbstractRelationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_source(self, value):
         return self.e_set("source", value.get_java_object())
@@ -5366,7 +5366,7 @@ class ActivityEdge(AbstractRelationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_guard(self, value):
         return self.e_set("guard", value.get_java_object())
@@ -5485,7 +5485,7 @@ class ComponentExchangeFunctionalExchangeAllocation(AbstractFunctionAllocation):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class ComponentExchangeRealization(ExchangeSpecificationRealization):
@@ -5504,7 +5504,7 @@ class ComponentExchangeRealization(ExchangeSpecificationRealization):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class ComponentPort(Port, InformationsExchanger, Property):
@@ -5611,7 +5611,7 @@ class FunctionalChainInvolvementLink(FunctionalChainInvolvement, ReferenceHierar
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_source(self, value):
         return self.e_set("source", value.get_java_object())
@@ -5620,7 +5620,7 @@ class FunctionalChainInvolvementLink(FunctionalChainInvolvement, ReferenceHierar
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_target(self, value):
         return self.e_set("target", value.get_java_object())
@@ -5645,7 +5645,7 @@ class SequenceLink(CapellaElement, ReferenceHierarchyContext):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_source(self, value):
         return self.e_set("source", value.get_java_object())
@@ -5654,7 +5654,7 @@ class SequenceLink(CapellaElement, ReferenceHierarchyContext):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_target(self, value):
         return self.e_set("target", value.get_java_object())
@@ -5773,14 +5773,14 @@ class GenericTrace(Trace):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def get_target(self):
         value =  self.e_get("target")
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
 
 class TransfoLink(GenericTrace):
@@ -5947,7 +5947,7 @@ class StateTransition(NamedElement, Relationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_guard(self, value):
         return self.e_set("guard", value.get_java_object())
@@ -5956,7 +5956,7 @@ class StateTransition(NamedElement, Relationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_source(self, value):
         return self.e_set("source", value.get_java_object())
@@ -5965,7 +5965,7 @@ class StateTransition(NamedElement, Relationship):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_target(self, value):
         return self.e_set("target", value.get_java_object())
@@ -6256,7 +6256,7 @@ class SendSignalAction(InvocationAction):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_target(self, value):
         return self.e_set("target", value.get_java_object())
@@ -6277,7 +6277,7 @@ class ValuePin(InputPin):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_value(self, value):
         return self.e_set("value", value.get_java_object())
@@ -6366,7 +6366,7 @@ class SystemCommunicationHook(NamedElement):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules[self.__module__], value.eClass().getName())
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
     def set_type(self, value):
         return self.e_set("type", value.get_java_object())

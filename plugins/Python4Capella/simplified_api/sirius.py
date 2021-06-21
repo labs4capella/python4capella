@@ -30,3 +30,6 @@ def get_representation_descriptors(self):
         res.append(DRepresentationDescriptor(e))
     return res
 setattr(EObject, "get_representation_descriptors", get_representation_descriptors)
+
+def load_sirius_session(aird_path):
+    return loadSiriusSession(aird_path)
