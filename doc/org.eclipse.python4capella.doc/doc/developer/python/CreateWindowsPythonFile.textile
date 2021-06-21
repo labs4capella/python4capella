@@ -20,6 +20,16 @@ Python will proceed with the installation of pip. Now we can install new package
 
 bc. Scripts\pip install XlsxWriter
 
+If you prefer, you can also install XlsxWriter from the source archive. Download the source archive from the following page:
+
+"https://pypi.org/project/XlsxWriter/#files":https://pypi.org/project/XlsxWriter/#files
+
+Then use the following command:
+
+bc. Scripts\pip install XlsxWriter-x.y.z.tar.gz
+
+Where x.y.z is the version of the downloaded XlsxWriter archive.
+
 Now you can import XlsxWriter in your Python scripts by adding the following import directive at the beginning of your script:
 
 bc. import xlsxwriter
