@@ -2,7 +2,12 @@ package org.eclipse.python4capella.m2doc.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
+import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
+import org.polarsys.capella.core.data.information.AggregationKind;
 import org.polarsys.capella.core.data.information.Class;
 import org.polarsys.capella.core.data.information.Property;
 
@@ -66,6 +71,43 @@ public class ClassServices {
 			}
 		}
 		return result;
+	}
+	
+	public List<Class> getPossibleParents (Class myClass) {
+		List<Class> result = new ArrayList<Class>();
+		List<Class> target = new ArrayList<Class>();
+		target.addAll(getAllSuperTypes(myClass));
+		target.add(myClass);
+		SystemEngineering se = getSE(myClass);
+		if (se != null) {
+			TreeIterator<EObject> it = se.eAllContents();
+			while (it.hasNext()) {
+				EObject obj = it.next();
+				if (obj instanceof Class) {
+					Class currentClass = (Class) obj;
+					if (!currentClass.isAbstract()) {
+						for (Property rel : getAllRelations(currentClass)) {
+							if (rel.getAggregationKind() == AggregationKind.COMPOSITION) {
+								if (target.contains(rel.getType())) {
+									result.add(currentClass);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return result;
+	}
+	
+	private SystemEngineering getSE(EObject obj) {
+		if (obj instanceof SystemEngineering) {
+			return (SystemEngineering) obj;
+		}
+		if (obj.eContainer() != null) {
+			return getSE(obj.eContainer());
+		}
+		return null;
 	}
 
 }
