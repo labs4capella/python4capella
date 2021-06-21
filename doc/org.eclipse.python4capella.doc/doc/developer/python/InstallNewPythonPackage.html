@@ -8,13 +8,26 @@
 	</head>
 	<body>
 		<h1 id="InstallnewPythonpackage">Install new Python package</h1>
-		<p>To install new Python packages on Linux or Mac OS X, please refere to your distribution documentation.</p>
-		<p>If you are using Windows and the python27.zip file provided with Python4Capella, you can install a new package using the following command:</p>
+		<p>To install new Python packages on Linux or Mac OS X, please refer to your distribution documentation.</p>
+		<p>If you are using Windows and the python27.zip file provided with Python4Capella, you can install a new package using the following command from the folder where you extracted the python27.zip:</p>
 		<pre><code>Scripts\pip install *package name*
 </code></pre>
-		<p>This will install the package and make it available to import in your scripts. For more details on importing the newly installed package please refere to its documentation.</p>
+		<p>For instance:</p>
+		<pre><code>Scripts\pip install Python-Chart
+</code></pre>
+		<p>This will install the package and make it available to import in your scripts. For more details on importing the newly installed package please refer to its documentation.</p>
 		<p>You can find packages 
-			<a href="https://pypi.org/">here</a>.
+			<a href="https://pypi.org/">Python Package Index (PyPI)</a>.
 		</p>
+		<p>You can also install a package from its source archive, you will need to go to the project page on 
+			<a href="https://pypi.org/">https://pypi.org/</a> and select the Download files menu on the left. For instance if you want to install Python-Chart form the source, go to the following page:
+		</p>
+		<p>
+			<a href="https://pypi.org/project/Python-Chart/#files">https://pypi.org/project/Python-Chart/#files</a>
+		</p>
+		<p>Once you downloaded the archive, from the folder where you extracted the python27.zip, you can use the following command to install the package, in this example:</p>
+		<pre><code>Scripts\pip install Python-Chart-1.39.tar.gz
+</code></pre>
+		<p>Note: the version in the archive name might be different in your case.</p>
 	</body>
 </html>
