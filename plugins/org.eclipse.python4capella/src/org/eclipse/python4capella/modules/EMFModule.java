@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
@@ -31,33 +30,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  */
 public class EMFModule {
-
-	/**
-	 * Gets the value of the given {@link EStructuralFeature#getName() feature name}
-	 * for the given {@link EObject}.
-	 * 
-	 * @param eObj        the {@link EObject}
-	 * @param featureName the {@link EStructuralFeature#getName() feature name}
-	 * @return the value of the given {@link EStructuralFeature#getName() feature
-	 *         name} for the given {@link EObject}
-	 */
-	@WrapToScript
-	public Object eGet(EObject eObj, String featureName) {
-		return eObj.eGet(eObj.eClass().getEStructuralFeature(featureName));
-	}
-
-	/**
-	 * Sets the new value for the given {@link EStructuralFeature#getName() feature
-	 * name} for the given {@link EObject}.
-	 * 
-	 * @param eObj        the {@link EObject}
-	 * @param featureName the {@link EStructuralFeature#getName() feature name}
-	 * @param value       the new value
-	 */
-	@WrapToScript
-	public void eSet(EObject eObj, String featureName, Object value) {
-		eObj.eSet(eObj.eClass().getEStructuralFeature(featureName), value);
-	}
 
 	/**
 	 * Deletes the given {@link EObject}.

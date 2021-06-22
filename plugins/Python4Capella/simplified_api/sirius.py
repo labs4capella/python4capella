@@ -14,13 +14,13 @@ class DRepresentationDescriptor(EObject):
         else:
             EObject.__init__(self, java_object)
     def get_name(self):
-        return self.e_get("name")
+        return self.get_java_object().getName()
     def set_name(self, value):
-        self.e_set("name", value)
+        self.get_java_object().setName(value)
     def get_target(self):
-        return EObject(self.e_get("target"))
+        return EObject(self.get_java_object().getTarget())
     def set_target(self, value):
-        return self.e_set("target", value.get_java_object())
+        return self.get_java_object().setTarget(value.get_java_object())
     def export_image(self, file_path):
         export_image_sirius(self, file_path)
 
