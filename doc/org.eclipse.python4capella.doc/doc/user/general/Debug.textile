@@ -13,9 +13,11 @@ You can now select your script and right click on it:
  - select the Debug As / EASE Script menu
 
 If your script takes some arguments, you can change the launch configuration by right clicking on your script:
- - select the Debug As / EASE Script menu with the CTRL (COMMAND for Mac OS) key pressed.
+ - select the Debug As / Debug configuration.
 
 This will open the launch configuration for your script and you can edit it to add parameters for instance.
+
+!Debug/Debug_Configurations.png(Debug Configurations with parameter)!
 
 To step over/into/return you can use the tool bar at the top:
 

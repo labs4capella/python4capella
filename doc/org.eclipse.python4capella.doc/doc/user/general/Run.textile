@@ -10,9 +10,11 @@ You can now select your script and right click on it:
  - select the Run As / EASE Script menu
 
 If your script take some arguments, you can change the launch configuration by right clicking on your script:
- - select the Run As / EASE Script menu with the CTRL (COMMAND for Mac OS) key pressed.
+ - select the Run As / Run configuration menu.
 
 This will open the launch configuration for your script and you can edit it to add parameters for instance.
+
+!Run/Run_Configurations.png(Run Configurations with parameter)!
 
 h2. Command line
 
