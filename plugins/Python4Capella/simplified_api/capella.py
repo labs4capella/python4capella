@@ -2348,6 +2348,22 @@ class EPBSArchitecture(ComponentArchitecture):
     @staticmethod
     def get_e_class():
         return get_e_classifier("http://www.polarsys.org/capella/core/epbs/1.4.0", "EPBSArchitecture")
+    def get_configuration_item_pkg(self):
+        value =  self.e_get("ownedConfigurationItemPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_configuration_item_pkg(self, value):
+        return self.e_set("ownedConfigurationItemPkg", value.get_java_object())
+    def get_capability_realization_pkg(self):
+        value =  self.e_get("containedCapabilityRealizationPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class ConfigurationItemPkg(ComponentPkg):
     def __init__(self, java_object = None):
@@ -3762,6 +3778,29 @@ class OperationalAnalysis(BlockArchitecture):
     @staticmethod
     def get_e_class():
         return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalAnalysis")
+    def get_entity_pkg(self):
+        value =  self.e_get("ownedEntityPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_entity_pkg(self, value):
+        return self.e_set("ownedEntityPkg", value.get_java_object())
+    def get_operational_capability_pkg(self):
+        value =  self.e_get("containedOperationalCapabilityPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def get_operational_activity_pkg(self):
+        value =  self.e_get("containedOperationalActivityPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class OperationalScenario(NamedElement):
     def __init__(self, java_object = None):
@@ -3980,7 +4019,7 @@ class FunctionalChain(NamedElement, InvolverElement, InvolvedElement):
         return create_e_list(self.e_get("availableInStates"), State)
     def get_involving_capabilities(self):
         return create_e_list(self.e_get("involvingCapabilities"), Capability)
-    def get_realized_functional_chains(self):
+    def get_involved_functional_chains(self):
         return create_e_list(self.e_get("realizedFunctionalChains"), FunctionalChain)
     def get_realizing_functional_chains(self):
         return create_e_list(self.e_get("realizingFunctionalChains"), FunctionalChain)
@@ -4006,8 +4045,8 @@ class FunctionalChain(NamedElement, InvolverElement, InvolvedElement):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChain_owningFunction", self)
     def get_realized_operational_processes(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainRealizedOperationalProcess", self)
-    def get_involved_functional_chains(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainChildren", self)
+    def get_realized_functional_chains(self):
+        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainRealizedFunctionalChains", self)
     def get_active_in_states(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainAvailableInState", self)
     def get_involvement_links(self):
@@ -4554,6 +4593,29 @@ class PhysicalArchitecture(ComponentArchitecture):
     @staticmethod
     def get_e_class():
         return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalArchitecture")
+    def get_physical_component_pkg(self):
+        value =  self.e_get("ownedPhysicalComponentPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_physical_component_pkg(self, value):
+        return self.e_set("ownedPhysicalComponentPkg", value.get_java_object())
+    def get_capability_realization_pkg(self):
+        value =  self.e_get("containedCapabilityRealizationPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def get_physical_function_pkg(self):
+        value =  self.e_get("containedPhysicalFunctionPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class PhysicalFunction(AbstractFunction):
     def __init__(self, java_object = None):
@@ -4853,6 +4915,29 @@ class LogicalArchitecture(ComponentArchitecture):
     @staticmethod
     def get_e_class():
         return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "LogicalArchitecture")
+    def get_logical_component_pkg(self):
+        value =  self.e_get("ownedLogicalComponentPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_logical_component_pkg(self, value):
+        return self.e_set("ownedLogicalComponentPkg", value.get_java_object())
+    def get_capability_realization_pkg(self):
+        value =  self.e_get("containedCapabilityRealizationPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def get_logical_function_pkg(self):
+        value =  self.e_get("containedLogicalFunctionPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class LogicalFunction(AbstractFunction):
     def __init__(self, java_object = None):
@@ -6293,6 +6378,38 @@ class SystemAnalysis(ComponentArchitecture):
     @staticmethod
     def get_e_class():
         return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemAnalysis")
+    def get_system_component_pkg(self):
+        value =  self.e_get("ownedSystemComponentPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_system_component_pkg(self, value):
+        return self.e_set("ownedSystemComponentPkg", value.get_java_object())
+    def get_mission_pkg(self):
+        value =  self.e_get("ownedMissionPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_mission_pkg(self, value):
+        return self.e_set("ownedMissionPkg", value.get_java_object())
+    def get_capability_pkg(self):
+        value =  self.e_get("containedCapabilityPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def get_system_function_pkg(self):
+        value =  self.e_get("containedSystemFunctionPkg")
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class SystemFunction(AbstractFunction):
     def __init__(self, java_object = None):
