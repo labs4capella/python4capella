@@ -69,4 +69,10 @@ Select the Window > preferences menu
 
 You can click the Apply and close button to finish your setup.
 
+When you will open your fist Python file, you will be prompted by PyDev to define its default configuration:
+
+![Default Eclipse preferences for PyDev](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/PyDev_preferences.png)
+
+You can validate the dialog by clicking the OK button.
+
 You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from capella, then on the right tree, you can select Python4Capella.
