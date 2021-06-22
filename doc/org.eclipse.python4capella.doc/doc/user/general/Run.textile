@@ -1,4 +1,4 @@
-h1. Run a Pyhton script
+h1. Run a Python script
 
 This section explains how you can run your Python4Capella script either within Capella or from the command line.
 
