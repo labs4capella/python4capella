@@ -30,7 +30,7 @@ Then unzip it in the dropins folder in the same folder as your Capella executabl
 
 ## Python 2.7 installation
 
-If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory:
+If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
 TODO add the Python 2.7 zip file URL
 
