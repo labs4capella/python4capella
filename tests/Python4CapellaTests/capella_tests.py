@@ -11730,8 +11730,7 @@ class capella_tests(unittest.TestCase):
     def test_ChangeEvent_constraints(self):
         tested = ChangeEvent()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_ChangeEvent_owned_property_values(self):
@@ -11877,8 +11876,7 @@ class capella_tests(unittest.TestCase):
     def test_TimeEvent_constraints(self):
         tested = TimeEvent()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_TimeEvent_owned_property_values(self):
@@ -12244,8 +12242,7 @@ class capella_tests(unittest.TestCase):
     def test_InstanceRole_constraints(self):
         tested = InstanceRole()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_InstanceRole_owned_property_values(self):
@@ -12391,8 +12388,7 @@ class capella_tests(unittest.TestCase):
     def test_SequenceMessage_constraints(self):
         tested = SequenceMessage()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_SequenceMessage_owned_property_values(self):
@@ -12580,8 +12576,7 @@ class capella_tests(unittest.TestCase):
     def test_StateFragment_constraints(self):
         tested = StateFragment()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_StateFragment_owned_property_values(self):
@@ -12741,8 +12736,7 @@ class capella_tests(unittest.TestCase):
     def test_CombinedFragment_constraints(self):
         tested = CombinedFragment()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_CombinedFragment_owned_property_values(self):
@@ -13063,8 +13057,7 @@ class capella_tests(unittest.TestCase):
     def test_ConstraintDuration_constraints(self):
         tested = ConstraintDuration()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_ConstraintDuration_owned_property_values(self):
@@ -14253,8 +14246,7 @@ class capella_tests(unittest.TestCase):
     def test_ExchangeItemAllocation_constraints(self):
         tested = ExchangeItemAllocation()
         value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_ExchangeItemAllocation_owned_property_values(self):
