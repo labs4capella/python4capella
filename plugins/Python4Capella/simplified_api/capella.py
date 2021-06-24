@@ -17,9 +17,6 @@ class Element(EObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/kitalpha/emde/1.0.0", "Element")
     def get_r_e_c_source_element(self):
         return capella_query("org.polarsys.capella.common.re.ui.queries.ReferencingReplicableElementLinks", self)
     def get_r_e_c(self):
@@ -37,9 +34,6 @@ class ExtensibleElement(Element):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/kitalpha/emde/1.0.0", "ExtensibleElement")
 
 class ModelElement(ExtensibleElement):
     def __init__(self, java_object = None):
@@ -49,9 +43,6 @@ class ModelElement(ExtensibleElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "ModelElement")
     def get_id(self):
         return self.get_java_object().getId()
     def set_id(self, value):
@@ -89,9 +80,6 @@ class AbstractNamedElement(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractNamedElement")
     def get_name(self):
         return self.get_java_object().getName()
     def set_name(self, value):
@@ -105,9 +93,6 @@ class AbstractBehavior(AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/behavior/1.4.0", "AbstractBehavior")
 
 class AbstractType(AbstractNamedElement):
     def __init__(self, java_object = None):
@@ -117,9 +102,6 @@ class AbstractType(AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractType")
     def get_inheritedof_typing_elements(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractTypeAbstractTypedElement", self)
 
@@ -131,9 +113,6 @@ class AbstractSignal(AbstractType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/behavior/1.4.0", "AbstractSignal")
 
 class AbstractEvent(AbstractType):
     def __init__(self, java_object = None):
@@ -143,9 +122,6 @@ class AbstractEvent(AbstractType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/behavior/1.4.0", "AbstractEvent")
 
 class AbstractTimeEvent(AbstractEvent):
     def __init__(self, java_object = None):
@@ -155,9 +131,6 @@ class AbstractTimeEvent(AbstractEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/behavior/1.4.0", "AbstractTimeEvent")
 
 class AbstractMessageEvent(AbstractEvent):
     def __init__(self, java_object = None):
@@ -167,9 +140,6 @@ class AbstractMessageEvent(AbstractEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/behavior/1.4.0", "AbstractMessageEvent")
 
 class AbstractSignalEvent(AbstractMessageEvent):
     def __init__(self, java_object = None):
@@ -179,9 +149,6 @@ class AbstractSignalEvent(AbstractMessageEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/behavior/1.4.0", "AbstractSignalEvent")
 
 class AbstractTypedElement(AbstractNamedElement):
     def __init__(self, java_object = None):
@@ -191,9 +158,6 @@ class AbstractTypedElement(AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractTypedElement")
 
 class ValueSpecification(AbstractTypedElement):
     def __init__(self, java_object = None):
@@ -203,9 +167,6 @@ class ValueSpecification(AbstractTypedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "ValueSpecification")
 
 class TimeExpression(ValueSpecification):
     def __init__(self, java_object = None):
@@ -215,9 +176,6 @@ class TimeExpression(ValueSpecification):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/behavior/1.4.0", "TimeExpression")
 
 class TraceableElement(ModelElement):
     def __init__(self, java_object = None):
@@ -227,9 +185,6 @@ class TraceableElement(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "TraceableElement")
     def get_outgoing_generic_traces(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.TraceableElementOutgoingTrace", self)
     def get_incoming_generic_traces(self):
@@ -243,9 +198,6 @@ class PublishableElement(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "PublishableElement")
 
 class CapellaElement(TraceableElement, PublishableElement):
     def __init__(self, java_object = None):
@@ -255,9 +207,6 @@ class CapellaElement(TraceableElement, PublishableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "CapellaElement")
     def get_summary(self):
         return self.get_java_object().getSummary()
     def set_summary(self, value):
@@ -300,9 +249,6 @@ class NamedElement(AbstractNamedElement, CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "NamedElement")
 
 class Namespace(NamedElement):
     def __init__(self, java_object = None):
@@ -312,9 +258,6 @@ class Namespace(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Namespace")
 
 class Structure(Namespace):
     def __init__(self, java_object = None):
@@ -324,9 +267,6 @@ class Structure(Namespace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Structure")
     def get_owned_property_value_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPropertyValuePkgs(), PropertyValuePkg)
 
@@ -338,9 +278,6 @@ class ModellingArchitecturePkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "ModellingArchitecturePkg")
 
 class BlockArchitecturePkg(ModellingArchitecturePkg):
     def __init__(self, java_object = None):
@@ -350,9 +287,6 @@ class BlockArchitecturePkg(ModellingArchitecturePkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "BlockArchitecturePkg")
 
 class ModellingArchitecture(Structure):
     def __init__(self, java_object = None):
@@ -362,9 +296,6 @@ class ModellingArchitecture(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "ModellingArchitecture")
 
 class AbstractFunctionalArchitecture(ModellingArchitecture):
     def __init__(self, java_object = None):
@@ -374,9 +305,6 @@ class AbstractFunctionalArchitecture(ModellingArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "AbstractFunctionalArchitecture")
 
 class BlockArchitecture(AbstractFunctionalArchitecture):
     def __init__(self, java_object = None):
@@ -386,9 +314,6 @@ class BlockArchitecture(AbstractFunctionalArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "BlockArchitecture")
 
 class Type(AbstractType, Namespace):
     def __init__(self, java_object = None):
@@ -398,9 +323,6 @@ class Type(AbstractType, Namespace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Type")
     def get_exchange_item_elements(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractTypeExchangeItemElements", self)
     def get_typing_elements(self):
@@ -414,9 +336,6 @@ class ModellingBlock(Type):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "ModellingBlock")
 
 class AbstractFunctionalBlock(ModellingBlock):
     def __init__(self, java_object = None):
@@ -426,9 +345,6 @@ class AbstractFunctionalBlock(ModellingBlock):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "AbstractFunctionalBlock")
     def get_allocated_functions(self):
         return create_e_list(self.get_java_object().getAllocatedFunctions(), AbstractFunction)
 
@@ -440,9 +356,6 @@ class Block(ModellingBlock, AbstractFunctionalBlock):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "Block")
     def get_owned_state_machines(self):
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
 
@@ -454,9 +367,6 @@ class ComponentArchitecture(BlockArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "ComponentArchitecture")
 
 class GeneralizableElement(Type):
     def __init__(self, java_object = None):
@@ -466,9 +376,6 @@ class GeneralizableElement(Type):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "GeneralizableElement")
     def get_abstract(self):
         return self.get_java_object().getAbstract()
     def set_abstract(self, value):
@@ -490,9 +397,6 @@ class Classifier(GeneralizableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Classifier")
 
 class InterfaceAllocator(CapellaElement):
     def __init__(self, java_object = None):
@@ -502,9 +406,6 @@ class InterfaceAllocator(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "InterfaceAllocator")
 
 class CommunicationLinkExchanger(EObject):
     def __init__(self, java_object = None):
@@ -514,9 +415,6 @@ class CommunicationLinkExchanger(EObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "CommunicationLinkExchanger")
 
 class Component(Block, Classifier, InterfaceAllocator, CommunicationLinkExchanger):
     def __init__(self, java_object = None):
@@ -526,9 +424,6 @@ class Component(Block, Classifier, InterfaceAllocator, CommunicationLinkExchange
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "Component")
     def get_used_interfaces(self):
         return create_e_list(self.get_java_object().getUsedInterfaces(), Interface)
     def get_implemented_interfaces(self):
@@ -582,9 +477,6 @@ class Feature(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Feature")
     def get_visibility(self):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
@@ -598,9 +490,6 @@ class TypedElement(AbstractTypedElement, NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "TypedElement")
     def get_type(self):
         value =  self.get_java_object().getType()
         if value is None:
@@ -617,9 +506,6 @@ class MultiplicityElement(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "MultiplicityElement")
 
 class FinalizableElement(ModelElement):
     def __init__(self, java_object = None):
@@ -629,9 +515,6 @@ class FinalizableElement(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "FinalizableElement")
     def get_final(self):
         return self.get_java_object().getFinal()
     def set_final(self, value):
@@ -645,9 +528,6 @@ class Property(Feature, TypedElement, MultiplicityElement, FinalizableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Property")
     def get_parent(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PropertyOwner", self)
     def get_association(self):
@@ -663,9 +543,6 @@ class AbstractInstance(Property):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "AbstractInstance")
 
 class InformationsExchanger(ModelElement):
     def __init__(self, java_object = None):
@@ -675,9 +552,6 @@ class InformationsExchanger(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "InformationsExchanger")
 
 class DeployableElement(NamedElement):
     def __init__(self, java_object = None):
@@ -687,9 +561,6 @@ class DeployableElement(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "DeployableElement")
 
 class DeploymentTarget(NamedElement):
     def __init__(self, java_object = None):
@@ -699,9 +570,6 @@ class DeploymentTarget(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "DeploymentTarget")
 
 class InvolvedElement(CapellaElement):
     def __init__(self, java_object = None):
@@ -711,9 +579,6 @@ class InvolvedElement(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "InvolvedElement")
 
 class AbstractPathInvolvedElement(InvolvedElement):
     def __init__(self, java_object = None):
@@ -723,9 +588,6 @@ class AbstractPathInvolvedElement(InvolvedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "AbstractPathInvolvedElement")
 
 class Part(AbstractInstance, InformationsExchanger, DeployableElement, DeploymentTarget, AbstractPathInvolvedElement):
     def __init__(self, java_object = None):
@@ -735,9 +597,6 @@ class Part(AbstractInstance, InformationsExchanger, DeployableElement, Deploymen
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "Part")
     def get_provided_interfaces(self):
         return create_e_list(self.get_java_object().getProvidedInterfaces(), Interface)
     def get_required_interfaces(self):
@@ -753,9 +612,6 @@ class AbstractRelationship(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractRelationship")
 
 class Relationship(AbstractRelationship, CapellaElement):
     def __init__(self, java_object = None):
@@ -765,9 +621,6 @@ class Relationship(AbstractRelationship, CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Relationship")
 
 class AbstractTrace(TraceableElement):
     def __init__(self, java_object = None):
@@ -777,9 +630,6 @@ class AbstractTrace(TraceableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractTrace")
 
 class Allocation(Relationship, AbstractTrace):
     def __init__(self, java_object = None):
@@ -789,9 +639,6 @@ class Allocation(Relationship, AbstractTrace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Allocation")
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsAllocationTarget", self)
     def get_source(self):
@@ -805,9 +652,6 @@ class ArchitectureAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "ArchitectureAllocation")
 
 class ComponentRealization(Allocation):
     def __init__(self, java_object = None):
@@ -817,9 +661,6 @@ class ComponentRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "ComponentRealization")
 
 class MessageReferencePkg(Structure):
     def __init__(self, java_object = None):
@@ -829,9 +670,6 @@ class MessageReferencePkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "MessageReferencePkg")
 
 class AbstractDependenciesPkg(Structure):
     def __init__(self, java_object = None):
@@ -841,9 +679,6 @@ class AbstractDependenciesPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "AbstractDependenciesPkg")
     def get_dependencies(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractDependenciesPkg_dependencies", self)
     def get_inverse_dependencies(self):
@@ -857,9 +692,6 @@ class AbstractExchangeItemPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "AbstractExchangeItemPkg")
     def get_owned_exchange_items(self):
         return create_e_list(self.get_java_object().getOwnedExchangeItems(), ExchangeItem)
 
@@ -871,9 +703,6 @@ class InterfacePkg(MessageReferencePkg, AbstractDependenciesPkg, AbstractExchang
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "InterfacePkg")
     def get_owned_interfaces(self):
         return create_e_list(self.get_java_object().getOwnedInterfaces(), Interface)
     def get_owned_interface_pkgs(self):
@@ -887,9 +716,6 @@ class GeneralClass(Classifier, FinalizableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "GeneralClass")
     def get_visibility(self):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
@@ -903,9 +729,6 @@ class Interface(GeneralClass, InterfaceAllocator):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "Interface")
     def get_implementor_components(self):
         return create_e_list(self.get_java_object().getImplementorComponents(), Component)
     def get_user_components(self):
@@ -941,9 +764,6 @@ class InterfaceImplementation(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "InterfaceImplementation")
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsInterfaceImplementationTarget", self)
     def get_source(self):
@@ -957,9 +777,6 @@ class InterfaceUse(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "InterfaceUse")
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsInterfaceUseTarget", self)
     def get_source(self):
@@ -973,9 +790,6 @@ class ProvidedInterfaceLink(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "ProvidedInterfaceLink")
 
 class RequiredInterfaceLink(Relationship):
     def __init__(self, java_object = None):
@@ -985,9 +799,6 @@ class RequiredInterfaceLink(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "RequiredInterfaceLink")
 
 class InterfaceAllocation(Allocation):
     def __init__(self, java_object = None):
@@ -997,9 +808,6 @@ class InterfaceAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "InterfaceAllocation")
 
 class AbstractEventOperation(NamedElement):
     def __init__(self, java_object = None):
@@ -1009,9 +817,6 @@ class AbstractEventOperation(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "AbstractEventOperation")
 
 class ExchangeItemAllocation(Relationship, AbstractEventOperation, FinalizableElement):
     def __init__(self, java_object = None):
@@ -1021,9 +826,6 @@ class ExchangeItemAllocation(Relationship, AbstractEventOperation, FinalizableEl
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "ExchangeItemAllocation")
     def get_exchange_item(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeItemAllocationExchangeItem", self)
     def get_scenarios(self):
@@ -1037,9 +839,6 @@ class AbstractDeploymentLink(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "AbstractDeploymentLink")
 
 class AbstractPhysicalArtifact(CapellaElement):
     def __init__(self, java_object = None):
@@ -1049,9 +848,6 @@ class AbstractPhysicalArtifact(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "AbstractPhysicalArtifact")
 
 class AbstractPhysicalLinkEnd(CapellaElement):
     def __init__(self, java_object = None):
@@ -1061,9 +857,6 @@ class AbstractPhysicalLinkEnd(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "AbstractPhysicalLinkEnd")
 
 class ComponentExchangeAllocator(NamedElement):
     def __init__(self, java_object = None):
@@ -1073,9 +866,6 @@ class ComponentExchangeAllocator(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentExchangeAllocator")
     def get_allocated_component_exchanges(self):
         return create_e_list(self.get_java_object().getAllocatedComponentExchanges(), ComponentExchange)
 
@@ -1087,9 +877,6 @@ class AbstractPhysicalPathLink(ComponentExchangeAllocator):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "AbstractPhysicalPathLink")
 
 class PhysicalLink(AbstractPhysicalPathLink, AbstractPhysicalArtifact, AbstractPathInvolvedElement):
     def __init__(self, java_object = None):
@@ -1099,9 +886,6 @@ class PhysicalLink(AbstractPhysicalPathLink, AbstractPhysicalArtifact, AbstractP
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalLink")
     def get_categories(self):
         return create_e_list(self.get_java_object().getCategories(), PhysicalLinkCategory)
     def get_realized_physical_links(self):
@@ -1127,9 +911,6 @@ class PhysicalLinkCategory(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalLinkCategory")
     def get_links(self):
         return create_e_list(self.get_java_object().getLinks(), PhysicalLink)
     def get_physical_links(self):
@@ -1143,9 +924,6 @@ class PhysicalLinkEnd(AbstractPhysicalLinkEnd):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalLinkEnd")
 
 class PhysicalLinkRealization(Allocation):
     def __init__(self, java_object = None):
@@ -1155,9 +933,6 @@ class PhysicalLinkRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalLinkRealization")
 
 class InvolverElement(CapellaElement):
     def __init__(self, java_object = None):
@@ -1167,9 +942,6 @@ class InvolverElement(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "InvolverElement")
 
 class PhysicalPath(NamedElement, ComponentExchangeAllocator, AbstractPathInvolvedElement, InvolverElement):
     def __init__(self, java_object = None):
@@ -1179,9 +951,6 @@ class PhysicalPath(NamedElement, ComponentExchangeAllocator, AbstractPathInvolve
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalPath")
     def get_involved_physical_paths(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPathInvolvedPhysicalPath", self)
     def get_involved_physical_links(self):
@@ -1199,9 +968,6 @@ class Involvement(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Involvement")
     def get_involved_element(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsInvolvementTarget", self)
     def get_involving_element(self):
@@ -1215,9 +981,6 @@ class PhysicalPathInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalPathInvolvement")
     def get_involved_physical_path(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPathInvolvmentInvolvedPhysicalPath", self)
     def get_involved_physical_component(self):
@@ -1233,9 +996,6 @@ class PhysicalPathReference(PhysicalPathInvolvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalPathReference")
 
 class PhysicalPathRealization(Allocation):
     def __init__(self, java_object = None):
@@ -1245,9 +1005,6 @@ class PhysicalPathRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalPathRealization")
 
 class Port(NamedElement):
     def __init__(self, java_object = None):
@@ -1257,9 +1014,6 @@ class Port(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Port")
     def get_provided_interfaces(self):
         return create_e_list(self.get_java_object().getProvidedInterfaces(), Interface)
     def get_required_interfaces(self):
@@ -1273,9 +1027,6 @@ class PhysicalPort(Port, AbstractPhysicalArtifact, InformationsExchanger, Abstra
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalPort")
     def get_allocated_component_ports(self):
         return create_e_list(self.get_java_object().getAllocatedComponentPorts(), ComponentPort)
     def get_realized_physical_ports(self):
@@ -1299,9 +1050,6 @@ class PhysicalPortRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "PhysicalPortRealization")
 
 class ComponentPkg(Structure):
     def __init__(self, java_object = None):
@@ -1311,9 +1059,6 @@ class ComponentPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/cs/1.4.0", "ComponentPkg")
     def get_owned_state_machines(self):
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
 
@@ -1325,9 +1070,6 @@ class DataValue(NamedElement, ValueSpecification):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "DataValue")
     def get_abstract(self):
         return self.get_java_object().getAbstract()
     def set_abstract(self, value):
@@ -1356,9 +1098,6 @@ class DataValueContainer(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "DataValueContainer")
 
 class AbstractBooleanValue(DataValue):
     def __init__(self, java_object = None):
@@ -1368,9 +1107,6 @@ class AbstractBooleanValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "AbstractBooleanValue")
 
 class LiteralBooleanValue(AbstractBooleanValue):
     def __init__(self, java_object = None):
@@ -1380,9 +1116,6 @@ class LiteralBooleanValue(AbstractBooleanValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "LiteralBooleanValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1396,9 +1129,6 @@ class BooleanReference(AbstractBooleanValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "BooleanReference")
 
 class AbstractEnumerationValue(DataValue):
     def __init__(self, java_object = None):
@@ -1408,9 +1138,6 @@ class AbstractEnumerationValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "AbstractEnumerationValue")
 
 class EnumerationLiteral(AbstractEnumerationValue):
     def __init__(self, java_object = None):
@@ -1420,9 +1147,6 @@ class EnumerationLiteral(AbstractEnumerationValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "EnumerationLiteral")
 
 class EnumerationReference(AbstractEnumerationValue):
     def __init__(self, java_object = None):
@@ -1432,9 +1156,6 @@ class EnumerationReference(AbstractEnumerationValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "EnumerationReference")
 
 class AbstractStringValue(DataValue):
     def __init__(self, java_object = None):
@@ -1444,9 +1165,6 @@ class AbstractStringValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "AbstractStringValue")
 
 class LiteralStringValue(AbstractStringValue):
     def __init__(self, java_object = None):
@@ -1456,9 +1174,6 @@ class LiteralStringValue(AbstractStringValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "LiteralStringValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1472,9 +1187,6 @@ class StringReference(AbstractStringValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "StringReference")
 
 class NumericValue(DataValue):
     def __init__(self, java_object = None):
@@ -1484,9 +1196,6 @@ class NumericValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "NumericValue")
 
 class LiteralNumericValue(NumericValue):
     def __init__(self, java_object = None):
@@ -1496,9 +1205,6 @@ class LiteralNumericValue(NumericValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "LiteralNumericValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1512,9 +1218,6 @@ class NumericReference(NumericValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "NumericReference")
 
 class AbstractComplexValue(DataValue):
     def __init__(self, java_object = None):
@@ -1524,9 +1227,6 @@ class AbstractComplexValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "AbstractComplexValue")
 
 class ComplexValue(AbstractComplexValue):
     def __init__(self, java_object = None):
@@ -1536,9 +1236,6 @@ class ComplexValue(AbstractComplexValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "ComplexValue")
 
 class ComplexValueReference(AbstractComplexValue):
     def __init__(self, java_object = None):
@@ -1548,9 +1245,6 @@ class ComplexValueReference(AbstractComplexValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "ComplexValueReference")
 
 class ValuePart(CapellaElement):
     def __init__(self, java_object = None):
@@ -1560,9 +1254,6 @@ class ValuePart(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "ValuePart")
 
 class AbstractExpressionValue(AbstractBooleanValue, AbstractComplexValue, AbstractEnumerationValue, NumericValue, AbstractStringValue):
     def __init__(self, java_object = None):
@@ -1572,9 +1263,6 @@ class AbstractExpressionValue(AbstractBooleanValue, AbstractComplexValue, Abstra
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "AbstractExpressionValue")
 
 class BinaryExpression(AbstractExpressionValue):
     def __init__(self, java_object = None):
@@ -1584,9 +1272,6 @@ class BinaryExpression(AbstractExpressionValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "BinaryExpression")
 
 class UnaryExpression(AbstractExpressionValue):
     def __init__(self, java_object = None):
@@ -1596,9 +1281,6 @@ class UnaryExpression(AbstractExpressionValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "UnaryExpression")
 
 class OpaqueExpression(CapellaElement, ValueSpecification):
     def __init__(self, java_object = None):
@@ -1608,9 +1290,6 @@ class OpaqueExpression(CapellaElement, ValueSpecification):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/1.4.0", "OpaqueExpression")
 
 class RequirementsPkg(Structure):
     def __init__(self, java_object = None):
@@ -1620,9 +1299,6 @@ class RequirementsPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "RequirementsPkg")
 
 class Trace(Relationship, AbstractTrace):
     def __init__(self, java_object = None):
@@ -1632,9 +1308,6 @@ class Trace(Relationship, AbstractTrace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Trace")
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsTraceTarget", self)
     def get_source(self):
@@ -1648,9 +1321,6 @@ class RequirementsTrace(Trace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "RequirementsTrace")
     def get_source(self):
         value =  self.get_java_object().getSource()
         if value is None:
@@ -1674,9 +1344,6 @@ class Requirement(Namespace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "Requirement")
     def get_traced_elements(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.RequirementTracedElements", self)
 
@@ -1688,9 +1355,6 @@ class SystemFunctionalInterfaceRequirement(Requirement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "SystemFunctionalInterfaceRequirement")
 
 class SystemFunctionalRequirement(Requirement):
     def __init__(self, java_object = None):
@@ -1700,9 +1364,6 @@ class SystemFunctionalRequirement(Requirement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "SystemFunctionalRequirement")
 
 class SystemNonFunctionalInterfaceRequirement(Requirement):
     def __init__(self, java_object = None):
@@ -1712,9 +1373,6 @@ class SystemNonFunctionalInterfaceRequirement(Requirement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "SystemNonFunctionalInterfaceRequirement")
 
 class SystemNonFunctionalRequirement(Requirement):
     def __init__(self, java_object = None):
@@ -1724,9 +1382,6 @@ class SystemNonFunctionalRequirement(Requirement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "SystemNonFunctionalRequirement")
 
 class SystemUserRequirement(Requirement):
     def __init__(self, java_object = None):
@@ -1736,9 +1391,6 @@ class SystemUserRequirement(Requirement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/requirement/1.4.0", "SystemUserRequirement")
 
 class NamedRelationship(Relationship, NamedElement):
     def __init__(self, java_object = None):
@@ -1748,9 +1400,6 @@ class NamedRelationship(Relationship, NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "NamedRelationship")
 
 class ReuserStructure(Structure):
     def __init__(self, java_object = None):
@@ -1760,9 +1409,6 @@ class ReuserStructure(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "ReuserStructure")
 
 class AbstractModellingStructure(ReuserStructure):
     def __init__(self, java_object = None):
@@ -1772,9 +1418,6 @@ class AbstractModellingStructure(ReuserStructure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "AbstractModellingStructure")
 
 class AbstractAnnotation(CapellaElement):
     def __init__(self, java_object = None):
@@ -1784,9 +1427,6 @@ class AbstractAnnotation(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "AbstractAnnotation")
 
 class NamingRule(AbstractAnnotation):
     def __init__(self, java_object = None):
@@ -1796,9 +1436,6 @@ class NamingRule(AbstractAnnotation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "NamingRule")
 
 class AbstractConstraint(ModelElement):
     def __init__(self, java_object = None):
@@ -1808,9 +1445,6 @@ class AbstractConstraint(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractConstraint")
     def get_constrained_elements(self):
         return create_e_list(self.get_java_object().getConstrainedElements(), ModelElement)
 
@@ -1822,9 +1456,6 @@ class Constraint(NamedElement, AbstractConstraint):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Constraint")
     def get_constrained_elements(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ConstraintModelElements", self)
 
@@ -1836,9 +1467,6 @@ class KeyValue(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "KeyValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1852,9 +1480,6 @@ class ReuseLink(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "ReuseLink")
 
 class ReuseableStructure(Structure):
     def __init__(self, java_object = None):
@@ -1864,9 +1489,6 @@ class ReuseableStructure(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "ReuseableStructure")
 
 class Generalization(Relationship):
     def __init__(self, java_object = None):
@@ -1876,9 +1498,6 @@ class Generalization(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "Generalization")
     def get_super(self):
         value =  self.get_java_object().getSuper()
         if value is None:
@@ -1910,9 +1529,6 @@ class AbstractPropertyValue(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "AbstractPropertyValue")
     def get_valued_elements(self):
         return create_e_list(self.get_java_object().getValuedElements(), CapellaElement)
     def get_value(self):
@@ -1926,9 +1542,6 @@ class StringPropertyValue(AbstractPropertyValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "StringPropertyValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1942,9 +1555,6 @@ class IntegerPropertyValue(AbstractPropertyValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "IntegerPropertyValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1958,9 +1568,6 @@ class BooleanPropertyValue(AbstractPropertyValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "BooleanPropertyValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1974,9 +1581,6 @@ class FloatPropertyValue(AbstractPropertyValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "FloatPropertyValue")
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
@@ -1990,9 +1594,6 @@ class EnumerationPropertyValue(AbstractPropertyValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "EnumerationPropertyValue")
     def get_type(self):
         value =  self.get_java_object().getType()
         if value is None:
@@ -2020,9 +1621,6 @@ class EnumerationPropertyType(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "EnumerationPropertyType")
     def get_owned_literals(self):
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationPropertyLiteral)
 
@@ -2034,9 +1632,6 @@ class EnumerationPropertyLiteral(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "EnumerationPropertyLiteral")
 
 class PropertyValueGroup(Namespace):
     def __init__(self, java_object = None):
@@ -2046,9 +1641,6 @@ class PropertyValueGroup(Namespace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "PropertyValueGroup")
     def get_valued_elements(self):
         return create_e_list(self.get_java_object().getValuedElements(), CapellaElement)
 
@@ -2060,9 +1652,6 @@ class PropertyValuePkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/core/1.4.0", "PropertyValuePkg")
 
 class ReAbstractElement(ExtensibleElement):
     def __init__(self, java_object = None):
@@ -2072,9 +1661,6 @@ class ReAbstractElement(ExtensibleElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "ReAbstractElement")
     def get_id(self):
         return self.get_java_object().getId()
     def set_id(self, value):
@@ -2088,9 +1674,6 @@ class ReNamedElement(ReAbstractElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "ReNamedElement")
     def get_name(self):
         return self.get_java_object().getName()
     def set_name(self, value):
@@ -2104,9 +1687,6 @@ class ReDescriptionElement(ReNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "ReDescriptionElement")
     def get_description(self):
         return self.get_java_object().getDescription()
     def set_description(self, value):
@@ -2120,9 +1700,6 @@ class ReElementContainer(EObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "ReElementContainer")
     def get_owned_elements(self):
         return create_e_list(self.get_java_object().getOwnedElements(), CatalogElement)
 
@@ -2134,9 +1711,6 @@ class CatalogElementPkg(ReNamedElement, ReElementContainer):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "CatalogElementPkg")
     def get_owned_element_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedElementPkgs(), CatalogElementPkg)
 
@@ -2148,9 +1722,6 @@ class ElementExtension(ExtensibleElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/kitalpha/emde/1.0.0", "ElementExtension")
 
 class RecCatalog(CatalogElementPkg, ElementExtension):
     def __init__(self, java_object = None):
@@ -2160,9 +1731,6 @@ class RecCatalog(CatalogElementPkg, ElementExtension):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "RecCatalog")
     def get_owned_compliancy_definition_pkg(self):
         value =  self.get_java_object().getOwnedCompliancyDefinitionPkg()
         if value is None:
@@ -2181,9 +1749,6 @@ class GroupingElementPkg(CatalogElementPkg, ElementExtension):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "GroupingElementPkg")
 
 class CatalogElementLink(ReAbstractElement):
     def __init__(self, java_object = None):
@@ -2193,9 +1758,6 @@ class CatalogElementLink(ReAbstractElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "CatalogElementLink")
     def get_source(self):
         value =  self.get_java_object().getSource()
         if value is None:
@@ -2234,9 +1796,6 @@ class CatalogElement(ReDescriptionElement, ReElementContainer):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "CatalogElement")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -2307,9 +1866,6 @@ class CompliancyDefinitionPkg(ReNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "CompliancyDefinitionPkg")
     def get_owned_definitions(self):
         return create_e_list(self.get_java_object().getOwnedDefinitions(), CompliancyDefinition)
 
@@ -2321,9 +1877,6 @@ class CompliancyDefinition(ReDescriptionElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/re/1.4.0", "CompliancyDefinition")
 
 class EPBSArchitecturePkg(BlockArchitecturePkg):
     def __init__(self, java_object = None):
@@ -2333,9 +1886,6 @@ class EPBSArchitecturePkg(BlockArchitecturePkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/epbs/1.4.0", "EPBSArchitecturePkg")
 
 class EPBSArchitecture(ComponentArchitecture):
     def __init__(self, java_object = None):
@@ -2345,9 +1895,6 @@ class EPBSArchitecture(ComponentArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/epbs/1.4.0", "EPBSArchitecture")
     def get_configuration_item_pkg(self):
         value =  self.get_java_object().getOwnedConfigurationItemPkg()
         if value is None:
@@ -2373,9 +1920,6 @@ class ConfigurationItemPkg(ComponentPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/epbs/1.4.0", "ConfigurationItemPkg")
     def get_owned_configuration_items(self):
         return create_e_list(self.get_java_object().getOwnedConfigurationItems(), ConfigurationItem)
     def get_owned_configuration_item_pkgs(self):
@@ -2389,9 +1933,6 @@ class CapabilityRealizationInvolvedElement(InvolvedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "CapabilityRealizationInvolvedElement")
     def get_involving_capability_realizations(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapabilityRealizationInvolvedElement_InvolvingCapabilityRealizations", self)
 
@@ -2403,9 +1944,6 @@ class ConfigurationItem(CapabilityRealizationInvolvedElement, Component):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/epbs/1.4.0", "ConfigurationItem")
     def get_item_identifier(self):
         return self.get_java_object().getItemIdentifier()
     def set_item_identifier(self, value):
@@ -2435,9 +1973,6 @@ class PhysicalArchitectureRealization(ArchitectureAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/epbs/1.4.0", "PhysicalArchitectureRealization")
 
 class PhysicalArtifactRealization(Allocation):
     def __init__(self, java_object = None):
@@ -2447,9 +1982,6 @@ class PhysicalArtifactRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/epbs/1.4.0", "PhysicalArtifactRealization")
 
 class CommunicationItem(Classifier, DataValueContainer):
     def __init__(self, java_object = None):
@@ -2459,9 +1991,6 @@ class CommunicationItem(Classifier, DataValueContainer):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "CommunicationItem")
     def get_visibility(self):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
@@ -2477,9 +2006,6 @@ class ExceptionCapella(CommunicationItem):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "ExceptionCapella")
 
 class Message(CommunicationItem):
     def __init__(self, java_object = None):
@@ -2489,9 +2015,6 @@ class Message(CommunicationItem):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "Message")
 
 class MessageReference(Relationship):
     def __init__(self, java_object = None):
@@ -2501,9 +2024,6 @@ class MessageReference(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "MessageReference")
 
 class Signal(CommunicationItem, AbstractSignal):
     def __init__(self, java_object = None):
@@ -2513,9 +2033,6 @@ class Signal(CommunicationItem, AbstractSignal):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "Signal")
 
 class SignalInstance(AbstractInstance):
     def __init__(self, java_object = None):
@@ -2525,9 +2042,6 @@ class SignalInstance(AbstractInstance):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "SignalInstance")
 
 class CommunicationLink(CapellaElement):
     def __init__(self, java_object = None):
@@ -2537,9 +2051,6 @@ class CommunicationLink(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/communication/1.4.0", "CommunicationLink")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -2566,9 +2077,6 @@ class SequenceMessage(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "SequenceMessage")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -2608,9 +2116,6 @@ class Scenario(Namespace, AbstractBehavior):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "Scenario")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -2662,9 +2167,6 @@ class InteractionFragment(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "InteractionFragment")
 
 class AbstractEnd(InteractionFragment):
     def __init__(self, java_object = None):
@@ -2674,9 +2176,6 @@ class AbstractEnd(InteractionFragment):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractEnd")
 
 class MessageEnd(AbstractEnd):
     def __init__(self, java_object = None):
@@ -2686,9 +2185,6 @@ class MessageEnd(AbstractEnd):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "MessageEnd")
 
 class TimeLapse(NamedElement):
     def __init__(self, java_object = None):
@@ -2698,9 +2194,6 @@ class TimeLapse(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "TimeLapse")
 
 class Execution(TimeLapse):
     def __init__(self, java_object = None):
@@ -2710,9 +2203,6 @@ class Execution(TimeLapse):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "Execution")
 
 class ExecutionEnd(AbstractEnd):
     def __init__(self, java_object = None):
@@ -2722,9 +2212,6 @@ class ExecutionEnd(AbstractEnd):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "ExecutionEnd")
 
 class Event(NamedElement, AbstractEvent):
     def __init__(self, java_object = None):
@@ -2734,9 +2221,6 @@ class Event(NamedElement, AbstractEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "Event")
 
 class CreationEvent(Event):
     def __init__(self, java_object = None):
@@ -2746,9 +2230,6 @@ class CreationEvent(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "CreationEvent")
 
 class DestructionEvent(Event):
     def __init__(self, java_object = None):
@@ -2758,9 +2239,6 @@ class DestructionEvent(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "DestructionEvent")
 
 class ExecutionEvent(Event):
     def __init__(self, java_object = None):
@@ -2770,9 +2248,6 @@ class ExecutionEvent(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "ExecutionEvent")
 
 class InstanceRole(NamedElement):
     def __init__(self, java_object = None):
@@ -2782,9 +2257,6 @@ class InstanceRole(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "InstanceRole")
     def get_parent_scenario(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.InstanceRole_parentScenario", self)
     def get_represented_instance(self):
@@ -2798,9 +2270,6 @@ class EventReceiptOperation(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "EventReceiptOperation")
 
 class EventSentOperation(Event):
     def __init__(self, java_object = None):
@@ -2810,9 +2279,6 @@ class EventSentOperation(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "EventSentOperation")
 
 class MergeLink(Trace):
     def __init__(self, java_object = None):
@@ -2822,9 +2288,6 @@ class MergeLink(Trace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "MergeLink")
 
 class RefinementLink(Trace):
     def __init__(self, java_object = None):
@@ -2834,9 +2297,6 @@ class RefinementLink(Trace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "RefinementLink")
 
 class AbstractCapabilityRealization(Allocation):
     def __init__(self, java_object = None):
@@ -2846,9 +2306,6 @@ class AbstractCapabilityRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractCapabilityRealization")
 
 class AbstractFunctionalChainContainer(CapellaElement):
     def __init__(self, java_object = None):
@@ -2858,9 +2315,6 @@ class AbstractFunctionalChainContainer(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "AbstractFunctionalChainContainer")
     def get_owned_functional_chains(self):
         return create_e_list(self.get_java_object().getOwnedFunctionalChains(), FunctionalChain)
 
@@ -2872,9 +2326,6 @@ class AbstractCapability(Structure, InvolverElement, AbstractFunctionalChainCont
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractCapability")
     def get_pre_condition(self):
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -2936,9 +2387,6 @@ class AbstractCapabilityExtend(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractCapabilityExtend")
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsAbstractCapabilityExtendTarget", self)
     def get_source(self):
@@ -2952,9 +2400,6 @@ class AbstractCapabilityExtensionPoint(NamedRelationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractCapabilityExtensionPoint")
     def get_abstract_capability(self):
         value =  self.get_java_object().getAbstractCapability()
         if value is None:
@@ -2971,9 +2416,6 @@ class AbstractCapabilityGeneralization(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractCapabilityGeneralization")
     def get_super(self):
         value =  self.get_java_object().getSuper()
         if value is None:
@@ -3003,9 +2445,6 @@ class AbstractCapabilityInclude(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractCapabilityInclude")
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsAbstractCapabilityIncludeTarget", self)
     def get_source(self):
@@ -3019,9 +2458,6 @@ class InteractionState(InteractionFragment):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "InteractionState")
 
 class AbstractFragment(TimeLapse):
     def __init__(self, java_object = None):
@@ -3031,9 +2467,6 @@ class AbstractFragment(TimeLapse):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractFragment")
 
 class InteractionUse(AbstractFragment):
     def __init__(self, java_object = None):
@@ -3043,9 +2476,6 @@ class InteractionUse(AbstractFragment):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "InteractionUse")
     def get_referenced_scenario(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.InteractionUseReferencedScenario", self)
     def get_referencing_scenario(self):
@@ -3059,9 +2489,6 @@ class CombinedFragment(AbstractFragment):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "CombinedFragment")
 
 class Gate(MessageEnd):
     def __init__(self, java_object = None):
@@ -3071,9 +2498,6 @@ class Gate(MessageEnd):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "Gate")
 
 class InteractionOperand(InteractionFragment):
     def __init__(self, java_object = None):
@@ -3083,9 +2507,6 @@ class InteractionOperand(InteractionFragment):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "InteractionOperand")
     def get_guard(self):
         value =  self.get_java_object().getGuard()
         if value is None:
@@ -3104,9 +2525,6 @@ class FragmentEnd(InteractionFragment):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "FragmentEnd")
 
 class FunctionalChainAbstractCapabilityInvolvement(Involvement):
     def __init__(self, java_object = None):
@@ -3116,9 +2534,6 @@ class FunctionalChainAbstractCapabilityInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "FunctionalChainAbstractCapabilityInvolvement")
     def get_functional_chain(self):
         value =  self.get_java_object().getFunctionalChain()
         if value is None:
@@ -3135,9 +2550,6 @@ class AbstractFunctionAbstractCapabilityInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "AbstractFunctionAbstractCapabilityInvolvement")
 
 class ScenarioRealization(Allocation):
     def __init__(self, java_object = None):
@@ -3147,9 +2559,6 @@ class ScenarioRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "ScenarioRealization")
 
 class StateFragment(TimeLapse):
     def __init__(self, java_object = None):
@@ -3159,9 +2568,6 @@ class StateFragment(TimeLapse):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "StateFragment")
     def get_related_function(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.StateFragmentRelatedFunctions", self)
     def get_related_state(self):
@@ -3175,9 +2581,6 @@ class ArmTimerEvent(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "ArmTimerEvent")
 
 class CancelTimerEvent(Event):
     def __init__(self, java_object = None):
@@ -3187,9 +2590,6 @@ class CancelTimerEvent(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "CancelTimerEvent")
 
 class ConstraintDuration(NamedElement):
     def __init__(self, java_object = None):
@@ -3199,9 +2599,6 @@ class ConstraintDuration(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "ConstraintDuration")
 
 class SequenceMessageValuation(CapellaElement):
     def __init__(self, java_object = None):
@@ -3211,9 +2608,6 @@ class SequenceMessageValuation(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/interaction/1.4.0", "SequenceMessageValuation")
     def get_value(self):
         value =  self.get_java_object().getValue()
         if value is None:
@@ -3232,9 +2626,6 @@ class AssociationPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "AssociationPkg")
     def get_visibility(self):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
@@ -3248,9 +2639,6 @@ class Association(NamedRelationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Association")
     def get_roles(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsAssociationRoles", self)
 
@@ -3262,9 +2650,6 @@ class Class(GeneralClass):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Class")
     def get_owned_state_machines(self):
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
     def get_realized_classes(self):
@@ -3280,9 +2665,6 @@ class Collection(Classifier, MultiplicityElement, DataValueContainer, Finalizabl
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Collection")
     def get_visibility(self):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
@@ -3309,9 +2691,6 @@ class AbstractCollectionValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "AbstractCollectionValue")
 
 class CollectionValue(AbstractCollectionValue):
     def __init__(self, java_object = None):
@@ -3321,9 +2700,6 @@ class CollectionValue(AbstractCollectionValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "CollectionValue")
     def get_owned_elements(self):
         return create_e_list(self.get_java_object().getOwnedElements(), DataValue)
 
@@ -3335,9 +2711,6 @@ class CollectionValueReference(AbstractCollectionValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "CollectionValueReference")
 
 class DataPkg(AbstractDependenciesPkg, AbstractExchangeItemPkg, AssociationPkg, DataValueContainer, MessageReferencePkg):
     def __init__(self, java_object = None):
@@ -3347,9 +2720,6 @@ class DataPkg(AbstractDependenciesPkg, AbstractExchangeItemPkg, AssociationPkg, 
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "DataPkg")
     def get_owned_messages(self):
         return create_e_list(self.get_java_object().getOwnedMessages(), Message)
 
@@ -3361,9 +2731,6 @@ class DomainElement(Class):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "DomainElement")
 
 class KeyPart(Relationship):
     def __init__(self, java_object = None):
@@ -3373,9 +2740,6 @@ class KeyPart(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "KeyPart")
 
 class Operation(Feature, AbstractEvent, AbstractEventOperation):
     def __init__(self, java_object = None):
@@ -3385,9 +2749,6 @@ class Operation(Feature, AbstractEvent, AbstractEventOperation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Operation")
     def get_realized_exchange_items(self):
         return create_e_list(self.get_java_object().getRealizedExchangeItems(), ExchangeItem)
     def get_scenarios(self):
@@ -3401,9 +2762,6 @@ class OperationAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "OperationAllocation")
 
 class AbstractParameter(AbstractTypedElement):
     def __init__(self, java_object = None):
@@ -3413,9 +2771,6 @@ class AbstractParameter(AbstractTypedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractParameter")
 
 class Parameter(TypedElement, MultiplicityElement, AbstractParameter):
     def __init__(self, java_object = None):
@@ -3425,9 +2780,6 @@ class Parameter(TypedElement, MultiplicityElement, AbstractParameter):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Parameter")
     def get_type(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Parameter_Type", self)
 
@@ -3439,9 +2791,6 @@ class Service(Operation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Service")
 
 class Union(Class):
     def __init__(self, java_object = None):
@@ -3451,9 +2800,6 @@ class Union(Class):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Union")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -3467,9 +2813,6 @@ class UnionProperty(Property):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "UnionProperty")
 
 class Unit(NamedElement):
     def __init__(self, java_object = None):
@@ -3479,9 +2822,6 @@ class Unit(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "Unit")
 
 class PortRealization(Allocation):
     def __init__(self, java_object = None):
@@ -3491,9 +2831,6 @@ class PortRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "PortRealization")
 
 class PortAllocation(Allocation):
     def __init__(self, java_object = None):
@@ -3503,9 +2840,6 @@ class PortAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "PortAllocation")
 
 class AbstractExchangeItem(AbstractType):
     def __init__(self, java_object = None):
@@ -3515,9 +2849,6 @@ class AbstractExchangeItem(AbstractType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractExchangeItem")
 
 class ExchangeItem(AbstractExchangeItem, AbstractEvent, AbstractSignal, FinalizableElement, GeneralizableElement):
     def __init__(self, java_object = None):
@@ -3527,9 +2858,6 @@ class ExchangeItem(AbstractExchangeItem, AbstractEvent, AbstractSignal, Finaliza
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "ExchangeItem")
     def get_exchange_mechanism(self):
         return self.get_java_object().getExchangeMechanism().getName()
     def set_exchange_mechanism(self, value):
@@ -3563,9 +2891,6 @@ class ExchangeItemElement(NamedElement, MultiplicityElement, TypedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "ExchangeItemElement")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -3581,9 +2906,6 @@ class ExchangeItemInstance(AbstractInstance):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "ExchangeItemInstance")
     def get_scenarios(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementReferencingScenario", self)
 
@@ -3595,9 +2917,6 @@ class InformationRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "InformationRealization")
 
 class ExchangeItemRealization(Allocation):
     def __init__(self, java_object = None):
@@ -3607,9 +2926,6 @@ class ExchangeItemRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/1.4.0", "ExchangeItemRealization")
 
 class DataType(GeneralizableElement, DataValueContainer, FinalizableElement):
     def __init__(self, java_object = None):
@@ -3619,9 +2935,6 @@ class DataType(GeneralizableElement, DataValueContainer, FinalizableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/1.4.0", "DataType")
     def get_visibility(self):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
@@ -3635,9 +2948,6 @@ class BooleanType(DataType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/1.4.0", "BooleanType")
     def get_owned_literals(self):
         return create_e_list(self.get_java_object().getOwnedLiterals(), LiteralBooleanValue)
 
@@ -3649,9 +2959,6 @@ class Enumeration(DataType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/1.4.0", "Enumeration")
     def get_owned_literals(self):
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationLiteral)
 
@@ -3663,9 +2970,6 @@ class StringType(DataType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/1.4.0", "StringType")
 
 class NumericType(DataType):
     def __init__(self, java_object = None):
@@ -3675,9 +2979,6 @@ class NumericType(DataType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/1.4.0", "NumericType")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -3691,9 +2992,6 @@ class PhysicalQuantity(NumericType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/1.4.0", "PhysicalQuantity")
 
 class Project(Structure):
     def __init__(self, java_object = None):
@@ -3703,9 +3001,6 @@ class Project(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/modeller/1.4.0", "Project")
 
 class Folder(Structure):
     def __init__(self, java_object = None):
@@ -3715,9 +3010,6 @@ class Folder(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/modeller/1.4.0", "Folder")
 
 class ModelRoot(CapellaElement):
     def __init__(self, java_object = None):
@@ -3727,9 +3019,6 @@ class ModelRoot(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/modeller/1.4.0", "ModelRoot")
 
 class SystemEngineering(AbstractModellingStructure, ModelRoot):
     def __init__(self, java_object = None):
@@ -3739,9 +3028,6 @@ class SystemEngineering(AbstractModellingStructure, ModelRoot):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/modeller/1.4.0", "SystemEngineering")
 
 class SystemEngineeringPkg(Structure, ModelRoot):
     def __init__(self, java_object = None):
@@ -3751,9 +3037,6 @@ class SystemEngineeringPkg(Structure, ModelRoot):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/modeller/1.4.0", "SystemEngineeringPkg")
 
 class Library(Project):
     def __init__(self, java_object = None):
@@ -3763,9 +3046,6 @@ class Library(Project):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/modeller/1.4.0", "Library")
 
 class OperationalAnalysis(BlockArchitecture):
     def __init__(self, java_object = None):
@@ -3775,9 +3055,6 @@ class OperationalAnalysis(BlockArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalAnalysis")
     def get_entity_pkg(self):
         value =  self.get_java_object().getOwnedEntityPkg()
         if value is None:
@@ -3810,9 +3087,6 @@ class OperationalScenario(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalScenario")
 
 class FunctionPkg(Structure):
     def __init__(self, java_object = None):
@@ -3822,9 +3096,6 @@ class FunctionPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionPkg")
 
 class OperationalActivityPkg(FunctionPkg):
     def __init__(self, java_object = None):
@@ -3834,9 +3105,6 @@ class OperationalActivityPkg(FunctionPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalActivityPkg")
     def get_owned_operational_activities(self):
         return create_e_list(self.get_java_object().getOwnedOperationalActivities(), OperationalActivity)
     def get_owned_operational_activity_pkgs(self):
@@ -3850,9 +3118,6 @@ class ActivityNode(AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ActivityNode")
     def get_outgoing(self):
         return create_e_list(self.get_java_object().getOutgoing(), ActivityEdge)
     def get_incoming(self):
@@ -3866,9 +3131,6 @@ class ExecutableNode(ActivityNode):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ExecutableNode")
 
 class AbstractAction(ExecutableNode, AbstractNamedElement):
     def __init__(self, java_object = None):
@@ -3878,9 +3140,6 @@ class AbstractAction(ExecutableNode, AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "AbstractAction")
     def get_inputs(self):
         return create_e_list(self.get_java_object().getInputs(), InputPin)
     def get_outputs(self):
@@ -3894,9 +3153,6 @@ class InvocationAction(AbstractAction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "InvocationAction")
 
 class CallAction(InvocationAction):
     def __init__(self, java_object = None):
@@ -3906,9 +3162,6 @@ class CallAction(InvocationAction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "CallAction")
 
 class CallBehaviorAction(CallAction):
     def __init__(self, java_object = None):
@@ -3918,9 +3171,6 @@ class CallBehaviorAction(CallAction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "CallBehaviorAction")
 
 class AbstractFunction(Namespace, InvolvedElement, AbstractInstance, AbstractFunctionalChainContainer, CallBehaviorAction, AbstractEvent):
     def __init__(self, java_object = None):
@@ -3930,9 +3180,6 @@ class AbstractFunction(Namespace, InvolvedElement, AbstractInstance, AbstractFun
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "AbstractFunction")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -3966,9 +3213,6 @@ class OperationalActivity(AbstractFunction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalActivity")
     def get_owned_operational_activity_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedOperationalActivityPkgs(), OperationalActivityPkg)
     def get_realizing_system_functions(self):
@@ -4004,9 +3248,6 @@ class FunctionalChain(NamedElement, InvolverElement, InvolvedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalChain")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -4068,9 +3309,6 @@ class OperationalProcess(FunctionalChain):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalProcess")
     def get_involving_operational_capabilities(self):
         return create_e_list(self.get_java_object().getInvolvingOperationalCapabilities(), OperationalCapability)
     def get_involved_operational_processes(self):
@@ -4088,9 +3326,6 @@ class ActivityGroup(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ActivityGroup")
 
 class ActivityPartition(ActivityGroup, AbstractNamedElement):
     def __init__(self, java_object = None):
@@ -4100,9 +3335,6 @@ class ActivityPartition(ActivityGroup, AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ActivityPartition")
 
 class Swimlane(NamedElement, ActivityPartition):
     def __init__(self, java_object = None):
@@ -4112,9 +3344,6 @@ class Swimlane(NamedElement, ActivityPartition):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "Swimlane")
 
 class AbstractCapabilityPkg(Structure):
     def __init__(self, java_object = None):
@@ -4124,9 +3353,6 @@ class AbstractCapabilityPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "AbstractCapabilityPkg")
 
 class OperationalCapabilityPkg(AbstractCapabilityPkg):
     def __init__(self, java_object = None):
@@ -4136,9 +3362,6 @@ class OperationalCapabilityPkg(AbstractCapabilityPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalCapabilityPkg")
     def get_owned_operational_capabilities(self):
         return create_e_list(self.get_java_object().getOwnedOperationalCapabilities(), OperationalCapability)
     def get_owned_operational_capability_pkgs(self):
@@ -4152,9 +3375,6 @@ class OperationalCapability(AbstractCapability, Namespace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OperationalCapability")
     def get_realizing_capabilities(self):
         return create_e_list(self.get_java_object().getRealizingCapabilities(), Capability)
     def get_involved_entities(self):
@@ -4172,9 +3392,6 @@ class ActivityAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "ActivityAllocation")
 
 class RolePkg(Structure):
     def __init__(self, java_object = None):
@@ -4184,9 +3401,6 @@ class RolePkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "RolePkg")
 
 class Role(AbstractInstance):
     def __init__(self, java_object = None):
@@ -4196,9 +3410,6 @@ class Role(AbstractInstance):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "Role")
     def get_allocated_operational_activities(self):
         return create_e_list(self.get_java_object().getAllocatedOperationalActivities(), OperationalActivity)
     def get_allocating_entities(self):
@@ -4214,9 +3425,6 @@ class RoleAssemblyUsage(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "RoleAssemblyUsage")
 
 class RoleAllocation(Allocation):
     def __init__(self, java_object = None):
@@ -4226,9 +3434,6 @@ class RoleAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "RoleAllocation")
     def get_entity(self):
         value =  self.get_java_object().getEntity()
         if value is None:
@@ -4245,9 +3450,6 @@ class EntityPkg(ComponentPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "EntityPkg")
     def get_owned_entities(self):
         return create_e_list(self.get_java_object().getOwnedEntities(), Entity)
     def get_owned_entity_pkgs(self):
@@ -4261,9 +3463,6 @@ class AbstractConceptItem(Component):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "AbstractConceptItem")
 
 class Entity(AbstractConceptItem, InformationsExchanger, InvolvedElement):
     def __init__(self, java_object = None):
@@ -4273,9 +3472,6 @@ class Entity(AbstractConceptItem, InformationsExchanger, InvolvedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "Entity")
     def get_owned_entities(self):
         return create_e_list(self.get_java_object().getOwnedEntities(), Entity)
     def get_allocated_operational_activities(self):
@@ -4301,9 +3497,6 @@ class ConceptPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "ConceptPkg")
 
 class Concept(NamedElement):
     def __init__(self, java_object = None):
@@ -4313,9 +3506,6 @@ class Concept(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "Concept")
 
 class ConceptCompliance(Relationship):
     def __init__(self, java_object = None):
@@ -4325,9 +3515,6 @@ class ConceptCompliance(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "ConceptCompliance")
 
 class ItemInConcept(NamedElement):
     def __init__(self, java_object = None):
@@ -4337,9 +3524,6 @@ class ItemInConcept(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "ItemInConcept")
 
 class CommunityOfInterest(NamedElement):
     def __init__(self, java_object = None):
@@ -4349,9 +3533,6 @@ class CommunityOfInterest(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "CommunityOfInterest")
 
 class CommunityOfInterestComposition(NamedElement):
     def __init__(self, java_object = None):
@@ -4361,9 +3542,6 @@ class CommunityOfInterestComposition(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "CommunityOfInterestComposition")
 
 class OrganisationalUnit(NamedElement):
     def __init__(self, java_object = None):
@@ -4373,9 +3551,6 @@ class OrganisationalUnit(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OrganisationalUnit")
 
 class OrganisationalUnitComposition(NamedElement):
     def __init__(self, java_object = None):
@@ -4385,9 +3560,6 @@ class OrganisationalUnitComposition(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "OrganisationalUnitComposition")
 
 class Location(AbstractConceptItem):
     def __init__(self, java_object = None):
@@ -4397,9 +3569,6 @@ class Location(AbstractConceptItem):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "Location")
 
 class CapabilityConfiguration(AbstractConceptItem):
     def __init__(self, java_object = None):
@@ -4409,9 +3578,6 @@ class CapabilityConfiguration(AbstractConceptItem):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "CapabilityConfiguration")
 
 class AbstractInformationFlow(AbstractNamedElement, AbstractRelationship):
     def __init__(self, java_object = None):
@@ -4421,9 +3587,6 @@ class AbstractInformationFlow(AbstractNamedElement, AbstractRelationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractInformationFlow")
     def get_convoyed_informations(self):
         return create_e_list(self.get_java_object().getConvoyedInformations(), AbstractExchangeItem)
     def get_source(self):
@@ -4453,9 +3616,6 @@ class ActivityExchange(AbstractInformationFlow):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ActivityExchange")
 
 class ExchangeSpecification(NamedElement, ActivityExchange):
     def __init__(self, java_object = None):
@@ -4465,9 +3625,6 @@ class ExchangeSpecification(NamedElement, ActivityExchange):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ExchangeSpecification")
     def get_realized_component_exchanges(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeSpecification_realizedDataflow", self)
     def get_target(self):
@@ -4483,9 +3640,6 @@ class ComponentExchange(AbstractEvent, AbstractEventOperation, NamedElement, Exc
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentExchange")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -4527,9 +3681,6 @@ class CommunicationMean(NamedRelationship, ComponentExchange):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "CommunicationMean")
     def get_source_entity(self):
         value =  self.get_java_object().getSourceEntity()
         if value is None:
@@ -4559,9 +3710,6 @@ class EntityOperationalCapabilityInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/oa/1.4.0", "EntityOperationalCapabilityInvolvement")
     def get_entity(self):
         value =  self.get_java_object().getEntity()
         if value is None:
@@ -4578,9 +3726,6 @@ class PhysicalArchitecturePkg(BlockArchitecturePkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalArchitecturePkg")
 
 class PhysicalArchitecture(ComponentArchitecture):
     def __init__(self, java_object = None):
@@ -4590,9 +3735,6 @@ class PhysicalArchitecture(ComponentArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalArchitecture")
     def get_physical_component_pkg(self):
         value =  self.get_java_object().getOwnedPhysicalComponentPkg()
         if value is None:
@@ -4625,9 +3767,6 @@ class PhysicalFunction(AbstractFunction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalFunction")
     def get_owned_physical_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctionPkgs(), PhysicalFunctionPkg)
     def get_realized_logical_functions(self):
@@ -4663,9 +3802,6 @@ class PhysicalFunctionPkg(FunctionPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalFunctionPkg")
     def get_owned_physical_functions(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctions(), PhysicalFunction)
     def get_owned_physical_function_pkgs(self):
@@ -4679,9 +3815,6 @@ class PhysicalComponent(AbstractPhysicalArtifact, Component, CapabilityRealizati
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalComponent")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -4713,9 +3846,6 @@ class PhysicalComponentPkg(ComponentPkg, AssociationPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalComponentPkg")
     def get_owned_physical_components(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
     def get_owned_physical_component_pkgs(self):
@@ -4729,9 +3859,6 @@ class PhysicalNode(PhysicalComponent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "PhysicalNode")
 
 class LogicalArchitectureRealization(ArchitectureAllocation):
     def __init__(self, java_object = None):
@@ -4741,9 +3868,6 @@ class LogicalArchitectureRealization(ArchitectureAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "LogicalArchitectureRealization")
 
 class LogicalInterfaceRealization(InterfaceAllocation):
     def __init__(self, java_object = None):
@@ -4753,9 +3877,6 @@ class LogicalInterfaceRealization(InterfaceAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/1.4.0", "LogicalInterfaceRealization")
 
 class AbstractPhysicalInstance(CapellaElement):
     def __init__(self, java_object = None):
@@ -4765,9 +3886,6 @@ class AbstractPhysicalInstance(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "AbstractPhysicalInstance")
 
 class ComponentInstance(AbstractPhysicalInstance, DeployableElement, DeploymentTarget):
     def __init__(self, java_object = None):
@@ -4777,9 +3895,6 @@ class ComponentInstance(AbstractPhysicalInstance, DeployableElement, DeploymentT
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "ComponentInstance")
     def get_type(self):
         value =  self.get_java_object().getType()
         if value is None:
@@ -4798,9 +3913,6 @@ class ConnectionInstance(AbstractPhysicalInstance):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "ConnectionInstance")
     def get_type(self):
         value =  self.get_java_object().getType()
         if value is None:
@@ -4819,9 +3931,6 @@ class DeploymentAspect(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "DeploymentAspect")
 
 class DeploymentConfiguration(NamedElement):
     def __init__(self, java_object = None):
@@ -4831,9 +3940,6 @@ class DeploymentConfiguration(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "DeploymentConfiguration")
 
 class InstanceDeploymentLink(AbstractDeploymentLink):
     def __init__(self, java_object = None):
@@ -4843,9 +3949,6 @@ class InstanceDeploymentLink(AbstractDeploymentLink):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "InstanceDeploymentLink")
 
 class PartDeploymentLink(AbstractDeploymentLink):
     def __init__(self, java_object = None):
@@ -4855,9 +3958,6 @@ class PartDeploymentLink(AbstractDeploymentLink):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "PartDeploymentLink")
 
 class PortInstance(AbstractPhysicalInstance):
     def __init__(self, java_object = None):
@@ -4867,9 +3967,6 @@ class PortInstance(AbstractPhysicalInstance):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "PortInstance")
     def get_type(self):
         value =  self.get_java_object().getType()
         if value is None:
@@ -4888,9 +3985,6 @@ class TypeDeploymentLink(AbstractDeploymentLink):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/pa/deployment/1.4.0", "TypeDeploymentLink")
 
 class LogicalArchitecturePkg(BlockArchitecturePkg):
     def __init__(self, java_object = None):
@@ -4900,9 +3994,6 @@ class LogicalArchitecturePkg(BlockArchitecturePkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "LogicalArchitecturePkg")
 
 class LogicalArchitecture(ComponentArchitecture):
     def __init__(self, java_object = None):
@@ -4912,9 +4003,6 @@ class LogicalArchitecture(ComponentArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "LogicalArchitecture")
     def get_logical_component_pkg(self):
         value =  self.get_java_object().getOwnedLogicalComponentPkg()
         if value is None:
@@ -4947,9 +4035,6 @@ class LogicalFunction(AbstractFunction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "LogicalFunction")
     def get_owned_logical_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedLogicalFunctionPkgs(), LogicalFunctionPkg)
     def get_realized_system_functions(self):
@@ -4987,9 +4072,6 @@ class LogicalFunctionPkg(FunctionPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "LogicalFunctionPkg")
     def get_owned_logical_functions(self):
         return create_e_list(self.get_java_object().getOwnedLogicalFunctions(), LogicalFunction)
     def get_owned_logical_function_pkgs(self):
@@ -5003,9 +4085,6 @@ class LogicalComponent(Component, CapabilityRealizationInvolvedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "LogicalComponent")
     def get_owned_logical_components(self):
         return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
     def get_owned_logical_component_pkgs(self):
@@ -5025,9 +4104,6 @@ class LogicalComponentPkg(ComponentPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "LogicalComponentPkg")
     def get_owned_logical_components(self):
         return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
     def get_owned_logical_component_pkgs(self):
@@ -5041,9 +4117,6 @@ class CapabilityRealization(AbstractCapability):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "CapabilityRealization")
     def get_realized_capabilities(self):
         return create_e_list(self.get_java_object().getRealizedCapabilities(), Capability)
     def get_realized_capability_realizations(self):
@@ -5067,9 +4140,6 @@ class CapabilityRealizationPkg(AbstractCapabilityPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "CapabilityRealizationPkg")
     def get_owned_capability_realizations(self):
         return create_e_list(self.get_java_object().getOwnedCapabilityRealizations(), CapabilityRealization)
     def get_owned_capability_realization_pkgs(self):
@@ -5083,9 +4153,6 @@ class SystemAnalysisRealization(ArchitectureAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "SystemAnalysisRealization")
 
 class ContextInterfaceRealization(InterfaceAllocation):
     def __init__(self, java_object = None):
@@ -5095,9 +4162,6 @@ class ContextInterfaceRealization(InterfaceAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/la/1.4.0", "ContextInterfaceRealization")
 
 class SharedPkg(ReuseableStructure, ModelRoot):
     def __init__(self, java_object = None):
@@ -5107,9 +4171,6 @@ class SharedPkg(ReuseableStructure, ModelRoot):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/sharedmodel/1.4.0", "SharedPkg")
 
 class GenericPkg(Structure):
     def __init__(self, java_object = None):
@@ -5119,9 +4180,6 @@ class GenericPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/sharedmodel/1.4.0", "GenericPkg")
 
 class AbstractActivity(AbstractBehavior, TraceableElement):
     def __init__(self, java_object = None):
@@ -5131,9 +4189,6 @@ class AbstractActivity(AbstractBehavior, TraceableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "AbstractActivity")
 
 class FunctionSpecification(Namespace, AbstractActivity):
     def __init__(self, java_object = None):
@@ -5143,9 +4198,6 @@ class FunctionSpecification(Namespace, AbstractActivity):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionSpecification")
 
 class ExchangeCategory(NamedElement):
     def __init__(self, java_object = None):
@@ -5155,9 +4207,6 @@ class ExchangeCategory(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ExchangeCategory")
     def get_exchanges(self):
         return create_e_list(self.get_java_object().getExchanges(), FunctionalExchange)
     def get_functional_exchanges(self):
@@ -5171,9 +4220,6 @@ class ExchangeLink(NamedRelationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ExchangeLink")
     def get_exchanges(self):
         return create_e_list(self.get_java_object().getExchanges(), ExchangeSpecification)
 
@@ -5185,9 +4231,6 @@ class ExchangeContainment(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ExchangeContainment")
 
 class FunctionalExchangeSpecification(ExchangeSpecification):
     def __init__(self, java_object = None):
@@ -5197,9 +4240,6 @@ class FunctionalExchangeSpecification(ExchangeSpecification):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalExchangeSpecification")
 
 class FunctionalChainInvolvement(Involvement):
     def __init__(self, java_object = None):
@@ -5209,9 +4249,6 @@ class FunctionalChainInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalChainInvolvement")
 
 class FunctionalChainReference(FunctionalChainInvolvement):
     def __init__(self, java_object = None):
@@ -5221,9 +4258,6 @@ class FunctionalChainReference(FunctionalChainInvolvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalChainReference")
     def get_involved_functions(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainInvolvementFunctions", self)
     def get_involved_functional_chains(self):
@@ -5241,9 +4275,6 @@ class FunctionPort(Port, TypedElement, AbstractEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionPort")
     def get_realized_function_ports(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionPortRealizedFunctionPort", self)
     def get_exchange_items(self):
@@ -5261,9 +4292,6 @@ class ObjectNode(ActivityNode, AbstractTypedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ObjectNode")
 
 class Pin(ObjectNode):
     def __init__(self, java_object = None):
@@ -5273,9 +4301,6 @@ class Pin(ObjectNode):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "Pin")
     def get_type(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Pin_type", self)
     def get_owner(self):
@@ -5297,9 +4322,6 @@ class InputPin(Pin):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "InputPin")
 
 class FunctionInputPort(FunctionPort, InputPin):
     def __init__(self, java_object = None):
@@ -5309,9 +4331,6 @@ class FunctionInputPort(FunctionPort, InputPin):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionInputPort")
     def get_incoming_exchange_items(self):
         return create_e_list(self.get_java_object().getIncomingExchangeItems(), ExchangeItem)
     def get_incoming_functional_exchanges(self):
@@ -5325,9 +4344,6 @@ class OutputPin(Pin):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "OutputPin")
 
 class FunctionOutputPort(FunctionPort, OutputPin):
     def __init__(self, java_object = None):
@@ -5337,9 +4353,6 @@ class FunctionOutputPort(FunctionPort, OutputPin):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionOutputPort")
     def get_outgoing_exchange_items(self):
         return create_e_list(self.get_java_object().getOutgoingExchangeItems(), ExchangeItem)
     def get_outgoing_functional_exchanges(self):
@@ -5353,9 +4366,6 @@ class AbstractFunctionAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "AbstractFunctionAllocation")
 
 class ComponentFunctionalAllocation(AbstractFunctionAllocation):
     def __init__(self, java_object = None):
@@ -5365,9 +4375,6 @@ class ComponentFunctionalAllocation(AbstractFunctionAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentFunctionalAllocation")
 
 class FunctionalChainRealization(Allocation):
     def __init__(self, java_object = None):
@@ -5377,9 +4384,6 @@ class FunctionalChainRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalChainRealization")
 
 class ExchangeSpecificationRealization(Allocation):
     def __init__(self, java_object = None):
@@ -5389,9 +4393,6 @@ class ExchangeSpecificationRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ExchangeSpecificationRealization")
 
 class FunctionalExchangeRealization(Allocation):
     def __init__(self, java_object = None):
@@ -5401,9 +4402,6 @@ class FunctionalExchangeRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalExchangeRealization")
 
 class FunctionRealization(AbstractFunctionAllocation):
     def __init__(self, java_object = None):
@@ -5413,9 +4411,6 @@ class FunctionRealization(AbstractFunctionAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionRealization")
 
 class ActivityEdge(AbstractRelationship):
     def __init__(self, java_object = None):
@@ -5425,9 +4420,6 @@ class ActivityEdge(AbstractRelationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ActivityEdge")
     def get_target(self):
         value =  self.get_java_object().getTarget()
         if value is None:
@@ -5464,9 +4456,6 @@ class ObjectFlow(ActivityEdge):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ObjectFlow")
 
 class FunctionalExchange(NamedElement, Relationship, InvolvedElement, ObjectFlow, AbstractEvent, AbstractEventOperation):
     def __init__(self, java_object = None):
@@ -5476,9 +4465,6 @@ class FunctionalExchange(NamedElement, Relationship, InvolvedElement, ObjectFlow
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalExchange")
     def get_involving_functional_chains(self):
         return create_e_list(self.get_java_object().getInvolvingFunctionalChains(), FunctionalChain)
     def get_exchanged_items(self):
@@ -5522,9 +4508,6 @@ class ComponentExchangeAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentExchangeAllocation")
 
 class ComponentExchangeCategory(NamedElement):
     def __init__(self, java_object = None):
@@ -5534,9 +4517,6 @@ class ComponentExchangeCategory(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentExchangeCategory")
     def get_exchanges(self):
         return create_e_list(self.get_java_object().getExchanges(), ComponentExchange)
     def get_component_exchanges(self):
@@ -5550,9 +4530,6 @@ class ComponentExchangeEnd(InformationsExchanger, CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentExchangeEnd")
 
 class ComponentExchangeFunctionalExchangeAllocation(AbstractFunctionAllocation):
     def __init__(self, java_object = None):
@@ -5562,9 +4539,6 @@ class ComponentExchangeFunctionalExchangeAllocation(AbstractFunctionAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentExchangeFunctionalExchangeAllocation")
     def get_allocating_component_exchange(self):
         value =  self.get_java_object().getAllocatingComponentExchange()
         if value is None:
@@ -5581,9 +4555,6 @@ class ComponentExchangeRealization(ExchangeSpecificationRealization):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentExchangeRealization")
     def get_allocating_component_exchange(self):
         value =  self.get_java_object().getAllocatingComponentExchange()
         if value is None:
@@ -5600,9 +4571,6 @@ class ComponentPort(Port, InformationsExchanger, Property):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentPort")
     def get_orientation(self):
         return self.get_java_object().getOrientation().getName()
     def set_orientation(self, value):
@@ -5646,9 +4614,6 @@ class ComponentPortAllocation(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentPortAllocation")
 
 class ComponentPortAllocationEnd(CapellaElement):
     def __init__(self, java_object = None):
@@ -5658,9 +4623,6 @@ class ComponentPortAllocationEnd(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ComponentPortAllocationEnd")
 
 class ReferenceHierarchyContext(EObject):
     def __init__(self, java_object = None):
@@ -5670,9 +4632,6 @@ class ReferenceHierarchyContext(EObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ReferenceHierarchyContext")
     def get_source_reference_hierachy(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ReferenceHierarchyContextSource", self)
     def get_target_reference_hierachy(self):
@@ -5686,9 +4645,6 @@ class FunctionalChainInvolvementLink(FunctionalChainInvolvement, ReferenceHierar
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalChainInvolvementLink")
     def get_exchanged_items(self):
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_source(self):
@@ -5720,9 +4676,6 @@ class SequenceLink(CapellaElement, ReferenceHierarchyContext):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "SequenceLink")
     def get_links(self):
         return create_e_list(self.get_java_object().getLinks(), FunctionalChainInvolvementLink)
     def get_source(self):
@@ -5764,9 +4717,6 @@ class SequenceLinkEnd(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "SequenceLinkEnd")
     def get_target_sequence_links(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SequenceLinkEndTargetSequenceLinks", self)
     def get_source_sequence_links(self):
@@ -5780,9 +4730,6 @@ class FunctionalChainInvolvementFunction(FunctionalChainInvolvement, SequenceLin
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "FunctionalChainInvolvementFunction")
     def get_owner(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementOwner", self)
     def get_outgoing_involvement_links(self):
@@ -5798,9 +4745,6 @@ class ControlNode(SequenceLinkEnd):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/fa/1.4.0", "ControlNode")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -5814,9 +4758,6 @@ class AbstractParameterSet(AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "AbstractParameterSet")
 
 class IState(AbstractNamedElement):
     def __init__(self, java_object = None):
@@ -5826,9 +4767,6 @@ class IState(AbstractNamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/core/1.4.0", "IState")
     def get_parent_stateand_mode(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.State_ParentState", self)
     def get_involved_statesand_modes(self):
@@ -5850,9 +4788,6 @@ class GenericTrace(Trace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "GenericTrace")
     def get_source(self):
         value =  self.get_java_object().getSource()
         if value is None:
@@ -5876,9 +4811,6 @@ class TransfoLink(GenericTrace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "TransfoLink")
 
 class JustificationLink(GenericTrace):
     def __init__(self, java_object = None):
@@ -5888,9 +4820,6 @@ class JustificationLink(GenericTrace):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "JustificationLink")
 
 class CapabilityRealizationInvolvement(Involvement):
     def __init__(self, java_object = None):
@@ -5900,9 +4829,6 @@ class CapabilityRealizationInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "CapabilityRealizationInvolvement")
 
 class StateMachine(CapellaElement, AbstractBehavior):
     def __init__(self, java_object = None):
@@ -5912,9 +4838,6 @@ class StateMachine(CapellaElement, AbstractBehavior):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "StateMachine")
     def get_owned_regions(self):
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
 
@@ -5926,9 +4849,6 @@ class Region(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "Region")
     def get_owned_states(self):
         return create_e_list(self.get_java_object().getOwnedStates(), AbstractState)
     def get_owned_transitions(self):
@@ -5944,9 +4864,6 @@ class AbstractState(NamedElement, IState):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "AbstractState")
     def get_outgoing(self):
         return create_e_list(self.get_java_object().getOutgoing(), StateTransition)
     def get_incoming(self):
@@ -5968,9 +4885,6 @@ class State(AbstractState):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "State")
     def get_owned_regions(self):
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
     def get_entry(self):
@@ -5992,9 +4906,6 @@ class Mode(State):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "Mode")
 
 class FinalState(State):
     def __init__(self, java_object = None):
@@ -6004,9 +4915,6 @@ class FinalState(State):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "FinalState")
 
 class StateTransition(NamedElement, Relationship):
     def __init__(self, java_object = None):
@@ -6016,9 +4924,6 @@ class StateTransition(NamedElement, Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "StateTransition")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -6071,9 +4976,6 @@ class Pseudostate(AbstractState):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "Pseudostate")
     def get_parent_region(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.EntryExitPoint_ParentRegion", self)
 
@@ -6085,9 +4987,6 @@ class InitialPseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "InitialPseudoState")
 
 class JoinPseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6097,9 +4996,6 @@ class JoinPseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "JoinPseudoState")
 
 class ForkPseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6109,9 +5005,6 @@ class ForkPseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "ForkPseudoState")
 
 class ChoicePseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6121,9 +5014,6 @@ class ChoicePseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "ChoicePseudoState")
 
 class TerminatePseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6133,9 +5023,6 @@ class TerminatePseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "TerminatePseudoState")
 
 class AbstractStateRealization(Allocation):
     def __init__(self, java_object = None):
@@ -6145,9 +5032,6 @@ class AbstractStateRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "AbstractStateRealization")
 
 class StateTransitionRealization(Allocation):
     def __init__(self, java_object = None):
@@ -6157,9 +5041,6 @@ class StateTransitionRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "StateTransitionRealization")
 
 class ShallowHistoryPseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6169,9 +5050,6 @@ class ShallowHistoryPseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "ShallowHistoryPseudoState")
 
 class DeepHistoryPseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6181,9 +5059,6 @@ class DeepHistoryPseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "DeepHistoryPseudoState")
 
 class EntryPointPseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6193,9 +5068,6 @@ class EntryPointPseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "EntryPointPseudoState")
 
 class ExitPointPseudoState(Pseudostate):
     def __init__(self, java_object = None):
@@ -6205,9 +5077,6 @@ class ExitPointPseudoState(Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "ExitPointPseudoState")
 
 class StateEventRealization(Allocation):
     def __init__(self, java_object = None):
@@ -6217,9 +5086,6 @@ class StateEventRealization(Allocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "StateEventRealization")
 
 class StateEvent(NamedElement, AbstractEvent):
     def __init__(self, java_object = None):
@@ -6229,9 +5095,6 @@ class StateEvent(NamedElement, AbstractEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "StateEvent")
 
 class ChangeEvent(StateEvent):
     def __init__(self, java_object = None):
@@ -6241,9 +5104,6 @@ class ChangeEvent(StateEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "ChangeEvent")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -6257,9 +5117,6 @@ class TimeEvent(StateEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/common/1.4.0", "TimeEvent")
     def get_kind(self):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
@@ -6273,9 +5130,6 @@ class ExceptionHandler(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ExceptionHandler")
 
 class InterruptibleActivityRegion(ActivityGroup):
     def __init__(self, java_object = None):
@@ -6285,9 +5139,6 @@ class InterruptibleActivityRegion(ActivityGroup):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "InterruptibleActivityRegion")
 
 class ControlFlow(ActivityEdge):
     def __init__(self, java_object = None):
@@ -6297,9 +5148,6 @@ class ControlFlow(ActivityEdge):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ControlFlow")
 
 class StructuredActivityNode(ActivityGroup, AbstractAction):
     def __init__(self, java_object = None):
@@ -6309,9 +5157,6 @@ class StructuredActivityNode(ActivityGroup, AbstractAction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "StructuredActivityNode")
 
 class AcceptEventAction(AbstractAction):
     def __init__(self, java_object = None):
@@ -6321,9 +5166,6 @@ class AcceptEventAction(AbstractAction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "AcceptEventAction")
 
 class SendSignalAction(InvocationAction):
     def __init__(self, java_object = None):
@@ -6333,9 +5175,6 @@ class SendSignalAction(InvocationAction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "SendSignalAction")
     def get_target(self):
         value =  self.get_java_object().getTarget()
         if value is None:
@@ -6354,9 +5193,6 @@ class ValuePin(InputPin):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/activity/1.4.0", "ValuePin")
     def get_value(self):
         value =  self.get_java_object().getValue()
         if value is None:
@@ -6375,9 +5211,6 @@ class SystemAnalysis(ComponentArchitecture):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemAnalysis")
     def get_system_component_pkg(self):
         value =  self.get_java_object().getOwnedSystemComponentPkg()
         if value is None:
@@ -6419,9 +5252,6 @@ class SystemFunction(AbstractFunction):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemFunction")
     def get_owned_system_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedSystemFunctionPkgs(), SystemFunctionPkg)
     def get_realized_operational_activities(self):
@@ -6459,9 +5289,6 @@ class SystemFunctionPkg(FunctionPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemFunctionPkg")
     def get_owned_system_functions(self):
         return create_e_list(self.get_java_object().getOwnedSystemFunctions(), SystemFunction)
     def get_owned_system_function_pkgs(self):
@@ -6475,9 +5302,6 @@ class SystemCommunicationHook(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemCommunicationHook")
     def get_type(self):
         value =  self.get_java_object().getType()
         if value is None:
@@ -6496,9 +5320,6 @@ class SystemCommunication(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemCommunication")
 
 class CapabilityInvolvement(Involvement):
     def __init__(self, java_object = None):
@@ -6508,9 +5329,6 @@ class CapabilityInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "CapabilityInvolvement")
 
 class MissionInvolvement(Involvement):
     def __init__(self, java_object = None):
@@ -6520,9 +5338,6 @@ class MissionInvolvement(Involvement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "MissionInvolvement")
 
 class Mission(NamedElement, InvolverElement):
     def __init__(self, java_object = None):
@@ -6532,9 +5347,6 @@ class Mission(NamedElement, InvolverElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "Mission")
     def get_exploited_capabilities(self):
         return create_e_list(self.get_java_object().getExploitedCapabilities(), Capability)
     def get_involved_system_components(self):
@@ -6548,9 +5360,6 @@ class MissionPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "MissionPkg")
     def get_owned_mission_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedMissionPkgs(), MissionPkg)
     def get_owned_missions(self):
@@ -6564,9 +5373,6 @@ class Capability(AbstractCapability):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "Capability")
     def get_purpose_missions(self):
         return create_e_list(self.get_java_object().getPurposeMissions(), Mission)
     def get_realized_operational_capabilities(self):
@@ -6590,9 +5396,6 @@ class CapabilityExploitation(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "CapabilityExploitation")
     def get_involved_element(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsCapabilityExploitationTarget", self)
     def get_source(self):
@@ -6606,9 +5409,6 @@ class CapabilityPkg(AbstractCapabilityPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "CapabilityPkg")
     def get_owned_capabilities(self):
         return create_e_list(self.get_java_object().getOwnedCapabilities(), Capability)
     def get_owned_capability_pkgs(self):
@@ -6622,9 +5422,6 @@ class OperationalAnalysisRealization(ArchitectureAllocation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "OperationalAnalysisRealization")
 
 class SystemComponentPkg(ComponentPkg):
     def __init__(self, java_object = None):
@@ -6634,9 +5431,6 @@ class SystemComponentPkg(ComponentPkg):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemComponentPkg")
     def get_owned_system_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedSystemComponentPkgs(), SystemComponentPkg)
 
@@ -6648,9 +5442,6 @@ class SystemComponent(Component, InvolvedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/core/ctx/1.4.0", "SystemComponent")
     def get_owned_system_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedSystemComponentPkgs(), SystemComponentPkg)
     def get_involving_capabilities(self):
@@ -6672,9 +5463,6 @@ class LibraryAbstractElement(ExtensibleElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/libraries/1.4.0", "LibraryAbstractElement")
     def get_id(self):
         return self.get_java_object().getId()
     def set_id(self, value):
@@ -6688,9 +5476,6 @@ class ModelInformation(LibraryAbstractElement, ElementExtension):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/libraries/1.4.0", "ModelInformation")
 
 class LibraryReference(LibraryAbstractElement):
     def __init__(self, java_object = None):
@@ -6700,9 +5485,6 @@ class LibraryReference(LibraryAbstractElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/libraries/1.4.0", "LibraryReference")
 
 class ModelVersion(LibraryAbstractElement):
     def __init__(self, java_object = None):
@@ -6712,6 +5494,3 @@ class ModelVersion(LibraryAbstractElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    @staticmethod
-    def get_e_class():
-        return get_e_classifier("http://www.polarsys.org/capella/common/libraries/1.4.0", "ModelVersion")

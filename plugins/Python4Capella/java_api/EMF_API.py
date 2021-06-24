@@ -9,18 +9,14 @@ class EObject(JavaObject):
     def delete(self):
         """Deletes the given EObject"""
         delete(self.get_java_object())
-    def e_get(self, feature_name):
-        """Gets the value of the given feature name for the given EObject"""
-        return eGet(self.get_java_object(), feature_name)
-    def e_set(self, feature_name, value):
-        """Sets the given value to the given feature name for the given EObject"""
-        return eSet(self.get_java_object(), feature_name, value)
     def get_all(self, cls):
         """Gets all elements of the given Class contained directly and indirectly in the EObject"""
         res = []
-        for e in e_all_contents(self.get_java_object(), cls.get_e_class()):
+        for e in e_all_contents(self.get_java_object()):
             specific_cls = getattr(sys.modules["__main__"], e.eClass().getName())
-            res.append(specific_cls(e))
+            value = specific_cls(e)
+            if isinstance(value, cls):
+                res.append(value)
         return res
     def e_container(self):
         """Gets the container of the EObject"""
@@ -31,9 +27,9 @@ class EObject(JavaObject):
             specific_cls = getattr(sys.modules["__main__"], e.eClass().getName())
             return specific_cls(e)
         
-def e_all_contents(e_obj, e_class):
-    """Gets all elements of the given Class contained directly and indireclty in the given EObject"""
-    return eAllContents(e_obj, e_class);
+def e_all_contents(e_obj):
+    """Gets all elements contained directly and indirectly in the given EObject"""
+    return eAllContents(e_obj);
 def get_e_classifier(ns_uri, eclass_name):
     """Gets the EClassifier for the given namespace URI and eclassifier name"""
     return getEClassifier(ns_uri, eclass_name)

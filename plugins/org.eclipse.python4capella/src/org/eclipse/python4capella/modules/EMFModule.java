@@ -78,19 +78,22 @@ public class EMFModule {
 		return EPackage.Registry.INSTANCE.getEPackage(nsURI).getEClassifier(eClassName);
 	}
 
+	/**
+	 * Gets the {@link List} all {@link EObject} contained directly or indirectly in
+	 * the given {@link EObject}.
+	 * 
+	 * @param eObj the {@link EObject}
+	 * @return the {@link List} all {@link EObject} contained directly or indirectly
+	 *         in the given {@link EObject}
+	 */
 	@WrapToScript
-	public List<EObject> eAllContents(EObject eObj, EClassifier eClassifier) {
+	public List<EObject> eAllContents(EObject eObj) {
 		final List<EObject> res = new ArrayList<EObject>();
 
-		if (eClassifier instanceof EClass) {
-			final EClass eCls = (EClass) eClassifier;
-			final Iterator<EObject> it = eObj.eAllContents();
-			while (it.hasNext()) {
-				final EObject child = it.next();
-				if (eCls.isInstance(child)) {
-					res.add(child);
-				}
-			}
+		final Iterator<EObject> it = eObj.eAllContents();
+		while (it.hasNext()) {
+			final EObject child = it.next();
+			res.add(child);
 		}
 
 		return res;
