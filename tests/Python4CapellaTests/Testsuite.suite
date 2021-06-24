@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TestSuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://eclipse.org/ease/unittest/testsuite/1.0" version="1.0">
+  <includeFilter>project://**.js
+project://**.py</includeFilter>
+  <disabledResource>/workspace</disabledResource>
+  <disabledResource>/workspace/Python4Capella</disabledResource>
+  <disabledResource>/workspace/Python4Capella/enduser</disabledResource>
+  <disabledResource>/workspace/Python4Capella/enduser/enduser.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/simplified_api</disabledResource>
+  <disabledResource>/workspace/Python4Capella/simplified_api/sirius.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/simplified_api/requirement.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/simplified_api/capella.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/java_api</disabledResource>
+  <disabledResource>/workspace/Python4Capella/java_api/Capella_API.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/java_api/Java_API.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/java_api/Sirius_API.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/java_api/EMF_API.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/enduser/enduser2.py</disabledResource>
+  <disabledResource>/workspace/Python4Capella/tests</disabledResource>
+</TestSuite>
