@@ -35,7 +35,7 @@
   <keyValuePairs xsi:type="org.polarsys.capella.core.data.capellacore:KeyValue" id="2f9a133b-a18b-4434-bebe-d495190ad6e2"
       key="projectApproach" value="SingletonComponents"/>
   <ownedModelRoots xsi:type="org.polarsys.capella.core.data.capellamodeller:SystemEngineering"
-      id="3f860a6a-aaaf-4e98-9ffc-49c9394fa0c4" name="Capella Light Metamodel" description="&lt;h1>Introduction&lt;/h1>&#xA;&#xA;&lt;p>This model defines the Capella simplified metamodel for implementation of Python API.&lt;/p>&#xA;&#xA;&lt;p>The overview of the concepts is provided here: &lt;a href=&quot;hlink://_DEN_8IrrEeum3sRHbZTGzQ&quot;>[CDB] Capella Light Metamodel&lt;/a>&lt;/p>&#xA;&#xA;&lt;p>This diagrams provides links towards other diagrams.&lt;/p>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Capella version&lt;/h1>&#xA;&#xA;&lt;p>The model focus on the definition of Capella metamodel for version 1.4.0 / 1.4.1 / 1.4.2 /&amp;nbsp;5.0.0 (no difference between those versions).&lt;/p>&#xA;&#xA;&lt;p>Metamodel for Capella 1.3.x will be defined later.&lt;/p>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Definition of the API&lt;/h1>&#xA;&#xA;&lt;p>To support the definition of the Python API, some Abstract Types have been defined which are then specialized.&lt;/p>&#xA;&#xA;&lt;p>They are defined mainly to ease the definition of the API (to avoid repetition of similar definitions on similar types).&lt;/p>&#xA;&#xA;&lt;p>They are not necessarily to be retained by end user.&lt;/p>&#xA;&#xA;&lt;p>The main Abstract Types defined are:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://7bd88617-cd02-494f-b666-d250ff6417d6&quot;>CapellaElement&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://d26dd98c-93da-4303-92b8-187452212c79&quot;>AbstractCapability&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06&quot;>Function&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://a5c9af0a-2b12-4b80-adff-c9307c2ab9e2&quot;>BehavioralComponent&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://187ed12e-8722-4fef-b5a1-b605bd98840b&quot;>Node&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Excluded elements&lt;/h1>&#xA;&#xA;&lt;p>This first version only focuses on the definition of a simplified metamodel for Capella concepts (model elements).&lt;/p>&#xA;&#xA;&lt;p>The concept of diagram is defined (and its relation with model elements) in this diagram: &lt;a href=&quot;hlink://_TheWQM57EeurHu2jZJ4leA&quot;>[CDB] Diagram&lt;/a>.&lt;/p>&#xA;&#xA;&lt;p>&lt;strong>However, the content of diagram (graphical elements)&amp;nbsp;is not yet defined&lt;/strong>.&lt;/p>&#xA;&#xA;&lt;p>Moreover, following elements are excluded from this simplified metamodel:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>All &lt;strong>technical elements&lt;/strong> like traces which are only represented by a direct link between elements&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>Capella core requirements &lt;/strong>(which are deprecated and replaced by the Requirement add-on)&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>Generic Traces&lt;/strong>&lt;/li>&#xA;&#x9;&lt;li>Functional Chain and Physical Path &lt;strong>involvement elements &lt;/strong>(simplified metamodel defines a direct relation with Functions or NodePC)&lt;br />&#xA;&#x9;As a result, it will not be possible to edit Functional Chain and Physical Path definition with the simplified metamodel&lt;br />&#xA;&#x9;Moreover, Control Nodes and Sequence Links are excluded from Functional Chain definition as they rely on the involvement elements.&lt;/li>&#xA;&#x9;&lt;li>&lt;span style=&quot;color: rgb(255, 0, 0);&quot;>&lt;strong>Roles in the Operational Analysis (TBC)&lt;/strong>&lt;/span>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Main differences with technical metamodel&lt;/h1>&#xA;&#xA;&lt;p>In addition to the excluded elements presented before, some elements are defined differently in the model compared to the real Capella technical metamodel.&lt;/p>&#xA;&#xA;&lt;p>The main differences are:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>&lt;strong>definition of Abstract Types&lt;/strong>: the Abstract Types defined in this model are different from the Abstract Types defined in the technical metamodel. They are introduced in order to simplify the definition of the API. Many levels of Abstract Types are not introduced here. Only the necessary Abstract Types have been introduced to avoid repetition, but Abstract Types have been avoided as much as possible to avoid complexity&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of Packages&lt;/strong>: the packages have been redefined in this model and do not strictly follow the same organization as the packages defined in the technical metamodel&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of Actors as a specific type (same for the System)&lt;/strong>: in the technical metamodel, actors are defined as a generic Component with a tag isActor. In this simplified metamodel, a specific type as been introduced in order to clearly differentiate what is external to the system and what is not. Moreover, actors in Capella have some specificities: they have both the characteristics of behavioral components and node components at the same time, which is not the case of the component of the system&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of Interaction as a specific type&lt;/strong>: in the technical metamodel, Interactions are defined as generic FunctionalExchange. Interactions have been introduced here to clearly separate Functions / Functional Exchanges / Functional Chains&amp;nbsp;from Activities / Interactions / Operation Processes. One of the main reason for this is that Activities do not have ports&amp;nbsp;&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of ComponentExchange source / target&lt;/strong>: in the technical metamodel, a ComponentExchange has a source and a target. However, from the user point of view, the orientation of the ComponentExchange is defined from the property orientation on the ComponentPorts. As a result, this simplified metamodel defines only that a ComponentExchange connects two ports without distinguishing a source and a target&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of containment for some elements&lt;/strong>: the containment of elements like the Exchanges (FunctionalExchange, ComponentExchange, PhysicalLink) is not defined in this simplified metamodel because it is not relevant for the end user. What is important is that an exchange connects two elements together. Where the exchange is stored should be defined by the tool and not by the end user&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of PropertyValue as one single type&lt;/strong>: This is a simplification of the technical metamodel. In the technical metamodel there is: StringPropertyValue, IntegerPropertyValue, BooleanPropertyValue, FloatPropertyValue, EnumerationPropertyValue&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of REC and RPL as two distinct types&lt;/strong>: in the technical metamodel, REC and RPL are both defined as CatalogElement with a tag for the type. However, REC and RPL have relations with are specific and do not apply to the other type. As a result, they have been defined as two distinct types here&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;">
+      id="3f860a6a-aaaf-4e98-9ffc-49c9394fa0c4" name="Capella Light Metamodel" description="&lt;h1>Introduction&lt;/h1>&#xA;&#xA;&lt;p>This model defines the Capella simplified metamodel for implementation of Python API.&lt;/p>&#xA;&#xA;&lt;p>The overview of the concepts is provided here: &lt;a href=&quot;hlink://_DEN_8IrrEeum3sRHbZTGzQ&quot;>[CDB] Capella Light Metamodel&lt;/a>&lt;/p>&#xA;&#xA;&lt;p>This diagrams provides links towards other diagrams.&lt;/p>&#xA;&#xA;&lt;p>Moreover, a simplified metamodel is also defined for:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>add-on PVMT: &lt;a href=&quot;hlink://_wM5H0NJrEeu6iLrOF9u83w&quot;>[CDB] PVMT&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>add-on Requirement: &lt;a href=&quot;hlink://_xe0CsNJrEeu6iLrOF9u83w&quot;>[CDB] Requirement&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Capella version&lt;/h1>&#xA;&#xA;&lt;p>The model focus on the definition of Capella metamodel for version 1.4.0 / 1.4.1 / 1.4.2 /&amp;nbsp;5.0.0 (no difference between those versions).&lt;/p>&#xA;&#xA;&lt;p>Metamodel for Capella 1.3.x will be defined later.&lt;/p>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Definition of the API&lt;/h1>&#xA;&#xA;&lt;p>To support the definition of the Python API, some Abstract Types have been defined which are then specialized.&lt;/p>&#xA;&#xA;&lt;p>They are defined mainly to ease the definition of the API (to avoid repetition of similar definitions on similar types).&lt;/p>&#xA;&#xA;&lt;p>They are not necessarily to be retained by end user.&lt;/p>&#xA;&#xA;&lt;p>The main Abstract Types defined are:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://7bd88617-cd02-494f-b666-d250ff6417d6&quot;>CapellaElement&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://d26dd98c-93da-4303-92b8-187452212c79&quot;>AbstractCapability&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06&quot;>Function&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://a5c9af0a-2b12-4b80-adff-c9307c2ab9e2&quot;>BehavioralComponent&lt;/a>&lt;/li>&#xA;&#x9;&lt;li>&lt;a href=&quot;hlink://187ed12e-8722-4fef-b5a1-b605bd98840b&quot;>Node&lt;/a>&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Excluded elements&lt;/h1>&#xA;&#xA;&lt;p>This first version only focuses on the definition of a simplified metamodel for Capella concepts (model elements).&lt;/p>&#xA;&#xA;&lt;p>The concept of diagram is defined (and its relation with model elements) in this diagram: &lt;a href=&quot;hlink://_TheWQM57EeurHu2jZJ4leA&quot;>[CDB] Diagram&lt;/a>.&lt;/p>&#xA;&#xA;&lt;p>&lt;strong>However, the content of diagram (graphical elements)&amp;nbsp;is not yet defined&lt;/strong>.&lt;/p>&#xA;&#xA;&lt;p>Moreover, following elements are excluded from this simplified metamodel:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>All &lt;strong>technical elements&lt;/strong> like traces which are only represented by a direct link between elements&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>Capella core requirements &lt;/strong>(which are deprecated and replaced by the Requirement add-on)&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>Generic Traces&lt;/strong>&lt;/li>&#xA;&#x9;&lt;li>Functional Chain and Physical Path &lt;strong>involvement elements &lt;/strong>(simplified metamodel defines a direct relation with Functions or NodePC)&lt;br />&#xA;&#x9;As a result, it will not be possible to edit Functional Chain and Physical Path definition with the simplified metamodel&lt;br />&#xA;&#x9;Moreover, Control Nodes and Sequence Links are excluded from Functional Chain definition as they rely on the involvement elements.&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>Roles in the Operational Analysis&lt;/strong>&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>Technical elements in the definition of scenarios &lt;/strong>allowing the definition of the fine grain sequence of events&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;h1>Main differences with technical metamodel&lt;/h1>&#xA;&#xA;&lt;p>In addition to the excluded elements presented before, some elements are defined differently in the model compared to the real Capella technical metamodel.&lt;/p>&#xA;&#xA;&lt;p>The main differences are:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>&lt;strong>definition of Abstract Types&lt;/strong>: the Abstract Types defined in this model are different from the Abstract Types defined in the technical metamodel. They are introduced in order to simplify the definition of the API. Many levels of Abstract Types are not introduced here. Only the necessary Abstract Types have been introduced to avoid repetition, but Abstract Types have been avoided as much as possible to avoid complexity&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of Packages&lt;/strong>: the packages have been redefined in this model and do not strictly follow the same organization as the packages defined in the technical metamodel&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of Actors as a specific type (same for the System)&lt;/strong>: in the technical metamodel, actors are defined as a generic Component with a tag isActor. In this simplified metamodel, a specific type as been introduced in order to clearly differentiate what is external to the system and what is not. Moreover, actors in Capella have some specificities: they have both the characteristics of behavioral components and node components at the same time, which is not the case of the component of the system&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of Interaction as a specific type&lt;/strong>: in the technical metamodel, Interactions are defined as generic FunctionalExchange. Interactions have been introduced here to clearly separate Functions / Functional Exchanges / Functional Chains&amp;nbsp;from Activities / Interactions / Operation Processes. One of the main reason for this is that Activities do not have ports&amp;nbsp;&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of ComponentExchange source / target&lt;/strong>: in the technical metamodel, a ComponentExchange has a source and a target. However, from the user point of view, the orientation of the ComponentExchange is defined from the property orientation on the ComponentPorts. As a result, this simplified metamodel defines only that a ComponentExchange connects two ports without distinguishing a source and a target&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of containment for some elements&lt;/strong>: the containment of elements like the Exchanges (FunctionalExchange, ComponentExchange, PhysicalLink) is not defined in this simplified metamodel because it is not relevant for the end user. What is important is that an exchange connects two elements together. Where the exchange is stored should be defined by the tool and not by the end user&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of PropertyValue as one single type&lt;/strong>: This is a simplification of the technical metamodel. In the technical metamodel there is: StringPropertyValue, IntegerPropertyValue, BooleanPropertyValue, FloatPropertyValue, EnumerationPropertyValue&lt;/li>&#xA;&#x9;&lt;li>&lt;strong>definition of REC and RPL as two distinct types&lt;/strong>: in the technical metamodel, REC and RPL are both defined as CatalogElement with a tag for the type. However, REC and RPL have relations with are specific and do not apply to the other type. As a result, they have been defined as two distinct types here&lt;/li>&#xA;&lt;/ul>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;">
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.oa:OperationalAnalysis"
         id="70b02b73-6b47-4f6a-9422-9d0cacbbec6b" name="Operational Analysis">
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalActivityPkg"
@@ -293,7 +293,7 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="db353307-924d-4023-ae6a-d0888f104402" name="CapellaModel">
+                id="db353307-924d-4023-ae6a-d0888f104402" name="CapellaModel" description="&lt;p>A Capella model. Used to defined the content of a model, and how to read a model&lt;/p>&#xA;">
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="c0b269be-148f-48e1-992c-c6c3dc8c427f" name="systemEngineering"
                   abstractType="#e523a8ac-9c04-4a16-949e-2f463d54258a" aggregationKind="COMPOSITION">
@@ -338,13 +338,14 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="f98e84d6-cf1d-4a17-ab36-214390208fd5" name="CapellaLibrary">
+                id="f98e84d6-cf1d-4a17-ab36-214390208fd5" name="CapellaLibrary" description="&lt;p>A Capella Library. A library is a model which can be referenced by other models in order to reuse its content&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="c4daaa17-f593-472a-8b29-2531e7ae11ec" super="#db353307-924d-4023-ae6a-d0888f104402"
                   sub="#f98e84d6-cf1d-4a17-ab36-214390208fd5"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="e523a8ac-9c04-4a16-949e-2f463d54258a" name="SystemEngineering">
+                id="e523a8ac-9c04-4a16-949e-2f463d54258a" name="SystemEngineering"
+                description="&lt;p>The main element in the definition of a Capella model. Contains the perspectives of the Arcadia methodology&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="262bcb9e-7bfe-44b3-aa25-e97ec5973250" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#e523a8ac-9c04-4a16-949e-2f463d54258a"/>
@@ -494,7 +495,8 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="82ae6ea2-a7b7-4e66-8c59-7175730ace50" name="EObject" abstract="true">
+                id="82ae6ea2-a7b7-4e66-8c59-7175730ace50" name="EObject" description="&lt;p>A generic object. Defines generic relations which are available for all elements&lt;/p>&#xA;"
+                abstract="true">
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="9f0cc7f6-54df-4ee5-9079-c448e3699443" name="ownedDiagrams" abstractType="#7daa5c4b-7f59-40d7-a5d1-837375ffbb9a"
                   aggregationKind="COMPOSITION">
@@ -529,7 +531,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="7bd88617-cd02-494f-b666-d250ff6417d6" name="CapellaElement" abstract="true">
+                id="7bd88617-cd02-494f-b666-d250ff6417d6" name="CapellaElement" description="&lt;p>A generic Capella model Element. Used to define generic attributes and relations inherited by most Capella elements&lt;/p>&#xA;"
+                abstract="true">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="69bcb8bb-9cef-4c63-a95b-2a37e554994d" name="INFO: Capella Generic traces are excluded from this first version"
                   constrainedElements="#7bd88617-cd02-494f-b666-d250ff6417d6">
@@ -683,7 +686,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="4abf2389-0aa2-4681-88d1-4e5bae0290c8" name="Constraint">
+                id="4abf2389-0aa2-4681-88d1-4e5bae0290c8" name="Constraint" description="&lt;p>A generic constraint which can be defined on Capella elements&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="08270cfa-edb7-416e-8a74-22ba1a0087ac" name="INFO: In the technical metamodel, a constraint owns an Opaque Expression which has the expression defined in its body.&#xD;&#xA;This is simplified here as a String attribute on the Constraint itself"
                   constrainedElements="#4abf2389-0aa2-4681-88d1-4e5bae0290c8">
@@ -713,7 +716,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="8b69e00f-7379-4d4e-8bb7-d8ff6ab7ea71" name="PropertyValue">
+                id="8b69e00f-7379-4d4e-8bb7-d8ff6ab7ea71" name="PropertyValue" description="&lt;p>A generic property with a name and value&amp;nbsp;which can be added to Capella elements&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="99eeee85-e92e-456a-b76a-76704f5a5e43" name="INFO: Value type will be dynamically checked based on the PVKind. In case of an EnumerationPropertyValue, the value should be picked in the associated EnumerationPropertyType list of values"
                   constrainedElements="#8b69e00f-7379-4d4e-8bb7-d8ff6ab7ea71">
@@ -758,7 +761,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="7221dd24-a6bf-4556-afae-2a4736fbcc01" name="PropertyValueGroup">
+                id="7221dd24-a6bf-4556-afae-2a4736fbcc01" name="PropertyValueGroup"
+                description="&lt;p>A group which can contain several PropertyValue and be applied to CapellaElements&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="b6bb3e16-5cec-4afe-82cd-a83a215be081" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#7221dd24-a6bf-4556-afae-2a4736fbcc01"/>
@@ -772,13 +776,15 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="46d701b7-2049-44da-9869-8727ad2b8c96" name="PropertyValuePkg">
+                id="46d701b7-2049-44da-9869-8727ad2b8c96" name="PropertyValuePkg"
+                description="&lt;p>A package to contain PropertyValues&amp;nbsp;and/or&amp;nbsp;PropertyValueGroups&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="0baf9871-291f-45bc-ade5-6e995b179faf" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#46d701b7-2049-44da-9869-8727ad2b8c96"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="5a732ff0-bad0-4dbe-af7d-1de60dc4e3fb" name="EnumerationPropertyType">
+                id="5a732ff0-bad0-4dbe-af7d-1de60dc4e3fb" name="EnumerationPropertyType"
+                description="&lt;p>The definition of an Enumeration to type a PropertyValue&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="ccbf2eb2-4a22-498e-b25e-21b946211eb7" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#5a732ff0-bad0-4dbe-af7d-1de60dc4e3fb"/>
@@ -792,13 +798,15 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="4e81c642-ccf3-4bd7-a580-4b006906658c" name="EnumerationPropertyLiteral">
+                id="4e81c642-ccf3-4bd7-a580-4b006906658c" name="EnumerationPropertyLiteral"
+                description="&lt;p>A value defined in an EnumerationPropertyType&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="64e5e26f-76f1-4fd3-b432-f093cf7b081a" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#4e81c642-ccf3-4bd7-a580-4b006906658c"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="0f864f12-2533-48f3-ae22-33105132eaf0" name="PropertyValuePkgContainer"
+                description="&lt;p>An abstract type to define all elements which can contain PropertyValuePkg&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="1689412b-a2b7-4eae-be64-29bd9a310371" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
@@ -868,7 +876,7 @@
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
               id="8fefc316-1761-4e17-8572-901ae16b368e" name="diagram" status="#b74f676f-2148-4e30-a5fa-7fee181e5da7">
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="7daa5c4b-7f59-40d7-a5d1-837375ffbb9a" name="Diagram">
+                id="7daa5c4b-7f59-40d7-a5d1-837375ffbb9a" name="Diagram" description="&lt;p>A generic Capella diagram&lt;/p>&#xA;">
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="da8a27da-4076-470b-8c27-cf12358e4cbd" name="uid" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -1088,6 +1096,7 @@
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="4ff9f8c0-4ee7-49a3-bd39-19ade61b9141" name="AbstractReElement"
+                description="&lt;p>An abstract type to define the generic attributes of REC / RPL and packages&amp;nbsp;elements&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="d32bf184-7005-456c-bbfc-2a469e3d2808" super="#82ae6ea2-a7b7-4e66-8c59-7175730ace50"
@@ -1109,6 +1118,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="252d7a8c-a87e-40de-a8ba-7c12ca0feb8f" name="AbstractCatalogElement"
+                description="&lt;p>An abstract type to define the generic attributes and relations&amp;nbsp;of REC / RPL elements&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="eef83dd9-923f-45b4-984d-77b4f45c5be2" super="#4ff9f8c0-4ee7-49a3-bd39-19ade61b9141"
@@ -1151,7 +1161,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="238a6baf-9dde-4162-9238-568e8cf32bcd" name="REC">
+                id="238a6baf-9dde-4162-9238-568e8cf32bcd" name="REC" description="&lt;p>A Record element is the definition of a set of elements to be replicated together&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="a8a737bf-8711-4ca7-b27a-dcece7d3707f" super="#252d7a8c-a87e-40de-a8ba-7c12ca0feb8f"
                   sub="#238a6baf-9dde-4162-9238-568e8cf32bcd"/>
@@ -1173,7 +1183,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="30da66f8-7140-4f75-bbe0-b3fb09445352" name="RPL">
+                id="30da66f8-7140-4f75-bbe0-b3fb09445352" name="RPL" description="&lt;p>A replay element is the instantiation of a record element&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="229c215d-008d-4f7b-a29d-380247d018c0" name="INFO: In the technical metamodel, REC and RPL are defined as one concept (CatalogElement), which is not clear from a user point of view"
                   constrainedElements="#30da66f8-7140-4f75-bbe0-b3fb09445352 #238a6baf-9dde-4162-9238-568e8cf32bcd">
@@ -1218,7 +1228,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="8493dd90-e5b6-4688-a546-a7267ab5db08" name="CatalogElementPkg">
+                id="8493dd90-e5b6-4688-a546-a7267ab5db08" name="CatalogElementPkg"
+                description="&lt;p>A package to structure the definition of REC / RPL elements&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="16755a97-2846-4ac1-adaa-5e2fa3f55a79" super="#4ff9f8c0-4ee7-49a3-bd39-19ade61b9141"
                   sub="#8493dd90-e5b6-4688-a546-a7267ab5db08"/>
@@ -1248,7 +1259,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="7ca38655-09b6-4d82-89fc-8ff7e4342b31" name="RecCatalog">
+                id="7ca38655-09b6-4d82-89fc-8ff7e4342b31" name="RecCatalog" description="&lt;p>The root package which contains the REC / RPL definitions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="87fad54b-d3d7-48e5-b7ee-8ce327adf350" super="#8493dd90-e5b6-4688-a546-a7267ab5db08"
                   sub="#7ca38655-09b6-4d82-89fc-8ff7e4342b31"/>
@@ -1262,7 +1273,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="794d5133-63b3-45ac-a537-99189c3d1713" name="CompliancyDefinitionPkg">
+                id="794d5133-63b3-45ac-a537-99189c3d1713" name="CompliancyDefinitionPkg"
+                description="&lt;p>A package to contain CompliancyDefinitions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="0fec7b19-14f9-43ea-be75-0aace41c16e5" super="#4ff9f8c0-4ee7-49a3-bd39-19ade61b9141"
                   sub="#794d5133-63b3-45ac-a537-99189c3d1713"/>
@@ -1276,7 +1288,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="daecc5ab-4309-4f07-862a-af0a07279bb8" name="CompliancyDefinition">
+                id="daecc5ab-4309-4f07-862a-af0a07279bb8" name="CompliancyDefinition"
+                description="&lt;p>The type of compliancy which have to be respected by the RPL regarding its REC definition. Default list of compliancies is:&lt;/p>&#xA;&#xA;&lt;ul>&#xA;&#x9;&lt;li>BLACK_BOX&lt;/li>&#xA;&#x9;&lt;li>CONSTRAINT_REUSE&lt;/li>&#xA;&#x9;&lt;li>INHERITANCY_REUSE&lt;/li>&#xA;&lt;/ul>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="f19726fc-f8b4-4543-8cc8-19e1168c2c1e" super="#4ff9f8c0-4ee7-49a3-bd39-19ade61b9141"
                   sub="#daecc5ab-4309-4f07-862a-af0a07279bb8"/>
@@ -1569,7 +1582,8 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="2fb5ad71-6947-4a43-8608-c9be6cf05fb0" name="OperationalAnalysis">
+                id="2fb5ad71-6947-4a43-8608-c9be6cf05fb0" name="OperationalAnalysis"
+                description="&lt;p>The element containing all definitions from the Operational Analysis.&lt;/p>&#xA;&#xA;&lt;p>The Operational Analysis aims at defining what the users of the system need to accomplish&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="90c63beb-a25e-4940-b4ac-404c5f1d34a8" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#2fb5ad71-6947-4a43-8608-c9be6cf05fb0"/>
@@ -1615,7 +1629,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="8b19d702-ddf8-4d54-9d1e-dc9ff08fd14b" name="OperationalActivityPkg">
+                id="8b19d702-ddf8-4d54-9d1e-dc9ff08fd14b" name="OperationalActivityPkg"
+                description="&lt;p>A package to contain OperationalActivity&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="975ed17e-e0cc-406b-b09f-0c471ae4cf49" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#8b19d702-ddf8-4d54-9d1e-dc9ff08fd14b"/>
@@ -1637,7 +1652,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="5c76e033-4dbd-4b6e-af58-9802a3766269" name="OperationalActivity">
+                id="5c76e033-4dbd-4b6e-af58-9802a3766269" name="OperationalActivity"
+                description="&lt;p>Process step or action/operation/service performed by an Operational entity / actor&amp;nbsp;and likely to influence the system definition or usage. Implementing operational activities generally produces elements of interactions expected by other activities&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="8ea1607a-89e0-4de5-acd5-00474225eccc" super="#32e7e714-895d-4e05-85d7-fd4f38d664f7"
                   sub="#5c76e033-4dbd-4b6e-af58-9802a3766269"/>
@@ -1715,7 +1731,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="43c00184-78f7-417b-98d2-e2f7e14e2d6d" name="Interaction">
+                id="43c00184-78f7-417b-98d2-e2f7e14e2d6d" name="Interaction" description="&lt;p>Oriented dependency between Operational Activities&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="5cdf6563-7ac9-4675-ac73-f33d96e6f5f3" name="INFO: Does not exist in Capella metamodel (this is a FunctionalExchange)"
                   constrainedElements="#43c00184-78f7-417b-98d2-e2f7e14e2d6d">
@@ -1778,7 +1794,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="28d44809-a1bb-4191-a843-d9be20ec79a3" name="OperationalProcess">
+                id="28d44809-a1bb-4191-a843-d9be20ec79a3" name="OperationalProcess"
+                description="&lt;p>An operational process is used to describe a particular context for performing operational activities to contribute to one or more operational capabilities&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="21a9ccd8-c348-4a94-ac42-830c94a3b2c3" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#28d44809-a1bb-4191-a843-d9be20ec79a3"/>
@@ -1848,7 +1865,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="b6cb6973-1bd0-4338-9fd9-9018020dc4fe" name="OperationalCapabilityPkg">
+                id="b6cb6973-1bd0-4338-9fd9-9018020dc4fe" name="OperationalCapabilityPkg"
+                description="&lt;p>A package to contain OperationalCapabilities&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="e08d3999-f996-4a01-acf6-78aabdefbb1c" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#b6cb6973-1bd0-4338-9fd9-9018020dc4fe"/>
@@ -1870,7 +1888,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="2cd680f2-124c-4425-8d55-89693d383632" name="OperationalCapability">
+                id="2cd680f2-124c-4425-8d55-89693d383632" name="OperationalCapability"
+                description="&lt;p>An operational capability is an ability, expected of one or more operational entities / actors. An operational capability is characterized by a set of operational processes and scenarios&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="38731680-10d8-4914-8773-b653c96fc916" super="#d26dd98c-93da-4303-92b8-187452212c79"
                   sub="#2cd680f2-124c-4425-8d55-89693d383632"/>
@@ -1916,7 +1935,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="414d58b9-8eb8-4def-9c81-3753c7ba5084" name="EntityPkg">
+                id="414d58b9-8eb8-4def-9c81-3753c7ba5084" name="EntityPkg" description="&lt;p>A package to define Operational entities / actors&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="97b781c6-8632-485c-b73e-951cd24d2c0b" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#414d58b9-8eb8-4def-9c81-3753c7ba5084"/>
@@ -1938,7 +1957,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="ac436e3b-4a12-44a5-81eb-a3044f6ec1e7" name="OperationalEntity">
+                id="ac436e3b-4a12-44a5-81eb-a3044f6ec1e7" name="OperationalEntity"
+                description="&lt;p>An Operational Entity is a real world entity (other system, device, group or organisation&amp;hellip;) carrying Operational Activities to which the system is likely to contribute&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="739a0ffb-222e-4128-858a-0e2260d3831e" name="INFO: Called Entity in the technical metamodel"
                   constrainedElements="#ac436e3b-4a12-44a5-81eb-a3044f6ec1e7">
@@ -1961,7 +1981,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="de14fa65-e574-417e-b877-cd8f4edd9bb2" name="OperationalActor">
+                id="de14fa65-e574-417e-b877-cd8f4edd9bb2" name="OperationalActor"
+                description="&lt;p>An Operational Actor is a kind of Operational Entity, usually human. It cannot be broken down&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="9757b8f9-4956-4217-af13-b02234a1264a" name="INFO: An Operational Entity / Actor cannot contain a package"
                   constrainedElements="#de14fa65-e574-417e-b877-cd8f4edd9bb2 #414d58b9-8eb8-4def-9c81-3753c7ba5084">
@@ -2024,7 +2045,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="fb6179ec-7010-4517-a2fe-db3ed134aeb5" name="CommunicationMean">
+                id="fb6179ec-7010-4517-a2fe-db3ed134aeb5" name="CommunicationMean"
+                description="&lt;p>Describes the media between the Operational Entities / Actors&amp;nbsp;to support the Operational Interactions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="e7dcc02a-e8fa-48e8-81b6-7e8d6271505f" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#fb6179ec-7010-4517-a2fe-db3ed134aeb5"/>
@@ -2290,7 +2312,7 @@
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="bf4d1192-a302-4b0b-8788-90655b225158" name="saAssociation22" navigableMembers="#f8f6a64e-49bd-49bf-a2b4-72ed0ba2bdbf #038dcdba-5063-431b-880a-9b8d38622c6c"/>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="e9f1ba5d-7907-44ec-976e-fc79a81fd9cf" name="SystemAnalysis">
+                id="e9f1ba5d-7907-44ec-976e-fc79a81fd9cf" name="SystemAnalysis" description="&lt;p>The element containing all definitions from the System Analysis.&lt;/p>&#xA;&#xA;&lt;p>The System Analysis aims at defining what the system has to accomplish for the users&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="dc1d2554-58c9-4383-8ca8-af3fad419bb6" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#e9f1ba5d-7907-44ec-976e-fc79a81fd9cf"/>
@@ -2344,7 +2366,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="161c9dc1-d4a0-4d09-8d33-c490263f04e9" name="SystemFunctionPkg">
+                id="161c9dc1-d4a0-4d09-8d33-c490263f04e9" name="SystemFunctionPkg"
+                description="&lt;p>A package to contain SystemFunctions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="08eeedfb-a92e-489e-961b-83656f5bf6cc" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#161c9dc1-d4a0-4d09-8d33-c490263f04e9"/>
@@ -2366,7 +2389,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="e0cc4a70-a716-4100-80fd-bc072d26336e" name="SystemFunction">
+                id="e0cc4a70-a716-4100-80fd-bc072d26336e" name="SystemFunction" description="&lt;p>The definition of a Function in the System Analysis&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="4f904169-b920-4cb3-b21f-1627db540ce1" super="#9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06"
                   sub="#e0cc4a70-a716-4100-80fd-bc072d26336e"/>
@@ -2404,7 +2427,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="4e287b26-63c1-4f69-8527-83a06055ce9e" name="CapabilityPkg">
+                id="4e287b26-63c1-4f69-8527-83a06055ce9e" name="CapabilityPkg" description="&lt;p>A package to contain Capabilities&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="60a5af34-deab-4a90-bf1b-d5c4b784576b" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#4e287b26-63c1-4f69-8527-83a06055ce9e"/>
@@ -2426,7 +2449,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="a7fd4fee-5dbc-41e7-9e70-a47a92ffc575" name="Capability">
+                id="a7fd4fee-5dbc-41e7-9e70-a47a92ffc575" name="Capability" description="&lt;p>The ability of the system to supply a service contributing to fulfilling one or more Missions. A Capability represents a system usage context. It is characterized by a set of Functional Chains and Scenarios it references.&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="11d12cfd-6c30-4dc4-95c2-3dd62b125bc1" super="#e09f4141-a8ec-46d7-9c72-e7991bd3b2b5"
                   sub="#a7fd4fee-5dbc-41e7-9e70-a47a92ffc575"/>
@@ -2464,7 +2487,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="43e78332-3bbc-4d74-a8d0-0ea9fbb9b100" name="SystemComponentPkg">
+                id="43e78332-3bbc-4d74-a8d0-0ea9fbb9b100" name="SystemComponentPkg"
+                description="&lt;p>A package to contain the System and the Actors&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="887d09cd-80f2-4bae-90c5-df02bab79a22" name="INFO: only the SystemComponentPkg contained directly under SystemAnalysis can contain the System"
                   constrainedElements="#43e78332-3bbc-4d74-a8d0-0ea9fbb9b100">
@@ -2503,7 +2527,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="e2eadb84-2712-4816-8872-27a4064962f2" name="System">
+                id="e2eadb84-2712-4816-8872-27a4064962f2" name="System" description="&lt;p>Set of elements functioning as a whole, responding to customer and user demand and needs&lt;/p>&#xA;&#xA;&lt;p>The System defined in the SystemAnalysis is seen as a black box&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="815dbf44-5dc2-4754-aba7-99d474b66c7c" super="#a5c9af0a-2b12-4b80-adff-c9307c2ab9e2"
                   sub="#e2eadb84-2712-4816-8872-27a4064962f2"/>
@@ -2512,7 +2536,7 @@
                   sub="#e2eadb84-2712-4816-8872-27a4064962f2"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="739f7daa-2277-4e8f-8977-bd5852c7902e" name="SystemActor">
+                id="739f7daa-2277-4e8f-8977-bd5852c7902e" name="SystemActor" description="&lt;p>Entity (human or not) that is external to the System (in term of responsibility), interacting with it, via its interfaces&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="9d291d2e-e809-41ae-aac1-07e3c65499b0" name="INFO: A SystemActor can contain sub Actors only if isHuman = FALSE"
                   constrainedElements="#739f7daa-2277-4e8f-8977-bd5852c7902e">
@@ -2585,7 +2609,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="3adc583a-af82-4a68-a50d-9993563f38dd" name="MissionPkg">
+                id="3adc583a-af82-4a68-a50d-9993563f38dd" name="MissionPkg" description="&lt;p>A package to contain Missions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="504f4e1c-0df1-4321-bd6c-02498add02f8" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#3adc583a-af82-4a68-a50d-9993563f38dd"/>
@@ -2607,7 +2631,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="3832a0cd-6299-4416-8e58-55079ec63776" name="Mission">
+                id="3832a0cd-6299-4416-8e58-55079ec63776" name="Mission" description="&lt;p>High-level goal to which the System should contribute. To be fulfilled, a Mission should use a number of system Functions regrouped within one or more Capabilities&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="e456c9f6-fd63-4f2f-83ec-5ca4cf64fe04" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#3832a0cd-6299-4416-8e58-55079ec63776"/>
@@ -2871,7 +2895,8 @@
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="99dc5e10-0089-46de-90df-823375c4f854" name="laAssociation24" navigableMembers="#bf713c26-8a39-47f7-91bc-0c8c09a04fc8 #fc6ff3a1-5f11-4cf3-817f-7f25a4c971d1"/>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="f9d5b644-f8f4-4f9c-bfd3-9d60dcbb0378" name="LogicalArchitecture">
+                id="f9d5b644-f8f4-4f9c-bfd3-9d60dcbb0378" name="LogicalArchitecture"
+                description="&lt;p>The element containing all definitions from the Logical Architecture.&lt;/p>&#xA;&#xA;&lt;p>The Logical Architecture (or conceptual solution)&amp;nbsp;aims at defining how the system will work in order to fulfil expectations&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="90c969e2-46f4-4ce2-8b13-28ae60df14e0" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#f9d5b644-f8f4-4f9c-bfd3-9d60dcbb0378"/>
@@ -2917,7 +2942,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="1d802dc9-f58f-4329-b00e-69fca4f04f4e" name="LogicalFunctionPkg">
+                id="1d802dc9-f58f-4329-b00e-69fca4f04f4e" name="LogicalFunctionPkg"
+                description="&lt;p>A package to contain LogicalFunctions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="41a77b69-1b3d-4c17-a4c2-aea166c95e77" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#1d802dc9-f58f-4329-b00e-69fca4f04f4e"/>
@@ -2939,7 +2965,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="182ac159-5328-49c4-8df0-3e6ab41ddce5" name="LogicalFunction">
+                id="182ac159-5328-49c4-8df0-3e6ab41ddce5" name="LogicalFunction" description="&lt;p>The definition of a Function in the Logical Architecture&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="80631a57-edc0-4f2b-a067-aaa3a1121f65" super="#9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06"
                   sub="#182ac159-5328-49c4-8df0-3e6ab41ddce5"/>
@@ -2977,7 +3003,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="92dad17f-eabf-448b-9d8b-3406d7eacf33" name="CapabilityRealizationPkg">
+                id="92dad17f-eabf-448b-9d8b-3406d7eacf33" name="CapabilityRealizationPkg"
+                description="&lt;p>A package to contain CapabilityRealizations&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="6b1af147-88a1-447a-9119-abe9efcd9ed3" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#92dad17f-eabf-448b-9d8b-3406d7eacf33"/>
@@ -2999,7 +3026,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="67dfa680-c27a-4013-9a3d-4c5df34f4614" name="CapabilityRealization">
+                id="67dfa680-c27a-4013-9a3d-4c5df34f4614" name="CapabilityRealization"
+                description="&lt;p>The implementation of the system Capabilities in Logical Architecture and Physical Architecture&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="55555ec1-d041-453a-a9c5-120b33bf007e" super="#e09f4141-a8ec-46d7-9c72-e7991bd3b2b5"
                   sub="#67dfa680-c27a-4013-9a3d-4c5df34f4614"/>
@@ -3061,7 +3089,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="d511de9e-4401-41b4-951e-8609bd3f305b" name="LogicalComponentPkg">
+                id="d511de9e-4401-41b4-951e-8609bd3f305b" name="LogicalComponentPkg"
+                description="&lt;p>A package to contain the LogicalSystem, LogicalComponents and LogicalActors&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="ad5dade8-4b8c-4b61-9bea-235b0a32c93f" name="INFO: only the LogicalComponentPkg contained directly under LogicalArchitecture can contain the LogicalSystem"
                   constrainedElements="#d511de9e-4401-41b4-951e-8609bd3f305b">
@@ -3117,7 +3146,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="4544641d-6da7-4384-9d7f-ec185db0cc4b" name="LogicalSystem">
+                id="4544641d-6da7-4384-9d7f-ec185db0cc4b" name="LogicalSystem" description="&lt;p>The definition of the system in Logical Architecture&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="c7c5091d-cc0a-4966-a373-d786161d1412" super="#a5c9af0a-2b12-4b80-adff-c9307c2ab9e2"
                   sub="#4544641d-6da7-4384-9d7f-ec185db0cc4b"/>
@@ -3142,7 +3171,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="01c6e63d-8bc7-4dd1-a3a7-54cf25822d2d" name="LogicalComponent">
+                id="01c6e63d-8bc7-4dd1-a3a7-54cf25822d2d" name="LogicalComponent"
+                description="&lt;p>Logical Components are the artefacts enabling a notional decomposition of the system as a &amp;quot;white box&amp;quot;, independently from any technological solutions, but dealing with major system decomposition constraints&lt;/p>&#xA;&#xA;&lt;p>Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="fdbd2f33-2500-4a0f-a9b0-af3cf62eaf62" name="INFO: A LogicalComponent can contain sub Components only if isHuman = FALSE"
                   constrainedElements="#01c6e63d-8bc7-4dd1-a3a7-54cf25822d2d">
@@ -3196,7 +3226,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="033bad37-21e2-4be2-ba55-392733b50461" name="LogicalActor">
+                id="033bad37-21e2-4be2-ba55-392733b50461" name="LogicalActor" description="&lt;p>An external Actor defined in the Logical Architecture&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="e44da0ca-dd1d-48b3-9338-c031cbf3652d" name="INFO: A LogicalActor can contain sub Actors only if isHuman = FALSE"
                   constrainedElements="#033bad37-21e2-4be2-ba55-392733b50461">
@@ -3478,7 +3508,8 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="39d0e280-96c4-4f29-8817-f29a41ce6db2" name="PhysicalArchitecture">
+                id="39d0e280-96c4-4f29-8817-f29a41ce6db2" name="PhysicalArchitecture"
+                description="&lt;p>The element containing all definitions from the Physical Architecture.&lt;/p>&#xA;&#xA;&lt;p>The Physical Architecture (or finalized solution)&amp;nbsp;aims at defining how the system will be developed and built&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="cccdd9fb-fa9b-4f02-ba85-891e2218b4d0" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#39d0e280-96c4-4f29-8817-f29a41ce6db2"/>
@@ -3524,7 +3555,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="99f924c4-9f6e-4012-8657-eb9f24b9dd12" name="PhysicalFunctionPkg">
+                id="99f924c4-9f6e-4012-8657-eb9f24b9dd12" name="PhysicalFunctionPkg"
+                description="&lt;p>A package to contain PhysicalFunctions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="ce1bd181-ac02-4569-ae96-6b76ad1c3c3e" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#99f924c4-9f6e-4012-8657-eb9f24b9dd12"/>
@@ -3546,7 +3578,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="52bb8ebf-a672-48bd-ac54-a2209465b046" name="PhysicalFunction">
+                id="52bb8ebf-a672-48bd-ac54-a2209465b046" name="PhysicalFunction"
+                description="&lt;p>The definition of a Function in the Physical Architecture&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="2e23e524-8e22-46b5-b8f4-12de7a01ddb2" super="#9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06"
                   sub="#52bb8ebf-a672-48bd-ac54-a2209465b046"/>
@@ -3576,7 +3609,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="af141567-fa67-4433-8a1c-515a0d8f93f9" name="PhysicalComponentPkg">
+                id="af141567-fa67-4433-8a1c-515a0d8f93f9" name="PhysicalComponentPkg"
+                description="&lt;p>A package to contain the PhysicalSystem, PhysicalComponents and PhysicalActors&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="e3c4be43-9a9c-48e5-971e-247045911c6a" name="INFO: only the PhysicalComponentPkg contained directly under PhysicalArchitecture can contain the PhysicalSystem"
                   constrainedElements="#af141567-fa67-4433-8a1c-515a0d8f93f9">
@@ -3632,7 +3666,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="0af8f91c-8374-461f-a99d-4b16b480b6d8" name="PhysicalSystem">
+                id="0af8f91c-8374-461f-a99d-4b16b480b6d8" name="PhysicalSystem" description="&lt;p>The definition of the system in Physical Architecture&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="ae561729-2e0e-4705-a59c-4ac8a85a4198" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#0af8f91c-8374-461f-a99d-4b16b480b6d8"/>
@@ -3655,6 +3689,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="78b1e145-08be-49c3-99fc-036c894ab3d5" name="AbstractPhysicalArtifact"
+                description="&lt;p>An abstract type to defined the relation between elements of the Physical Architecture and ConfigurationItems&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="2e99ed51-eee7-4bb5-9c4b-0434c57de4a3" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
@@ -3670,6 +3705,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="7a96db90-8bed-4809-ac7f-59789791332d" name="PhysicalComponent"
+                description="&lt;p>A generic Physical Component which can be either a BehaviorPC or a NodePC&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="676dad66-11ad-4073-b7f2-6dffbba0253d" super="#78b1e145-08be-49c3-99fc-036c894ab3d5"
@@ -3714,7 +3750,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="b58e094b-aa71-4bb7-992a-486910f84c80" name="BehaviorPC">
+                id="b58e094b-aa71-4bb7-992a-486910f84c80" name="BehaviorPC" description="&lt;p>System component in charge of implementing / realizing some of the functions devoted to the system&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="417ef0dd-c91a-4025-af2b-fbbe28edfd8b" name="INFO: In technical metamode, Behavior and Nodes are managed as PhysicalComponents with a nature attribute"
                   constrainedElements="#b58e094b-aa71-4bb7-992a-486910f84c80 #8b417d78-c0d5-4e16-b757-bf103c0b3d97">
@@ -3748,7 +3784,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="8b417d78-c0d5-4e16-b757-bf103c0b3d97" name="NodePC">
+                id="8b417d78-c0d5-4e16-b757-bf103c0b3d97" name="NodePC" description="&lt;p>Component hosting a number of behavioral components, providing them with the resource they require to function and to interact with their environment&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="ca82238a-04e6-4f4a-998f-74a44eb4d265" name="INFO: BehaviorPC can only contain BehaviorPC and NodePC can only contain NodePC (directly or through a package)"
                   constrainedElements="#8b417d78-c0d5-4e16-b757-bf103c0b3d97 #b58e094b-aa71-4bb7-992a-486910f84c80">
@@ -3777,7 +3813,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="c03c17d8-41c3-4b94-93ef-140f065894e8" name="PhysicalActor">
+                id="c03c17d8-41c3-4b94-93ef-140f065894e8" name="PhysicalActor" description="&lt;p>An external Actor defined in the Physical Architecture&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="004ce525-c2f1-4f30-94e0-8ea9dcb5d4c6" super="#a5c9af0a-2b12-4b80-adff-c9307c2ab9e2"
                   sub="#c03c17d8-41c3-4b94-93ef-140f065894e8"/>
@@ -3947,7 +3983,8 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="078a3c88-a289-497f-809e-75a151ccb0a6" name="EPBSArchitecture">
+                id="078a3c88-a289-497f-809e-75a151ccb0a6" name="EPBSArchitecture"
+                description="&lt;p>The element containing all definitions from the End-Product Breakdown Structure.&lt;/p>&#xA;&#xA;&lt;p>The End-Product Breakdown Structure aims at defining the construction strategy of the product, taking into account industrial and subcontracting constraints&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="cea3ded3-7e5b-464f-8570-8b2370433246" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#078a3c88-a289-497f-809e-75a151ccb0a6"/>
@@ -3977,7 +4014,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="2c589be0-3b34-44ba-8784-c430e353b3a1" name="ConfigurationItemPkg">
+                id="2c589be0-3b34-44ba-8784-c430e353b3a1" name="ConfigurationItemPkg"
+                description="&lt;p>A package to contain ConfigurationItems&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="3e59f909-571e-48b5-98a4-27db04cd7283" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#2c589be0-3b34-44ba-8784-c430e353b3a1"/>
@@ -3999,7 +4037,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="88f942be-d031-40ac-bc55-82f164455d4b" name="ConfigurationItem">
+                id="88f942be-d031-40ac-bc55-82f164455d4b" name="ConfigurationItem"
+                description="&lt;p>System part to be acquired or produced, in as many copies as the physical architecture requires&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="1d893dce-4b86-4a4c-94b5-5bc879a5a39c" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#88f942be-d031-40ac-bc55-82f164455d4b"/>
@@ -4064,7 +4103,7 @@
             </ownedDataTypes>
           </ownedDataPkgs>
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
-              id="1bf96b72-abde-400d-9397-7db3dee674da" name="statemachine" status="#aac70fd0-5b06-4a73-85a0-e120bc5c7ae8">
+              id="1bf96b72-abde-400d-9397-7db3dee674da" name="statemachine" status="#b74f676f-2148-4e30-a5fa-7fee181e5da7">
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="55c1c7f0-d546-4fc8-83a3-2c45392e9a78" name="capellacommonAssociation1"
                 navigableMembers="#b53c6fb1-5c7b-451c-9531-636110c20185 #c3c6a8e8-e984-4deb-ab3e-0a73961601b0"/>
@@ -4188,7 +4227,7 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="431ebd1e-f53f-48bd-b95f-5b6c8f8c9a7c" name="StateMachine">
+                id="431ebd1e-f53f-48bd-b95f-5b6c8f8c9a7c" name="StateMachine" description="&lt;p>State Machine is a way to define some of&amp;nbsp;the expected behavior of the System, a Component or an external Actor&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="e0499e5a-88f6-4411-b5c7-345470819c78" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#431ebd1e-f53f-48bd-b95f-5b6c8f8c9a7c"/>
@@ -4202,7 +4241,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="b2b88d99-a332-4e16-b1c3-232197dac402" name="AbstractState" abstract="true">
+                id="b2b88d99-a332-4e16-b1c3-232197dac402" name="AbstractState" description="&lt;p>An abstract type to define the generic relation of modes and states&lt;/p>&#xA;"
+                abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="be5e9f2a-1f5f-4f9d-8bf5-c235c4babb79" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#b2b88d99-a332-4e16-b1c3-232197dac402"/>
@@ -4240,7 +4280,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="cec2e45b-3fd8-4cac-b9a1-06abf34fb23b" name="State">
+                id="cec2e45b-3fd8-4cac-b9a1-06abf34fb23b" name="State" description="&lt;p>A State is a context undergone by the system, an actor or a component in specific circumstances (for example imposed by the environment)&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="d120fe01-9df2-4597-aeaf-f037d1bea433" super="#b2b88d99-a332-4e16-b1c3-232197dac402"
                   sub="#cec2e45b-3fd8-4cac-b9a1-06abf34fb23b"/>
@@ -4310,13 +4350,13 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="7473c995-0781-4144-8d49-ec77f4ca6ce0" name="Mode">
+                id="7473c995-0781-4144-8d49-ec77f4ca6ce0" name="Mode" description="&lt;p>A Mode is a behavior expected from the system,&amp;nbsp;an Actor or a component&amp;nbsp;in chosen conditions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="51470d82-62e2-443a-baf8-4e6651fcad90" super="#cec2e45b-3fd8-4cac-b9a1-06abf34fb23b"
                   sub="#7473c995-0781-4144-8d49-ec77f4ca6ce0"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="173c7cc9-3d82-49eb-b7ca-7bdc51aef367" name="Pseudostate">
+                id="173c7cc9-3d82-49eb-b7ca-7bdc51aef367" name="Pseudostate" description="&lt;p>A pseudo states are transitive states (meaning they don&amp;#39;t remain active). They are used to define entry / exit point of a state machine, and to connect multiple transitions into more complex transition paths&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="056ee510-7739-4615-850b-d9afb952ec67" name="INFO: All different types of PseudoStates are simplified by one concept with a kind attribute"
                   constrainedElements="#173c7cc9-3d82-49eb-b7ca-7bdc51aef367 #3317653c-c6a4-485c-ad37-3fb875d0f58b">
@@ -4338,7 +4378,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="899d6f7d-3b45-430b-9f78-1065f952c2cf" name="Region">
+                id="899d6f7d-3b45-430b-9f78-1065f952c2cf" name="Region" description="&lt;p>A region is an orthogonal part of either a composite state or a state machine.&lt;/p>&#xA;&#xA;&lt;p>Inside of a region, only one more or state can be active at a time&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="02aa6f72-6171-4c5b-8f38-77bae5db0da8" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#899d6f7d-3b45-430b-9f78-1065f952c2cf"/>
@@ -4352,7 +4392,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="6cf32f0d-7a3c-4d3a-8a63-0cdcde694553" name="StateTransition">
+                id="6cf32f0d-7a3c-4d3a-8a63-0cdcde694553" name="StateTransition" description="&lt;p>A possible transition between 2 modes or 2 states&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="3b16c9ae-09ac-48c4-8eca-c9c127241cb0" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#6cf32f0d-7a3c-4d3a-8a63-0cdcde694553"/>
@@ -4422,7 +4462,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="3b54fb8f-b694-4da7-b9c8-ccef2ea66dff" name="ChangeEvent">
+                id="3b54fb8f-b694-4da7-b9c8-ccef2ea66dff" name="ChangeEvent" description="&lt;p>An event defined by WHEN something occurs&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="cf571fbd-0a6e-476f-82f9-7185d35c849b" super="#f713ce73-4824-4c98-9482-f8e07ae4513f"
                   sub="#3b54fb8f-b694-4da7-b9c8-ccef2ea66dff"/>
@@ -4435,7 +4475,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="73e43d3d-a2b3-480b-930c-f65ce87f0138" name="TimeEvent">
+                id="73e43d3d-a2b3-480b-930c-f65ce87f0138" name="TimeEvent" description="&lt;p>An event defined by AT a given time, or AFTER a certain time&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="2d77cc97-629c-4586-9f67-2a29541e0802" super="#f713ce73-4824-4c98-9482-f8e07ae4513f"
                   sub="#73e43d3d-a2b3-480b-930c-f65ce87f0138"/>
@@ -4456,6 +4496,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="32e7e714-895d-4e05-85d7-fd4f38d664f7" name="AbstractActivityFunction"
+                description="&lt;p>An abstract type to define the link between mode / state and activity / function (available in states)&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="5cfe367b-3855-4625-b77b-3e87a36eb3af" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
@@ -4479,9 +4520,11 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="85e6991b-ea3d-479b-a9eb-86490950a89a" name="AbstractAction" abstract="true"/>
+                id="85e6991b-ea3d-479b-a9eb-86490950a89a" name="AbstractAction" description="&lt;p>A generic action which can be triggered by a Mode / State or a StateTransition&lt;/p>&#xA;"
+                abstract="true"/>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="f713ce73-4824-4c98-9482-f8e07ae4513f" name="AbstractEvent" abstract="true">
+                id="f713ce73-4824-4c98-9482-f8e07ae4513f" name="AbstractEvent" description="&lt;p>An generic event which can trigger a transition&lt;/p>&#xA;"
+                abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="3b669dd6-94da-4890-9683-bddba44c43f9" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#f713ce73-4824-4c98-9482-f8e07ae4513f"/>
@@ -4527,7 +4570,7 @@
             </ownedDataTypes>
           </ownedDataPkgs>
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
-              id="9c950fd4-3930-4065-8c68-01a5d39ed098" name="scenario" status="#aac70fd0-5b06-4a73-85a0-e120bc5c7ae8">
+              id="9c950fd4-3930-4065-8c68-01a5d39ed098" name="scenario" status="#b74f676f-2148-4e30-a5fa-7fee181e5da7">
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="9ed11b29-24a5-4396-80ec-ca88725e0185" name="interactionAssociation8"
                 navigableMembers="#51e39407-3cb1-4f40-8d70-ccfa1310d44f">
@@ -4796,7 +4839,7 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="52b765f3-edb2-4e13-bc4b-7a1e55968608" name="Scenario">
+                id="52b765f3-edb2-4e13-bc4b-7a1e55968608" name="Scenario" description="&lt;p>A scenario of use of the system defined by a specific sequence&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="22fd1bca-b9e4-469a-9b6c-3fb038c66e34" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#52b765f3-edb2-4e13-bc4b-7a1e55968608"/>
@@ -4889,7 +4932,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="f0e28e37-492a-4bc8-a462-050e1b579292" name="InstanceRole">
+                id="f0e28e37-492a-4bc8-a462-050e1b579292" name="InstanceRole" description="&lt;p>The involvement of an element (function, system, component or actor)&amp;nbsp;in a scenario&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="d3458387-f4c2-4739-bf3b-bec61f94bd82" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#f0e28e37-492a-4bc8-a462-050e1b579292"/>
@@ -4904,9 +4947,10 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="5b8febe7-9914-4b14-b575-f57ca6d5f353" name="AbstractInstance"
+                description="&lt;p>A generic element which can be involved in a scenario as an InstanceRole&lt;/p>&#xA;"
                 abstract="true"/>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="d7ee83e5-fec1-4a5f-8e2e-3753e01edd95" name="SequenceMessage">
+                id="d7ee83e5-fec1-4a5f-8e2e-3753e01edd95" name="SequenceMessage" description="&lt;p>An exchange between InstanceRole performed in the frame of a scenario&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="56883cd6-4bf3-4ab0-bac9-8de57937bd8c" name="NOTE: invokedOperation is used in INTERFACE scenario only. For other kind of scenarios, invokedExchange and exchangedItems is used instead"
                   constrainedElements="#d7ee83e5-fec1-4a5f-8e2e-3753e01edd95">
@@ -4977,6 +5021,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="683398b4-e382-435a-bb00-92090a87dc2b" name="AbstractExchange"
+                description="&lt;p>A generic exchange which can be used in a scenario as a sequence message&lt;/p>&#xA;"
                 abstract="true">
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="92bd3e49-9526-42e7-992f-f83682baeef7" name="invokingSequenceMessages"
@@ -4988,7 +5033,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="d4969de1-45c4-4a05-a6b3-760f7f7d4417" name="StateFragment">
+                id="d4969de1-45c4-4a05-a6b3-760f7f7d4417" name="StateFragment" description="&lt;p>The call of a function or mode / state&amp;nbsp;by an InstanceRole in the context of a scenario&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="75b43a40-f9b9-4a17-92d4-0583e85404e7" name="INFO: only one of relatedState or relatedActivityFunction can be defined at a time"
                   constrainedElements="#d4969de1-45c4-4a05-a6b3-760f7f7d4417">
@@ -5027,7 +5072,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="026af7fe-26b9-49db-a283-5688ebfa50fb" name="CombinedFragment">
+                id="026af7fe-26b9-49db-a283-5688ebfa50fb" name="CombinedFragment"
+                description="&lt;p>The identification of a specific operator (ALT, OPT, LOOP...)&amp;nbsp;in the sequence of a scenario&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="8b747884-bbeb-44a2-ab6b-b1d61d5b7f53" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#026af7fe-26b9-49db-a283-5688ebfa50fb"/>
@@ -5056,7 +5102,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="bf02e227-29e0-4d32-9079-104db43297ee" name="Operand">
+                id="bf02e227-29e0-4d32-9079-104db43297ee" name="Operand" description="&lt;p>A specific &amp;quot;region&amp;quot; in a Combined Fragment&lt;/p>&#xA;&#xA;&lt;p>For example, an ALTERNATIVE contains one operand for each of the alternative conditions&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="98ea07c0-c329-4d13-bed6-38c9a6f4929c" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#bf02e227-29e0-4d32-9079-104db43297ee"/>
@@ -5086,7 +5132,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="b116d620-df85-499f-9e32-4eeaa6686720" name="ConstraintDuration">
+                id="b116d620-df85-499f-9e32-4eeaa6686720" name="ConstraintDuration"
+                description="&lt;p>A constraint about the execution time of a scenario defined between 2 points&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="3a2fc295-1224-40d5-b61c-45e3b8aa8fa5" name="NOTE: It's not possible to further defined ConstraintDuration without exposing all the details of the technical metamodel..."
                   constrainedElements="#b116d620-df85-499f-9e32-4eeaa6686720">
@@ -5282,7 +5329,8 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="187ed12e-8722-4fef-b5a1-b605bd98840b" name="Node" abstract="true">
+                id="187ed12e-8722-4fef-b5a1-b605bd98840b" name="Node" description="&lt;p>An abstract type defining the generic relation of a Node (implementation ressource)&amp;nbsp;element&lt;/p>&#xA;"
+                abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="fae41bb1-b9f0-434f-b9b8-0a31e925fb9f" super="#5b8febe7-9914-4b14-b575-f57ca6d5f353"
                   sub="#187ed12e-8722-4fef-b5a1-b605bd98840b"/>
@@ -5320,7 +5368,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="ebafef60-4f27-46a9-b3a8-e48c708248ee" name="PhysicalPort">
+                id="ebafef60-4f27-46a9-b3a8-e48c708248ee" name="PhysicalPort" description="&lt;p>A port on a Node component defining a physical interaction point&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="e31ef985-91a4-49b6-8bad-7a74206b845a" super="#78b1e145-08be-49c3-99fc-036c894ab3d5"
                   sub="#ebafef60-4f27-46a9-b3a8-e48c708248ee"/>
@@ -5358,7 +5406,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="43bb272d-9b44-43dc-a82c-c2700bcf08c5" name="PhysicalLink">
+                id="43bb272d-9b44-43dc-a82c-c2700bcf08c5" name="PhysicalLink" description="&lt;p>Means of communication, transport or routing between two Node components, used as a support for behavioral exchanges&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="1825cd37-a9ff-4638-ad4c-ff33d0a60e24" super="#78b1e145-08be-49c3-99fc-036c894ab3d5"
                   sub="#43bb272d-9b44-43dc-a82c-c2700bcf08c5"/>
@@ -5420,7 +5468,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="7f9ffcdc-2984-462c-a8ab-8d167b9c79f6" name="PhysicalLinkCategory">
+                id="7f9ffcdc-2984-462c-a8ab-8d167b9c79f6" name="PhysicalLinkCategory"
+                description="&lt;p>A regroupement of PhysicalLinks for graphical simplification of diagrams&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="4b25a8a3-9f34-46df-b8e2-6dd30717afcb" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#7f9ffcdc-2984-462c-a8ab-8d167b9c79f6"/>
@@ -5434,7 +5483,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="2ae14802-3bbf-4182-ac60-400d39854723" name="PhysicalPath">
+                id="2ae14802-3bbf-4182-ac60-400d39854723" name="PhysicalPath" description="&lt;p>Set of Physical Links defining a continuous path likely to route one or more behavioral exchanges&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="24175ab5-8e58-4b33-a499-ac6bf1096dca" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#2ae14802-3bbf-4182-ac60-400d39854723"/>
@@ -5480,7 +5529,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="ca138555-436c-4df4-b488-f4137ba1dc27" name="InterfacePkg">
+                id="ca138555-436c-4df4-b488-f4137ba1dc27" name="InterfacePkg" description="&lt;p>A package to contain Interfaces&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="2c5e2fa5-2c16-41da-941c-25cab2d4d8cb" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
                   sub="#ca138555-436c-4df4-b488-f4137ba1dc27"/>
@@ -5510,7 +5559,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="dc7b09ac-7a06-4ab5-8e08-50e00b673d69" name="Interface">
+                id="dc7b09ac-7a06-4ab5-8e08-50e00b673d69" name="Interface" description="&lt;p>The definition of ExchangeItems which can be send / received by a ComponentPort&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="a15b4021-7f7b-4ffd-8ee0-008b8574853b" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#dc7b09ac-7a06-4ab5-8e08-50e00b673d69"/>
@@ -5587,7 +5636,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="6f302e23-b47e-46c8-8d2b-72882257e8cd" name="ExchangeItemAllocation">
+                id="6f302e23-b47e-46c8-8d2b-72882257e8cd" name="ExchangeItemAllocation"
+                description="&lt;p>The involvement of an ExchangeItem by an Interface.&lt;/p>&#xA;&#xA;&lt;p>Mainly used for the involvement of ExchangeItems in Interface Scenarios based on the definition of Interfaces between components&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="1233b1f5-7de3-445c-a36a-48bc62fa2141" name="INFO: ExchangeItemAllocation is defined in order to identify the involvement of interfaces in interface scenarios"
                   constrainedElements="#6f302e23-b47e-46c8-8d2b-72882257e8cd">
@@ -5634,7 +5684,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="4c0b5f05-02be-42e4-b12c-d8f8f9372dda" name="ExchangeItem">
+                id="4c0b5f05-02be-42e4-b12c-d8f8f9372dda" name="ExchangeItem" description="&lt;p>Ordered set of references to elements carried together during an interaction or exchange between functions, components and actors. The elements are carried simultaneously, in the same conditions, with the same non-functional properties. The &amp;ldquo;elements&amp;rdquo; are called data&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="127fb41b-85c1-4764-a764-da35286f5b85" name="NOTE: In the technical metamodel, it's not ExchangeItem but ExchangeItemInstance which can be represented by an InstanceRole"
                   constrainedElements="#4c0b5f05-02be-42e4-b12c-d8f8f9372dda #f0e28e37-492a-4bc8-a462-050e1b579292">
@@ -5728,7 +5778,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="e1c5ba38-9fcb-4dc5-8df3-17e6dd75de78" name="ExchangeItemElement">
+                id="e1c5ba38-9fcb-4dc5-8df3-17e6dd75de78" name="ExchangeItemElement"
+                description="&lt;p>A part of the information contained by an ExchangeItem&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="7a1ce296-9a03-4d49-8118-400d8b51cde2" name="TO BE DETAILED"
                   constrainedElements="#e1c5ba38-9fcb-4dc5-8df3-17e6dd75de78">
@@ -6092,7 +6143,8 @@
               </ownedMembers>
             </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06" name="Function" abstract="true">
+                id="9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06" name="Function" description="&lt;p>Action performed by the System, an Actor or a component, in order to realize a Capability&lt;/p>&#xA;"
+                abstract="true">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="4c905ff1-21ab-4af6-82b8-df27a4dfda68" name="INFO: Function containment is defined on specialized types (SystemFunction, LogicalFunction, PhysicalFunction)"
                   constrainedElements="#9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06">
@@ -6194,7 +6246,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="06b37000-b625-4765-ae03-b555a22b77ce" name="FunctionPort" abstract="true">
+                id="06b37000-b625-4765-ae03-b555a22b77ce" name="FunctionPort" description="&lt;p>An generic FunctionPort to define the allocation with ComponentPorts&lt;/p>&#xA;&#xA;&lt;p>A Function Port specify what a Function is capable of producing or is requiring&lt;/p>&#xA;"
+                abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="757bc7c4-f494-4a3a-bd9b-d26bd7626e48" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#06b37000-b625-4765-ae03-b555a22b77ce"/>
@@ -6208,7 +6261,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="2b8bf4cc-3956-48fe-b755-eb2f682ab800" name="FunctionInputPort">
+                id="2b8bf4cc-3956-48fe-b755-eb2f682ab800" name="FunctionInputPort"
+                description="&lt;p>An FunctionInputPort defines what a Function is requiring&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="9a3bba1c-f320-45a2-a69f-60d40a29e1b0" super="#06b37000-b625-4765-ae03-b555a22b77ce"
                   sub="#2b8bf4cc-3956-48fe-b755-eb2f682ab800"/>
@@ -6246,7 +6300,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="8297b98b-48fa-4db8-8afa-e271c4ef7965" name="FunctionOutputPort">
+                id="8297b98b-48fa-4db8-8afa-e271c4ef7965" name="FunctionOutputPort"
+                description="&lt;p>A FunctionOutputPort defines what a Function is capable of producing&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="e0874f36-7219-4fa3-a99c-43204f4eb1af" super="#06b37000-b625-4765-ae03-b555a22b77ce"
                   sub="#8297b98b-48fa-4db8-8afa-e271c4ef7965"/>
@@ -6284,7 +6339,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="b3fdbe54-f407-4d80-aef4-203fbceaa94b" name="FunctionalExchange">
+                id="b3fdbe54-f407-4d80-aef4-203fbceaa94b" name="FunctionalExchange"
+                description="&lt;p>A functional exchange represents a dependency between a source function and a target one. Exchanges connect Function Ports, which specify what a Function is capable of producing or is requiring.&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="9b53e4bf-e05c-4ffc-b6dd-38d012e3927d" name="INFO: Containment of Functional Exchange is not described here because this information is not relevant for the user"
                   constrainedElements="#b3fdbe54-f407-4d80-aef4-203fbceaa94b #9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06">
@@ -6374,7 +6430,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="13603f72-859b-4d2c-8158-e4806ffa4e64" name="ExchangeCategory">
+                id="13603f72-859b-4d2c-8158-e4806ffa4e64" name="ExchangeCategory"
+                description="&lt;p>A regroupement of FunctionalExchanges for graphical simplification of diagrams&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="ad9915b7-c778-491e-897a-ed4328780969" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#13603f72-859b-4d2c-8158-e4806ffa4e64"/>
@@ -6388,7 +6445,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="e2dc1258-a01c-46bd-821e-865106b5cc20" name="FunctionalChain">
+                id="e2dc1258-a01c-46bd-821e-865106b5cc20" name="FunctionalChain" description="&lt;p>Describe the system behaviour in a particular usage context with references towards Functions and Functional Exchanges&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="0d5e73c2-1b83-4dc1-978c-bc8f830e542c" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#e2dc1258-a01c-46bd-821e-865106b5cc20"/>
@@ -6475,6 +6532,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="a5c9af0a-2b12-4b80-adff-c9307c2ab9e2" name="BehavioralComponent"
+                description="&lt;p>An abstract type to define the generic relation of behavioral elements&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="a4dc2424-3ecc-46c4-a2e6-b1bfc6e2f23d" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
@@ -6548,7 +6606,7 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="04e33445-5686-4407-adaf-aa365a6fefef" name="ComponentPort">
+                id="04e33445-5686-4407-adaf-aa365a6fefef" name="ComponentPort" description="&lt;p>A port on a BehavioralComponent defining a logical interaction point&lt;/p>&#xA;">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="bd4c9a29-b11a-46bf-9269-13f93a18c41b" name="INFO: Component port Kind is not defined here as it does not really mean anything for system engineer"
                   constrainedElements="#04e33445-5686-4407-adaf-aa365a6fefef">
@@ -6626,7 +6684,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="db7ac793-fed3-408c-92fd-8c08316efaaf" name="ComponentExchange">
+                id="db7ac793-fed3-408c-92fd-8c08316efaaf" name="ComponentExchange"
+                description="&lt;p>Represent the interactions between Logical / Behavioral&amp;nbsp;Components. Exchanges connects Component Ports.&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="f9700fae-5cb2-4430-9f5e-341a01fadce6" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#db7ac793-fed3-408c-92fd-8c08316efaaf"/>
@@ -6722,7 +6781,8 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="94fe7cf4-8766-4423-8226-e1adc53544d3" name="ComponentExchangeCategory">
+                id="94fe7cf4-8766-4423-8226-e1adc53544d3" name="ComponentExchangeCategory"
+                description="&lt;p>A regroupement of ComponentExchanges for graphical simplification of diagrams&lt;/p>&#xA;">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="a9ff548e-a18b-491d-85b0-84138df3a325" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#94fe7cf4-8766-4423-8226-e1adc53544d3"/>
@@ -6737,6 +6797,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="d26dd98c-93da-4303-92b8-187452212c79" name="AbstractCapability"
+                description="&lt;p>An abstract type to define the generic relations of all capabilities (operational and system)&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="54d7d59e-675c-40db-be15-da02c7bc2e0b" super="#0f864f12-2533-48f3-ae22-33105132eaf0"
@@ -6824,6 +6885,7 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="e09f4141-a8ec-46d7-9c72-e7991bd3b2b5" name="AbstractSystemCapability"
+                description="&lt;p>An abstract type to define the generic relation of system capabilities (as defined in SA, LA and PA)&lt;/p>&#xA;"
                 abstract="true">
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="fe06ff98-ff6c-47ab-b16d-04f41ac2e209" super="#d26dd98c-93da-4303-92b8-187452212c79"
