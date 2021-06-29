@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
+import org.polarsys.capella.core.data.capellacommon.CapellacommonPackage;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
@@ -133,6 +134,13 @@ public class CapellaModule {
 			}
 		}
 		return queryResult;
+	}
+
+	@WrapToScript
+	public String getCapellaVersion() {
+		final String ensUri = CapellacommonPackage.eNS_URI;
+
+		return ensUri.substring(ensUri.lastIndexOf('/') + 1);
 	}
 
 }
