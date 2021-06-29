@@ -10,7 +10,7 @@ For instance:
 
 bc. Scripts\pip install Python-Chart
 
-This will install the package and make it available to import in your scripts. For more details on importing the newly installed package please refer to its documentation.
+This will download and install the package and make it available to import in your scripts. For more details on importing the newly installed package please refer to its documentation.
 
 You can find packages "Python Package Index (PyPI)":https://pypi.org/.
 

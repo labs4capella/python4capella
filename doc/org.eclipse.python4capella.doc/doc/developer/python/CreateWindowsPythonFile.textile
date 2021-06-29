@@ -16,9 +16,11 @@ At this point pip is not installed but it will be needed later to install packag
 
 bc. python -m ensurepip
 
-Python will proceed with the installation of pip. Now we can install new packages. By default we are going to install a library to write to xlsx documents:
+Python will proceed with the downlaod and installation of pip. Now we can install new packages. By default we are going to install a library to write to xlsx documents:
 
 bc. Scripts\pip install XlsxWriter
+
+This will download the package and install it.
 
 If you prefer, you can also install XlsxWriter from the source archive. Download the source archive from the following page:
 
