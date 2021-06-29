@@ -21,9 +21,5 @@ def available_query_names(e_obj):
     """List all available query names for the given EObject"""
     return getAvailableSBQueries(e_obj.get_java_object())
 
-def get_extensions(extensible_element, ns_uri, eclass_name):
-    """Gets the liste of extensions of the given type (namespace URI and EClass name) for the given ExtensibleElement"""
-    return getExtensions(extensible_element.get_java_object(), ns_uri, eclass_name)
-
 def capella_version():
     return getCapellaVersion()

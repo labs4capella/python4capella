@@ -19,16 +19,11 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.ease.modules.WrapToScript;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacommon.CapellacommonPackage;
-import org.polarsys.kitalpha.emde.model.ElementExtension;
-import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 /**
  * EASE module for Capella.
@@ -37,33 +32,6 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
  *
  */
 public class CapellaModule {
-
-	/**
-	 * Gets the {@link List} of {@link ElementExtension} with the given
-	 * {@link EPackage#getNsURI() nsURI} and {@link EClass#getName() eclass name}
-	 * type for the given {@link ExtensibleElement}.
-	 * 
-	 * @param element    the {@link ExtensibleElement}
-	 * @param nsURI      the {@link EPackage#getNsURI() nsURI}
-	 * @param eClassName the {@link EClass#getName() eclass name}
-	 * @return the {@link List} of {@link ElementExtension} with the given
-	 *         {@link EPackage#getNsURI() nsURI} and {@link EClass#getName() eclass
-	 *         name} type for the given {@link ExtensibleElement}
-	 */
-	@WrapToScript
-	public List<ElementExtension> getExtensions(ExtensibleElement element, String nsURI, String eClassName) {
-		final List<ElementExtension> res = new ArrayList<>();
-
-		final EClassifier eClassifier = EPackage.Registry.INSTANCE.getEPackage(nsURI).getEClassifier(eClassName);
-
-		for (ElementExtension extension : element.getOwnedExtensions()) {
-			if (eClassifier.isInstance(extension)) {
-				res.add(extension);
-			}
-		}
-
-		return res;
-	}
 
 	/**
 	 * Calls the {@link IQuery} by its {@link Class#getCanonicalName() class

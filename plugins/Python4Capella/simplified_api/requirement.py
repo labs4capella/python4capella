@@ -10,10 +10,3 @@ class Requirement(EObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-
-def get_requirements(self):
-    res = [] #: :type res: list(Requirement)
-    for e in get_extensions(self, "http://www.polarsys.org/kitalpha/requirements", "Requirement"):
-        res.append(Requirement(e))
-    return res
-setattr(ExtensibleElement, "get_requirements", get_requirements)        
