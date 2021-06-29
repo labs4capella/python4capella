@@ -12,6 +12,9 @@ To add a breakpoint, you can double click on the left ruler of the Python editor
 You can now select your script and right click on it:
  - select the Debug As / EASE Script menu
 
+When the the debugger stops on the break point, you will be prompted to change the perspective to the debug perspective.
+This perspective will allow to control the debugger and see the internal state of your script.
+
 If your script takes some arguments, you can change the launch configuration by right clicking on your script:
  - select the Debug As / Debug configuration.
 
