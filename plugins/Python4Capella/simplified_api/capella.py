@@ -198,6 +198,10 @@ class PublishableElement(ModelElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_visible_in_documentation(self):
+        return self.get_java_object().isVisibleInDoc()
+    def set_visible_in_documentation(self, value):
+        self.get_java_object().setVisibleInDoc(value)
 
 class CapellaElement(TraceableElement, PublishableElement):
     def __init__(self, java_object = None):
@@ -377,7 +381,7 @@ class GeneralizableElement(Type):
         else:
             EObject.__init__(self, java_object)
     def get_abstract(self):
-        return self.get_java_object().getAbstract()
+        return self.get_java_object().isAbstract()
     def set_abstract(self, value):
         self.get_java_object().setAbstract(value)
     def get_super(self):
@@ -516,7 +520,7 @@ class FinalizableElement(ModelElement):
         else:
             EObject.__init__(self, java_object)
     def get_final(self):
-        return self.get_java_object().getFinal()
+        return self.get_java_object().isFinal()
     def set_final(self, value):
         self.get_java_object().setFinal(value)
 
@@ -1071,7 +1075,7 @@ class DataValue(NamedElement, ValueSpecification):
         else:
             EObject.__init__(self, java_object)
     def get_abstract(self):
-        return self.get_java_object().getAbstract()
+        return self.get_java_object().isAbstract()
     def set_abstract(self, value):
         self.get_java_object().setAbstract(value)
     def get_type(self):
@@ -1117,7 +1121,7 @@ class LiteralBooleanValue(AbstractBooleanValue):
         else:
             EObject.__init__(self, java_object)
     def get_value(self):
-        return self.get_java_object().getValue()
+        return self.get_java_object().isValue()
     def set_value(self, value):
         self.get_java_object().setValue(value)
 
@@ -1569,7 +1573,7 @@ class BooleanPropertyValue(AbstractPropertyValue):
         else:
             EObject.__init__(self, java_object)
     def get_value(self):
-        return self.get_java_object().getValue()
+        return self.get_java_object().isValue()
     def set_value(self, value):
         self.get_java_object().setValue(value)
 
@@ -1813,7 +1817,7 @@ class CatalogElement(ReDescriptionElement, ReElementContainer):
     def set_suffix(self, value):
         self.get_java_object().setSuffix(value)
     def get_read_only(self):
-        return self.get_java_object().getReadOnly()
+        return self.get_java_object().isReadOnly()
     def set_read_only(self, value):
         self.get_java_object().setReadOnly(value)
     def get_tags(self):
