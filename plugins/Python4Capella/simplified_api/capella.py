@@ -202,6 +202,10 @@ class PublishableElement(ModelElement):
         return self.get_java_object().isVisibleInDoc()
     def set_visible_in_documentation(self, value):
         self.get_java_object().setVisibleInDoc(value)
+    def get_visible_for_traceability(self):
+        return self.get_java_object().isVisibleInLM()
+    def set_visible_for_traceability(self, value):
+        self.get_java_object().setVisibleInLM(value)
 
 class CapellaElement(TraceableElement, PublishableElement):
     def __init__(self, java_object = None):
