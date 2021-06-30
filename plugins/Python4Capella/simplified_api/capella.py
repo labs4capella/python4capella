@@ -71,6 +71,8 @@ class ModelElement(ExtensibleElement):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ModelElementPreCondition", self)
     def get_constraining_elements(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ModelElementConstraints", self)
+    def get_label(self):
+        return self.get_java_object().getLabel()
 
 class AbstractNamedElement(ModelElement):
     def __init__(self, java_object = None):

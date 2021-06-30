@@ -16571,3 +16571,10 @@ class capella_tests(unittest.TestCase):
         tested.set_kind(value)
         self.assertEqual(tested.get_kind(), value)
         pass
+
+    def test_LogicalComponent_get_label(self):
+        tested = LogicalComponent()
+        value = "Some logical component"
+        tested.set_name(value)
+        self.assertEqual(tested.get_label(), "Some logical component")
+        pass
