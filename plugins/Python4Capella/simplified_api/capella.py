@@ -178,6 +178,15 @@ class TimeExpression(ValueSpecification):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_expression(self):
+        value =  self.get_java_object().getExpression()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_expression(self, value):
+        return self.get_java_object().setExpression(value.get_java_object())
 
 class TraceableElement(ModelElement):
     def __init__(self, java_object = None):
@@ -407,6 +416,8 @@ class Classifier(GeneralizableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_contained_properties(self):
+        return create_e_list(self.get_java_object().getContainedProperties(), Property)
 
 class InterfaceAllocator(CapellaElement):
     def __init__(self, java_object = None):
@@ -516,6 +527,22 @@ class MultiplicityElement(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_ordered(self):
+        return self.get_java_object().isOrdered()
+    def set_ordered(self, value):
+        self.get_java_object().setOrdered(value)
+    def get_unique(self):
+        return self.get_java_object().isUnique()
+    def set_unique(self, value):
+        self.get_java_object().setUnique(value)
+    def get_min_inclusive(self):
+        return self.get_java_object().isMinInclusive()
+    def set_min_inclusive(self, value):
+        self.get_java_object().setMinInclusive(value)
+    def get_max_inclusive(self):
+        return self.get_java_object().isMaxInclusive()
+    def set_max_inclusive(self, value):
+        self.get_java_object().setMaxInclusive(value)
 
 class FinalizableElement(ModelElement):
     def __init__(self, java_object = None):
@@ -538,6 +565,10 @@ class Property(Feature, TypedElement, MultiplicityElement, FinalizableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_aggregation_kind(self):
+        return self.get_java_object().getAggregationKind().getName()
+    def set_aggregation_kind(self, value):
+        self.get_java_object().setAggregationKind(value)
     def get_parent(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PropertyOwner", self)
     def get_association(self):
@@ -730,6 +761,8 @@ class GeneralClass(Classifier, FinalizableElement):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
         self.get_java_object().setVisibility(value)
+    def get_contained_operations(self):
+        return create_e_list(self.get_java_object().getContainedOperations(), Operation)
 
 class Interface(GeneralClass, InterfaceAllocator):
     def __init__(self, java_object = None):
@@ -745,6 +778,8 @@ class Interface(GeneralClass, InterfaceAllocator):
         return create_e_list(self.get_java_object().getUserComponents(), Component)
     def get_exchange_items(self):
         return create_e_list(self.get_java_object().getExchangeItems(), ExchangeItem)
+    def get_owned_exchange_item_allocations(self):
+        return create_e_list(self.get_java_object().getOwnedExchangeItemAllocations(), ExchangeItemAllocation)
     def get_requiring_component_ports(self):
         return create_e_list(self.get_java_object().getRequiringComponentPorts(), ComponentPort)
     def get_providing_component_ports(self):
@@ -800,6 +835,15 @@ class ProvidedInterfaceLink(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_interface(self):
+        value =  self.get_java_object().getInterface()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_interface(self, value):
+        return self.get_java_object().setInterface(value.get_java_object())
 
 class RequiredInterfaceLink(Relationship):
     def __init__(self, java_object = None):
@@ -809,6 +853,15 @@ class RequiredInterfaceLink(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_interface(self):
+        value =  self.get_java_object().getInterface()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_interface(self, value):
+        return self.get_java_object().setInterface(value.get_java_object())
 
 class InterfaceAllocation(Allocation):
     def __init__(self, java_object = None):
@@ -827,6 +880,8 @@ class AbstractEventOperation(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_invoking_sequence_messages(self):
+        return create_e_list(self.get_java_object().getInvokingSequenceMessages(), SequenceMessage)
 
 class ExchangeItemAllocation(Relationship, AbstractEventOperation, FinalizableElement):
     def __init__(self, java_object = None):
@@ -836,6 +891,15 @@ class ExchangeItemAllocation(Relationship, AbstractEventOperation, FinalizableEl
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_allocated_item(self):
+        value =  self.get_java_object().getAllocatedItem()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_allocated_item(self, value):
+        return self.get_java_object().setAllocatedItem(value.get_java_object())
     def get_exchange_item(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeItemAllocationExchangeItem", self)
     def get_scenarios(self):
@@ -858,6 +922,8 @@ class AbstractPhysicalArtifact(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_allocator_configuration_items(self):
+        return create_e_list(self.get_java_object().getAllocatorConfigurationItems(), ConfigurationItem)
 
 class AbstractPhysicalLinkEnd(CapellaElement):
     def __init__(self, java_object = None):
@@ -961,6 +1027,10 @@ class PhysicalPath(NamedElement, ComponentExchangeAllocator, AbstractPathInvolve
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_realized_physical_paths(self):
+        return create_e_list(self.get_java_object().getRealizedPhysicalPaths(), PhysicalPath)
+    def get_realizing_physical_paths(self):
+        return create_e_list(self.get_java_object().getRealizingPhysicalPaths(), PhysicalPath)
     def get_involved_physical_paths(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPathInvolvedPhysicalPath", self)
     def get_involved_physical_links(self):
@@ -1117,6 +1187,13 @@ class AbstractBooleanValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_boolean_type(self):
+        value =  self.get_java_object().getBooleanType()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class LiteralBooleanValue(AbstractBooleanValue):
     def __init__(self, java_object = None):
@@ -1175,6 +1252,13 @@ class AbstractStringValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_string_type(self):
+        value =  self.get_java_object().getStringType()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class LiteralStringValue(AbstractStringValue):
     def __init__(self, java_object = None):
@@ -1206,6 +1290,22 @@ class NumericValue(DataValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_unit(self):
+        value =  self.get_java_object().getUnit()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_unit(self, value):
+        return self.get_java_object().setUnit(value.get_java_object())
+    def get_numeric_type(self):
+        value =  self.get_java_object().getNumericType()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class LiteralNumericValue(NumericValue):
     def __init__(self, java_object = None):
@@ -1273,6 +1373,8 @@ class AbstractExpressionValue(AbstractBooleanValue, AbstractComplexValue, Abstra
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_expression(self):
+        return self.get_java_object().getExpression()
 
 class BinaryExpression(AbstractExpressionValue):
     def __init__(self, java_object = None):
@@ -1282,6 +1384,10 @@ class BinaryExpression(AbstractExpressionValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_operator(self):
+        return self.get_java_object().getOperator().getName()
+    def set_operator(self, value):
+        self.get_java_object().setOperator(value)
 
 class UnaryExpression(AbstractExpressionValue):
     def __init__(self, java_object = None):
@@ -1291,6 +1397,10 @@ class UnaryExpression(AbstractExpressionValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_operator(self):
+        return self.get_java_object().getOperator().getName()
+    def set_operator(self, value):
+        self.get_java_object().setOperator(value)
 
 class OpaqueExpression(CapellaElement, ValueSpecification):
     def __init__(self, java_object = None):
@@ -1309,6 +1419,8 @@ class RequirementsPkg(Structure):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_owned_requirements(self):
+        return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
 
 class Trace(Relationship, AbstractTrace):
     def __init__(self, java_object = None):
@@ -1944,7 +2056,7 @@ class CapabilityRealizationInvolvedElement(InvolvedElement):
         else:
             EObject.__init__(self, java_object)
     def get_involving_capability_realizations(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapabilityRealizationInvolvedElement_InvolvingCapabilityRealizations", self)
+        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
 class ConfigurationItem(CapabilityRealizationInvolvedElement, Component):
     def __init__(self, java_object = None):
@@ -2091,6 +2203,22 @@ class SequenceMessage(NamedElement):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
         self.get_java_object().setKind(value)
+    def get_exchange_context(self):
+        value =  self.get_java_object().getExchangeContext()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_exchange_context(self, value):
+        return self.get_java_object().setExchangeContext(value.get_java_object())
+    def get_invoked_operation(self):
+        value =  self.get_java_object().getInvokedOperation()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
     def get_exchanged_items(self):
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_parent_scenario(self):
@@ -2111,8 +2239,6 @@ class SequenceMessage(NamedElement):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SequenceMessage_AllocatedFunctionalExchange", self)
     def get_target(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SequenceMessageFunctionTarget", self)
-    def get_invoked_operation(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SequenceMessage_invokedOperation", self)
     def get_source(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SequenceMessagePartSource", self)
     def get_refining_sequence_message(self):
@@ -2177,6 +2303,8 @@ class InteractionFragment(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_covered_instance_roles(self):
+        return create_e_list(self.get_java_object().getCoveredInstanceRoles(), InstanceRole)
 
 class AbstractEnd(InteractionFragment):
     def __init__(self, java_object = None):
@@ -2267,10 +2395,17 @@ class InstanceRole(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_represented_instance(self):
+        value =  self.get_java_object().getRepresentedInstance()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_represented_instance(self, value):
+        return self.get_java_object().setRepresentedInstance(value.get_java_object())
     def get_parent_scenario(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.InstanceRole_parentScenario", self)
-    def get_represented_instance(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.InstanceRole_representedInstance", self)
 
 class EventReceiptOperation(Event):
     def __init__(self, java_object = None):
@@ -2280,6 +2415,15 @@ class EventReceiptOperation(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_operation(self):
+        value =  self.get_java_object().getOperation()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_operation(self, value):
+        return self.get_java_object().setOperation(value.get_java_object())
 
 class EventSentOperation(Event):
     def __init__(self, java_object = None):
@@ -2289,6 +2433,15 @@ class EventSentOperation(Event):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_operation(self):
+        value =  self.get_java_object().getOperation()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_operation(self, value):
+        return self.get_java_object().setOperation(value.get_java_object())
 
 class MergeLink(Trace):
     def __init__(self, java_object = None):
@@ -2499,6 +2652,10 @@ class CombinedFragment(AbstractFragment):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_operator(self):
+        return self.get_java_object().getOperator().getName()
+    def set_operator(self, value):
+        self.get_java_object().setOperator(value)
 
 class Gate(MessageEnd):
     def __init__(self, java_object = None):
@@ -2609,6 +2766,10 @@ class ConstraintDuration(NamedElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_duration(self):
+        return self.get_java_object().getDuration()
+    def set_duration(self, value):
+        self.get_java_object().setDuration(value)
 
 class SequenceMessageValuation(CapellaElement):
     def __init__(self, java_object = None):
@@ -2618,6 +2779,15 @@ class SequenceMessageValuation(CapellaElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_exchange_item_element(self):
+        value =  self.get_java_object().getExchangeItemElement()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_exchange_item_element(self, value):
+        return self.get_java_object().setExchangeItemElement(value.get_java_object())
     def get_value(self):
         value =  self.get_java_object().getValue()
         if value is None:
@@ -2683,6 +2853,10 @@ class Collection(Classifier, MultiplicityElement, DataValueContainer, Finalizabl
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
         self.get_java_object().setKind(value)
+    def get_aggregation_kind(self):
+        return self.get_java_object().getAggregationKind().getName()
+    def set_aggregation_kind(self, value):
+        self.get_java_object().setAggregationKind(value)
     def get_type(self):
         value =  self.get_java_object().getType()
         if value is None:
@@ -2692,6 +2866,8 @@ class Collection(Classifier, MultiplicityElement, DataValueContainer, Finalizabl
             return specific_cls(value)
     def set_type(self, value):
         return self.get_java_object().setType(value.get_java_object())
+    def get_contained_operations(self):
+        return create_e_list(self.get_java_object().getContainedOperations(), Operation)
 
 class AbstractCollectionValue(DataValue):
     def __init__(self, java_object = None):
@@ -2750,6 +2926,15 @@ class KeyPart(Relationship):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_property(self):
+        value =  self.get_java_object().getProperty()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_property(self, value):
+        return self.get_java_object().setProperty(value.get_java_object())
 
 class Operation(Feature, AbstractEvent, AbstractEventOperation):
     def __init__(self, java_object = None):
@@ -2759,6 +2944,8 @@ class Operation(Feature, AbstractEvent, AbstractEventOperation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_owned_parameters(self):
+        return create_e_list(self.get_java_object().getOwnedParameters(), Parameter)
     def get_realized_exchange_items(self):
         return create_e_list(self.get_java_object().getRealizedExchangeItems(), ExchangeItem)
     def get_scenarios(self):
@@ -2801,6 +2988,8 @@ class Service(Operation):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_thrown_exceptions(self):
+        return create_e_list(self.get_java_object().getThrownExceptions(), ExceptionCapella)
 
 class Union(Class):
     def __init__(self, java_object = None):
@@ -2814,6 +3003,26 @@ class Union(Class):
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
         self.get_java_object().setKind(value)
+    def get_discriminant(self):
+        value =  self.get_java_object().getDiscriminant()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_discriminant(self, value):
+        return self.get_java_object().setDiscriminant(value.get_java_object())
+    def get_default_property(self):
+        value =  self.get_java_object().getDefaultProperty()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_default_property(self, value):
+        return self.get_java_object().setDefaultProperty(value.get_java_object())
+    def get_contained_union_properties(self):
+        return create_e_list(self.get_java_object().getContainedUnionProperties(), UnionProperty)
 
 class UnionProperty(Property):
     def __init__(self, java_object = None):
@@ -2880,6 +3089,8 @@ class ExchangeItem(AbstractExchangeItem, AbstractEvent, AbstractSignal, Finaliza
         return create_e_list(self.get_java_object().getRealizedExchangeItems(), ExchangeItem)
     def get_realizing_exchange_items(self):
         return create_e_list(self.get_java_object().getRealizingExchangeItems(), ExchangeItem)
+    def get_realizing_operations(self):
+        return create_e_list(self.get_java_object().getRealizingOperations(), Operation)
     def get_exchange_item_elements(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangesItemExchangeItemElements", self)
     def get_allocating_function_output_ports(self):
@@ -2945,10 +3156,40 @@ class DataType(GeneralizableElement, DataValueContainer, FinalizableElement):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_discrete(self):
+        return self.get_java_object().isDiscrete()
+    def set_discrete(self, value):
+        self.get_java_object().setDiscrete(value)
+    def get_min_inclusive(self):
+        return self.get_java_object().isMinInclusive()
+    def set_min_inclusive(self, value):
+        self.get_java_object().setMinInclusive(value)
+    def get_max_inclusive(self):
+        return self.get_java_object().isMaxInclusive()
+    def set_max_inclusive(self, value):
+        self.get_java_object().setMaxInclusive(value)
+    def get_pattern(self):
+        return self.get_java_object().getPattern()
+    def set_pattern(self, value):
+        self.get_java_object().setPattern(value)
     def get_visibility(self):
         return self.get_java_object().getVisibility().getName()
     def set_visibility(self, value):
         self.get_java_object().setVisibility(value)
+    def get_default_value(self):
+        value =  self.get_java_object().getDefaultValue()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def get_null_value(self):
+        value =  self.get_java_object().getNullValue()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
 
 class BooleanType(DataType):
     def __init__(self, java_object = None):
@@ -2971,6 +3212,15 @@ class Enumeration(DataType):
             EObject.__init__(self, java_object)
     def get_owned_literals(self):
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationLiteral)
+    def get_domain_type(self):
+        value =  self.get_java_object().getDomainType()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_domain_type(self, value):
+        return self.get_java_object().setDomainType(value.get_java_object())
 
 class StringType(DataType):
     def __init__(self, java_object = None):
@@ -3002,6 +3252,15 @@ class PhysicalQuantity(NumericType):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_unit(self):
+        value =  self.get_java_object().getUnit()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_unit(self, value):
+        return self.get_java_object().setUnit(value.get_java_object())
 
 class Project(Structure):
     def __init__(self, java_object = None):
@@ -3194,10 +3453,16 @@ class AbstractFunction(Namespace, InvolvedElement, AbstractInstance, AbstractFun
         return self.get_java_object().getKind().getName()
     def set_kind(self, value):
         self.get_java_object().setKind(value)
+    def get_condition(self):
+        return self.get_java_object().getCondition()
+    def set_condition(self, value):
+        self.get_java_object().setCondition(value)
     def get_available_in_states(self):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
     def get_involving_capabilities(self):
         return create_e_list(self.get_java_object().getInvolvingCapabilities(), Capability)
+    def get_involving_capability_realizations(self):
+        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
     def get_involving_functional_chains(self):
         return create_e_list(self.get_java_object().getInvolvingFunctionalChains(), FunctionalChain)
     def get_parent(self):
@@ -3270,6 +3535,8 @@ class FunctionalChain(NamedElement, InvolverElement, InvolvedElement):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
     def get_involving_capabilities(self):
         return create_e_list(self.get_java_object().getInvolvingCapabilities(), Capability)
+    def get_involving_capability_realizations(self):
+        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
     def get_involved_functional_chains(self):
         return create_e_list(self.get_java_object().getRealizedFunctionalChains(), FunctionalChain)
     def get_realizing_functional_chains(self):
@@ -3306,8 +3573,6 @@ class FunctionalChain(NamedElement, InvolverElement, InvolvedElement):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChain_enactedComponents", self)
     def get_active_in_modes(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainAvailableInMode", self)
-    def get_involving_capability_realizations(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.LAAndPAFunctionalChainInvolvingCapabilityRealization", self)
     def get_parent_functional_chains(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainParent", self)
 
@@ -3833,6 +4098,8 @@ class PhysicalComponent(AbstractPhysicalArtifact, Component, CapabilityRealizati
         return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
     def get_owned_physical_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
+    def get_realized_logical_components(self):
+        return create_e_list(self.get_java_object().getRealizedLogicalComponents(), LogicalComponent)
     def get_deployed_physical_components(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalComponent_deployedPhysicalComponents", self)
     def get_physical_links(self):
@@ -4655,6 +4922,15 @@ class FunctionalChainInvolvementLink(FunctionalChainInvolvement, ReferenceHierar
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_exchange_context(self):
+        value =  self.get_java_object().getExchangeContext()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_exchange_context(self, value):
+        return self.get_java_object().setExchangeContext(value.get_java_object())
     def get_exchanged_items(self):
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_source(self):
@@ -4675,8 +4951,6 @@ class FunctionalChainInvolvementLink(FunctionalChainInvolvement, ReferenceHierar
             return specific_cls(value)
     def set_target(self, value):
         return self.get_java_object().setTarget(value.get_java_object())
-    def get_exchange_context(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainInvolvmentLinkExchangeContext", self)
 
 class SequenceLink(CapellaElement, ReferenceHierarchyContext):
     def __init__(self, java_object = None):
@@ -4686,6 +4960,15 @@ class SequenceLink(CapellaElement, ReferenceHierarchyContext):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_condition(self):
+        value =  self.get_java_object().getCondition()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_condition(self, value):
+        return self.get_java_object().setCondition(value.get_java_object())
     def get_links(self):
         return create_e_list(self.get_java_object().getLinks(), FunctionalChainInvolvementLink)
     def get_source(self):
@@ -4706,8 +4989,6 @@ class SequenceLink(CapellaElement, ReferenceHierarchyContext):
             return specific_cls(value)
     def set_target(self, value):
         return self.get_java_object().setTarget(value.get_java_object())
-    def get_condition(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SequenceLinkCondition", self)
     def get_owner(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementOwner", self)
     def get_target_control_node(self):
@@ -4861,8 +5142,6 @@ class Region(NamedElement):
             EObject.__init__(self, java_object)
     def get_owned_states(self):
         return create_e_list(self.get_java_object().getOwnedStates(), AbstractState)
-    def get_owned_transitions(self):
-        return create_e_list(self.get_java_object().getOwnedTransitions(), StateTransition)
     def get_owned_entry(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.State_OwnedEntryExitPoints", self)
 
@@ -4897,6 +5176,10 @@ class State(AbstractState):
             EObject.__init__(self, java_object)
     def get_owned_regions(self):
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
+    def get_available_functional_chains(self):
+        return create_e_list(self.get_java_object().getAvailableFunctionalChains(), FunctionalChain)
+    def get_available_capabilities(self):
+        return create_e_list(self.get_java_object().getAvailableAbstractCapabilities(), AbstractCapability)
     def get_entry(self):
         return create_e_list(self.get_java_object().getEntry(), AbstractEvent)
     def get_exit(self):
@@ -4969,6 +5252,8 @@ class StateTransition(NamedElement, Relationship):
             return specific_cls(value)
     def set_target(self, value):
         return self.get_java_object().setTarget(value.get_java_object())
+    def get_triggers(self):
+        return create_e_list(self.get_java_object().getTriggers(), AbstractEvent)
     def get_realized_state_transitions(self):
         return create_e_list(self.get_java_object().getRealizedStateTransitions(), StateTransition)
     def get_realizing_state_transitions(self):
@@ -5105,6 +5390,15 @@ class StateEvent(NamedElement, AbstractEvent):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_expression(self):
+        value =  self.get_java_object().getExpression()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_expression(self, value):
+        return self.get_java_object().setExpression(value.get_java_object())
 
 class ChangeEvent(StateEvent):
     def __init__(self, java_object = None):

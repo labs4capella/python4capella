@@ -390,7 +390,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_constrained_elements(self):
         tested = Constraint()
-        value = ComponentExchangeCategory()
+        value = Unit()
         tested.get_constrained_elements()
         pass
 
@@ -550,7 +550,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_valued_elements(self):
         tested = PropertyValue()
-        value = ComponentExchangeCategory()
+        value = Unit()
         tested.get_valued_elements().add(value)
         self.assertEqual(tested.get_valued_elements().get(0), value)
         pass
@@ -703,7 +703,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_valued_elements(self):
         tested = PropertyValueGroup()
-        value = ComponentExchangeCategory()
+        value = Unit()
         tested.get_valued_elements()
         pass
 
@@ -2921,29 +2921,25 @@ class capella_tests(unittest.TestCase):
     def test_OperationalCapability_included_capabilities(self):
         tested = OperationalCapability()
         value = CapabilityRealization()
-        tested.get_included_capabilities().add(value)
-        self.assertEqual(tested.get_included_capabilities().get(0), value)
+        tested.get_included_capabilities()
         pass
 
     def test_OperationalCapability_including_capabilities(self):
         tested = OperationalCapability()
         value = CapabilityRealization()
-        tested.get_including_capabilities().add(value)
-        self.assertEqual(tested.get_including_capabilities().get(0), value)
+        tested.get_including_capabilities()
         pass
 
     def test_OperationalCapability_extended_capabilities(self):
         tested = OperationalCapability()
         value = CapabilityRealization()
-        tested.get_extended_capabilities().add(value)
-        self.assertEqual(tested.get_extended_capabilities().get(0), value)
+        tested.get_extended_capabilities()
         pass
 
     def test_OperationalCapability_extending_capabilities(self):
         tested = OperationalCapability()
         value = CapabilityRealization()
-        tested.get_extending_capabilities().add(value)
-        self.assertEqual(tested.get_extending_capabilities().get(0), value)
+        tested.get_extending_capabilities()
         pass
 
     def test_OperationalCapability_available_in_states(self):
@@ -4771,29 +4767,25 @@ class capella_tests(unittest.TestCase):
     def test_Capability_included_capabilities(self):
         tested = Capability()
         value = CapabilityRealization()
-        tested.get_included_capabilities().add(value)
-        self.assertEqual(tested.get_included_capabilities().get(0), value)
+        tested.get_included_capabilities()
         pass
 
     def test_Capability_including_capabilities(self):
         tested = Capability()
         value = CapabilityRealization()
-        tested.get_including_capabilities().add(value)
-        self.assertEqual(tested.get_including_capabilities().get(0), value)
+        tested.get_including_capabilities()
         pass
 
     def test_Capability_extended_capabilities(self):
         tested = Capability()
         value = CapabilityRealization()
-        tested.get_extended_capabilities().add(value)
-        self.assertEqual(tested.get_extended_capabilities().get(0), value)
+        tested.get_extended_capabilities()
         pass
 
     def test_Capability_extending_capabilities(self):
         tested = Capability()
         value = CapabilityRealization()
-        tested.get_extending_capabilities().add(value)
-        self.assertEqual(tested.get_extending_capabilities().get(0), value)
+        tested.get_extending_capabilities()
         pass
 
     def test_Capability_available_in_states(self):
@@ -6881,29 +6873,25 @@ class capella_tests(unittest.TestCase):
     def test_CapabilityRealization_included_capabilities(self):
         tested = CapabilityRealization()
         value = CapabilityRealization()
-        tested.get_included_capabilities().add(value)
-        self.assertEqual(tested.get_included_capabilities().get(0), value)
+        tested.get_included_capabilities()
         pass
 
     def test_CapabilityRealization_including_capabilities(self):
         tested = CapabilityRealization()
         value = CapabilityRealization()
-        tested.get_including_capabilities().add(value)
-        self.assertEqual(tested.get_including_capabilities().get(0), value)
+        tested.get_including_capabilities()
         pass
 
     def test_CapabilityRealization_extended_capabilities(self):
         tested = CapabilityRealization()
         value = CapabilityRealization()
-        tested.get_extended_capabilities().add(value)
-        self.assertEqual(tested.get_extended_capabilities().get(0), value)
+        tested.get_extended_capabilities()
         pass
 
     def test_CapabilityRealization_extending_capabilities(self):
         tested = CapabilityRealization()
         value = CapabilityRealization()
-        tested.get_extending_capabilities().add(value)
-        self.assertEqual(tested.get_extending_capabilities().get(0), value)
+        tested.get_extending_capabilities()
         pass
 
     def test_CapabilityRealization_available_in_states(self):
@@ -7526,15 +7514,13 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponent_incoming_component_exchanges(self):
         tested = LogicalComponent()
         value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        self.assertEqual(tested.get_incoming_component_exchanges().get(0), value)
+        tested.get_incoming_component_exchanges()
         pass
 
     def test_LogicalComponent_outgoing_component_exchanges(self):
         tested = LogicalComponent()
         value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        self.assertEqual(tested.get_outgoing_component_exchanges().get(0), value)
+        tested.get_outgoing_component_exchanges()
         pass
 
     def test_LogicalComponent_inout_component_exchanges(self):
@@ -7739,8 +7725,7 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponent_involving_capability_realizations(self):
         tested = LogicalComponent()
         value = CapabilityRealization()
-        tested.get_involving_capability_realizations().add(value)
-        self.assertEqual(tested.get_involving_capability_realizations().get(0), value)
+        tested.get_involving_capability_realizations()
         pass
 
     def test_LogicalActor_contained_component_ports(self):
@@ -10904,8 +10889,7 @@ class capella_tests(unittest.TestCase):
     def test_State_available_functional_chains(self):
         tested = State()
         value = FunctionalChain()
-        tested.get_available_functional_chains().add(value)
-        self.assertEqual(tested.get_available_functional_chains().get(0), value)
+        tested.get_available_functional_chains()
         pass
 
     def test_State_available_operational_processes(self):
@@ -10918,8 +10902,7 @@ class capella_tests(unittest.TestCase):
     def test_State_available_capabilities(self):
         tested = State()
         value = CapabilityRealization()
-        tested.get_available_capabilities().add(value)
-        self.assertEqual(tested.get_available_capabilities().get(0), value)
+        tested.get_available_capabilities()
         pass
 
     def test_Mode_owned_regions(self):
@@ -10960,8 +10943,7 @@ class capella_tests(unittest.TestCase):
     def test_Mode_available_functional_chains(self):
         tested = Mode()
         value = FunctionalChain()
-        tested.get_available_functional_chains().add(value)
-        self.assertEqual(tested.get_available_functional_chains().get(0), value)
+        tested.get_available_functional_chains()
         pass
 
     def test_Mode_available_operational_processes(self):
@@ -10974,8 +10956,7 @@ class capella_tests(unittest.TestCase):
     def test_Mode_available_capabilities(self):
         tested = Mode()
         value = CapabilityRealization()
-        tested.get_available_capabilities().add(value)
-        self.assertEqual(tested.get_available_capabilities().get(0), value)
+        tested.get_available_capabilities()
         pass
 
     def test_Mode_incoming(self):
@@ -13133,8 +13114,7 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPort_allocator_configuration_items(self):
         tested = PhysicalPort()
         value = ConfigurationItem()
-        tested.get_allocator_configuration_items().add(value)
-        self.assertEqual(tested.get_allocator_configuration_items().get(0), value)
+        tested.get_allocator_configuration_items()
         pass
 
     def test_PhysicalPort_id(self):
@@ -13303,8 +13283,7 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalLink_allocator_configuration_items(self):
         tested = PhysicalLink()
         value = ConfigurationItem()
-        tested.get_allocator_configuration_items().add(value)
-        self.assertEqual(tested.get_allocator_configuration_items().get(0), value)
+        tested.get_allocator_configuration_items()
         pass
 
     def test_PhysicalLink_id(self):
@@ -13798,15 +13777,13 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPath_realized_physical_paths(self):
         tested = PhysicalPath()
         value = PhysicalPath()
-        tested.get_realized_physical_paths().add(value)
-        self.assertEqual(tested.get_realized_physical_paths().get(0), value)
+        tested.get_realized_physical_paths()
         pass
 
     def test_PhysicalPath_realizing_physical_paths(self):
         tested = PhysicalPath()
         value = PhysicalPath()
-        tested.get_realizing_physical_paths().add(value)
-        self.assertEqual(tested.get_realizing_physical_paths().get(0), value)
+        tested.get_realizing_physical_paths()
         pass
 
     def test_InterfacePkg_owned_property_value_pkgs(self):
@@ -14336,8 +14313,7 @@ class capella_tests(unittest.TestCase):
     def test_ExchangeItemAllocation_invoking_sequence_messages(self):
         tested = ExchangeItemAllocation()
         value = SequenceMessage()
-        tested.get_invoking_sequence_messages().add(value)
-        self.assertEqual(tested.get_invoking_sequence_messages().get(0), value)
+        tested.get_invoking_sequence_messages()
         pass
 
     def test_ExchangeItem_id(self):
@@ -14676,6 +14652,13 @@ class capella_tests(unittest.TestCase):
         tested.get_realizing_exchange_items()
         pass
 
+    def test_ExchangeItem_realizing_operations(self):
+        tested = ExchangeItem()
+        value = Operation()
+        tested.get_realizing_operations().add(value)
+        self.assertEqual(tested.get_realizing_operations().get(0), value)
+        pass
+
     def test_ExchangeItemElement_id(self):
         tested = ExchangeItemElement()
         value = "value"
@@ -14813,6 +14796,13 @@ class capella_tests(unittest.TestCase):
         value = Diagram()
         tested.get_representing_diagrams().add(value)
         self.assertEqual(tested.get_representing_diagrams().get(0), value)
+        pass
+
+    def test_ExchangeItemElement_type(self):
+        tested = ExchangeItemElement()
+        value = PhysicalQuantity()
+        tested.set_type(value)
+        self.assertEqual(tested.get_type(), value)
         pass
 
     def test_FunctionInputPort_allocator_component_port(self):
@@ -15303,8 +15293,7 @@ class capella_tests(unittest.TestCase):
     def test_FunctionalExchange_invoking_sequence_messages(self):
         tested = FunctionalExchange()
         value = SequenceMessage()
-        tested.get_invoking_sequence_messages().add(value)
-        self.assertEqual(tested.get_invoking_sequence_messages().get(0), value)
+        tested.get_invoking_sequence_messages()
         pass
 
     def test_FunctionalExchange_source(self):
@@ -16044,8 +16033,7 @@ class capella_tests(unittest.TestCase):
     def test_ComponentExchange_invoking_sequence_messages(self):
         tested = ComponentExchange()
         value = SequenceMessage()
-        tested.get_invoking_sequence_messages().add(value)
-        self.assertEqual(tested.get_invoking_sequence_messages().get(0), value)
+        tested.get_invoking_sequence_messages()
         pass
 
     def test_ComponentExchange_connected_component_ports(self):
@@ -16264,6 +16252,1633 @@ class capella_tests(unittest.TestCase):
         value = ComponentExchange()
         tested.get_exchanges().add(value)
         self.assertEqual(tested.get_exchanges().get(0), value)
+        pass
+
+    def test_Class_abstract(self):
+        tested = Class()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_Class_final(self):
+        tested = Class()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_Class_primitive(self):
+        tested = Class()
+        value = True
+        tested.set_primitive(value)
+        self.assertEqual(tested.get_primitive(), value)
+        pass
+
+    def test_Class_visibility(self):
+        tested = Class()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_Class_contained_properties(self):
+        tested = Class()
+        value = Property()
+        tested.get_contained_properties()
+        pass
+
+    def test_Class_contained_operations(self):
+        tested = Class()
+        value = Operation()
+        tested.get_contained_operations().add(value)
+        self.assertEqual(tested.get_contained_operations().get(0), value)
+        pass
+
+    def test_Collection_ordered(self):
+        tested = Collection()
+        value = True
+        tested.set_ordered(value)
+        self.assertEqual(tested.get_ordered(), value)
+        pass
+
+    def test_Collection_unique(self):
+        tested = Collection()
+        value = True
+        tested.set_unique(value)
+        self.assertEqual(tested.get_unique(), value)
+        pass
+
+    def test_Collection_min_inclusive(self):
+        tested = Collection()
+        value = True
+        tested.set_min_inclusive(value)
+        self.assertEqual(tested.get_min_inclusive(), value)
+        pass
+
+    def test_Collection_max_inclusive(self):
+        tested = Collection()
+        value = True
+        tested.set_max_inclusive(value)
+        self.assertEqual(tested.get_max_inclusive(), value)
+        pass
+
+    def test_Collection_abstract(self):
+        tested = Collection()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_Collection_final(self):
+        tested = Collection()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_Collection_primitive(self):
+        tested = Collection()
+        value = True
+        tested.set_primitive(value)
+        self.assertEqual(tested.get_primitive(), value)
+        pass
+
+    def test_Collection_collection_kind(self):
+        tested = Collection()
+        value = CollectionKind()
+        tested.set_collection_kind(value)
+        self.assertEqual(tested.get_collection_kind(), value)
+        pass
+
+    def test_Collection_aggregation_kind(self):
+        tested = Collection()
+        value = AggregationKind()
+        tested.set_aggregation_kind(value)
+        self.assertEqual(tested.get_aggregation_kind(), value)
+        pass
+
+    def test_Collection_visibility(self):
+        tested = Collection()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_Collection_contained_operations(self):
+        tested = Collection()
+        value = Operation()
+        tested.get_contained_operations().add(value)
+        self.assertEqual(tested.get_contained_operations().get(0), value)
+        pass
+
+    def test_Collection_min_card(self):
+        tested = Collection()
+        value = LiteralNumericValue()
+        tested.set_min_card(value)
+        self.assertEqual(tested.get_min_card(), value)
+        pass
+
+    def test_Collection_max_card(self):
+        tested = Collection()
+        value = LiteralNumericValue()
+        tested.set_max_card(value)
+        self.assertEqual(tested.get_max_card(), value)
+        pass
+
+    def test_Union_final(self):
+        tested = Union()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_Union_contained_union_properties(self):
+        tested = Union()
+        value = UnionProperty()
+        tested.get_contained_union_properties()
+        pass
+
+    def test_Union_discriminant(self):
+        tested = Union()
+        value = UnionProperty()
+        tested.set_discriminant(value)
+        self.assertEqual(tested.get_discriminant(), value)
+        pass
+
+    def test_Union_default_property(self):
+        tested = Union()
+        value = UnionProperty()
+        tested.set_default_property(value)
+        self.assertEqual(tested.get_default_property(), value)
+        pass
+
+    def test_Union_kind(self):
+        tested = Union()
+        value = UnionKind()
+        tested.set_kind(value)
+        self.assertEqual(tested.get_kind(), value)
+        pass
+
+    def test_Union_contained_operations(self):
+        tested = Union()
+        value = Operation()
+        tested.get_contained_operations().add(value)
+        self.assertEqual(tested.get_contained_operations().get(0), value)
+        pass
+
+    def test_Property_type(self):
+        tested = Property()
+        value = PhysicalQuantity()
+        tested.set_type(value)
+        self.assertEqual(tested.get_type(), value)
+        pass
+
+    def test_UnionProperty_type(self):
+        tested = UnionProperty()
+        value = PhysicalQuantity()
+        tested.set_type(value)
+        self.assertEqual(tested.get_type(), value)
+        pass
+
+    def test_Operation_visibility(self):
+        tested = Operation()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_Operation_realized_exchange_items(self):
+        tested = Operation()
+        value = ExchangeItem()
+        tested.get_realized_exchange_items().add(value)
+        self.assertEqual(tested.get_realized_exchange_items().get(0), value)
+        pass
+
+    def test_Operation_owned_parameters(self):
+        tested = Operation()
+        value = Parameter()
+        tested.get_owned_parameters().add(value)
+        self.assertEqual(tested.get_owned_parameters().get(0), value)
+        pass
+
+    def test_Operation_thrown_exceptions(self):
+        tested = Operation()
+        value = Exception()
+        tested.get_thrown_exceptions().add(value)
+        self.assertEqual(tested.get_thrown_exceptions().get(0), value)
+        pass
+
+    def test_Exception_abstract(self):
+        tested = Exception()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_Exception_visibility(self):
+        tested = Exception()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_Exception_super(self):
+        tested = Exception()
+        value = Exception()
+        tested.get_super().add(value)
+        self.assertEqual(tested.get_super().get(0), value)
+        pass
+
+    def test_Exception_sub(self):
+        tested = Exception()
+        value = Exception()
+        tested.get_sub().add(value)
+        self.assertEqual(tested.get_sub().get(0), value)
+        pass
+
+    def test_Enumeration_abstract(self):
+        tested = Enumeration()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_Enumeration_final(self):
+        tested = Enumeration()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_Enumeration_discrete(self):
+        tested = Enumeration()
+        value = True
+        tested.set_discrete(value)
+        self.assertEqual(tested.get_discrete(), value)
+        pass
+
+    def test_Enumeration_visibility(self):
+        tested = Enumeration()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_Enumeration_super(self):
+        tested = Enumeration()
+        value = PhysicalQuantity()
+        tested.get_super()
+        pass
+
+    def test_Enumeration_sub(self):
+        tested = Enumeration()
+        value = PhysicalQuantity()
+        tested.get_sub()
+        pass
+
+    def test_Enumeration_realized_informations(self):
+        tested = Enumeration()
+        value = PhysicalQuantity()
+        tested.get_realized_informations().add(value)
+        self.assertEqual(tested.get_realized_informations().get(0), value)
+        pass
+
+    def test_Enumeration_realizing_informations(self):
+        tested = Enumeration()
+        value = PhysicalQuantity()
+        tested.get_realizing_informations().add(value)
+        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        pass
+
+    def test_Enumeration_owned_property_value_pkgs(self):
+        tested = Enumeration()
+        value = PropertyValuePkg()
+        tested.get_owned_property_value_pkgs().add(value)
+        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        pass
+
+    def test_Enumeration_id(self):
+        tested = Enumeration()
+        value = "value"
+        tested.set_id(value)
+        self.assertEqual(tested.get_id(), value)
+        pass
+
+    def test_Enumeration_sid(self):
+        tested = Enumeration()
+        value = "value"
+        tested.set_sid(value)
+        self.assertEqual(tested.get_sid(), value)
+        pass
+
+    def test_Enumeration_name(self):
+        tested = Enumeration()
+        value = "value"
+        tested.set_name(value)
+        self.assertEqual(tested.get_name(), value)
+        pass
+
+    def test_Enumeration_summary(self):
+        tested = Enumeration()
+        value = "value"
+        tested.set_summary(value)
+        self.assertEqual(tested.get_summary(), value)
+        pass
+
+    def test_Enumeration_description(self):
+        tested = Enumeration()
+        value = "value"
+        tested.set_description(value)
+        self.assertEqual(tested.get_description(), value)
+        pass
+
+    def test_Enumeration_status(self):
+        tested = Enumeration()
+        value = Status()
+        tested.set_status(value)
+        self.assertEqual(tested.get_status(), value)
+        pass
+
+    def test_Enumeration_review(self):
+        tested = Enumeration()
+        value = "value"
+        tested.set_review(value)
+        self.assertEqual(tested.get_review(), value)
+        pass
+
+    def test_Enumeration_visible_in_documentation(self):
+        tested = Enumeration()
+        value = True
+        tested.set_visible_in_documentation(value)
+        self.assertEqual(tested.get_visible_in_documentation(), value)
+        pass
+
+    def test_Enumeration_visible_for_traceability(self):
+        tested = Enumeration()
+        value = True
+        tested.set_visible_for_traceability(value)
+        self.assertEqual(tested.get_visible_for_traceability(), value)
+        pass
+
+    def test_Enumeration_owned_constraints(self):
+        tested = Enumeration()
+        value = Constraint()
+        tested.get_owned_constraints().add(value)
+        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        pass
+
+    def test_Enumeration_constraints(self):
+        tested = Enumeration()
+        value = Constraint()
+        tested.get_constraints()
+        pass
+
+    def test_Enumeration_owned_property_values(self):
+        tested = Enumeration()
+        value = PropertyValue()
+        tested.get_owned_property_values().add(value)
+        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        pass
+
+    def test_Enumeration_applied_property_values(self):
+        tested = Enumeration()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        pass
+
+    def test_Enumeration_owned_property_value_groups(self):
+        tested = Enumeration()
+        value = PropertyValueGroup()
+        tested.get_owned_property_value_groups().add(value)
+        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        pass
+
+    def test_Enumeration_applied_property_value_groups(self):
+        tested = Enumeration()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        pass
+
+    def test_Enumeration_owned_enumeration_property_types(self):
+        tested = Enumeration()
+        value = EnumerationPropertyType()
+        tested.get_owned_enumeration_property_types().add(value)
+        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        pass
+
+    def test_Enumeration_owned_diagrams(self):
+        tested = Enumeration()
+        value = Diagram()
+        tested.get_owned_diagrams().add(value)
+        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        pass
+
+    def test_Enumeration_element_of_interest_for_diagrams(self):
+        tested = Enumeration()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        pass
+
+    def test_Enumeration_contextual_element_for_diagrams(self):
+        tested = Enumeration()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        pass
+
+    def test_Enumeration_representing_diagrams(self):
+        tested = Enumeration()
+        value = Diagram()
+        tested.get_representing_diagrams().add(value)
+        self.assertEqual(tested.get_representing_diagrams().get(0), value)
+        pass
+
+    def test_Enumeration_min_inclusive(self):
+        tested = Enumeration()
+        value = True
+        tested.set_min_inclusive(value)
+        self.assertEqual(tested.get_min_inclusive(), value)
+        pass
+
+    def test_Enumeration_max_inclusive(self):
+        tested = Enumeration()
+        value = True
+        tested.set_max_inclusive(value)
+        self.assertEqual(tested.get_max_inclusive(), value)
+        pass
+
+    def test_Enumeration_pattern(self):
+        tested = Enumeration()
+        value = "value"
+        tested.set_pattern(value)
+        self.assertEqual(tested.get_pattern(), value)
+        pass
+
+    def test_Enumeration_owned_literals(self):
+        tested = Enumeration()
+        value = EnumerationLiteral()
+        tested.get_owned_literals().add(value)
+        self.assertEqual(tested.get_owned_literals().get(0), value)
+        pass
+
+    def test_Enumeration_default_value(self):
+        tested = Enumeration()
+        value = EnumerationLiteral()
+        tested.set_default_value(value)
+        self.assertEqual(tested.get_default_value(), value)
+        pass
+
+    def test_Enumeration_min_value(self):
+        tested = Enumeration()
+        value = EnumerationLiteral()
+        tested.set_min_value(value)
+        self.assertEqual(tested.get_min_value(), value)
+        pass
+
+    def test_Enumeration_max_value(self):
+        tested = Enumeration()
+        value = EnumerationLiteral()
+        tested.set_max_value(value)
+        self.assertEqual(tested.get_max_value(), value)
+        pass
+
+    def test_Enumeration_null_value(self):
+        tested = Enumeration()
+        value = EnumerationLiteral()
+        tested.set_null_value(value)
+        self.assertEqual(tested.get_null_value(), value)
+        pass
+
+    def test_Enumeration_domain_type(self):
+        tested = Enumeration()
+        value = PhysicalQuantity()
+        tested.set_domain_type(value)
+        self.assertEqual(tested.get_domain_type(), value)
+        pass
+
+    def test_BooleanType_abstract(self):
+        tested = BooleanType()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_BooleanType_final(self):
+        tested = BooleanType()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_BooleanType_discrete(self):
+        tested = BooleanType()
+        value = True
+        tested.set_discrete(value)
+        self.assertEqual(tested.get_discrete(), value)
+        pass
+
+    def test_BooleanType_visibility(self):
+        tested = BooleanType()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_BooleanType_super(self):
+        tested = BooleanType()
+        value = PhysicalQuantity()
+        tested.get_super()
+        pass
+
+    def test_BooleanType_sub(self):
+        tested = BooleanType()
+        value = PhysicalQuantity()
+        tested.get_sub()
+        pass
+
+    def test_BooleanType_realized_informations(self):
+        tested = BooleanType()
+        value = PhysicalQuantity()
+        tested.get_realized_informations().add(value)
+        self.assertEqual(tested.get_realized_informations().get(0), value)
+        pass
+
+    def test_BooleanType_realizing_informations(self):
+        tested = BooleanType()
+        value = PhysicalQuantity()
+        tested.get_realizing_informations().add(value)
+        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        pass
+
+    def test_BooleanType_owned_property_value_pkgs(self):
+        tested = BooleanType()
+        value = PropertyValuePkg()
+        tested.get_owned_property_value_pkgs().add(value)
+        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        pass
+
+    def test_BooleanType_id(self):
+        tested = BooleanType()
+        value = "value"
+        tested.set_id(value)
+        self.assertEqual(tested.get_id(), value)
+        pass
+
+    def test_BooleanType_sid(self):
+        tested = BooleanType()
+        value = "value"
+        tested.set_sid(value)
+        self.assertEqual(tested.get_sid(), value)
+        pass
+
+    def test_BooleanType_name(self):
+        tested = BooleanType()
+        value = "value"
+        tested.set_name(value)
+        self.assertEqual(tested.get_name(), value)
+        pass
+
+    def test_BooleanType_summary(self):
+        tested = BooleanType()
+        value = "value"
+        tested.set_summary(value)
+        self.assertEqual(tested.get_summary(), value)
+        pass
+
+    def test_BooleanType_description(self):
+        tested = BooleanType()
+        value = "value"
+        tested.set_description(value)
+        self.assertEqual(tested.get_description(), value)
+        pass
+
+    def test_BooleanType_status(self):
+        tested = BooleanType()
+        value = Status()
+        tested.set_status(value)
+        self.assertEqual(tested.get_status(), value)
+        pass
+
+    def test_BooleanType_review(self):
+        tested = BooleanType()
+        value = "value"
+        tested.set_review(value)
+        self.assertEqual(tested.get_review(), value)
+        pass
+
+    def test_BooleanType_visible_in_documentation(self):
+        tested = BooleanType()
+        value = True
+        tested.set_visible_in_documentation(value)
+        self.assertEqual(tested.get_visible_in_documentation(), value)
+        pass
+
+    def test_BooleanType_visible_for_traceability(self):
+        tested = BooleanType()
+        value = True
+        tested.set_visible_for_traceability(value)
+        self.assertEqual(tested.get_visible_for_traceability(), value)
+        pass
+
+    def test_BooleanType_owned_constraints(self):
+        tested = BooleanType()
+        value = Constraint()
+        tested.get_owned_constraints().add(value)
+        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        pass
+
+    def test_BooleanType_constraints(self):
+        tested = BooleanType()
+        value = Constraint()
+        tested.get_constraints()
+        pass
+
+    def test_BooleanType_owned_property_values(self):
+        tested = BooleanType()
+        value = PropertyValue()
+        tested.get_owned_property_values().add(value)
+        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        pass
+
+    def test_BooleanType_applied_property_values(self):
+        tested = BooleanType()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        pass
+
+    def test_BooleanType_owned_property_value_groups(self):
+        tested = BooleanType()
+        value = PropertyValueGroup()
+        tested.get_owned_property_value_groups().add(value)
+        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        pass
+
+    def test_BooleanType_applied_property_value_groups(self):
+        tested = BooleanType()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        pass
+
+    def test_BooleanType_owned_enumeration_property_types(self):
+        tested = BooleanType()
+        value = EnumerationPropertyType()
+        tested.get_owned_enumeration_property_types().add(value)
+        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        pass
+
+    def test_BooleanType_owned_diagrams(self):
+        tested = BooleanType()
+        value = Diagram()
+        tested.get_owned_diagrams().add(value)
+        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        pass
+
+    def test_BooleanType_element_of_interest_for_diagrams(self):
+        tested = BooleanType()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        pass
+
+    def test_BooleanType_contextual_element_for_diagrams(self):
+        tested = BooleanType()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        pass
+
+    def test_BooleanType_representing_diagrams(self):
+        tested = BooleanType()
+        value = Diagram()
+        tested.get_representing_diagrams().add(value)
+        self.assertEqual(tested.get_representing_diagrams().get(0), value)
+        pass
+
+    def test_BooleanType_owned_literals(self):
+        tested = BooleanType()
+        value = LiteralBooleanValue()
+        tested.get_owned_literals().add(value)
+        self.assertEqual(tested.get_owned_literals().get(0), value)
+        pass
+
+    def test_BooleanType_default_value(self):
+        tested = BooleanType()
+        value = LiteralBooleanValue()
+        tested.set_default_value(value)
+        self.assertEqual(tested.get_default_value(), value)
+        pass
+
+    def test_StringType_abstract(self):
+        tested = StringType()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_StringType_final(self):
+        tested = StringType()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_StringType_discrete(self):
+        tested = StringType()
+        value = True
+        tested.set_discrete(value)
+        self.assertEqual(tested.get_discrete(), value)
+        pass
+
+    def test_StringType_visibility(self):
+        tested = StringType()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_StringType_super(self):
+        tested = StringType()
+        value = PhysicalQuantity()
+        tested.get_super()
+        pass
+
+    def test_StringType_sub(self):
+        tested = StringType()
+        value = PhysicalQuantity()
+        tested.get_sub()
+        pass
+
+    def test_StringType_realized_informations(self):
+        tested = StringType()
+        value = PhysicalQuantity()
+        tested.get_realized_informations().add(value)
+        self.assertEqual(tested.get_realized_informations().get(0), value)
+        pass
+
+    def test_StringType_realizing_informations(self):
+        tested = StringType()
+        value = PhysicalQuantity()
+        tested.get_realizing_informations().add(value)
+        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        pass
+
+    def test_StringType_owned_property_value_pkgs(self):
+        tested = StringType()
+        value = PropertyValuePkg()
+        tested.get_owned_property_value_pkgs().add(value)
+        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        pass
+
+    def test_StringType_id(self):
+        tested = StringType()
+        value = "value"
+        tested.set_id(value)
+        self.assertEqual(tested.get_id(), value)
+        pass
+
+    def test_StringType_sid(self):
+        tested = StringType()
+        value = "value"
+        tested.set_sid(value)
+        self.assertEqual(tested.get_sid(), value)
+        pass
+
+    def test_StringType_name(self):
+        tested = StringType()
+        value = "value"
+        tested.set_name(value)
+        self.assertEqual(tested.get_name(), value)
+        pass
+
+    def test_StringType_summary(self):
+        tested = StringType()
+        value = "value"
+        tested.set_summary(value)
+        self.assertEqual(tested.get_summary(), value)
+        pass
+
+    def test_StringType_description(self):
+        tested = StringType()
+        value = "value"
+        tested.set_description(value)
+        self.assertEqual(tested.get_description(), value)
+        pass
+
+    def test_StringType_status(self):
+        tested = StringType()
+        value = Status()
+        tested.set_status(value)
+        self.assertEqual(tested.get_status(), value)
+        pass
+
+    def test_StringType_review(self):
+        tested = StringType()
+        value = "value"
+        tested.set_review(value)
+        self.assertEqual(tested.get_review(), value)
+        pass
+
+    def test_StringType_visible_in_documentation(self):
+        tested = StringType()
+        value = True
+        tested.set_visible_in_documentation(value)
+        self.assertEqual(tested.get_visible_in_documentation(), value)
+        pass
+
+    def test_StringType_visible_for_traceability(self):
+        tested = StringType()
+        value = True
+        tested.set_visible_for_traceability(value)
+        self.assertEqual(tested.get_visible_for_traceability(), value)
+        pass
+
+    def test_StringType_owned_constraints(self):
+        tested = StringType()
+        value = Constraint()
+        tested.get_owned_constraints().add(value)
+        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        pass
+
+    def test_StringType_constraints(self):
+        tested = StringType()
+        value = Constraint()
+        tested.get_constraints()
+        pass
+
+    def test_StringType_owned_property_values(self):
+        tested = StringType()
+        value = PropertyValue()
+        tested.get_owned_property_values().add(value)
+        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        pass
+
+    def test_StringType_applied_property_values(self):
+        tested = StringType()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        pass
+
+    def test_StringType_owned_property_value_groups(self):
+        tested = StringType()
+        value = PropertyValueGroup()
+        tested.get_owned_property_value_groups().add(value)
+        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        pass
+
+    def test_StringType_applied_property_value_groups(self):
+        tested = StringType()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        pass
+
+    def test_StringType_owned_enumeration_property_types(self):
+        tested = StringType()
+        value = EnumerationPropertyType()
+        tested.get_owned_enumeration_property_types().add(value)
+        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        pass
+
+    def test_StringType_owned_diagrams(self):
+        tested = StringType()
+        value = Diagram()
+        tested.get_owned_diagrams().add(value)
+        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        pass
+
+    def test_StringType_element_of_interest_for_diagrams(self):
+        tested = StringType()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        pass
+
+    def test_StringType_contextual_element_for_diagrams(self):
+        tested = StringType()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        pass
+
+    def test_StringType_representing_diagrams(self):
+        tested = StringType()
+        value = Diagram()
+        tested.get_representing_diagrams().add(value)
+        self.assertEqual(tested.get_representing_diagrams().get(0), value)
+        pass
+
+    def test_StringType_min_inclusive(self):
+        tested = StringType()
+        value = True
+        tested.set_min_inclusive(value)
+        self.assertEqual(tested.get_min_inclusive(), value)
+        pass
+
+    def test_StringType_max_inclusive(self):
+        tested = StringType()
+        value = True
+        tested.set_max_inclusive(value)
+        self.assertEqual(tested.get_max_inclusive(), value)
+        pass
+
+    def test_StringType_pattern(self):
+        tested = StringType()
+        value = "value"
+        tested.set_pattern(value)
+        self.assertEqual(tested.get_pattern(), value)
+        pass
+
+    def test_StringType_min_length(self):
+        tested = StringType()
+        value = LiteralNumericValue()
+        tested.set_min_length(value)
+        self.assertEqual(tested.get_min_length(), value)
+        pass
+
+    def test_StringType_max_length(self):
+        tested = StringType()
+        value = LiteralNumericValue()
+        tested.set_max_length(value)
+        self.assertEqual(tested.get_max_length(), value)
+        pass
+
+    def test_StringType_default_value(self):
+        tested = StringType()
+        value = LiteralStringValue()
+        tested.set_default_value(value)
+        self.assertEqual(tested.get_default_value(), value)
+        pass
+
+    def test_StringType_null_value(self):
+        tested = StringType()
+        value = LiteralStringValue()
+        tested.set_null_value(value)
+        self.assertEqual(tested.get_null_value(), value)
+        pass
+
+    def test_NumericType_abstract(self):
+        tested = NumericType()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_NumericType_final(self):
+        tested = NumericType()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_NumericType_discrete(self):
+        tested = NumericType()
+        value = True
+        tested.set_discrete(value)
+        self.assertEqual(tested.get_discrete(), value)
+        pass
+
+    def test_NumericType_visibility(self):
+        tested = NumericType()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_NumericType_super(self):
+        tested = NumericType()
+        value = PhysicalQuantity()
+        tested.get_super()
+        pass
+
+    def test_NumericType_sub(self):
+        tested = NumericType()
+        value = PhysicalQuantity()
+        tested.get_sub()
+        pass
+
+    def test_NumericType_realized_informations(self):
+        tested = NumericType()
+        value = PhysicalQuantity()
+        tested.get_realized_informations().add(value)
+        self.assertEqual(tested.get_realized_informations().get(0), value)
+        pass
+
+    def test_NumericType_realizing_informations(self):
+        tested = NumericType()
+        value = PhysicalQuantity()
+        tested.get_realizing_informations().add(value)
+        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        pass
+
+    def test_NumericType_owned_property_value_pkgs(self):
+        tested = NumericType()
+        value = PropertyValuePkg()
+        tested.get_owned_property_value_pkgs().add(value)
+        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        pass
+
+    def test_NumericType_id(self):
+        tested = NumericType()
+        value = "value"
+        tested.set_id(value)
+        self.assertEqual(tested.get_id(), value)
+        pass
+
+    def test_NumericType_sid(self):
+        tested = NumericType()
+        value = "value"
+        tested.set_sid(value)
+        self.assertEqual(tested.get_sid(), value)
+        pass
+
+    def test_NumericType_name(self):
+        tested = NumericType()
+        value = "value"
+        tested.set_name(value)
+        self.assertEqual(tested.get_name(), value)
+        pass
+
+    def test_NumericType_summary(self):
+        tested = NumericType()
+        value = "value"
+        tested.set_summary(value)
+        self.assertEqual(tested.get_summary(), value)
+        pass
+
+    def test_NumericType_description(self):
+        tested = NumericType()
+        value = "value"
+        tested.set_description(value)
+        self.assertEqual(tested.get_description(), value)
+        pass
+
+    def test_NumericType_status(self):
+        tested = NumericType()
+        value = Status()
+        tested.set_status(value)
+        self.assertEqual(tested.get_status(), value)
+        pass
+
+    def test_NumericType_review(self):
+        tested = NumericType()
+        value = "value"
+        tested.set_review(value)
+        self.assertEqual(tested.get_review(), value)
+        pass
+
+    def test_NumericType_visible_in_documentation(self):
+        tested = NumericType()
+        value = True
+        tested.set_visible_in_documentation(value)
+        self.assertEqual(tested.get_visible_in_documentation(), value)
+        pass
+
+    def test_NumericType_visible_for_traceability(self):
+        tested = NumericType()
+        value = True
+        tested.set_visible_for_traceability(value)
+        self.assertEqual(tested.get_visible_for_traceability(), value)
+        pass
+
+    def test_NumericType_owned_constraints(self):
+        tested = NumericType()
+        value = Constraint()
+        tested.get_owned_constraints().add(value)
+        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        pass
+
+    def test_NumericType_constraints(self):
+        tested = NumericType()
+        value = Constraint()
+        tested.get_constraints()
+        pass
+
+    def test_NumericType_owned_property_values(self):
+        tested = NumericType()
+        value = PropertyValue()
+        tested.get_owned_property_values().add(value)
+        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        pass
+
+    def test_NumericType_applied_property_values(self):
+        tested = NumericType()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        pass
+
+    def test_NumericType_owned_property_value_groups(self):
+        tested = NumericType()
+        value = PropertyValueGroup()
+        tested.get_owned_property_value_groups().add(value)
+        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        pass
+
+    def test_NumericType_applied_property_value_groups(self):
+        tested = NumericType()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        pass
+
+    def test_NumericType_owned_enumeration_property_types(self):
+        tested = NumericType()
+        value = EnumerationPropertyType()
+        tested.get_owned_enumeration_property_types().add(value)
+        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        pass
+
+    def test_NumericType_owned_diagrams(self):
+        tested = NumericType()
+        value = Diagram()
+        tested.get_owned_diagrams().add(value)
+        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        pass
+
+    def test_NumericType_element_of_interest_for_diagrams(self):
+        tested = NumericType()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        pass
+
+    def test_NumericType_contextual_element_for_diagrams(self):
+        tested = NumericType()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        pass
+
+    def test_NumericType_representing_diagrams(self):
+        tested = NumericType()
+        value = Diagram()
+        tested.get_representing_diagrams().add(value)
+        self.assertEqual(tested.get_representing_diagrams().get(0), value)
+        pass
+
+    def test_NumericType_min_inclusive(self):
+        tested = NumericType()
+        value = True
+        tested.set_min_inclusive(value)
+        self.assertEqual(tested.get_min_inclusive(), value)
+        pass
+
+    def test_NumericType_max_inclusive(self):
+        tested = NumericType()
+        value = True
+        tested.set_max_inclusive(value)
+        self.assertEqual(tested.get_max_inclusive(), value)
+        pass
+
+    def test_NumericType_pattern(self):
+        tested = NumericType()
+        value = "value"
+        tested.set_pattern(value)
+        self.assertEqual(tested.get_pattern(), value)
+        pass
+
+    def test_NumericType_kind(self):
+        tested = NumericType()
+        value = NumericTypeKind()
+        tested.set_kind(value)
+        self.assertEqual(tested.get_kind(), value)
+        pass
+
+    def test_NumericType_min_value(self):
+        tested = NumericType()
+        value = LiteralNumericValue()
+        tested.set_min_value(value)
+        self.assertEqual(tested.get_min_value(), value)
+        pass
+
+    def test_NumericType_max_value(self):
+        tested = NumericType()
+        value = LiteralNumericValue()
+        tested.set_max_value(value)
+        self.assertEqual(tested.get_max_value(), value)
+        pass
+
+    def test_NumericType_default_value(self):
+        tested = NumericType()
+        value = LiteralNumericValue()
+        tested.set_default_value(value)
+        self.assertEqual(tested.get_default_value(), value)
+        pass
+
+    def test_NumericType_null_value(self):
+        tested = NumericType()
+        value = LiteralNumericValue()
+        tested.set_null_value(value)
+        self.assertEqual(tested.get_null_value(), value)
+        pass
+
+    def test_PhysicalQuantity_min_inclusive(self):
+        tested = PhysicalQuantity()
+        value = True
+        tested.set_min_inclusive(value)
+        self.assertEqual(tested.get_min_inclusive(), value)
+        pass
+
+    def test_PhysicalQuantity_max_inclusive(self):
+        tested = PhysicalQuantity()
+        value = True
+        tested.set_max_inclusive(value)
+        self.assertEqual(tested.get_max_inclusive(), value)
+        pass
+
+    def test_PhysicalQuantity_pattern(self):
+        tested = PhysicalQuantity()
+        value = "value"
+        tested.set_pattern(value)
+        self.assertEqual(tested.get_pattern(), value)
+        pass
+
+    def test_PhysicalQuantity_kind(self):
+        tested = PhysicalQuantity()
+        value = NumericTypeKind()
+        tested.set_kind(value)
+        self.assertEqual(tested.get_kind(), value)
+        pass
+
+    def test_PhysicalQuantity_min_value(self):
+        tested = PhysicalQuantity()
+        value = LiteralNumericValue()
+        tested.set_min_value(value)
+        self.assertEqual(tested.get_min_value(), value)
+        pass
+
+    def test_PhysicalQuantity_max_value(self):
+        tested = PhysicalQuantity()
+        value = LiteralNumericValue()
+        tested.set_max_value(value)
+        self.assertEqual(tested.get_max_value(), value)
+        pass
+
+    def test_PhysicalQuantity_default_value(self):
+        tested = PhysicalQuantity()
+        value = LiteralNumericValue()
+        tested.set_default_value(value)
+        self.assertEqual(tested.get_default_value(), value)
+        pass
+
+    def test_PhysicalQuantity_null_value(self):
+        tested = PhysicalQuantity()
+        value = LiteralNumericValue()
+        tested.set_null_value(value)
+        self.assertEqual(tested.get_null_value(), value)
+        pass
+
+    def test_PhysicalQuantity_abstract(self):
+        tested = PhysicalQuantity()
+        value = True
+        tested.set_abstract(value)
+        self.assertEqual(tested.get_abstract(), value)
+        pass
+
+    def test_PhysicalQuantity_final(self):
+        tested = PhysicalQuantity()
+        value = True
+        tested.set_final(value)
+        self.assertEqual(tested.get_final(), value)
+        pass
+
+    def test_PhysicalQuantity_discrete(self):
+        tested = PhysicalQuantity()
+        value = True
+        tested.set_discrete(value)
+        self.assertEqual(tested.get_discrete(), value)
+        pass
+
+    def test_PhysicalQuantity_visibility(self):
+        tested = PhysicalQuantity()
+        value = VisibilityKind()
+        tested.set_visibility(value)
+        self.assertEqual(tested.get_visibility(), value)
+        pass
+
+    def test_PhysicalQuantity_super(self):
+        tested = PhysicalQuantity()
+        value = PhysicalQuantity()
+        tested.get_super()
+        pass
+
+    def test_PhysicalQuantity_sub(self):
+        tested = PhysicalQuantity()
+        value = PhysicalQuantity()
+        tested.get_sub()
+        pass
+
+    def test_PhysicalQuantity_realized_informations(self):
+        tested = PhysicalQuantity()
+        value = PhysicalQuantity()
+        tested.get_realized_informations().add(value)
+        self.assertEqual(tested.get_realized_informations().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_realizing_informations(self):
+        tested = PhysicalQuantity()
+        value = PhysicalQuantity()
+        tested.get_realizing_informations().add(value)
+        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_owned_property_value_pkgs(self):
+        tested = PhysicalQuantity()
+        value = PropertyValuePkg()
+        tested.get_owned_property_value_pkgs().add(value)
+        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_id(self):
+        tested = PhysicalQuantity()
+        value = "value"
+        tested.set_id(value)
+        self.assertEqual(tested.get_id(), value)
+        pass
+
+    def test_PhysicalQuantity_sid(self):
+        tested = PhysicalQuantity()
+        value = "value"
+        tested.set_sid(value)
+        self.assertEqual(tested.get_sid(), value)
+        pass
+
+    def test_PhysicalQuantity_name(self):
+        tested = PhysicalQuantity()
+        value = "value"
+        tested.set_name(value)
+        self.assertEqual(tested.get_name(), value)
+        pass
+
+    def test_PhysicalQuantity_summary(self):
+        tested = PhysicalQuantity()
+        value = "value"
+        tested.set_summary(value)
+        self.assertEqual(tested.get_summary(), value)
+        pass
+
+    def test_PhysicalQuantity_description(self):
+        tested = PhysicalQuantity()
+        value = "value"
+        tested.set_description(value)
+        self.assertEqual(tested.get_description(), value)
+        pass
+
+    def test_PhysicalQuantity_status(self):
+        tested = PhysicalQuantity()
+        value = Status()
+        tested.set_status(value)
+        self.assertEqual(tested.get_status(), value)
+        pass
+
+    def test_PhysicalQuantity_review(self):
+        tested = PhysicalQuantity()
+        value = "value"
+        tested.set_review(value)
+        self.assertEqual(tested.get_review(), value)
+        pass
+
+    def test_PhysicalQuantity_visible_in_documentation(self):
+        tested = PhysicalQuantity()
+        value = True
+        tested.set_visible_in_documentation(value)
+        self.assertEqual(tested.get_visible_in_documentation(), value)
+        pass
+
+    def test_PhysicalQuantity_visible_for_traceability(self):
+        tested = PhysicalQuantity()
+        value = True
+        tested.set_visible_for_traceability(value)
+        self.assertEqual(tested.get_visible_for_traceability(), value)
+        pass
+
+    def test_PhysicalQuantity_owned_constraints(self):
+        tested = PhysicalQuantity()
+        value = Constraint()
+        tested.get_owned_constraints().add(value)
+        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_constraints(self):
+        tested = PhysicalQuantity()
+        value = Constraint()
+        tested.get_constraints()
+        pass
+
+    def test_PhysicalQuantity_owned_property_values(self):
+        tested = PhysicalQuantity()
+        value = PropertyValue()
+        tested.get_owned_property_values().add(value)
+        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_applied_property_values(self):
+        tested = PhysicalQuantity()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_owned_property_value_groups(self):
+        tested = PhysicalQuantity()
+        value = PropertyValueGroup()
+        tested.get_owned_property_value_groups().add(value)
+        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_applied_property_value_groups(self):
+        tested = PhysicalQuantity()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_owned_enumeration_property_types(self):
+        tested = PhysicalQuantity()
+        value = EnumerationPropertyType()
+        tested.get_owned_enumeration_property_types().add(value)
+        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_owned_diagrams(self):
+        tested = PhysicalQuantity()
+        value = Diagram()
+        tested.get_owned_diagrams().add(value)
+        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_element_of_interest_for_diagrams(self):
+        tested = PhysicalQuantity()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_contextual_element_for_diagrams(self):
+        tested = PhysicalQuantity()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_representing_diagrams(self):
+        tested = PhysicalQuantity()
+        value = Diagram()
+        tested.get_representing_diagrams().add(value)
+        self.assertEqual(tested.get_representing_diagrams().get(0), value)
+        pass
+
+    def test_PhysicalQuantity_unit(self):
+        tested = PhysicalQuantity()
+        value = Unit()
+        tested.set_unit(value)
+        self.assertEqual(tested.get_unit(), value)
+        pass
+
+    def test_Unit_id(self):
+        tested = Unit()
+        value = "value"
+        tested.set_id(value)
+        self.assertEqual(tested.get_id(), value)
+        pass
+
+    def test_Unit_sid(self):
+        tested = Unit()
+        value = "value"
+        tested.set_sid(value)
+        self.assertEqual(tested.get_sid(), value)
+        pass
+
+    def test_Unit_name(self):
+        tested = Unit()
+        value = "value"
+        tested.set_name(value)
+        self.assertEqual(tested.get_name(), value)
+        pass
+
+    def test_Unit_summary(self):
+        tested = Unit()
+        value = "value"
+        tested.set_summary(value)
+        self.assertEqual(tested.get_summary(), value)
+        pass
+
+    def test_Unit_description(self):
+        tested = Unit()
+        value = "value"
+        tested.set_description(value)
+        self.assertEqual(tested.get_description(), value)
+        pass
+
+    def test_Unit_status(self):
+        tested = Unit()
+        value = Status()
+        tested.set_status(value)
+        self.assertEqual(tested.get_status(), value)
+        pass
+
+    def test_Unit_review(self):
+        tested = Unit()
+        value = "value"
+        tested.set_review(value)
+        self.assertEqual(tested.get_review(), value)
+        pass
+
+    def test_Unit_visible_in_documentation(self):
+        tested = Unit()
+        value = True
+        tested.set_visible_in_documentation(value)
+        self.assertEqual(tested.get_visible_in_documentation(), value)
+        pass
+
+    def test_Unit_visible_for_traceability(self):
+        tested = Unit()
+        value = True
+        tested.set_visible_for_traceability(value)
+        self.assertEqual(tested.get_visible_for_traceability(), value)
+        pass
+
+    def test_Unit_owned_constraints(self):
+        tested = Unit()
+        value = Constraint()
+        tested.get_owned_constraints().add(value)
+        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        pass
+
+    def test_Unit_constraints(self):
+        tested = Unit()
+        value = Constraint()
+        tested.get_constraints()
+        pass
+
+    def test_Unit_owned_property_values(self):
+        tested = Unit()
+        value = PropertyValue()
+        tested.get_owned_property_values().add(value)
+        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        pass
+
+    def test_Unit_applied_property_values(self):
+        tested = Unit()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        pass
+
+    def test_Unit_owned_property_value_groups(self):
+        tested = Unit()
+        value = PropertyValueGroup()
+        tested.get_owned_property_value_groups().add(value)
+        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        pass
+
+    def test_Unit_applied_property_value_groups(self):
+        tested = Unit()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        pass
+
+    def test_Unit_owned_enumeration_property_types(self):
+        tested = Unit()
+        value = EnumerationPropertyType()
+        tested.get_owned_enumeration_property_types().add(value)
+        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        pass
+
+    def test_Unit_owned_diagrams(self):
+        tested = Unit()
+        value = Diagram()
+        tested.get_owned_diagrams().add(value)
+        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        pass
+
+    def test_Unit_element_of_interest_for_diagrams(self):
+        tested = Unit()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        pass
+
+    def test_Unit_contextual_element_for_diagrams(self):
+        tested = Unit()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        pass
+
+    def test_Unit_representing_diagrams(self):
+        tested = Unit()
+        value = Diagram()
+        tested.get_representing_diagrams().add(value)
+        self.assertEqual(tested.get_representing_diagrams().get(0), value)
         pass
 
     def test_PVMT_getPVNames(self):
