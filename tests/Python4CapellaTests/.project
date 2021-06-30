@@ -3,6 +3,7 @@
 	<name>Python4CapellaTests</name>
 	<comment></comment>
 	<projects>
+		<project>Python4Capella</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
