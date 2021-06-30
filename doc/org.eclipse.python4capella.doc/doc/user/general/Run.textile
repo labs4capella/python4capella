@@ -22,19 +22,19 @@ You can also run your Python4Capella script from the command line:
 
 Windows
 
-bc. eclipse -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+bc. eclipse -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Linux and Mac OS X
 
-bc. ./eclipse -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+bc. ./eclipse -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:
 
 Windows
 
-bc. capella -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+bc. capella -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Linux and Mac OS X
 
-bc. ./capella -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/enduser/my_script.py *arguments*
+bc. ./capella -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
