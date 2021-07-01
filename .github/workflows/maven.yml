@@ -49,7 +49,7 @@ jobs:
       env:
         PROFILE: ${{ matrix.profile }}
       run: |
-        if [[ "$PROFILE" == *"updatesites"* && "$(git tag --points-at HEAD)" != "" ]]; then export IS_RELEASE=true; fi
+        if [[ "$PROFILE" == *"updatesite"* && "$(git tag --points-at HEAD)" != "" ]]; then export IS_RELEASE=true; fi
         echo ::set-output name=IS_RELEASE::${IS_RELEASE}
 
     - name: Set up JDK ${{ matrix.java }}
