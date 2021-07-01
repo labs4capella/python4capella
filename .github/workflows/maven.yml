@@ -41,12 +41,12 @@ jobs:
         echo PROFILE ${{ matrix.profile }}
 
     - name: Check if update site is needed
-      id: updatesite_check
+      id: release_check
       env:
         PROFILE: ${{ matrix.profile }}
       run: |
-        if [[ "$PROFILE" == *"updatesites"* ]]; then export UPDATE_SITES=true; fi
-        echo ::set-output name=UPDATE_SITES::${UPDATE_SITES}
+        if [[ "$PROFILE" == *"updatesites"* && "$(git tag --points-at HEAD)" != "" ]]; then export IS_RELEASE=true; fi
+        echo ::set-output name=IS_RELEASE::${IS_RELEASE}
 
     - name: Check out code
       uses: actions/checkout@v2
@@ -61,11 +61,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
 
-#    - name: Install metacity
-#      if: ${{ steps.updatesite_check.outputs.UPDATE_SITES }}
-#      run: |
-#        sudo apt install metacity
-
     - name: Build with Maven (${{ matrix.profile }})
       env:
         MAVEN_OPTS: -XX:MaxPermSize=512m -Xmx2048m -Xms1024m
@@ -75,7 +70,7 @@ jobs:
 
     - name: Prepare deploy local directory
       id: prepare_deploy
-      if: ${{ steps.updatesite_check.outputs.UPDATE_SITES }}
+      if: ${{ steps.release_check.outputs.IS_RELEASE }}
       run: |
         export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)/nightly"
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
@@ -83,9 +78,27 @@ jobs:
         ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
         echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
 
-#
-#    - name: Deploy to TODO
-#      if: ${{ steps.updatesite_check.outputs.UPDATE_SITES }}
-#      TODO deploy ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }} somewhere
-#
+    - name: Create Release ${{ github.ref }}
+      id: create_release
+      if: ${{ steps.release_check.outputs.IS_RELEASE }}
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload_release_asset 
+      if: ${{ steps.release_check.outputs.IS_RELEASE }}
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        asset_path: ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
+        asset_name: org.eclipse.python4capella.update.zip
+        asset_content_type: application/zip
 
