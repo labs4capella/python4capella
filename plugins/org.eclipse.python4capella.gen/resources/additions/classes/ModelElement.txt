@@ -1,0 +1,3 @@
+    def get_label(self):
+        return self.get_java_object().getLabel()
+

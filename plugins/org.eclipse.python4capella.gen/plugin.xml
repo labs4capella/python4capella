@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="CapellaModule.commands.category"
+            name="Sample Category">
+      </category>
+      <command
+            categoryId="CapellaModule.commands.category"
+            id="CapellaModule.commands.sampleCommand"
+            name="Sample Command">
+      </command>
+      <command
+            categoryId="CapellaModule.commands.category"
+            id="CapellaModule.commands.sampleCommand2"
+            name="Sample Command2">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.python4capella.gen.handlers.ProduceCapellaPythonAPIFromEcoreHandler"
+            commandId="CapellaModule.commands.sampleCommand">
+      </handler>
+      <handler
+            class="org.eclipse.python4capella.gen.handlers.ProduceCapellaPythonAPIFromCapellaHandler"
+            commandId="CapellaModule.commands.sampleCommand2">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="CapellaModule.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
+      </key>
+      <key
+            commandId="CapellaModule.commands.sampleCommand2"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+7">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="CapellaModule.menus.sampleMenu"
+               label="Sample Menu"
+               mnemonic="M">
+            <command
+                  commandId="CapellaModule.commands.sampleCommand"
+                  id="CapellaModule.menus.sampleCommand"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="CapellaModule.toolbars.sampleToolbar">
+            <command
+                  commandId="CapellaModule.commands.sampleCommand"
+                  icon="icons/sample.png"
+                  id="CapellaModule.toolbars.sampleCommand"
+                  tooltip="Say hello world">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="CapellaModule.commands.sampleCommand2"
+               icon="icons/sample.png"
+               id="CapellaModule.toolbars.sampleCommand1"
+               label="Generate Python from Capella"
+               tooltip="Say hello world">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
