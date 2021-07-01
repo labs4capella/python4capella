@@ -6,4 +6,5 @@ You will find the following sections:
 * "*Python4Capella project structure*":general/Python4CapellaProjectSturcture.html Describes all elements from the Python4Capella project.
 * "*Run a script*":general/Run.html Describes how you can run your Python scripts (Within Capella, from the command line).
 * "*Debug a script*":general/Debug.html Describes how you can run your Python scripts.
+* "*Write a script*":general/Write.html Describes how you can write your Python scripts.
 
