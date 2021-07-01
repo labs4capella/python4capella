@@ -1,6 +1,9 @@
 include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
     from simplified_api.capella import *
+include('workspace://Python4Capella/simplified_api/requirement.py')
+if False:
+    from simplified_api.requirement import *
 
 import unittest
 
