@@ -10,12 +10,17 @@
       <command
             categoryId="CapellaModule.commands.category"
             id="CapellaModule.commands.sampleCommand"
-            name="Sample Command">
+            name="Generate Python API from Ecore">
       </command>
       <command
             categoryId="CapellaModule.commands.category"
             id="CapellaModule.commands.sampleCommand2"
-            name="Sample Command2">
+            name="Generate Python Tests from Capella">
+      </command>
+      <command
+            categoryId="CapellaModule.commands.category"
+            id="CapellaModule.commands.sampleCommand3"
+            name="Generate Python API from Capella">
       </command>
    </extension>
    <extension
@@ -25,40 +30,16 @@
             commandId="CapellaModule.commands.sampleCommand">
       </handler>
       <handler
-            class="org.eclipse.python4capella.gen.handlers.ProduceCapellaPythonAPIFromCapellaHandler"
+            class="org.eclipse.python4capella.gen.handlers.ProduceCapellaPythonTestsFromCapellaHandler"
             commandId="CapellaModule.commands.sampleCommand2">
+      </handler>
+      <handler
+            class="org.eclipse.python4capella.gen.handlers.ProduceCapellaPythonAPIFromCapellaHandler"
+            commandId="CapellaModule.commands.sampleCommand3">
       </handler>
    </extension>
    <extension
-         point="org.eclipse.ui.bindings">
-      <key
-            commandId="CapellaModule.commands.sampleCommand"
-            contextId="org.eclipse.ui.contexts.window"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+6">
-      </key>
-      <key
-            commandId="CapellaModule.commands.sampleCommand2"
-            contextId="org.eclipse.ui.contexts.window"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+7">
-      </key>
-   </extension>
-   <extension
          point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
-         <menu
-               id="CapellaModule.menus.sampleMenu"
-               label="Sample Menu"
-               mnemonic="M">
-            <command
-                  commandId="CapellaModule.commands.sampleCommand"
-                  id="CapellaModule.menus.sampleCommand"
-                  mnemonic="S">
-            </command>
-         </menu>
-      </menuContribution>
       <menuContribution
             locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
          <toolbar
@@ -67,6 +48,7 @@
                   commandId="CapellaModule.commands.sampleCommand"
                   icon="icons/sample.png"
                   id="CapellaModule.toolbars.sampleCommand"
+                  label="Generate Python API from Ecore"
                   tooltip="Say hello world">
             </command>
          </toolbar>
@@ -77,9 +59,16 @@
          <command
                commandId="CapellaModule.commands.sampleCommand2"
                icon="icons/sample.png"
-               id="CapellaModule.toolbars.sampleCommand1"
-               label="Generate Python from Capella"
-               tooltip="Say hello world">
+               id="CapellaModule.toolbars.sampleCommand2"
+               label="Generate Python Tests from Capella"
+               tooltip="Generate Python Tests from Capella">
+         </command>
+         <command
+               commandId="CapellaModule.commands.sampleCommand3"
+               icon="icons/sample.png"
+               id="CapellaModule.toolbars.sampleCommand3"
+               label="Generate Python API from Capella"
+               tooltip="Generate Python API from Capella">
          </command>
       </menuContribution>
    </extension>

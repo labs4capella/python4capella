@@ -34,7 +34,7 @@ import org.polarsys.capella.core.data.information.Property;
 import org.polarsys.capella.core.data.information.datavalue.LiteralNumericValue;
 import org.polarsys.capella.core.data.information.datavalue.NumericValue;
 
-public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
+public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler {
 
 	/**
 	 * The new line separator.
