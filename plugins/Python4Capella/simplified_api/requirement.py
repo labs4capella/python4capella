@@ -15,10 +15,38 @@ class RequirementAddOn():
         return res
     @staticmethod
     def get_incoming_requirements(capellaModel):
-        raise AttributeError("TODO")
+        #: :type capellaModel: CapellaModel
+        res = []
+        modules = RequirementAddOn.get_requirement_modules(capellaModel)
+        for module in modules:
+            for requirement in module.get_java_object().getOwnedRequirements():
+                for relation in requirement.getOwnedRelations():
+                    if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/requirements":
+                        res.append(Requirement(requirement))
+                        break
+                try:
+                    res.index(requirement)
+                    break
+                except ValueError:
+                    continue
+        return res
     @staticmethod
     def get_outgoing_requirements(capellaModel):
-        raise AttributeError("TODO")
+        #: :type capellaModel: CapellaModel
+        res = []
+        modules = RequirementAddOn.get_requirement_modules(capellaModel)
+        for module in modules:
+            for requirement in module.get_java_object().getOwnedRequirements():
+                for relation in requirement.getOwnedRelations():
+                    if relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/requirements":
+                        res.append(Requirement(requirement))
+                        break
+                try:
+                    res.index(requirement)
+                    break
+                except ValueError:
+                    continue
+        return res
     @staticmethod
     def get_relation_type(eObject1, eObject2):
         raise AttributeError("TODO")
