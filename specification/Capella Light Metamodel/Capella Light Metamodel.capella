@@ -3510,6 +3510,18 @@
                     id="4e66ce5e-46df-438b-a604-a5790a02eb60" value="1"/>
               </ownedMembers>
             </ownedAssociations>
+            <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
+                id="5ba0b8b9-581e-42ef-99ca-0ebbf2db70bf" name="Capella Light MetamodelAssociation21"
+                navigableMembers="#b7eaaac4-5724-4b1a-a73d-16f9595050b5">
+              <ownedMembers xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="6a7ecbac-dcfc-4ea0-93c0-bc2a0d6f9279" name="node" abstractType="#8b417d78-c0d5-4e16-b757-bf103c0b3d97"
+                  aggregationKind="ASSOCIATION">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="91a26eec-688d-4d97-9a00-62f1d47a1420" value="1"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="ee1f8c84-9135-4d23-9d85-b67bf711c2fc" value="1"/>
+              </ownedMembers>
+            </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="39d0e280-96c4-4f29-8817-f29a41ce6db2" name="PhysicalArchitecture"
                 description="&lt;p>The element containing all definitions from the Physical Architecture.&lt;/p>&#xA;&#xA;&lt;p>The Physical Architecture (or finalized solution)&amp;nbsp;aims at defining how the system will be developed and built&lt;/p>&#xA;">
@@ -3813,6 +3825,14 @@
                     id="9493d6bc-9cea-4dcb-b2a6-32b49ac5b028" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="e645e913-bff1-4faa-84f2-d6870afa8602" name="" value="*"/>
+              </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="b7eaaac4-5724-4b1a-a73d-16f9595050b5" name="ownedStateMachines"
+                  abstractType="#431ebd1e-f53f-48bd-b95f-5b6c8f8c9a7c" aggregationKind="COMPOSITION">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="9aa0012e-0eb9-46d7-a3a8-2309c8ed0dad" name="" value="0"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="07ec5e45-48d4-4fd6-9374-3ff1fb1939d0" name="" value="*"/>
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
@@ -5296,18 +5316,6 @@
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="1676435f-0def-43b5-b029-6a758692d414" name="csAssociation16" navigableMembers="#e4646219-79f8-4f09-b867-b36e1b43e80a #7e349e59-d3fe-4124-9e8c-5994c25b8408"/>
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
-                id="5ba0b8b9-581e-42ef-99ca-0ebbf2db70bf" name="Capella Light MetamodelAssociation21"
-                navigableMembers="#b7eaaac4-5724-4b1a-a73d-16f9595050b5">
-              <ownedMembers xsi:type="org.polarsys.capella.core.data.information:Property"
-                  id="6a7ecbac-dcfc-4ea0-93c0-bc2a0d6f9279" name="node" abstractType="#187ed12e-8722-4fef-b5a1-b605bd98840b"
-                  aggregationKind="ASSOCIATION">
-                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
-                    id="91a26eec-688d-4d97-9a00-62f1d47a1420" value="1"/>
-                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
-                    id="ee1f8c84-9135-4d23-9d85-b67bf711c2fc" value="1"/>
-              </ownedMembers>
-            </ownedAssociations>
-            <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="fcc05b6c-303a-47b5-86d8-991d2c6cf3e9" name="csAssociation18" navigableMembers="#e11ce18c-b76a-4711-9514-2ac0148fabb9 #523eda1f-07c5-453d-87d0-58ccd4f1da41"/>
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="1888eb81-0d66-44bd-a271-f73ef3f4c033" name="csAssociation19" navigableMembers="#5ef90648-7423-48ae-88af-fd42a15c1566">
@@ -5371,14 +5379,6 @@
                     id="063de7b4-4525-4560-b0d2-d5b35cbcc289" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="514fc904-d726-4d37-9435-756558084c15" name="" value="*"/>
-              </ownedFeatures>
-              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
-                  id="b7eaaac4-5724-4b1a-a73d-16f9595050b5" name="ownedStateMachines"
-                  abstractType="#431ebd1e-f53f-48bd-b95f-5b6c8f8c9a7c" aggregationKind="COMPOSITION">
-                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
-                    id="9aa0012e-0eb9-46d7-a3a8-2309c8ed0dad" name="" value="0"/>
-                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
-                    id="07ec5e45-48d4-4fd6-9374-3ff1fb1939d0" name="" value="*"/>
               </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
