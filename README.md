@@ -86,9 +86,7 @@ Then you will need to setup Python 2.7 in your environment.
 
 ## Update site
 
-You will need to add the following update site to your Capella installation:
-
-TODO add the update site URL
+You will need to add the update site to your Capella installation, you can see available releases [here](https://github.com/labs4capella/python4capella/releases).
 
 If you don't know how to install from an update site you can have a look at our [video](https://www.youtube.com/watch?v=qYTrO7THer0).
 
@@ -110,7 +108,7 @@ Then unzip it in the dropins folder in the same folder as your Capella executabl
 
 If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
-TODO add the Python 2.7 zip file URL
+[https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python27.zip](https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python27.zip)
 
 If you are running Linux or MacOS X, please check your distribution documentation to install Python 2.7 on your system.
 
