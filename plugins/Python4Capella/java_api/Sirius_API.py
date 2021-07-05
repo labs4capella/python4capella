@@ -6,3 +6,5 @@ def get_representation_descriptors_sirius(self):
 def export_image_sirius(self, file_path):
     """Exports an image to the given file path from the given RepresentationDescriptor"""
     exportImage(self.get_java_object(), file_path)
+def load_sirius_session(aird_path):
+    return loadSiriusSession(aird_path)

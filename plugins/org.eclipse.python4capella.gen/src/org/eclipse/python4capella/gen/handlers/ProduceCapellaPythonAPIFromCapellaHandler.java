@@ -7,11 +7,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
@@ -23,7 +27,11 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.polarsys.capella.common.helpers.query.IQuery;
+import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
+import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacore.Feature;
+import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
 import org.polarsys.capella.core.data.capellacore.Generalization;
 import org.polarsys.capella.core.data.information.Class;
 import org.polarsys.capella.core.data.information.DataPkg;
@@ -40,6 +48,8 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 	private final Map<String, String> featureRenames = initFeatureRenames();
 
+	final Map<String, List<ICategory>> queries = getQueryMapping();
+
 	/**
 	 * The new line separator.
 	 */
@@ -49,7 +59,71 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		DataPkg root = (DataPkg) ((IStructuredSelection) HandlerUtil.getCurrentSelection(event)).getFirstElement();
 
-		for (DataPkg pkg : getAllDataPkg(root)) {
+		// generateMultiFiles(root);
+		generateOneFile(root);
+
+		return null;
+	}
+
+	private void generateOneFile(DataPkg root) {
+
+		final Set<Class> remainingClasses = new LinkedHashSet<>();
+		for (DataPkg pkg : root.getOwnedDataPkgs()) {
+			for (Class cls : pkg.getOwnedClasses()) {
+				remainingClasses.add(cls);
+			}
+		}
+
+		final List<Class> orderedClasses = new ArrayList<>();
+		final Set<Class> knwonClasses = new HashSet<>();
+		while (!remainingClasses.isEmpty()) {
+			final List<Class> toRemove = new ArrayList<>();
+			for (Class cls : remainingClasses) {
+				if (knwonClasses.containsAll(getSuperClassesWithoutEObject(cls))) {
+					orderedClasses.add(cls);
+					knwonClasses.add(cls);
+					toRemove.add(cls);
+				}
+			}
+			remainingClasses.removeAll(toRemove);
+		}
+
+		final File file = new File("/tmp/capella/" + "capella" + ".py");
+		try {
+			if (!file.exists()) {
+				file.getParentFile().mkdirs();
+				file.createNewFile();
+			}
+			try (OutputStream os = new FileOutputStream(file)) {
+				os.write(getHeader("capella").getBytes());
+				for (Class cls : orderedClasses) {
+					if (!"EObject".equals(cls.getName())) {
+						os.write(NL.getBytes());
+						os.write(generateClass(cls).getBytes());
+					}
+				}
+				os.write(NL.getBytes());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private List<Class> getSuperClassesWithoutEObject(Class cls) {
+		List<Class> res = new ArrayList<>();
+
+		for (GeneralizableElement superElement : cls.getSuper()) {
+			if (superElement instanceof Class && !"EObject".equals(superElement.getName())) {
+				res.add((Class) superElement);
+			}
+		}
+
+		return res;
+	}
+
+	private void generateMultiFiles(DataPkg root) {
+		for (DataPkg pkg : root.getOwnedDataPkgs()) {
 			final File file = new File("/tmp/capella/" + pkg.getName() + ".py");
 			try {
 				if (!file.exists()) {
@@ -57,7 +131,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					file.createNewFile();
 				}
 				try (OutputStream os = new FileOutputStream(file)) {
-					os.write(getHeader().getBytes());
+					os.write(getHeader(pkg.getName()).getBytes());
 					for (Class cls : pkg.getOwnedClasses()) {
 						if (!"EObject".equals(cls.getName())) {
 							os.write(NL.getBytes());
@@ -71,8 +145,6 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				e.printStackTrace();
 			}
 		}
-
-		return null;
 	}
 
 	private String generateClass(Class cls) {
@@ -101,7 +173,37 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			if (featureCustomization != null) {
 				res.append(featureCustomization);
 			} else {
-				res.append(generateFeature(cls, feature));
+				final String generatedQuery = generateQuery(cls, feature);
+				if (!generatedQuery.isEmpty()) {
+					res.append(generatedQuery);
+				} else {
+					res.append(generateFeature(cls, feature));
+				}
+			}
+		}
+
+		return res.toString();
+	}
+
+	private String generateQuery(Class cls, Feature feature) {
+		final StringBuilder res = new StringBuilder();
+
+		final String attributeName = getPythonName(feature.getName());
+		final String featureGetterName = "get_" + attributeName;
+		final EClass eCls = findCorrespondingEClass(cls);
+		if (eCls != null) {
+			final List<ICategory> categories = queries.get(eCls.getInstanceClass().getCanonicalName());
+			if (categories != null) {
+				for (ICategory category : categories) {
+					final IQuery query = getQuery(category);
+					final String queryGetterName = "get_" + getCategoryPythonName(category.getName());
+					if (featureGetterName.equals(queryGetterName)) {
+						res.append("    def " + queryGetterName + "(self):" + NL);
+						res.append("        return capella_query(\"" + query.getClass().getCanonicalName() + "\", self)"
+								+ NL);
+						break;
+					}
+				}
 			}
 		}
 
@@ -131,7 +233,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			res.append("            raise ValueError(\"No matching EClass for this type\")" + NL);
 		}
 
-		res.append("        elif isinstance(java_object, AbstractNamedElement):" + NL);
+		res.append("        elif isinstance(java_object, " + cls.getName() + "):" + NL);
 		res.append("            EObject.__init__(self, java_object.get_java_object())" + NL);
 		res.append("        else:" + NL);
 		res.append("            EObject.__init__(self, java_object)" + NL);
@@ -223,21 +325,14 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		return "set" + Character.toUpperCase(javaName.charAt(0)) + javaName.substring(1);
 	}
 
-	private List<DataPkg> getAllDataPkg(DataPkg root) {
-		final List<DataPkg> res = new ArrayList<>();
-
-		res.add(root);
-		for (DataPkg child : root.getOwnedDataPkgs()) {
-			res.addAll(getAllDataPkg(child));
-		}
-
-		return res;
-	}
-
-	private String getHeader() {
+	private String getHeader(String pkgName) {
 		final StringBuilder res = new StringBuilder();
 
-		// TODO import dependences
+		final String imports = getPackageImports(pkgName);
+		if (imports != null) {
+			res.append(imports);
+		}
+
 		res.append(NL);
 
 		return res.toString();
@@ -316,6 +411,20 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		return res;
 	}
 
+	private String getPackageImports(String packageName) {
+		String res = null;
+
+		try (InputStream is = getClass().getClassLoader()
+				.getResourceAsStream("resources/customizations/packages/" + packageName + ".imports.txt");) {
+			res = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines()
+					.collect(Collectors.joining(NL));
+		} catch (Exception e) {
+			// nothing to do here
+		}
+
+		return res;
+	}
+
 	private Map<String, String> initFeatureRenames() {
 		final Map<String, String> res = new HashMap<>();
 
@@ -358,7 +467,85 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		res.put("SystemAnalysis.systemComponentPkg", "ownedSystemComponentPkg");
 		res.put("SystemAnalysis.systemFunctionPkg", "containedSystemFunctionPkg");
 
+		// requirement renames
+		res.put("CapellaModule.id", "ReqIFIdentifier");
+		res.put("CapellaModule.longName", "ReqIFLongName");
+		res.put("CapellaModule.name", "ReqIFName");
+		res.put("CapellaModule.prefix", "ReqIFPrefix");
+		res.put("Requirement.id", "ReqIFIdentifier");
+		res.put("Requirement.longName", "ReqIFLongName");
+		res.put("Requirement.name", "ReqIFName");
+		res.put("Requirement.chapterName", "ReqIFChapterName");
+		res.put("Requirement.prefix", "ReqIFPrefix");
+		res.put("Requirement.text", "ReqIFText");
+		res.put("Attribute.name", "ReqIFName");
+
 		return res;
+	}
+
+	private Map<String, List<ICategory>> getQueryMapping() {
+		final Map<String, List<ICategory>> res = new HashMap<>();
+
+		final CategoryRegistry registry = CategoryRegistry.getInstance();
+		final Set<String> fields = new HashSet<>();
+		fields.add("currentElementRegistry");
+		fields.add("diagramElementRegistry");
+		fields.add("referencedElementRegistry");
+		fields.add("referencingElementRegistry");
+		fields.add("relatedElementsRegistry");
+		for (Field field : registry.getClass().getDeclaredFields()) {
+			if (fields.contains(field.getName())) {
+				field.setAccessible(true);
+				try {
+					HashMap<String, ICategory> map = (HashMap<String, ICategory>) field.get(registry);
+					for (ICategory category : map.values()) {
+						res.computeIfAbsent(category.getTypeFullyQualifiedName(), t -> new ArrayList<>()).add(category);
+					}
+				} catch (IllegalArgumentException | IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return res;
+	}
+
+	private IQuery getQuery(ICategory category) {
+		for (Field field : category.getClass().getDeclaredFields()) {
+			if ("categoryQuery".equals(field.getName())) {
+				field.setAccessible(true);
+				try {
+					return (IQuery) field.get(category);
+				} catch (IllegalArgumentException | IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		throw new IllegalStateException();
+	}
+
+	private String getCategoryPythonName(String name) {
+		final StringBuilder res = new StringBuilder();
+
+		res.append(Character.toLowerCase(name.charAt(0)));
+		for (int i = 1; i < name.length(); i++) {
+			final char c = name.charAt(i);
+			if (Character.isLetterOrDigit(c)) {
+				res.append(c);
+			} else if (c == ' ') {
+				// skip
+			} else {
+				break;
+			}
+		}
+
+		if (res.charAt(res.length() - 1) == '_') {
+			return getPythonName(res.substring(0, res.length() - 1).trim());
+		} else {
+			return getPythonName(res.toString().trim());
+		}
 	}
 
 }

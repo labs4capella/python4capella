@@ -1,0 +1,6 @@
+    def get_system_engineering(self):
+        if self.session is None:
+            return None
+        else:
+            return SystemEngineering(getEngineering(self.session))
+

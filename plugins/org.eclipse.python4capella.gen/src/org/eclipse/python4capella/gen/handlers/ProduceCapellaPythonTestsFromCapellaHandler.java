@@ -53,7 +53,7 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		DataPkg root = (DataPkg) ((IStructuredSelection) HandlerUtil.getCurrentSelection(event)).getFirstElement();
 
-		for (DataPkg pkg : getAllDataPkg(root)) {
+		for (DataPkg pkg : root.getOwnedDataPkgs()) {
 			for (Class cls : pkg.getOwnedClasses()) {
 				if (!cls.isAbstract()) {
 					concreteClass.put(cls, cls);
@@ -73,8 +73,8 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 				file.createNewFile();
 			}
 			try (OutputStream os = new FileOutputStream(file)) {
-				os.write(getHeader("capella").getBytes());
-				for (DataPkg pkg : getAllDataPkg(root)) {
+				os.write(getHeader(root, "capella").getBytes());
+				for (DataPkg pkg : root.getOwnedDataPkgs()) {
 					for (Class cls : pkg.getOwnedClasses()) {
 						final EClass eCls = findCorrespondingEClass(cls);
 						if (eCls == null) {
@@ -775,23 +775,14 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		return res;
 	}
 
-	private List<DataPkg> getAllDataPkg(DataPkg root) {
-		final List<DataPkg> res = new ArrayList<>();
-
-		res.add(root);
-		for (DataPkg child : root.getOwnedDataPkgs()) {
-			res.addAll(getAllDataPkg(child));
-		}
-
-		return res;
-	}
-
-	private String getHeader(String clsLabel) {
+	private String getHeader(DataPkg root, String clsLabel) {
 		final StringBuilder res = new StringBuilder();
 
-		res.append("include('workspace://Python4Capella/simplified_api/capella.py')" + NL);
-		res.append("if False:" + NL);
-		res.append("    from simplified_api.capella import *" + NL);
+		for (DataPkg pkg : root.getOwnedDataPkgs()) {
+			res.append("include('workspace://Python4Capella/simplified_api/" + pkg.getName() + ".py')" + NL);
+			res.append("if False:" + NL);
+			res.append("    from simplified_api." + pkg.getName() + " import *" + NL);
+		}
 		res.append(NL);
 		res.append("import unittest" + NL);
 		res.append(NL);
