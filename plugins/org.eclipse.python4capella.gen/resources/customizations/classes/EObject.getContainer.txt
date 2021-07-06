@@ -1,0 +1,8 @@
+    def get_container(self):
+        value = self.get_java_object().eContainer()
+        if value is not None:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            if specific_cls is not None:
+                return specific_cls(value)
+        return None
+

@@ -1,0 +1,8 @@
+    def get_contents(self):
+        res = []
+        for value in self.get_java_object().eContents():
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            if specific_cls is not None:
+                res.append(specific_cls(value))
+        return res
+

@@ -46,12 +46,28 @@ class EObject(JavaObject):
         for element in Sirius.get_representation_descriptors(self.get_java_object()):
             res.append(Diagram(element))
         return res
-    def get_element_of_interest_for_diagrams(eObject):
+    def get_element_of_interest_for_diagrams(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation", self, Diagram)
     def get_contextual_element_for_diagrams(self):
         return create_e_list(self.get_java_object().getContextualElementForDiagrams(), Diagram)
     def get_representing_diagrams(self):
         return create_e_list(self.get_java_object().getRepresentingDiagrams(), Diagram)
+    def get_label(self):
+        return get_label(self)
+    def get_container(self):
+        value = self.get_java_object().eContainer()
+        if value is not None:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            if specific_cls is not None:
+                return specific_cls(value)
+        return None
+    def get_contents(self):
+        res = []
+        for value in self.get_java_object().eContents():
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            if specific_cls is not None:
+                res.append(specific_cls(value))
+        return res
 
 class CapellaElement(EObject):
     def __init__(self, java_object = None):
@@ -162,8 +178,6 @@ class PropertyValue(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_type(self, value):
-        return self.get_java_object().setType(value.get_java_object())
 
 class PropertyValueGroup(CapellaElement):
     def __init__(self, java_object = None):
@@ -258,8 +272,6 @@ class Diagram(JavaObject):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_target(self, value):
-        return self.get_java_object().setTarget(value.get_java_object())
     def get_represented_elements(self):
         res = []
         for element in Sirius.get_represented_elements(self.get_java_object()):
@@ -445,8 +457,6 @@ class OperationalAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_operational_activity_pkg(self, value):
-        return self.get_java_object().setContainedOperationalActivityPkg(value.get_java_object())
     def get_operational_capability_pkg(self):
         value =  self.get_java_object().getContainedOperationalCapabilityPkg()
         if value is None:
@@ -454,8 +464,6 @@ class OperationalAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_operational_capability_pkg(self, value):
-        return self.get_java_object().setContainedOperationalCapabilityPkg(value.get_java_object())
     def get_interface_pkg(self):
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -463,8 +471,6 @@ class OperationalAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_interface_pkg(self, value):
-        return self.get_java_object().setOwnedInterfacePkg(value.get_java_object())
     def get_data_pkg(self):
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -472,8 +478,6 @@ class OperationalAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_data_pkg(self, value):
-        return self.get_java_object().setOwnedDataPkg(value.get_java_object())
     def get_entity_pkg(self):
         value =  self.get_java_object().getOwnedEntityPkg()
         if value is None:
@@ -481,8 +485,6 @@ class OperationalAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_entity_pkg(self, value):
-        return self.get_java_object().setOwnedEntityPkg(value.get_java_object())
 
 class OperationalActivityPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -631,8 +633,6 @@ class SystemAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_system_function_pkg(self, value):
-        return self.get_java_object().setContainedSystemFunctionPkg(value.get_java_object())
     def get_capability_pkg(self):
         value =  self.get_java_object().getContainedCapabilityPkg()
         if value is None:
@@ -640,8 +640,6 @@ class SystemAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_capability_pkg(self, value):
-        return self.get_java_object().setContainedCapabilityPkg(value.get_java_object())
     def get_interface_pkg(self):
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -649,8 +647,6 @@ class SystemAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_interface_pkg(self, value):
-        return self.get_java_object().setOwnedInterfacePkg(value.get_java_object())
     def get_data_pkg(self):
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -658,8 +654,6 @@ class SystemAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_data_pkg(self, value):
-        return self.get_java_object().setOwnedDataPkg(value.get_java_object())
     def get_system_component_pkg(self):
         value =  self.get_java_object().getOwnedSystemComponentPkg()
         if value is None:
@@ -667,8 +661,6 @@ class SystemAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_system_component_pkg(self, value):
-        return self.get_java_object().setOwnedSystemComponentPkg(value.get_java_object())
     def get_mission_pkg(self):
         value =  self.get_java_object().getOwnedMissionPkg()
         if value is None:
@@ -676,8 +668,6 @@ class SystemAnalysis(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_mission_pkg(self, value):
-        return self.get_java_object().setOwnedMissionPkg(value.get_java_object())
 
 class SystemFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -722,8 +712,6 @@ class SystemComponentPkg(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_owned_system(self, value):
-        return self.get_java_object().setOwnedSystem(value.get_java_object())
     def get_owned_actors(self):
         return create_e_list(self.get_java_object().getOwnedActors(), SystemActor)
 
@@ -768,8 +756,6 @@ class LogicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_logical_function_pkg(self, value):
-        return self.get_java_object().setContainedLogicalFunctionPkg(value.get_java_object())
     def get_capability_realization_pkg(self):
         value =  self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
@@ -777,8 +763,6 @@ class LogicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_capability_realization_pkg(self, value):
-        return self.get_java_object().setContainedCapabilityRealizationPkg(value.get_java_object())
     def get_interface_pkg(self):
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -786,8 +770,6 @@ class LogicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_interface_pkg(self, value):
-        return self.get_java_object().setOwnedInterfacePkg(value.get_java_object())
     def get_data_pkg(self):
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -795,8 +777,6 @@ class LogicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_data_pkg(self, value):
-        return self.get_java_object().setOwnedDataPkg(value.get_java_object())
     def get_logical_component_pkg(self):
         value =  self.get_java_object().getOwnedLogicalComponentPkg()
         if value is None:
@@ -804,8 +784,6 @@ class LogicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_logical_component_pkg(self, value):
-        return self.get_java_object().setOwnedLogicalComponentPkg(value.get_java_object())
 
 class LogicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -857,8 +835,6 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_owned_logical_system(self, value):
-        return self.get_java_object().setOwnedLogicalSystem(value.get_java_object())
     def get_owned_logical_actors(self):
         return create_e_list(self.get_java_object().getOwnedLogicalActors(), LogicalActor)
     def get_owned_logical_components(self):
@@ -879,8 +855,6 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_physical_function_pkg(self, value):
-        return self.get_java_object().setContainedPhysicalFunctionPkg(value.get_java_object())
     def get_capability_realization_pkg(self):
         value =  self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
@@ -888,8 +862,6 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_capability_realization_pkg(self, value):
-        return self.get_java_object().setContainedCapabilityRealizationPkg(value.get_java_object())
     def get_interface_pkg(self):
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -897,8 +869,6 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_interface_pkg(self, value):
-        return self.get_java_object().setOwnedInterfacePkg(value.get_java_object())
     def get_data_pkg(self):
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -906,8 +876,6 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_data_pkg(self, value):
-        return self.get_java_object().setOwnedDataPkg(value.get_java_object())
     def get_physical_component_pkg(self):
         value =  self.get_java_object().getOwnedPhysicalComponentPkg()
         if value is None:
@@ -915,8 +883,6 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_physical_component_pkg(self, value):
-        return self.get_java_object().setOwnedPhysicalComponentPkg(value.get_java_object())
 
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -948,8 +914,6 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_owned_physical_system(self, value):
-        return self.get_java_object().setOwnedPhysicalSystem(value.get_java_object())
     def get_owned_physical_actors(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalActors(), PhysicalActor)
     def get_owned_physical_components(self):
@@ -1022,8 +986,6 @@ class EPBSArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_capability_realization_pkg(self, value):
-        return self.get_java_object().setContainedCapabilityRealizationPkg(value.get_java_object())
     def get_configuration_item_pkg(self):
         value =  self.get_java_object().getOwnedConfigurationItemPkg()
         if value is None:
@@ -1031,8 +993,6 @@ class EPBSArchitecture(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_configuration_item_pkg(self, value):
-        return self.get_java_object().setOwnedConfigurationItemPkg(value.get_java_object())
     def get_data_pkg(self):
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -1161,8 +1121,6 @@ class Pseudostate(AbstractState):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_kind(self, value):
-        return self.get_java_object().setKind(value.get_java_object())
 
 class Region(CapellaElement):
     def __init__(self, java_object = None):
@@ -1242,8 +1200,6 @@ class Scenario(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_kind(self, value):
-        return self.get_java_object().setKind(value.get_java_object())
     def get_pre_condition(self):
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -1314,8 +1270,6 @@ class SequenceMessage(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_kind(self, value):
-        return self.get_java_object().setKind(value.get_java_object())
     def get_sending_instance_role(self):
         value =  self.get_java_object().getSendingInstanceRole()
         if value is None:
@@ -1323,8 +1277,6 @@ class SequenceMessage(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_sending_instance_role(self, value):
-        return self.get_java_object().setSendingInstanceRole(value.get_java_object())
     def get_receiving_instance_role(self):
         value =  self.get_java_object().getReceivingInstanceRole()
         if value is None:
@@ -1332,8 +1284,6 @@ class SequenceMessage(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_receiving_instance_role(self, value):
-        return self.get_java_object().setReceivingInstanceRole(value.get_java_object())
     def get_invoked_exchange(self):
         value =  self.get_java_object().getInvokedExchange()
         if value is None:
@@ -1341,8 +1291,6 @@ class SequenceMessage(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_invoked_exchange(self, value):
-        return self.get_java_object().setInvokedExchange(value.get_java_object())
     def get_exchanged_items(self):
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_invoked_operation(self):
@@ -1354,8 +1302,6 @@ class SequenceMessage(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_exchange_context(self, value):
-        return self.get_java_object().setExchangeContext(value.get_java_object())
 
 class AbstractExchange(JavaObject):
     def __init__(self, java_object = None):
@@ -1383,8 +1329,6 @@ class StateFragment(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_covered_instance_role(self, value):
-        return self.get_java_object().setCoveredInstanceRole(value.get_java_object())
     def get_related_state(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.StateFragmentRelatedStates", self)
     def get_related_activity_function(self):
@@ -1394,8 +1338,6 @@ class StateFragment(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_related_activity_function(self, value):
-        return self.get_java_object().setRelatedActivityFunction(value.get_java_object())
 
 class CombinedFragment(CapellaElement):
     def __init__(self, java_object = None):
@@ -1412,8 +1354,6 @@ class CombinedFragment(CapellaElement):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_operator(self, value):
-        return self.get_java_object().setOperator(value.get_java_object())
     def get_operands(self):
         return create_e_list(self.get_java_object().getOperands(), Operand)
     def get_covered_instance_roles(self):
@@ -1737,10 +1677,42 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    def get_source(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalExchange_dataflowSource", self)
-    def get_target(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalExchange_dataflowTarget", self)
+    def get_source_port(self):
+        value =  self.get_java_object().getSourcePort()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_source_port(self, value):
+        return self.get_java_object().setSourcePort(value.get_java_object())
+    def get_target_port(self):
+        value =  self.get_java_object().getTargetPort()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_target_port(self, value):
+        return self.get_java_object().setTargetPort(value.get_java_object())
+    def get_source_function(self):
+        value =  self.get_java_object().getSourceFunction()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_source_function(self, value):
+        return self.get_java_object().setSourceFunction(value.get_java_object())
+    def get_target_function(self):
+        value =  self.get_java_object().getTargetFunction()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_target_function(self, value):
+        return self.get_java_object().setTargetFunction(value.get_java_object())
     def get_exchanged_items(self):
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_involving_functional_chains(self):
@@ -1875,6 +1847,15 @@ class ComponentExchange(CapellaElement, AbstractExchange):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+    def get_kind(self):
+        value =  self.get_java_object().getKind()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
+    def set_kind(self, value):
+        return self.get_java_object().setKind(value.get_java_object())
     def get_connected_component_ports(self):
         return create_e_list(self.get_java_object().getConnectedComponentPorts(), ComponentPort)
     def get_connected_components(self):
@@ -1895,15 +1876,6 @@ class ComponentExchange(CapellaElement, AbstractExchange):
         return create_e_list(self.get_java_object().getRealizedComponentExchanges(), ComponentExchange)
     def get_realizing_component_exchanges(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeSpecification_realizingDataflow", self)
-    def get_kind(self):
-        value =  self.get_java_object().getKind()
-        if value is None:
-            return value
-        else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
-    def set_kind(self, value):
-        return self.get_java_object().setKind(value.get_java_object())
 
 class ComponentExchangeCategory(CapellaElement):
     def __init__(self, java_object = None):
@@ -2734,7 +2706,7 @@ class CapellaModule(EObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaModule"))
-        elif isinstance(java_object, Requirement):
+        elif isinstance(java_object, CapellaModule):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
@@ -2800,7 +2772,7 @@ class Folder(Requirement):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Folder"))
-        elif isinstance(java_object, Requirement):
+        elif isinstance(java_object, Folder):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
@@ -2811,7 +2783,7 @@ class Attribute(EObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Attribute"))
-        elif isinstance(java_object, Requirement):
+        elif isinstance(java_object, Attribute):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
@@ -2830,8 +2802,6 @@ class Attribute(EObject):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_kind(self, value):
-        return self.get_java_object().setKind(value.get_java_object())
 
 class SystemEngineering(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -2850,8 +2820,6 @@ class SystemEngineering(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_operational_analysis(self, value):
-        return self.get_java_object().setOperationalAnalysis(value.get_java_object())
     def get_system_analysis(self):
         value =  self.get_java_object().getSystemAnalysis()
         if value is None:
@@ -2859,13 +2827,9 @@ class SystemEngineering(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_system_analysis(self, value):
-        return self.get_java_object().setSystemAnalysis(value.get_java_object())
     def get_logical_architecture(self):
         for la in self.get_java_object().getContainedLogicalArchitectures():
             return LogicalArchitecture(la)
-    def set_logical_architecture(self, value):
-        return self.get_java_object().setLogicalArchitecture(value.get_java_object())
     def get_physical_architecture(self):
         value =  self.get_java_object().getPhysicalArchitecture()
         if value is None:
@@ -2873,8 +2837,6 @@ class SystemEngineering(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_physical_architecture(self, value):
-        return self.get_java_object().setPhysicalArchitecture(value.get_java_object())
     def get_e_p_b_s_architecture(self):
         value =  self.get_java_object().getEPBSArchitecture()
         if value is None:
@@ -2882,8 +2844,6 @@ class SystemEngineering(PropertyValuePkgContainer):
         else:
             specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
             return specific_cls(value)
-    def set_e_p_b_s_architecture(self, value):
-        return self.get_java_object().setEPBSArchitecture(value.get_java_object())
 
 class PropertyValuePkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):

@@ -20,6 +20,7 @@ import java.util.Set;
 
 import org.eclipse.ease.modules.WrapToScript;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.capella.common.helpers.EObjectExt;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
@@ -104,11 +105,26 @@ public class CapellaModule {
 		return queryResult;
 	}
 
+	/**
+	 * Gets the version of Capella.
+	 * 
+	 * @return the version of Capella
+	 */
 	@WrapToScript
 	public String getCapellaVersion() {
 		final String ensUri = CapellacommonPackage.eNS_URI;
 
 		return ensUri.substring(ensUri.lastIndexOf('/') + 1);
+	}
+
+	/**
+	 * Gets the label of the given {@link EObject}.
+	 * 
+	 * @param eObject the {@link EObject}
+	 */
+	@WrapToScript
+	public String getLabel(EObject eObject) {
+		return EObjectExt.getText(eObject);
 	}
 
 }

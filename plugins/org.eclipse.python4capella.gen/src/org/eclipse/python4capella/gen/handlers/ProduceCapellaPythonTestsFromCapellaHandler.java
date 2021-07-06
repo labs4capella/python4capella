@@ -15,6 +15,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -28,9 +29,12 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
+import org.polarsys.capella.core.data.capellacore.TypedElement;
 import org.polarsys.capella.core.data.information.Class;
 import org.polarsys.capella.core.data.information.DataPkg;
 import org.polarsys.capella.core.data.information.Operation;
+import org.polarsys.capella.core.data.information.Parameter;
+import org.polarsys.capella.core.data.information.ParameterDirection;
 import org.polarsys.capella.core.data.information.Property;
 import org.polarsys.capella.core.data.information.datavalue.LiteralNumericValue;
 import org.polarsys.capella.core.data.information.datavalue.NumericValue;
@@ -863,11 +867,11 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 	private String getHeader(DataPkg root, String clsLabel) {
 		final StringBuilder res = new StringBuilder();
 
-		for (DataPkg pkg : root.getOwnedDataPkgs()) {
-			res.append("include('workspace://Python4Capella/simplified_api/" + pkg.getName() + ".py')" + NL);
-			res.append("if False:" + NL);
-			res.append("    from simplified_api." + pkg.getName() + " import *" + NL);
-		}
+//		for (DataPkg pkg : root.getOwnedDataPkgs()) {
+		res.append("include('workspace://Python4Capella/simplified_api/" + "capella" + ".py')" + NL);
+		res.append("if False:" + NL);
+		res.append("    from simplified_api." + "capella" + " import *" + NL);
+//		}
 		res.append(NL);
 		res.append("import unittest" + NL);
 		res.append(NL);
@@ -892,8 +896,22 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 	private String getTest(Class cls, Operation operation) {
 		final StringBuilder res = new StringBuilder();
 
-		res.append("    def test_" + cls.getName() + "_" + operation.getName() + "(self):" + NL);
-		res.append("        self.fail(\"TODO\")" + NL);
+		final String pythonName = ProduceCapellaPythonAPIFromEcoreHandler.getPythonName(operation.getName());
+		res.append("    def test_" + cls.getName() + "_" + pythonName + "(self):" + NL);
+		res.append("        tested = " + cls.getName() + "()" + NL);
+
+		int index = 1;
+		final StringJoiner joiner = new StringJoiner(", ");
+		for (Parameter parameter : operation.getOwnedParameters()) {
+			if (parameter.getDirection() != ParameterDirection.RETURN) {
+				final String paramName = "param" + index++;
+				res.append("        " + paramName + " = " + getTestValue(cls, parameter) + NL);
+				joiner.add(paramName);
+			}
+		}
+
+		res.append("        tested." + pythonName + "(" + joiner.toString() + ")" + NL);
+		res.append("        pass" + NL);
 		res.append(NL);
 
 		return res.toString();
@@ -927,22 +945,22 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		return res.toString();
 	}
 
-	private String getTestValue(Class cls, Property property) {
+	private String getTestValue(Class cls, TypedElement typedElement) {
 		final String res;
 
-		if ("Boolean".equals(property.getType().getLabel())) {
+		if ("Boolean".equals(typedElement.getType().getLabel())) {
 			res = "True";
-		} else if ("Float".equals(property.getType().getLabel())) {
+		} else if ("Float".equals(typedElement.getType().getLabel())) {
 			res = "3.14";
-		} else if ("Integer".equals(property.getType().getLabel())) {
+		} else if ("Integer".equals(typedElement.getType().getLabel())) {
 			res = "42";
-		} else if ("String".equals(property.getType().getLabel())) {
+		} else if ("String".equals(typedElement.getType().getLabel())) {
 			res = "\"value\"";
 		} else {
-			if (property.getType() instanceof Class && ((Class) property.getType()).isAbstract()) {
-				res = concreteClass.get(property.getType()).getLabel() + "()";
+			if (typedElement.getType() instanceof Class && ((Class) typedElement.getType()).isAbstract()) {
+				res = concreteClass.get(typedElement.getType()).getLabel() + "()";
 			} else {
-				res = property.getType().getLabel() + "()";
+				res = typedElement.getType().getLabel() + "()";
 			}
 		}
 

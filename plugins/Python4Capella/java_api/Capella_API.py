@@ -27,3 +27,6 @@ def available_query_names(e_obj):
 
 def capella_version():
     return getCapellaVersion()
+
+def get_label(e_obj):
+    return getLabel(e_obj.get_java_object())
