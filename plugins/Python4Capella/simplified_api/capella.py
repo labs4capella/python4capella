@@ -211,10 +211,10 @@ class Diagram(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.eclipse.org/sirius/1.1.0", "DRepresentationDescriptor"))
-        elif isinstance(java_object, PhysicalFunction):
+        elif isinstance(java_object, Diagram):
             JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_uid(self):
         return self.get_java_object().getUid()
     def set_uid(self, value):
@@ -2862,12 +2862,8 @@ class SystemEngineering(PropertyValuePkgContainer):
     def set_system_analysis(self, value):
         return self.get_java_object().setSystemAnalysis(value.get_java_object())
     def get_logical_architecture(self):
-        value =  self.get_java_object().getLogicalArchitecture()
-        if value is None:
-            return value
-        else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
+        for la in self.get_java_object().getContainedLogicalArchitectures():
+            return LogicalArchitecture(la)
     def set_logical_architecture(self, value):
         return self.get_java_object().setLogicalArchitecture(value.get_java_object())
     def get_physical_architecture(self):

@@ -31,9 +31,9 @@ if not folder.exists():
 
 
 # Iterates over representations to export them
-for rd in lc.get_representation_descriptors():
-    #: :type rd: DRepresentationDescriptor
-    print("exporting " + rd.get_name())
-    rd.export_image(folder.getLocation().toString() + "/" + rd.get_name() + ".jpg")
+for diagram in lc.get_owned_diagrams():
+    #: :type diagram: Diagram
+    print("exporting " + diagram.get_name())
+    diagram.export_as_image(folder.getLocation().toString() + "/" + diagram.get_name() + ".jpg")
 
 folder.refreshLocal(2, None)
