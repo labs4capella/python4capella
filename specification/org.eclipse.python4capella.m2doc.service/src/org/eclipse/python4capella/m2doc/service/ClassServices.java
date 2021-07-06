@@ -9,7 +9,9 @@ import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
 import org.polarsys.capella.core.data.information.AggregationKind;
 import org.polarsys.capella.core.data.information.Class;
+import org.polarsys.capella.core.data.information.Operation;
 import org.polarsys.capella.core.data.information.Property;
+import org.polarsys.capella.core.data.information.Service;
 
 public class ClassServices {
 
@@ -71,6 +73,19 @@ public class ClassServices {
 			}
 		}
 		return result;
+	}
+	
+	public List<Operation> getAllOperations (Class myClass) {
+		List<Operation> result = new ArrayList<Operation>();
+		for (Class supClass : getAllSuperTypes(myClass)) {
+			result.addAll(getOperations(supClass));
+		}
+		result.addAll(getOperations(myClass));
+		return result;
+	}
+	
+	public List<Operation> getOperations (Class myClass) {
+		return myClass.getContainedOperations();
 	}
 	
 	public List<Class> getPossibleParents (Class myClass) {
