@@ -86,7 +86,7 @@ class EObject(JavaObject):
     def get_available_s_b_queries(self):
         return available_query_names(self)
     def get_query_result(self, name):
-        return capella_query_by_name(name, self)
+        return capella_query_by_name(self, name)
 
 class CapellaElement(EObject):
     def __init__(self, java_object = None):
