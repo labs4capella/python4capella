@@ -1,0 +1,3 @@
+    def get_available_s_b_queries(self):
+        return available_query_names(self)
+

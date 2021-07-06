@@ -1,0 +1,4 @@
+    def get_system_analysis(self):
+        for sa in self.get_java_object().getContainedSystemAnalysis():
+            return SystemAnalysis(sa)
+

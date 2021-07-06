@@ -1,0 +1,3 @@
+    def get_query_result(self, name):
+        return capella_query_by_name(name, self)
+

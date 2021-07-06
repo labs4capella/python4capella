@@ -1,0 +1,4 @@
+    def get_operational_analysis(self):
+        for oa in self.get_java_object().getContainedOperationalAnalysis():
+            return OperationalAnalysis(oa)
+

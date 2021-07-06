@@ -595,7 +595,7 @@
                 </ownedParameters>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
-                  id="9aa2c6fe-1fea-4c66-92ed-92cfbc6730b3" name="getAllContents">
+                  id="9aa2c6fe-1fea-4c66-92ed-92cfbc6730b3" name="getAllContentsFiltered">
                 <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
                     id="420a6ef6-a64d-4d2f-a59c-647310e2b36e" name="type" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
                   <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

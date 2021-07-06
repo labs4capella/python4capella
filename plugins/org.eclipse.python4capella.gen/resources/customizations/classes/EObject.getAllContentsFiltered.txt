@@ -1,0 +1,7 @@
+    def get_all_contents_filtered(self, type):
+        res = []
+        for value in self.get_all_contents():
+            if isinstance(value, type):
+                res.append(value)
+        return res
+

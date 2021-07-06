@@ -54,6 +54,8 @@ class EObject(JavaObject):
         return create_e_list(self.get_java_object().getRepresentingDiagrams(), Diagram)
     def get_label(self):
         return get_label(self)
+    def get_type(self):
+        raise AttributeError("TODO")
     def get_container(self):
         value = self.get_java_object().eContainer()
         if value is not None:
@@ -68,6 +70,23 @@ class EObject(JavaObject):
             if specific_cls is not None:
                 res.append(specific_cls(value))
         return res
+    def get_all_contents(self):
+        res = []
+        for value in e_all_contents(self.get_java_object()):
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            if specific_cls is not None:
+                res.append(specific_cls(value))
+        return res
+    def get_all_contents_filtered(self, type):
+        res = []
+        for value in self.get_all_contents():
+            if isinstance(value, type):
+                res.append(value)
+        return res
+    def get_available_s_b_queries(self):
+        return available_query_names(self)
+    def get_query_result(self, name):
+        return capella_query_by_name(name, self)
 
 class CapellaElement(EObject):
     def __init__(self, java_object = None):
@@ -2812,38 +2831,26 @@ class SystemEngineering(PropertyValuePkgContainer):
         else:
             EObject.__init__(self, java_object)
     def get_rec_catalogs(self):
-        return create_e_list(self.get_java_object().getRecCatalogs(), RecCatalog)
+        res = []
+        for extension in self.get_java_object().getOwnedExtensions():
+            if extension.eClass().getName() == "RecCatalog" and extension.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/common/re/" + capella_version():
+                res.append(RecCatalog(extension))
+        return res
     def get_operational_analysis(self):
-        value =  self.get_java_object().getOperationalAnalysis()
-        if value is None:
-            return value
-        else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
+        for oa in self.get_java_object().getContainedOperationalAnalysis():
+            return OperationalAnalysis(oa)
     def get_system_analysis(self):
-        value =  self.get_java_object().getSystemAnalysis()
-        if value is None:
-            return value
-        else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
+        for sa in self.get_java_object().getContainedSystemAnalysis():
+            return SystemAnalysis(sa)
     def get_logical_architecture(self):
         for la in self.get_java_object().getContainedLogicalArchitectures():
             return LogicalArchitecture(la)
     def get_physical_architecture(self):
-        value =  self.get_java_object().getPhysicalArchitecture()
-        if value is None:
-            return value
-        else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
+        for pa in self.get_java_object().getContainedPhysicalArchitectures():
+            return PhysicalArchitecture(pa)
     def get_e_p_b_s_architecture(self):
-        value =  self.get_java_object().getEPBSArchitecture()
-        if value is None:
-            return value
-        else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
+        for epbsa in self.get_java_object().getContainedEPBSArchitectures():
+            return EPBSArchitecture(epbsa)
 
 class PropertyValuePkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):

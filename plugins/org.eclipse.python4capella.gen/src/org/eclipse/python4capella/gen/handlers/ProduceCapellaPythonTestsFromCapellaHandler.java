@@ -382,6 +382,13 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_Unit_owned_diagrams");
 		res.add("test_Diagram_represented_elements");
 
+		res.add("test_SystemEngineering_rec_catalogs");
+		res.add("test_SystemEngineering_operational_analysis");
+		res.add("test_SystemEngineering_system_analysis");
+		res.add("test_SystemEngineering_logical_architecture");
+		res.add("test_SystemEngineering_physical_architecture");
+		res.add("test_SystemEngineering_e_p_b_s_architecture");
+
 		return res;
 	}
 
@@ -925,9 +932,14 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.append("    def " + testName + "(self):" + NL);
 		res.append("        tested = " + cls.getName() + "()" + NL);
 		if (isScalar(property)) {
-			res.append("        value = " + getTestValue(cls, property) + NL);
-			res.append("        tested.set_" + pythonName + "(value)" + NL);
-			res.append("        self.assertEqual(tested.get_" + pythonName + "(), value)" + NL);
+			if (property.isIsReadOnly() || queries.contains(cls.getLabel() + "." + pythonName)
+					|| readOnlyTests.contains(testName)) {
+				res.append("        tested.get_" + pythonName + "()" + NL);
+			} else {
+				res.append("        value = " + getTestValue(cls, property) + NL);
+				res.append("        tested.set_" + pythonName + "(value)" + NL);
+				res.append("        self.assertEqual(tested.get_" + pythonName + "(), value)" + NL);
+			}
 		} else {
 			// collection
 			if (property.isIsReadOnly() || queries.contains(cls.getLabel() + "." + pythonName)

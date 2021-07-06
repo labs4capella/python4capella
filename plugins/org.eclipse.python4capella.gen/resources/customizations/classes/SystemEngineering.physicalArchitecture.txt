@@ -1,0 +1,4 @@
+    def get_physical_architecture(self):
+        for pa in self.get_java_object().getContainedPhysicalArchitectures():
+            return PhysicalArchitecture(pa)
+
