@@ -1,0 +1,8 @@
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.eclipse.org/sirius/1.1.0", "DRepresentationDescriptor"))
+        elif isinstance(java_object, PhysicalFunction):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            EObject.__init__(self, java_object)
+

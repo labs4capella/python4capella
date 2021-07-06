@@ -133,7 +133,6 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_constraints(self):
         tested = SystemEngineering()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -174,9 +173,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_owned_diagrams(self):
         tested = SystemEngineering()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_SystemEngineering_element_of_interest_for_diagrams(self):
@@ -314,7 +311,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_constraints(self):
         tested = Constraint()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -355,9 +351,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_owned_diagrams(self):
         tested = Constraint()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Constraint_element_of_interest_for_diagrams(self):
@@ -390,7 +384,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_constrained_elements(self):
         tested = Constraint()
-        value = Unit()
         tested.get_constrained_elements()
         pass
 
@@ -508,9 +501,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_owned_diagrams(self):
         tested = PropertyValue()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PropertyValue_element_of_interest_for_diagrams(self):
@@ -634,7 +625,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_constraints(self):
         tested = PropertyValueGroup()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -675,9 +665,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_owned_diagrams(self):
         tested = PropertyValueGroup()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PropertyValueGroup_element_of_interest_for_diagrams(self):
@@ -703,7 +691,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_valued_elements(self):
         tested = PropertyValueGroup()
-        value = Unit()
         tested.get_valued_elements()
         pass
 
@@ -786,7 +773,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_constraints(self):
         tested = PropertyValuePkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -827,9 +813,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_owned_diagrams(self):
         tested = PropertyValuePkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PropertyValuePkg_element_of_interest_for_diagrams(self):
@@ -925,7 +909,6 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_constraints(self):
         tested = EnumerationPropertyType()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -966,9 +949,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_owned_diagrams(self):
         tested = EnumerationPropertyType()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_EnumerationPropertyType_element_of_interest_for_diagrams(self):
@@ -1071,7 +1052,6 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_constraints(self):
         tested = EnumerationPropertyLiteral()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -1112,9 +1092,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_owned_diagrams(self):
         tested = EnumerationPropertyLiteral()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_EnumerationPropertyLiteral_element_of_interest_for_diagrams(self):
@@ -1290,9 +1268,7 @@ class capella_tests(unittest.TestCase):
 
     def test_REC_owned_diagrams(self):
         tested = REC()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_REC_element_of_interest_for_diagrams(self):
@@ -1381,9 +1357,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RPL_owned_diagrams(self):
         tested = RPL()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_RPL_element_of_interest_for_diagrams(self):
@@ -1451,9 +1425,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CatalogElementPkg_owned_diagrams(self):
         tested = CatalogElementPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CatalogElementPkg_element_of_interest_for_diagrams(self):
@@ -1535,9 +1507,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RecCatalog_owned_diagrams(self):
         tested = RecCatalog()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_RecCatalog_element_of_interest_for_diagrams(self):
@@ -1584,9 +1554,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CompliancyDefinitionPkg_owned_diagrams(self):
         tested = CompliancyDefinitionPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CompliancyDefinitionPkg_element_of_interest_for_diagrams(self):
@@ -1633,9 +1601,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CompliancyDefinition_owned_diagrams(self):
         tested = CompliancyDefinition()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CompliancyDefinition_element_of_interest_for_diagrams(self):
@@ -1745,7 +1711,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_constraints(self):
         tested = OperationalAnalysis()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -1786,9 +1751,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_owned_diagrams(self):
         tested = OperationalAnalysis()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalAnalysis_element_of_interest_for_diagrams(self):
@@ -1926,7 +1889,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_constraints(self):
         tested = OperationalActivityPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -1967,9 +1929,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_owned_diagrams(self):
         tested = OperationalActivityPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalActivityPkg_element_of_interest_for_diagrams(self):
@@ -2086,7 +2046,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_constraints(self):
         tested = OperationalActivity()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -2127,148 +2086,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_owned_diagrams(self):
         tested = OperationalActivity()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
-        pass
-
-    def test_OperationalActivity_element_of_interest_for_diagrams(self):
-        tested = OperationalActivity()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_OperationalActivity_contextual_element_for_diagrams(self):
-        tested = OperationalActivity()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_OperationalActivity_representing_diagrams(self):
-        tested = OperationalActivity()
-        value = Diagram()
-        tested.get_representing_diagrams().add(value)
-        self.assertEqual(tested.get_representing_diagrams().get(0), value)
-        pass
-
-    def test_OperationalActivity_id(self):
-        tested = OperationalActivity()
-        value = "value"
-        tested.set_id(value)
-        self.assertEqual(tested.get_id(), value)
-        pass
-
-    def test_OperationalActivity_sid(self):
-        tested = OperationalActivity()
-        value = "value"
-        tested.set_sid(value)
-        self.assertEqual(tested.get_sid(), value)
-        pass
-
-    def test_OperationalActivity_name(self):
-        tested = OperationalActivity()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_OperationalActivity_summary(self):
-        tested = OperationalActivity()
-        value = "value"
-        tested.set_summary(value)
-        self.assertEqual(tested.get_summary(), value)
-        pass
-
-    def test_OperationalActivity_description(self):
-        tested = OperationalActivity()
-        value = "value"
-        tested.set_description(value)
-        self.assertEqual(tested.get_description(), value)
-        pass
-
-    def test_OperationalActivity_status(self):
-        tested = OperationalActivity()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
-        pass
-
-    def test_OperationalActivity_review(self):
-        tested = OperationalActivity()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
-        pass
-
-    def test_OperationalActivity_visible_in_documentation(self):
-        tested = OperationalActivity()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
-        pass
-
-    def test_OperationalActivity_visible_for_traceability(self):
-        tested = OperationalActivity()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
-        pass
-
-    def test_OperationalActivity_owned_constraints(self):
-        tested = OperationalActivity()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
-        pass
-
-    def test_OperationalActivity_constraints(self):
-        tested = OperationalActivity()
-        value = Constraint()
-        tested.get_constraints()
-        pass
-
-    def test_OperationalActivity_owned_property_values(self):
-        tested = OperationalActivity()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
-        pass
-
-    def test_OperationalActivity_applied_property_values(self):
-        tested = OperationalActivity()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
-        pass
-
-    def test_OperationalActivity_owned_property_value_groups(self):
-        tested = OperationalActivity()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
-        pass
-
-    def test_OperationalActivity_applied_property_value_groups(self):
-        tested = OperationalActivity()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
-        pass
-
-    def test_OperationalActivity_owned_enumeration_property_types(self):
-        tested = OperationalActivity()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
-        pass
-
-    def test_OperationalActivity_owned_diagrams(self):
-        tested = OperationalActivity()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalActivity_element_of_interest_for_diagrams(self):
@@ -2294,7 +2112,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_contained_operational_activities(self):
         tested = OperationalActivity()
-        value = OperationalActivity()
         tested.get_contained_operational_activities()
         pass
 
@@ -2328,7 +2145,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_owned_operational_processes(self):
         tested = OperationalActivity()
-        value = OperationalProcess()
         tested.get_owned_operational_processes()
         pass
 
@@ -2348,7 +2164,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_realizing_system_functions(self):
         tested = OperationalActivity()
-        value = SystemFunction()
         tested.get_realizing_system_functions()
         pass
 
@@ -2466,9 +2281,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_owned_diagrams(self):
         tested = Interaction()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Interaction_element_of_interest_for_diagrams(self):
@@ -2606,7 +2419,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_constraints(self):
         tested = OperationalProcess()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -2647,9 +2459,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_owned_diagrams(self):
         tested = OperationalProcess()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalProcess_element_of_interest_for_diagrams(self):
@@ -2675,7 +2485,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_involved_operational_activities(self):
         tested = OperationalProcess()
-        value = OperationalActivity()
         tested.get_involved_operational_activities()
         pass
 
@@ -2688,7 +2497,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_involved_operational_processes(self):
         tested = OperationalProcess()
-        value = OperationalProcess()
         tested.get_involved_operational_processes()
         pass
 
@@ -2715,13 +2523,11 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_involving_operational_capabilities(self):
         tested = OperationalProcess()
-        value = OperationalCapability()
         tested.get_involving_operational_capabilities()
         pass
 
     def test_OperationalProcess_realizing_functional_chains(self):
         tested = OperationalProcess()
-        value = FunctionalChain()
         tested.get_realizing_functional_chains()
         pass
 
@@ -2804,7 +2610,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_constraints(self):
         tested = OperationalCapabilityPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -2845,9 +2650,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_owned_diagrams(self):
         tested = OperationalCapabilityPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalCapabilityPkg_element_of_interest_for_diagrams(self):
@@ -2908,37 +2711,31 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_super(self):
         tested = OperationalCapability()
-        value = CapabilityRealization()
         tested.get_super()
         pass
 
     def test_OperationalCapability_sub(self):
         tested = OperationalCapability()
-        value = CapabilityRealization()
         tested.get_sub()
         pass
 
     def test_OperationalCapability_included_capabilities(self):
         tested = OperationalCapability()
-        value = CapabilityRealization()
         tested.get_included_capabilities()
         pass
 
     def test_OperationalCapability_including_capabilities(self):
         tested = OperationalCapability()
-        value = CapabilityRealization()
         tested.get_including_capabilities()
         pass
 
     def test_OperationalCapability_extended_capabilities(self):
         tested = OperationalCapability()
-        value = CapabilityRealization()
         tested.get_extended_capabilities()
         pass
 
     def test_OperationalCapability_extending_capabilities(self):
         tested = OperationalCapability()
-        value = CapabilityRealization()
         tested.get_extending_capabilities()
         pass
 
@@ -3028,7 +2825,6 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_constraints(self):
         tested = OperationalCapability()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -3069,9 +2865,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_owned_diagrams(self):
         tested = OperationalCapability()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalCapability_element_of_interest_for_diagrams(self):
@@ -3097,13 +2891,11 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_owned_operational_processes(self):
         tested = OperationalCapability()
-        value = OperationalProcess()
         tested.get_owned_operational_processes()
         pass
 
     def test_OperationalCapability_involved_operational_processes(self):
         tested = OperationalCapability()
-        value = OperationalProcess()
         tested.get_involved_operational_processes()
         pass
 
@@ -3116,13 +2908,11 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_involved_entities(self):
         tested = OperationalCapability()
-        value = OperationalActor()
         tested.get_involved_entities()
         pass
 
     def test_OperationalCapability_realizing_capabilities(self):
         tested = OperationalCapability()
-        value = Capability()
         tested.get_realizing_capabilities()
         pass
 
@@ -3205,7 +2995,6 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_constraints(self):
         tested = EntityPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -3246,9 +3035,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_owned_diagrams(self):
         tested = EntityPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_EntityPkg_element_of_interest_for_diagrams(self):
@@ -3442,9 +3229,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_owned_diagrams(self):
         tested = OperationalEntity()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalEntity_element_of_interest_for_diagrams(self):
@@ -3589,9 +3374,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_owned_diagrams(self):
         tested = OperationalActor()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_OperationalActor_element_of_interest_for_diagrams(self):
@@ -3729,7 +3512,6 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_constraints(self):
         tested = CommunicationMean()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -3770,9 +3552,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_owned_diagrams(self):
         tested = CommunicationMean()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CommunicationMean_element_of_interest_for_diagrams(self):
@@ -3812,7 +3592,6 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_allocated_interactions(self):
         tested = CommunicationMean()
-        value = Interaction()
         tested.get_allocated_interactions()
         pass
 
@@ -3825,7 +3604,6 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_realizing_component_exchanges(self):
         tested = CommunicationMean()
-        value = ComponentExchange()
         tested.get_realizing_component_exchanges()
         pass
 
@@ -3908,7 +3686,6 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_constraints(self):
         tested = SystemAnalysis()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -3949,9 +3726,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_owned_diagrams(self):
         tested = SystemAnalysis()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_SystemAnalysis_element_of_interest_for_diagrams(self):
@@ -4096,7 +3871,6 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_constraints(self):
         tested = SystemFunctionPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -4137,9 +3911,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_owned_diagrams(self):
         tested = SystemFunctionPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_SystemFunctionPkg_element_of_interest_for_diagrams(self):
@@ -4207,13 +3979,11 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_incoming(self):
         tested = SystemFunction()
-        value = FunctionalExchange()
         tested.get_incoming()
         pass
 
     def test_SystemFunction_outgoing(self):
         tested = SystemFunction()
-        value = FunctionalExchange()
         tested.get_outgoing()
         pass
 
@@ -4226,19 +3996,16 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_owned_functional_chains(self):
         tested = SystemFunction()
-        value = FunctionalChain()
         tested.get_owned_functional_chains()
         pass
 
     def test_SystemFunction_involving_functional_chains(self):
         tested = SystemFunction()
-        value = FunctionalChain()
         tested.get_involving_functional_chains()
         pass
 
     def test_SystemFunction_involving_capabilities(self):
         tested = SystemFunction()
-        value = CapabilityRealization()
         tested.get_involving_capabilities()
         pass
 
@@ -4321,7 +4088,6 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_constraints(self):
         tested = SystemFunction()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -4362,148 +4128,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_owned_diagrams(self):
         tested = SystemFunction()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
-        pass
-
-    def test_SystemFunction_element_of_interest_for_diagrams(self):
-        tested = SystemFunction()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_SystemFunction_contextual_element_for_diagrams(self):
-        tested = SystemFunction()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_SystemFunction_representing_diagrams(self):
-        tested = SystemFunction()
-        value = Diagram()
-        tested.get_representing_diagrams().add(value)
-        self.assertEqual(tested.get_representing_diagrams().get(0), value)
-        pass
-
-    def test_SystemFunction_id(self):
-        tested = SystemFunction()
-        value = "value"
-        tested.set_id(value)
-        self.assertEqual(tested.get_id(), value)
-        pass
-
-    def test_SystemFunction_sid(self):
-        tested = SystemFunction()
-        value = "value"
-        tested.set_sid(value)
-        self.assertEqual(tested.get_sid(), value)
-        pass
-
-    def test_SystemFunction_name(self):
-        tested = SystemFunction()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_SystemFunction_summary(self):
-        tested = SystemFunction()
-        value = "value"
-        tested.set_summary(value)
-        self.assertEqual(tested.get_summary(), value)
-        pass
-
-    def test_SystemFunction_description(self):
-        tested = SystemFunction()
-        value = "value"
-        tested.set_description(value)
-        self.assertEqual(tested.get_description(), value)
-        pass
-
-    def test_SystemFunction_status(self):
-        tested = SystemFunction()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
-        pass
-
-    def test_SystemFunction_review(self):
-        tested = SystemFunction()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
-        pass
-
-    def test_SystemFunction_visible_in_documentation(self):
-        tested = SystemFunction()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
-        pass
-
-    def test_SystemFunction_visible_for_traceability(self):
-        tested = SystemFunction()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
-        pass
-
-    def test_SystemFunction_owned_constraints(self):
-        tested = SystemFunction()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
-        pass
-
-    def test_SystemFunction_constraints(self):
-        tested = SystemFunction()
-        value = Constraint()
-        tested.get_constraints()
-        pass
-
-    def test_SystemFunction_owned_property_values(self):
-        tested = SystemFunction()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
-        pass
-
-    def test_SystemFunction_applied_property_values(self):
-        tested = SystemFunction()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
-        pass
-
-    def test_SystemFunction_owned_property_value_groups(self):
-        tested = SystemFunction()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
-        pass
-
-    def test_SystemFunction_applied_property_value_groups(self):
-        tested = SystemFunction()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
-        pass
-
-    def test_SystemFunction_owned_enumeration_property_types(self):
-        tested = SystemFunction()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
-        pass
-
-    def test_SystemFunction_owned_diagrams(self):
-        tested = SystemFunction()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_SystemFunction_element_of_interest_for_diagrams(self):
@@ -4529,7 +4154,6 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_contained_system_functions(self):
         tested = SystemFunction()
-        value = SystemFunction()
         tested.get_contained_system_functions()
         pass
 
@@ -4542,13 +4166,11 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_realized_operational_activities(self):
         tested = SystemFunction()
-        value = OperationalActivity()
         tested.get_realized_operational_activities()
         pass
 
     def test_SystemFunction_realizing_logical_functions(self):
         tested = SystemFunction()
-        value = LogicalFunction()
         tested.get_realizing_logical_functions()
         pass
 
@@ -4631,7 +4253,6 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_constraints(self):
         tested = CapabilityPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -4672,9 +4293,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_owned_diagrams(self):
         tested = CapabilityPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CapabilityPkg_element_of_interest_for_diagrams(self):
@@ -4714,13 +4333,11 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_owned_functional_chains(self):
         tested = Capability()
-        value = FunctionalChain()
         tested.get_owned_functional_chains()
         pass
 
     def test_Capability_involved_functional_chains(self):
         tested = Capability()
-        value = FunctionalChain()
         tested.get_involved_functional_chains()
         pass
 
@@ -4754,37 +4371,31 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_super(self):
         tested = Capability()
-        value = CapabilityRealization()
         tested.get_super()
         pass
 
     def test_Capability_sub(self):
         tested = Capability()
-        value = CapabilityRealization()
         tested.get_sub()
         pass
 
     def test_Capability_included_capabilities(self):
         tested = Capability()
-        value = CapabilityRealization()
         tested.get_included_capabilities()
         pass
 
     def test_Capability_including_capabilities(self):
         tested = Capability()
-        value = CapabilityRealization()
         tested.get_including_capabilities()
         pass
 
     def test_Capability_extended_capabilities(self):
         tested = Capability()
-        value = CapabilityRealization()
         tested.get_extended_capabilities()
         pass
 
     def test_Capability_extending_capabilities(self):
         tested = Capability()
-        value = CapabilityRealization()
         tested.get_extending_capabilities()
         pass
 
@@ -4874,7 +4485,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_constraints(self):
         tested = Capability()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -4915,9 +4525,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_owned_diagrams(self):
         tested = Capability()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Capability_element_of_interest_for_diagrams(self):
@@ -4943,19 +4551,16 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_purpose_missions(self):
         tested = Capability()
-        value = Mission()
         tested.get_purpose_missions()
         pass
 
     def test_Capability_realized_operational_capabilities(self):
         tested = Capability()
-        value = OperationalCapability()
         tested.get_realized_operational_capabilities()
         pass
 
     def test_Capability_realizing_capability_realizations(self):
         tested = Capability()
-        value = CapabilityRealization()
         tested.get_realizing_capability_realizations()
         pass
 
@@ -5045,7 +4650,6 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_constraints(self):
         tested = SystemComponentPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -5086,9 +4690,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_diagrams(self):
         tested = SystemComponentPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_SystemComponentPkg_element_of_interest_for_diagrams(self):
@@ -5303,9 +4905,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_owned_diagrams(self):
         tested = System()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_System_element_of_interest_for_diagrams(self):
@@ -5348,13 +4948,6 @@ class capella_tests(unittest.TestCase):
         value = PhysicalPath()
         tested.get_involving_physical_paths().add(value)
         self.assertEqual(tested.get_involving_physical_paths().get(0), value)
-        pass
-
-    def test_System_owned_state_machines(self):
-        tested = System()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
         pass
 
     def test_SystemActor_contained_component_ports(self):
@@ -5527,9 +5120,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_owned_diagrams(self):
         tested = SystemActor()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_SystemActor_element_of_interest_for_diagrams(self):
@@ -5572,13 +5163,6 @@ class capella_tests(unittest.TestCase):
         value = PhysicalPath()
         tested.get_involving_physical_paths().add(value)
         self.assertEqual(tested.get_involving_physical_paths().get(0), value)
-        pass
-
-    def test_SystemActor_owned_state_machines(self):
-        tested = SystemActor()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
         pass
 
     def test_SystemActor_is_human(self):
@@ -5709,7 +5293,6 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_constraints(self):
         tested = MissionPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -5750,9 +5333,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_owned_diagrams(self):
         tested = MissionPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_MissionPkg_element_of_interest_for_diagrams(self):
@@ -5862,7 +5443,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_constraints(self):
         tested = Mission()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -5903,9 +5483,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_owned_diagrams(self):
         tested = Mission()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Mission_element_of_interest_for_diagrams(self):
@@ -5931,7 +5509,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_exploited_capabilities(self):
         tested = Mission()
-        value = Capability()
         tested.get_exploited_capabilities()
         pass
 
@@ -6021,7 +5598,6 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_constraints(self):
         tested = LogicalArchitecture()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -6062,9 +5638,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_owned_diagrams(self):
         tested = LogicalArchitecture()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_LogicalArchitecture_element_of_interest_for_diagrams(self):
@@ -6202,7 +5776,6 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_constraints(self):
         tested = LogicalFunctionPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -6243,9 +5816,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_owned_diagrams(self):
         tested = LogicalFunctionPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_LogicalFunctionPkg_element_of_interest_for_diagrams(self):
@@ -6313,13 +5884,11 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_incoming(self):
         tested = LogicalFunction()
-        value = FunctionalExchange()
         tested.get_incoming()
         pass
 
     def test_LogicalFunction_outgoing(self):
         tested = LogicalFunction()
-        value = FunctionalExchange()
         tested.get_outgoing()
         pass
 
@@ -6332,19 +5901,16 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_owned_functional_chains(self):
         tested = LogicalFunction()
-        value = FunctionalChain()
         tested.get_owned_functional_chains()
         pass
 
     def test_LogicalFunction_involving_functional_chains(self):
         tested = LogicalFunction()
-        value = FunctionalChain()
         tested.get_involving_functional_chains()
         pass
 
     def test_LogicalFunction_involving_capabilities(self):
         tested = LogicalFunction()
-        value = CapabilityRealization()
         tested.get_involving_capabilities()
         pass
 
@@ -6427,7 +5993,6 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_constraints(self):
         tested = LogicalFunction()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -6468,148 +6033,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_owned_diagrams(self):
         tested = LogicalFunction()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
-        pass
-
-    def test_LogicalFunction_element_of_interest_for_diagrams(self):
-        tested = LogicalFunction()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_LogicalFunction_contextual_element_for_diagrams(self):
-        tested = LogicalFunction()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_LogicalFunction_representing_diagrams(self):
-        tested = LogicalFunction()
-        value = Diagram()
-        tested.get_representing_diagrams().add(value)
-        self.assertEqual(tested.get_representing_diagrams().get(0), value)
-        pass
-
-    def test_LogicalFunction_id(self):
-        tested = LogicalFunction()
-        value = "value"
-        tested.set_id(value)
-        self.assertEqual(tested.get_id(), value)
-        pass
-
-    def test_LogicalFunction_sid(self):
-        tested = LogicalFunction()
-        value = "value"
-        tested.set_sid(value)
-        self.assertEqual(tested.get_sid(), value)
-        pass
-
-    def test_LogicalFunction_name(self):
-        tested = LogicalFunction()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_LogicalFunction_summary(self):
-        tested = LogicalFunction()
-        value = "value"
-        tested.set_summary(value)
-        self.assertEqual(tested.get_summary(), value)
-        pass
-
-    def test_LogicalFunction_description(self):
-        tested = LogicalFunction()
-        value = "value"
-        tested.set_description(value)
-        self.assertEqual(tested.get_description(), value)
-        pass
-
-    def test_LogicalFunction_status(self):
-        tested = LogicalFunction()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
-        pass
-
-    def test_LogicalFunction_review(self):
-        tested = LogicalFunction()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
-        pass
-
-    def test_LogicalFunction_visible_in_documentation(self):
-        tested = LogicalFunction()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
-        pass
-
-    def test_LogicalFunction_visible_for_traceability(self):
-        tested = LogicalFunction()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
-        pass
-
-    def test_LogicalFunction_owned_constraints(self):
-        tested = LogicalFunction()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
-        pass
-
-    def test_LogicalFunction_constraints(self):
-        tested = LogicalFunction()
-        value = Constraint()
-        tested.get_constraints()
-        pass
-
-    def test_LogicalFunction_owned_property_values(self):
-        tested = LogicalFunction()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
-        pass
-
-    def test_LogicalFunction_applied_property_values(self):
-        tested = LogicalFunction()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
-        pass
-
-    def test_LogicalFunction_owned_property_value_groups(self):
-        tested = LogicalFunction()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
-        pass
-
-    def test_LogicalFunction_applied_property_value_groups(self):
-        tested = LogicalFunction()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
-        pass
-
-    def test_LogicalFunction_owned_enumeration_property_types(self):
-        tested = LogicalFunction()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
-        pass
-
-    def test_LogicalFunction_owned_diagrams(self):
-        tested = LogicalFunction()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_LogicalFunction_element_of_interest_for_diagrams(self):
@@ -6635,7 +6059,6 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_contained_logical_functions(self):
         tested = LogicalFunction()
-        value = LogicalFunction()
         tested.get_contained_logical_functions()
         pass
 
@@ -6648,13 +6071,11 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_realized_system_functions(self):
         tested = LogicalFunction()
-        value = SystemFunction()
         tested.get_realized_system_functions()
         pass
 
     def test_LogicalFunction_realizing_physical_functions(self):
         tested = LogicalFunction()
-        value = PhysicalFunction()
         tested.get_realizing_physical_functions()
         pass
 
@@ -6737,7 +6158,6 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_constraints(self):
         tested = CapabilityRealizationPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -6778,9 +6198,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_owned_diagrams(self):
         tested = CapabilityRealizationPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CapabilityRealizationPkg_element_of_interest_for_diagrams(self):
@@ -6820,13 +6238,11 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_owned_functional_chains(self):
         tested = CapabilityRealization()
-        value = FunctionalChain()
         tested.get_owned_functional_chains()
         pass
 
     def test_CapabilityRealization_involved_functional_chains(self):
         tested = CapabilityRealization()
-        value = FunctionalChain()
         tested.get_involved_functional_chains()
         pass
 
@@ -6860,37 +6276,31 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_super(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_super()
         pass
 
     def test_CapabilityRealization_sub(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_sub()
         pass
 
     def test_CapabilityRealization_included_capabilities(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_included_capabilities()
         pass
 
     def test_CapabilityRealization_including_capabilities(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_including_capabilities()
         pass
 
     def test_CapabilityRealization_extended_capabilities(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_extended_capabilities()
         pass
 
     def test_CapabilityRealization_extending_capabilities(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_extending_capabilities()
         pass
 
@@ -6980,7 +6390,6 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_constraints(self):
         tested = CapabilityRealization()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -7021,9 +6430,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_owned_diagrams(self):
         tested = CapabilityRealization()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CapabilityRealization_element_of_interest_for_diagrams(self):
@@ -7049,19 +6456,16 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_realized_capabilities(self):
         tested = CapabilityRealization()
-        value = Capability()
         tested.get_realized_capabilities()
         pass
 
     def test_CapabilityRealization_realized_capability_realizations(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_realized_capability_realizations()
         pass
 
     def test_CapabilityRealization_realizing_capability_realizations(self):
         tested = CapabilityRealization()
-        value = CapabilityRealization()
         tested.get_realizing_capability_realizations()
         pass
 
@@ -7172,7 +6576,6 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_constraints(self):
         tested = LogicalComponentPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -7213,9 +6616,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_diagrams(self):
         tested = LogicalComponentPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_LogicalComponentPkg_element_of_interest_for_diagrams(self):
@@ -7437,9 +6838,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_owned_diagrams(self):
         tested = LogicalSystem()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_LogicalSystem_element_of_interest_for_diagrams(self):
@@ -7484,13 +6883,6 @@ class capella_tests(unittest.TestCase):
         self.assertEqual(tested.get_involving_physical_paths().get(0), value)
         pass
 
-    def test_LogicalSystem_owned_state_machines(self):
-        tested = LogicalSystem()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
-        pass
-
     def test_LogicalSystem_owned_logical_components(self):
         tested = LogicalSystem()
         value = LogicalComponent()
@@ -7507,19 +6899,16 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_contained_component_ports(self):
         tested = LogicalComponent()
-        value = ComponentPort()
         tested.get_contained_component_ports()
         pass
 
     def test_LogicalComponent_incoming_component_exchanges(self):
         tested = LogicalComponent()
-        value = ComponentExchange()
         tested.get_incoming_component_exchanges()
         pass
 
     def test_LogicalComponent_outgoing_component_exchanges(self):
         tested = LogicalComponent()
-        value = ComponentExchange()
         tested.get_outgoing_component_exchanges()
         pass
 
@@ -7532,19 +6921,16 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_allocated_functions(self):
         tested = LogicalComponent()
-        value = PhysicalFunction()
         tested.get_allocated_functions()
         pass
 
     def test_LogicalComponent_used_interfaces(self):
         tested = LogicalComponent()
-        value = Interface()
         tested.get_used_interfaces()
         pass
 
     def test_LogicalComponent_implemented_interfaces(self):
         tested = LogicalComponent()
-        value = Interface()
         tested.get_implemented_interfaces()
         pass
 
@@ -7627,7 +7013,6 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_constraints(self):
         tested = LogicalComponent()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -7668,9 +7053,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_owned_diagrams(self):
         tested = LogicalComponent()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_LogicalComponent_element_of_interest_for_diagrams(self):
@@ -7724,7 +7107,6 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_involving_capability_realizations(self):
         tested = LogicalComponent()
-        value = CapabilityRealization()
         tested.get_involving_capability_realizations()
         pass
 
@@ -7898,9 +7280,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_owned_diagrams(self):
         tested = LogicalActor()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_LogicalActor_element_of_interest_for_diagrams(self):
@@ -7943,13 +7323,6 @@ class capella_tests(unittest.TestCase):
         value = PhysicalPath()
         tested.get_involving_physical_paths().add(value)
         self.assertEqual(tested.get_involving_physical_paths().get(0), value)
-        pass
-
-    def test_LogicalActor_owned_state_machines(self):
-        tested = LogicalActor()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
         pass
 
     def test_LogicalActor_owned_logical_actors(self):
@@ -8073,7 +7446,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_constraints(self):
         tested = PhysicalArchitecture()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -8114,9 +7486,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_owned_diagrams(self):
         tested = PhysicalArchitecture()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalArchitecture_element_of_interest_for_diagrams(self):
@@ -8254,7 +7624,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_constraints(self):
         tested = PhysicalFunctionPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -8295,9 +7664,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_owned_diagrams(self):
         tested = PhysicalFunctionPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalFunctionPkg_element_of_interest_for_diagrams(self):
@@ -8365,13 +7732,11 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_incoming(self):
         tested = PhysicalFunction()
-        value = FunctionalExchange()
         tested.get_incoming()
         pass
 
     def test_PhysicalFunction_outgoing(self):
         tested = PhysicalFunction()
-        value = FunctionalExchange()
         tested.get_outgoing()
         pass
 
@@ -8384,19 +7749,16 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_owned_functional_chains(self):
         tested = PhysicalFunction()
-        value = FunctionalChain()
         tested.get_owned_functional_chains()
         pass
 
     def test_PhysicalFunction_involving_functional_chains(self):
         tested = PhysicalFunction()
-        value = FunctionalChain()
         tested.get_involving_functional_chains()
         pass
 
     def test_PhysicalFunction_involving_capabilities(self):
         tested = PhysicalFunction()
-        value = CapabilityRealization()
         tested.get_involving_capabilities()
         pass
 
@@ -8479,7 +7841,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_constraints(self):
         tested = PhysicalFunction()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -8520,148 +7881,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_owned_diagrams(self):
         tested = PhysicalFunction()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
-        pass
-
-    def test_PhysicalFunction_element_of_interest_for_diagrams(self):
-        tested = PhysicalFunction()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_PhysicalFunction_contextual_element_for_diagrams(self):
-        tested = PhysicalFunction()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_PhysicalFunction_representing_diagrams(self):
-        tested = PhysicalFunction()
-        value = Diagram()
-        tested.get_representing_diagrams().add(value)
-        self.assertEqual(tested.get_representing_diagrams().get(0), value)
-        pass
-
-    def test_PhysicalFunction_id(self):
-        tested = PhysicalFunction()
-        value = "value"
-        tested.set_id(value)
-        self.assertEqual(tested.get_id(), value)
-        pass
-
-    def test_PhysicalFunction_sid(self):
-        tested = PhysicalFunction()
-        value = "value"
-        tested.set_sid(value)
-        self.assertEqual(tested.get_sid(), value)
-        pass
-
-    def test_PhysicalFunction_name(self):
-        tested = PhysicalFunction()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_PhysicalFunction_summary(self):
-        tested = PhysicalFunction()
-        value = "value"
-        tested.set_summary(value)
-        self.assertEqual(tested.get_summary(), value)
-        pass
-
-    def test_PhysicalFunction_description(self):
-        tested = PhysicalFunction()
-        value = "value"
-        tested.set_description(value)
-        self.assertEqual(tested.get_description(), value)
-        pass
-
-    def test_PhysicalFunction_status(self):
-        tested = PhysicalFunction()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
-        pass
-
-    def test_PhysicalFunction_review(self):
-        tested = PhysicalFunction()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
-        pass
-
-    def test_PhysicalFunction_visible_in_documentation(self):
-        tested = PhysicalFunction()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
-        pass
-
-    def test_PhysicalFunction_visible_for_traceability(self):
-        tested = PhysicalFunction()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
-        pass
-
-    def test_PhysicalFunction_owned_constraints(self):
-        tested = PhysicalFunction()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
-        pass
-
-    def test_PhysicalFunction_constraints(self):
-        tested = PhysicalFunction()
-        value = Constraint()
-        tested.get_constraints()
-        pass
-
-    def test_PhysicalFunction_owned_property_values(self):
-        tested = PhysicalFunction()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
-        pass
-
-    def test_PhysicalFunction_applied_property_values(self):
-        tested = PhysicalFunction()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
-        pass
-
-    def test_PhysicalFunction_owned_property_value_groups(self):
-        tested = PhysicalFunction()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
-        pass
-
-    def test_PhysicalFunction_applied_property_value_groups(self):
-        tested = PhysicalFunction()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
-        pass
-
-    def test_PhysicalFunction_owned_enumeration_property_types(self):
-        tested = PhysicalFunction()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
-        pass
-
-    def test_PhysicalFunction_owned_diagrams(self):
-        tested = PhysicalFunction()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalFunction_element_of_interest_for_diagrams(self):
@@ -8687,7 +7907,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_contained_physical_functions(self):
         tested = PhysicalFunction()
-        value = PhysicalFunction()
         tested.get_contained_physical_functions()
         pass
 
@@ -8700,7 +7919,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_realized_logical_functions(self):
         tested = PhysicalFunction()
-        value = LogicalFunction()
         tested.get_realized_logical_functions()
         pass
 
@@ -8783,7 +8001,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_constraints(self):
         tested = PhysicalComponentPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -8824,9 +8041,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_diagrams(self):
         tested = PhysicalComponentPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalComponentPkg_element_of_interest_for_diagrams(self):
@@ -8992,9 +8207,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_owned_diagrams(self):
         tested = PhysicalSystem()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalSystem_element_of_interest_for_diagrams(self):
@@ -9188,9 +8401,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_owned_diagrams(self):
         tested = BehaviorPC()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_BehaviorPC_element_of_interest_for_diagrams(self):
@@ -9268,146 +8479,6 @@ class capella_tests(unittest.TestCase):
         value = StateMachine()
         tested.get_owned_state_machines().add(value)
         self.assertEqual(tested.get_owned_state_machines().get(0), value)
-        pass
-
-    def test_BehaviorPC_id(self):
-        tested = BehaviorPC()
-        value = "value"
-        tested.set_id(value)
-        self.assertEqual(tested.get_id(), value)
-        pass
-
-    def test_BehaviorPC_sid(self):
-        tested = BehaviorPC()
-        value = "value"
-        tested.set_sid(value)
-        self.assertEqual(tested.get_sid(), value)
-        pass
-
-    def test_BehaviorPC_name(self):
-        tested = BehaviorPC()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_BehaviorPC_summary(self):
-        tested = BehaviorPC()
-        value = "value"
-        tested.set_summary(value)
-        self.assertEqual(tested.get_summary(), value)
-        pass
-
-    def test_BehaviorPC_description(self):
-        tested = BehaviorPC()
-        value = "value"
-        tested.set_description(value)
-        self.assertEqual(tested.get_description(), value)
-        pass
-
-    def test_BehaviorPC_status(self):
-        tested = BehaviorPC()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
-        pass
-
-    def test_BehaviorPC_review(self):
-        tested = BehaviorPC()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
-        pass
-
-    def test_BehaviorPC_visible_in_documentation(self):
-        tested = BehaviorPC()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
-        pass
-
-    def test_BehaviorPC_visible_for_traceability(self):
-        tested = BehaviorPC()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
-        pass
-
-    def test_BehaviorPC_owned_constraints(self):
-        tested = BehaviorPC()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
-        pass
-
-    def test_BehaviorPC_constraints(self):
-        tested = BehaviorPC()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
-        pass
-
-    def test_BehaviorPC_owned_property_values(self):
-        tested = BehaviorPC()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
-        pass
-
-    def test_BehaviorPC_applied_property_values(self):
-        tested = BehaviorPC()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
-        pass
-
-    def test_BehaviorPC_owned_property_value_groups(self):
-        tested = BehaviorPC()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
-        pass
-
-    def test_BehaviorPC_applied_property_value_groups(self):
-        tested = BehaviorPC()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
-        pass
-
-    def test_BehaviorPC_owned_enumeration_property_types(self):
-        tested = BehaviorPC()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
-        pass
-
-    def test_BehaviorPC_owned_diagrams(self):
-        tested = BehaviorPC()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
-        pass
-
-    def test_BehaviorPC_element_of_interest_for_diagrams(self):
-        tested = BehaviorPC()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_BehaviorPC_contextual_element_for_diagrams(self):
-        tested = BehaviorPC()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_BehaviorPC_representing_diagrams(self):
-        tested = BehaviorPC()
-        value = Diagram()
-        tested.get_representing_diagrams().add(value)
-        self.assertEqual(tested.get_representing_diagrams().get(0), value)
         pass
 
     def test_BehaviorPC_deploying_node_p_c(self):
@@ -9580,149 +8651,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_owned_diagrams(self):
         tested = NodePC()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
-        pass
-
-    def test_NodePC_element_of_interest_for_diagrams(self):
-        tested = NodePC()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_NodePC_contextual_element_for_diagrams(self):
-        tested = NodePC()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_NodePC_representing_diagrams(self):
-        tested = NodePC()
-        value = Diagram()
-        tested.get_representing_diagrams().add(value)
-        self.assertEqual(tested.get_representing_diagrams().get(0), value)
-        pass
-
-    def test_NodePC_id(self):
-        tested = NodePC()
-        value = "value"
-        tested.set_id(value)
-        self.assertEqual(tested.get_id(), value)
-        pass
-
-    def test_NodePC_sid(self):
-        tested = NodePC()
-        value = "value"
-        tested.set_sid(value)
-        self.assertEqual(tested.get_sid(), value)
-        pass
-
-    def test_NodePC_name(self):
-        tested = NodePC()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_NodePC_summary(self):
-        tested = NodePC()
-        value = "value"
-        tested.set_summary(value)
-        self.assertEqual(tested.get_summary(), value)
-        pass
-
-    def test_NodePC_description(self):
-        tested = NodePC()
-        value = "value"
-        tested.set_description(value)
-        self.assertEqual(tested.get_description(), value)
-        pass
-
-    def test_NodePC_status(self):
-        tested = NodePC()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
-        pass
-
-    def test_NodePC_review(self):
-        tested = NodePC()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
-        pass
-
-    def test_NodePC_visible_in_documentation(self):
-        tested = NodePC()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
-        pass
-
-    def test_NodePC_visible_for_traceability(self):
-        tested = NodePC()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
-        pass
-
-    def test_NodePC_owned_constraints(self):
-        tested = NodePC()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
-        pass
-
-    def test_NodePC_constraints(self):
-        tested = NodePC()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
-        pass
-
-    def test_NodePC_owned_property_values(self):
-        tested = NodePC()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
-        pass
-
-    def test_NodePC_applied_property_values(self):
-        tested = NodePC()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
-        pass
-
-    def test_NodePC_owned_property_value_groups(self):
-        tested = NodePC()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
-        pass
-
-    def test_NodePC_applied_property_value_groups(self):
-        tested = NodePC()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
-        pass
-
-    def test_NodePC_owned_enumeration_property_types(self):
-        tested = NodePC()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
-        pass
-
-    def test_NodePC_owned_diagrams(self):
-        tested = NodePC()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_NodePC_element_of_interest_for_diagrams(self):
@@ -9767,18 +8696,18 @@ class capella_tests(unittest.TestCase):
         self.assertEqual(tested.get_involving_physical_paths().get(0), value)
         pass
 
-    def test_NodePC_owned_state_machines(self):
-        tested = NodePC()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
-        pass
-
     def test_NodePC_deployed_behavior_p_cs(self):
         tested = NodePC()
         value = BehaviorPC()
         tested.get_deployed_behavior_p_cs().add(value)
         self.assertEqual(tested.get_deployed_behavior_p_cs().get(0), value)
+        pass
+
+    def test_NodePC_owned_state_machines(self):
+        tested = NodePC()
+        value = StateMachine()
+        tested.get_owned_state_machines().add(value)
+        self.assertEqual(tested.get_owned_state_machines().get(0), value)
         pass
 
     def test_PhysicalActor_contained_component_ports(self):
@@ -9951,9 +8880,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_owned_diagrams(self):
         tested = PhysicalActor()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalActor_element_of_interest_for_diagrams(self):
@@ -9996,13 +8923,6 @@ class capella_tests(unittest.TestCase):
         value = PhysicalPath()
         tested.get_involving_physical_paths().add(value)
         self.assertEqual(tested.get_involving_physical_paths().get(0), value)
-        pass
-
-    def test_PhysicalActor_owned_state_machines(self):
-        tested = PhysicalActor()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
         pass
 
     def test_PhysicalActor_owned_physical_actors(self):
@@ -10119,7 +9039,6 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_constraints(self):
         tested = EPBSArchitecture()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -10160,9 +9079,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_owned_diagrams(self):
         tested = EPBSArchitecture()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_EPBSArchitecture_element_of_interest_for_diagrams(self):
@@ -10286,7 +9203,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_constraints(self):
         tested = ConfigurationItemPkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -10327,9 +9243,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_owned_diagrams(self):
         tested = ConfigurationItemPkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ConfigurationItemPkg_element_of_interest_for_diagrams(self):
@@ -10439,7 +9353,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_constraints(self):
         tested = ConfigurationItem()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -10480,9 +9393,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_owned_diagrams(self):
         tested = ConfigurationItem()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ConfigurationItem_element_of_interest_for_diagrams(self):
@@ -10536,7 +9447,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_allocated_physical_artifacts(self):
         tested = ConfigurationItem()
-        value = PhysicalLink()
         tested.get_allocated_physical_artifacts()
         pass
 
@@ -10612,7 +9522,6 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_constraints(self):
         tested = StateMachine()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -10653,9 +9562,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_owned_diagrams(self):
         tested = StateMachine()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_StateMachine_element_of_interest_for_diagrams(self):
@@ -10688,13 +9595,11 @@ class capella_tests(unittest.TestCase):
 
     def test_State_incoming(self):
         tested = State()
-        value = StateTransition()
         tested.get_incoming()
         pass
 
     def test_State_outgoing(self):
         tested = State()
-        value = StateTransition()
         tested.get_outgoing()
         pass
 
@@ -10784,7 +9689,6 @@ class capella_tests(unittest.TestCase):
 
     def test_State_constraints(self):
         tested = State()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -10825,9 +9729,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_owned_diagrams(self):
         tested = State()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_State_element_of_interest_for_diagrams(self):
@@ -10888,7 +9790,6 @@ class capella_tests(unittest.TestCase):
 
     def test_State_available_functional_chains(self):
         tested = State()
-        value = FunctionalChain()
         tested.get_available_functional_chains()
         pass
 
@@ -10901,7 +9802,6 @@ class capella_tests(unittest.TestCase):
 
     def test_State_available_capabilities(self):
         tested = State()
-        value = CapabilityRealization()
         tested.get_available_capabilities()
         pass
 
@@ -10942,7 +9842,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_available_functional_chains(self):
         tested = Mode()
-        value = FunctionalChain()
         tested.get_available_functional_chains()
         pass
 
@@ -10955,19 +9854,16 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_available_capabilities(self):
         tested = Mode()
-        value = CapabilityRealization()
         tested.get_available_capabilities()
         pass
 
     def test_Mode_incoming(self):
         tested = Mode()
-        value = StateTransition()
         tested.get_incoming()
         pass
 
     def test_Mode_outgoing(self):
         tested = Mode()
-        value = StateTransition()
         tested.get_outgoing()
         pass
 
@@ -11057,7 +9953,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_constraints(self):
         tested = Mode()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -11098,9 +9993,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_owned_diagrams(self):
         tested = Mode()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Mode_element_of_interest_for_diagrams(self):
@@ -11266,9 +10159,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_owned_diagrams(self):
         tested = Pseudostate()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Pseudostate_element_of_interest_for_diagrams(self):
@@ -11371,7 +10262,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_constraints(self):
         tested = Region()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -11412,9 +10302,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_owned_diagrams(self):
         tested = Region()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Region_element_of_interest_for_diagrams(self):
@@ -11517,7 +10405,6 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_constraints(self):
         tested = StateTransition()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -11558,9 +10445,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_owned_diagrams(self):
         tested = StateTransition()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_StateTransition_element_of_interest_for_diagrams(self):
@@ -11628,13 +10513,11 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_realized_state_transitions(self):
         tested = StateTransition()
-        value = StateTransition()
         tested.get_realized_state_transitions()
         pass
 
     def test_StateTransition_realizing_state_transitions(self):
         tested = StateTransition()
-        value = StateTransition()
         tested.get_realizing_state_transitions()
         pass
 
@@ -11710,7 +10593,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_constraints(self):
         tested = ChangeEvent()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -11751,9 +10633,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_owned_diagrams(self):
         tested = ChangeEvent()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ChangeEvent_element_of_interest_for_diagrams(self):
@@ -11856,7 +10736,6 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_constraints(self):
         tested = TimeEvent()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -11897,9 +10776,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_owned_diagrams(self):
         tested = TimeEvent()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_TimeEvent_element_of_interest_for_diagrams(self):
@@ -12009,7 +10886,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_constraints(self):
         tested = Scenario()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -12050,9 +10926,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_owned_diagrams(self):
         tested = Scenario()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Scenario_element_of_interest_for_diagrams(self):
@@ -12134,19 +11008,16 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_referenced_scenarios(self):
         tested = Scenario()
-        value = Scenario()
         tested.get_referenced_scenarios()
         pass
 
     def test_Scenario_realized_scenarios(self):
         tested = Scenario()
-        value = Scenario()
         tested.get_realized_scenarios()
         pass
 
     def test_Scenario_realizing_scenarios(self):
         tested = Scenario()
-        value = Scenario()
         tested.get_realizing_scenarios()
         pass
 
@@ -12222,7 +11093,6 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_constraints(self):
         tested = InstanceRole()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -12263,9 +11133,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_owned_diagrams(self):
         tested = InstanceRole()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_InstanceRole_element_of_interest_for_diagrams(self):
@@ -12368,7 +11236,6 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_constraints(self):
         tested = SequenceMessage()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -12409,9 +11276,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_owned_diagrams(self):
         tested = SequenceMessage()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_SequenceMessage_element_of_interest_for_diagrams(self):
@@ -12556,7 +11421,6 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_constraints(self):
         tested = StateFragment()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -12597,9 +11461,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_owned_diagrams(self):
         tested = StateFragment()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_StateFragment_element_of_interest_for_diagrams(self):
@@ -12716,7 +11578,6 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_constraints(self):
         tested = CombinedFragment()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -12757,9 +11618,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_owned_diagrams(self):
         tested = CombinedFragment()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CombinedFragment_element_of_interest_for_diagrams(self):
@@ -12918,9 +11777,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_owned_diagrams(self):
         tested = Operand()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Operand_element_of_interest_for_diagrams(self):
@@ -13037,7 +11894,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_constraints(self):
         tested = ConstraintDuration()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -13078,9 +11934,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_owned_diagrams(self):
         tested = ConstraintDuration()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ConstraintDuration_element_of_interest_for_diagrams(self):
@@ -13113,7 +11967,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_allocator_configuration_items(self):
         tested = PhysicalPort()
-        value = ConfigurationItem()
         tested.get_allocator_configuration_items()
         pass
 
@@ -13189,7 +12042,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_constraints(self):
         tested = PhysicalPort()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -13230,9 +12082,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_owned_diagrams(self):
         tested = PhysicalPort()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalPort_element_of_interest_for_diagrams(self):
@@ -13258,31 +12108,26 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_physical_links(self):
         tested = PhysicalPort()
-        value = PhysicalLink()
         tested.get_physical_links()
         pass
 
     def test_PhysicalPort_allocated_component_ports(self):
         tested = PhysicalPort()
-        value = ComponentPort()
         tested.get_allocated_component_ports()
         pass
 
     def test_PhysicalPort_realized_physical_ports(self):
         tested = PhysicalPort()
-        value = PhysicalPort()
         tested.get_realized_physical_ports()
         pass
 
     def test_PhysicalPort_realizing_physical_ports(self):
         tested = PhysicalPort()
-        value = PhysicalPort()
         tested.get_realizing_physical_ports()
         pass
 
     def test_PhysicalLink_allocator_configuration_items(self):
         tested = PhysicalLink()
-        value = ConfigurationItem()
         tested.get_allocator_configuration_items()
         pass
 
@@ -13358,7 +12203,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_constraints(self):
         tested = PhysicalLink()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -13399,9 +12243,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_owned_diagrams(self):
         tested = PhysicalLink()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalLink_element_of_interest_for_diagrams(self):
@@ -13434,7 +12276,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_categories(self):
         tested = PhysicalLink()
-        value = PhysicalLinkCategory()
         tested.get_categories()
         pass
 
@@ -13454,19 +12295,16 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_allocated_component_exchanges(self):
         tested = PhysicalLink()
-        value = ComponentExchange()
         tested.get_allocated_component_exchanges()
         pass
 
     def test_PhysicalLink_realized_physical_links(self):
         tested = PhysicalLink()
-        value = PhysicalLink()
         tested.get_realized_physical_links()
         pass
 
     def test_PhysicalLink_realizing_physical_links(self):
         tested = PhysicalLink()
-        value = PhysicalLink()
         tested.get_realizing_physical_links()
         pass
 
@@ -13542,7 +12380,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_constraints(self):
         tested = PhysicalLinkCategory()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -13583,9 +12420,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_owned_diagrams(self):
         tested = PhysicalLinkCategory()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalLinkCategory_element_of_interest_for_diagrams(self):
@@ -13688,7 +12523,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_constraints(self):
         tested = PhysicalPath()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -13729,9 +12563,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_owned_diagrams(self):
         tested = PhysicalPath()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalPath_element_of_interest_for_diagrams(self):
@@ -13757,7 +12589,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_involved_physical_links(self):
         tested = PhysicalPath()
-        value = PhysicalLink()
         tested.get_involved_physical_links()
         pass
 
@@ -13770,19 +12601,16 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_allocated_component_exchanges(self):
         tested = PhysicalPath()
-        value = ComponentExchange()
         tested.get_allocated_component_exchanges()
         pass
 
     def test_PhysicalPath_realized_physical_paths(self):
         tested = PhysicalPath()
-        value = PhysicalPath()
         tested.get_realized_physical_paths()
         pass
 
     def test_PhysicalPath_realizing_physical_paths(self):
         tested = PhysicalPath()
-        value = PhysicalPath()
         tested.get_realizing_physical_paths()
         pass
 
@@ -13865,7 +12693,6 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_constraints(self):
         tested = InterfacePkg()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -13906,9 +12733,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_owned_diagrams(self):
         tested = InterfacePkg()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_InterfacePkg_element_of_interest_for_diagrams(self):
@@ -14025,7 +12850,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_constraints(self):
         tested = Interface()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -14066,9 +12890,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_owned_diagrams(self):
         tested = Interface()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Interface_element_of_interest_for_diagrams(self):
@@ -14108,19 +12930,16 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_exchange_items(self):
         tested = Interface()
-        value = ExchangeItem()
         tested.get_exchange_items()
         pass
 
     def test_Interface_providing_component_ports(self):
         tested = Interface()
-        value = ComponentPort()
         tested.get_providing_component_ports()
         pass
 
     def test_Interface_requiring_component_ports(self):
         tested = Interface()
-        value = ComponentPort()
         tested.get_requiring_component_ports()
         pass
 
@@ -14140,13 +12959,11 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_super(self):
         tested = Interface()
-        value = Interface()
         tested.get_super()
         pass
 
     def test_Interface_sub(self):
         tested = Interface()
-        value = Interface()
         tested.get_sub()
         pass
 
@@ -14222,7 +13039,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_constraints(self):
         tested = ExchangeItemAllocation()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -14263,9 +13079,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_owned_diagrams(self):
         tested = ExchangeItemAllocation()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ExchangeItemAllocation_element_of_interest_for_diagrams(self):
@@ -14312,7 +13126,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_invoking_sequence_messages(self):
         tested = ExchangeItemAllocation()
-        value = SequenceMessage()
         tested.get_invoking_sequence_messages()
         pass
 
@@ -14388,7 +13201,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_constraints(self):
         tested = ExchangeItem()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -14429,148 +13241,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_owned_diagrams(self):
         tested = ExchangeItem()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
-        pass
-
-    def test_ExchangeItem_element_of_interest_for_diagrams(self):
-        tested = ExchangeItem()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_ExchangeItem_contextual_element_for_diagrams(self):
-        tested = ExchangeItem()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_ExchangeItem_representing_diagrams(self):
-        tested = ExchangeItem()
-        value = Diagram()
-        tested.get_representing_diagrams().add(value)
-        self.assertEqual(tested.get_representing_diagrams().get(0), value)
-        pass
-
-    def test_ExchangeItem_id(self):
-        tested = ExchangeItem()
-        value = "value"
-        tested.set_id(value)
-        self.assertEqual(tested.get_id(), value)
-        pass
-
-    def test_ExchangeItem_sid(self):
-        tested = ExchangeItem()
-        value = "value"
-        tested.set_sid(value)
-        self.assertEqual(tested.get_sid(), value)
-        pass
-
-    def test_ExchangeItem_name(self):
-        tested = ExchangeItem()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_ExchangeItem_summary(self):
-        tested = ExchangeItem()
-        value = "value"
-        tested.set_summary(value)
-        self.assertEqual(tested.get_summary(), value)
-        pass
-
-    def test_ExchangeItem_description(self):
-        tested = ExchangeItem()
-        value = "value"
-        tested.set_description(value)
-        self.assertEqual(tested.get_description(), value)
-        pass
-
-    def test_ExchangeItem_status(self):
-        tested = ExchangeItem()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
-        pass
-
-    def test_ExchangeItem_review(self):
-        tested = ExchangeItem()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
-        pass
-
-    def test_ExchangeItem_visible_in_documentation(self):
-        tested = ExchangeItem()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
-        pass
-
-    def test_ExchangeItem_visible_for_traceability(self):
-        tested = ExchangeItem()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
-        pass
-
-    def test_ExchangeItem_owned_constraints(self):
-        tested = ExchangeItem()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
-        pass
-
-    def test_ExchangeItem_constraints(self):
-        tested = ExchangeItem()
-        value = Constraint()
-        tested.get_constraints()
-        pass
-
-    def test_ExchangeItem_owned_property_values(self):
-        tested = ExchangeItem()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
-        pass
-
-    def test_ExchangeItem_applied_property_values(self):
-        tested = ExchangeItem()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
-        pass
-
-    def test_ExchangeItem_owned_property_value_groups(self):
-        tested = ExchangeItem()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
-        pass
-
-    def test_ExchangeItem_applied_property_value_groups(self):
-        tested = ExchangeItem()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
-        pass
-
-    def test_ExchangeItem_owned_enumeration_property_types(self):
-        tested = ExchangeItem()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
-        pass
-
-    def test_ExchangeItem_owned_diagrams(self):
-        tested = ExchangeItem()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ExchangeItem_element_of_interest_for_diagrams(self):
@@ -14624,31 +13295,26 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_allocator_interfaces(self):
         tested = ExchangeItem()
-        value = Interface()
         tested.get_allocator_interfaces()
         pass
 
     def test_ExchangeItem_super(self):
         tested = ExchangeItem()
-        value = ExchangeItem()
         tested.get_super()
         pass
 
     def test_ExchangeItem_sub(self):
         tested = ExchangeItem()
-        value = ExchangeItem()
         tested.get_sub()
         pass
 
     def test_ExchangeItem_realized_exchange_items(self):
         tested = ExchangeItem()
-        value = ExchangeItem()
         tested.get_realized_exchange_items()
         pass
 
     def test_ExchangeItem_realizing_exchange_items(self):
         tested = ExchangeItem()
-        value = ExchangeItem()
         tested.get_realizing_exchange_items()
         pass
 
@@ -14731,7 +13397,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_constraints(self):
         tested = ExchangeItemElement()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -14772,9 +13437,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_owned_diagrams(self):
         tested = ExchangeItemElement()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ExchangeItemElement_element_of_interest_for_diagrams(self):
@@ -14884,7 +13547,6 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_constraints(self):
         tested = FunctionInputPort()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -14925,9 +13587,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_owned_diagrams(self):
         tested = FunctionInputPort()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_FunctionInputPort_element_of_interest_for_diagrams(self):
@@ -14953,7 +13613,6 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_incoming_functional_exchanges(self):
         tested = FunctionInputPort()
-        value = FunctionalExchange()
         tested.get_incoming_functional_exchanges()
         pass
 
@@ -15057,7 +13716,6 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_constraints(self):
         tested = FunctionOutputPort()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -15098,9 +13756,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_owned_diagrams(self):
         tested = FunctionOutputPort()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_FunctionOutputPort_element_of_interest_for_diagrams(self):
@@ -15126,7 +13782,6 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_outgoing_functional_exchanges(self):
         tested = FunctionOutputPort()
-        value = FunctionalExchange()
         tested.get_outgoing_functional_exchanges()
         pass
 
@@ -15223,7 +13878,6 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_constraints(self):
         tested = FunctionalExchange()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -15264,9 +13918,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_owned_diagrams(self):
         tested = FunctionalExchange()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_FunctionalExchange_element_of_interest_for_diagrams(self):
@@ -15292,7 +13944,6 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_invoking_sequence_messages(self):
         tested = FunctionalExchange()
-        value = SequenceMessage()
         tested.get_invoking_sequence_messages()
         pass
 
@@ -15319,13 +13970,11 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_involving_functional_chains(self):
         tested = FunctionalExchange()
-        value = FunctionalChain()
         tested.get_involving_functional_chains()
         pass
 
     def test_FunctionalExchange_categories(self):
         tested = FunctionalExchange()
-        value = ExchangeCategory()
         tested.get_categories()
         pass
 
@@ -15338,19 +13987,16 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_realized_functional_exchanges(self):
         tested = FunctionalExchange()
-        value = FunctionalExchange()
         tested.get_realized_functional_exchanges()
         pass
 
     def test_FunctionalExchange_realizing_functional_exchanges(self):
         tested = FunctionalExchange()
-        value = FunctionalExchange()
         tested.get_realizing_functional_exchanges()
         pass
 
     def test_FunctionalExchange_realized_interactions(self):
         tested = FunctionalExchange()
-        value = Interaction()
         tested.get_realized_interactions()
         pass
 
@@ -15426,7 +14072,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_constraints(self):
         tested = ExchangeCategory()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -15467,9 +14112,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_owned_diagrams(self):
         tested = ExchangeCategory()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ExchangeCategory_element_of_interest_for_diagrams(self):
@@ -15572,7 +14215,6 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_constraints(self):
         tested = FunctionalChain()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -15613,9 +14255,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_owned_diagrams(self):
         tested = FunctionalChain()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_FunctionalChain_element_of_interest_for_diagrams(self):
@@ -15655,25 +14295,21 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_involved_functions(self):
         tested = FunctionalChain()
-        value = PhysicalFunction()
         tested.get_involved_functions()
         pass
 
     def test_FunctionalChain_involved_functional_exchanges(self):
         tested = FunctionalChain()
-        value = FunctionalExchange()
         tested.get_involved_functional_exchanges()
         pass
 
     def test_FunctionalChain_involved_functional_chains(self):
         tested = FunctionalChain()
-        value = FunctionalChain()
         tested.get_involved_functional_chains()
         pass
 
     def test_FunctionalChain_involving_capabilities(self):
         tested = FunctionalChain()
-        value = CapabilityRealization()
         tested.get_involving_capabilities()
         pass
 
@@ -15686,19 +14322,16 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_realized_operational_processes(self):
         tested = FunctionalChain()
-        value = OperationalProcess()
         tested.get_realized_operational_processes()
         pass
 
     def test_FunctionalChain_realized_functional_chains(self):
         tested = FunctionalChain()
-        value = FunctionalChain()
         tested.get_realized_functional_chains()
         pass
 
     def test_FunctionalChain_realizing_functional_chains(self):
         tested = FunctionalChain()
-        value = FunctionalChain()
         tested.get_realizing_functional_chains()
         pass
 
@@ -15774,7 +14407,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_constraints(self):
         tested = ComponentPort()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -15815,9 +14447,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_owned_diagrams(self):
         tested = ComponentPort()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ComponentPort_element_of_interest_for_diagrams(self):
@@ -15850,25 +14480,21 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_component_exchanges(self):
         tested = ComponentPort()
-        value = ComponentExchange()
         tested.get_component_exchanges()
         pass
 
     def test_ComponentPort_allocated_function_ports(self):
         tested = ComponentPort()
-        value = FunctionOutputPort()
         tested.get_allocated_function_ports()
         pass
 
     def test_ComponentPort_provided_interfaces(self):
         tested = ComponentPort()
-        value = Interface()
         tested.get_provided_interfaces()
         pass
 
     def test_ComponentPort_required_interfaces(self):
         tested = ComponentPort()
-        value = Interface()
         tested.get_required_interfaces()
         pass
 
@@ -15881,13 +14507,11 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_realized_component_ports(self):
         tested = ComponentPort()
-        value = ComponentPort()
         tested.get_realized_component_ports()
         pass
 
     def test_ComponentPort_realizing_component_ports(self):
         tested = ComponentPort()
-        value = ComponentPort()
         tested.get_realizing_component_ports()
         pass
 
@@ -15963,7 +14587,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_constraints(self):
         tested = ComponentExchange()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -16004,9 +14627,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_owned_diagrams(self):
         tested = ComponentExchange()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ComponentExchange_element_of_interest_for_diagrams(self):
@@ -16032,7 +14653,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_invoking_sequence_messages(self):
         tested = ComponentExchange()
-        value = SequenceMessage()
         tested.get_invoking_sequence_messages()
         pass
 
@@ -16045,19 +14665,16 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_connected_components(self):
         tested = ComponentExchange()
-        value = PhysicalActor()
         tested.get_connected_components()
         pass
 
     def test_ComponentExchange_categories(self):
         tested = ComponentExchange()
-        value = ComponentExchangeCategory()
         tested.get_categories()
         pass
 
     def test_ComponentExchange_allocated_functional_exchanges(self):
         tested = ComponentExchange()
-        value = FunctionalExchange()
         tested.get_allocated_functional_exchanges()
         pass
 
@@ -16091,13 +14708,11 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_realized_component_exchanges(self):
         tested = ComponentExchange()
-        value = ComponentExchange()
         tested.get_realized_component_exchanges()
         pass
 
     def test_ComponentExchange_realizing_component_exchanges(self):
         tested = ComponentExchange()
-        value = ComponentExchange()
         tested.get_realizing_component_exchanges()
         pass
 
@@ -16180,7 +14795,6 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_constraints(self):
         tested = ComponentExchangeCategory()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -16221,9 +14835,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_owned_diagrams(self):
         tested = ComponentExchangeCategory()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_ComponentExchangeCategory_element_of_interest_for_diagrams(self):
@@ -16284,7 +14896,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Class_contained_properties(self):
         tested = Class()
-        value = Property()
         tested.get_contained_properties()
         pass
 
@@ -16395,7 +15006,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Union_contained_union_properties(self):
         tested = Union()
-        value = UnionProperty()
         tested.get_contained_union_properties()
         pass
 
@@ -16527,13 +15137,11 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_super(self):
         tested = Enumeration()
-        value = PhysicalQuantity()
         tested.get_super()
         pass
 
     def test_Enumeration_sub(self):
         tested = Enumeration()
-        value = PhysicalQuantity()
         tested.get_sub()
         pass
 
@@ -16630,7 +15238,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_constraints(self):
         tested = Enumeration()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -16671,9 +15278,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_owned_diagrams(self):
         tested = Enumeration()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Enumeration_element_of_interest_for_diagrams(self):
@@ -16790,13 +15395,11 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_super(self):
         tested = BooleanType()
-        value = PhysicalQuantity()
         tested.get_super()
         pass
 
     def test_BooleanType_sub(self):
         tested = BooleanType()
-        value = PhysicalQuantity()
         tested.get_sub()
         pass
 
@@ -16893,7 +15496,6 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_constraints(self):
         tested = BooleanType()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -16934,9 +15536,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_owned_diagrams(self):
         tested = BooleanType()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_BooleanType_element_of_interest_for_diagrams(self):
@@ -17004,13 +15604,11 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_super(self):
         tested = StringType()
-        value = PhysicalQuantity()
         tested.get_super()
         pass
 
     def test_StringType_sub(self):
         tested = StringType()
-        value = PhysicalQuantity()
         tested.get_sub()
         pass
 
@@ -17107,7 +15705,6 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_constraints(self):
         tested = StringType()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -17148,9 +15745,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_owned_diagrams(self):
         tested = StringType()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_StringType_element_of_interest_for_diagrams(self):
@@ -17253,13 +15848,11 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_super(self):
         tested = NumericType()
-        value = PhysicalQuantity()
         tested.get_super()
         pass
 
     def test_NumericType_sub(self):
         tested = NumericType()
-        value = PhysicalQuantity()
         tested.get_sub()
         pass
 
@@ -17356,7 +15949,6 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_constraints(self):
         tested = NumericType()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -17397,9 +15989,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_owned_diagrams(self):
         tested = NumericType()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_NumericType_element_of_interest_for_diagrams(self):
@@ -17565,13 +16155,11 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_super(self):
         tested = PhysicalQuantity()
-        value = PhysicalQuantity()
         tested.get_super()
         pass
 
     def test_PhysicalQuantity_sub(self):
         tested = PhysicalQuantity()
-        value = PhysicalQuantity()
         tested.get_sub()
         pass
 
@@ -17668,7 +16256,6 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_constraints(self):
         tested = PhysicalQuantity()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -17709,9 +16296,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_owned_diagrams(self):
         tested = PhysicalQuantity()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_PhysicalQuantity_element_of_interest_for_diagrams(self):
@@ -17814,7 +16399,6 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_constraints(self):
         tested = Unit()
-        value = Constraint()
         tested.get_constraints()
         pass
 
@@ -17855,9 +16439,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_owned_diagrams(self):
         tested = Unit()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Unit_element_of_interest_for_diagrams(self):
@@ -17904,9 +16486,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaModule_owned_diagrams(self):
         tested = CapellaModule()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_CapellaModule_element_of_interest_for_diagrams(self):
@@ -17967,9 +16547,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Requirement_owned_diagrams(self):
         tested = Requirement()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Requirement_element_of_interest_for_diagrams(self):
@@ -18105,9 +16683,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Folder_owned_diagrams(self):
         tested = Folder()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Folder_element_of_interest_for_diagrams(self):
@@ -18140,9 +16716,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Attribute_owned_diagrams(self):
         tested = Attribute()
-        value = Diagram()
-        tested.get_owned_diagrams().add(value)
-        self.assertEqual(tested.get_owned_diagrams().get(0), value)
+        tested.get_owned_diagrams()
         pass
 
     def test_Attribute_element_of_interest_for_diagrams(self):

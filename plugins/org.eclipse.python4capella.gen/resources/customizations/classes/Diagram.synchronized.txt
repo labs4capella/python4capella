@@ -1,0 +1,3 @@
+    def get_synchronized(self):
+        return Sirius.is_synchronized(self.get_java_object())
+

@@ -1,0 +1,6 @@
+    def get_package(self):
+        if self.getTarget() is None:
+            return None
+        else:
+            return self.getTarget().eClass().getEPackage().getName()
+

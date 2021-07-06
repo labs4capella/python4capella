@@ -79,7 +79,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		while (!remainingClasses.isEmpty()) {
 			final List<Class> toRemove = new ArrayList<>();
 			for (Class cls : remainingClasses) {
-				if (knwonClasses.containsAll(getSuperClassesWithoutEObject(cls))) {
+				if (knwonClasses.containsAll(getSuperClasses(cls))) {
 					orderedClasses.add(cls);
 					knwonClasses.add(cls);
 					toRemove.add(cls);
@@ -97,10 +97,13 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			try (OutputStream os = new FileOutputStream(file)) {
 				os.write(getHeader("capella").getBytes());
 				for (Class cls : orderedClasses) {
-					if (!"EObject".equals(cls.getName())) {
-						os.write(NL.getBytes());
-						os.write(generateClass(cls).getBytes());
-					}
+					os.write(NL.getBytes());
+					os.write(generateClass(cls).getBytes());
+				}
+				os.write(NL.getBytes());
+				final String additions = getPackageAdditions("capella");
+				if (additions != null) {
+					os.write(additions.getBytes());
 				}
 				os.write(NL.getBytes());
 			}
@@ -110,11 +113,11 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 	}
 
-	private List<Class> getSuperClassesWithoutEObject(Class cls) {
+	private List<Class> getSuperClasses(Class cls) {
 		List<Class> res = new ArrayList<>();
 
 		for (GeneralizableElement superElement : cls.getSuper()) {
-			if (superElement instanceof Class && !"EObject".equals(superElement.getName())) {
+			if (superElement instanceof Class) {
 				res.add((Class) superElement);
 			}
 		}
@@ -133,10 +136,8 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				try (OutputStream os = new FileOutputStream(file)) {
 					os.write(getHeader(pkg.getName()).getBytes());
 					for (Class cls : pkg.getOwnedClasses()) {
-						if (!"EObject".equals(cls.getName())) {
-							os.write(NL.getBytes());
-							os.write(generateClass(cls).getBytes());
-						}
+						os.write(NL.getBytes());
+						os.write(generateClass(cls).getBytes());
 					}
 					os.write(NL.getBytes());
 				}
@@ -152,7 +153,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 		final String superClassNames;
 		if (cls.getSuperGeneralizations().isEmpty()) {
-			superClassNames = "EObject";
+			superClassNames = "JavaObject";
 		} else {
 			final StringJoiner joiner = new StringJoiner(", ");
 			for (Generalization superGeneralization : cls.getSuperGeneralizations()) {
@@ -425,6 +426,20 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		return res;
 	}
 
+	private String getPackageAdditions(String packageName) {
+		String res = null;
+
+		try (InputStream is = getClass().getClassLoader()
+				.getResourceAsStream("resources/additions/packages/" + packageName + ".txt");) {
+			res = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines()
+					.collect(Collectors.joining(NL));
+		} catch (Exception e) {
+			// nothing to do here
+		}
+
+		return res;
+	}
+
 	private Map<String, String> initFeatureRenames() {
 		final Map<String, String> res = new HashMap<>();
 
@@ -466,6 +481,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		res.put("SystemAnalysis.missionPkg", "ownedMissionPkg");
 		res.put("SystemAnalysis.systemComponentPkg", "ownedSystemComponentPkg");
 		res.put("SystemAnalysis.systemFunctionPkg", "containedSystemFunctionPkg");
+		res.put("Diagram.description", "documentation");
 
 		// requirement renames
 		res.put("CapellaModule.id", "ReqIFIdentifier");

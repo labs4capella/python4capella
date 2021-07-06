@@ -1,0 +1,3 @@
+    def get_visible_for_traceability(self):
+        return Sirius.is_visible_for_traceability(self.get_java_object())
+

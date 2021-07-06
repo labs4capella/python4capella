@@ -1,0 +1,3 @@
+    def export_as_image(self, file_path):
+        Sirius.export_image(self.get_java_object(), file_path)
+

@@ -9,21 +9,28 @@ if False:
     from java_api.Sirius_API import *
 
 
-class CapellaModel(EObject):
+class CapellaModel(JavaObject):
     def __init__(self, aird_path):
-        self.session = load_sirius_session(aird_path)
+        self.session = Sirius.load_session(aird_path)
     def get_system_engineering(self):
         if self.session is None:
             return None
         else:
-            return SystemEngineering(getEngineering(self.session))
+            return SystemEngineering(Sirius.get_system_engineering(self.session))
     def get_referenced_libraries(self):
         return create_e_list(self.get_java_object().getReferencedLibraries(), CapellaLibrary)
     def get_all_diagrams(self):
-        return create_e_list(self.get_java_object().getAllDiagrams(), Diagram)
-    def get_diagrams(self, diagramType):
-        raise AttributeError("TODO")
-
+        res = []
+        descriptors = Sirius.get_all_diagrams(self.session)
+        for descriptor in descriptors:
+            res.append(Diagram(descriptor))
+        return res
+    def get_diagrams(self, diagram_type):
+        res = []
+        descriptors = Sirius.get_diagrams(self.session, diagram_type)
+        for descriptor in descriptors:
+            res.append(Diagram(descriptor))
+        return res
 class CapellaLibrary(CapellaModel):
     def __init__(self, java_object = None):
         if java_object is None:
@@ -32,6 +39,19 @@ class CapellaLibrary(CapellaModel):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+
+class EObject(JavaObject):
+    def get_owned_diagrams(self):
+        res = []
+        for element in Sirius.get_representation_descriptors(self.get_java_object()):
+            res.append(Diagram(element))
+        return res
+    def get_element_of_interest_for_diagrams(eObject):
+        return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation", self, Diagram)
+    def get_contextual_element_for_diagrams(self):
+        return create_e_list(self.get_java_object().getContextualElementForDiagrams(), Diagram)
+    def get_representing_diagrams(self):
+        return create_e_list(self.get_java_object().getRepresentingDiagrams(), Diagram)
 
 class CapellaElement(EObject):
     def __init__(self, java_object = None):
@@ -187,12 +207,12 @@ class PropertyValuePkgContainer(CapellaElement):
     def get_owned_property_value_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPropertyValuePkgs(), PropertyValuePkg)
 
-class Diagram(EObject):
+class Diagram(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
-        elif isinstance(java_object, Diagram):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, create_e_object("http://www.eclipse.org/sirius/1.1.0", "DRepresentationDescriptor"))
+        elif isinstance(java_object, PhysicalFunction):
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
     def get_uid(self):
@@ -204,42 +224,33 @@ class Diagram(EObject):
     def set_name(self, value):
         self.get_java_object().setName(value)
     def get_type(self):
-        return self.get_java_object().getType()
-    def set_type(self, value):
-        self.get_java_object().setType(value)
+        if self.getDescription() is None:
+            return None
+        else:
+            return self.getDescription().getName()
     def get_package(self):
-        return self.get_java_object().getPackage()
-    def set_package(self, value):
-        self.get_java_object().setPackage(value)
+        if self.getTarget() is None:
+            return None
+        else:
+            return self.getTarget().eClass().getEPackage().getName()
     def get_description(self):
-        return self.get_java_object().getDescription()
+        return self.get_java_object().getDocumentation()
     def set_description(self, value):
-        self.get_java_object().setDescription(value)
+        self.get_java_object().setDocumentation(value)
     def get_status(self):
-        value =  self.get_java_object().getStatus()
+        value = Sirius.get_status(self.get_java_object())
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
-    def set_status(self, value):
-        return self.get_java_object().setStatus(value.get_java_object())
+            return Status(value)
     def get_review(self):
-        return self.get_java_object().getReview()
-    def set_review(self, value):
-        self.get_java_object().setReview(value)
+        return Sirius.get_review(self.get_java_object())
     def get_visible_in_documentation(self):
-        return self.get_java_object().isVisibleInDocumentation()
-    def set_visible_in_documentation(self, value):
-        self.get_java_object().setVisibleInDocumentation(value)
+        return Sirius.is_visible_in_documentation(self.get_java_object())
     def get_visible_for_traceability(self):
-        return self.get_java_object().isVisibleForTraceability()
-    def set_visible_for_traceability(self, value):
-        self.get_java_object().setVisibleForTraceability(value)
+        return Sirius.is_visible_for_traceability(self.get_java_object())
     def get_synchronized(self):
-        return self.get_java_object().isSynchronized()
-    def set_synchronized(self, value):
-        self.get_java_object().setSynchronized(value)
+        return Sirius.is_synchronized(self.get_java_object())
     def get_target(self):
         value =  self.get_java_object().getTarget()
         if value is None:
@@ -250,13 +261,18 @@ class Diagram(EObject):
     def set_target(self, value):
         return self.get_java_object().setTarget(value.get_java_object())
     def get_represented_elements(self):
-        return create_e_list(self.get_java_object().getRepresentedElements(), EObject)
+        res = []
+        for element in Sirius.get_represented_elements(self.get_java_object()):
+            specific_cls = getattr(sys.modules["__main__"], element.eClass().getName())
+            if specific_cls is not None:
+                res.append(specific_cls())
+        return res
     def get_contextual_elements(self):
-        return create_e_list(self.get_java_object().getContextualElements(), EObject)
+        return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToContextualElement", self)
     def get_elements_of_interest(self):
-        return create_e_list(self.get_java_object().getElementsOfInterest(), EObject)
-    def export_as_image(self, filePath):
-        raise AttributeError("TODO")
+        return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToElement", self)
+    def export_as_image(self, file_path):
+        Sirius.export_image(self.get_java_object(), file_path)
 
 class AbstractReElement(EObject):
     def __init__(self, java_object = None):
@@ -1193,7 +1209,7 @@ class StateTransition(CapellaElement):
     def get_realizing_state_transitions(self):
         return create_e_list(self.get_java_object().getRealizingStateTransitions(), StateTransition)
 
-class AbstractAction(EObject):
+class AbstractAction(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction"))
@@ -1274,7 +1290,7 @@ class InstanceRole(CapellaElement):
     def get_represented_instance(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.InstanceRole_representedInstance", self)
 
-class AbstractInstance(EObject):
+class AbstractInstance(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance"))
@@ -1341,7 +1357,7 @@ class SequenceMessage(CapellaElement):
     def set_exchange_context(self, value):
         return self.get_java_object().setExchangeContext(value.get_java_object())
 
-class AbstractExchange(EObject):
+class AbstractExchange(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -1958,7 +1974,7 @@ class AbstractSystemCapability(AbstractCapability):
     def get_involved_functions(self):
         return create_e_list(self.get_java_object().getInvolvedFunctions(), Function)
 
-class DataValue(EObject):
+class DataValue(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "DataValue"))
@@ -2084,7 +2100,7 @@ class CollectionValue(DataValue):
         else:
             EObject.__init__(self, java_object)
 
-class DataPkg(EObject):
+class DataPkg(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "DataPkg"))
@@ -2093,7 +2109,7 @@ class DataPkg(EObject):
         else:
             EObject.__init__(self, java_object)
 
-class DataType(EObject):
+class DataType(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "DataType"))
@@ -2264,7 +2280,7 @@ class Union(DataType):
     def get_contained_operations(self):
         return create_e_list(self.get_java_object().getContainedOperations(), Operation)
 
-class Association(EObject):
+class Association(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Association"))
@@ -2273,7 +2289,7 @@ class Association(EObject):
         else:
             EObject.__init__(self, java_object)
 
-class Property(EObject):
+class Property(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0", "Property"))
@@ -2300,7 +2316,7 @@ class UnionProperty(Property):
         else:
             EObject.__init__(self, java_object)
 
-class Operation(EObject):
+class Operation(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Operation"))
@@ -2324,7 +2340,7 @@ class Operation(EObject):
     def get_thrown_exceptions(self):
         return create_e_list(self.get_java_object().getThrownExceptions(), Exception)
 
-class Parameter(EObject):
+class Parameter(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Parameter"))
@@ -2333,7 +2349,7 @@ class Parameter(EObject):
         else:
             EObject.__init__(self, java_object)
 
-class Exception(EObject):
+class Exception(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception"))
@@ -2644,7 +2660,7 @@ class Unit(CapellaElement):
         else:
             EObject.__init__(self, java_object)
 
-class PVMT(EObject):
+class PVMT(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -2659,7 +2675,7 @@ class PVMT(EObject):
     def get_p_v_value(self, elem, PVName):
         raise AttributeError("TODO")
 
-class RequirementAddOn(EObject):
+class RequirementAddOn(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -3313,3 +3329,11 @@ class PhysicalFunction(Function):
     def get_realized_logical_functions(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractFunction_realizedFunctions", self)
 
+class Status(EObject):
+    def __init__(self, java_object = None):
+        if java_object is None:
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
+        elif isinstance(java_object, PhysicalFunction):
+            EObject.__init__(self, java_object.get_java_object())
+        else:
+            EObject.__init__(self, java_object)

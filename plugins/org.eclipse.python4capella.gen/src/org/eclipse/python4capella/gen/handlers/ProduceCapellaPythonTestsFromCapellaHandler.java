@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -76,25 +77,10 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 				os.write(getHeader(root, "capella").getBytes());
 				for (DataPkg pkg : root.getOwnedDataPkgs()) {
 					for (Class cls : pkg.getOwnedClasses()) {
-						final EClass eCls = findCorrespondingEClass(cls);
-						if (eCls == null) {
-							// System.out.println(cls.getLabel());
-						}
 						if (!cls.isAbstract()) {
-							final List<Feature> allFeatures = getAllFeatures(cls);
+							final Set<Feature> allFeatures = getAllFeatures(cls);
 							for (Feature feature : allFeatures) {
 								os.write(getTest(cls, feature).getBytes());
-								if (eCls != null) {
-									EStructuralFeature eFeature = eCls.getEStructuralFeature(feature.getLabel());
-									if (eFeature == null && feature instanceof Property) {
-										eFeature = findMatchingFeature(eCls, (Property) feature);
-										if (eFeature != null) {
-											// System.out.println(cls.getLabel());
-											System.out.println("res.put(\"" + cls.getLabel() + "." + eFeature.getName()
-													+ "\",\"" + feature.getLabel() + "\")");
-										}
-									}
-								}
 							}
 						}
 					}
@@ -292,6 +278,105 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_StringType_super");
 		res.add("test_Union_contained_union_properties");
 		res.add("test_Unit_constraints");
+		res.add("test_Diagram_type");
+		res.add("test_Diagram_package");
+		res.add("test_Attribute_owned_diagrams");
+		res.add("test_BehaviorPC_owned_diagrams");
+		res.add("test_BooleanType_owned_diagrams");
+		res.add("test_CapabilityPkg_owned_diagrams");
+		res.add("test_CapabilityRealizationPkg_owned_diagrams");
+		res.add("test_CapabilityRealization_owned_diagrams");
+		res.add("test_Capability_owned_diagrams");
+		res.add("test_CapellaModule_owned_diagrams");
+		res.add("test_CatalogElementPkg_owned_diagrams");
+		res.add("test_ChangeEvent_owned_diagrams");
+		res.add("test_CombinedFragment_owned_diagrams");
+		res.add("test_CommunicationMean_owned_diagrams");
+		res.add("test_CompliancyDefinitionPkg_owned_diagrams");
+		res.add("test_CompliancyDefinition_owned_diagrams");
+		res.add("test_ComponentExchangeCategory_owned_diagrams");
+		res.add("test_ComponentExchange_owned_diagrams");
+		res.add("test_ComponentPort_owned_diagrams");
+		res.add("test_ConfigurationItemPkg_owned_diagrams");
+		res.add("test_ConfigurationItem_owned_diagrams");
+		res.add("test_ConstraintDuration_owned_diagrams");
+		res.add("test_Constraint_owned_diagrams");
+		res.add("test_EPBSArchitecture_owned_diagrams");
+		res.add("test_EntityPkg_owned_diagrams");
+		res.add("test_EnumerationPropertyLiteral_owned_diagrams");
+		res.add("test_EnumerationPropertyType_owned_diagrams");
+		res.add("test_Enumeration_owned_diagrams");
+		res.add("test_ExchangeCategory_owned_diagrams");
+		res.add("test_ExchangeItemAllocation_owned_diagrams");
+		res.add("test_ExchangeItemElement_owned_diagrams");
+		res.add("test_ExchangeItem_owned_diagrams");
+		res.add("test_Folder_owned_diagrams");
+		res.add("test_FunctionInputPort_owned_diagrams");
+		res.add("test_FunctionOutputPort_owned_diagrams");
+		res.add("test_FunctionalChain_owned_diagrams");
+		res.add("test_FunctionalExchange_owned_diagrams");
+		res.add("test_InstanceRole_owned_diagrams");
+		res.add("test_Interaction_owned_diagrams");
+		res.add("test_InterfacePkg_owned_diagrams");
+		res.add("test_Interface_owned_diagrams");
+		res.add("test_LogicalActor_owned_diagrams");
+		res.add("test_LogicalArchitecture_owned_diagrams");
+		res.add("test_LogicalComponentPkg_owned_diagrams");
+		res.add("test_LogicalComponent_owned_diagrams");
+		res.add("test_LogicalFunctionPkg_owned_diagrams");
+		res.add("test_LogicalFunction_owned_diagrams");
+		res.add("test_LogicalSystem_owned_diagrams");
+		res.add("test_MissionPkg_owned_diagrams");
+		res.add("test_Mission_owned_diagrams");
+		res.add("test_Mode_owned_diagrams");
+		res.add("test_NodePC_owned_diagrams");
+		res.add("test_NumericType_owned_diagrams");
+		res.add("test_Operand_owned_diagrams");
+		res.add("test_OperationalActivityPkg_owned_diagrams");
+		res.add("test_OperationalActivity_owned_diagrams");
+		res.add("test_OperationalActor_owned_diagrams");
+		res.add("test_OperationalAnalysis_owned_diagrams");
+		res.add("test_OperationalCapabilityPkg_owned_diagrams");
+		res.add("test_OperationalCapability_owned_diagrams");
+		res.add("test_OperationalEntity_owned_diagrams");
+		res.add("test_OperationalProcess_owned_diagrams");
+		res.add("test_PhysicalActor_owned_diagrams");
+		res.add("test_PhysicalArchitecture_owned_diagrams");
+		res.add("test_PhysicalComponentPkg_owned_diagrams");
+		res.add("test_PhysicalFunctionPkg_owned_diagrams");
+		res.add("test_PhysicalFunction_owned_diagrams");
+		res.add("test_PhysicalLinkCategory_owned_diagrams");
+		res.add("test_PhysicalLink_owned_diagrams");
+		res.add("test_PhysicalPath_owned_diagrams");
+		res.add("test_PhysicalPort_owned_diagrams");
+		res.add("test_PhysicalQuantity_owned_diagrams");
+		res.add("test_PhysicalSystem_owned_diagrams");
+		res.add("test_PropertyValueGroup_owned_diagrams");
+		res.add("test_PropertyValuePkg_owned_diagrams");
+		res.add("test_PropertyValue_owned_diagrams");
+		res.add("test_Pseudostate_owned_diagrams");
+		res.add("test_REC_owned_diagrams");
+		res.add("test_RPL_owned_diagrams");
+		res.add("test_RecCatalog_owned_diagrams");
+		res.add("test_Region_owned_diagrams");
+		res.add("test_Requirement_owned_diagrams");
+		res.add("test_Scenario_owned_diagrams");
+		res.add("test_SequenceMessage_owned_diagrams");
+		res.add("test_StateFragment_owned_diagrams");
+		res.add("test_StateMachine_owned_diagrams");
+		res.add("test_StateTransition_owned_diagrams");
+		res.add("test_State_owned_diagrams");
+		res.add("test_StringType_owned_diagrams");
+		res.add("test_SystemActor_owned_diagrams");
+		res.add("test_SystemAnalysis_owned_diagrams");
+		res.add("test_SystemComponentPkg_owned_diagrams");
+		res.add("test_SystemEngineering_owned_diagrams");
+		res.add("test_SystemFunctionPkg_owned_diagrams");
+		res.add("test_SystemFunction_owned_diagrams");
+		res.add("test_System_owned_diagrams");
+		res.add("test_TimeEvent_owned_diagrams");
+		res.add("test_Unit_owned_diagrams");
+		res.add("test_Diagram_represented_elements");
 
 		return res;
 	}
@@ -764,8 +849,8 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		return res;
 	}
 
-	private List<Feature> getAllFeatures(Class cls) {
-		final List<Feature> res = new ArrayList<>();
+	private Set<Feature> getAllFeatures(Class cls) {
+		final Set<Feature> res = new LinkedHashSet<>();
 
 		for (Class superType : getAllSuperClasses(cls)) {
 			res.addAll(superType.getOwnedFeatures());
@@ -821,8 +906,8 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		final String testName = "test_" + cls.getName() + "_" + pythonName;
 		res.append("    def " + testName + "(self):" + NL);
 		res.append("        tested = " + cls.getName() + "()" + NL);
-		res.append("        value = " + getTestValue(cls, property) + NL);
 		if (isScalar(property)) {
+			res.append("        value = " + getTestValue(cls, property) + NL);
 			res.append("        tested.set_" + pythonName + "(value)" + NL);
 			res.append("        self.assertEqual(tested.get_" + pythonName + "(), value)" + NL);
 		} else {
@@ -831,6 +916,7 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 					|| readOnlyTests.contains(testName)) {
 				res.append("        tested.get_" + pythonName + "()" + NL);
 			} else {
+				res.append("        value = " + getTestValue(cls, property) + NL);
 				res.append("        tested.get_" + pythonName + "().add(value)" + NL);
 				res.append("        self.assertEqual(tested.get_" + pythonName + "().get(0), value)" + NL);
 			}

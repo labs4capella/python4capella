@@ -1,0 +1,3 @@
+    def get_visible_in_documentation(self):
+        return Sirius.is_visible_in_documentation(self.get_java_object())
+

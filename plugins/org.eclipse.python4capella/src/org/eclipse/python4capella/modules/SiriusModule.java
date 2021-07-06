@@ -28,16 +28,22 @@ import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.dialect.ExportFormat;
 import org.eclipse.sirius.ui.tools.api.actions.export.SizeTooLargeException;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.swt.widgets.Display;
+import org.polarsys.capella.core.data.capellacore.EnumerationPropertyLiteral;
 import org.polarsys.capella.core.data.capellamodeller.ModelRoot;
 import org.polarsys.capella.core.data.capellamodeller.Project;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
+import org.polarsys.capella.core.data.cs.Part;
+import org.polarsys.capella.core.diagram.helpers.RepresentationAnnotationHelper;
 
 /**
  * EASE module for Sirius.
@@ -64,17 +70,19 @@ public class SiriusModule {
 		final List<DRepresentationDescriptor> res = new ArrayList<>();
 
 		final Session session = new EObjectQuery(eObj).getSession();
-		final Collection<DRepresentationDescriptor> repDescs = DialectManager.INSTANCE
-				.getRepresentationDescriptors(eObj, session);
-		// Filter representations to keep only those in a selected viewpoint
-		final Collection<Viewpoint> selectedViewpoints = session.getSelectedViewpoints(false);
+		if (session != null) {
+			final Collection<DRepresentationDescriptor> repDescs = DialectManager.INSTANCE
+					.getRepresentationDescriptors(eObj, session);
+			// Filter representations to keep only those in a selected viewpoint
+			final Collection<Viewpoint> selectedViewpoints = session.getSelectedViewpoints(false);
 
-		for (DRepresentationDescriptor repDesc : repDescs) {
-			boolean isDangling = new DRepresentationDescriptorQuery(repDesc).isDangling();
-			if (!isDangling && repDesc.getDescription().eContainer() instanceof Viewpoint) {
-				Viewpoint vp = (Viewpoint) repDesc.getDescription().eContainer();
-				if (selectedViewpoints.contains(vp)) {
-					res.add(repDesc);
+			for (DRepresentationDescriptor repDesc : repDescs) {
+				boolean isDangling = new DRepresentationDescriptorQuery(repDesc).isDangling();
+				if (!isDangling && repDesc.getDescription().eContainer() instanceof Viewpoint) {
+					Viewpoint vp = (Viewpoint) repDesc.getDescription().eContainer();
+					if (selectedViewpoints.contains(vp)) {
+						res.add(repDesc);
+					}
 				}
 			}
 		}
@@ -148,6 +156,161 @@ public class SiriusModule {
 						}
 					}
 				}
+			}
+		}
+
+		return res;
+	}
+
+	/**
+	 * Gets the {@link List} of {@link EObject} represented on the given
+	 * {@link DRepresentationDescriptor}.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * @return the {@link List} of {@link EObject} represented on the given
+	 *         {@link DRepresentationDescriptor}
+	 */
+	@WrapToScript
+	public List<EObject> getRepresentedElements(DRepresentationDescriptor descriptor) {
+		final List<EObject> res = new ArrayList<>();
+
+		final DRepresentation representation = descriptor.getRepresentation();
+		if (representation != null) {
+			for (DRepresentationElement element : representation.getRepresentationElements()) {
+				if (!(element instanceof DDiagramElement) && ((DDiagramElement) element).isVisible()) {
+					final EObject target = element.getTarget();
+					if (target instanceof Part) {
+						res.add(((Part) target).getType());
+					} else {
+						res.add(target);
+					}
+
+				}
+			}
+		}
+
+		return res;
+	}
+
+	/**
+	 * Tells if the given {@link DRepresentationDescriptor} is visible in
+	 * documentation.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * 
+	 * @return <code>true</code> if the given {@link DRepresentationDescriptor} is
+	 *         visible in documentation, <code>false</code> otherwise
+	 */
+	@WrapToScript
+	public boolean isVisibleInDocumentation(DRepresentationDescriptor descriptor) {
+		return RepresentationAnnotationHelper.isVisibleInDoc(descriptor);
+	}
+
+	/**
+	 * Tells if the given {@link DRepresentationDescriptor} is visible for
+	 * traceability.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * 
+	 * @return <code>true</code> if the given {@link DRepresentationDescriptor} is
+	 *         visible for traceability, <code>false</code> otherwise
+	 */
+	@WrapToScript
+	public boolean isVisibleForTraceability(DRepresentationDescriptor descriptor) {
+		return RepresentationAnnotationHelper.isVisibleInLM(descriptor);
+	}
+
+	/**
+	 * Tells if the given {@link DRepresentationDescriptor} is syncronized.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * @return <code>true</code> if the given {@link DRepresentationDescriptor} is
+	 *         syncronized, <code>false</code> otherwise
+	 */
+	@WrapToScript
+	public boolean isSynchronized(DRepresentationDescriptor descriptor) {
+		return descriptor.getRepresentation() instanceof DDiagram
+				&& ((DDiagram) descriptor.getRepresentation()).isSynchronized();
+	}
+
+	/**
+	 * Gets the status of the given {@link DRepresentationDescriptor}.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * @return the status of the given {@link DRepresentationDescriptor}
+	 */
+	@WrapToScript
+	public EnumerationPropertyLiteral getStatus(DRepresentationDescriptor descriptor) {
+		return RepresentationAnnotationHelper.getProgressStatus(descriptor);
+	}
+
+	/**
+	 * Sets the status of the given {@link DRepresentationDescriptor}.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * @param literal    the {@link EnumerationPropertyLiteral}
+	 */
+	@WrapToScript
+	public void setStatus(DRepresentationDescriptor descriptor, EnumerationPropertyLiteral literal) {
+		RepresentationAnnotationHelper.setProgressStatus(descriptor, literal);
+	}
+
+	/**
+	 * Gets the review for the given {@link DRepresentationDescriptor}.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * @return the review for the given {@link DRepresentationDescriptor}
+	 */
+	@WrapToScript
+	public String getReview(DRepresentationDescriptor descriptor) {
+		return RepresentationAnnotationHelper.getStatusReview(descriptor);
+	}
+
+	/**
+	 * Sets the review for the given {@link DRepresentationDescriptor}.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * @param review     the review
+	 */
+	@WrapToScript
+	public void setReview(DRepresentationDescriptor descriptor, String review) {
+		RepresentationAnnotationHelper.setStatusReview(descriptor, review);
+	}
+
+	/**
+	 * Gets the {@link List} of all {@link DRepresentationDescriptor} for the given
+	 * {@link Session}.
+	 * 
+	 * @param session the {@link Session}
+	 * @return the {@link List} of all {@link DRepresentationDescriptor} for the
+	 *         given {@link Session}
+	 */
+	public List<DRepresentationDescriptor> getAllDiagrams(Session session, String type) {
+		final List<DRepresentationDescriptor> res = new ArrayList<>();
+
+		for (DRepresentationDescriptor descriptor : DialectManager.INSTANCE.getAllRepresentationDescriptors(session)) {
+			if (descriptor.getDescription().getName().equals(type)) {
+				res.add(descriptor);
+			}
+		}
+
+		return res;
+	}
+
+	/**
+	 * Gets the {@link List} of {@link DRepresentationDescriptor} for the given
+	 * {@link Session}.
+	 * 
+	 * @param session the {@link Session}
+	 * @return the {@link List} of {@link DRepresentationDescriptor} for the given
+	 *         {@link Session}
+	 */
+	public List<DRepresentationDescriptor> getDiagrams(Session session, String type) {
+		final List<DRepresentationDescriptor> res = new ArrayList<>();
+
+		for (DRepresentationDescriptor descriptor : DialectManager.INSTANCE.getAllRepresentationDescriptors(session)) {
+			if (descriptor.getDescription().getName().equals(type)) {
+				res.add(descriptor);
 			}
 		}
 

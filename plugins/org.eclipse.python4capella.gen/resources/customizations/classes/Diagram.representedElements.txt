@@ -1,0 +1,8 @@
+    def get_represented_elements(self):
+        res = []
+        for element in Sirius.get_represented_elements(self.get_java_object()):
+            specific_cls = getattr(sys.modules["__main__"], element.eClass().getName())
+            if specific_cls is not None:
+                res.append(specific_cls())
+        return res
+

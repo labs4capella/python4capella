@@ -1,12 +1,15 @@
 loadModule('/Capella/Capella')
 import sys
 
-def capella_query(query_class, e_obj):
+def capella_query(query_class, e_obj, cls = None):
     """Call a query from the semantic browser from the qualified class name of the query and the EObect to pass as parameter"""
     res = []
     for e in callQuery(query_class, e_obj.get_java_object()):
         specific_cls = getattr(sys.modules["__main__"], e.eClass().getName())
-        res.append(specific_cls(e))
+        if specific_cls is not None:
+            res.append(specific_cls(e))
+        elif cls is not None:
+            res.append(cls(e))
     return res
 
 def capella_query_by_name(query_name, e_obj):
@@ -14,7 +17,8 @@ def capella_query_by_name(query_name, e_obj):
     res = []
     for e in getSBQuery(query_name, e_obj.get_java_object()):
         specific_cls = getattr(sys.modules["__main__"], e.eClass().getName())
-        res.append(specific_cls(e))
+        if specific_cls is not None:
+            res.append(specific_cls(e))
     return res
 
 def available_query_names(e_obj):

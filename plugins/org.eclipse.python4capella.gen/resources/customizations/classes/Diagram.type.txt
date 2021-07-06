@@ -1,0 +1,6 @@
+    def get_type(self):
+        if self.getDescription() is None:
+            return None
+        else:
+            return self.getDescription().getName()
+

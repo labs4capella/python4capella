@@ -1,0 +1,6 @@
+    def get_owned_diagrams(self):
+        res = []
+        for element in Sirius.get_representation_descriptors(self.get_java_object()):
+            res.append(Diagram(element))
+        return res
+

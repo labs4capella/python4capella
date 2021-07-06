@@ -1,0 +1,7 @@
+    def get_status(self):
+        value = Sirius.get_status(self.get_java_object())
+        if value is None:
+            return value
+        else:
+            return Status(value)
+
