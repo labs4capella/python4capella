@@ -53,6 +53,8 @@ import org.polarsys.capella.core.diagram.helpers.RepresentationAnnotationHelper;
  */
 public class SiriusModule {
 
+	private final CapellaModule capellaModule = new CapellaModule();
+
 	/**
 	 * The {@link ExportFormat}.
 	 */
@@ -146,13 +148,15 @@ public class SiriusModule {
 	public SystemEngineering getEngineering(Session session) {
 		SystemEngineering res = null;
 
-		found: for (Resource resource : session.getSemanticResources()) {
-			for (EObject root : resource.getContents()) {
-				if (root instanceof Project) {
-					for (ModelRoot modelRoot : ((Project) root).getOwnedModelRoots()) {
-						if (modelRoot instanceof SystemEngineering) {
-							res = (SystemEngineering) modelRoot;
-							break found;
+		if (session != null) {
+			found: for (Resource resource : session.getSemanticResources()) {
+				for (EObject root : resource.getContents()) {
+					if (root instanceof Project) {
+						for (ModelRoot modelRoot : ((Project) root).getOwnedModelRoots()) {
+							if (modelRoot instanceof SystemEngineering) {
+								res = (SystemEngineering) modelRoot;
+								break found;
+							}
 						}
 					}
 				}
@@ -285,11 +289,13 @@ public class SiriusModule {
 	 * @return the {@link List} of all {@link DRepresentationDescriptor} for the
 	 *         given {@link Session}
 	 */
-	public List<DRepresentationDescriptor> getAllDiagrams(Session session, String type) {
+	@WrapToScript
+	public List<DRepresentationDescriptor> getAllDiagrams(Session session) {
 		final List<DRepresentationDescriptor> res = new ArrayList<>();
 
-		for (DRepresentationDescriptor descriptor : DialectManager.INSTANCE.getAllRepresentationDescriptors(session)) {
-			if (descriptor.getDescription().getName().equals(type)) {
+		if (session != null) {
+			for (DRepresentationDescriptor descriptor : DialectManager.INSTANCE
+					.getAllRepresentationDescriptors(session)) {
 				res.add(descriptor);
 			}
 		}
@@ -305,11 +311,58 @@ public class SiriusModule {
 	 * @return the {@link List} of {@link DRepresentationDescriptor} for the given
 	 *         {@link Session}
 	 */
+	@WrapToScript
 	public List<DRepresentationDescriptor> getDiagrams(Session session, String type) {
 		final List<DRepresentationDescriptor> res = new ArrayList<>();
 
 		for (DRepresentationDescriptor descriptor : DialectManager.INSTANCE.getAllRepresentationDescriptors(session)) {
 			if (descriptor.getDescription().getName().equals(type)) {
+				res.add(descriptor);
+			}
+		}
+
+		return res;
+	}
+
+	/**
+	 * Gets the {@link List} of {@link DRepresentationDescriptor} where the given
+	 * {@link EObject} is represented.
+	 * 
+	 * @param eObject the {@link EObjectQuery}
+	 * @return the {@link List} of {@link DRepresentationDescriptor} where the given
+	 *         {@link EObject} is represented
+	 */
+	@WrapToScript
+	public List<DRepresentationDescriptor> getRepresentingDiagrams(EObject eObject) {
+		final List<DRepresentationDescriptor> res = new ArrayList<>();
+
+		final Session session = new EObjectQuery(eObject).getSession();
+		for (DRepresentationDescriptor descriptor : getAllDiagrams(session)) {
+			if (getRepresentedElements(descriptor).contains(eObject)) {
+				res.add(descriptor);
+			}
+		}
+
+		return res;
+	}
+
+	/**
+	 * Gets the {@link List} of {@link DRepresentationDescriptor} where the given
+	 * {@link EObject} is a contextual element.
+	 * 
+	 * @param eObject the {@link EObjectQuery}
+	 * @return the {@link List} of {@link DRepresentationDescriptor} where the given
+	 *         {@link EObject} is a contextual element
+	 */
+	@WrapToScript
+	public List<DRepresentationDescriptor> getContextualElementForDiagrams(EObject eObject) {
+		final List<DRepresentationDescriptor> res = new ArrayList<>();
+
+		final Session session = new EObjectQuery(eObject).getSession();
+		for (DRepresentationDescriptor descriptor : getAllDiagrams(session)) {
+			if (capellaModule.callQuery(
+					"org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToContextualElement",
+					descriptor).contains(eObject)) {
 				res.add(descriptor);
 			}
 		}

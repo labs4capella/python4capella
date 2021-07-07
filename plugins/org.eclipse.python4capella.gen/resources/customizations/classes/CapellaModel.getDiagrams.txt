@@ -4,3 +4,4 @@
         for descriptor in descriptors:
             res.append(Diagram(descriptor))
         return res
+

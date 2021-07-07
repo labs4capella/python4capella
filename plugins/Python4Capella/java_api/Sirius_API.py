@@ -46,9 +46,17 @@ class Sirius:
         return getReview(descriptor)
 
     @staticmethod
-    def get_all_diagrams(descriptor):
-        return getAllDiagrams(descriptor)
+    def get_all_diagrams(session):
+        return getAllDiagrams(session)
 
     @staticmethod
-    def get_diagrams(descriptor, type):
-        return getDiagrams(descriptor, type)
+    def get_diagrams(session, cls):
+        return getDiagrams(session, cls)
+
+    @staticmethod
+    def get_representing_diagram(e_object):
+        return getRepresentingDiagrams(e_object)
+
+    @staticmethod
+    def get_contextual_element_for_diagrams(e_object):
+        return getContextualElementForDiagrams(e_object)

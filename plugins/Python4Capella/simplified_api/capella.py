@@ -31,6 +31,7 @@ class CapellaModel(JavaObject):
         for descriptor in descriptors:
             res.append(Diagram(descriptor))
         return res
+
 class CapellaLibrary(CapellaModel):
     def __init__(self, java_object = None):
         if java_object is None:
@@ -49,9 +50,9 @@ class EObject(JavaObject):
     def get_element_of_interest_for_diagrams(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation", self, Diagram)
     def get_contextual_element_for_diagrams(self):
-        return create_e_list(self.get_java_object().getContextualElementForDiagrams(), Diagram)
-    def get_representing_diagrams(self):
-        return create_e_list(self.get_java_object().getRepresentingDiagrams(), Diagram)
+        return Sirius.get_contextual_element_for_diagrams(self.get_java_object())
+    def get_representing_diagram(self):
+        return Sirius.get_representing_diagram(self.get_java_object())
     def get_label(self):
         return get_label(self)
     def get_type(self):
