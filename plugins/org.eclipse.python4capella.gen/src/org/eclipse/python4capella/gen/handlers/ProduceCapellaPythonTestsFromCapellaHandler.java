@@ -548,6 +548,12 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_SystemFunction_representing_diagrams");
 		res.add("test_TimeEvent_representing_diagrams");
 		res.add("test_Unit_representing_diagrams");
+		
+		res.add("test_Diagram_review");
+		res.add("test_Diagram_status");
+		res.add("test_Diagram_synchronized");
+		res.add("test_Diagram_visible_for_traceability");
+		res.add("test_Diagram_visible_in_documentation");
 
 		return res;
 	}

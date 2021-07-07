@@ -264,15 +264,15 @@ class Diagram(JavaObject):
     def set_name(self, value):
         self.get_java_object().setName(value)
     def get_type(self):
-        if self.getDescription() is None:
+        if self.get_java_object().getDescription() is None:
             return None
         else:
-            return self.getDescription().getName()
+            return self.get_java_object().getDescription().getName()
     def get_package(self):
-        if self.getTarget() is None:
+        if self.get_java_object().getTarget() is None:
             return None
         else:
-            return self.getTarget().eClass().getEPackage().getName()
+            return self.get_java_object().getTarget().eClass().getEPackage().getName()
     def get_description(self):
         return self.get_java_object().getDocumentation()
     def set_description(self, value):

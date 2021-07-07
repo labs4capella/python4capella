@@ -1373,37 +1373,27 @@ class capella_tests(unittest.TestCase):
 
     def test_Diagram_status(self):
         tested = Diagram()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Diagram_review(self):
         tested = Diagram()
-        value = "value"
-        tested.set_review(value)
-        self.assertEqual(tested.get_review(), value)
+        tested.get_review()
         pass
 
     def test_Diagram_visible_in_documentation(self):
         tested = Diagram()
-        value = True
-        tested.set_visible_in_documentation(value)
-        self.assertEqual(tested.get_visible_in_documentation(), value)
+        tested.get_visible_in_documentation()
         pass
 
     def test_Diagram_visible_for_traceability(self):
         tested = Diagram()
-        value = True
-        tested.set_visible_for_traceability(value)
-        self.assertEqual(tested.get_visible_for_traceability(), value)
+        tested.get_visible_for_traceability()
         pass
 
     def test_Diagram_synchronized(self):
         tested = Diagram()
-        value = True
-        tested.set_synchronized(value)
-        self.assertEqual(tested.get_synchronized(), value)
+        tested.get_synchronized()
         pass
 
     def test_Diagram_target(self):
