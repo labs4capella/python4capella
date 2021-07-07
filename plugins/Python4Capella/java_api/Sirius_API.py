@@ -54,7 +54,7 @@ class Sirius:
         return getDiagrams(session, cls)
 
     @staticmethod
-    def get_representing_diagram(e_object):
+    def get_representing_diagrams(e_object):
         return getRepresentingDiagrams(e_object)
 
     @staticmethod

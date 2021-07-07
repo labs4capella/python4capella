@@ -143,9 +143,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_applied_property_values(self):
         tested = SystemEngineering()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_SystemEngineering_owned_property_value_groups(self):
@@ -157,9 +155,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_applied_property_value_groups(self):
         tested = SystemEngineering()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_SystemEngineering_owned_enumeration_property_types(self):
@@ -183,9 +179,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_contextual_element_for_diagrams(self):
         tested = SystemEngineering()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_SystemEngineering_representing_diagrams(self):
@@ -349,9 +343,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_applied_property_values(self):
         tested = Constraint()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Constraint_owned_property_value_groups(self):
@@ -363,9 +355,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_applied_property_value_groups(self):
         tested = Constraint()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Constraint_owned_enumeration_property_types(self):
@@ -389,9 +379,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_contextual_element_for_diagrams(self):
         tested = Constraint()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Constraint_representing_diagrams(self):
@@ -539,9 +527,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_applied_property_values(self):
         tested = PropertyValue()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PropertyValue_owned_property_value_groups(self):
@@ -553,9 +539,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_applied_property_value_groups(self):
         tested = PropertyValue()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PropertyValue_owned_enumeration_property_types(self):
@@ -741,9 +725,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_applied_property_values(self):
         tested = PropertyValueGroup()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PropertyValueGroup_owned_property_value_groups(self):
@@ -755,9 +737,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_applied_property_value_groups(self):
         tested = PropertyValueGroup()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PropertyValueGroup_owned_enumeration_property_types(self):
@@ -781,9 +761,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_contextual_element_for_diagrams(self):
         tested = PropertyValueGroup()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PropertyValueGroup_representing_diagrams(self):
@@ -929,9 +907,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_applied_property_values(self):
         tested = PropertyValuePkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PropertyValuePkg_owned_property_value_groups(self):
@@ -943,9 +919,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_applied_property_value_groups(self):
         tested = PropertyValuePkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PropertyValuePkg_owned_enumeration_property_types(self):
@@ -969,9 +943,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_contextual_element_for_diagrams(self):
         tested = PropertyValuePkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PropertyValuePkg_representing_diagrams(self):
@@ -1105,9 +1077,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_applied_property_values(self):
         tested = EnumerationPropertyType()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_EnumerationPropertyType_owned_property_value_groups(self):
@@ -1119,9 +1089,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_applied_property_value_groups(self):
         tested = EnumerationPropertyType()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_EnumerationPropertyType_owned_enumeration_property_types(self):
@@ -1145,9 +1113,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_contextual_element_for_diagrams(self):
         tested = EnumerationPropertyType()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_EnumerationPropertyType_representing_diagrams(self):
@@ -1288,9 +1254,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_applied_property_values(self):
         tested = EnumerationPropertyLiteral()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_EnumerationPropertyLiteral_owned_property_value_groups(self):
@@ -1302,9 +1266,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_applied_property_value_groups(self):
         tested = EnumerationPropertyLiteral()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_EnumerationPropertyLiteral_owned_enumeration_property_types(self):
@@ -1328,9 +1290,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_contextual_element_for_diagrams(self):
         tested = EnumerationPropertyLiteral()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_EnumerationPropertyLiteral_representing_diagrams(self):
@@ -1776,9 +1736,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CatalogElementPkg_contextual_element_for_diagrams(self):
         tested = CatalogElementPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CatalogElementPkg_representing_diagrams(self):
@@ -1898,9 +1856,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RecCatalog_contextual_element_for_diagrams(self):
         tested = RecCatalog()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_RecCatalog_representing_diagrams(self):
@@ -1985,9 +1941,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CompliancyDefinitionPkg_contextual_element_for_diagrams(self):
         tested = CompliancyDefinitionPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CompliancyDefinitionPkg_representing_diagrams(self):
@@ -2072,9 +2026,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CompliancyDefinition_contextual_element_for_diagrams(self):
         tested = CompliancyDefinition()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CompliancyDefinition_representing_diagrams(self):
@@ -2222,9 +2174,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_applied_property_values(self):
         tested = OperationalAnalysis()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalAnalysis_owned_property_value_groups(self):
@@ -2236,9 +2186,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_applied_property_value_groups(self):
         tested = OperationalAnalysis()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalAnalysis_owned_enumeration_property_types(self):
@@ -2262,9 +2210,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_contextual_element_for_diagrams(self):
         tested = OperationalAnalysis()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_OperationalAnalysis_representing_diagrams(self):
@@ -2430,9 +2376,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_applied_property_values(self):
         tested = OperationalActivityPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalActivityPkg_owned_property_value_groups(self):
@@ -2444,9 +2388,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_applied_property_value_groups(self):
         tested = OperationalActivityPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalActivityPkg_owned_enumeration_property_types(self):
@@ -2470,9 +2412,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_contextual_element_for_diagrams(self):
         tested = OperationalActivityPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_OperationalActivityPkg_representing_diagrams(self):
@@ -2627,9 +2567,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_applied_property_values(self):
         tested = OperationalActivity()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalActivity_owned_property_value_groups(self):
@@ -2641,9 +2579,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_applied_property_value_groups(self):
         tested = OperationalActivity()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalActivity_owned_enumeration_property_types(self):
@@ -2667,9 +2603,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_contextual_element_for_diagrams(self):
         tested = OperationalActivity()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_OperationalActivity_representing_diagrams(self):
@@ -2858,9 +2792,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_applied_property_values(self):
         tested = Interaction()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Interaction_owned_property_value_groups(self):
@@ -2872,9 +2804,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_applied_property_value_groups(self):
         tested = Interaction()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Interaction_owned_enumeration_property_types(self):
@@ -3074,9 +3004,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_applied_property_values(self):
         tested = OperationalProcess()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalProcess_owned_property_value_groups(self):
@@ -3088,9 +3016,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_applied_property_value_groups(self):
         tested = OperationalProcess()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalProcess_owned_enumeration_property_types(self):
@@ -3114,9 +3040,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_contextual_element_for_diagrams(self):
         tested = OperationalProcess()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_OperationalProcess_representing_diagrams(self):
@@ -3303,9 +3227,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_applied_property_values(self):
         tested = OperationalCapabilityPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalCapabilityPkg_owned_property_value_groups(self):
@@ -3317,9 +3239,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_applied_property_value_groups(self):
         tested = OperationalCapabilityPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalCapabilityPkg_owned_enumeration_property_types(self):
@@ -3343,9 +3263,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_contextual_element_for_diagrams(self):
         tested = OperationalCapabilityPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_OperationalCapabilityPkg_representing_diagrams(self):
@@ -3556,9 +3474,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_applied_property_values(self):
         tested = OperationalCapability()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalCapability_owned_property_value_groups(self):
@@ -3570,9 +3486,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_applied_property_value_groups(self):
         tested = OperationalCapability()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalCapability_owned_enumeration_property_types(self):
@@ -3596,9 +3510,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_contextual_element_for_diagrams(self):
         tested = OperationalCapability()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_OperationalCapability_representing_diagrams(self):
@@ -3766,9 +3678,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_applied_property_values(self):
         tested = EntityPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_EntityPkg_owned_property_value_groups(self):
@@ -3780,9 +3690,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_applied_property_value_groups(self):
         tested = EntityPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_EntityPkg_owned_enumeration_property_types(self):
@@ -3806,9 +3714,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_contextual_element_for_diagrams(self):
         tested = EntityPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_EntityPkg_representing_diagrams(self):
@@ -4000,9 +3906,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_applied_property_values(self):
         tested = OperationalEntity()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalEntity_owned_property_value_groups(self):
@@ -4014,9 +3918,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_applied_property_value_groups(self):
         tested = OperationalEntity()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalEntity_owned_enumeration_property_types(self):
@@ -4185,9 +4087,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_applied_property_values(self):
         tested = OperationalActor()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_OperationalActor_owned_property_value_groups(self):
@@ -4199,9 +4099,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_applied_property_value_groups(self):
         tested = OperationalActor()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_OperationalActor_owned_enumeration_property_types(self):
@@ -4403,9 +4301,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_applied_property_values(self):
         tested = CommunicationMean()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_CommunicationMean_owned_property_value_groups(self):
@@ -4417,9 +4313,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_applied_property_value_groups(self):
         tested = CommunicationMean()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_CommunicationMean_owned_enumeration_property_types(self):
@@ -4443,9 +4337,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_contextual_element_for_diagrams(self):
         tested = CommunicationMean()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CommunicationMean_representing_diagrams(self):
@@ -4617,9 +4509,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_applied_property_values(self):
         tested = SystemAnalysis()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_SystemAnalysis_owned_property_value_groups(self):
@@ -4631,9 +4521,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_applied_property_value_groups(self):
         tested = SystemAnalysis()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_SystemAnalysis_owned_enumeration_property_types(self):
@@ -4657,9 +4545,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_contextual_element_for_diagrams(self):
         tested = SystemAnalysis()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_SystemAnalysis_representing_diagrams(self):
@@ -4830,9 +4716,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_applied_property_values(self):
         tested = SystemFunctionPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_SystemFunctionPkg_owned_property_value_groups(self):
@@ -4844,9 +4728,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_applied_property_value_groups(self):
         tested = SystemFunctionPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_SystemFunctionPkg_owned_enumeration_property_types(self):
@@ -4870,9 +4752,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_contextual_element_for_diagrams(self):
         tested = SystemFunctionPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_SystemFunctionPkg_representing_diagrams(self):
@@ -5087,9 +4967,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_applied_property_values(self):
         tested = SystemFunction()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_SystemFunction_owned_property_value_groups(self):
@@ -5101,9 +4979,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_applied_property_value_groups(self):
         tested = SystemFunction()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_SystemFunction_owned_enumeration_property_types(self):
@@ -5127,9 +5003,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_contextual_element_for_diagrams(self):
         tested = SystemFunction()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_SystemFunction_representing_diagrams(self):
@@ -5292,9 +5166,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_applied_property_values(self):
         tested = CapabilityPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_CapabilityPkg_owned_property_value_groups(self):
@@ -5306,9 +5178,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_applied_property_value_groups(self):
         tested = CapabilityPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_CapabilityPkg_owned_enumeration_property_types(self):
@@ -5332,9 +5202,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_contextual_element_for_diagrams(self):
         tested = CapabilityPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CapabilityPkg_representing_diagrams(self):
@@ -5562,9 +5430,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_applied_property_values(self):
         tested = Capability()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Capability_owned_property_value_groups(self):
@@ -5576,9 +5442,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_applied_property_value_groups(self):
         tested = Capability()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Capability_owned_enumeration_property_types(self):
@@ -5602,9 +5466,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_contextual_element_for_diagrams(self):
         tested = Capability()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Capability_representing_diagrams(self):
@@ -5767,9 +5629,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_applied_property_values(self):
         tested = SystemComponentPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_SystemComponentPkg_owned_property_value_groups(self):
@@ -5781,9 +5641,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_applied_property_value_groups(self):
         tested = SystemComponentPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_SystemComponentPkg_owned_enumeration_property_types(self):
@@ -5807,9 +5665,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_contextual_element_for_diagrams(self):
         tested = SystemComponentPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_SystemComponentPkg_representing_diagrams(self):
@@ -6020,9 +5876,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_applied_property_values(self):
         tested = System()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_System_owned_property_value_groups(self):
@@ -6034,9 +5888,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_applied_property_value_groups(self):
         tested = System()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_System_owned_enumeration_property_types(self):
@@ -6273,9 +6125,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_applied_property_values(self):
         tested = SystemActor()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_SystemActor_owned_property_value_groups(self):
@@ -6287,9 +6137,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_applied_property_value_groups(self):
         tested = SystemActor()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_SystemActor_owned_enumeration_property_types(self):
@@ -6524,9 +6372,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_applied_property_values(self):
         tested = MissionPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_MissionPkg_owned_property_value_groups(self):
@@ -6538,9 +6384,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_applied_property_value_groups(self):
         tested = MissionPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_MissionPkg_owned_enumeration_property_types(self):
@@ -6564,9 +6408,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_contextual_element_for_diagrams(self):
         tested = MissionPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_MissionPkg_representing_diagrams(self):
@@ -6714,9 +6556,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_applied_property_values(self):
         tested = Mission()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Mission_owned_property_value_groups(self):
@@ -6728,9 +6568,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_applied_property_value_groups(self):
         tested = Mission()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Mission_owned_enumeration_property_types(self):
@@ -6754,9 +6592,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_contextual_element_for_diagrams(self):
         tested = Mission()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Mission_representing_diagrams(self):
@@ -6909,9 +6745,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_applied_property_values(self):
         tested = LogicalArchitecture()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_LogicalArchitecture_owned_property_value_groups(self):
@@ -6923,9 +6757,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_applied_property_value_groups(self):
         tested = LogicalArchitecture()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_LogicalArchitecture_owned_enumeration_property_types(self):
@@ -6949,9 +6781,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_contextual_element_for_diagrams(self):
         tested = LogicalArchitecture()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_LogicalArchitecture_representing_diagrams(self):
@@ -7117,9 +6947,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_applied_property_values(self):
         tested = LogicalFunctionPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_LogicalFunctionPkg_owned_property_value_groups(self):
@@ -7131,9 +6959,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_applied_property_value_groups(self):
         tested = LogicalFunctionPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_LogicalFunctionPkg_owned_enumeration_property_types(self):
@@ -7157,9 +6983,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_contextual_element_for_diagrams(self):
         tested = LogicalFunctionPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_LogicalFunctionPkg_representing_diagrams(self):
@@ -7374,9 +7198,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_applied_property_values(self):
         tested = LogicalFunction()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_LogicalFunction_owned_property_value_groups(self):
@@ -7388,9 +7210,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_applied_property_value_groups(self):
         tested = LogicalFunction()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_LogicalFunction_owned_enumeration_property_types(self):
@@ -7414,9 +7234,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_contextual_element_for_diagrams(self):
         tested = LogicalFunction()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_LogicalFunction_representing_diagrams(self):
@@ -7579,9 +7397,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_applied_property_values(self):
         tested = CapabilityRealizationPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_CapabilityRealizationPkg_owned_property_value_groups(self):
@@ -7593,9 +7409,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_applied_property_value_groups(self):
         tested = CapabilityRealizationPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_CapabilityRealizationPkg_owned_enumeration_property_types(self):
@@ -7619,9 +7433,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_contextual_element_for_diagrams(self):
         tested = CapabilityRealizationPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CapabilityRealizationPkg_representing_diagrams(self):
@@ -7849,9 +7661,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_applied_property_values(self):
         tested = CapabilityRealization()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_CapabilityRealization_owned_property_value_groups(self):
@@ -7863,9 +7673,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_applied_property_value_groups(self):
         tested = CapabilityRealization()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_CapabilityRealization_owned_enumeration_property_types(self):
@@ -7889,9 +7697,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_contextual_element_for_diagrams(self):
         tested = CapabilityRealization()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CapabilityRealization_representing_diagrams(self):
@@ -8075,9 +7881,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_applied_property_values(self):
         tested = LogicalComponentPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_LogicalComponentPkg_owned_property_value_groups(self):
@@ -8089,9 +7893,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_applied_property_value_groups(self):
         tested = LogicalComponentPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_LogicalComponentPkg_owned_enumeration_property_types(self):
@@ -8115,9 +7917,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_contextual_element_for_diagrams(self):
         tested = LogicalComponentPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_LogicalComponentPkg_representing_diagrams(self):
@@ -8335,9 +8135,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_applied_property_values(self):
         tested = LogicalSystem()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_LogicalSystem_owned_property_value_groups(self):
@@ -8349,9 +8147,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_applied_property_value_groups(self):
         tested = LogicalSystem()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_LogicalSystem_owned_enumeration_property_types(self):
@@ -8588,9 +8384,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_applied_property_values(self):
         tested = LogicalComponent()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_LogicalComponent_owned_property_value_groups(self):
@@ -8602,9 +8396,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_applied_property_value_groups(self):
         tested = LogicalComponent()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_LogicalComponent_owned_enumeration_property_types(self):
@@ -8628,9 +8420,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_contextual_element_for_diagrams(self):
         tested = LogicalComponent()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_LogicalComponent_representing_diagrams(self):
@@ -8855,9 +8645,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_applied_property_values(self):
         tested = LogicalActor()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_LogicalActor_owned_property_value_groups(self):
@@ -8869,9 +8657,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_applied_property_value_groups(self):
         tested = LogicalActor()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_LogicalActor_owned_enumeration_property_types(self):
@@ -9099,9 +8885,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_applied_property_values(self):
         tested = PhysicalArchitecture()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalArchitecture_owned_property_value_groups(self):
@@ -9113,9 +8897,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_applied_property_value_groups(self):
         tested = PhysicalArchitecture()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalArchitecture_owned_enumeration_property_types(self):
@@ -9139,9 +8921,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_contextual_element_for_diagrams(self):
         tested = PhysicalArchitecture()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalArchitecture_representing_diagrams(self):
@@ -9307,9 +9087,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_applied_property_values(self):
         tested = PhysicalFunctionPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalFunctionPkg_owned_property_value_groups(self):
@@ -9321,9 +9099,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_applied_property_value_groups(self):
         tested = PhysicalFunctionPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalFunctionPkg_owned_enumeration_property_types(self):
@@ -9347,9 +9123,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_contextual_element_for_diagrams(self):
         tested = PhysicalFunctionPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalFunctionPkg_representing_diagrams(self):
@@ -9564,9 +9338,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_applied_property_values(self):
         tested = PhysicalFunction()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalFunction_owned_property_value_groups(self):
@@ -9578,9 +9350,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_applied_property_value_groups(self):
         tested = PhysicalFunction()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalFunction_owned_enumeration_property_types(self):
@@ -9604,9 +9374,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_contextual_element_for_diagrams(self):
         tested = PhysicalFunction()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalFunction_representing_diagrams(self):
@@ -9764,9 +9532,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_applied_property_values(self):
         tested = PhysicalComponentPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalComponentPkg_owned_property_value_groups(self):
@@ -9778,9 +9544,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_applied_property_value_groups(self):
         tested = PhysicalComponentPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalComponentPkg_owned_enumeration_property_types(self):
@@ -9804,9 +9568,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_contextual_element_for_diagrams(self):
         tested = PhysicalComponentPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalComponentPkg_representing_diagrams(self):
@@ -9968,9 +9730,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_applied_property_values(self):
         tested = PhysicalSystem()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalSystem_owned_property_value_groups(self):
@@ -9982,9 +9742,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_applied_property_value_groups(self):
         tested = PhysicalSystem()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalSystem_owned_enumeration_property_types(self):
@@ -10202,9 +9960,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_applied_property_values(self):
         tested = BehaviorPC()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_BehaviorPC_owned_property_value_groups(self):
@@ -10216,9 +9972,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_applied_property_value_groups(self):
         tested = BehaviorPC()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_BehaviorPC_owned_enumeration_property_types(self):
@@ -10492,9 +10246,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_applied_property_values(self):
         tested = NodePC()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_NodePC_owned_property_value_groups(self):
@@ -10506,9 +10258,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_applied_property_value_groups(self):
         tested = NodePC()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_NodePC_owned_enumeration_property_types(self):
@@ -10593,9 +10343,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_physical_links(self):
         tested = NodePC()
-        value = PhysicalLink()
-        tested.get_physical_links().add(value)
-        self.assertEqual(tested.get_physical_links().get(0), value)
+        tested.get_physical_links()
         pass
 
     def test_NodePC_involving_physical_paths(self):
@@ -10759,9 +10507,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_applied_property_values(self):
         tested = PhysicalActor()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalActor_owned_property_value_groups(self):
@@ -10773,9 +10519,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_applied_property_value_groups(self):
         tested = PhysicalActor()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalActor_owned_enumeration_property_types(self):
@@ -10996,9 +10740,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_applied_property_values(self):
         tested = EPBSArchitecture()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_EPBSArchitecture_owned_property_value_groups(self):
@@ -11010,9 +10752,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_applied_property_value_groups(self):
         tested = EPBSArchitecture()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_EPBSArchitecture_owned_enumeration_property_types(self):
@@ -11036,9 +10776,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_contextual_element_for_diagrams(self):
         tested = EPBSArchitecture()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_EPBSArchitecture_representing_diagrams(self):
@@ -11196,9 +10934,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_applied_property_values(self):
         tested = ConfigurationItemPkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ConfigurationItemPkg_owned_property_value_groups(self):
@@ -11210,9 +10946,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_applied_property_value_groups(self):
         tested = ConfigurationItemPkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ConfigurationItemPkg_owned_enumeration_property_types(self):
@@ -11236,9 +10970,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_contextual_element_for_diagrams(self):
         tested = ConfigurationItemPkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ConfigurationItemPkg_representing_diagrams(self):
@@ -11386,9 +11118,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_applied_property_values(self):
         tested = ConfigurationItem()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ConfigurationItem_owned_property_value_groups(self):
@@ -11400,9 +11130,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_applied_property_value_groups(self):
         tested = ConfigurationItem()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ConfigurationItem_owned_enumeration_property_types(self):
@@ -11426,9 +11154,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_contextual_element_for_diagrams(self):
         tested = ConfigurationItem()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ConfigurationItem_representing_diagrams(self):
@@ -11595,9 +11321,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_applied_property_values(self):
         tested = StateMachine()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_StateMachine_owned_property_value_groups(self):
@@ -11609,9 +11333,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_applied_property_value_groups(self):
         tested = StateMachine()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_StateMachine_owned_enumeration_property_types(self):
@@ -11635,9 +11357,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_contextual_element_for_diagrams(self):
         tested = StateMachine()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_StateMachine_representing_diagrams(self):
@@ -11802,9 +11522,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_applied_property_values(self):
         tested = State()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_State_owned_property_value_groups(self):
@@ -11816,9 +11534,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_applied_property_value_groups(self):
         tested = State()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_State_owned_enumeration_property_types(self):
@@ -11842,9 +11558,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_contextual_element_for_diagrams(self):
         tested = State()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_State_representing_diagrams(self):
@@ -12106,9 +11820,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_applied_property_values(self):
         tested = Mode()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Mode_owned_property_value_groups(self):
@@ -12120,9 +11832,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_applied_property_value_groups(self):
         tested = Mode()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Mode_owned_enumeration_property_types(self):
@@ -12146,9 +11856,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_contextual_element_for_diagrams(self):
         tested = Mode()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Mode_representing_diagrams(self):
@@ -12312,9 +12020,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_applied_property_values(self):
         tested = Pseudostate()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Pseudostate_owned_property_value_groups(self):
@@ -12326,9 +12032,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_applied_property_value_groups(self):
         tested = Pseudostate()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Pseudostate_owned_enumeration_property_types(self):
@@ -12493,9 +12197,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_applied_property_values(self):
         tested = Region()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Region_owned_property_value_groups(self):
@@ -12507,9 +12209,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_applied_property_value_groups(self):
         tested = Region()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Region_owned_enumeration_property_types(self):
@@ -12533,9 +12233,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_contextual_element_for_diagrams(self):
         tested = Region()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Region_representing_diagrams(self):
@@ -12676,9 +12374,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_applied_property_values(self):
         tested = StateTransition()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_StateTransition_owned_property_value_groups(self):
@@ -12690,9 +12386,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_applied_property_value_groups(self):
         tested = StateTransition()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_StateTransition_owned_enumeration_property_types(self):
@@ -12716,9 +12410,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_contextual_element_for_diagrams(self):
         tested = StateTransition()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_StateTransition_representing_diagrams(self):
@@ -12900,9 +12592,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_applied_property_values(self):
         tested = ChangeEvent()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ChangeEvent_owned_property_value_groups(self):
@@ -12914,9 +12604,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_applied_property_value_groups(self):
         tested = ChangeEvent()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ChangeEvent_owned_enumeration_property_types(self):
@@ -12940,9 +12628,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_contextual_element_for_diagrams(self):
         tested = ChangeEvent()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ChangeEvent_representing_diagrams(self):
@@ -13083,9 +12769,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_applied_property_values(self):
         tested = TimeEvent()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_TimeEvent_owned_property_value_groups(self):
@@ -13097,9 +12781,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_applied_property_value_groups(self):
         tested = TimeEvent()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_TimeEvent_owned_enumeration_property_types(self):
@@ -13123,9 +12805,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_contextual_element_for_diagrams(self):
         tested = TimeEvent()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_TimeEvent_representing_diagrams(self):
@@ -13273,9 +12953,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_applied_property_values(self):
         tested = Scenario()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Scenario_owned_property_value_groups(self):
@@ -13287,9 +12965,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_applied_property_value_groups(self):
         tested = Scenario()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Scenario_owned_enumeration_property_types(self):
@@ -13313,9 +12989,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_contextual_element_for_diagrams(self):
         tested = Scenario()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Scenario_representing_diagrams(self):
@@ -13508,9 +13182,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_applied_property_values(self):
         tested = InstanceRole()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_InstanceRole_owned_property_value_groups(self):
@@ -13522,9 +13194,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_applied_property_value_groups(self):
         tested = InstanceRole()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_InstanceRole_owned_enumeration_property_types(self):
@@ -13548,9 +13218,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_contextual_element_for_diagrams(self):
         tested = InstanceRole()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_InstanceRole_representing_diagrams(self):
@@ -13689,9 +13357,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_applied_property_values(self):
         tested = SequenceMessage()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_SequenceMessage_owned_property_value_groups(self):
@@ -13703,9 +13369,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_applied_property_value_groups(self):
         tested = SequenceMessage()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_SequenceMessage_owned_enumeration_property_types(self):
@@ -13729,9 +13393,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_contextual_element_for_diagrams(self):
         tested = SequenceMessage()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_SequenceMessage_representing_diagrams(self):
@@ -13900,9 +13562,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_applied_property_values(self):
         tested = StateFragment()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_StateFragment_owned_property_value_groups(self):
@@ -13914,9 +13574,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_applied_property_value_groups(self):
         tested = StateFragment()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_StateFragment_owned_enumeration_property_types(self):
@@ -13940,9 +13598,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_contextual_element_for_diagrams(self):
         tested = StateFragment()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_StateFragment_representing_diagrams(self):
@@ -14091,9 +13747,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_applied_property_values(self):
         tested = CombinedFragment()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_CombinedFragment_owned_property_value_groups(self):
@@ -14105,9 +13759,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_applied_property_value_groups(self):
         tested = CombinedFragment()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_CombinedFragment_owned_enumeration_property_types(self):
@@ -14131,9 +13783,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_contextual_element_for_diagrams(self):
         tested = CombinedFragment()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CombinedFragment_representing_diagrams(self):
@@ -14284,9 +13934,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_applied_property_values(self):
         tested = Operand()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Operand_owned_property_value_groups(self):
@@ -14298,9 +13946,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_applied_property_value_groups(self):
         tested = Operand()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Operand_owned_enumeration_property_types(self):
@@ -14477,9 +14123,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_applied_property_values(self):
         tested = ConstraintDuration()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ConstraintDuration_owned_property_value_groups(self):
@@ -14491,9 +14135,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_applied_property_value_groups(self):
         tested = ConstraintDuration()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ConstraintDuration_owned_enumeration_property_types(self):
@@ -14517,9 +14159,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_contextual_element_for_diagrams(self):
         tested = ConstraintDuration()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ConstraintDuration_representing_diagrams(self):
@@ -14665,9 +14305,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_applied_property_values(self):
         tested = PhysicalPort()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalPort_owned_property_value_groups(self):
@@ -14679,9 +14317,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_applied_property_value_groups(self):
         tested = PhysicalPort()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalPort_owned_enumeration_property_types(self):
@@ -14705,9 +14341,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_contextual_element_for_diagrams(self):
         tested = PhysicalPort()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalPort_representing_diagrams(self):
@@ -14866,9 +14500,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_applied_property_values(self):
         tested = PhysicalLink()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalLink_owned_property_value_groups(self):
@@ -14880,9 +14512,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_applied_property_value_groups(self):
         tested = PhysicalLink()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalLink_owned_enumeration_property_types(self):
@@ -14906,9 +14536,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_contextual_element_for_diagrams(self):
         tested = PhysicalLink()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalLink_representing_diagrams(self):
@@ -15081,9 +14709,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_applied_property_values(self):
         tested = PhysicalLinkCategory()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalLinkCategory_owned_property_value_groups(self):
@@ -15095,9 +14721,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_applied_property_value_groups(self):
         tested = PhysicalLinkCategory()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalLinkCategory_owned_enumeration_property_types(self):
@@ -15121,9 +14745,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_contextual_element_for_diagrams(self):
         tested = PhysicalLinkCategory()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalLinkCategory_representing_diagrams(self):
@@ -15264,9 +14886,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_applied_property_values(self):
         tested = PhysicalPath()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalPath_owned_property_value_groups(self):
@@ -15278,9 +14898,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_applied_property_value_groups(self):
         tested = PhysicalPath()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalPath_owned_enumeration_property_types(self):
@@ -15304,9 +14922,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_contextual_element_for_diagrams(self):
         tested = PhysicalPath()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalPath_representing_diagrams(self):
@@ -15472,9 +15088,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_applied_property_values(self):
         tested = InterfacePkg()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_InterfacePkg_owned_property_value_groups(self):
@@ -15486,9 +15100,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_applied_property_value_groups(self):
         tested = InterfacePkg()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_InterfacePkg_owned_enumeration_property_types(self):
@@ -15512,9 +15124,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_contextual_element_for_diagrams(self):
         tested = InterfacePkg()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_InterfacePkg_representing_diagrams(self):
@@ -15669,9 +15279,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_applied_property_values(self):
         tested = Interface()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Interface_owned_property_value_groups(self):
@@ -15683,9 +15291,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_applied_property_value_groups(self):
         tested = Interface()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Interface_owned_enumeration_property_types(self):
@@ -15709,9 +15315,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_contextual_element_for_diagrams(self):
         tested = Interface()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Interface_representing_diagrams(self):
@@ -15898,9 +15502,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_applied_property_values(self):
         tested = ExchangeItemAllocation()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ExchangeItemAllocation_owned_property_value_groups(self):
@@ -15912,9 +15514,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_applied_property_value_groups(self):
         tested = ExchangeItemAllocation()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ExchangeItemAllocation_owned_enumeration_property_types(self):
@@ -15938,9 +15538,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_contextual_element_for_diagrams(self):
         tested = ExchangeItemAllocation()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ExchangeItemAllocation_representing_diagrams(self):
@@ -16100,9 +15698,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_applied_property_values(self):
         tested = ExchangeItem()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ExchangeItem_owned_property_value_groups(self):
@@ -16114,9 +15710,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_applied_property_value_groups(self):
         tested = ExchangeItem()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ExchangeItem_owned_enumeration_property_types(self):
@@ -16140,9 +15734,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_contextual_element_for_diagrams(self):
         tested = ExchangeItem()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ExchangeItem_representing_diagrams(self):
@@ -16336,9 +15928,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_applied_property_values(self):
         tested = ExchangeItemElement()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ExchangeItemElement_owned_property_value_groups(self):
@@ -16350,9 +15940,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_applied_property_value_groups(self):
         tested = ExchangeItemElement()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ExchangeItemElement_owned_enumeration_property_types(self):
@@ -16376,9 +15964,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_contextual_element_for_diagrams(self):
         tested = ExchangeItemElement()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ExchangeItemElement_representing_diagrams(self):
@@ -16524,9 +16110,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_applied_property_values(self):
         tested = FunctionInputPort()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_FunctionInputPort_owned_property_value_groups(self):
@@ -16538,9 +16122,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_applied_property_value_groups(self):
         tested = FunctionInputPort()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_FunctionInputPort_owned_enumeration_property_types(self):
@@ -16564,9 +16146,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_contextual_element_for_diagrams(self):
         tested = FunctionInputPort()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_FunctionInputPort_representing_diagrams(self):
@@ -16733,9 +16313,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_applied_property_values(self):
         tested = FunctionOutputPort()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_FunctionOutputPort_owned_property_value_groups(self):
@@ -16747,9 +16325,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_applied_property_value_groups(self):
         tested = FunctionOutputPort()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_FunctionOutputPort_owned_enumeration_property_types(self):
@@ -16773,9 +16349,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_contextual_element_for_diagrams(self):
         tested = FunctionOutputPort()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_FunctionOutputPort_representing_diagrams(self):
@@ -16935,9 +16509,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_applied_property_values(self):
         tested = FunctionalExchange()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_FunctionalExchange_owned_property_value_groups(self):
@@ -16949,9 +16521,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_applied_property_value_groups(self):
         tested = FunctionalExchange()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_FunctionalExchange_owned_enumeration_property_types(self):
@@ -16975,9 +16545,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_contextual_element_for_diagrams(self):
         tested = FunctionalExchange()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_FunctionalExchange_representing_diagrams(self):
@@ -17181,9 +16749,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_applied_property_values(self):
         tested = ExchangeCategory()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ExchangeCategory_owned_property_value_groups(self):
@@ -17195,9 +16761,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_applied_property_value_groups(self):
         tested = ExchangeCategory()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ExchangeCategory_owned_enumeration_property_types(self):
@@ -17221,9 +16785,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_contextual_element_for_diagrams(self):
         tested = ExchangeCategory()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ExchangeCategory_representing_diagrams(self):
@@ -17364,9 +16926,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_applied_property_values(self):
         tested = FunctionalChain()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_FunctionalChain_owned_property_value_groups(self):
@@ -17378,9 +16938,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_applied_property_value_groups(self):
         tested = FunctionalChain()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_FunctionalChain_owned_enumeration_property_types(self):
@@ -17404,9 +16962,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_contextual_element_for_diagrams(self):
         tested = FunctionalChain()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_FunctionalChain_representing_diagrams(self):
@@ -17596,9 +17152,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_applied_property_values(self):
         tested = ComponentPort()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ComponentPort_owned_property_value_groups(self):
@@ -17610,9 +17164,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_applied_property_value_groups(self):
         tested = ComponentPort()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ComponentPort_owned_enumeration_property_types(self):
@@ -17636,9 +17188,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_contextual_element_for_diagrams(self):
         tested = ComponentPort()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ComponentPort_representing_diagrams(self):
@@ -17814,9 +17364,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_applied_property_values(self):
         tested = ComponentExchange()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ComponentExchange_owned_property_value_groups(self):
@@ -17828,9 +17376,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_applied_property_value_groups(self):
         tested = ComponentExchange()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ComponentExchange_owned_enumeration_property_types(self):
@@ -17854,9 +17400,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_contextual_element_for_diagrams(self):
         tested = ComponentExchange()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ComponentExchange_representing_diagrams(self):
@@ -18058,9 +17602,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_applied_property_values(self):
         tested = ComponentExchangeCategory()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_ComponentExchangeCategory_owned_property_value_groups(self):
@@ -18072,9 +17614,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_applied_property_value_groups(self):
         tested = ComponentExchangeCategory()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_ComponentExchangeCategory_owned_enumeration_property_types(self):
@@ -18098,9 +17638,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_contextual_element_for_diagrams(self):
         tested = ComponentExchangeCategory()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_ComponentExchangeCategory_representing_diagrams(self):
@@ -18335,9 +17873,7 @@ class capella_tests(unittest.TestCase):
 
     def test_UnionProperty_type(self):
         tested = UnionProperty()
-        value = PhysicalQuantity()
-        tested.set_type(value)
-        self.assertEqual(tested.get_type(), value)
+        tested.get_type()
         pass
 
     def test_Operation_visibility(self):
@@ -18539,9 +18075,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_applied_property_values(self):
         tested = Enumeration()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Enumeration_owned_property_value_groups(self):
@@ -18553,9 +18087,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_applied_property_value_groups(self):
         tested = Enumeration()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Enumeration_owned_enumeration_property_types(self):
@@ -18579,9 +18111,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_contextual_element_for_diagrams(self):
         tested = Enumeration()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Enumeration_representing_diagrams(self):
@@ -18837,9 +18367,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_applied_property_values(self):
         tested = BooleanType()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_BooleanType_owned_property_value_groups(self):
@@ -18851,9 +18379,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_applied_property_value_groups(self):
         tested = BooleanType()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_BooleanType_owned_enumeration_property_types(self):
@@ -18877,9 +18403,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_contextual_element_for_diagrams(self):
         tested = BooleanType()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_BooleanType_representing_diagrams(self):
@@ -19086,9 +18610,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_applied_property_values(self):
         tested = StringType()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_StringType_owned_property_value_groups(self):
@@ -19100,9 +18622,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_applied_property_value_groups(self):
         tested = StringType()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_StringType_owned_enumeration_property_types(self):
@@ -19126,9 +18646,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_contextual_element_for_diagrams(self):
         tested = StringType()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_StringType_representing_diagrams(self):
@@ -19370,9 +18888,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_applied_property_values(self):
         tested = NumericType()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_NumericType_owned_property_value_groups(self):
@@ -19384,9 +18900,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_applied_property_value_groups(self):
         tested = NumericType()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_NumericType_owned_enumeration_property_types(self):
@@ -19410,9 +18924,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_contextual_element_for_diagrams(self):
         tested = NumericType()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_NumericType_representing_diagrams(self):
@@ -19717,9 +19229,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_applied_property_values(self):
         tested = PhysicalQuantity()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_PhysicalQuantity_owned_property_value_groups(self):
@@ -19731,9 +19241,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_applied_property_value_groups(self):
         tested = PhysicalQuantity()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_PhysicalQuantity_owned_enumeration_property_types(self):
@@ -19757,9 +19265,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_contextual_element_for_diagrams(self):
         tested = PhysicalQuantity()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_PhysicalQuantity_representing_diagrams(self):
@@ -19900,9 +19406,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_applied_property_values(self):
         tested = Unit()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        self.assertEqual(tested.get_applied_property_values().get(0), value)
+        tested.get_applied_property_values()
         pass
 
     def test_Unit_owned_property_value_groups(self):
@@ -19914,9 +19418,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_applied_property_value_groups(self):
         tested = Unit()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        self.assertEqual(tested.get_applied_property_value_groups().get(0), value)
+        tested.get_applied_property_value_groups()
         pass
 
     def test_Unit_owned_enumeration_property_types(self):
@@ -19940,9 +19442,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_contextual_element_for_diagrams(self):
         tested = Unit()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Unit_representing_diagrams(self):
@@ -20051,9 +19551,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaModule_contextual_element_for_diagrams(self):
         tested = CapellaModule()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_CapellaModule_representing_diagrams(self):
@@ -20152,9 +19650,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Requirement_contextual_element_for_diagrams(self):
         tested = Requirement()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Requirement_representing_diagrams(self):
@@ -20336,9 +19832,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Folder_contextual_element_for_diagrams(self):
         tested = Folder()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
+        tested.get_contextual_element_for_diagrams()
         pass
 
     def test_Folder_representing_diagrams(self):

@@ -389,6 +389,166 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_SystemEngineering_physical_architecture");
 		res.add("test_SystemEngineering_e_p_b_s_architecture");
 
+		res.add("test_BooleanType_contextual_element_for_diagrams");
+		res.add("test_CapabilityPkg_contextual_element_for_diagrams");
+		res.add("test_CapabilityRealizationPkg_contextual_element_for_diagrams");
+		res.add("test_CapabilityRealization_contextual_element_for_diagrams");
+		res.add("test_Capability_contextual_element_for_diagrams");
+		res.add("test_CapellaModule_contextual_element_for_diagrams");
+		res.add("test_CatalogElementPkg_contextual_element_for_diagrams");
+		res.add("test_ChangeEvent_contextual_element_for_diagrams");
+		res.add("test_CombinedFragment_contextual_element_for_diagrams");
+		res.add("test_CommunicationMean_contextual_element_for_diagrams");
+		res.add("test_CompliancyDefinitionPkg_contextual_element_for_diagrams");
+		res.add("test_CompliancyDefinition_contextual_element_for_diagrams");
+		res.add("test_ComponentExchangeCategory_contextual_element_for_diagrams");
+		res.add("test_ComponentExchange_contextual_element_for_diagrams");
+		res.add("test_ComponentPort_contextual_element_for_diagrams");
+		res.add("test_ConfigurationItemPkg_contextual_element_for_diagrams");
+		res.add("test_ConfigurationItem_contextual_element_for_diagrams");
+		res.add("test_ConstraintDuration_contextual_element_for_diagrams");
+		res.add("test_Constraint_contextual_element_for_diagrams");
+		res.add("test_EPBSArchitecture_contextual_element_for_diagrams");
+		res.add("test_EntityPkg_contextual_element_for_diagrams");
+		res.add("test_EnumerationPropertyLiteral_contextual_element_for_diagrams");
+		res.add("test_EnumerationPropertyType_contextual_element_for_diagrams");
+		res.add("test_Enumeration_contextual_element_for_diagrams");
+		res.add("test_ExchangeCategory_contextual_element_for_diagrams");
+		res.add("test_ExchangeItemAllocation_contextual_element_for_diagrams");
+		res.add("test_ExchangeItemElement_contextual_element_for_diagrams");
+		res.add("test_ExchangeItem_contextual_element_for_diagrams");
+		res.add("test_Folder_contextual_element_for_diagrams");
+		res.add("test_FunctionInputPort_contextual_element_for_diagrams");
+		res.add("test_FunctionOutputPort_contextual_element_for_diagrams");
+		res.add("test_FunctionalChain_contextual_element_for_diagrams");
+		res.add("test_FunctionalExchange_contextual_element_for_diagrams");
+		res.add("test_InstanceRole_contextual_element_for_diagrams");
+		res.add("test_InterfacePkg_contextual_element_for_diagrams");
+		res.add("test_Interface_contextual_element_for_diagrams");
+		res.add("test_LogicalArchitecture_contextual_element_for_diagrams");
+		res.add("test_LogicalComponentPkg_contextual_element_for_diagrams");
+		res.add("test_LogicalComponent_contextual_element_for_diagrams");
+		res.add("test_LogicalFunctionPkg_contextual_element_for_diagrams");
+		res.add("test_LogicalFunction_contextual_element_for_diagrams");
+		res.add("test_MissionPkg_contextual_element_for_diagrams");
+		res.add("test_Mission_contextual_element_for_diagrams");
+		res.add("test_Mode_contextual_element_for_diagrams");
+		res.add("test_NumericType_contextual_element_for_diagrams");
+		res.add("test_OperationalActivityPkg_contextual_element_for_diagrams");
+		res.add("test_OperationalActivity_contextual_element_for_diagrams");
+		res.add("test_OperationalAnalysis_contextual_element_for_diagrams");
+		res.add("test_OperationalCapabilityPkg_contextual_element_for_diagrams");
+		res.add("test_OperationalCapability_contextual_element_for_diagrams");
+		res.add("test_OperationalProcess_contextual_element_for_diagrams");
+		res.add("test_PhysicalArchitecture_contextual_element_for_diagrams");
+		res.add("test_PhysicalComponentPkg_contextual_element_for_diagrams");
+		res.add("test_PhysicalFunctionPkg_contextual_element_for_diagrams");
+		res.add("test_PhysicalFunction_contextual_element_for_diagrams");
+		res.add("test_PhysicalLinkCategory_contextual_element_for_diagrams");
+		res.add("test_PhysicalLink_contextual_element_for_diagrams");
+		res.add("test_PhysicalPath_contextual_element_for_diagrams");
+		res.add("test_PhysicalPort_contextual_element_for_diagrams");
+		res.add("test_PhysicalQuantity_contextual_element_for_diagrams");
+		res.add("test_PropertyValueGroup_contextual_element_for_diagrams");
+		res.add("test_PropertyValuePkg_contextual_element_for_diagrams");
+		res.add("test_RecCatalog_contextual_element_for_diagrams");
+		res.add("test_Region_contextual_element_for_diagrams");
+		res.add("test_Requirement_contextual_element_for_diagrams");
+		res.add("test_Scenario_contextual_element_for_diagrams");
+		res.add("test_SequenceMessage_contextual_element_for_diagrams");
+		res.add("test_StateFragment_contextual_element_for_diagrams");
+		res.add("test_StateMachine_contextual_element_for_diagrams");
+		res.add("test_StateTransition_contextual_element_for_diagrams");
+		res.add("test_State_contextual_element_for_diagrams");
+		res.add("test_StringType_contextual_element_for_diagrams");
+		res.add("test_SystemAnalysis_contextual_element_for_diagrams");
+		res.add("test_SystemComponentPkg_contextual_element_for_diagrams");
+		res.add("test_SystemEngineering_contextual_element_for_diagrams");
+		res.add("test_SystemFunctionPkg_contextual_element_for_diagrams");
+		res.add("test_SystemFunction_contextual_element_for_diagrams");
+		res.add("test_TimeEvent_contextual_element_for_diagrams");
+		res.add("test_Unit_contextual_element_for_diagrams");
+
+		res.add("test_BooleanType_representing_diagrams");
+		res.add("test_CapabilityPkg_representing_diagrams");
+		res.add("test_CapabilityRealizationPkg_representing_diagrams");
+		res.add("test_CapabilityRealization_representing_diagrams");
+		res.add("test_Capability_representing_diagrams");
+		res.add("test_CapellaModule_representing_diagrams");
+		res.add("test_CatalogElementPkg_representing_diagrams");
+		res.add("test_ChangeEvent_representing_diagrams");
+		res.add("test_CombinedFragment_representing_diagrams");
+		res.add("test_CommunicationMean_representing_diagrams");
+		res.add("test_CompliancyDefinitionPkg_representing_diagrams");
+		res.add("test_CompliancyDefinition_representing_diagrams");
+		res.add("test_ComponentExchangeCategory_representing_diagrams");
+		res.add("test_ComponentExchange_representing_diagrams");
+		res.add("test_ComponentPort_representing_diagrams");
+		res.add("test_ConfigurationItemPkg_representing_diagrams");
+		res.add("test_ConfigurationItem_representing_diagrams");
+		res.add("test_ConstraintDuration_representing_diagrams");
+		res.add("test_Constraint_representing_diagrams");
+		res.add("test_EPBSArchitecture_representing_diagrams");
+		res.add("test_EntityPkg_representing_diagrams");
+		res.add("test_EnumerationPropertyLiteral_representing_diagrams");
+		res.add("test_EnumerationPropertyType_representing_diagrams");
+		res.add("test_Enumeration_representing_diagrams");
+		res.add("test_ExchangeCategory_representing_diagrams");
+		res.add("test_ExchangeItemAllocation_representing_diagrams");
+		res.add("test_ExchangeItemElement_representing_diagrams");
+		res.add("test_ExchangeItem_representing_diagrams");
+		res.add("test_Folder_representing_diagrams");
+		res.add("test_FunctionInputPort_representing_diagrams");
+		res.add("test_FunctionOutputPort_representing_diagrams");
+		res.add("test_FunctionalChain_representing_diagrams");
+		res.add("test_FunctionalExchange_representing_diagrams");
+		res.add("test_InstanceRole_representing_diagrams");
+		res.add("test_InterfacePkg_representing_diagrams");
+		res.add("test_Interface_representing_diagrams");
+		res.add("test_LogicalArchitecture_representing_diagrams");
+		res.add("test_LogicalComponentPkg_representing_diagrams");
+		res.add("test_LogicalComponent_representing_diagrams");
+		res.add("test_LogicalFunctionPkg_representing_diagrams");
+		res.add("test_LogicalFunction_representing_diagrams");
+		res.add("test_MissionPkg_representing_diagrams");
+		res.add("test_Mission_representing_diagrams");
+		res.add("test_Mode_representing_diagrams");
+		res.add("test_NumericType_representing_diagrams");
+		res.add("test_OperationalActivityPkg_representing_diagrams");
+		res.add("test_OperationalActivity_representing_diagrams");
+		res.add("test_OperationalAnalysis_representing_diagrams");
+		res.add("test_OperationalCapabilityPkg_representing_diagrams");
+		res.add("test_OperationalCapability_representing_diagrams");
+		res.add("test_OperationalProcess_representing_diagrams");
+		res.add("test_PhysicalArchitecture_representing_diagrams");
+		res.add("test_PhysicalComponentPkg_representing_diagrams");
+		res.add("test_PhysicalFunctionPkg_representing_diagrams");
+		res.add("test_PhysicalFunction_representing_diagrams");
+		res.add("test_PhysicalLinkCategory_representing_diagrams");
+		res.add("test_PhysicalLink_representing_diagrams");
+		res.add("test_PhysicalPath_representing_diagrams");
+		res.add("test_PhysicalPort_representing_diagrams");
+		res.add("test_PhysicalQuantity_representing_diagrams");
+		res.add("test_PropertyValueGroup_representing_diagrams");
+		res.add("test_PropertyValuePkg_representing_diagrams");
+		res.add("test_RecCatalog_representing_diagrams");
+		res.add("test_Region_representing_diagrams");
+		res.add("test_Requirement_representing_diagrams");
+		res.add("test_Scenario_representing_diagrams");
+		res.add("test_SequenceMessage_representing_diagrams");
+		res.add("test_StateFragment_representing_diagrams");
+		res.add("test_StateMachine_representing_diagrams");
+		res.add("test_StateTransition_representing_diagrams");
+		res.add("test_State_representing_diagrams");
+		res.add("test_StringType_representing_diagrams");
+		res.add("test_SystemAnalysis_representing_diagrams");
+		res.add("test_SystemComponentPkg_representing_diagrams");
+		res.add("test_SystemEngineering_representing_diagrams");
+		res.add("test_SystemFunctionPkg_representing_diagrams");
+		res.add("test_SystemFunction_representing_diagrams");
+		res.add("test_TimeEvent_representing_diagrams");
+		res.add("test_Unit_representing_diagrams");
+
 		return res;
 	}
 
@@ -932,8 +1092,7 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.append("    def " + testName + "(self):" + NL);
 		res.append("        tested = " + cls.getName() + "()" + NL);
 		if (isScalar(property)) {
-			if (property.isIsReadOnly() || queries.contains(cls.getLabel() + "." + pythonName)
-					|| readOnlyTests.contains(testName)) {
+			if (property.isIsReadOnly() || isQuery(cls, pythonName) || readOnlyTests.contains(testName)) {
 				res.append("        tested.get_" + pythonName + "()" + NL);
 			} else {
 				res.append("        value = " + getTestValue(cls, property) + NL);
@@ -942,8 +1101,7 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 			}
 		} else {
 			// collection
-			if (property.isIsReadOnly() || queries.contains(cls.getLabel() + "." + pythonName)
-					|| readOnlyTests.contains(testName)) {
+			if (property.isIsReadOnly() || isQuery(cls, pythonName) || readOnlyTests.contains(testName)) {
 				res.append("        tested.get_" + pythonName + "()" + NL);
 			} else {
 				res.append("        value = " + getTestValue(cls, property) + NL);
@@ -955,6 +1113,21 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.append(NL);
 
 		return res.toString();
+	}
+
+	private boolean isQuery(Class cls, final String pythonName) {
+		boolean res = queries.contains(cls.getLabel() + "." + pythonName);
+
+		if (!res) {
+			for (Class superCls : getAllSuperClasses(cls)) {
+				if (queries.contains(superCls.getLabel() + "." + pythonName)) {
+					res = true;
+					break;
+				}
+			}
+		}
+
+		return res;
 	}
 
 	private String getTestValue(Class cls, TypedElement typedElement) {

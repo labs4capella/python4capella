@@ -482,6 +482,8 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		res.put("SystemAnalysis.systemComponentPkg", "ownedSystemComponentPkg");
 		res.put("SystemAnalysis.systemFunctionPkg", "containedSystemFunctionPkg");
 		res.put("Diagram.description", "documentation");
+		res.put("PrimitiveDataType.realizedInformations", "RealizedDataTypes");
+		res.put("PrimitiveDataType.realizingInformations", "RealizingDataTypes");
 
 		// requirement renames
 		res.put("CapellaModule.id", "ReqIFIdentifier");

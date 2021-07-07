@@ -1,3 +1,6 @@
-    def get_representing_diagram(self):
-        return Sirius.get_representing_diagram(self.get_java_object())
+    def get_representing_diagrams(self):
+        res = []
+        for element in Sirius.get_representing_diagrams(self.get_java_object()):
+            res.append(Diagram(element))
+        return res
 

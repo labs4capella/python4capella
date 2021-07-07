@@ -50,9 +50,15 @@ class EObject(JavaObject):
     def get_element_of_interest_for_diagrams(self):
         return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation", self, Diagram)
     def get_contextual_element_for_diagrams(self):
-        return Sirius.get_contextual_element_for_diagrams(self.get_java_object())
-    def get_representing_diagram(self):
-        return Sirius.get_representing_diagram(self.get_java_object())
+        res = []
+        for element in Sirius.get_contextual_element_for_diagrams(self.get_java_object()):
+            res.append(Diagram(element))
+        return res
+    def get_representing_diagrams(self):
+        res = []
+        for element in Sirius.get_representing_diagrams(self.get_java_object()):
+            res.append(Diagram(element))
+        return res
     def get_label(self):
         return get_label(self)
     def get_type(self):
@@ -2401,9 +2407,9 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
     def get_sub(self):
         return create_e_list(self.get_java_object().getSub(), PrimitiveDataType)
     def get_realized_informations(self):
-        return create_e_list(self.get_java_object().getRealizedInformations(), PrimitiveDataType)
+        return create_e_list(self.get_java_object().getRealizedDataTypes(), PrimitiveDataType)
     def get_realizing_informations(self):
-        return create_e_list(self.get_java_object().getRealizingInformations(), PrimitiveDataType)
+        return create_e_list(self.get_java_object().getRealizingDataTypes(), PrimitiveDataType)
 
 class Enumeration(PrimitiveDataType):
     def __init__(self, java_object = None):
