@@ -48,7 +48,7 @@ class EObject(JavaObject):
             res.append(Diagram(element))
         return res
     def get_element_of_interest_for_diagrams(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation", self, Diagram)
+        return capella_query_by_name(self, "Element of Interest for Diagram", Diagram)
     def get_contextual_element_for_diagrams(self):
         res = []
         for element in Sirius.get_contextual_element_for_diagrams(self.get_java_object()):

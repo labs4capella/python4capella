@@ -172,9 +172,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_element_of_interest_for_diagrams(self):
         tested = SystemEngineering()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_SystemEngineering_contextual_element_for_diagrams(self):
@@ -372,9 +370,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_element_of_interest_for_diagrams(self):
         tested = Constraint()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Constraint_contextual_element_for_diagrams(self):
@@ -754,9 +750,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_element_of_interest_for_diagrams(self):
         tested = PropertyValueGroup()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PropertyValueGroup_contextual_element_for_diagrams(self):
@@ -936,9 +930,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_element_of_interest_for_diagrams(self):
         tested = PropertyValuePkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PropertyValuePkg_contextual_element_for_diagrams(self):
@@ -1106,9 +1098,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_element_of_interest_for_diagrams(self):
         tested = EnumerationPropertyType()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_EnumerationPropertyType_contextual_element_for_diagrams(self):
@@ -1283,9 +1273,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_element_of_interest_for_diagrams(self):
         tested = EnumerationPropertyLiteral()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_EnumerationPropertyLiteral_contextual_element_for_diagrams(self):
@@ -1719,9 +1707,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CatalogElementPkg_element_of_interest_for_diagrams(self):
         tested = CatalogElementPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CatalogElementPkg_contextual_element_for_diagrams(self):
@@ -1839,9 +1825,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RecCatalog_element_of_interest_for_diagrams(self):
         tested = RecCatalog()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_RecCatalog_contextual_element_for_diagrams(self):
@@ -1924,9 +1908,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CompliancyDefinitionPkg_element_of_interest_for_diagrams(self):
         tested = CompliancyDefinitionPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CompliancyDefinitionPkg_contextual_element_for_diagrams(self):
@@ -2009,9 +1991,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CompliancyDefinition_element_of_interest_for_diagrams(self):
         tested = CompliancyDefinition()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CompliancyDefinition_contextual_element_for_diagrams(self):
@@ -2193,9 +2173,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_element_of_interest_for_diagrams(self):
         tested = OperationalAnalysis()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_OperationalAnalysis_contextual_element_for_diagrams(self):
@@ -2395,9 +2373,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_element_of_interest_for_diagrams(self):
         tested = OperationalActivityPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_OperationalActivityPkg_contextual_element_for_diagrams(self):
@@ -2586,9 +2562,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_element_of_interest_for_diagrams(self):
         tested = OperationalActivity()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_OperationalActivity_contextual_element_for_diagrams(self):
@@ -3023,9 +2997,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_element_of_interest_for_diagrams(self):
         tested = OperationalProcess()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_OperationalProcess_contextual_element_for_diagrams(self):
@@ -3246,9 +3218,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_element_of_interest_for_diagrams(self):
         tested = OperationalCapabilityPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_OperationalCapabilityPkg_contextual_element_for_diagrams(self):
@@ -3493,9 +3463,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_element_of_interest_for_diagrams(self):
         tested = OperationalCapability()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_OperationalCapability_contextual_element_for_diagrams(self):
@@ -3697,9 +3665,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_element_of_interest_for_diagrams(self):
         tested = EntityPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_EntityPkg_contextual_element_for_diagrams(self):
@@ -4320,9 +4286,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_element_of_interest_for_diagrams(self):
         tested = CommunicationMean()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CommunicationMean_contextual_element_for_diagrams(self):
@@ -4528,9 +4492,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_element_of_interest_for_diagrams(self):
         tested = SystemAnalysis()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_SystemAnalysis_contextual_element_for_diagrams(self):
@@ -4735,9 +4697,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_element_of_interest_for_diagrams(self):
         tested = SystemFunctionPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_SystemFunctionPkg_contextual_element_for_diagrams(self):
@@ -4986,9 +4946,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_element_of_interest_for_diagrams(self):
         tested = SystemFunction()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_SystemFunction_contextual_element_for_diagrams(self):
@@ -5185,9 +5143,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_element_of_interest_for_diagrams(self):
         tested = CapabilityPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CapabilityPkg_contextual_element_for_diagrams(self):
@@ -5449,9 +5405,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_element_of_interest_for_diagrams(self):
         tested = Capability()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Capability_contextual_element_for_diagrams(self):
@@ -5648,9 +5602,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_element_of_interest_for_diagrams(self):
         tested = SystemComponentPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_SystemComponentPkg_contextual_element_for_diagrams(self):
@@ -6391,9 +6343,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_element_of_interest_for_diagrams(self):
         tested = MissionPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_MissionPkg_contextual_element_for_diagrams(self):
@@ -6575,9 +6525,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_element_of_interest_for_diagrams(self):
         tested = Mission()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Mission_contextual_element_for_diagrams(self):
@@ -6764,9 +6712,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_element_of_interest_for_diagrams(self):
         tested = LogicalArchitecture()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_LogicalArchitecture_contextual_element_for_diagrams(self):
@@ -6966,9 +6912,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_element_of_interest_for_diagrams(self):
         tested = LogicalFunctionPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_LogicalFunctionPkg_contextual_element_for_diagrams(self):
@@ -7217,9 +7161,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_element_of_interest_for_diagrams(self):
         tested = LogicalFunction()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_LogicalFunction_contextual_element_for_diagrams(self):
@@ -7416,9 +7358,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_element_of_interest_for_diagrams(self):
         tested = CapabilityRealizationPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CapabilityRealizationPkg_contextual_element_for_diagrams(self):
@@ -7680,9 +7620,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_element_of_interest_for_diagrams(self):
         tested = CapabilityRealization()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CapabilityRealization_contextual_element_for_diagrams(self):
@@ -7900,9 +7838,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_element_of_interest_for_diagrams(self):
         tested = LogicalComponentPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_LogicalComponentPkg_contextual_element_for_diagrams(self):
@@ -8403,9 +8339,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_element_of_interest_for_diagrams(self):
         tested = LogicalComponent()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_LogicalComponent_contextual_element_for_diagrams(self):
@@ -8904,9 +8838,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_element_of_interest_for_diagrams(self):
         tested = PhysicalArchitecture()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalArchitecture_contextual_element_for_diagrams(self):
@@ -9106,9 +9038,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_element_of_interest_for_diagrams(self):
         tested = PhysicalFunctionPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalFunctionPkg_contextual_element_for_diagrams(self):
@@ -9357,9 +9287,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_element_of_interest_for_diagrams(self):
         tested = PhysicalFunction()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalFunction_contextual_element_for_diagrams(self):
@@ -9551,9 +9479,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_element_of_interest_for_diagrams(self):
         tested = PhysicalComponentPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalComponentPkg_contextual_element_for_diagrams(self):
@@ -10759,9 +10685,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_element_of_interest_for_diagrams(self):
         tested = EPBSArchitecture()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_EPBSArchitecture_contextual_element_for_diagrams(self):
@@ -10953,9 +10877,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_element_of_interest_for_diagrams(self):
         tested = ConfigurationItemPkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ConfigurationItemPkg_contextual_element_for_diagrams(self):
@@ -11137,9 +11059,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_element_of_interest_for_diagrams(self):
         tested = ConfigurationItem()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ConfigurationItem_contextual_element_for_diagrams(self):
@@ -11340,9 +11260,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_element_of_interest_for_diagrams(self):
         tested = StateMachine()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_StateMachine_contextual_element_for_diagrams(self):
@@ -11541,9 +11459,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_element_of_interest_for_diagrams(self):
         tested = State()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_State_contextual_element_for_diagrams(self):
@@ -11839,9 +11755,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_element_of_interest_for_diagrams(self):
         tested = Mode()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Mode_contextual_element_for_diagrams(self):
@@ -12216,9 +12130,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_element_of_interest_for_diagrams(self):
         tested = Region()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Region_contextual_element_for_diagrams(self):
@@ -12393,9 +12305,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_element_of_interest_for_diagrams(self):
         tested = StateTransition()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_StateTransition_contextual_element_for_diagrams(self):
@@ -12611,9 +12521,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_element_of_interest_for_diagrams(self):
         tested = ChangeEvent()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ChangeEvent_contextual_element_for_diagrams(self):
@@ -12788,9 +12696,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_element_of_interest_for_diagrams(self):
         tested = TimeEvent()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_TimeEvent_contextual_element_for_diagrams(self):
@@ -12972,9 +12878,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_element_of_interest_for_diagrams(self):
         tested = Scenario()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Scenario_contextual_element_for_diagrams(self):
@@ -13201,9 +13105,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_element_of_interest_for_diagrams(self):
         tested = InstanceRole()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_InstanceRole_contextual_element_for_diagrams(self):
@@ -13376,9 +13278,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_element_of_interest_for_diagrams(self):
         tested = SequenceMessage()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_SequenceMessage_contextual_element_for_diagrams(self):
@@ -13581,9 +13481,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_element_of_interest_for_diagrams(self):
         tested = StateFragment()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_StateFragment_contextual_element_for_diagrams(self):
@@ -13766,9 +13664,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_element_of_interest_for_diagrams(self):
         tested = CombinedFragment()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CombinedFragment_contextual_element_for_diagrams(self):
@@ -14142,9 +14038,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_element_of_interest_for_diagrams(self):
         tested = ConstraintDuration()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ConstraintDuration_contextual_element_for_diagrams(self):
@@ -14324,9 +14218,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_element_of_interest_for_diagrams(self):
         tested = PhysicalPort()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalPort_contextual_element_for_diagrams(self):
@@ -14519,9 +14411,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_element_of_interest_for_diagrams(self):
         tested = PhysicalLink()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalLink_contextual_element_for_diagrams(self):
@@ -14728,9 +14618,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_element_of_interest_for_diagrams(self):
         tested = PhysicalLinkCategory()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalLinkCategory_contextual_element_for_diagrams(self):
@@ -14905,9 +14793,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_element_of_interest_for_diagrams(self):
         tested = PhysicalPath()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalPath_contextual_element_for_diagrams(self):
@@ -15107,9 +14993,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_element_of_interest_for_diagrams(self):
         tested = InterfacePkg()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_InterfacePkg_contextual_element_for_diagrams(self):
@@ -15298,9 +15182,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_element_of_interest_for_diagrams(self):
         tested = Interface()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Interface_contextual_element_for_diagrams(self):
@@ -15521,9 +15403,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_element_of_interest_for_diagrams(self):
         tested = ExchangeItemAllocation()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ExchangeItemAllocation_contextual_element_for_diagrams(self):
@@ -15717,9 +15597,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_element_of_interest_for_diagrams(self):
         tested = ExchangeItem()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ExchangeItem_contextual_element_for_diagrams(self):
@@ -15947,9 +15825,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_element_of_interest_for_diagrams(self):
         tested = ExchangeItemElement()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ExchangeItemElement_contextual_element_for_diagrams(self):
@@ -16129,9 +16005,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_element_of_interest_for_diagrams(self):
         tested = FunctionInputPort()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_FunctionInputPort_contextual_element_for_diagrams(self):
@@ -16332,9 +16206,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_element_of_interest_for_diagrams(self):
         tested = FunctionOutputPort()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_FunctionOutputPort_contextual_element_for_diagrams(self):
@@ -16528,9 +16400,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_element_of_interest_for_diagrams(self):
         tested = FunctionalExchange()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_FunctionalExchange_contextual_element_for_diagrams(self):
@@ -16768,9 +16638,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_element_of_interest_for_diagrams(self):
         tested = ExchangeCategory()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ExchangeCategory_contextual_element_for_diagrams(self):
@@ -16945,9 +16813,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_element_of_interest_for_diagrams(self):
         tested = FunctionalChain()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_FunctionalChain_contextual_element_for_diagrams(self):
@@ -17171,9 +17037,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_element_of_interest_for_diagrams(self):
         tested = ComponentPort()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ComponentPort_contextual_element_for_diagrams(self):
@@ -17383,9 +17247,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_element_of_interest_for_diagrams(self):
         tested = ComponentExchange()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ComponentExchange_contextual_element_for_diagrams(self):
@@ -17621,9 +17483,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_element_of_interest_for_diagrams(self):
         tested = ComponentExchangeCategory()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_ComponentExchangeCategory_contextual_element_for_diagrams(self):
@@ -18094,9 +17954,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_element_of_interest_for_diagrams(self):
         tested = Enumeration()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Enumeration_contextual_element_for_diagrams(self):
@@ -18386,9 +18244,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_element_of_interest_for_diagrams(self):
         tested = BooleanType()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_BooleanType_contextual_element_for_diagrams(self):
@@ -18629,9 +18485,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_element_of_interest_for_diagrams(self):
         tested = StringType()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_StringType_contextual_element_for_diagrams(self):
@@ -18907,9 +18761,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_element_of_interest_for_diagrams(self):
         tested = NumericType()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_NumericType_contextual_element_for_diagrams(self):
@@ -19248,9 +19100,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_element_of_interest_for_diagrams(self):
         tested = PhysicalQuantity()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_PhysicalQuantity_contextual_element_for_diagrams(self):
@@ -19425,9 +19275,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_element_of_interest_for_diagrams(self):
         tested = Unit()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Unit_contextual_element_for_diagrams(self):
@@ -19534,9 +19382,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaModule_element_of_interest_for_diagrams(self):
         tested = CapellaModule()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_CapellaModule_contextual_element_for_diagrams(self):
@@ -19633,9 +19479,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Requirement_element_of_interest_for_diagrams(self):
         tested = Requirement()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Requirement_contextual_element_for_diagrams(self):
@@ -19815,9 +19659,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Folder_element_of_interest_for_diagrams(self):
         tested = Folder()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
+        tested.get_element_of_interest_for_diagrams()
         pass
 
     def test_Folder_contextual_element_for_diagrams(self):

@@ -1,3 +1,3 @@
     def get_element_of_interest_for_diagrams(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation", self, Diagram)
+        return capella_query_by_name(self, "Element of Interest for Diagram", Diagram)
 
