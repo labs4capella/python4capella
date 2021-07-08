@@ -177,7 +177,7 @@
               id="7f55d739-87f8-4f36-a86a-5e02d537df69" name="classesAssociation8"
               navigableMembers="#004534cb-43fb-42c5-9408-964a842732e2 #eba6c4b5-2673-4261-9680-f2afff75b3d9"/>
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
-              id="55bad998-daa2-4f59-9fe1-da3783b51ccc" name="capellamodeller" status="#f3036511-df6c-4895-8659-be6f5be16b7c">
+              id="55bad998-daa2-4f59-9fe1-da3783b51ccc" name="capellamodeller" status="#b74f676f-2148-4e30-a5fa-7fee181e5da7">
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="51fca0b1-ec31-4361-97b2-1fd80113bcbf" name="capellamodellerAssociation1"
                 navigableMembers="#c0b269be-148f-48e1-992c-c6c3dc8c427f">
@@ -295,6 +295,27 @@
                     id="6d649f64-bb6f-440c-a181-1308ea90d5be" value="1"/>
               </ownedMembers>
             </ownedAssociations>
+            <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
+                id="e6a78e69-b694-4aae-ab45-f35a45024cc8" name="capellamodellerAssociation10"
+                navigableMembers="#17e96d7e-a568-43f5-b6d4-6cbace604290">
+              <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                  id="1c93cf80-2d37-428f-a679-c2ad1fec6b53" name="This provides access to the list of status defined for the model. This list can then be modified from this element"
+                  constrainedElements="#e6a78e69-b694-4aae-ab45-f35a45024cc8">
+                <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                    id="4045de99-70dc-400a-99bb-4c2a58f80b5f">
+                  <bodies></bodies>
+                  <languages>capella:linkedText</languages>
+                </ownedSpecification>
+              </ownedConstraints>
+              <ownedMembers xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="fb6073a4-be7e-4644-a3b1-816bde0df4c1" name="capellaModel" abstractType="#db353307-924d-4023-ae6a-d0888f104402"
+                  aggregationKind="ASSOCIATION">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="354d575a-5d5d-4015-bab5-4c98b2d48db2" value="1"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="a43e17d8-1d9e-4981-b451-7ec14b8e5f26" value="1"/>
+              </ownedMembers>
+            </ownedAssociations>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="db353307-924d-4023-ae6a-d0888f104402" name="CapellaModel" description="&lt;p>A Capella model. Used to defined the content of a model, and how to read a model&lt;/p>&#xA;">
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
@@ -305,6 +326,15 @@
                     id="fc473d3e-4779-4dea-afd4-df3c1076fcd0" name="" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="cf98ad68-4ba0-4902-821b-80488dc26c45" name="" value="1"/>
+              </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="17e96d7e-a568-43f5-b6d4-6cbace604290" name="progressStatus"
+                  abstractType="#5a732ff0-bad0-4dbe-af7d-1de60dc4e3fb" aggregationKind="COMPOSITION"
+                  isReadOnly="true">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="08a9ba0c-6080-44a8-9b4e-1feca0bfab8e" value="1"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="57cc05d2-8b73-4b79-b13b-bae817b638b0" value="1"/>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="f2087056-0d1c-4f62-847c-5904c68f581f" name="referencedLibraries"
@@ -340,6 +370,28 @@
                       id="c60c8411-31dc-4806-8990-a6027ac3900a" name="" value="*"/>
                 </ownedParameters>
               </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
+                  id="7e95d156-7dc6-4891-8ef5-58a5f7e87711" name="open">
+                <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
+                    id="ee95585f-9ccb-442e-b0dd-2d10dea18880" name="path" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
+                  <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="61b9f1d5-0882-481c-a72d-fb99a3b7ac63" value="1"/>
+                  <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="4f335984-3f0b-499d-8665-14824eb8f591" value="1"/>
+                </ownedParameters>
+              </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
+                  id="43b00453-6144-4cf6-8549-1370c2e4194b" name="create">
+                <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
+                    id="b530aef5-7bc5-4b0f-b000-b33b3169bbcd" name="path" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
+                  <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="b898a833-6820-4330-b7a9-e0e1cb851e03" value="1"/>
+                  <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="e82076e8-ced9-4ceb-9ed2-b76b013b3731" value="1"/>
+                </ownedParameters>
+              </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
+                  id="4538c128-5396-4e65-bb6a-d7ff1411f02b" name="save"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="f98e84d6-cf1d-4a17-ab36-214390208fd5" name="CapellaLibrary" description="&lt;p>A Capella Library. A library is a model which can be referenced by other models in order to reuse its content&lt;/p>&#xA;">
@@ -409,7 +461,7 @@
             </ownedClasses>
           </ownedDataPkgs>
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
-              id="0ef01b5a-81c8-4054-bf5a-f4d8c7b578ef" name="capellacore" status="#f3036511-df6c-4895-8659-be6f5be16b7c">
+              id="0ef01b5a-81c8-4054-bf5a-f4d8c7b578ef" name="capellacore" status="#b74f676f-2148-4e30-a5fa-7fee181e5da7">
             <ownedAssociations xsi:type="org.polarsys.capella.core.data.information:Association"
                 id="c63699df-db6d-443c-9481-0a621f82bb0e" name="capellacoreAssociation3"
                 navigableMembers="#75236a4a-41ac-4ac0-b796-40f89e7b3d13">
@@ -595,7 +647,7 @@
                 </ownedParameters>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
-                  id="9aa2c6fe-1fea-4c66-92ed-92cfbc6730b3" name="getAllContentsFiltered">
+                  id="9aa2c6fe-1fea-4c66-92ed-92cfbc6730b3" name="getAllContentsByType">
                 <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
                     id="420a6ef6-a64d-4d2f-a59c-647310e2b36e" name="type" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
                   <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -672,6 +724,15 @@
                   <languages>capella:linkedText</languages>
                 </ownedSpecification>
               </ownedConstraints>
+              <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
+                  id="77fa7124-5f38-482b-aaad-1a5ca52d28dc" name="INFO: Status will be accessed and modified as a String, but is based on a list of values defined for the model"
+                  constrainedElements="#7bd88617-cd02-494f-b666-d250ff6417d6 #7daa5c4b-7f59-40d7-a5d1-837375ffbb9a">
+                <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
+                    id="cf66fc51-9cde-4cef-9e88-2445f6fa92b8">
+                  <bodies></bodies>
+                  <languages>capella:linkedText</languages>
+                </ownedSpecification>
+              </ownedConstraints>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="2ef072fd-b298-43f5-acc0-0ba71d312c61" super="#82ae6ea2-a7b7-4e66-8c59-7175730ace50"
                   sub="#7bd88617-cd02-494f-b666-d250ff6417d6"/>
@@ -711,7 +772,7 @@
                     id="d3841c9a-a08f-4945-b8e5-e2e000052541" value="1"/>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
-                  id="7d2382e5-f06e-4e66-a9ea-0c7b37a72ba4" name="status" abstractType="#c57c6afa-3704-4585-af77-136b0e33a6c3">
+                  id="7d2382e5-f06e-4e66-a9ea-0c7b37a72ba4" name="status" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="b6f313b9-9e16-4424-86e3-23c1fffd87ab" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -933,18 +994,6 @@
               </ownedFeatures>
             </ownedClasses>
             <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:Enumeration"
-                id="c57c6afa-3704-4585-af77-136b0e33a6c3" name="Status">
-              <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
-                  id="77fa7124-5f38-482b-aaad-1a5ca52d28dc" name="INFO: Status actually is not a static list but is an enumeration defined in the Capella model"
-                  constrainedElements="#c57c6afa-3704-4585-af77-136b0e33a6c3">
-                <ownedSpecification xsi:type="org.polarsys.capella.core.data.information.datavalue:OpaqueExpression"
-                    id="cf66fc51-9cde-4cef-9e88-2445f6fa92b8">
-                  <bodies></bodies>
-                  <languages>capella:linkedText</languages>
-                </ownedSpecification>
-              </ownedConstraints>
-            </ownedDataTypes>
-            <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:Enumeration"
                 id="2d7b4a1a-7fdb-4341-b057-4e2c6c9809ab" name="PropertyValueKind">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="5400fdf5-3eeb-451d-a43a-9af1b887ee56" name="INFO: Property values are simplified as one concept with an attribute kind"
@@ -1025,7 +1074,7 @@
                     id="48a2a8ee-63d6-40b8-92d6-9e38846f0e5e" value="1"/>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
-                  id="3e2e118d-b6bd-408b-acb8-dfabdd84a0a3" name="status" abstractType="#c57c6afa-3704-4585-af77-136b0e33a6c3">
+                  id="3e2e118d-b6bd-408b-acb8-dfabdd84a0a3" name="status" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="f6aff662-a0a6-4ad3-afeb-205577ed9553" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -4445,7 +4494,7 @@
                     id="606012f0-c6e6-46c7-9d1e-b0d069b43944" name="" value="*"/>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
-                  id="6bfc430e-6cef-49b5-9ccb-c8621a8f03c1" name="availableActivities/Functions"
+                  id="6bfc430e-6cef-49b5-9ccb-c8621a8f03c1" name="availableActivitiesFunctions"
                   abstractType="#32e7e714-895d-4e05-85d7-fd4f38d664f7" aggregationKind="ASSOCIATION">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="09a98bfa-d4bf-4b9e-b264-c779307140b7" name="" value="0"/>
