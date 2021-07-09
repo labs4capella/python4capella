@@ -1677,7 +1677,7 @@ class ExchangeItemAllocation(CapellaElement):
     def get_invoking_sequence_messages(self):
         return create_e_list(self.get_java_object().getInvokingSequenceMessages(), SequenceMessage)
 
-class ExchangeItem(CapellaElement, AbstractAction, AbstractEvent, AbstractInstance):
+class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem"))
@@ -3237,7 +3237,7 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
     def get_realized_logical_components(self):
         return create_e_list(self.get_java_object().getRealizedLogicalComponents(), LogicalComponent)
 
-class NodePC(PhysicalComponent, CapellaElement, Node):
+class NodePC(PhysicalComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -3311,7 +3311,7 @@ class TimeEvent(AbstractEvent):
     def set_expression(self, value):
         self.get_java_object().setExpression(value)
 
-class AbstractActivityFunction(CapellaElement, AbstractAction, AbstractEvent, AbstractInstance):
+class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")

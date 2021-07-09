@@ -32,7 +32,6 @@ import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
-import org.polarsys.capella.core.data.capellacore.Generalization;
 import org.polarsys.capella.core.data.information.Class;
 import org.polarsys.capella.core.data.information.DataPkg;
 import org.polarsys.capella.core.data.information.Operation;
@@ -156,8 +155,17 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			superClassNames = "JavaObject";
 		} else {
 			final StringJoiner joiner = new StringJoiner(", ");
-			for (Generalization superGeneralization : cls.getSuperGeneralizations()) {
-				joiner.add(superGeneralization.getSuper().getLabel());
+			final List<Class> allSuperClasses = new ArrayList<>();
+			for (GeneralizableElement superElement : cls.getSuper()) {
+				if (superElement instanceof Class) {
+					allSuperClasses.addAll(
+							ProduceCapellaPythonTestsFromCapellaHandler.getAllSuperClasses((Class) superElement));
+				}
+			}
+			for (GeneralizableElement superElement : cls.getSuper()) {
+				if (!allSuperClasses.contains(superElement)) {
+					joiner.add(superElement.getLabel());
+				}
 			}
 			superClassNames = joiner.toString();
 		}
@@ -200,8 +208,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					final String queryGetterName = "get_" + getCategoryPythonName(category.getName());
 					if (featureGetterName.equals(queryGetterName)) {
 						res.append("    def " + queryGetterName + "(self):" + NL);
-						res.append("        return capella_query_by_name(self, \"" + category.getName() + "\")"
-								+ NL);
+						res.append("        return capella_query_by_name(self, \"" + category.getName() + "\")" + NL);
 						break;
 					}
 				}

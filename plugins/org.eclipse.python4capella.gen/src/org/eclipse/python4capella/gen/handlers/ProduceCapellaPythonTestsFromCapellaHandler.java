@@ -1196,7 +1196,7 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 				|| ePackage.getNsURI().contains("kitalpha") || ePackage.getNsURI().contains("sirius"));
 	}
 
-	private List<Class> getAllSuperClasses(Class cls) {
+	public static List<Class> getAllSuperClasses(Class cls) {
 		final List<Class> res = new ArrayList<>();
 
 		for (GeneralizableElement superType : cls.getSuper()) {
