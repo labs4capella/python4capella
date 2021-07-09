@@ -173,11 +173,11 @@ class CapellaElement(EObject):
     def get_owned_property_values(self):
         return create_e_list(self.get_java_object().getOwnedPropertyValues(), PropertyValue)
     def get_applied_property_values(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElement_applied_property_values", self)
+        return capella_query_by_name(self, "Applied Property Values")
     def get_owned_property_value_groups(self):
         return create_e_list(self.get_java_object().getOwnedPropertyValueGroups(), PropertyValueGroup)
     def get_applied_property_value_groups(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElement_applied_property_value_groups", self)
+        return capella_query_by_name(self, "Applied Property Value Groups")
     def get_owned_enumeration_property_types(self):
         return create_e_list(self.get_java_object().getOwnedEnumerationPropertyTypes(), EnumerationPropertyType)
 
@@ -194,7 +194,7 @@ class Constraint(CapellaElement):
     def set_specification(self, value):
         self.get_java_object().setSpecification(value)
     def get_constrained_elements(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ConstraintModelElements", self)
+        return capella_query_by_name(self, "Constrained Elements")
 
 class PropertyValue(CapellaElement):
     def __init__(self, java_object = None):
@@ -238,7 +238,7 @@ class PropertyValueGroup(CapellaElement):
         else:
             EObject.__init__(self, java_object)
     def get_valued_elements(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PropertyValueGroup_applying_valued_element", self)
+        return capella_query_by_name(self, "Valued Elements")
 
 class EnumerationPropertyType(CapellaElement):
     def __init__(self, java_object = None):
@@ -569,11 +569,11 @@ class OperationalProcess(CapellaElement):
         else:
             EObject.__init__(self, java_object)
     def get_involved_operational_activities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessInvolvedOperationalActivities", self)
+        return capella_query_by_name(self, "Involved Operational Activities")
     def get_involved_interactions(self):
         return create_e_list(self.get_java_object().getInvolvedInteractions(), Interaction)
     def get_involved_operational_processes(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessChildren", self)
+        return capella_query_by_name(self, "Involved Operational Processes")
     def get_pre_condition(self):
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -597,7 +597,7 @@ class OperationalProcess(CapellaElement):
     def get_available_in_states(self):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
     def get_involving_operational_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainInvolvingCapability", self)
+        return capella_query_by_name(self, "Involving Operational Capabilities")
     def get_realizing_functional_chains(self):
         return create_e_list(self.get_java_object().getRealizingFunctionalChains(), FunctionalChain)
 
@@ -677,7 +677,7 @@ class CommunicationMean(CapellaElement):
     def set_target_entity(self, value):
         return self.get_java_object().setTargetEntity(value.get_java_object())
     def get_allocated_interactions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CommunicationMean_AllocatedExchanges", self)
+        return capella_query_by_name(self, "Allocated Interactions")
     def get_convoyed_informations(self):
         return create_e_list(self.get_java_object().getConvoyedInformations(), ExchangeItem)
     def get_realizing_component_exchanges(self):
@@ -809,7 +809,7 @@ class Mission(CapellaElement):
         else:
             EObject.__init__(self, java_object)
     def get_exploited_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Mission_ExploitedCapabilities", self)
+        return capella_query_by_name(self, "Exploited Capabilities")
     def get_involved_actors(self):
         return create_e_list(self.get_java_object().getInvolvedActors(), SystemActor)
 
@@ -1240,9 +1240,9 @@ class StateTransition(CapellaElement):
     def set_trigger_description(self, value):
         self.get_java_object().setTriggerDescription(value)
     def get_source(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.StateTransitionInComingIState", self)
+        return capella_query_by_name(self, "Source")
     def get_target(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.StateTransitionOutGoingIState", self)
+        return capella_query_by_name(self, "Target")
     def get_triggers(self):
         return create_e_list(self.get_java_object().getTriggers(), AbstractEvent)
     def get_guard(self):
@@ -1329,9 +1329,9 @@ class Scenario(CapellaElement):
     def get_referenced_scenarios(self):
         return create_e_list(self.get_java_object().getReferencedScenarios(), Scenario)
     def get_realized_scenarios(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_realizedScenario", self)
+        return capella_query_by_name(self, "Realized Scenarios")
     def get_realizing_scenarios(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_realizingScenario", self)
+        return capella_query_by_name(self, "Realizing Scenarios")
 
 class InstanceRole(CapellaElement):
     def __init__(self, java_object = None):
@@ -1342,7 +1342,7 @@ class InstanceRole(CapellaElement):
         else:
             EObject.__init__(self, java_object)
     def get_represented_instance(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.InstanceRole_representedInstance", self)
+        return capella_query_by_name(self, "Represented Instance")
 
 class AbstractInstance(JavaObject):
     def __init__(self, java_object = None):
@@ -1396,7 +1396,7 @@ class SequenceMessage(CapellaElement):
     def get_exchanged_items(self):
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_invoked_operation(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SequenceMessage_invokedOperation", self)
+        return capella_query_by_name(self, "Invoked Operation")
     def get_exchange_context(self):
         value =  self.get_java_object().getExchangeContext()
         if value is None:
@@ -1434,7 +1434,7 @@ class StateFragment(CapellaElement):
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
     def get_related_state(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.StateFragmentRelatedStates", self)
+        return capella_query_by_name(self, "Related State")
     def get_related_activity_function(self):
         value =  self.get_java_object().getRelatedActivityFunction()
         if value is None:
@@ -1525,9 +1525,9 @@ class PhysicalPort(AbstractPhysicalArtifact):
         else:
             EObject.__init__(self, java_object)
     def get_physical_links(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPortIncomingPhysicalLinks", self)
+        return capella_query_by_name(self, "Physical Links")
     def get_allocated_component_ports(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPortAllocatedComponentPorts", self)
+        return capella_query_by_name(self, "Allocated Component Ports")
     def get_realized_physical_ports(self):
         return create_e_list(self.get_java_object().getRealizedPhysicalPorts(), PhysicalPort)
     def get_realizing_physical_ports(self):
@@ -1544,13 +1544,13 @@ class PhysicalLink(AbstractPhysicalArtifact):
     def get_connected_physical_ports(self):
         return create_e_list(self.get_java_object().getConnectedPhysicalPorts(), PhysicalPort)
     def get_categories(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinkCategories", self)
+        return capella_query_by_name(self, "Categories")
     def get_involving_physical_paths(self):
         return create_e_list(self.get_java_object().getInvolvingPhysicalPaths(), PhysicalPath)
     def get_connected_components(self):
         return create_e_list(self.get_java_object().getConnectedComponents(), Node)
     def get_allocated_component_exchanges(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinksRealizedConnection", self)
+        return capella_query_by_name(self, "Allocated Component Exchanges")
     def get_realized_physical_links(self):
         return create_e_list(self.get_java_object().getRealizedPhysicalLinks(), PhysicalLink)
     def get_realizing_physical_links(self):
@@ -1576,11 +1576,11 @@ class PhysicalPath(CapellaElement):
         else:
             EObject.__init__(self, java_object)
     def get_involved_physical_links(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPath_PhysicalLinks", self)
+        return capella_query_by_name(self, "Involved Physical Links")
     def get_involved_node_p_cs(self):
         return create_e_list(self.get_java_object().getInvolvedNodePCs(), Node)
     def get_allocated_component_exchanges(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPath_RealisedConnection", self)
+        return capella_query_by_name(self, "Allocated Component Exchanges")
     def get_realized_physical_paths(self):
         return create_e_list(self.get_java_object().getRealizedPhysicalPaths(), PhysicalPath)
     def get_realizing_physical_paths(self):
@@ -1622,7 +1622,7 @@ class Interface(CapellaElement):
     def get_owned_exchange_item_allocations(self):
         return create_e_list(self.get_java_object().getOwnedExchangeItemAllocations(), ExchangeItemAllocation)
     def get_exchange_items(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.InterfaceExchangesItems", self)
+        return capella_query_by_name(self, "Exchange Items")
     def get_providing_component_ports(self):
         return create_e_list(self.get_java_object().getProvidingComponentPorts(), ComponentPort)
     def get_requiring_component_ports(self):
@@ -1712,9 +1712,9 @@ class ExchangeItem(CapellaElement, AbstractAction, AbstractEvent, AbstractInstan
     def get_sub(self):
         return create_e_list(self.get_java_object().getSub(), ExchangeItem)
     def get_realized_exchange_items(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeItem_realizedEI", self)
+        return capella_query_by_name(self, "Realized Exchange Items")
     def get_realizing_exchange_items(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeItem_realizingEI", self)
+        return capella_query_by_name(self, "Realizing Exchange Items")
     def get_realizing_operations(self):
         return create_e_list(self.get_java_object().getRealizingOperations(), Operation)
 
@@ -1727,7 +1727,7 @@ class ExchangeItemElement(CapellaElement):
         else:
             EObject.__init__(self, java_object)
     def get_type(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeItemElementType", self)
+        return capella_query_by_name(self, "Type")
 
 class FunctionPort(CapellaElement):
     def __init__(self, java_object = None):
@@ -1835,15 +1835,15 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
     def get_involving_functional_chains(self):
         return create_e_list(self.get_java_object().getInvolvingFunctionalChains(), FunctionalChain)
     def get_categories(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalExchangeCategory", self)
+        return capella_query_by_name(self, "Categories")
     def get_allocating_component_exchange(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalExchangeAllocatingComponentExchange", self)
+        return capella_query_by_name(self, "Allocating Component Exchange")
     def get_realized_functional_exchanges(self):
         return create_e_list(self.get_java_object().getRealizedFunctionalExchanges(), FunctionalExchange)
     def get_realizing_functional_exchanges(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalExchange_realizingDataflow", self)
+        return capella_query_by_name(self, "Realizing Functional Exchanges")
     def get_realized_interactions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalExchangeRealizedInteractions", self)
+        return capella_query_by_name(self, "Realized Interactions")
 
 class ExchangeCategory(CapellaElement):
     def __init__(self, java_object = None):
@@ -1885,21 +1885,21 @@ class FunctionalChain(CapellaElement):
     def set_post_condition(self, value):
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_involved_functions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainInvolvementFunctions", self)
+        return capella_query_by_name(self, "Involved Functions")
     def get_involved_functional_exchanges(self):
         return create_e_list(self.get_java_object().getInvolvedFunctionalExchanges(), FunctionalExchange)
     def get_involved_functional_chains(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainChildren", self)
+        return capella_query_by_name(self, "Involved Functional Chains")
     def get_involving_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.SAFunctionalChainInvolvingCapability", self)
+        return capella_query_by_name(self, "Involving Capabilities")
     def get_available_in_states(self):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
     def get_realized_operational_processes(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainRealizedOperationalProcess", self)
+        return capella_query_by_name(self, "Realized Operational Processes")
     def get_realized_functional_chains(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainRealizedFunctionalChains", self)
+        return capella_query_by_name(self, "Realized Functional Chains")
     def get_realizing_functional_chains(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainRealizingFunctionalChains", self)
+        return capella_query_by_name(self, "Realizing Functional Chains")
 
 class BehavioralComponent(CapellaElement, AbstractInstance):
     def __init__(self, java_object = None):
@@ -1947,17 +1947,17 @@ class ComponentPort(CapellaElement):
     def get_component_exchanges(self):
         return create_e_list(self.get_java_object().getComponentExchanges(), ComponentExchange)
     def get_allocated_function_ports(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentPort_realizedFunctionPort", self)
+        return capella_query_by_name(self, "Allocated Function Ports")
     def get_provided_interfaces(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentPort_providedInterfaces", self)
+        return capella_query_by_name(self, "Provided Interfaces")
     def get_required_interfaces(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentPort_requiredInterfaces", self)
+        return capella_query_by_name(self, "Required Interfaces")
     def get_allocating_physical_ports(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentPortAllocatingPhysicalPorts", self)
+        return capella_query_by_name(self, "Allocating Physical Ports")
     def get_realized_component_ports(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentPort_realizedComponentPort", self)
+        return capella_query_by_name(self, "Realized Component Ports")
     def get_realizing_component_ports(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentPort_realizingComponentPort", self)
+        return capella_query_by_name(self, "Realizing Component Ports")
 
 class ComponentExchange(CapellaElement, AbstractExchange):
     def __init__(self, java_object = None):
@@ -1980,23 +1980,23 @@ class ComponentExchange(CapellaElement, AbstractExchange):
     def get_connected_component_ports(self):
         return create_e_list(self.get_java_object().getConnectedComponentPorts(), ComponentPort)
     def get_connected_components(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Connection_connectedComponents", self)
+        return capella_query_by_name(self, "Connected Components")
     def get_categories(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentExchangeCategories", self)
+        return capella_query_by_name(self, "Categories")
     def get_allocated_functional_exchanges(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentExchangeAllocatedFunctionalExchanges", self)
+        return capella_query_by_name(self, "Allocated Functional Exchanges")
     def get_convoyed_informations(self):
         return create_e_list(self.get_java_object().getConvoyedInformations(), ExchangeItem)
     def get_allocating_physical_link(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentExchangeAllocatingPhysicalLink", self)
+        return capella_query_by_name(self, "Allocating Physical Link")
     def get_allocating_physical_path(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ComponentExchangeAllocatingPhysicalPath", self)
+        return capella_query_by_name(self, "Allocating Physical Path")
     def get_realized_communication_means(self):
         return create_e_list(self.get_java_object().getRealizedCommunicationMeans(), CommunicationMean)
     def get_realized_component_exchanges(self):
         return create_e_list(self.get_java_object().getRealizedComponentExchanges(), ComponentExchange)
     def get_realizing_component_exchanges(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeSpecification_realizingDataflow", self)
+        return capella_query_by_name(self, "Realizing Component Exchanges")
 
 class ComponentExchangeCategory(CapellaElement):
     def __init__(self, java_object = None):
@@ -2044,13 +2044,13 @@ class AbstractCapability(PropertyValuePkgContainer):
     def get_sub(self):
         return create_e_list(self.get_java_object().getSub(), AbstractCapability)
     def get_included_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Capability_includedCapabilities", self)
+        return capella_query_by_name(self, "Included Capabilities")
     def get_including_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Capability_includingCapabilities", self)
+        return capella_query_by_name(self, "Including Capabilities")
     def get_extended_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Capability_extendedCapabilities", self)
+        return capella_query_by_name(self, "Extended Capabilities")
     def get_extending_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Capability_extendingCapabilities", self)
+        return capella_query_by_name(self, "Extending Capabilities")
     def get_available_in_states(self):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
 
@@ -3049,15 +3049,15 @@ class OperationalCapability(AbstractCapability):
         else:
             EObject.__init__(self, java_object)
     def get_owned_operational_processes(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractCapabilityOwnedFunctionalChains", self)
+        return capella_query_by_name(self, "Owned Operational Processes")
     def get_involved_operational_processes(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractCapabilityInvolvedFunctionalChains", self)
+        return capella_query_by_name(self, "Involved Operational Processes")
     def get_involved_operational_activities(self):
         return create_e_list(self.get_java_object().getInvolvedOperationalActivities(), OperationalActivity)
     def get_involved_entities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.OperationalCapability_InvolvedEntity", self)
+        return capella_query_by_name(self, "Involved Entities")
     def get_realizing_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.OCapabilityRealizingCapability", self)
+        return capella_query_by_name(self, "Realizing Capabilities")
 
 class OperationalEntity(OperationalActor):
     def __init__(self, java_object = None):
@@ -3081,9 +3081,9 @@ class Capability(AbstractSystemCapability):
     def get_purpose_missions(self):
         return create_e_list(self.get_java_object().getPurposeMissions(), Mission)
     def get_realized_operational_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapabilityRealizedOC", self)
+        return capella_query_by_name(self, "Realized Operational Capabilities")
     def get_realizing_capability_realizations(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapabilityRealizingCR", self)
+        return capella_query_by_name(self, "Realizing Capability Realizations")
     def get_involved_system_actors(self):
         return create_e_list(self.get_java_object().getInvolvedSystemActors(), SystemActor)
 
@@ -3138,11 +3138,11 @@ class CapabilityRealization(AbstractSystemCapability):
         else:
             EObject.__init__(self, java_object)
     def get_realized_capabilities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapabilityRealization_RealizedCapability", self)
+        return capella_query_by_name(self, "Realized Capabilities")
     def get_realized_capability_realizations(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapabilityRealization_RealizedCapabilityRealization", self)
+        return capella_query_by_name(self, "Realized Capability Realizations")
     def get_realizing_capability_realizations(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.CapabilityRealization_RealizingCapabilityRealization", self)
+        return capella_query_by_name(self, "Realizing Capability Realizations")
     def get_involved_logical_actors(self):
         return create_e_list(self.get_java_object().getInvolvedLogicalActors(), LogicalActor)
     def get_involved_logical_components(self):
@@ -3386,15 +3386,15 @@ class OperationalActivity(AbstractActivityFunction):
     def get_outgoing(self):
         return create_e_list(self.get_java_object().getOutgoing(), Interaction)
     def get_allocating_entity(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.FunctionAllocatingComponent", self)
+        return capella_query_by_name(self, "Allocating Entity")
     def get_owned_operational_processes(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.Function_ownedFunctionalChains", self)
+        return capella_query_by_name(self, "Owned Operational Processes")
     def get_involving_operational_processes(self):
         return create_e_list(self.get_java_object().getInvolvingOperationalProcesses(), OperationalProcess)
     def get_involving_operational_capabilities(self):
         return create_e_list(self.get_java_object().getInvolvingOperationalCapabilities(), OperationalCapability)
     def get_realizing_system_functions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractFunction_realizingFunctions", self)
+        return capella_query_by_name(self, "Realizing System Functions")
 
 class SystemFunction(Function):
     def __init__(self, java_object = None):
@@ -3409,9 +3409,9 @@ class SystemFunction(Function):
     def get_owned_system_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedSystemFunctionPkgs(), SystemFunctionPkg)
     def get_realized_operational_activities(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractFunction_realizedFunctions", self)
+        return capella_query_by_name(self, "Realized Operational Activities")
     def get_realizing_logical_functions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractFunction_realizingFunctions", self)
+        return capella_query_by_name(self, "Realizing Logical Functions")
 
 class LogicalFunction(Function):
     def __init__(self, java_object = None):
@@ -3426,9 +3426,9 @@ class LogicalFunction(Function):
     def get_owned_logical_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedLogicalFunctionPkgs(), LogicalFunctionPkg)
     def get_realized_system_functions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractFunction_realizedFunctions", self)
+        return capella_query_by_name(self, "Realized System Functions")
     def get_realizing_physical_functions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractFunction_realizingFunctions", self)
+        return capella_query_by_name(self, "Realizing Physical Functions")
 
 class PhysicalFunction(Function):
     def __init__(self, java_object = None):
@@ -3443,7 +3443,7 @@ class PhysicalFunction(Function):
     def get_owned_physical_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctionPkgs(), PhysicalFunctionPkg)
     def get_realized_logical_functions(self):
-        return capella_query("org.polarsys.capella.core.semantic.queries.basic.queries.AbstractFunction_realizedFunctions", self)
+        return capella_query_by_name(self, "Realized Logical Functions")
 
 class Status(EObject):
     def __init__(self, java_object = None):

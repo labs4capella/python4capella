@@ -200,7 +200,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					final String queryGetterName = "get_" + getCategoryPythonName(category.getName());
 					if (featureGetterName.equals(queryGetterName)) {
 						res.append("    def " + queryGetterName + "(self):" + NL);
-						res.append("        return capella_query(\"" + query.getClass().getCanonicalName() + "\", self)"
+						res.append("        return capella_query_by_name(self, \"" + category.getName() + "\")"
 								+ NL);
 						break;
 					}
