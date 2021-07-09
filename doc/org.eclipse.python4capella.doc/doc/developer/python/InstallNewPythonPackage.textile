@@ -2,7 +2,7 @@ h1. Install new Python package
 
 To install new Python packages on Linux or Mac OS X, please refer to your distribution documentation.
 
-If you are using Windows and the python27.zip file provided with Python4Capella, you can install a new package using the following command from the folder where you extracted the python27.zip:
+If you are using Windows and the python37.zip file provided with Python4Capella, you can install a new package using the following command from the folder where you extracted the python37.zip:
 
 bc. Scripts\pip install *package name*
 
@@ -18,7 +18,7 @@ You can also install a package from its source archive, you will need to go to t
 
 "https://pypi.org/project/Python-Chart/#files":https://pypi.org/project/Python-Chart/#files
 
-Once you downloaded the archive, from the folder where you extracted the python27.zip, you can use the following command to install the package, in this example:
+Once you downloaded the archive, from the folder where you extracted the python37.zip, you can use the following command to install the package, in this example:
 
 bc. Scripts\pip install Python-Chart-1.39.tar.gz
 

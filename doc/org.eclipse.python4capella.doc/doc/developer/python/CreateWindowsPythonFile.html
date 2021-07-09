@@ -9,18 +9,22 @@
 	<body>
 		<h1 id="CreateWindowsPythoninterpreterzipfile">Create Windows Python interpreter zip file</h1>
 		<p>This section describes how you can recreate the Python interpreter zip file for Windows.</p>
-		<p>The first step is to download the Python 2.7.x installer from the python web site:</p>
+		<p>The first step is to download the Python 3.7.9 embeddable zip file from the python web site:</p>
 		<p>
-			<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
+			<a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9-embed-amd64.zip">https://www.python.org/ftp/python/3.7.9/python-3.7.9-embed-amd64.zip</a>
 		</p>
-		<p>Once you have the .msi file, you will need to extract its contents using the msiexec command:</p>
-		<pre><code>msiexec /a c:\Users\user\Downloads\python-2.7.18.amd64.msi /qb TARGETDIR=c:\Users\user\Downloads\python
+		<p>Once you have the zip file, you can unpack it.</p>
+		<p>At this point pip is not installed but it will be needed later to install packages. You will need to download the 
+			<a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a> script in the unpacked Python folder then run:
+		</p>
+		<pre><code>python get-pip.py
 </code></pre>
-		<p>Note: both the .msi file path and TARGETDIR path need to be absolute.</p>
-		<p>At this point pip is not installed but it will be needed later to install packages. So we will install it using the following command inside the python folder:</p>
-		<pre><code>python -m ensurepip
+		<p>Python will proceed with the download and installation of pip. One more step is needed before we can use pip. You need to edite the file python37._pth to add the created Lib\site-packages folder:</p>
+		<pre><code>python37.zip
+    .
+    Lib\site-packages
 </code></pre>
-		<p>Python will proceed with the downlaod and installation of pip. Now we can install new packages. By default we are going to install a library to write to xlsx documents:</p>
+		<p>Now we can install new packages. By default we are going to install a library to write to xlsx documents:</p>
 		<pre><code>Scripts\pip install XlsxWriter
 </code></pre>
 		<p>This will download the package and install it.</p>
