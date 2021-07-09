@@ -82,7 +82,7 @@ You can install Python4Capella in your Capella in two ways:
 - update site
 - dropins
 
-Then you will need to setup Python 2.7 in your environment.
+Then you will need to setup Python 3.7 in your environment.
 
 ## Update site
 
@@ -104,13 +104,13 @@ TODO add droping zip URL
 
 Then unzip it in the dropins folder in the same folder as your Capella executable.
 
-## Python 2.7 installation
+## Python 3.7 installation
 
 If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
-[https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python27.zip](https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python27.zip)
+[https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python37.zip](https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python37.zip)
 
-If you are running Linux or MacOS X, please check your distribution documentation to install Python 2.7 on your system.
+If you are running Linux or MacOS X, please check your distribution documentation to install Python 3.7 on your system.
 
 # Python4Capella configuration
 
@@ -134,13 +134,13 @@ You now have the following Python4Capella project in your workspace:
 
 ![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-04.png)
 
-Now you need to refence your Python 2.7 interpreter:
+Now you need to refence your Python 3.7 interpreter:
 
 Select the Window > preferences menu
 - select the PyDev / Interpreters / Python Interpreter
-  - select the python executable from the [Python 2.7 installation section](#python-27-installation) by clicking the New button
+  - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the New button
 - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
-  - select the python executable from the [Python 2.7 installation section](#python-27-installation) by clicking the Browse button
+  - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the Browse button
 - select the Scripting / Scripting Locations
   - add /Python4Capella/enduser by clicking the Add Workspace button
 

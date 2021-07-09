@@ -2,21 +2,23 @@ h1. Create Windows Python interpreter zip file
 
 This section describes how you can recreate the Python interpreter zip file for Windows.
 
-The first step is to download the Python 2.7.x installer from the python web site:
+The first step is to download the Python 3.7.9 embeddable zip file from the python web site:
 
-"https://www.python.org/downloads/":https://www.python.org/downloads/
+"https://www.python.org/ftp/python/3.7.9/python-3.7.9-embed-amd64.zip":https://www.python.org/ftp/python/3.7.9/python-3.7.9-embed-amd64.zip
 
-Once you have the .msi file, you will need to extract its contents using the msiexec command:
+Once you have the zip file, you can unpack it.
 
-bc. msiexec /a c:\Users\user\Downloads\python-2.7.18.amd64.msi /qb TARGETDIR=c:\Users\user\Downloads\python
+At this point pip is not installed but it will be needed later to install packages. You will need to download the "get-pip.py":https://bootstrap.pypa.io/get-pip.py script in the unpacked Python folder then run:
 
-Note: both the .msi file path and TARGETDIR path need to be absolute.
+bc. python get-pip.py
 
-At this point pip is not installed but it will be needed later to install packages. So we will install it using the following command inside the python folder:
+Python will proceed with the download and installation of pip. One more step is needed before we can use pip. You need to edite the file python37._pth to add the created Lib\site-packages folder:
 
-bc. python -m ensurepip
+bc. python37.zip
+    .
+    Lib\site-packages
 
-Python will proceed with the downlaod and installation of pip. Now we can install new packages. By default we are going to install a library to write to xlsx documents:
+Now we can install new packages. By default we are going to install a library to write to xlsx documents:
 
 bc. Scripts\pip install XlsxWriter
 
