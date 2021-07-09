@@ -719,6 +719,25 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_TimeEvent_status");
 		res.add("test_Unit_status");
 
+		res.add("test_CapabilityRealization_involved_functions");
+		res.add("test_Capability_involved_functions");
+		res.add("test_Interface_implementor_components");
+		res.add("test_Interface_user_components");
+		res.add("test_LogicalActor_allocated_functions");
+		res.add("test_LogicalActor_constraints");
+		res.add("test_LogicalActor_contained_component_ports");
+		res.add("test_LogicalActor_contained_physical_ports");
+		res.add("test_LogicalActor_implemented_interfaces");
+		res.add("test_LogicalActor_involving_capability_realizations");
+		res.add("test_LogicalActor_used_interfaces");
+		res.add("test_PhysicalActor_allocated_functions");
+		res.add("test_PhysicalActor_constraints");
+		res.add("test_PhysicalActor_contained_component_ports");
+		res.add("test_PhysicalActor_contained_physical_ports");
+		res.add("test_PhysicalActor_implemented_interfaces");
+		res.add("test_PhysicalActor_involving_capability_realizations");
+		res.add("test_PhysicalActor_used_interfaces");
+
 		return res;
 	}
 

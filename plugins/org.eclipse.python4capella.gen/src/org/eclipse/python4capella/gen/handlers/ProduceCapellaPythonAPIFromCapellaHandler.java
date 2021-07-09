@@ -273,8 +273,8 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				res.append("        if value is None:" + NL);
 				res.append("            return value" + NL);
 				res.append("        else:" + NL);
-				res.append(
-						"            specific_cls = getattr(sys.modules[\"__main__\"], value.eClass().getName())" + NL);
+				res.append("            e_object_class = getattr(sys.modules[\"__main__\"], \"EObject\")" + NL);
+				res.append("            specific_cls = e_object_class.get_class(value)" + NL);
 				res.append("            return specific_cls(value)" + NL);
 				if (!property.isIsReadOnly() && !property.isIsDerived()) {
 					res.append("    def set_" + getPythonName(property.getName()) + "(self, value):" + NL);

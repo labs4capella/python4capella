@@ -1,7 +1,7 @@
-    def get_all_contents_by_type(self, type):
+    def get_all_contents_by_type(self, cls):
         res = []
         for value in self.get_all_contents():
-            if isinstance(value, type):
+            if isinstance(value, cls):
                 res.append(value)
         return res
 

@@ -74,8 +74,12 @@ class JavaList(JavaObject):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is not None:
+                return specific_cls(value)
+            else:
+                return None
     def clear(self):
         """Removes all elements from this List"""
         return self.get_java_object().clear()
