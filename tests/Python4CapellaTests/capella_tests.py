@@ -11,6 +11,11 @@ class capella_tests(unittest.TestCase):
         tested.get_system_engineering()
         pass
 
+    def test_CapellaModel_progress_status(self):
+        tested = CapellaModel()
+        tested.get_progress_status()
+        pass
+
     def test_CapellaModel_referenced_libraries(self):
         tested = CapellaModel()
         value = CapellaLibrary()
@@ -29,9 +34,31 @@ class capella_tests(unittest.TestCase):
         tested.get_diagrams(param1)
         pass
 
+    def test_CapellaModel_open(self):
+        tested = CapellaModel()
+        param1 = "value"
+        tested.open(param1)
+        pass
+
+    def test_CapellaModel_create(self):
+        tested = CapellaModel()
+        param1 = "value"
+        tested.create(param1)
+        pass
+
+    def test_CapellaModel_save(self):
+        tested = CapellaModel()
+        tested.save()
+        pass
+
     def test_CapellaLibrary_system_engineering(self):
         tested = CapellaLibrary()
         tested.get_system_engineering()
+        pass
+
+    def test_CapellaLibrary_progress_status(self):
+        tested = CapellaLibrary()
+        tested.get_progress_status()
         pass
 
     def test_CapellaLibrary_referenced_libraries(self):
@@ -50,6 +77,23 @@ class capella_tests(unittest.TestCase):
         tested = CapellaLibrary()
         param1 = "value"
         tested.get_diagrams(param1)
+        pass
+
+    def test_CapellaLibrary_open(self):
+        tested = CapellaLibrary()
+        param1 = "value"
+        tested.open(param1)
+        pass
+
+    def test_CapellaLibrary_create(self):
+        tested = CapellaLibrary()
+        param1 = "value"
+        tested.create(param1)
+        pass
+
+    def test_CapellaLibrary_save(self):
+        tested = CapellaLibrary()
+        tested.save()
         pass
 
     def test_SystemEngineering_owned_property_value_pkgs(self):
@@ -96,9 +140,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_status(self):
         tested = SystemEngineering()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_SystemEngineering_review(self):
@@ -210,10 +252,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_SystemEngineering_get_all_contents_filtered(self):
+    def test_SystemEngineering_get_all_contents_by_type(self):
         tested = SystemEngineering()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_SystemEngineering_get_available_s_b_queries(self):
@@ -294,9 +336,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_status(self):
         tested = Constraint()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Constraint_review(self):
@@ -408,10 +448,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Constraint_get_all_contents_filtered(self):
+    def test_Constraint_get_all_contents_by_type(self):
         tested = Constraint()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Constraint_get_available_s_b_queries(self):
@@ -474,7 +514,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_status(self):
         tested = PropertyValue()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -594,10 +634,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PropertyValue_get_all_contents_filtered(self):
+    def test_PropertyValue_get_all_contents_by_type(self):
         tested = PropertyValue()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PropertyValue_get_available_s_b_queries(self):
@@ -674,9 +714,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_status(self):
         tested = PropertyValueGroup()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PropertyValueGroup_review(self):
@@ -788,10 +826,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PropertyValueGroup_get_all_contents_filtered(self):
+    def test_PropertyValueGroup_get_all_contents_by_type(self):
         tested = PropertyValueGroup()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PropertyValueGroup_get_available_s_b_queries(self):
@@ -854,9 +892,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_status(self):
         tested = PropertyValuePkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PropertyValuePkg_review(self):
@@ -968,10 +1004,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PropertyValuePkg_get_all_contents_filtered(self):
+    def test_PropertyValuePkg_get_all_contents_by_type(self):
         tested = PropertyValuePkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PropertyValuePkg_get_available_s_b_queries(self):
@@ -1022,9 +1058,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_status(self):
         tested = EnumerationPropertyType()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_EnumerationPropertyType_review(self):
@@ -1136,10 +1170,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_EnumerationPropertyType_get_all_contents_filtered(self):
+    def test_EnumerationPropertyType_get_all_contents_by_type(self):
         tested = EnumerationPropertyType()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_EnumerationPropertyType_get_available_s_b_queries(self):
@@ -1197,9 +1231,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_status(self):
         tested = EnumerationPropertyLiteral()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_EnumerationPropertyLiteral_review(self):
@@ -1311,10 +1343,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_EnumerationPropertyLiteral_get_all_contents_filtered(self):
+    def test_EnumerationPropertyLiteral_get_all_contents_by_type(self):
         tested = EnumerationPropertyLiteral()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_EnumerationPropertyLiteral_get_available_s_b_queries(self):
@@ -1512,10 +1544,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_REC_get_all_contents_filtered(self):
+    def test_REC_get_all_contents_by_type(self):
         tested = REC()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_REC_get_available_s_b_queries(self):
@@ -1641,10 +1673,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_RPL_get_all_contents_filtered(self):
+    def test_RPL_get_all_contents_by_type(self):
         tested = RPL()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_RPL_get_available_s_b_queries(self):
@@ -1745,10 +1777,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CatalogElementPkg_get_all_contents_filtered(self):
+    def test_CatalogElementPkg_get_all_contents_by_type(self):
         tested = CatalogElementPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CatalogElementPkg_get_available_s_b_queries(self):
@@ -1863,10 +1895,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_RecCatalog_get_all_contents_filtered(self):
+    def test_RecCatalog_get_all_contents_by_type(self):
         tested = RecCatalog()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_RecCatalog_get_available_s_b_queries(self):
@@ -1946,10 +1978,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CompliancyDefinitionPkg_get_all_contents_filtered(self):
+    def test_CompliancyDefinitionPkg_get_all_contents_by_type(self):
         tested = CompliancyDefinitionPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CompliancyDefinitionPkg_get_available_s_b_queries(self):
@@ -2029,10 +2061,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CompliancyDefinition_get_all_contents_filtered(self):
+    def test_CompliancyDefinition_get_all_contents_by_type(self):
         tested = CompliancyDefinition()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CompliancyDefinition_get_available_s_b_queries(self):
@@ -2097,9 +2129,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_status(self):
         tested = OperationalAnalysis()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_OperationalAnalysis_review(self):
@@ -2211,10 +2241,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalAnalysis_get_all_contents_filtered(self):
+    def test_OperationalAnalysis_get_all_contents_by_type(self):
         tested = OperationalAnalysis()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalAnalysis_get_available_s_b_queries(self):
@@ -2297,9 +2327,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_status(self):
         tested = OperationalActivityPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_OperationalActivityPkg_review(self):
@@ -2411,10 +2439,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalActivityPkg_get_all_contents_filtered(self):
+    def test_OperationalActivityPkg_get_all_contents_by_type(self):
         tested = OperationalActivityPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalActivityPkg_get_available_s_b_queries(self):
@@ -2486,9 +2514,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_status(self):
         tested = OperationalActivity()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_OperationalActivity_review(self):
@@ -2600,10 +2626,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalActivity_get_all_contents_filtered(self):
+    def test_OperationalActivity_get_all_contents_by_type(self):
         tested = OperationalActivity()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalActivity_get_available_s_b_queries(self):
@@ -2707,7 +2733,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_status(self):
         tested = Interaction()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -2827,10 +2853,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Interaction_get_all_contents_filtered(self):
+    def test_Interaction_get_all_contents_by_type(self):
         tested = Interaction()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Interaction_get_available_s_b_queries(self):
@@ -2921,9 +2947,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_status(self):
         tested = OperationalProcess()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_OperationalProcess_review(self):
@@ -3035,10 +3059,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalProcess_get_all_contents_filtered(self):
+    def test_OperationalProcess_get_all_contents_by_type(self):
         tested = OperationalProcess()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalProcess_get_available_s_b_queries(self):
@@ -3142,9 +3166,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_status(self):
         tested = OperationalCapabilityPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_OperationalCapabilityPkg_review(self):
@@ -3256,10 +3278,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalCapabilityPkg_get_all_contents_filtered(self):
+    def test_OperationalCapabilityPkg_get_all_contents_by_type(self):
         tested = OperationalCapabilityPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalCapabilityPkg_get_available_s_b_queries(self):
@@ -3387,9 +3409,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_status(self):
         tested = OperationalCapability()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_OperationalCapability_review(self):
@@ -3501,10 +3521,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalCapability_get_all_contents_filtered(self):
+    def test_OperationalCapability_get_all_contents_by_type(self):
         tested = OperationalCapability()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalCapability_get_available_s_b_queries(self):
@@ -3589,9 +3609,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_status(self):
         tested = EntityPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_EntityPkg_review(self):
@@ -3703,10 +3721,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_EntityPkg_get_all_contents_filtered(self):
+    def test_EntityPkg_get_all_contents_by_type(self):
         tested = EntityPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_EntityPkg_get_available_s_b_queries(self):
@@ -3813,7 +3831,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_status(self):
         tested = OperationalEntity()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -3933,10 +3951,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalEntity_get_all_contents_filtered(self):
+    def test_OperationalEntity_get_all_contents_by_type(self):
         tested = OperationalEntity()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalEntity_get_available_s_b_queries(self):
@@ -3994,7 +4012,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_status(self):
         tested = OperationalActor()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -4114,10 +4132,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_OperationalActor_get_all_contents_filtered(self):
+    def test_OperationalActor_get_all_contents_by_type(self):
         tested = OperationalActor()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_OperationalActor_get_available_s_b_queries(self):
@@ -4210,9 +4228,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_status(self):
         tested = CommunicationMean()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_CommunicationMean_review(self):
@@ -4324,10 +4340,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CommunicationMean_get_all_contents_filtered(self):
+    def test_CommunicationMean_get_all_contents_by_type(self):
         tested = CommunicationMean()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CommunicationMean_get_available_s_b_queries(self):
@@ -4416,9 +4432,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_status(self):
         tested = SystemAnalysis()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_SystemAnalysis_review(self):
@@ -4530,10 +4544,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_SystemAnalysis_get_all_contents_filtered(self):
+    def test_SystemAnalysis_get_all_contents_by_type(self):
         tested = SystemAnalysis()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_SystemAnalysis_get_available_s_b_queries(self):
@@ -4621,9 +4635,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_status(self):
         tested = SystemFunctionPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_SystemFunctionPkg_review(self):
@@ -4735,10 +4747,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_SystemFunctionPkg_get_all_contents_filtered(self):
+    def test_SystemFunctionPkg_get_all_contents_by_type(self):
         tested = SystemFunctionPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_SystemFunctionPkg_get_available_s_b_queries(self):
@@ -4870,9 +4882,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_status(self):
         tested = SystemFunction()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_SystemFunction_review(self):
@@ -4984,10 +4994,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_SystemFunction_get_all_contents_filtered(self):
+    def test_SystemFunction_get_all_contents_by_type(self):
         tested = SystemFunction()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_SystemFunction_get_available_s_b_queries(self):
@@ -5067,9 +5077,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_status(self):
         tested = CapabilityPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_CapabilityPkg_review(self):
@@ -5181,10 +5189,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CapabilityPkg_get_all_contents_filtered(self):
+    def test_CapabilityPkg_get_all_contents_by_type(self):
         tested = CapabilityPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CapabilityPkg_get_available_s_b_queries(self):
@@ -5329,9 +5337,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_status(self):
         tested = Capability()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Capability_review(self):
@@ -5443,10 +5449,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Capability_get_all_contents_filtered(self):
+    def test_Capability_get_all_contents_by_type(self):
         tested = Capability()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Capability_get_available_s_b_queries(self):
@@ -5526,9 +5532,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_status(self):
         tested = SystemComponentPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_SystemComponentPkg_review(self):
@@ -5640,10 +5644,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_SystemComponentPkg_get_all_contents_filtered(self):
+    def test_SystemComponentPkg_get_all_contents_by_type(self):
         tested = SystemComponentPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_SystemComponentPkg_get_available_s_b_queries(self):
@@ -5769,7 +5773,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_status(self):
         tested = System()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -5889,10 +5893,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_System_get_all_contents_filtered(self):
+    def test_System_get_all_contents_by_type(self):
         tested = System()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_System_get_available_s_b_queries(self):
@@ -6018,7 +6022,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_status(self):
         tested = SystemActor()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -6138,10 +6142,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_SystemActor_get_all_contents_filtered(self):
+    def test_SystemActor_get_all_contents_by_type(self):
         tested = SystemActor()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_SystemActor_get_available_s_b_queries(self):
@@ -6267,9 +6271,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_status(self):
         tested = MissionPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_MissionPkg_review(self):
@@ -6381,10 +6383,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_MissionPkg_get_all_contents_filtered(self):
+    def test_MissionPkg_get_all_contents_by_type(self):
         tested = MissionPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_MissionPkg_get_available_s_b_queries(self):
@@ -6449,9 +6451,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_status(self):
         tested = Mission()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Mission_review(self):
@@ -6563,10 +6563,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Mission_get_all_contents_filtered(self):
+    def test_Mission_get_all_contents_by_type(self):
         tested = Mission()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Mission_get_available_s_b_queries(self):
@@ -6636,9 +6636,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_status(self):
         tested = LogicalArchitecture()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_LogicalArchitecture_review(self):
@@ -6750,10 +6748,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_LogicalArchitecture_get_all_contents_filtered(self):
+    def test_LogicalArchitecture_get_all_contents_by_type(self):
         tested = LogicalArchitecture()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_LogicalArchitecture_get_available_s_b_queries(self):
@@ -6836,9 +6834,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_status(self):
         tested = LogicalFunctionPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_LogicalFunctionPkg_review(self):
@@ -6950,10 +6946,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_LogicalFunctionPkg_get_all_contents_filtered(self):
+    def test_LogicalFunctionPkg_get_all_contents_by_type(self):
         tested = LogicalFunctionPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_LogicalFunctionPkg_get_available_s_b_queries(self):
@@ -7085,9 +7081,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_status(self):
         tested = LogicalFunction()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_LogicalFunction_review(self):
@@ -7199,10 +7193,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_LogicalFunction_get_all_contents_filtered(self):
+    def test_LogicalFunction_get_all_contents_by_type(self):
         tested = LogicalFunction()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_LogicalFunction_get_available_s_b_queries(self):
@@ -7282,9 +7276,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_status(self):
         tested = CapabilityRealizationPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_CapabilityRealizationPkg_review(self):
@@ -7396,10 +7388,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CapabilityRealizationPkg_get_all_contents_filtered(self):
+    def test_CapabilityRealizationPkg_get_all_contents_by_type(self):
         tested = CapabilityRealizationPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CapabilityRealizationPkg_get_available_s_b_queries(self):
@@ -7544,9 +7536,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_status(self):
         tested = CapabilityRealization()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_CapabilityRealization_review(self):
@@ -7658,10 +7648,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CapabilityRealization_get_all_contents_filtered(self):
+    def test_CapabilityRealization_get_all_contents_by_type(self):
         tested = CapabilityRealization()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CapabilityRealization_get_available_s_b_queries(self):
@@ -7762,9 +7752,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_status(self):
         tested = LogicalComponentPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_LogicalComponentPkg_review(self):
@@ -7876,10 +7864,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_LogicalComponentPkg_get_all_contents_filtered(self):
+    def test_LogicalComponentPkg_get_all_contents_by_type(self):
         tested = LogicalComponentPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_LogicalComponentPkg_get_available_s_b_queries(self):
@@ -8012,7 +8000,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_status(self):
         tested = LogicalSystem()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -8132,10 +8120,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_LogicalSystem_get_all_contents_filtered(self):
+    def test_LogicalSystem_get_all_contents_by_type(self):
         tested = LogicalSystem()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_LogicalSystem_get_available_s_b_queries(self):
@@ -8263,9 +8251,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_status(self):
         tested = LogicalComponent()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_LogicalComponent_review(self):
@@ -8377,10 +8363,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_LogicalComponent_get_all_contents_filtered(self):
+    def test_LogicalComponent_get_all_contents_by_type(self):
         tested = LogicalComponent()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_LogicalComponent_get_available_s_b_queries(self):
@@ -8520,7 +8506,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_status(self):
         tested = LogicalActor()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -8640,10 +8626,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_LogicalActor_get_all_contents_filtered(self):
+    def test_LogicalActor_get_all_contents_by_type(self):
         tested = LogicalActor()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_LogicalActor_get_available_s_b_queries(self):
@@ -8762,9 +8748,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_status(self):
         tested = PhysicalArchitecture()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalArchitecture_review(self):
@@ -8876,10 +8860,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalArchitecture_get_all_contents_filtered(self):
+    def test_PhysicalArchitecture_get_all_contents_by_type(self):
         tested = PhysicalArchitecture()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalArchitecture_get_available_s_b_queries(self):
@@ -8962,9 +8946,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_status(self):
         tested = PhysicalFunctionPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalFunctionPkg_review(self):
@@ -9076,10 +9058,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalFunctionPkg_get_all_contents_filtered(self):
+    def test_PhysicalFunctionPkg_get_all_contents_by_type(self):
         tested = PhysicalFunctionPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalFunctionPkg_get_available_s_b_queries(self):
@@ -9211,9 +9193,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_status(self):
         tested = PhysicalFunction()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalFunction_review(self):
@@ -9325,10 +9305,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalFunction_get_all_contents_filtered(self):
+    def test_PhysicalFunction_get_all_contents_by_type(self):
         tested = PhysicalFunction()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalFunction_get_available_s_b_queries(self):
@@ -9403,9 +9383,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_status(self):
         tested = PhysicalComponentPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalComponentPkg_review(self):
@@ -9517,10 +9495,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalComponentPkg_get_all_contents_filtered(self):
+    def test_PhysicalComponentPkg_get_all_contents_by_type(self):
         tested = PhysicalComponentPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalComponentPkg_get_available_s_b_queries(self):
@@ -9597,7 +9575,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_status(self):
         tested = PhysicalSystem()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -9717,10 +9695,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalSystem_get_all_contents_filtered(self):
+    def test_PhysicalSystem_get_all_contents_by_type(self):
         tested = PhysicalSystem()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalSystem_get_available_s_b_queries(self):
@@ -9827,7 +9805,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_status(self):
         tested = BehaviorPC()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -9947,10 +9925,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_BehaviorPC_get_all_contents_filtered(self):
+    def test_BehaviorPC_get_all_contents_by_type(self):
         tested = BehaviorPC()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_BehaviorPC_get_available_s_b_queries(self):
@@ -10113,7 +10091,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_status(self):
         tested = NodePC()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -10233,10 +10211,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_NodePC_get_all_contents_filtered(self):
+    def test_NodePC_get_all_contents_by_type(self):
         tested = NodePC()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_NodePC_get_available_s_b_queries(self):
@@ -10374,7 +10352,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_status(self):
         tested = PhysicalActor()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -10494,10 +10472,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalActor_get_all_contents_filtered(self):
+    def test_PhysicalActor_get_all_contents_by_type(self):
         tested = PhysicalActor()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalActor_get_available_s_b_queries(self):
@@ -10609,9 +10587,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_status(self):
         tested = EPBSArchitecture()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_EPBSArchitecture_review(self):
@@ -10723,10 +10699,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_EPBSArchitecture_get_all_contents_filtered(self):
+    def test_EPBSArchitecture_get_all_contents_by_type(self):
         tested = EPBSArchitecture()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_EPBSArchitecture_get_available_s_b_queries(self):
@@ -10801,9 +10777,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_status(self):
         tested = ConfigurationItemPkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ConfigurationItemPkg_review(self):
@@ -10915,10 +10889,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ConfigurationItemPkg_get_all_contents_filtered(self):
+    def test_ConfigurationItemPkg_get_all_contents_by_type(self):
         tested = ConfigurationItemPkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ConfigurationItemPkg_get_available_s_b_queries(self):
@@ -10983,9 +10957,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_status(self):
         tested = ConfigurationItem()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ConfigurationItem_review(self):
@@ -11097,10 +11069,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ConfigurationItem_get_all_contents_filtered(self):
+    def test_ConfigurationItem_get_all_contents_by_type(self):
         tested = ConfigurationItem()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ConfigurationItem_get_available_s_b_queries(self):
@@ -11184,9 +11156,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_status(self):
         tested = StateMachine()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_StateMachine_review(self):
@@ -11298,10 +11268,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_StateMachine_get_all_contents_filtered(self):
+    def test_StateMachine_get_all_contents_by_type(self):
         tested = StateMachine()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_StateMachine_get_available_s_b_queries(self):
@@ -11383,9 +11353,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_status(self):
         tested = State()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_State_review(self):
@@ -11497,10 +11465,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_State_get_all_contents_filtered(self):
+    def test_State_get_all_contents_by_type(self):
         tested = State()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_State_get_available_s_b_queries(self):
@@ -11521,11 +11489,11 @@ class capella_tests(unittest.TestCase):
         self.assertEqual(tested.get_owned_regions().get(0), value)
         pass
 
-    def test_State_available_activities__functions(self):
+    def test_State_available_activities_functions(self):
         tested = State()
         value = PhysicalFunction()
-        tested.get_available_activities__functions().add(value)
-        self.assertEqual(tested.get_available_activities__functions().get(0), value)
+        tested.get_available_activities_functions().add(value)
+        self.assertEqual(tested.get_available_activities_functions().get(0), value)
         pass
 
     def test_State_entry(self):
@@ -11573,11 +11541,11 @@ class capella_tests(unittest.TestCase):
         self.assertEqual(tested.get_owned_regions().get(0), value)
         pass
 
-    def test_Mode_available_activities__functions(self):
+    def test_Mode_available_activities_functions(self):
         tested = Mode()
         value = PhysicalFunction()
-        tested.get_available_activities__functions().add(value)
-        self.assertEqual(tested.get_available_activities__functions().get(0), value)
+        tested.get_available_activities_functions().add(value)
+        self.assertEqual(tested.get_available_activities_functions().get(0), value)
         pass
 
     def test_Mode_entry(self):
@@ -11679,9 +11647,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_status(self):
         tested = Mode()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Mode_review(self):
@@ -11793,10 +11759,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Mode_get_all_contents_filtered(self):
+    def test_Mode_get_all_contents_by_type(self):
         tested = Mode()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Mode_get_available_s_b_queries(self):
@@ -11875,7 +11841,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_status(self):
         tested = Pseudostate()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -11995,10 +11961,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Pseudostate_get_all_contents_filtered(self):
+    def test_Pseudostate_get_all_contents_by_type(self):
         tested = Pseudostate()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Pseudostate_get_available_s_b_queries(self):
@@ -12054,9 +12020,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_status(self):
         tested = Region()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Region_review(self):
@@ -12168,10 +12132,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Region_get_all_contents_filtered(self):
+    def test_Region_get_all_contents_by_type(self):
         tested = Region()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Region_get_available_s_b_queries(self):
@@ -12229,9 +12193,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_status(self):
         tested = StateTransition()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_StateTransition_review(self):
@@ -12343,10 +12305,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_StateTransition_get_all_contents_filtered(self):
+    def test_StateTransition_get_all_contents_by_type(self):
         tested = StateTransition()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_StateTransition_get_available_s_b_queries(self):
@@ -12445,9 +12407,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_status(self):
         tested = ChangeEvent()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ChangeEvent_review(self):
@@ -12559,10 +12519,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ChangeEvent_get_all_contents_filtered(self):
+    def test_ChangeEvent_get_all_contents_by_type(self):
         tested = ChangeEvent()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ChangeEvent_get_available_s_b_queries(self):
@@ -12620,9 +12580,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_status(self):
         tested = TimeEvent()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_TimeEvent_review(self):
@@ -12734,10 +12692,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_TimeEvent_get_all_contents_filtered(self):
+    def test_TimeEvent_get_all_contents_by_type(self):
         tested = TimeEvent()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_TimeEvent_get_available_s_b_queries(self):
@@ -12802,9 +12760,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_status(self):
         tested = Scenario()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Scenario_review(self):
@@ -12916,10 +12872,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Scenario_get_all_contents_filtered(self):
+    def test_Scenario_get_all_contents_by_type(self):
         tested = Scenario()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Scenario_get_available_s_b_queries(self):
@@ -13029,9 +12985,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_status(self):
         tested = InstanceRole()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_InstanceRole_review(self):
@@ -13143,10 +13097,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_InstanceRole_get_all_contents_filtered(self):
+    def test_InstanceRole_get_all_contents_by_type(self):
         tested = InstanceRole()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_InstanceRole_get_available_s_b_queries(self):
@@ -13202,9 +13156,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_status(self):
         tested = SequenceMessage()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_SequenceMessage_review(self):
@@ -13316,10 +13268,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_SequenceMessage_get_all_contents_filtered(self):
+    def test_SequenceMessage_get_all_contents_by_type(self):
         tested = SequenceMessage()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_SequenceMessage_get_available_s_b_queries(self):
@@ -13405,9 +13357,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_status(self):
         tested = StateFragment()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_StateFragment_review(self):
@@ -13519,10 +13469,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_StateFragment_get_all_contents_filtered(self):
+    def test_StateFragment_get_all_contents_by_type(self):
         tested = StateFragment()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_StateFragment_get_available_s_b_queries(self):
@@ -13588,9 +13538,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_status(self):
         tested = CombinedFragment()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_CombinedFragment_review(self):
@@ -13702,10 +13650,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CombinedFragment_get_all_contents_filtered(self):
+    def test_CombinedFragment_get_all_contents_by_type(self):
         tested = CombinedFragment()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CombinedFragment_get_available_s_b_queries(self):
@@ -13771,7 +13719,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_status(self):
         tested = Operand()
-        value = Status()
+        value = "value"
         tested.set_status(value)
         self.assertEqual(tested.get_status(), value)
         pass
@@ -13891,10 +13839,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Operand_get_all_contents_filtered(self):
+    def test_Operand_get_all_contents_by_type(self):
         tested = Operand()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Operand_get_available_s_b_queries(self):
@@ -13962,9 +13910,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_status(self):
         tested = ConstraintDuration()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ConstraintDuration_review(self):
@@ -14076,10 +14022,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ConstraintDuration_get_all_contents_filtered(self):
+    def test_ConstraintDuration_get_all_contents_by_type(self):
         tested = ConstraintDuration()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ConstraintDuration_get_available_s_b_queries(self):
@@ -14142,9 +14088,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_status(self):
         tested = PhysicalPort()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalPort_review(self):
@@ -14256,10 +14200,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalPort_get_all_contents_filtered(self):
+    def test_PhysicalPort_get_all_contents_by_type(self):
         tested = PhysicalPort()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalPort_get_available_s_b_queries(self):
@@ -14335,9 +14279,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_status(self):
         tested = PhysicalLink()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalLink_review(self):
@@ -14449,10 +14391,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalLink_get_all_contents_filtered(self):
+    def test_PhysicalLink_get_all_contents_by_type(self):
         tested = PhysicalLink()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalLink_get_available_s_b_queries(self):
@@ -14542,9 +14484,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_status(self):
         tested = PhysicalLinkCategory()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalLinkCategory_review(self):
@@ -14656,10 +14596,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalLinkCategory_get_all_contents_filtered(self):
+    def test_PhysicalLinkCategory_get_all_contents_by_type(self):
         tested = PhysicalLinkCategory()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalLinkCategory_get_available_s_b_queries(self):
@@ -14717,9 +14657,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_status(self):
         tested = PhysicalPath()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalPath_review(self):
@@ -14831,10 +14769,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalPath_get_all_contents_filtered(self):
+    def test_PhysicalPath_get_all_contents_by_type(self):
         tested = PhysicalPath()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalPath_get_available_s_b_queries(self):
@@ -14917,9 +14855,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_status(self):
         tested = InterfacePkg()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_InterfacePkg_review(self):
@@ -15031,10 +14967,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_InterfacePkg_get_all_contents_filtered(self):
+    def test_InterfacePkg_get_all_contents_by_type(self):
         tested = InterfacePkg()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_InterfacePkg_get_available_s_b_queries(self):
@@ -15106,9 +15042,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_status(self):
         tested = Interface()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Interface_review(self):
@@ -15220,10 +15154,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Interface_get_all_contents_filtered(self):
+    def test_Interface_get_all_contents_by_type(self):
         tested = Interface()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Interface_get_available_s_b_queries(self):
@@ -15327,9 +15261,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_status(self):
         tested = ExchangeItemAllocation()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ExchangeItemAllocation_review(self):
@@ -15441,10 +15373,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ExchangeItemAllocation_get_all_contents_filtered(self):
+    def test_ExchangeItemAllocation_get_all_contents_by_type(self):
         tested = ExchangeItemAllocation()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ExchangeItemAllocation_get_available_s_b_queries(self):
@@ -15521,9 +15453,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_status(self):
         tested = ExchangeItem()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ExchangeItem_review(self):
@@ -15635,10 +15565,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ExchangeItem_get_all_contents_filtered(self):
+    def test_ExchangeItem_get_all_contents_by_type(self):
         tested = ExchangeItem()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ExchangeItem_get_available_s_b_queries(self):
@@ -15749,9 +15679,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_status(self):
         tested = ExchangeItemElement()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ExchangeItemElement_review(self):
@@ -15863,10 +15791,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ExchangeItemElement_get_all_contents_filtered(self):
+    def test_ExchangeItemElement_get_all_contents_by_type(self):
         tested = ExchangeItemElement()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ExchangeItemElement_get_available_s_b_queries(self):
@@ -15929,9 +15857,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_status(self):
         tested = FunctionInputPort()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_FunctionInputPort_review(self):
@@ -16043,10 +15969,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_FunctionInputPort_get_all_contents_filtered(self):
+    def test_FunctionInputPort_get_all_contents_by_type(self):
         tested = FunctionInputPort()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_FunctionInputPort_get_available_s_b_queries(self):
@@ -16130,9 +16056,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_status(self):
         tested = FunctionOutputPort()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_FunctionOutputPort_review(self):
@@ -16244,10 +16168,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_FunctionOutputPort_get_all_contents_filtered(self):
+    def test_FunctionOutputPort_get_all_contents_by_type(self):
         tested = FunctionOutputPort()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_FunctionOutputPort_get_available_s_b_queries(self):
@@ -16324,9 +16248,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_status(self):
         tested = FunctionalExchange()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_FunctionalExchange_review(self):
@@ -16438,10 +16360,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_FunctionalExchange_get_all_contents_filtered(self):
+    def test_FunctionalExchange_get_all_contents_by_type(self):
         tested = FunctionalExchange()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_FunctionalExchange_get_available_s_b_queries(self):
@@ -16562,9 +16484,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_status(self):
         tested = ExchangeCategory()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ExchangeCategory_review(self):
@@ -16676,10 +16596,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ExchangeCategory_get_all_contents_filtered(self):
+    def test_ExchangeCategory_get_all_contents_by_type(self):
         tested = ExchangeCategory()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ExchangeCategory_get_available_s_b_queries(self):
@@ -16737,9 +16657,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_status(self):
         tested = FunctionalChain()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_FunctionalChain_review(self):
@@ -16851,10 +16769,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_FunctionalChain_get_all_contents_filtered(self):
+    def test_FunctionalChain_get_all_contents_by_type(self):
         tested = FunctionalChain()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_FunctionalChain_get_available_s_b_queries(self):
@@ -16961,9 +16879,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_status(self):
         tested = ComponentPort()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ComponentPort_review(self):
@@ -17075,10 +16991,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ComponentPort_get_all_contents_filtered(self):
+    def test_ComponentPort_get_all_contents_by_type(self):
         tested = ComponentPort()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ComponentPort_get_available_s_b_queries(self):
@@ -17171,9 +17087,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_status(self):
         tested = ComponentExchange()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ComponentExchange_review(self):
@@ -17285,10 +17199,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ComponentExchange_get_all_contents_filtered(self):
+    def test_ComponentExchange_get_all_contents_by_type(self):
         tested = ComponentExchange()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ComponentExchange_get_available_s_b_queries(self):
@@ -17407,9 +17321,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_status(self):
         tested = ComponentExchangeCategory()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_ComponentExchangeCategory_review(self):
@@ -17521,10 +17433,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_ComponentExchangeCategory_get_all_contents_filtered(self):
+    def test_ComponentExchangeCategory_get_all_contents_by_type(self):
         tested = ComponentExchangeCategory()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_ComponentExchangeCategory_get_available_s_b_queries(self):
@@ -17822,16 +17734,12 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_realized_informations(self):
         tested = Enumeration()
-        value = PhysicalQuantity()
-        tested.get_realized_informations().add(value)
-        self.assertEqual(tested.get_realized_informations().get(0), value)
+        tested.get_realized_informations()
         pass
 
     def test_Enumeration_realizing_informations(self):
         tested = Enumeration()
-        value = PhysicalQuantity()
-        tested.get_realizing_informations().add(value)
-        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        tested.get_realizing_informations()
         pass
 
     def test_Enumeration_owned_property_value_pkgs(self):
@@ -17878,9 +17786,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_status(self):
         tested = Enumeration()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Enumeration_review(self):
@@ -17992,10 +17898,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Enumeration_get_all_contents_filtered(self):
+    def test_Enumeration_get_all_contents_by_type(self):
         tested = Enumeration()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Enumeration_get_available_s_b_queries(self):
@@ -18112,16 +18018,12 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_realized_informations(self):
         tested = BooleanType()
-        value = PhysicalQuantity()
-        tested.get_realized_informations().add(value)
-        self.assertEqual(tested.get_realized_informations().get(0), value)
+        tested.get_realized_informations()
         pass
 
     def test_BooleanType_realizing_informations(self):
         tested = BooleanType()
-        value = PhysicalQuantity()
-        tested.get_realizing_informations().add(value)
-        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        tested.get_realizing_informations()
         pass
 
     def test_BooleanType_owned_property_value_pkgs(self):
@@ -18168,9 +18070,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_status(self):
         tested = BooleanType()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_BooleanType_review(self):
@@ -18282,10 +18182,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_BooleanType_get_all_contents_filtered(self):
+    def test_BooleanType_get_all_contents_by_type(self):
         tested = BooleanType()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_BooleanType_get_available_s_b_queries(self):
@@ -18353,16 +18253,12 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_realized_informations(self):
         tested = StringType()
-        value = PhysicalQuantity()
-        tested.get_realized_informations().add(value)
-        self.assertEqual(tested.get_realized_informations().get(0), value)
+        tested.get_realized_informations()
         pass
 
     def test_StringType_realizing_informations(self):
         tested = StringType()
-        value = PhysicalQuantity()
-        tested.get_realizing_informations().add(value)
-        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        tested.get_realizing_informations()
         pass
 
     def test_StringType_owned_property_value_pkgs(self):
@@ -18409,9 +18305,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_status(self):
         tested = StringType()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_StringType_review(self):
@@ -18523,10 +18417,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_StringType_get_all_contents_filtered(self):
+    def test_StringType_get_all_contents_by_type(self):
         tested = StringType()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_StringType_get_available_s_b_queries(self):
@@ -18629,16 +18523,12 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_realized_informations(self):
         tested = NumericType()
-        value = PhysicalQuantity()
-        tested.get_realized_informations().add(value)
-        self.assertEqual(tested.get_realized_informations().get(0), value)
+        tested.get_realized_informations()
         pass
 
     def test_NumericType_realizing_informations(self):
         tested = NumericType()
-        value = PhysicalQuantity()
-        tested.get_realizing_informations().add(value)
-        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        tested.get_realizing_informations()
         pass
 
     def test_NumericType_owned_property_value_pkgs(self):
@@ -18685,9 +18575,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_status(self):
         tested = NumericType()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_NumericType_review(self):
@@ -18799,10 +18687,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_NumericType_get_all_contents_filtered(self):
+    def test_NumericType_get_all_contents_by_type(self):
         tested = NumericType()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_NumericType_get_available_s_b_queries(self):
@@ -18968,16 +18856,12 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_realized_informations(self):
         tested = PhysicalQuantity()
-        value = PhysicalQuantity()
-        tested.get_realized_informations().add(value)
-        self.assertEqual(tested.get_realized_informations().get(0), value)
+        tested.get_realized_informations()
         pass
 
     def test_PhysicalQuantity_realizing_informations(self):
         tested = PhysicalQuantity()
-        value = PhysicalQuantity()
-        tested.get_realizing_informations().add(value)
-        self.assertEqual(tested.get_realizing_informations().get(0), value)
+        tested.get_realizing_informations()
         pass
 
     def test_PhysicalQuantity_owned_property_value_pkgs(self):
@@ -19024,9 +18908,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_status(self):
         tested = PhysicalQuantity()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_PhysicalQuantity_review(self):
@@ -19138,10 +19020,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_PhysicalQuantity_get_all_contents_filtered(self):
+    def test_PhysicalQuantity_get_all_contents_by_type(self):
         tested = PhysicalQuantity()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_PhysicalQuantity_get_available_s_b_queries(self):
@@ -19199,9 +19081,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_status(self):
         tested = Unit()
-        value = Status()
-        tested.set_status(value)
-        self.assertEqual(tested.get_status(), value)
+        tested.get_status()
         pass
 
     def test_Unit_review(self):
@@ -19313,10 +19193,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Unit_get_all_contents_filtered(self):
+    def test_Unit_get_all_contents_by_type(self):
         tested = Unit()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Unit_get_available_s_b_queries(self):
@@ -19420,10 +19300,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_CapellaModule_get_all_contents_filtered(self):
+    def test_CapellaModule_get_all_contents_by_type(self):
         tested = CapellaModule()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_CapellaModule_get_available_s_b_queries(self):
@@ -19517,10 +19397,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Requirement_get_all_contents_filtered(self):
+    def test_Requirement_get_all_contents_by_type(self):
         tested = Requirement()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Requirement_get_available_s_b_queries(self):
@@ -19697,10 +19577,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Folder_get_all_contents_filtered(self):
+    def test_Folder_get_all_contents_by_type(self):
         tested = Folder()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Folder_get_available_s_b_queries(self):
@@ -19770,10 +19650,10 @@ class capella_tests(unittest.TestCase):
         tested.get_all_contents()
         pass
 
-    def test_Attribute_get_all_contents_filtered(self):
+    def test_Attribute_get_all_contents_by_type(self):
         tested = Attribute()
         param1 = "value"
-        tested.get_all_contents_filtered(param1)
+        tested.get_all_contents_by_type(param1)
         pass
 
     def test_Attribute_get_available_s_b_queries(self):

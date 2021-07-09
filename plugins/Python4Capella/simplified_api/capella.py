@@ -17,6 +17,13 @@ class CapellaModel(JavaObject):
             return None
         else:
             return SystemEngineering(Sirius.get_system_engineering(self.session))
+    def get_progress_status(self):
+        value =  self.get_java_object().getProgressStatus()
+        if value is None:
+            return value
+        else:
+            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
+            return specific_cls(value)
     def get_referenced_libraries(self):
         return create_e_list(self.get_java_object().getReferencedLibraries(), CapellaLibrary)
     def get_all_diagrams(self):
@@ -31,6 +38,12 @@ class CapellaModel(JavaObject):
         for descriptor in descriptors:
             res.append(Diagram(descriptor))
         return res
+    def open(self, path):
+        raise AttributeError("TODO")
+    def create(self, path):
+        raise AttributeError("TODO")
+    def save(self):
+        raise AttributeError("TODO")
 
 class CapellaLibrary(CapellaModel):
     def __init__(self, java_object = None):
@@ -84,7 +97,7 @@ class EObject(JavaObject):
             if specific_cls is not None:
                 res.append(specific_cls(value))
         return res
-    def get_all_contents_filtered(self, type):
+    def get_all_contents_by_type(self, type):
         res = []
         for value in self.get_all_contents():
             if isinstance(value, type):
@@ -128,10 +141,7 @@ class CapellaElement(EObject):
         if value is None:
             return value
         else:
-            specific_cls = getattr(sys.modules["__main__"], value.eClass().getName())
-            return specific_cls(value)
-    def set_status(self, value):
-        return self.get_java_object().setStatus(value.get_java_object())
+            return value.getName()
     def get_review(self):
         return self.get_java_object().getReview()
     def set_review(self, value):
@@ -991,9 +1001,9 @@ class PhysicalComponent(AbstractPhysicalArtifact):
     def get_owned_physical_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
     def get_is_human(self):
-        return self.get_java_object().isIsHuman()
+        return self.get_java_object().isHuman()
     def set_is_human(self, value):
-        self.get_java_object().setIsHuman(value)
+        self.get_java_object().setHuman(value)
     def get_involving_capability_realizations(self):
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
@@ -1108,8 +1118,8 @@ class State(AbstractState):
             EObject.__init__(self, java_object)
     def get_owned_regions(self):
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
-    def get_available_activities__functions(self):
-        return create_e_list(self.get_java_object().getAvailableActivities_Functions(), AbstractActivityFunction)
+    def get_available_activities_functions(self):
+        return create_e_list(self.get_java_object().getAvailableActivitiesFunctions(), AbstractActivityFunction)
     def get_entry(self):
         return create_e_list(self.get_java_object().getEntry(), AbstractAction)
     def get_do(self):
@@ -1968,9 +1978,9 @@ class AbstractSystemCapability(AbstractCapability):
     def get_owned_functional_chains(self):
         return create_e_list(self.get_java_object().getOwnedFunctionalChains(), FunctionalChain)
     def get_involved_functional_chains(self):
-        return create_e_list(self.get_java_object().getRealizedFunctionalChains(), FunctionalChain)
+        return create_e_list(self.get_java_object().getInvolvedFunctionalChains(), FunctionalChain)
     def get_involved_functions(self):
-        return create_e_list(self.get_java_object().getInvolvedFunctions(), Function)
+        return create_e_list(self.get_java_object().getInvolvedAbstractFunctions(), Function)
 
 class DataValue(JavaObject):
     def __init__(self, java_object = None):
@@ -2975,9 +2985,9 @@ class SystemActor(BehavioralComponent, Node):
         else:
             EObject.__init__(self, java_object)
     def get_is_human(self):
-        return self.get_java_object().isIsHuman()
+        return self.get_java_object().isHuman()
     def set_is_human(self, value):
-        self.get_java_object().setIsHuman(value)
+        self.get_java_object().setHuman(value)
     def get_owned_actors(self):
         return create_e_list(self.get_java_object().getOwnedActors(), SystemActor)
     def get_owned_system_component_pkgs(self):
@@ -3047,9 +3057,9 @@ class LogicalComponent(BehavioralComponent):
     def get_owned_logical_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
     def get_is_human(self):
-        return self.get_java_object().isIsHuman()
+        return self.get_java_object().isHuman()
     def set_is_human(self, value):
-        self.get_java_object().setIsHuman(value)
+        self.get_java_object().setHuman(value)
     def get_realizing_behavior_p_cs(self):
         return create_e_list(self.get_java_object().getRealizingBehaviorPCs(), BehaviorPC)
     def get_involving_capability_realizations(self):
@@ -3070,9 +3080,9 @@ class LogicalActor(BehavioralComponent, Node):
     def get_realized_system_actors(self):
         return create_e_list(self.get_java_object().getRealizedSystemActors(), SystemActor)
     def get_is_human(self):
-        return self.get_java_object().isIsHuman()
+        return self.get_java_object().isHuman()
     def set_is_human(self, value):
-        self.get_java_object().setIsHuman(value)
+        self.get_java_object().setHuman(value)
     def get_realizing_physical_actors(self):
         return create_e_list(self.get_java_object().getRealizingPhysicalActors(), PhysicalActor)
     def get_involving_capability_realizations(self):
@@ -3126,9 +3136,9 @@ class PhysicalActor(BehavioralComponent, Node):
     def get_realized_logical_actors(self):
         return create_e_list(self.get_java_object().getRealizedLogicalActors(), LogicalActor)
     def get_is_human(self):
-        return self.get_java_object().isIsHuman()
+        return self.get_java_object().isHuman()
     def set_is_human(self, value):
-        self.get_java_object().setIsHuman(value)
+        self.get_java_object().setHuman(value)
     def get_involving_capability_realizations(self):
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 

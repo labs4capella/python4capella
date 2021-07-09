@@ -1,4 +1,4 @@
-    def get_all_contents_filtered(self, type):
+    def get_all_contents_by_type(self, type):
         res = []
         for value in self.get_all_contents():
             if isinstance(value, type):

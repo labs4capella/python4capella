@@ -449,7 +449,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		res.put("AbstractCapability.includingCapabilities", "includingAbstractCapabilities");
 		res.put("AbstractState.realizedStates", "realizedAbstractStates");
 		res.put("AbstractState.realizingStates", "realizingAbstractStates");
-		res.put("AbstractSystemCapability.involvedFunctionalChains", "realizedFunctionalChains");
+		res.put("AbstractSystemCapability.involvedFunctions", "involvedAbstractFunctions");
 		res.put("CapellaElement.visibleForTraceability", "visibleInLM");
 		res.put("CapellaElement.visibleInDocumentation", "visibleInDoc");
 		res.put("EPBSArchitecture.capabilityRealizationPkg", "containedCapabilityRealizationPkg");
@@ -497,6 +497,13 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		res.put("Requirement.prefix", "ReqIFPrefix");
 		res.put("Requirement.text", "ReqIFText");
 		res.put("Attribute.name", "ReqIFName");
+
+		// isHuman
+		res.put("SystemActor.isHuman", "human");
+		res.put("LogicalComponent.isHuman", "human");
+		res.put("LogicalActor.isHuman", "human");
+		res.put("PhysicalActor.isHuman", "human");
+		res.put("PhysicalComponent.isHuman", "human");
 
 		return res;
 	}
