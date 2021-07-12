@@ -4,4 +4,7 @@ if False:
 include('workspace://Python4Capella/java_api/Capella_API.py')
 if False:
     from java_api.Capella_API import *
+include('workspace://Python4Capella/simplified_api/capellacore.py')
+if False:
+    from simplified_api.capellacore import *
 

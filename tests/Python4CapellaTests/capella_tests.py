@@ -19650,3 +19650,4 @@ class capella_tests(unittest.TestCase):
         tested.get_kind()
         pass
 
+

@@ -3449,7 +3449,8 @@ class Status(EObject):
     def __init__(self, java_object = None):
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
-        elif isinstance(java_object, PhysicalFunction):
+        elif isinstance(java_object, Status):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+

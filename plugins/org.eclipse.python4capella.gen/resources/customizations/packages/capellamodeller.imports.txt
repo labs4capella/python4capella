@@ -16,4 +16,7 @@ if False:
 include('workspace://Python4Capella/simplified_api/re.py')
 if False:
     from simplified_api.re import *
+include('workspace://Python4Capella/simplified_api/oa.py')
+if False:
+    from simplified_api.oa import *
 

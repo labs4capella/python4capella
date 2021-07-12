@@ -126,6 +126,31 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 	private void generateMultiFiles(DataPkg root) {
 		for (DataPkg pkg : root.getOwnedDataPkgs()) {
+			final Set<Class> remainingClasses = new LinkedHashSet<>();
+			for (Class cls : pkg.getOwnedClasses()) {
+				remainingClasses.add(cls);
+			}
+
+			final List<Class> orderedClasses = new ArrayList<>();
+			final Set<Class> knwonClasses = new HashSet<>();
+			while (!remainingClasses.isEmpty()) {
+				final List<Class> toRemove = new ArrayList<>();
+				for (Class cls : remainingClasses) {
+					final List<Class> superClasses = getSuperClasses(cls);
+					for (Class superClass : new ArrayList<>(superClasses)) {
+						if (superClass.eContainer() != pkg) {
+							superClasses.remove(superClass);
+						}
+					}
+					if (knwonClasses.containsAll(superClasses)) {
+						orderedClasses.add(cls);
+						knwonClasses.add(cls);
+						toRemove.add(cls);
+					}
+				}
+				remainingClasses.removeAll(toRemove);
+			}
+
 			final File file = new File("/tmp/capella/" + pkg.getName() + ".py");
 			try {
 				if (!file.exists()) {
@@ -137,6 +162,11 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					for (Class cls : pkg.getOwnedClasses()) {
 						os.write(NL.getBytes());
 						os.write(generateClass(cls).getBytes());
+					}
+					os.write(NL.getBytes());
+					final String additions = getPackageAdditions(pkg.getName());
+					if (additions != null) {
+						os.write(additions.getBytes());
 					}
 					os.write(NL.getBytes());
 				}

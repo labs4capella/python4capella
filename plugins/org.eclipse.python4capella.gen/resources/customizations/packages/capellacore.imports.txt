@@ -4,4 +4,16 @@ if False:
 include('workspace://Python4Capella/java_api/Capella_API.py')
 if False:
     from java_api.Capella_API import *
+include('workspace://Python4Capella/java_api/Sirius_API.py')
+if False:
+    from java_api.Sirius_API import *
+include('workspace://Python4Capella/simplified_api/diagram.py')
+if False:
+    from simplified_api.diagram import *
+include('workspace://Python4Capella/simplified_api/la.py')
+if False:
+    from simplified_api.la import *
+include('workspace://Python4Capella/simplified_api/pa.py')
+if False:
+    from simplified_api.pa import *
 
