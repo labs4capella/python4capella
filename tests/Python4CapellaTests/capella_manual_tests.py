@@ -47,16 +47,40 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual(False, pc.get_java_object().isActor())
         pass
 
-    def test_new_PhysicalComponent_invalid_java_object(self):
+    def test_new_PhysicalComponent_invalid_java_object_actor(self):
         pa = PhysicalActor()
         with self.assertRaises(AttributeError) as context:
             PhysicalComponent(pa.get_java_object())
         self.assertEqual("Passed component is an actor.", str(context.exception))
         pass
 
+    def test_new_PhysicalComponent_invalid_java_object_behavior(self):
+        bpc = BehaviorPC()
+        with self.assertRaises(AttributeError) as context:
+            PhysicalComponent(bpc.get_java_object())
+        self.assertEqual("Passed component is a behavior physical component.", str(context.exception))
+        pass
+
+    def test_new_PhysicalComponent_invalid_java_object_node(self):
+        npc = NodePC()
+        with self.assertRaises(AttributeError) as context:
+            PhysicalComponent(npc.get_java_object())
+        self.assertEqual("Passed component is a node physical component.", str(context.exception))
+        pass
+
     def test_new_PhysicalActor(self):
         pa = PhysicalActor()
         self.assertEqual(True, pa.get_java_object().isActor())
+        pass
+
+    def test_new_BehaviorPC(self):
+        bpc = BehaviorPC()
+        self.assertEqual("BEHAVIOR", bpc.get_java_object().getNature().getName())
+        pass
+
+    def test_new_NodePC(self):
+        npc = NodePC()
+        self.assertEqual("NODE", npc.get_java_object().getNature().getName())
         pass
 
     def test_PhysicalComponent_get_class(self):
@@ -69,10 +93,33 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual(PhysicalActor, EObject.get_class(pa.get_java_object()))
         pass
 
+    def test_BehaviorPC_get_class(self):
+        bpc = BehaviorPC()
+        self.assertEqual(BehaviorPC, EObject.get_class(bpc.get_java_object()))
+        pass
+
+    def test_NodePC_get_class(self):
+        npc = NodePC()
+        self.assertEqual(NodePC, EObject.get_class(npc.get_java_object()))
+        pass
 
     def test_new_PhysicalActor_invalid_java_object(self):
         pc = PhysicalComponent()
         with self.assertRaises(AttributeError) as context:
             PhysicalActor(pc.get_java_object())
         self.assertEqual("Passed component is not an actor.", str(context.exception))
+        pass
+
+    def test_new_BehaviorPC_invalid_java_object(self):
+        pc = PhysicalComponent()
+        with self.assertRaises(AttributeError) as context:
+            BehaviorPC(pc.get_java_object())
+        self.assertEqual("Passed component is a physical component.", str(context.exception))
+        pass
+
+    def test_new_NodePC_invalid_java_object(self):
+        pc = PhysicalComponent()
+        with self.assertRaises(AttributeError) as context:
+            NodePC(pc.get_java_object())
+        self.assertEqual("Passed component is a physical component.", str(context.exception))
         pass

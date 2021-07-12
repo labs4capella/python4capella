@@ -59,10 +59,23 @@ class EObject(JavaObject):
     @staticmethod
     def get_class(e_object):
         res = getattr(sys.modules["__main__"], e_object.eClass().getName())
+        
         if res == LogicalComponent and e_object.isActor():
             res = LogicalActor
-        if res == PhysicalComponent and e_object.isActor():
-            res = PhysicalActor
+        
+        if res == PhysicalComponent:
+            if e_object.isActor():
+                res = PhysicalActor
+            else:
+                if e_object.getNature().getName() == "UNSET":
+                    res = PhysicalComponent
+                elif e_object.getNature().getName() == "BEHAVIOR":
+                    res = BehaviorPC
+                elif e_object.getNature().getName() == "NODE":
+                    res = NodePC
+                else:
+                    raise AttributeError("Passed physical component has unexpected nature.")
+        
         return res
     def get_owned_diagrams(self):
         res = []
@@ -1036,7 +1049,12 @@ class PhysicalComponent(AbstractPhysicalArtifact):
             EObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
-                EObject.__init__(self, java_object)
+                if java_object.getNature().getName() == "UNSET":
+                    EObject.__init__(self, java_object)
+                elif java_object.getNature().getName() == "BEHAVIOR":
+                    raise AttributeError("Passed component is a behavior physical component.")
+                elif java_object.getNature().getName() == "NODE":
+                    raise AttributeError("Passed component is a node physical component.")
             else:
                 raise AttributeError("Passed component is an actor.")
     def get_kind(self):
@@ -3219,11 +3237,20 @@ class LogicalActor(BehavioralComponent, Node):
 class BehaviorPC(PhysicalComponent, BehavioralComponent):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "BEHAVIOR"))
         elif isinstance(java_object, BehaviorPC):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if not java_object.isActor():
+                if java_object.getNature().getName() == "UNSET":
+                    raise AttributeError("Passed component is a physical component.")
+                elif java_object.getNature().getName() == "BEHAVIOR":
+                    EObject.__init__(self, java_object)
+                elif java_object.getNature().getName() == "NODE":
+                    raise AttributeError("Passed component is a node physical component.")
+            else:
+                raise AttributeError("Passed component is an actor.")
     def get_deploying_node_p_c(self):
         value =  self.get_java_object().getDeployingNodePC()
         if value is None:
@@ -3240,11 +3267,22 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
 class NodePC(PhysicalComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "NODE"))
         elif isinstance(java_object, NodePC):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if not java_object.isActor():
+                if java_object.getNature().getName() == "UNSET":
+                    raise AttributeError("Passed component is a physical component.")
+                elif java_object.getNature().getName() == "BEHAVIOR":
+                    raise AttributeError("Passed component is a behavior physical component.")
+                elif java_object.getNature().getName() == "NODE":
+                    EObject.__init__(self, java_object)
+                else:
+                    raise AttributeError("Passed component has unexpected nature.")
+            else:
+                raise AttributeError("Passed component is an actor.")
     def get_deployed_behavior_p_cs(self):
         return create_e_list(self.get_java_object().getDeployedBehaviorPCs(), BehaviorPC)
     def get_owned_state_machines(self):

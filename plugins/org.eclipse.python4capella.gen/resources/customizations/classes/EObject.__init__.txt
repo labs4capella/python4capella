@@ -1,9 +1,22 @@
     @staticmethod
     def get_class(e_object):
         res = getattr(sys.modules["__main__"], e_object.eClass().getName())
+        
         if res == LogicalComponent and e_object.isActor():
             res = LogicalActor
-        if res == PhysicalComponent and e_object.isActor():
-            res = PhysicalActor
+        
+        if res == PhysicalComponent:
+            if e_object.isActor():
+                res = PhysicalActor
+            else:
+                if e_object.getNature().getName() == "UNSET":
+                    res = PhysicalComponent
+                elif e_object.getNature().getName() == "BEHAVIOR":
+                    res = BehaviorPC
+                elif e_object.getNature().getName() == "NODE":
+                    res = NodePC
+                else:
+                    raise AttributeError("Passed physical component has unexpected nature.")
+        
         return res
 

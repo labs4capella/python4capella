@@ -17,8 +17,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.ease.modules.WrapToScript;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -97,6 +100,24 @@ public class EMFModule {
 		}
 
 		return res;
+	}
+
+	/**
+	 * Gets the {@link Enumerator} for the given {@link EPackage#getNsURI() nsURI},
+	 * {@link EEnum#getName() eenum name} and {@link EEnumLiteral#getName() eenume
+	 * literal name}.
+	 * 
+	 * @param nsURI       the {@link EPackage#getNsURI() nsURI}
+	 * @param enumName    the {@link EEnum#getName() eenum name}
+	 * @param literalName the {@link EEnumLiteral#getName() eenume literal name}
+	 * @return the {@link Enumerator} for the given {@link EPackage#getNsURI()
+	 *         nsURI}, {@link EEnum#getName() eenum name} and
+	 *         {@link EEnumLiteral#getName() eenume literal name}
+	 */
+	@WrapToScript
+	public Enumerator getEnumLiteral(String nsURI, String enumName, String literalName) {
+		return ((EEnum) EPackage.Registry.INSTANCE.getEPackage(nsURI).getEClassifier(enumName))
+				.getEEnumLiteral(literalName).getInstance();
 	}
 
 }
