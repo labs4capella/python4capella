@@ -1,6 +1,9 @@
     @staticmethod
     def get_class(e_object):
-        res = getattr(sys.modules["__main__"], e_object.eClass().getName())
+        try:
+            res = getattr(sys.modules["__main__"], e_object.eClass().getName())
+        except AttributeError:
+            res = None
         
         if res == LogicalComponent and e_object.isActor():
             res = LogicalActor
@@ -17,6 +20,12 @@
                     res = NodePC
                 else:
                     raise AttributeError("Passed physical component has unexpected nature.")
+        
+        if res == None and e_object.eClass().getName() == "Entity":
+            if e_object.isActor():
+                res = OperationalActor
+            else:
+                res = OperationalEntity
         
         return res
 

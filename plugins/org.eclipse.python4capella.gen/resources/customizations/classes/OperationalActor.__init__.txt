@@ -1,0 +1,12 @@
+    def __init__(self, java_object = None):
+        if java_object is None:
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
+            self.get_java_object().setActor(True)
+        elif isinstance(java_object, OperationalEntity):
+            EObject.__init__(self, java_object.get_java_object())
+        else:
+            if java_object.isActor():
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed entity is not an actor.")
+

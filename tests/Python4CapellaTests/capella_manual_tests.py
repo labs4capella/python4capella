@@ -123,3 +123,38 @@ class capella_manual_tests(unittest.TestCase):
             NodePC(pc.get_java_object())
         self.assertEqual("Passed component is a physical component.", str(context.exception))
         pass
+
+    def test_new_OperationalEntity(self):
+        oe = OperationalEntity()
+        self.assertEqual(False, oe.get_java_object().isActor())
+        pass
+
+    def test_new_OperationalEntity_invalid_java_object(self):
+        oa = OperationalActor()
+        with self.assertRaises(AttributeError) as context:
+            OperationalEntity(oa.get_java_object())
+        self.assertEqual("Passed entity is an actor.", str(context.exception))
+        pass
+
+    def test_new_OperationalActor(self):
+        oa = OperationalActor()
+        self.assertEqual(True, oa.get_java_object().isActor())
+        pass
+
+    def test_OperationalEntity_get_class(self):
+        oe = OperationalEntity()
+        self.assertEqual(OperationalEntity, EObject.get_class(oe.get_java_object()))
+        pass
+
+    def test_OperationalActor_get_class(self):
+        oa = OperationalActor()
+        self.assertEqual(OperationalActor, EObject.get_class(oa.get_java_object()))
+        pass
+
+    def test_new_OperationalActor_invalid_java_object(self):
+        oe = OperationalEntity()
+        with self.assertRaises(AttributeError) as context:
+            OperationalActor(oe.get_java_object())
+        self.assertEqual("Passed entity is not an actor.", str(context.exception))
+        pass
+

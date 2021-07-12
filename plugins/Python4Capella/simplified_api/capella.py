@@ -58,7 +58,10 @@ class CapellaLibrary(CapellaModel):
 class EObject(JavaObject):
     @staticmethod
     def get_class(e_object):
-        res = getattr(sys.modules["__main__"], e_object.eClass().getName())
+        try:
+            res = getattr(sys.modules["__main__"], e_object.eClass().getName())
+        except AttributeError:
+            res = None
         
         if res == LogicalComponent and e_object.isActor():
             res = LogicalActor
@@ -75,6 +78,12 @@ class EObject(JavaObject):
                     res = NodePC
                 else:
                     raise AttributeError("Passed physical component has unexpected nature.")
+        
+        if res == None and e_object.eClass().getName() == "Entity":
+            if e_object.isActor():
+                res = OperationalActor
+            else:
+                res = OperationalEntity
         
         return res
     def get_owned_diagrams(self):
@@ -643,11 +652,15 @@ class EntityPkg(PropertyValuePkgContainer):
 class OperationalActor(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
-        elif isinstance(java_object, OperationalActor):
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
+            self.get_java_object().setActor(True)
+        elif isinstance(java_object, OperationalEntity):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if java_object.isActor():
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed entity is not an actor.")
     def get_incoming_communication_means(self):
         return create_e_list(self.get_java_object().getIncomingCommunicationMeans(), CommunicationMean)
     def get_outgoing_communication_means(self):
@@ -3080,11 +3093,14 @@ class OperationalCapability(AbstractCapability):
 class OperationalEntity(OperationalActor):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
         elif isinstance(java_object, OperationalEntity):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if not java_object.isActor():
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed entity is an actor.")
     def get_owned_entities(self):
         return create_e_list(self.get_java_object().getOwnedEntities(), OperationalEntity)
 
@@ -3249,6 +3265,8 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
                     EObject.__init__(self, java_object)
                 elif java_object.getNature().getName() == "NODE":
                     raise AttributeError("Passed component is a node physical component.")
+                else:
+                    raise AttributeError("Passed component has unexpected nature.")
             else:
                 raise AttributeError("Passed component is an actor.")
     def get_deploying_node_p_c(self):
@@ -3491,4 +3509,3 @@ class Status(EObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-
