@@ -27,5 +27,8 @@
             else:
                 res = OperationalEntity
         
+        if res == None and e_object.eClass().getName() == "InteractionOperand":
+            res = Operand
+
         return res
 

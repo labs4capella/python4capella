@@ -158,3 +158,12 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual("Passed entity is not an actor.", str(context.exception))
         pass
 
+    def test_Operand_get_class(self):
+        o = Operand()
+        self.assertEqual(Operand, EObject.get_class(o.get_java_object()))
+        pass
+
+    def test_new_Operand(self):
+        oa = Operand()
+        self.assertEqual("InteractionOperand", oa.get_java_object().eClass().getName())
+        pass

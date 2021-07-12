@@ -2657,16 +2657,12 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_incoming(self):
         tested = OperationalActivity()
-        value = Interaction()
-        tested.get_incoming().add(value)
-        self.assertEqual(tested.get_incoming().get(0), value)
+        tested.get_incoming()
         pass
 
     def test_OperationalActivity_outgoing(self):
         tested = OperationalActivity()
-        value = Interaction()
-        tested.get_outgoing().add(value)
-        self.assertEqual(tested.get_outgoing().get(0), value)
+        tested.get_outgoing()
         pass
 
     def test_OperationalActivity_allocating_entity(self):
@@ -2768,9 +2764,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_constraints(self):
         tested = Interaction()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_Interaction_owned_property_values(self):
@@ -2905,9 +2899,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_realizing_functional_exchanges(self):
         tested = Interaction()
-        value = FunctionalExchange()
-        tested.get_realizing_functional_exchanges().add(value)
-        self.assertEqual(tested.get_realizing_functional_exchanges().get(0), value)
+        tested.get_realizing_functional_exchanges()
         pass
 
     def test_OperationalProcess_id(self):
@@ -3768,16 +3760,12 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_allocated_operational_activities(self):
         tested = OperationalEntity()
-        value = OperationalActivity()
-        tested.get_allocated_operational_activities().add(value)
-        self.assertEqual(tested.get_allocated_operational_activities().get(0), value)
+        tested.get_allocated_operational_activities()
         pass
 
     def test_OperationalEntity_involving_operational_capabilities(self):
         tested = OperationalEntity()
-        value = OperationalCapability()
-        tested.get_involving_operational_capabilities().add(value)
-        self.assertEqual(tested.get_involving_operational_capabilities().get(0), value)
+        tested.get_involving_operational_capabilities()
         pass
 
     def test_OperationalEntity_owned_state_machines(self):
@@ -3866,9 +3854,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_constraints(self):
         tested = OperationalEntity()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_OperationalEntity_owned_property_values(self):
@@ -4047,9 +4033,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_constraints(self):
         tested = OperationalActor()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_OperationalActor_owned_property_values(self):
@@ -4165,16 +4149,12 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_allocated_operational_activities(self):
         tested = OperationalActor()
-        value = OperationalActivity()
-        tested.get_allocated_operational_activities().add(value)
-        self.assertEqual(tested.get_allocated_operational_activities().get(0), value)
+        tested.get_allocated_operational_activities()
         pass
 
     def test_OperationalActor_involving_operational_capabilities(self):
         tested = OperationalActor()
-        value = OperationalCapability()
-        tested.get_involving_operational_capabilities().add(value)
-        self.assertEqual(tested.get_involving_operational_capabilities().get(0), value)
+        tested.get_involving_operational_capabilities()
         pass
 
     def test_OperationalActor_owned_state_machines(self):
@@ -9738,16 +9718,12 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_involving_capability_realizations(self):
         tested = BehaviorPC()
-        value = CapabilityRealization()
-        tested.get_involving_capability_realizations().add(value)
-        self.assertEqual(tested.get_involving_capability_realizations().get(0), value)
+        tested.get_involving_capability_realizations()
         pass
 
     def test_BehaviorPC_allocator_configuration_items(self):
         tested = BehaviorPC()
-        value = ConfigurationItem()
-        tested.get_allocator_configuration_items().add(value)
-        self.assertEqual(tested.get_allocator_configuration_items().get(0), value)
+        tested.get_allocator_configuration_items()
         pass
 
     def test_BehaviorPC_id(self):
@@ -9822,9 +9798,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_constraints(self):
         tested = BehaviorPC()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_BehaviorPC_owned_property_values(self):
@@ -9926,9 +9900,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_contained_component_ports(self):
         tested = BehaviorPC()
-        value = ComponentPort()
-        tested.get_contained_component_ports().add(value)
-        self.assertEqual(tested.get_contained_component_ports().get(0), value)
+        tested.get_contained_component_ports()
         pass
 
     def test_BehaviorPC_incoming_component_exchanges(self):
@@ -9954,23 +9926,17 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_allocated_functions(self):
         tested = BehaviorPC()
-        value = PhysicalFunction()
-        tested.get_allocated_functions().add(value)
-        self.assertEqual(tested.get_allocated_functions().get(0), value)
+        tested.get_allocated_functions()
         pass
 
     def test_BehaviorPC_used_interfaces(self):
         tested = BehaviorPC()
-        value = Interface()
-        tested.get_used_interfaces().add(value)
-        self.assertEqual(tested.get_used_interfaces().get(0), value)
+        tested.get_used_interfaces()
         pass
 
     def test_BehaviorPC_implemented_interfaces(self):
         tested = BehaviorPC()
-        value = Interface()
-        tested.get_implemented_interfaces().add(value)
-        self.assertEqual(tested.get_implemented_interfaces().get(0), value)
+        tested.get_implemented_interfaces()
         pass
 
     def test_BehaviorPC_owned_state_machines(self):
@@ -9989,9 +9955,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_realized_logical_components(self):
         tested = BehaviorPC()
-        value = LogicalComponent()
-        tested.get_realized_logical_components().add(value)
-        self.assertEqual(tested.get_realized_logical_components().get(0), value)
+        tested.get_realized_logical_components()
         pass
 
     def test_NodePC_kind(self):
@@ -10024,16 +9988,12 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_involving_capability_realizations(self):
         tested = NodePC()
-        value = CapabilityRealization()
-        tested.get_involving_capability_realizations().add(value)
-        self.assertEqual(tested.get_involving_capability_realizations().get(0), value)
+        tested.get_involving_capability_realizations()
         pass
 
     def test_NodePC_allocator_configuration_items(self):
         tested = NodePC()
-        value = ConfigurationItem()
-        tested.get_allocator_configuration_items().add(value)
-        self.assertEqual(tested.get_allocator_configuration_items().get(0), value)
+        tested.get_allocator_configuration_items()
         pass
 
     def test_NodePC_id(self):
@@ -10108,9 +10068,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_constraints(self):
         tested = NodePC()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_NodePC_owned_property_values(self):
@@ -10212,9 +10170,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_contained_physical_ports(self):
         tested = NodePC()
-        value = PhysicalPort()
-        tested.get_contained_physical_ports().add(value)
-        self.assertEqual(tested.get_contained_physical_ports().get(0), value)
+        tested.get_contained_physical_ports()
         pass
 
     def test_NodePC_physical_links(self):
@@ -13722,9 +13678,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_constraints(self):
         tested = Operand()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        self.assertEqual(tested.get_constraints().get(0), value)
+        tested.get_constraints()
         pass
 
     def test_Operand_owned_property_values(self):
@@ -17646,16 +17600,12 @@ class capella_tests(unittest.TestCase):
 
     def test_Exception_super(self):
         tested = Exception()
-        value = Exception()
-        tested.get_super().add(value)
-        self.assertEqual(tested.get_super().get(0), value)
+        tested.get_super()
         pass
 
     def test_Exception_sub(self):
         tested = Exception()
-        value = Exception()
-        tested.get_sub().add(value)
-        self.assertEqual(tested.get_sub().get(0), value)
+        tested.get_sub()
         pass
 
     def test_Enumeration_abstract(self):

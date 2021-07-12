@@ -85,6 +85,9 @@ class EObject(JavaObject):
             else:
                 res = OperationalEntity
         
+        if res == None and e_object.eClass().getName() == "InteractionOperand":
+            res = Operand
+
         return res
     def get_owned_diagrams(self):
         res = []
@@ -1499,7 +1502,7 @@ class CombinedFragment(CapellaElement):
 class Operand(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InteractionOperand"))
         elif isinstance(java_object, Operand):
             EObject.__init__(self, java_object.get_java_object())
         else:

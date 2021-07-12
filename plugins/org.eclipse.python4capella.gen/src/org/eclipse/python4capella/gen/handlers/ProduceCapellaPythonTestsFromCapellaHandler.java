@@ -738,6 +738,32 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_PhysicalActor_involving_capability_realizations");
 		res.add("test_PhysicalActor_used_interfaces");
 
+		res.add("test_BehaviorPC_allocated_functions");
+		res.add("test_BehaviorPC_allocator_configuration_items");
+		res.add("test_BehaviorPC_constraints");
+		res.add("test_BehaviorPC_contained_component_ports");
+		res.add("test_BehaviorPC_implemented_interfaces");
+		res.add("test_BehaviorPC_involving_capability_realizations");
+		res.add("test_BehaviorPC_realized_logical_components");
+		res.add("test_BehaviorPC_used_interfaces");
+		res.add("test_Exception_sub");
+		res.add("test_Exception_super");
+		res.add("test_Interaction_constraints");
+		res.add("test_Interaction_realizing_functional_exchanges");
+		res.add("test_NodePC_allocator_configuration_items");
+		res.add("test_NodePC_constraints");
+		res.add("test_NodePC_contained_physical_ports");
+		res.add("test_NodePC_involving_capability_realizations");
+		res.add("test_Operand_constraints");
+		res.add("test_OperationalActivity_incoming");
+		res.add("test_OperationalActivity_outgoing");
+		res.add("test_OperationalActor_allocated_operational_activities");
+		res.add("test_OperationalActor_constraints");
+		res.add("test_OperationalActor_involving_operational_capabilities");
+		res.add("test_OperationalEntity_allocated_operational_activities");
+		res.add("test_OperationalEntity_constraints");
+		res.add("test_OperationalEntity_involving_operational_capabilities");
+
 		return res;
 	}
 
