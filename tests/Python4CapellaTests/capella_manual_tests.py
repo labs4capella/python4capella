@@ -123,3 +123,8 @@ class capella_manual_tests(unittest.TestCase):
             NodePC(pc.get_java_object())
         self.assertEqual("Passed component is a physical component.", str(context.exception))
         pass
+
+    def test_Interation_get_class(self):
+        interaction = Interaction()
+        self.assertEqual(Interaction, EObject.get_class(interaction.get_java_object()))
+        pass

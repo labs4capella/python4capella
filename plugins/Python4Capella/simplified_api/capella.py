@@ -3016,7 +3016,7 @@ class PropertyValuePkg(PropertyValuePkgContainer):
 class Interaction(AbstractEvent):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
         elif isinstance(java_object, Interaction):
             EObject.__init__(self, java_object.get_java_object())
         else:
