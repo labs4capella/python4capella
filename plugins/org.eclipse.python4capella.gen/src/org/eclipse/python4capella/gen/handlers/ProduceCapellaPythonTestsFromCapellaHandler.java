@@ -764,6 +764,37 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_OperationalEntity_constraints");
 		res.add("test_OperationalEntity_involving_operational_capabilities");
 
+		res.add("test_REC_replicated_elements");
+
+		res.add("test_BehaviorPC_contextual_element_for_diagrams");
+		res.add("test_BehaviorPC_element_of_interest_for_diagrams");
+		res.add("test_BehaviorPC_status");
+		res.add("test_Interaction_contextual_element_for_diagrams");
+		res.add("test_Interaction_element_of_interest_for_diagrams");
+		res.add("test_Interaction_status");
+		res.add("test_LogicalActor_contextual_element_for_diagrams");
+		res.add("test_LogicalActor_element_of_interest_for_diagrams");
+		res.add("test_LogicalActor_status");
+		res.add("test_NodePC_contextual_element_for_diagrams");
+		res.add("test_NodePC_element_of_interest_for_diagrams");
+		res.add("test_NodePC_status");
+		res.add("test_Operand_contextual_element_for_diagrams");
+		res.add("test_Operand_element_of_interest_for_diagrams");
+		res.add("test_Operand_status");
+		res.add("test_OperationalActor_contextual_element_for_diagrams");
+		res.add("test_OperationalActor_element_of_interest_for_diagrams");
+		res.add("test_OperationalActor_status");
+		res.add("test_OperationalEntity_contextual_element_for_diagrams");
+		res.add("test_OperationalEntity_element_of_interest_for_diagrams");
+		res.add("test_OperationalEntity_status");
+		res.add("test_PhysicalActor_contextual_element_for_diagrams");
+		res.add("test_PhysicalActor_element_of_interest_for_diagrams");
+		res.add("test_PhysicalActor_status");
+		res.add("test_REC_contextual_element_for_diagrams");
+		res.add("test_REC_element_of_interest_for_diagrams");
+		res.add("test_RPL_contextual_element_for_diagrams");
+		res.add("test_RPL_element_of_interest_for_diagrams");
+
 		return res;
 	}
 

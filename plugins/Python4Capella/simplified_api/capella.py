@@ -85,6 +85,14 @@ class EObject(JavaObject):
             else:
                 res = OperationalEntity
         
+        if res == None and e_object.eClass().getName() == "CatalogElement":
+            if e_object.getKind().getName() == "REC":
+                res = REC
+            elif e_object.getKind().getName() == "RPL":
+                res = RPL
+            else:
+                raise AttributeError("Passed catalog element has unexpected kind.")
+        
         if res == None and e_object.eClass().getName() == "InteractionOperand":
             res = Operand
 
@@ -410,11 +418,15 @@ class AbstractCatalogElement(AbstractReElement):
 class REC(AbstractCatalogElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
-        elif isinstance(java_object, REC):
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "REC"))
+        elif isinstance(java_object, RPL):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if java_object.getKind().getName() == "REC":
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed catalog element is not a REC.")
     def get_default_replica_compliancy(self):
         value =  self.get_java_object().getDefaultReplicaCompliancy()
         if value is None:
@@ -431,11 +443,15 @@ class REC(AbstractCatalogElement):
 class RPL(AbstractCatalogElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "RPL"))
         elif isinstance(java_object, RPL):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if java_object.getKind().getName() == "RPL":
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed catalog element is not a RPL.")
     def get_suffix(self):
         return self.get_java_object().getSuffix()
     def set_suffix(self, value):

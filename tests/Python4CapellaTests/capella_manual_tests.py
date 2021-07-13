@@ -167,3 +167,39 @@ class capella_manual_tests(unittest.TestCase):
         oa = Operand()
         self.assertEqual("InteractionOperand", oa.get_java_object().eClass().getName())
         pass
+
+    def test_new_REC(self):
+        rec = REC()
+        self.assertEqual("REC", rec.get_java_object().getKind().getName())
+        pass
+
+    def test_new_REC_invalid_java_object(self):
+        rpl = RPL()
+        with self.assertRaises(AttributeError) as context:
+            REC(rpl.get_java_object())
+        self.assertEqual("Passed catalog element is not a REC.", str(context.exception))
+        pass
+
+    def test_new_RPL(self):
+        rpl = RPL()
+        self.assertEqual("RPL", rpl.get_java_object().getKind().getName())
+        pass
+
+    def test_REC_get_class(self):
+        rec = REC()
+        self.assertEqual(REC, EObject.get_class(rec.get_java_object()))
+        pass
+
+    def test_RPL_get_class(self):
+        rpl = RPL()
+        self.assertEqual(RPL, EObject.get_class(rpl.get_java_object()))
+        pass
+
+
+    def test_new_RPL_invalid_java_object(self):
+        rec = REC()
+        with self.assertRaises(AttributeError) as context:
+            RPL(rec.get_java_object())
+        self.assertEqual("Passed catalog element is not a RPL.", str(context.exception))
+        pass
+
