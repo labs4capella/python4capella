@@ -467,9 +467,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_specification(self):
         tested = Constraint()
-        value = "value"
-        tested.set_specification(value)
-        self.assertEqual(tested.get_specification(), value)
+        tested.get_specification()
         pass
 
     def test_Constraint_constrained_elements(self):
@@ -1448,9 +1446,7 @@ class capella_tests(unittest.TestCase):
 
     def test_REC_decription(self):
         tested = REC()
-        value = "value"
-        tested.set_decription(value)
-        self.assertEqual(tested.get_decription(), value)
+        tested.get_decription()
         pass
 
     def test_REC_author(self):
@@ -1469,9 +1465,7 @@ class capella_tests(unittest.TestCase):
 
     def test_REC_tags(self):
         tested = REC()
-        value = "value"
-        tested.set_tags(value)
-        self.assertEqual(tested.get_tags(), value)
+        tested.get_tags()
         pass
 
     def test_REC_referenced_elements(self):
@@ -1571,9 +1565,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RPL_decription(self):
         tested = RPL()
-        value = "value"
-        tested.set_decription(value)
-        self.assertEqual(tested.get_decription(), value)
+        tested.get_decription()
         pass
 
     def test_RPL_author(self):
@@ -1592,9 +1584,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RPL_tags(self):
         tested = RPL()
-        value = "value"
-        tested.set_tags(value)
-        self.assertEqual(tested.get_tags(), value)
+        tested.get_tags()
         pass
 
     def test_RPL_referenced_elements(self):
@@ -2864,9 +2854,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_allocating_communication_mean(self):
         tested = Interaction()
-        value = CommunicationMean()
-        tested.set_allocating_communication_mean(value)
-        self.assertEqual(tested.get_allocating_communication_mean(), value)
+        tested.get_allocating_communication_mean()
         pass
 
     def test_Interaction_involving_operational_processes(self):
@@ -4311,16 +4299,12 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_source_entity(self):
         tested = CommunicationMean()
-        value = OperationalActor()
-        tested.set_source_entity(value)
-        self.assertEqual(tested.get_source_entity(), value)
+        tested.get_source_entity()
         pass
 
     def test_CommunicationMean_target_entity(self):
         tested = CommunicationMean()
-        value = OperationalActor()
-        tested.set_target_entity(value)
-        self.assertEqual(tested.get_target_entity(), value)
+        tested.get_target_entity()
         pass
 
     def test_CommunicationMean_allocated_interactions(self):
@@ -4770,9 +4754,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_allocating_component(self):
         tested = SystemFunction()
-        value = PhysicalActor()
-        tested.set_allocating_component(value)
-        self.assertEqual(tested.get_allocating_component(), value)
+        tested.get_allocating_component()
         pass
 
     def test_SystemFunction_owned_functional_chains(self):
@@ -6967,9 +6949,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_allocating_component(self):
         tested = LogicalFunction()
-        value = PhysicalActor()
-        tested.set_allocating_component(value)
-        self.assertEqual(tested.get_allocating_component(), value)
+        tested.get_allocating_component()
         pass
 
     def test_LogicalFunction_owned_functional_chains(self):
@@ -7831,9 +7811,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_logical_component_pkgs(self):
         tested = LogicalComponentPkg()
-        value = LogicalComponentPkg()
-        tested.set_owned_logical_component_pkgs(value)
-        self.assertEqual(tested.get_owned_logical_component_pkgs(), value)
+        tested.get_owned_logical_component_pkgs()
         pass
 
     def test_LogicalComponentPkg_owned_logical_system(self):
@@ -9057,9 +9035,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_allocating_component(self):
         tested = PhysicalFunction()
-        value = PhysicalActor()
-        tested.set_allocating_component(value)
-        self.assertEqual(tested.get_allocating_component(), value)
+        tested.get_allocating_component()
         pass
 
     def test_PhysicalFunction_owned_functional_chains(self):
@@ -9908,9 +9884,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_deploying_node_p_c(self):
         tested = BehaviorPC()
-        value = NodePC()
-        tested.set_deploying_node_p_c(value)
-        self.assertEqual(tested.get_deploying_node_p_c(), value)
+        tested.get_deploying_node_p_c()
         pass
 
     def test_BehaviorPC_realized_logical_components(self):
@@ -12410,9 +12384,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_expression(self):
         tested = ChangeEvent()
-        value = "value"
-        tested.set_expression(value)
-        self.assertEqual(tested.get_expression(), value)
+        tested.get_expression()
         pass
 
     def test_TimeEvent_id(self):
@@ -12590,9 +12562,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_expression(self):
         tested = TimeEvent()
-        value = "value"
-        tested.set_expression(value)
-        self.assertEqual(tested.get_expression(), value)
+        tested.get_expression()
         pass
 
     def test_Scenario_id(self):
@@ -16244,30 +16214,22 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_source_port(self):
         tested = FunctionalExchange()
-        value = FunctionOutputPort()
-        tested.set_source_port(value)
-        self.assertEqual(tested.get_source_port(), value)
+        tested.get_source_port()
         pass
 
     def test_FunctionalExchange_target_port(self):
         tested = FunctionalExchange()
-        value = FunctionInputPort()
-        tested.set_target_port(value)
-        self.assertEqual(tested.get_target_port(), value)
+        tested.get_target_port()
         pass
 
     def test_FunctionalExchange_source_function(self):
         tested = FunctionalExchange()
-        value = PhysicalFunction()
-        tested.set_source_function(value)
-        self.assertEqual(tested.get_source_function(), value)
+        tested.get_source_function()
         pass
 
     def test_FunctionalExchange_target_function(self):
         tested = FunctionalExchange()
-        value = PhysicalFunction()
-        tested.set_target_function(value)
-        self.assertEqual(tested.get_target_function(), value)
+        tested.get_target_function()
         pass
 
     def test_FunctionalExchange_exchanged_items(self):
@@ -17333,9 +17295,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Class_primitive(self):
         tested = Class()
-        value = True
-        tested.set_primitive(value)
-        self.assertEqual(tested.get_primitive(), value)
+        tested.get_primitive()
         pass
 
     def test_Class_visibility(self):
@@ -17401,9 +17361,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Collection_primitive(self):
         tested = Collection()
-        value = True
-        tested.set_primitive(value)
-        self.assertEqual(tested.get_primitive(), value)
+        tested.get_primitive()
         pass
 
     def test_Collection_collection_kind(self):
@@ -17436,16 +17394,12 @@ class capella_tests(unittest.TestCase):
 
     def test_Collection_min_card(self):
         tested = Collection()
-        value = LiteralNumericValue()
-        tested.set_min_card(value)
-        self.assertEqual(tested.get_min_card(), value)
+        tested.get_min_card()
         pass
 
     def test_Collection_max_card(self):
         tested = Collection()
-        value = LiteralNumericValue()
-        tested.set_max_card(value)
-        self.assertEqual(tested.get_max_card(), value)
+        tested.get_max_card()
         pass
 
     def test_Union_final(self):
@@ -17801,30 +17755,22 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_default_value(self):
         tested = Enumeration()
-        value = EnumerationLiteral()
-        tested.set_default_value(value)
-        self.assertEqual(tested.get_default_value(), value)
+        tested.get_default_value()
         pass
 
     def test_Enumeration_min_value(self):
         tested = Enumeration()
-        value = EnumerationLiteral()
-        tested.set_min_value(value)
-        self.assertEqual(tested.get_min_value(), value)
+        tested.get_min_value()
         pass
 
     def test_Enumeration_max_value(self):
         tested = Enumeration()
-        value = EnumerationLiteral()
-        tested.set_max_value(value)
-        self.assertEqual(tested.get_max_value(), value)
+        tested.get_max_value()
         pass
 
     def test_Enumeration_null_value(self):
         tested = Enumeration()
-        value = EnumerationLiteral()
-        tested.set_null_value(value)
-        self.assertEqual(tested.get_null_value(), value)
+        tested.get_null_value()
         pass
 
     def test_Enumeration_domain_type(self):
@@ -18064,9 +18010,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_default_value(self):
         tested = BooleanType()
-        value = LiteralBooleanValue()
-        tested.set_default_value(value)
-        self.assertEqual(tested.get_default_value(), value)
+        tested.get_default_value()
         pass
 
     def test_StringType_abstract(self):
@@ -18313,30 +18257,22 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_min_length(self):
         tested = StringType()
-        value = LiteralNumericValue()
-        tested.set_min_length(value)
-        self.assertEqual(tested.get_min_length(), value)
+        tested.get_min_length()
         pass
 
     def test_StringType_max_length(self):
         tested = StringType()
-        value = LiteralNumericValue()
-        tested.set_max_length(value)
-        self.assertEqual(tested.get_max_length(), value)
+        tested.get_max_length()
         pass
 
     def test_StringType_default_value(self):
         tested = StringType()
-        value = LiteralStringValue()
-        tested.set_default_value(value)
-        self.assertEqual(tested.get_default_value(), value)
+        tested.get_default_value()
         pass
 
     def test_StringType_null_value(self):
         tested = StringType()
-        value = LiteralStringValue()
-        tested.set_null_value(value)
-        self.assertEqual(tested.get_null_value(), value)
+        tested.get_null_value()
         pass
 
     def test_NumericType_abstract(self):
@@ -18590,30 +18526,22 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_min_value(self):
         tested = NumericType()
-        value = LiteralNumericValue()
-        tested.set_min_value(value)
-        self.assertEqual(tested.get_min_value(), value)
+        tested.get_min_value()
         pass
 
     def test_NumericType_max_value(self):
         tested = NumericType()
-        value = LiteralNumericValue()
-        tested.set_max_value(value)
-        self.assertEqual(tested.get_max_value(), value)
+        tested.get_max_value()
         pass
 
     def test_NumericType_default_value(self):
         tested = NumericType()
-        value = LiteralNumericValue()
-        tested.set_default_value(value)
-        self.assertEqual(tested.get_default_value(), value)
+        tested.get_default_value()
         pass
 
     def test_NumericType_null_value(self):
         tested = NumericType()
-        value = LiteralNumericValue()
-        tested.set_null_value(value)
-        self.assertEqual(tested.get_null_value(), value)
+        tested.get_null_value()
         pass
 
     def test_PhysicalQuantity_min_inclusive(self):
@@ -18646,30 +18574,22 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_min_value(self):
         tested = PhysicalQuantity()
-        value = LiteralNumericValue()
-        tested.set_min_value(value)
-        self.assertEqual(tested.get_min_value(), value)
+        tested.get_min_value()
         pass
 
     def test_PhysicalQuantity_max_value(self):
         tested = PhysicalQuantity()
-        value = LiteralNumericValue()
-        tested.set_max_value(value)
-        self.assertEqual(tested.get_max_value(), value)
+        tested.get_max_value()
         pass
 
     def test_PhysicalQuantity_default_value(self):
         tested = PhysicalQuantity()
-        value = LiteralNumericValue()
-        tested.set_default_value(value)
-        self.assertEqual(tested.get_default_value(), value)
+        tested.get_default_value()
         pass
 
     def test_PhysicalQuantity_null_value(self):
         tested = PhysicalQuantity()
-        value = LiteralNumericValue()
-        tested.set_null_value(value)
-        self.assertEqual(tested.get_null_value(), value)
+        tested.get_null_value()
         pass
 
     def test_PhysicalQuantity_abstract(self):

@@ -795,6 +795,47 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_RPL_contextual_element_for_diagrams");
 		res.add("test_RPL_element_of_interest_for_diagrams");
 
+		res.add("test_BehaviorPC_deploying_node_p_c");
+		res.add("test_BooleanType_default_value");
+		res.add("test_ChangeEvent_expression");
+		res.add("test_Class_primitive");
+		res.add("test_Collection_max_card");
+		res.add("test_Collection_min_card");
+		res.add("test_Collection_primitive");
+		res.add("test_CommunicationMean_source_entity");
+		res.add("test_CommunicationMean_target_entity");
+		res.add("test_Constraint_specification");
+		res.add("test_Enumeration_default_value");
+		res.add("test_Enumeration_max_value");
+		res.add("test_Enumeration_min_value");
+		res.add("test_Enumeration_null_value");
+		res.add("test_FunctionalExchange_source_function");
+		res.add("test_FunctionalExchange_source_port");
+		res.add("test_FunctionalExchange_target_function");
+		res.add("test_FunctionalExchange_target_port");
+		res.add("test_Interaction_allocating_communication_mean");
+		res.add("test_LogicalComponentPkg_owned_logical_component_pkgs");
+		res.add("test_LogicalFunction_allocating_component");
+		res.add("test_NumericType_default_value");
+		res.add("test_NumericType_max_value");
+		res.add("test_NumericType_min_value");
+		res.add("test_NumericType_null_value");
+		res.add("test_PhysicalFunction_allocating_component");
+		res.add("test_PhysicalQuantity_default_value");
+		res.add("test_PhysicalQuantity_max_value");
+		res.add("test_PhysicalQuantity_min_value");
+		res.add("test_PhysicalQuantity_null_value");
+		res.add("test_REC_decription");
+		res.add("test_REC_tags");
+		res.add("test_RPL_decription");
+		res.add("test_RPL_tags");
+		res.add("test_StringType_default_value");
+		res.add("test_StringType_max_length");
+		res.add("test_StringType_min_length");
+		res.add("test_StringType_null_value");
+		res.add("test_SystemFunction_allocating_component");
+		res.add("test_TimeEvent_expression");
+
 		return res;
 	}
 
