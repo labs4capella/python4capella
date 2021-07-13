@@ -203,3 +203,8 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual("Passed catalog element is not a RPL.", str(context.exception))
         pass
 
+    def test_Operation_get_class(self):
+        o = Operation()
+        self.assertEqual(Operation, EObject.get_class(o.get_java_object()))
+        pass
+

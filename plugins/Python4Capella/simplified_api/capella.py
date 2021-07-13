@@ -96,6 +96,9 @@ class EObject(JavaObject):
         if res == None and e_object.eClass().getName() == "InteractionOperand":
             res = Operand
 
+        if res == None and e_object.eClass().getName() == "Service":
+            res = Operation
+
         return res
     def get_owned_diagrams(self):
         res = []
@@ -2474,7 +2477,7 @@ class UnionProperty(Property):
 class Operation(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Operation"))
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Service"))
         elif isinstance(java_object, Operation):
             EObject.__init__(self, java_object.get_java_object())
         else:
