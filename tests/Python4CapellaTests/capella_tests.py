@@ -15467,9 +15467,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_realizing_operations(self):
         tested = ExchangeItem()
-        value = Operation()
-        tested.get_realizing_operations().add(value)
-        self.assertEqual(tested.get_realizing_operations().get(0), value)
+        tested.get_realizing_operations()
         pass
 
     def test_ExchangeItemElement_id(self):
@@ -17312,9 +17310,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Class_contained_operations(self):
         tested = Class()
-        value = Operation()
-        tested.get_contained_operations().add(value)
-        self.assertEqual(tested.get_contained_operations().get(0), value)
+        tested.get_contained_operations()
         pass
 
     def test_Collection_ordered(self):
@@ -17387,9 +17383,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Collection_contained_operations(self):
         tested = Collection()
-        value = Operation()
-        tested.get_contained_operations().add(value)
-        self.assertEqual(tested.get_contained_operations().get(0), value)
+        tested.get_contained_operations()
         pass
 
     def test_Collection_min_card(self):
@@ -17437,9 +17431,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Union_contained_operations(self):
         tested = Union()
-        value = Operation()
-        tested.get_contained_operations().add(value)
-        self.assertEqual(tested.get_contained_operations().get(0), value)
+        tested.get_contained_operations()
         pass
 
     def test_Property_type(self):
@@ -17461,9 +17453,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operation_realized_exchange_items(self):
         tested = Operation()
-        value = ExchangeItem()
-        tested.get_realized_exchange_items().add(value)
-        self.assertEqual(tested.get_realized_exchange_items().get(0), value)
+        tested.get_realized_exchange_items()
         pass
 
     def test_Operation_owned_parameters(self):

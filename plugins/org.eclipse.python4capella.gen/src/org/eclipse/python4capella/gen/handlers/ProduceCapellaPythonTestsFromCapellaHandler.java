@@ -836,6 +836,12 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.add("test_SystemFunction_allocating_component");
 		res.add("test_TimeEvent_expression");
 
+		res.add("test_Class_contained_operations");
+		res.add("test_Collection_contained_operations");
+		res.add("test_ExchangeItem_realizing_operations");
+		res.add("test_Operation_realized_exchange_items");
+		res.add("test_Union_contained_operations");
+
 		return res;
 	}
 
