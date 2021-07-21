@@ -152,10 +152,14 @@ public class Action implements IObjectActionDelegate {
 		    			}
 		    		}
 		    		if (pvg != null) {
+		    			List<AbstractPropertyValue> toBeDestroyed = new ArrayList<AbstractPropertyValue>();
 		    			for (AbstractPropertyValue pv : pvg.getOwnedPropertyValues()) {
 		    				if (!features.contains(pv.getName())) {
-		    					pv.destroy();
+		    					toBeDestroyed.add(pv);
 		    				}
+		    			}
+		    			for (AbstractPropertyValue apv : toBeDestroyed) {
+		    				apv.destroy();
 		    			}
 		    		}
 		    	}
