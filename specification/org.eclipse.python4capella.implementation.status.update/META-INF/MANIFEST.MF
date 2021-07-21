@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Update
+Bundle-SymbolicName: org.eclipse.python4capella.implementation.status.update;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.eclipse.python4capella.implementation.status.update
+Bundle-RequiredExecutionEnvironment: JavaSE-14
+Require-Bundle: org.eclipse.ui,
+ org.polarsys.capella.core.data.gen,
+ org.eclipse.emf.diffmerge,
+ org.eclipse.emf.diffmerge.ui

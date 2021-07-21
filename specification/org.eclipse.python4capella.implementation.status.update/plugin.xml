@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.eclipse.python4capella.implementation.status.update.objectContribution1"
+            objectClass="org.polarsys.capella.core.data.capellamodeller.SystemEngineering">
+         <menu
+               id="org.eclipse.python4capella.implementation.status.update.menu1"
+               label="Python4Capella"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="org.eclipse.python4capella.implementation.status.update.Action"
+               enablesFor="1"
+               id="org.eclipse.python4capella.implementation.status.update.action1"
+               label="Update Implementation Statuses"
+               menubarPath="org.eclipse.python4capella.implementation.status.update.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
