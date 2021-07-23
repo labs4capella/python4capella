@@ -108,7 +108,7 @@ Then unzip it in the dropins folder in the same folder as your Capella executabl
 
 If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
-[https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python37.zip](https://github.com/labs4capella/python4capella/releases/download/2021-07-02/python37.zip)
+[https://github.com/labs4capella/python4capella/releases/download/2021-07-16/Python37.zip](https://github.com/labs4capella/python4capella/releases/download/2021-07-16/Python37.zip)
 
 If you are running Linux or MacOS X, please check your distribution documentation to install Python 3.7 on your system.
 
