@@ -66,9 +66,10 @@ public class Action implements IObjectActionDelegate {
 		FileDialog dialog = new FileDialog(shell, SWT.OPEN);
 		dialog.setFilterExtensions(new String [] {"*.xml"});
 		String filePath = dialog.open();
-		String fileName = filePath.substring(filePath.lastIndexOf("\\")+1, filePath.length());
 		
-		if (filePath != null) {			
+		if (filePath != null) {
+			
+			String fileName = filePath.substring(filePath.lastIndexOf("\\")+1, filePath.length());
 			
 			// prepare a copy of the model to perform modifications
 			copySE = EcoreUtil.copy(se);
