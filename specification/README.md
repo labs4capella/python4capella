@@ -24,3 +24,5 @@ The new menu is called Python4Capella / Update Implementation Statuses.
 
 Using this command, the tool will ask you to select a xml file. You need to select the xml file with the export of the tests results.
 The tool will analyze the xml file and show the result of the update of implementation status with a diff / merge window. To validate the update of the status, you need to transfer the modifications in the Capella model
+
+Information about implementation status is then used by the M2Doc generation to provide this information in the documentation of the simplified metamodel.
