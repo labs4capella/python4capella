@@ -5,6 +5,7 @@ In this folder, you will find:
  - **/User Scripts Need definition**: the definition of user needs regarding import / export of data (used to define sample scripts)
  - **/org.eclipse.python4capella.implementation.status.update**: a plugin to allow import and update of implementation status in the Capella model
  - **/org.eclipse.python4capella.m2doc.service**: a plugin required for the M2Doc generation
+ - **/org.eclipse.python4capella.validation**: a plugin defining some validation rules for the simplified metamodel
 
 # How-To generate simplified metamodel
 To generate the documentation of the simplified metamodel, you need a Capella 5.0.0 with M2Doc installed (M2Doc 3.1.1 for Capella 5.0.x).
