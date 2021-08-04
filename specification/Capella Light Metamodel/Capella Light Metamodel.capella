@@ -743,7 +743,7 @@
                 </ownedParameters>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
-                  id="5bc53647-0270-48ed-9b49-77f853e50450" name="getType">
+                  id="5bc53647-0270-48ed-9b49-77f853e50450" name="getElementType">
                 <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
                     id="b30bb6a2-317c-4f7f-8518-68a188a49646" name="elementType" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2"
                     direction="RETURN">
@@ -1812,8 +1812,28 @@
                   <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                       id="31c9dbc9-1e3f-4426-9842-73d15883dbac" value="1"/>
                 </ownedParameters>
+                <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
+                    id="9144bb5e-3cdd-447c-880c-908ac3ae844c" name="format" abstractType="#5a7192f8-eca9-4a63-9d2c-c3fc4cea894e">
+                  <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="bcd85985-e69a-406c-adcf-c968e5e1194d" value="1"/>
+                  <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="f5ef1167-0dd1-4260-8af3-05211e036d73" value="1"/>
+                </ownedParameters>
               </ownedFeatures>
             </ownedClasses>
+            <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:Enumeration"
+                id="5a7192f8-eca9-4a63-9d2c-c3fc4cea894e" name="ExportFormat">
+              <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:EnumerationLiteral"
+                  id="b4046df1-8cdd-4721-bccd-b9e1cd62c33d" name="JPG" abstractType="#5a7192f8-eca9-4a63-9d2c-c3fc4cea894e"/>
+              <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:EnumerationLiteral"
+                  id="2f835181-09c2-4d6c-a9f0-2dfe364e7b59" name="PNG" abstractType="#5a7192f8-eca9-4a63-9d2c-c3fc4cea894e"/>
+              <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:EnumerationLiteral"
+                  id="d043c8c9-aaf4-4869-bace-f6c9c519c84d" name="SVG" abstractType="#5a7192f8-eca9-4a63-9d2c-c3fc4cea894e"/>
+              <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:EnumerationLiteral"
+                  id="2f4a02c3-7dd1-44f9-befb-34e2ecab4bce" name="BMP" abstractType="#5a7192f8-eca9-4a63-9d2c-c3fc4cea894e"/>
+              <ownedLiterals xsi:type="org.polarsys.capella.core.data.information.datavalue:EnumerationLiteral"
+                  id="ad1e8f9b-ad42-4cd2-9744-94caae8fc35e" name="GIF" abstractType="#5a7192f8-eca9-4a63-9d2c-c3fc4cea894e"/>
+            </ownedDataTypes>
           </ownedDataPkgs>
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
               id="e2eddaa2-ea03-40d4-a17a-5f1856d7a2a9" name="re" status="#b74f676f-2148-4e30-a5fa-7fee181e5da7">
