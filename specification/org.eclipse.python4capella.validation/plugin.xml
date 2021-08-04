@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="capella.category/python4capella"
+            name="Python4Capella">
+      </category>
+      <constraintProvider>
+         <package
+               namespaceUri="http://www.polarsys.org/capella/core/information/5.0.0">
+         </package>
+         <constraints
+               categories="capella.category/python4capella">
+            <constraint
+                  class="validationRules.AssociationNavigationCheck"
+                  id="P4C_1"
+                  isEnabledByDefault="true"
+                  lang="java"
+                  mode="Batch"
+                  name="P4C_1 - Association navigation check"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  Association {0} / {1} between {2} and {3} cannot be navigated in both direction
+               </message>
+               <description>
+                  Check that associations can be navigated in both direction (except composition).
+This will greatly ease the navigation in a Capella model through the Python API by end-users
+               </description>
+               <target
+                     class="Association">
+               </target>
+            </constraint>
+            <constraint
+                  class="validationRules.PropertyContainentROCheck"
+                  id="P4C_2"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="P4C_2 - Containment Read-Only Check"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  Property &quot;{0}&quot; which defines a containment is not in read-only
+               </message>
+               <target
+                     class="Property"></target>
+               <description>
+                  Check that Properties which defines containment between elements are in read-only.
+Indeed, users will not directly modifies the containment, but will use other methods (move object, create new, delete)
+               </description>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.polarsys.capella.core.validation.ui.ide.capellaQuickFix">
+      <resolver
+            class="org.eclipse.python4capella.validation.SetPropReadOnly"
+            label="Switch Property to Read-Only">
+         <rules
+               ruleId="P4C_2">
+         </rules>
+      </resolver>
+   </extension>
+
+</plugin>

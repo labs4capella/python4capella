@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Validation
+Bundle-SymbolicName: org.eclipse.python4capella.validation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.eclipse.python4capella.validation
+Bundle-RequiredExecutionEnvironment: JavaSE-14
+Require-Bundle: org.eclipse.emf.validation,
+ org.eclipse.equinox.registry,
+ org.polarsys.capella.core.data.gen,
+ org.polarsys.capella.core.validation.ui.ide
