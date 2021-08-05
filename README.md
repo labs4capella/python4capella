@@ -77,14 +77,8 @@ For this last option, you need to go this the main page (https://github.com/labs
 
 # Installation
 
-You can install Python4Capella in your Capella in two ways:
-
-- update site
-- dropins
-
+You can install Python4Capella in your Capella thanks to an update site.
 Then you will need to setup Python 3.7 in your environment.
-
-## Update site
 
 You will need to add the update site to your Capella installation, you can see available releases [here](https://github.com/labs4capella/python4capella/releases).
 
@@ -95,14 +89,6 @@ Then select the Python4Capella feature:
 ![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install.png)
 
 Click the next button and complet the installation by clicking the finish button.
-
-## Dropins
-
-To install using dropins, you need to download the following zip file:
-
-TODO add droping zip URL
-
-Then unzip it in the dropins folder in the same folder as your Capella executable.
 
 ## Python 3.7 installation
 
