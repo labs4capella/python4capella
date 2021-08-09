@@ -25,7 +25,7 @@ elem = CapellaElement(CapellaPlatform.getFirstSelectedElement())
 
 # create  a folder in the project
 model_path = CapellaPlatform.getModelPath(elem)
-project_name = model_path[1:(model_path.index("/", 1) + 1)]
+project_name = model_path[0:(model_path.index("/", 1) + 1)]
 project = CapellaPlatform.getProject(project_name)
 folder = CapellaPlatform.getFolder(project, "Python4Capella_exported_diagrams")
 
