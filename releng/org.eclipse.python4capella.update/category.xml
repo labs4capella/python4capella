@@ -3,9 +3,9 @@
    <feature id="org.eclipse.python4capella.feature" version="0.0.0">
       <category name="org.eclipse.python4capella.category"/>
    </feature>
-   <feature id="org.eclipse.python4capella.commandline.feature" version="0.0.0">
+   <!--feature id="org.eclipse.python4capella.commandline.feature" version="0.0.0">
       <category name="org.eclipse.python4capella.category"/>
-   </feature>
+   </feature-->
 
    <feature id="org.eclipse.ease.lang.scriptarchive.feature" version="0.0.0"/>
    <feature id="org.eclipse.ease.feature" version="0.0.0"/>
