@@ -9,6 +9,36 @@
 	<body>
 		<h1 id="RunaPythonscript">Run a Python script</h1>
 		<p>This section explains how you can run your Python4Capella script either within Capella or from the command line.</p>
+		<p>Note:</p>
+		<p>If you open provided scripts, you will notice some errors in them. Those errors can be ignored. They are related to the use of EASE that allows access to Java objects with the PyDev editor.</p>
+		<p>EASE is a scripting environment for Eclipse.
+			<br/>It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 
+		</p>
+		<p>The PyDev editor only recognize the Python language, and EASE add a custom way to import other scripts, declare methods and variables. At runtime EASE will be used and everything will work properly.</p>
+		<p>- some 
+			<b>import directives from EASE</b> are not recognized by PyDev
+		</p>
+		<p>
+			<img alt="Import error" title="Import error" border="0" src="Run/error_import.png"/>
+		</p>
+		<p>- some 
+			<b>methods</b> defined in EASE modules are not recognized by PyDev
+		</p>
+		<p>
+			<img alt="Method error" title="Method error" border="0" src="Run/error_method1.png"/>
+		</p>
+		<p>
+			<img alt="Method error" title="Method error" border="0" src="Run/error_method2.png"/>
+		</p>
+		<p>
+			<img alt="Method error" title="Method error" border="0" src="Run/error_method3.png"/>
+		</p>
+		<p>- some other errors can happen when accessing 
+			<b>variables defined by EASE</b>
+		</p>
+		<p>
+			<img alt="Import variable" title="Import variable" border="0" src="Run/error_variable.png"/>
+		</p>
 		<h2 id="WithinCapella">Within Capella</h2>
 		<p>You will need to 
 			<a href="EnableDevelopmentCapabilities.html">enable Development capabilities</a> if it&#8217;s not already done.

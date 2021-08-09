@@ -2,6 +2,31 @@ h1. Run a Python script
 
 This section explains how you can run your Python4Capella script either within Capella or from the command line.
 
+Note:
+
+If you open provided scripts, you will notice some errors in them. Those errors can be ignored. They are related to the use of EASE that allows access to Java objects with the PyDev editor.
+
+EASE is a scripting environment for Eclipse.
+It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 
+
+The PyDev editor only recognize the Python language, and EASE add a custom way to import other scripts, declare methods and variables. At runtime EASE will be used and everything will work properly.
+
+- some **import directives from EASE** are not recognized by PyDev
+
+!Run/error_import.png(Import error)!
+
+- some **methods** defined in EASE modules are not recognized by PyDev
+
+!Run/error_method1.png(Method error)!
+
+!Run/error_method2.png(Method error)!
+
+!Run/error_method3.png(Method error)!
+
+- some other errors can happen when accessing **variables defined by EASE**
+
+!Run/error_variable.png(Import variable)!
+
 h2. Within Capella
 
 You will need to "enable Development capabilities":EnableDevelopmentCapabilities.html if it's not already done.
