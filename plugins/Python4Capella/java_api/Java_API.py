@@ -23,10 +23,13 @@ class JavaIterator(JavaObject):
         """Gets the next element"""
         if iteratorHasNext(self.get_java_object()):
             next = iteratorNext(self.get_java_object())
-            specific_cls = getattr(sys.modules[self.cls.__module__], next.eClass().getName())
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(next)
             return specific_cls(next)
         else:
             raise StopIteration
+    def __next__(self):
+        return self.next()
 
 class JavaList(JavaObject):
     """A wrapping class for a Java Iterator"""
