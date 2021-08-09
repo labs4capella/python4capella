@@ -139,3 +139,30 @@ When you will open your fist Python file, you will be prompted by PyDev to defin
 You can validate the dialog by clicking the OK button.
 
 You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from capella, then on the right tree, you can select Python4Capella.
+
+# Errors in provided scripts
+
+If you open provided scripts, you will notice some errors in them. Those errors can be ignored. They are related to the use of EASE that allows access to Java objects with the PyDev editor.
+
+EASE is a scripting environment for Eclipse.
+It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 
+
+The PyDev editor only recognize the Python language, and EASE add a custom way to import other scripts, declare methods and variables. At runtime EASE will be used and everything will work properly.
+
+- some **import directives from EASE** are not recognized by PyDev
+
+![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/error_import.png)
+
+- some **methods** defined in EASE modules are not recognized by PyDev
+
+![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/error_method1.png)
+
+![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/error_method2.png)
+
+![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/error_method3.png)
+
+- some other errors can happen when accessing **variables defined by EASE**
+
+![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/error_variable.png)
+
+
