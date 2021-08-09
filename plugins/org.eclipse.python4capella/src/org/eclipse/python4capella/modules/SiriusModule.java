@@ -181,7 +181,7 @@ public class SiriusModule {
 		final DRepresentation representation = descriptor.getRepresentation();
 		if (representation != null) {
 			for (DRepresentationElement element : representation.getRepresentationElements()) {
-				if (!(element instanceof DDiagramElement) && ((DDiagramElement) element).isVisible()) {
+				if (!(element instanceof DDiagramElement) || ((DDiagramElement) element).isVisible()) {
 					final EObject target = element.getTarget();
 					if (target instanceof Part) {
 						res.add(((Part) target).getType());
