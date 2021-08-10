@@ -12,6 +12,12 @@ if False:
 class CapellaModel(JavaObject):
     def __init__(self, aird_path):
         self.session = Sirius.load_session(aird_path)
+    def start_transaction(self):
+        Sirius.start_transaction(self.session)
+    def commit_transaction(self):
+        Sirius.commit_transaction(self.session)
+    def rollback_transaction(self):
+        Sirius.rollback_transaction(self.session)
     def get_system_engineering(self):
         if self.session is None:
             return None

@@ -14,14 +14,26 @@ package org.eclipse.python4capella.modules;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.ease.modules.WrapToScript;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.RollbackException;
+import org.eclipse.emf.transaction.Transaction;
+import org.eclipse.emf.transaction.impl.InternalTransaction;
+import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
+import org.eclipse.emf.transaction.internal.EMFTransactionPlugin;
+import org.eclipse.emf.transaction.internal.EMFTransactionStatusCodes;
+import org.eclipse.emf.transaction.internal.l10n.Messages;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.query.DRepresentationDescriptorQuery;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
@@ -51,9 +63,15 @@ import org.polarsys.capella.core.diagram.helpers.RepresentationAnnotationHelper;
  * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
  *
  */
+@SuppressWarnings("restriction")
 public class SiriusModule {
 
 	private final CapellaModule capellaModule = new CapellaModule();
+
+	/**
+	 * Mapping from a {@link Session} to its current {@link Transaction} if any.
+	 */
+	private final Map<Session, Stack<Transaction>> transactions = new HashMap<>();
 
 	/**
 	 * The {@link ExportFormat}.
@@ -368,6 +386,86 @@ public class SiriusModule {
 		}
 
 		return res;
+	}
+
+	/**
+	 * Starts a transaction for the given {@link Session}.
+	 * 
+	 * @param session the {@link Session}
+	 */
+	@WrapToScript
+	public void startTransaction(Session session) {
+		final InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) session
+				.getTransactionalEditingDomain();
+		Transaction nested = null;
+
+		try {
+			nested = internalDomain.startTransaction(false, null);
+		} catch (InterruptedException e) {
+			// can't proceed with non-undoable changes
+			internalDomain.getActiveTransaction().abort(new Status(IStatus.ERROR, EMFTransactionPlugin.getPluginId(),
+					EMFTransactionStatusCodes.PRECOMMIT_INTERRUPTED, Messages.precommitInterrupted, e));
+		}
+
+		transactions.computeIfAbsent(session, s -> new Stack<Transaction>()).push(nested);
+	}
+
+	/**
+	 * Commits the transaction for the given {@link Session}.
+	 * 
+	 * @param session the {@link Session}
+	 */
+	@WrapToScript
+	public void commitTransaction(Session session) {
+		final Transaction nested = getCurrentTransaction(session);
+
+		final InternalTransactionalEditingDomain internalDomain = (InternalTransactionalEditingDomain) session
+				.getTransactionalEditingDomain();
+		final Transaction transaction = internalDomain.getActiveTransaction();
+		if (nested != null) {
+			if (transaction == null) {
+				// failed to execute. Roll back
+				nested.rollback();
+			} else {
+				try {
+					nested.commit();
+				} catch (RollbackException e) {
+					// propagate the rollback
+					((InternalTransaction) transaction).abort(e.getStatus());
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * Rolls back the transaction for the given {@link Session}.
+	 * 
+	 * @param session the {@link Session}
+	 */
+	@WrapToScript
+	public void rollbackTransaction(Session session) {
+		final Transaction nested = getCurrentTransaction(session);
+
+		if (nested != null) {
+			nested.rollback();
+		}
+	}
+
+	/**
+	 * Gets the current {@link Transaction} for the given {@link Session}.
+	 * 
+	 * @param session the {@link Session}
+	 * @return the current {@link Transaction} for the given {@link Session} if any,
+	 *         <code>null</code> otherwise
+	 */
+	private Transaction getCurrentTransaction(Session session) {
+		final Stack<Transaction> stack = transactions.get(session);
+		if (stack == null || stack.isEmpty()) {
+			throw new IllegalStateException("You need to call startTransaction() first.");
+		}
+
+		return stack.pop();
 	}
 
 }

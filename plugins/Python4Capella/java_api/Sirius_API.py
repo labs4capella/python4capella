@@ -60,3 +60,15 @@ class Sirius:
     @staticmethod
     def get_contextual_element_for_diagrams(e_object):
         return getContextualElementForDiagrams(e_object)
+
+    @staticmethod
+    def start_transaction(session):
+        return startTransaction(session)
+
+    @staticmethod
+    def commit_transaction(session):
+        return commitTransaction(session)
+
+    @staticmethod
+    def rollback_transaction(session):
+        return rollbackTransaction(session)
