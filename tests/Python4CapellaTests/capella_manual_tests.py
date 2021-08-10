@@ -208,3 +208,28 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual(Operation, EObject.get_class(o.get_java_object()))
         pass
 
+    def test_set_in_capella(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        self.assertEqual("In-Flight Entertainment System", se.get_name())
+        model.start_transaction()
+        try:
+            se.set_name("Some name")
+            self.assertEqual("Some name", se.get_name())
+        except:
+            self.fail("transaction failed")
+        else:
+            model.commit_transaction()
+            pass
+        model.start_transaction()
+        try:
+            se.set_name("In-Flight Entertainment System")
+            self.assertEqual("In-Flight Entertainment System", se.get_name())
+        except:
+            self.fail("transaction failed")
+        else:
+            model.commit_transaction()
+            pass
