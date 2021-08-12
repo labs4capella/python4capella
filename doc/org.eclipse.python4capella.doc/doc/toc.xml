@@ -10,7 +10,9 @@
   <topic href="doc/developer/DeveloperManual.html" label="Python4Capella Developer Manual">
     <topic href="doc/developer/python/InstallNewPythonPackage.html" label="Install new Python packages">
     </topic>
-    <topic href="doc/developer/python/CreateWindowsPythonFile.html" label="Recreate the Windows Python 2.7 folder">
+    <topic href="doc/developer/python/CreateWindowsPythonFile.html" label="Recreate the Windows Python 3.7 folder">
+    </topic>
+    <topic href="doc/developer/python/GeneratePythonTests.html" label="Generate Python tests">
     </topic>
   </topic>
 </toc>
