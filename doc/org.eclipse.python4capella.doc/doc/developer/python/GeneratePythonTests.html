@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>GeneratePythonTests</title>
+		<link type="text/css" rel="stylesheet" href="../../resources/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="../../resources/custom.css"/>
+	</head>
+	<body>
+		<h1 id="GeneratePythonTest">Generate Python Test</h1>
+		<p>This section describes how you can generate Python tests for the simplified Capella Python metamodel.</p>
+		<p>The generator is defined in the 
+			<a href="https://github.com/labs4capella/python4capella/blob/master/plugins/org.eclipse.python4capella.gen/src/org/eclipse/python4capella/gen/handlers/ProduceCapellaPythonTestsFromCapellaHandler.java">ProduceCapellaPythonTestsFromCapellaHandler</a> Java class. It uses the simplified Capella metamodel defined in the 
+			<a href="https://github.com/labs4capella/python4capella/tree/master/specification">specification folder</a> of the git repository.
+		</p>
+		<p>The Capella Light Metamodel is defined using Capella 5.0, you will need this version to generate the Python tests.</p>
+		<p>Start to import the 
+			<a href="https://github.com/labs4capella/python4capella/tree/master/plugins/org.eclipse.python4capella.gen">org.eclipse.python4capella.gen</a> project in your Capella 5.0 workspace and 
+			<a href="../../user/general/EnableDevelopmentCapabilities.html">enable developer capabilities</a> to launch a runtime:
+		</p>
+		<p>To open the specification model, you will need import to the project in the workspace of your runtime.</p>
+		<p>When you open the specification model, you can open the System Analysis, then the Data folder, then select the Capella Light Metamodel. You can right click on it and select the &#8220;Generate Python Tests from Capella&#8221; menu:</p>
+		<p>
+			<img alt="Generate Python Tests from Capella menu" title="Generate Python Tests from Capella menu" border="0" src="GeneratePythonTests/GeneratePythonTestsMenu.png"/>
+		</p>
+		<p>By default this will generate a file &#8220;/tmp/capella/capella_tests.py&#8221;. You can change this path by editing the generator class: ProduceCapellaPythonTestsFromCapellaHandler.</p>
+		<p>For the moment, the only customization you can add is to mark a test as read only. This will generate a test that only access a getter for this test and will not make use of any setter.</p>
+		<p>If you want to add custom tests, you can add them to the capella_manual_tests.py file. You can also add your own Python file and add it to the ManualTestsuite.suite file.</p>
+	</body>
+</html>
