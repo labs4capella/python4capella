@@ -43,23 +43,25 @@ This will open the launch configuration for your script and you can edit it to a
 
 h2. Command line
 
+This feature is available for Capella 1.4.1 and above.
+
 You can also run your Python4Capella script from the command line:
 
 Windows
 
-bc. eclipse -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Linux and Mac OS X
 
-bc. ./eclipse -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. ./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:
 
 Windows
 
-bc. capella -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Linux and Mac OS X
 
-bc. ./capella -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. ./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 

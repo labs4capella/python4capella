@@ -54,19 +54,20 @@
 			<img alt="Run Configurations with parameter" title="Run Configurations with parameter" border="0" src="Run/Run_Configurations.png"/>
 		</p>
 		<h2 id="Commandline">Command line</h2>
+		<p>This feature is available for Capella 1.4.1 and above.</p>
 		<p>You can also run your Python4Capella script from the command line:</p>
 		<p>Windows</p>
-		<pre><code>eclipse -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+		<pre><code>eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 </code></pre>
 		<p>Linux and Mac OS X</p>
-		<pre><code>./eclipse -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+		<pre><code>./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 </code></pre>
 		<p>Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:</p>
 		<p>Windows</p>
-		<pre><code>capella -application org.eclipse.ease.runScript -workspace .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+		<pre><code>capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 </code></pre>
 		<p>Linux and Mac OS X</p>
-		<pre><code>./capella -application org.eclipse.ease.runScript -workspace ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+		<pre><code>./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 </code></pre>
 	</body>
 </html>
