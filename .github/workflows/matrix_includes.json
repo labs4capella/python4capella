@@ -1,6 +1,10 @@
 [
   {
     "java":"8",
+    "profile":"platform-capella-5.1.0,tests,commandline"
+  },
+  {
+    "java":"8",
     "profile":"platform-capella-5.0.0,tests,commandline"
   },
   {
