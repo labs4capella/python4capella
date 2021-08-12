@@ -1,15 +1,15 @@
 [
   {
     "java":"8",
-    "profile":"platform-capella-5.0.0,tests"
+    "profile":"platform-capella-5.0.0,tests,commandline"
   },
   {
     "java":"8",
-    "profile":"platform-capella-1.4.2,tests,updatesite"
+    "profile":"platform-capella-1.4.2,tests,commandline,updatesite"
   },
   {
     "java":"8",
-    "profile":"platform-capella-1.4.1,tests"
+    "profile":"platform-capella-1.4.1,tests,commandline"
   },
   {
     "java":"8",

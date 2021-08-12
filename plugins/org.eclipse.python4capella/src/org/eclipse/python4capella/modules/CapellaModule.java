@@ -20,6 +20,9 @@ import java.util.Set;
 
 import org.eclipse.ease.modules.WrapToScript;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.polarsys.capella.common.helpers.EObjectExt;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
@@ -125,6 +128,32 @@ public class CapellaModule {
 	@WrapToScript
 	public String getLabel(EObject eObject) {
 		return EObjectExt.getText(eObject);
+	}
+
+	/**
+	 * Starts the Workbench if not already running.
+	 */
+	@WrapToScript
+	public static void startWorkbenchIfNeeded() {
+		if (!PlatformUI.isWorkbenchRunning()) {
+			final Display display = PlatformUI.createDisplay();
+			PlatformUI.createAndRunWorkbench(display, new WorkbenchAdvisor() {
+
+				/**
+				 * {@inheritDoc}
+				 */
+				@Override
+				public boolean openWindows() {
+					return false;
+				}
+
+				@Override
+				public String getInitialWindowPerspectiveId() {
+					return null;
+				}
+
+			});
+		}
 	}
 
 }

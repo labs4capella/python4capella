@@ -24,9 +24,6 @@ import org.eclipse.ease.service.ScriptService;
 import org.eclipse.ease.service.ScriptType;
 import org.eclipse.ease.tools.ResourceTools;
 import org.eclipse.equinox.app.IApplicationContext;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.polarsys.capella.core.commandline.core.CommandLineException;
 import org.polarsys.capella.core.commandline.core.DefaultCommandLine;
 
@@ -39,7 +36,7 @@ import org.polarsys.capella.core.commandline.core.DefaultCommandLine;
 public class Python4CapellaCommandLine extends DefaultCommandLine {
 
 	// @formatter:off
-// ./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data workspace workspace://Python4Capella/sample_scripts/list_logical_components.py ^CIn-Flight Entertainment System/In-Flight Entertainment System.aird"	
+// ./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data workspace workspace://Python4Capella/sample_scripts/list_logical_components.py "In-Flight Entertainment System/In-Flight Entertainment System.aird"	
 	// @formatter:on
 
 	/**
@@ -47,8 +44,6 @@ public class Python4CapellaCommandLine extends DefaultCommandLine {
 	 */
 	@Override
 	public boolean execute(IApplicationContext context) {
-		startFakeWorkbench();
-
 		final Object argObject = context.getArguments().get(IApplicationContext.APPLICATION_ARGS);
 		if (argObject instanceof String[]) {
 			final String scriptPath = ((String[]) argObject)[2];
@@ -121,26 +116,6 @@ public class Python4CapellaCommandLine extends DefaultCommandLine {
 			System.err.println("Can't find script engine for: " + scriptPath);
 		}
 		return false;
-	}
-
-	public static void startFakeWorkbench() {
-		final Display display = PlatformUI.createDisplay();
-		PlatformUI.createAndRunWorkbench(display, new WorkbenchAdvisor() {
-
-			/**
-			 * {@inheritDoc}
-			 */
-			@Override
-			public boolean openWindows() {
-				return false;
-			}
-
-			@Override
-			public String getInitialWindowPerspectiveId() {
-				return null;
-			}
-
-		});
 	}
 
 	@Override

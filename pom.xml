@@ -17,11 +17,9 @@
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-5.0.0</module>
 
     <module>plugins/org.eclipse.python4capella</module>
-    <!--module>plugins/org.eclipse.python4capella.commandline</module-->
     <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
-    <!--module>features/org.eclipse.python4capella.commandline.feature</module-->
   </modules>
 
   <properties>
@@ -218,6 +216,9 @@
       </activation>
       <modules>
         <module>releng/org.eclipse.python4capella.update</module>
+
+        <module>plugins/org.eclipse.python4capella.commandline</module>
+        <module>features/org.eclipse.python4capella.commandline.feature</module>
       </modules>
     </profile>
     <profile>
@@ -227,6 +228,16 @@
       </activation>
       <modules>
         <module>tests/org.eclipse.python4capella.tests</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>commandline</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <modules>
+        <module>plugins/org.eclipse.python4capella.commandline</module>
+        <module>features/org.eclipse.python4capella.commandline.feature</module>
       </modules>
     </profile>
 
