@@ -128,7 +128,7 @@ Select the Window > preferences menu
 - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the Browse button
 - select the Scripting / Scripting Locations
-  - add /Python4Capella/enduser by clicking the Add Workspace button
+  - add /Python4Capella/sample_scripts by clicking the Add Workspace button
 
 You can click the Apply and close button to finish your setup.
 
