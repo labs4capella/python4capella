@@ -50,6 +50,8 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.polarsys.capella.core.data.capellacore.EnumerationPropertyLiteral;
 import org.polarsys.capella.core.data.capellamodeller.ModelRoot;
 import org.polarsys.capella.core.data.capellamodeller.Project;
@@ -65,6 +67,29 @@ import org.polarsys.capella.core.diagram.helpers.RepresentationAnnotationHelper;
  */
 @SuppressWarnings("restriction")
 public class SiriusModule {
+
+	static {
+		// initialize the workbench if needed
+		if (!PlatformUI.isWorkbenchRunning()) {
+			final Display display = PlatformUI.createDisplay();
+			PlatformUI.createAndRunWorkbench(display, new WorkbenchAdvisor() {
+
+				/**
+				 * {@inheritDoc}
+				 */
+				@Override
+				public boolean openWindows() {
+					return false;
+				}
+
+				@Override
+				public String getInitialWindowPerspectiveId() {
+					return null;
+				}
+
+			});
+		}
+	}
 
 	private final CapellaModule capellaModule = new CapellaModule();
 

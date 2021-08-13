@@ -1,8 +1,6 @@
 loadModule('/Capella/Capella')
 import sys
 
-startWorkbenchIfNeeded()
-
 def capella_query(query_class, e_obj, cls = None):
     """Call a query from the semantic browser from the qualified class name of the query and the EObect to pass as parameter"""
     res = []
