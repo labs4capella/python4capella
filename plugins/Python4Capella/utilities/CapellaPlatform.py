@@ -4,6 +4,10 @@
 loadModule('/System/UI')
 loadModule('/System/Resources')
 
+include('workspace://Python4Capella/java_api/Sirius_API.py')
+if False:
+    from java_api.Sirius_API import *
+
 class CapellaPlatform():
     @staticmethod
     def getFirstSelectedElement():
@@ -17,7 +21,7 @@ class CapellaPlatform():
         """
         return the relavite path toward the aird file of a CapellaElement or Diagram
         """
-        res = elem.get_java_object().eResource().getURI().toPlatformString(True)
+        res = Sirius.get_session(elem.java_object).getSessionResource().getURI().toPlatformString(True)
         res = res[1:res.rfind(".")] + ".aird"
         return res
     

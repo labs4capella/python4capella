@@ -414,6 +414,18 @@ public class SiriusModule {
 	}
 
 	/**
+	 * Gets the {@link Session} of the given {@link EObject}.
+	 * 
+	 * @param eObject the {@link EObject}
+	 * @return the {@link Session} of the given {@link EObject} if any,
+	 *         <code>null</code> otherwise
+	 */
+	@WrapToScript
+	public Session getSession(EObject eObject) {
+		return new EObjectQuery(eObject).getSession();
+	}
+
+	/**
 	 * Starts a transaction for the given {@link Session}.
 	 * 
 	 * @param session the {@link Session}
