@@ -17,4 +17,5 @@ project://**.py</includeFilter>
   <disabledResource>/workspace/Python4Capella/java_api/EMF_API.py</disabledResource>
   <disabledResource>/workspace/Python4Capella/enduser/enduser2.py</disabledResource>
   <disabledResource>/workspace/Python4Capella/tests</disabledResource>
+  <disabledResource>/workspace/Python4CapellaTests/capella_manual_tests.py</disabledResource>
 </TestSuite>
