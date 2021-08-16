@@ -294,35 +294,38 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	private String generateProperty(Class cls, Property property) {
 		final StringBuilder res = new StringBuilder();
 
-		final String attributeName = getPythonName(property.getName());
-		final String getterName = "get_" + attributeName;
-		final String setterName = "set_" + attributeName;
+		if (property.getType() != null) {
+			final String attributeName = getPythonName(property.getName());
+			final String getterName = "get_" + attributeName;
+			final String setterName = "set_" + attributeName;
 
-		if (isScalar(property)) {
-			if (isAttribute(property)) {
-				res.append("    def " + getterName + "(self):" + NL);
-				res.append("        return self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
-				res.append("    def " + setterName + "(self, value):" + NL);
-				res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(value)" + NL);
+			if (isScalar(property)) {
+				if (isAttribute(property)) {
+					res.append("    def " + getterName + "(self):" + NL);
+					res.append("        return self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
+					res.append("    def " + setterName + "(self, value):" + NL);
+					res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(value)" + NL);
+				} else {
+					res.append("    def " + getterName + "(self):" + NL);
+					res.append(
+							"        value =  self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
+					res.append("        if value is None:" + NL);
+					res.append("            return value" + NL);
+					res.append("        else:" + NL);
+					res.append("            e_object_class = getattr(sys.modules[\"__main__\"], \"EObject\")" + NL);
+					res.append("            specific_cls = e_object_class.get_class(value)" + NL);
+					res.append("            return specific_cls(value)" + NL);
+					if (!property.isIsReadOnly() && !property.isIsDerived()) {
+						res.append("    def set_" + getPythonName(property.getName()) + "(self, value):" + NL);
+						res.append("        return self.get_java_object()." + getJavaSetterName(cls, property)
+								+ "(value.get_java_object())" + NL);
+					}
+				}
 			} else {
 				res.append("    def " + getterName + "(self):" + NL);
-				res.append("        value =  self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
-				res.append("        if value is None:" + NL);
-				res.append("            return value" + NL);
-				res.append("        else:" + NL);
-				res.append("            e_object_class = getattr(sys.modules[\"__main__\"], \"EObject\")" + NL);
-				res.append("            specific_cls = e_object_class.get_class(value)" + NL);
-				res.append("            return specific_cls(value)" + NL);
-				if (!property.isIsReadOnly() && !property.isIsDerived()) {
-					res.append("    def set_" + getPythonName(property.getName()) + "(self, value):" + NL);
-					res.append("        return self.get_java_object()." + getJavaSetterName(cls, property)
-							+ "(value.get_java_object())" + NL);
-				}
+				res.append("        return create_e_list(self.get_java_object()." + getJavaGetterName(cls, property)
+						+ "(), " + property.getType().getLabel() + ")" + NL);
 			}
-		} else {
-			res.append("    def " + getterName + "(self):" + NL);
-			res.append("        return create_e_list(self.get_java_object()." + getJavaGetterName(cls, property)
-					+ "(), " + property.getType().getLabel() + ")" + NL);
 		}
 
 		return res.toString();
