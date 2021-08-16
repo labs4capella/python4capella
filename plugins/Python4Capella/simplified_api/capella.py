@@ -2975,9 +2975,27 @@ class Requirement(EObject):
     def get_owned_attributes(self):
         return create_e_list(self.get_java_object().getOwnedAttributes(), Attribute)
     def get_incoming_linked_elems(self):
-        raise AttributeError("TODO")
+        res = []
+        for relation in self.java_object.getOwnedRelations():
+            if relation.eClass().getName() == "CapellaIncomingRelation":
+                capella_element = relation.getTarget()
+                if capella_element is not None:
+                    e_object_class = getattr(sys.modules["__main__"], "EObject")
+                    specific_cls = e_object_class.get_class(capella_element)
+                    if specific_cls is not None:
+                        res.append(specific_cls(capella_element))
+        return res
     def get_outgoing_linked_elems(self):
-        raise AttributeError("TODO")
+        res = []
+        for relation in self.java_object.getOwnedRelations():
+            if relation.eClass().getName() == "CapellaOutgoingRelation":
+                capella_element = relation.getSource()
+                if capella_element is not None:
+                    e_object_class = getattr(sys.modules["__main__"], "EObject")
+                    specific_cls = e_object_class.get_class(capella_element)
+                    if specific_cls is not None:
+                        res.append(specific_cls(capella_element))
+        return res
 
 class Folder(Requirement):
     def __init__(self, java_object = None):
