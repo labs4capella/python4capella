@@ -123,9 +123,13 @@ class EObject(JavaObject):
         for element in Sirius.get_representing_diagrams(self.get_java_object()):
             res.append(Diagram(element))
         return res
+    def get__r_e_cs(self):
+        return create_e_list(self.get_java_object().getRECs(), REC)
+    def get__r_p_ls(self):
+        return create_e_list(self.get_java_object().getRPLs(), RPL)
     def get_label(self):
         return get_label(self)
-    def get_type(self):
+    def get_element_type(self):
         raise AttributeError("TODO")
     def get_container(self):
         value = self.get_java_object().eContainer()
@@ -421,8 +425,6 @@ class AbstractCatalogElement(AbstractReElement):
         return self.get_java_object().getTags()
     def set_tags(self, value):
         self.get_java_object().setTags(value)
-    def get_referenced_elements(self):
-        return create_e_list(self.get_java_object().getReferencedElements(), EObject)
 
 class REC(AbstractCatalogElement):
     def __init__(self, java_object = None):
@@ -436,6 +438,8 @@ class REC(AbstractCatalogElement):
                 EObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed catalog element is not a REC.")
+    def get_referenced_elements(self):
+        return create_e_list(self.get_java_object().getReferencedElements(), EObject)
     def get_default_replica_compliancy(self):
         value =  self.get_java_object().getDefaultReplicaCompliancy()
         if value is None:
@@ -461,6 +465,8 @@ class RPL(AbstractCatalogElement):
                 EObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed catalog element is not a RPL.")
+    def get_referenced_elements(self):
+        return create_e_list(self.get_java_object().getReferencedElements(), EObject)
     def get_suffix(self):
         return self.get_java_object().getSuffix()
     def set_suffix(self, value):
@@ -521,8 +527,6 @@ class RecCatalog(CatalogElementPkg):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_owned_compliancy_definition_pkg(self, value):
-        return self.get_java_object().setOwnedCompliancyDefinitionPkg(value.get_java_object())
 
 class CompliancyDefinitionPkg(AbstractReElement):
     def __init__(self, java_object = None):
@@ -793,6 +797,14 @@ class SystemAnalysis(PropertyValuePkgContainer):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
+    def get_system(self):
+        value =  self.get_java_object().getSystem()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
 
 class SystemFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -806,6 +818,8 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedSystemFunctionPkgs(), SystemFunctionPkg)
     def get_owned_system_functions(self):
         return create_e_list(self.get_java_object().getOwnedSystemFunctions(), SystemFunction)
+    def get_owned_categories(self):
+        return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
 class CapabilityPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -840,6 +854,10 @@ class SystemComponentPkg(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_owned_actors(self):
         return create_e_list(self.get_java_object().getOwnedActors(), SystemActor)
+    def get_owned_component_exchange_categories(self):
+        return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
+    def get_owned_physical_link_categories(self):
+        return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
 class MissionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -915,6 +933,14 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
+    def get_logical_system(self):
+        value =  self.get_java_object().getLogicalSystem()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
 
 class LogicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -928,6 +954,8 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedLogicalFunctionPkgs(), LogicalFunctionPkg)
     def get_owned_logical_functions(self):
         return create_e_list(self.get_java_object().getOwnedLogicalFunctions(), LogicalFunction)
+    def get_owned_categories(self):
+        return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
 class CapabilityRealizationPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -958,8 +986,6 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_owned_logical_component_pkgs(self, value):
-        return self.get_java_object().setOwnedLogicalComponentPkgs(value.get_java_object())
     def get_owned_logical_system(self):
         value =  self.get_java_object().getOwnedLogicalSystem()
         if value is None:
@@ -972,6 +998,10 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedLogicalActors(), LogicalActor)
     def get_owned_logical_components(self):
         return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
+    def get_owned_component_exchange_categories(self):
+        return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
+    def get_owned_physical_link_categories(self):
+        return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
 class PhysicalArchitecture(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -1021,6 +1051,14 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
+    def get_physical_system(self):
+        value =  self.get_java_object().getPhysicalSystem()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
 
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -1034,6 +1072,8 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctionPkgs(), PhysicalFunctionPkg)
     def get_owned_physical_functions(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctions(), PhysicalFunction)
+    def get_owned_categories(self):
+        return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
 class PhysicalComponentPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -1057,19 +1097,10 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedPhysicalActors(), PhysicalActor)
     def get_owned_physical_components(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
-
-class PhysicalSystem(CapellaElement):
-    def __init__(self, java_object = None):
-        if java_object is None:
-            raise ValueError("No matching EClass for this type")
-        elif isinstance(java_object, PhysicalSystem):
-            EObject.__init__(self, java_object.get_java_object())
-        else:
-            EObject.__init__(self, java_object)
-    def get_owned_physical_components(self):
-        return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
-    def get_owned_physical_component_pkgs(self):
-        return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
+    def get_owned_component_exchange_categories(self):
+        return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
+    def get_owned_physical_link_categories(self):
+        return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
 class AbstractPhysicalArtifact(CapellaElement):
     def __init__(self, java_object = None):
@@ -1151,8 +1182,6 @@ class EPBSArchitecture(PropertyValuePkgContainer):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_data_pkg(self, value):
-        return self.get_java_object().setOwnedDataPkg(value.get_java_object())
 
 class ConfigurationItemPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -1574,6 +1603,10 @@ class Node(AbstractInstance):
         return create_e_list(self.get_java_object().getInvolvedLinks(), PhysicalLink)
     def get_involving_physical_paths(self):
         return create_e_list(self.get_java_object().getInvolvingPhysicalPaths(), PhysicalPath)
+    def get_owned_physical_link_categories(self):
+        return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
+    def get_owned_physical_paths(self):
+        return create_e_list(self.get_java_object().getOwnedPhysicalPaths(), PhysicalPath)
 
 class PhysicalPort(AbstractPhysicalArtifact):
     def __init__(self, java_object = None):
@@ -1984,6 +2017,8 @@ class BehavioralComponent(CapellaElement, AbstractInstance):
         return create_e_list(self.get_java_object().getImplementedInterfaces(), Interface)
     def get_owned_state_machines(self):
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
+    def get_owned_component_exchange_categories(self):
+        return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
 
 class ComponentPort(CapellaElement):
     def __init__(self, java_object = None):
@@ -2383,8 +2418,6 @@ class Collection(DataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_min_card(self, value):
-        return self.get_java_object().setMinCard(value.get_java_object())
     def get_max_card(self):
         value =  self.get_java_object().getMaxCard()
         if value is None:
@@ -2393,8 +2426,6 @@ class Collection(DataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_max_card(self, value):
-        return self.get_java_object().setMaxCard(value.get_java_object())
 
 class Union(DataType):
     def __init__(self, java_object = None):
@@ -2455,21 +2486,13 @@ class Association(JavaObject):
 class Property(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0", "Property"))
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property"))
         elif isinstance(java_object, Property):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
     def get_type(self):
-        value =  self.get_java_object().getType()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
-    def set_type(self, value):
-        return self.get_java_object().setType(value.get_java_object())
+        return capella_query_by_name(self, "Type")
 
 class UnionProperty(Property):
     def __init__(self, java_object = None):
@@ -2711,8 +2734,6 @@ class StringType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_min_length(self, value):
-        return self.get_java_object().setMinLength(value.get_java_object())
     def get_max_length(self):
         value =  self.get_java_object().getMaxLength()
         if value is None:
@@ -2721,8 +2742,6 @@ class StringType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_max_length(self, value):
-        return self.get_java_object().setMaxLength(value.get_java_object())
     def get_default_value(self):
         value =  self.get_java_object().getDefaultValue()
         if value is None:
@@ -2731,8 +2750,6 @@ class StringType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_default_value(self, value):
-        return self.get_java_object().setDefaultValue(value.get_java_object())
     def get_null_value(self):
         value =  self.get_java_object().getNullValue()
         if value is None:
@@ -2741,8 +2758,6 @@ class StringType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_null_value(self, value):
-        return self.get_java_object().setNullValue(value.get_java_object())
 
 class NumericType(PrimitiveDataType):
     def __init__(self, java_object = None):
@@ -2782,8 +2797,6 @@ class NumericType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_min_value(self, value):
-        return self.get_java_object().setMinValue(value.get_java_object())
     def get_max_value(self):
         value =  self.get_java_object().getMaxValue()
         if value is None:
@@ -2792,8 +2805,6 @@ class NumericType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_max_value(self, value):
-        return self.get_java_object().setMaxValue(value.get_java_object())
     def get_default_value(self):
         value =  self.get_java_object().getDefaultValue()
         if value is None:
@@ -2802,8 +2813,6 @@ class NumericType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_default_value(self, value):
-        return self.get_java_object().setDefaultValue(value.get_java_object())
     def get_null_value(self):
         value =  self.get_java_object().getNullValue()
         if value is None:
@@ -2812,8 +2821,6 @@ class NumericType(PrimitiveDataType):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_null_value(self, value):
-        return self.get_java_object().setNullValue(value.get_java_object())
 
 class PhysicalQuantity(NumericType):
     def __init__(self, java_object = None):
@@ -2972,8 +2979,12 @@ class Requirement(EObject):
         return self.get_java_object().getReqIFText()
     def set_text(self, value):
         self.get_java_object().setReqIFText(value)
-    def get_owned_attributes(self):
-        return create_e_list(self.get_java_object().getOwnedAttributes(), Attribute)
+    def get_all_attributes(self):
+        raise AttributeError("TODO")
+    def get_attribute(self, attributeName):
+        raise AttributeError("TODO")
+    def set_attribute(self, attributeName, value):
+        raise AttributeError("TODO")
     def get_incoming_linked_elems(self):
         res = []
         for relation in self.java_object.getOwnedRelations():
@@ -3007,31 +3018,6 @@ class Folder(Requirement):
             EObject.__init__(self, java_object)
     def get_owned_requirements(self):
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
-
-class Attribute(EObject):
-    def __init__(self, java_object = None):
-        if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Attribute"))
-        elif isinstance(java_object, Attribute):
-            EObject.__init__(self, java_object.get_java_object())
-        else:
-            EObject.__init__(self, java_object)
-    def get_name(self):
-        return self.get_java_object().getReqIFName()
-    def set_name(self, value):
-        self.get_java_object().setReqIFName(value)
-    def get_value(self):
-        return self.get_java_object().getValue()
-    def set_value(self, value):
-        self.get_java_object().setValue(value)
-    def get_kind(self):
-        value =  self.get_java_object().getKind()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
 
 class SystemEngineering(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -3198,8 +3184,6 @@ class SystemActor(BehavioralComponent, Node):
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
-    def set_owned_system_component_pkgs(self, value):
-        return self.get_java_object().setOwnedSystemComponentPkgs(value.get_java_object())
     def get_involving_missions(self):
         return create_e_list(self.get_java_object().getInvolvingMissions(), Mission)
     def get_realized_operational_entities(self):
@@ -3295,6 +3279,19 @@ class LogicalActor(BehavioralComponent, Node):
         return create_e_list(self.get_java_object().getRealizingPhysicalActors(), PhysicalActor)
     def get_involving_capability_realizations(self):
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
+
+class PhysicalSystem(CapellaElement, Node):
+    def __init__(self, java_object = None):
+        if java_object is None:
+            raise ValueError("No matching EClass for this type")
+        elif isinstance(java_object, PhysicalSystem):
+            EObject.__init__(self, java_object.get_java_object())
+        else:
+            EObject.__init__(self, java_object)
+    def get_owned_physical_components(self):
+        return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
+    def get_owned_physical_component_pkgs(self):
+        return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
 
 class BehaviorPC(PhysicalComponent, BehavioralComponent):
     def __init__(self, java_object = None):
@@ -3555,3 +3552,4 @@ class Status(EObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
+

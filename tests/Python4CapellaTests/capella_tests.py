@@ -98,9 +98,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_owned_property_value_pkgs(self):
         tested = SystemEngineering()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_SystemEngineering_id(self):
@@ -166,9 +164,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_owned_constraints(self):
         tested = SystemEngineering()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_SystemEngineering_constraints(self):
@@ -178,9 +174,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_owned_property_values(self):
         tested = SystemEngineering()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_SystemEngineering_applied_property_values(self):
@@ -190,9 +184,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_owned_property_value_groups(self):
         tested = SystemEngineering()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_SystemEngineering_applied_property_value_groups(self):
@@ -202,9 +194,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_owned_enumeration_property_types(self):
         tested = SystemEngineering()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_SystemEngineering_owned_diagrams(self):
@@ -227,14 +217,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_SystemEngineering__r_e_cs(self):
+        tested = SystemEngineering()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_SystemEngineering__r_p_ls(self):
+        tested = SystemEngineering()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_SystemEngineering_get_label(self):
         tested = SystemEngineering()
         tested.get_label()
         pass
 
-    def test_SystemEngineering_get_type(self):
+    def test_SystemEngineering_get_element_type(self):
         tested = SystemEngineering()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_SystemEngineering_get_container(self):
@@ -362,9 +366,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_owned_constraints(self):
         tested = Constraint()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Constraint_constraints(self):
@@ -374,9 +376,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_owned_property_values(self):
         tested = Constraint()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Constraint_applied_property_values(self):
@@ -386,9 +386,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_owned_property_value_groups(self):
         tested = Constraint()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Constraint_applied_property_value_groups(self):
@@ -398,9 +396,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_owned_enumeration_property_types(self):
         tested = Constraint()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Constraint_owned_diagrams(self):
@@ -423,14 +419,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Constraint__r_e_cs(self):
+        tested = Constraint()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Constraint__r_p_ls(self):
+        tested = Constraint()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Constraint_get_label(self):
         tested = Constraint()
         tested.get_label()
         pass
 
-    def test_Constraint_get_type(self):
+    def test_Constraint_get_element_type(self):
         tested = Constraint()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Constraint_get_container(self):
@@ -540,9 +550,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_owned_constraints(self):
         tested = PropertyValue()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PropertyValue_constraints(self):
@@ -554,9 +562,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_owned_property_values(self):
         tested = PropertyValue()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PropertyValue_applied_property_values(self):
@@ -566,9 +572,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_owned_property_value_groups(self):
         tested = PropertyValue()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PropertyValue_applied_property_value_groups(self):
@@ -578,9 +582,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_owned_enumeration_property_types(self):
         tested = PropertyValue()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PropertyValue_owned_diagrams(self):
@@ -607,14 +609,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PropertyValue__r_e_cs(self):
+        tested = PropertyValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PropertyValue__r_p_ls(self):
+        tested = PropertyValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PropertyValue_get_label(self):
         tested = PropertyValue()
         tested.get_label()
         pass
 
-    def test_PropertyValue_get_type(self):
+    def test_PropertyValue_get_element_type(self):
         tested = PropertyValue()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PropertyValue_get_container(self):
@@ -738,9 +754,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_owned_constraints(self):
         tested = PropertyValueGroup()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PropertyValueGroup_constraints(self):
@@ -750,9 +764,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_owned_property_values(self):
         tested = PropertyValueGroup()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PropertyValueGroup_applied_property_values(self):
@@ -762,9 +774,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_owned_property_value_groups(self):
         tested = PropertyValueGroup()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PropertyValueGroup_applied_property_value_groups(self):
@@ -774,9 +784,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_owned_enumeration_property_types(self):
         tested = PropertyValueGroup()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PropertyValueGroup_owned_diagrams(self):
@@ -799,14 +807,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PropertyValueGroup__r_e_cs(self):
+        tested = PropertyValueGroup()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PropertyValueGroup__r_p_ls(self):
+        tested = PropertyValueGroup()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PropertyValueGroup_get_label(self):
         tested = PropertyValueGroup()
         tested.get_label()
         pass
 
-    def test_PropertyValueGroup_get_type(self):
+    def test_PropertyValueGroup_get_element_type(self):
         tested = PropertyValueGroup()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PropertyValueGroup_get_container(self):
@@ -848,9 +870,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_owned_property_value_pkgs(self):
         tested = PropertyValuePkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_PropertyValuePkg_id(self):
@@ -916,9 +936,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_owned_constraints(self):
         tested = PropertyValuePkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PropertyValuePkg_constraints(self):
@@ -928,9 +946,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_owned_property_values(self):
         tested = PropertyValuePkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PropertyValuePkg_applied_property_values(self):
@@ -940,9 +956,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_owned_property_value_groups(self):
         tested = PropertyValuePkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PropertyValuePkg_applied_property_value_groups(self):
@@ -952,9 +966,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_owned_enumeration_property_types(self):
         tested = PropertyValuePkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PropertyValuePkg_owned_diagrams(self):
@@ -977,14 +989,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PropertyValuePkg__r_e_cs(self):
+        tested = PropertyValuePkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PropertyValuePkg__r_p_ls(self):
+        tested = PropertyValuePkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PropertyValuePkg_get_label(self):
         tested = PropertyValuePkg()
         tested.get_label()
         pass
 
-    def test_PropertyValuePkg_get_type(self):
+    def test_PropertyValuePkg_get_element_type(self):
         tested = PropertyValuePkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PropertyValuePkg_get_container(self):
@@ -1082,9 +1108,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_owned_constraints(self):
         tested = EnumerationPropertyType()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_EnumerationPropertyType_constraints(self):
@@ -1094,9 +1118,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_owned_property_values(self):
         tested = EnumerationPropertyType()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_EnumerationPropertyType_applied_property_values(self):
@@ -1106,9 +1128,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_owned_property_value_groups(self):
         tested = EnumerationPropertyType()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_EnumerationPropertyType_applied_property_value_groups(self):
@@ -1118,9 +1138,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_owned_enumeration_property_types(self):
         tested = EnumerationPropertyType()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_EnumerationPropertyType_owned_diagrams(self):
@@ -1143,14 +1161,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_EnumerationPropertyType__r_e_cs(self):
+        tested = EnumerationPropertyType()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_EnumerationPropertyType__r_p_ls(self):
+        tested = EnumerationPropertyType()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_EnumerationPropertyType_get_label(self):
         tested = EnumerationPropertyType()
         tested.get_label()
         pass
 
-    def test_EnumerationPropertyType_get_type(self):
+    def test_EnumerationPropertyType_get_element_type(self):
         tested = EnumerationPropertyType()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_EnumerationPropertyType_get_container(self):
@@ -1187,9 +1219,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_owned_literals(self):
         tested = EnumerationPropertyType()
-        value = EnumerationPropertyLiteral()
-        tested.get_owned_literals().add(value)
-        self.assertEqual(tested.get_owned_literals().get(0), value)
+        tested.get_owned_literals()
         pass
 
     def test_EnumerationPropertyLiteral_id(self):
@@ -1255,9 +1285,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_owned_constraints(self):
         tested = EnumerationPropertyLiteral()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_EnumerationPropertyLiteral_constraints(self):
@@ -1267,9 +1295,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_owned_property_values(self):
         tested = EnumerationPropertyLiteral()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_EnumerationPropertyLiteral_applied_property_values(self):
@@ -1279,9 +1305,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_owned_property_value_groups(self):
         tested = EnumerationPropertyLiteral()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_EnumerationPropertyLiteral_applied_property_value_groups(self):
@@ -1291,9 +1315,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_owned_enumeration_property_types(self):
         tested = EnumerationPropertyLiteral()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_EnumerationPropertyLiteral_owned_diagrams(self):
@@ -1316,14 +1338,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_EnumerationPropertyLiteral__r_e_cs(self):
+        tested = EnumerationPropertyLiteral()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_EnumerationPropertyLiteral__r_p_ls(self):
+        tested = EnumerationPropertyLiteral()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_EnumerationPropertyLiteral_get_label(self):
         tested = EnumerationPropertyLiteral()
         tested.get_label()
         pass
 
-    def test_EnumerationPropertyLiteral_get_type(self):
+    def test_EnumerationPropertyLiteral_get_element_type(self):
         tested = EnumerationPropertyLiteral()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_EnumerationPropertyLiteral_get_container(self):
@@ -1426,14 +1462,14 @@ class capella_tests(unittest.TestCase):
 
     def test_Diagram_contextual_elements(self):
         tested = Diagram()
-        value = Attribute()
+        value = Folder()
         tested.get_contextual_elements().add(value)
         self.assertEqual(tested.get_contextual_elements().get(0), value)
         pass
 
     def test_Diagram_elements_of_interest(self):
         tested = Diagram()
-        value = Attribute()
+        value = Folder()
         tested.get_elements_of_interest().add(value)
         self.assertEqual(tested.get_elements_of_interest().get(0), value)
         pass
@@ -1441,7 +1477,8 @@ class capella_tests(unittest.TestCase):
     def test_Diagram_export_as_image(self):
         tested = Diagram()
         param1 = "value"
-        tested.export_as_image(param1)
+        param2 = ExportFormat()
+        tested.export_as_image(param1, param2)
         pass
 
     def test_REC_decription(self):
@@ -1466,13 +1503,6 @@ class capella_tests(unittest.TestCase):
     def test_REC_tags(self):
         tested = REC()
         tested.get_tags()
-        pass
-
-    def test_REC_referenced_elements(self):
-        tested = REC()
-        value = Attribute()
-        tested.get_referenced_elements().add(value)
-        self.assertEqual(tested.get_referenced_elements().get(0), value)
         pass
 
     def test_REC_id(self):
@@ -1509,14 +1539,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_REC__r_e_cs(self):
+        tested = REC()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_REC__r_p_ls(self):
+        tested = REC()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_REC_get_label(self):
         tested = REC()
         tested.get_label()
         pass
 
-    def test_REC_get_type(self):
+    def test_REC_get_element_type(self):
         tested = REC()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_REC_get_container(self):
@@ -1549,6 +1593,13 @@ class capella_tests(unittest.TestCase):
         tested = REC()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_REC_referenced_elements(self):
+        tested = REC()
+        value = Folder()
+        tested.get_referenced_elements().add(value)
+        self.assertEqual(tested.get_referenced_elements().get(0), value)
         pass
 
     def test_REC_default_replica_compliancy(self):
@@ -1587,13 +1638,6 @@ class capella_tests(unittest.TestCase):
         tested.get_tags()
         pass
 
-    def test_RPL_referenced_elements(self):
-        tested = RPL()
-        value = Attribute()
-        tested.get_referenced_elements().add(value)
-        self.assertEqual(tested.get_referenced_elements().get(0), value)
-        pass
-
     def test_RPL_id(self):
         tested = RPL()
         value = "value"
@@ -1628,14 +1672,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_RPL__r_e_cs(self):
+        tested = RPL()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_RPL__r_p_ls(self):
+        tested = RPL()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_RPL_get_label(self):
         tested = RPL()
         tested.get_label()
         pass
 
-    def test_RPL_get_type(self):
+    def test_RPL_get_element_type(self):
         tested = RPL()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_RPL_get_container(self):
@@ -1668,6 +1726,13 @@ class capella_tests(unittest.TestCase):
         tested = RPL()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_RPL_referenced_elements(self):
+        tested = RPL()
+        value = Folder()
+        tested.get_referenced_elements().add(value)
+        self.assertEqual(tested.get_referenced_elements().get(0), value)
         pass
 
     def test_RPL_suffix(self):
@@ -1732,14 +1797,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CatalogElementPkg__r_e_cs(self):
+        tested = CatalogElementPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CatalogElementPkg__r_p_ls(self):
+        tested = CatalogElementPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CatalogElementPkg_get_label(self):
         tested = CatalogElementPkg()
         tested.get_label()
         pass
 
-    def test_CatalogElementPkg_get_type(self):
+    def test_CatalogElementPkg_get_element_type(self):
         tested = CatalogElementPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CatalogElementPkg_get_container(self):
@@ -1776,44 +1855,32 @@ class capella_tests(unittest.TestCase):
 
     def test_CatalogElementPkg_owned_element_pkgs(self):
         tested = CatalogElementPkg()
-        value = CatalogElementPkg()
-        tested.get_owned_element_pkgs().add(value)
-        self.assertEqual(tested.get_owned_element_pkgs().get(0), value)
+        tested.get_owned_element_pkgs()
         pass
 
     def test_CatalogElementPkg_owned_recs(self):
         tested = CatalogElementPkg()
-        value = REC()
-        tested.get_owned_recs().add(value)
-        self.assertEqual(tested.get_owned_recs().get(0), value)
+        tested.get_owned_recs()
         pass
 
     def test_CatalogElementPkg_owned_rpls(self):
         tested = CatalogElementPkg()
-        value = RPL()
-        tested.get_owned_rpls().add(value)
-        self.assertEqual(tested.get_owned_rpls().get(0), value)
+        tested.get_owned_rpls()
         pass
 
     def test_RecCatalog_owned_element_pkgs(self):
         tested = RecCatalog()
-        value = CatalogElementPkg()
-        tested.get_owned_element_pkgs().add(value)
-        self.assertEqual(tested.get_owned_element_pkgs().get(0), value)
+        tested.get_owned_element_pkgs()
         pass
 
     def test_RecCatalog_owned_recs(self):
         tested = RecCatalog()
-        value = REC()
-        tested.get_owned_recs().add(value)
-        self.assertEqual(tested.get_owned_recs().get(0), value)
+        tested.get_owned_recs()
         pass
 
     def test_RecCatalog_owned_rpls(self):
         tested = RecCatalog()
-        value = RPL()
-        tested.get_owned_rpls().add(value)
-        self.assertEqual(tested.get_owned_rpls().get(0), value)
+        tested.get_owned_rpls()
         pass
 
     def test_RecCatalog_id(self):
@@ -1850,14 +1917,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_RecCatalog__r_e_cs(self):
+        tested = RecCatalog()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_RecCatalog__r_p_ls(self):
+        tested = RecCatalog()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_RecCatalog_get_label(self):
         tested = RecCatalog()
         tested.get_label()
         pass
 
-    def test_RecCatalog_get_type(self):
+    def test_RecCatalog_get_element_type(self):
         tested = RecCatalog()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_RecCatalog_get_container(self):
@@ -1894,9 +1975,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RecCatalog_owned_compliancy_definition_pkg(self):
         tested = RecCatalog()
-        value = CompliancyDefinitionPkg()
-        tested.set_owned_compliancy_definition_pkg(value)
-        self.assertEqual(tested.get_owned_compliancy_definition_pkg(), value)
+        tested.get_owned_compliancy_definition_pkg()
         pass
 
     def test_CompliancyDefinitionPkg_id(self):
@@ -1933,14 +2012,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CompliancyDefinitionPkg__r_e_cs(self):
+        tested = CompliancyDefinitionPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CompliancyDefinitionPkg__r_p_ls(self):
+        tested = CompliancyDefinitionPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CompliancyDefinitionPkg_get_label(self):
         tested = CompliancyDefinitionPkg()
         tested.get_label()
         pass
 
-    def test_CompliancyDefinitionPkg_get_type(self):
+    def test_CompliancyDefinitionPkg_get_element_type(self):
         tested = CompliancyDefinitionPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CompliancyDefinitionPkg_get_container(self):
@@ -1977,9 +2070,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CompliancyDefinitionPkg_owned_definitions(self):
         tested = CompliancyDefinitionPkg()
-        value = CompliancyDefinition()
-        tested.get_owned_definitions().add(value)
-        self.assertEqual(tested.get_owned_definitions().get(0), value)
+        tested.get_owned_definitions()
         pass
 
     def test_CompliancyDefinition_id(self):
@@ -2016,14 +2107,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CompliancyDefinition__r_e_cs(self):
+        tested = CompliancyDefinition()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CompliancyDefinition__r_p_ls(self):
+        tested = CompliancyDefinition()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CompliancyDefinition_get_label(self):
         tested = CompliancyDefinition()
         tested.get_label()
         pass
 
-    def test_CompliancyDefinition_get_type(self):
+    def test_CompliancyDefinition_get_element_type(self):
         tested = CompliancyDefinition()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CompliancyDefinition_get_container(self):
@@ -2067,9 +2172,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_owned_property_value_pkgs(self):
         tested = OperationalAnalysis()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_OperationalAnalysis_id(self):
@@ -2135,9 +2238,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_owned_constraints(self):
         tested = OperationalAnalysis()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalAnalysis_constraints(self):
@@ -2147,9 +2248,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_owned_property_values(self):
         tested = OperationalAnalysis()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalAnalysis_applied_property_values(self):
@@ -2159,9 +2258,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_owned_property_value_groups(self):
         tested = OperationalAnalysis()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalAnalysis_applied_property_value_groups(self):
@@ -2171,9 +2268,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_owned_enumeration_property_types(self):
         tested = OperationalAnalysis()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalAnalysis_owned_diagrams(self):
@@ -2196,14 +2291,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalAnalysis__r_e_cs(self):
+        tested = OperationalAnalysis()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalAnalysis__r_p_ls(self):
+        tested = OperationalAnalysis()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalAnalysis_get_label(self):
         tested = OperationalAnalysis()
         tested.get_label()
         pass
 
-    def test_OperationalAnalysis_get_type(self):
+    def test_OperationalAnalysis_get_element_type(self):
         tested = OperationalAnalysis()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalAnalysis_get_container(self):
@@ -2265,9 +2374,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_owned_property_value_pkgs(self):
         tested = OperationalActivityPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_OperationalActivityPkg_id(self):
@@ -2333,9 +2440,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_owned_constraints(self):
         tested = OperationalActivityPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalActivityPkg_constraints(self):
@@ -2345,9 +2450,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_owned_property_values(self):
         tested = OperationalActivityPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalActivityPkg_applied_property_values(self):
@@ -2357,9 +2460,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_owned_property_value_groups(self):
         tested = OperationalActivityPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalActivityPkg_applied_property_value_groups(self):
@@ -2369,9 +2470,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_owned_enumeration_property_types(self):
         tested = OperationalActivityPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalActivityPkg_owned_diagrams(self):
@@ -2394,14 +2493,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalActivityPkg__r_e_cs(self):
+        tested = OperationalActivityPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalActivityPkg__r_p_ls(self):
+        tested = OperationalActivityPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalActivityPkg_get_label(self):
         tested = OperationalActivityPkg()
         tested.get_label()
         pass
 
-    def test_OperationalActivityPkg_get_type(self):
+    def test_OperationalActivityPkg_get_element_type(self):
         tested = OperationalActivityPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalActivityPkg_get_container(self):
@@ -2438,16 +2551,12 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_owned_operational_activity_pkgs(self):
         tested = OperationalActivityPkg()
-        value = OperationalActivityPkg()
-        tested.get_owned_operational_activity_pkgs().add(value)
-        self.assertEqual(tested.get_owned_operational_activity_pkgs().get(0), value)
+        tested.get_owned_operational_activity_pkgs()
         pass
 
     def test_OperationalActivityPkg_owned_operational_activities(self):
         tested = OperationalActivityPkg()
-        value = OperationalActivity()
-        tested.get_owned_operational_activities().add(value)
-        self.assertEqual(tested.get_owned_operational_activities().get(0), value)
+        tested.get_owned_operational_activities()
         pass
 
     def test_OperationalActivity_available_in_states(self):
@@ -2520,9 +2629,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_owned_constraints(self):
         tested = OperationalActivity()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalActivity_constraints(self):
@@ -2532,9 +2639,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_owned_property_values(self):
         tested = OperationalActivity()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalActivity_applied_property_values(self):
@@ -2544,9 +2649,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_owned_property_value_groups(self):
         tested = OperationalActivity()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalActivity_applied_property_value_groups(self):
@@ -2556,9 +2659,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_owned_enumeration_property_types(self):
         tested = OperationalActivity()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalActivity_owned_diagrams(self):
@@ -2581,14 +2682,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalActivity__r_e_cs(self):
+        tested = OperationalActivity()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalActivity__r_p_ls(self):
+        tested = OperationalActivity()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalActivity_get_label(self):
         tested = OperationalActivity()
         tested.get_label()
         pass
 
-    def test_OperationalActivity_get_type(self):
+    def test_OperationalActivity_get_element_type(self):
         tested = OperationalActivity()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalActivity_get_container(self):
@@ -2630,9 +2745,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_owned_operational_activity_pkgs(self):
         tested = OperationalActivity()
-        value = OperationalActivityPkg()
-        tested.get_owned_operational_activity_pkgs().add(value)
-        self.assertEqual(tested.get_owned_operational_activity_pkgs().get(0), value)
+        tested.get_owned_operational_activity_pkgs()
         pass
 
     def test_OperationalActivity_incoming(self):
@@ -2735,9 +2848,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_owned_constraints(self):
         tested = Interaction()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Interaction_constraints(self):
@@ -2747,9 +2858,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_owned_property_values(self):
         tested = Interaction()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Interaction_applied_property_values(self):
@@ -2759,9 +2868,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_owned_property_value_groups(self):
         tested = Interaction()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Interaction_applied_property_value_groups(self):
@@ -2771,9 +2878,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_owned_enumeration_property_types(self):
         tested = Interaction()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Interaction_owned_diagrams(self):
@@ -2796,14 +2901,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Interaction__r_e_cs(self):
+        tested = Interaction()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Interaction__r_p_ls(self):
+        tested = Interaction()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Interaction_get_label(self):
         tested = Interaction()
         tested.get_label()
         pass
 
-    def test_Interaction_get_type(self):
+    def test_Interaction_get_element_type(self):
         tested = Interaction()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Interaction_get_container(self):
@@ -2937,9 +3056,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_owned_constraints(self):
         tested = OperationalProcess()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalProcess_constraints(self):
@@ -2949,9 +3066,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_owned_property_values(self):
         tested = OperationalProcess()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalProcess_applied_property_values(self):
@@ -2961,9 +3076,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_owned_property_value_groups(self):
         tested = OperationalProcess()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalProcess_applied_property_value_groups(self):
@@ -2973,9 +3086,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_owned_enumeration_property_types(self):
         tested = OperationalProcess()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalProcess_owned_diagrams(self):
@@ -2998,14 +3109,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalProcess__r_e_cs(self):
+        tested = OperationalProcess()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalProcess__r_p_ls(self):
+        tested = OperationalProcess()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalProcess_get_label(self):
         tested = OperationalProcess()
         tested.get_label()
         pass
 
-    def test_OperationalProcess_get_type(self):
+    def test_OperationalProcess_get_element_type(self):
         tested = OperationalProcess()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalProcess_get_container(self):
@@ -3088,9 +3213,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_owned_property_value_pkgs(self):
         tested = OperationalCapabilityPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_OperationalCapabilityPkg_id(self):
@@ -3156,9 +3279,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_owned_constraints(self):
         tested = OperationalCapabilityPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalCapabilityPkg_constraints(self):
@@ -3168,9 +3289,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_owned_property_values(self):
         tested = OperationalCapabilityPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalCapabilityPkg_applied_property_values(self):
@@ -3180,9 +3299,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_owned_property_value_groups(self):
         tested = OperationalCapabilityPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalCapabilityPkg_applied_property_value_groups(self):
@@ -3192,9 +3309,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_owned_enumeration_property_types(self):
         tested = OperationalCapabilityPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalCapabilityPkg_owned_diagrams(self):
@@ -3217,14 +3332,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalCapabilityPkg__r_e_cs(self):
+        tested = OperationalCapabilityPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalCapabilityPkg__r_p_ls(self):
+        tested = OperationalCapabilityPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalCapabilityPkg_get_label(self):
         tested = OperationalCapabilityPkg()
         tested.get_label()
         pass
 
-    def test_OperationalCapabilityPkg_get_type(self):
+    def test_OperationalCapabilityPkg_get_element_type(self):
         tested = OperationalCapabilityPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalCapabilityPkg_get_container(self):
@@ -3261,16 +3390,12 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_owned_operational_capability_pkgs(self):
         tested = OperationalCapabilityPkg()
-        value = OperationalCapabilityPkg()
-        tested.get_owned_operational_capability_pkgs().add(value)
-        self.assertEqual(tested.get_owned_operational_capability_pkgs().get(0), value)
+        tested.get_owned_operational_capability_pkgs()
         pass
 
     def test_OperationalCapabilityPkg_owned_operational_capabilities(self):
         tested = OperationalCapabilityPkg()
-        value = OperationalCapability()
-        tested.get_owned_operational_capabilities().add(value)
-        self.assertEqual(tested.get_owned_operational_capabilities().get(0), value)
+        tested.get_owned_operational_capabilities()
         pass
 
     def test_OperationalCapability_pre_condition(self):
@@ -3331,9 +3456,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_owned_property_value_pkgs(self):
         tested = OperationalCapability()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_OperationalCapability_id(self):
@@ -3399,9 +3522,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_owned_constraints(self):
         tested = OperationalCapability()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalCapability_constraints(self):
@@ -3411,9 +3532,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_owned_property_values(self):
         tested = OperationalCapability()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalCapability_applied_property_values(self):
@@ -3423,9 +3542,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_owned_property_value_groups(self):
         tested = OperationalCapability()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalCapability_applied_property_value_groups(self):
@@ -3435,9 +3552,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_owned_enumeration_property_types(self):
         tested = OperationalCapability()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalCapability_owned_diagrams(self):
@@ -3460,14 +3575,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalCapability__r_e_cs(self):
+        tested = OperationalCapability()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalCapability__r_p_ls(self):
+        tested = OperationalCapability()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalCapability_get_label(self):
         tested = OperationalCapability()
         tested.get_label()
         pass
 
-    def test_OperationalCapability_get_type(self):
+    def test_OperationalCapability_get_element_type(self):
         tested = OperationalCapability()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalCapability_get_container(self):
@@ -3531,9 +3660,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_owned_property_value_pkgs(self):
         tested = EntityPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_EntityPkg_id(self):
@@ -3599,9 +3726,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_owned_constraints(self):
         tested = EntityPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_EntityPkg_constraints(self):
@@ -3611,9 +3736,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_owned_property_values(self):
         tested = EntityPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_EntityPkg_applied_property_values(self):
@@ -3623,9 +3746,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_owned_property_value_groups(self):
         tested = EntityPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_EntityPkg_applied_property_value_groups(self):
@@ -3635,9 +3756,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_owned_enumeration_property_types(self):
         tested = EntityPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_EntityPkg_owned_diagrams(self):
@@ -3660,14 +3779,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_EntityPkg__r_e_cs(self):
+        tested = EntityPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_EntityPkg__r_p_ls(self):
+        tested = EntityPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_EntityPkg_get_label(self):
         tested = EntityPkg()
         tested.get_label()
         pass
 
-    def test_EntityPkg_get_type(self):
+    def test_EntityPkg_get_element_type(self):
         tested = EntityPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_EntityPkg_get_container(self):
@@ -3704,16 +3837,12 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_owned_entity_pkgs(self):
         tested = EntityPkg()
-        value = EntityPkg()
-        tested.get_owned_entity_pkgs().add(value)
-        self.assertEqual(tested.get_owned_entity_pkgs().get(0), value)
+        tested.get_owned_entity_pkgs()
         pass
 
     def test_EntityPkg_owned_entities(self):
         tested = EntityPkg()
-        value = OperationalActor()
-        tested.get_owned_entities().add(value)
-        self.assertEqual(tested.get_owned_entities().get(0), value)
+        tested.get_owned_entities()
         pass
 
     def test_OperationalEntity_incoming_communication_means(self):
@@ -3742,9 +3871,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_owned_state_machines(self):
         tested = OperationalEntity()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
         pass
 
     def test_OperationalEntity_realizing_system_actors(self):
@@ -3817,9 +3944,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_owned_constraints(self):
         tested = OperationalEntity()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalEntity_constraints(self):
@@ -3829,9 +3954,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_owned_property_values(self):
         tested = OperationalEntity()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalEntity_applied_property_values(self):
@@ -3841,9 +3964,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_owned_property_value_groups(self):
         tested = OperationalEntity()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalEntity_applied_property_value_groups(self):
@@ -3853,9 +3974,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_owned_enumeration_property_types(self):
         tested = OperationalEntity()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalEntity_owned_diagrams(self):
@@ -3878,14 +3997,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalEntity__r_e_cs(self):
+        tested = OperationalEntity()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalEntity__r_p_ls(self):
+        tested = OperationalEntity()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalEntity_get_label(self):
         tested = OperationalEntity()
         tested.get_label()
         pass
 
-    def test_OperationalEntity_get_type(self):
+    def test_OperationalEntity_get_element_type(self):
         tested = OperationalEntity()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalEntity_get_container(self):
@@ -3922,9 +4055,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_owned_entities(self):
         tested = OperationalEntity()
-        value = OperationalEntity()
-        tested.get_owned_entities().add(value)
-        self.assertEqual(tested.get_owned_entities().get(0), value)
+        tested.get_owned_entities()
         pass
 
     def test_OperationalActor_id(self):
@@ -3990,9 +4121,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_owned_constraints(self):
         tested = OperationalActor()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_OperationalActor_constraints(self):
@@ -4002,9 +4131,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_owned_property_values(self):
         tested = OperationalActor()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_OperationalActor_applied_property_values(self):
@@ -4014,9 +4141,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_owned_property_value_groups(self):
         tested = OperationalActor()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_OperationalActor_applied_property_value_groups(self):
@@ -4026,9 +4151,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_owned_enumeration_property_types(self):
         tested = OperationalActor()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_OperationalActor_owned_diagrams(self):
@@ -4051,14 +4174,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_OperationalActor__r_e_cs(self):
+        tested = OperationalActor()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_OperationalActor__r_p_ls(self):
+        tested = OperationalActor()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_OperationalActor_get_label(self):
         tested = OperationalActor()
         tested.get_label()
         pass
 
-    def test_OperationalActor_get_type(self):
+    def test_OperationalActor_get_element_type(self):
         tested = OperationalActor()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_OperationalActor_get_container(self):
@@ -4119,9 +4256,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_owned_state_machines(self):
         tested = OperationalActor()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
         pass
 
     def test_OperationalActor_realizing_system_actors(self):
@@ -4194,9 +4329,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_owned_constraints(self):
         tested = CommunicationMean()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_CommunicationMean_constraints(self):
@@ -4206,9 +4339,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_owned_property_values(self):
         tested = CommunicationMean()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_CommunicationMean_applied_property_values(self):
@@ -4218,9 +4349,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_owned_property_value_groups(self):
         tested = CommunicationMean()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_CommunicationMean_applied_property_value_groups(self):
@@ -4230,9 +4359,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_owned_enumeration_property_types(self):
         tested = CommunicationMean()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_CommunicationMean_owned_diagrams(self):
@@ -4255,14 +4382,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CommunicationMean__r_e_cs(self):
+        tested = CommunicationMean()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CommunicationMean__r_p_ls(self):
+        tested = CommunicationMean()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CommunicationMean_get_label(self):
         tested = CommunicationMean()
         tested.get_label()
         pass
 
-    def test_CommunicationMean_get_type(self):
+    def test_CommunicationMean_get_element_type(self):
         tested = CommunicationMean()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CommunicationMean_get_container(self):
@@ -4326,9 +4467,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_owned_property_value_pkgs(self):
         tested = SystemAnalysis()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_SystemAnalysis_id(self):
@@ -4394,9 +4533,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_owned_constraints(self):
         tested = SystemAnalysis()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_SystemAnalysis_constraints(self):
@@ -4406,9 +4543,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_owned_property_values(self):
         tested = SystemAnalysis()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_SystemAnalysis_applied_property_values(self):
@@ -4418,9 +4553,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_owned_property_value_groups(self):
         tested = SystemAnalysis()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_SystemAnalysis_applied_property_value_groups(self):
@@ -4430,9 +4563,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_owned_enumeration_property_types(self):
         tested = SystemAnalysis()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_SystemAnalysis_owned_diagrams(self):
@@ -4455,14 +4586,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_SystemAnalysis__r_e_cs(self):
+        tested = SystemAnalysis()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_SystemAnalysis__r_p_ls(self):
+        tested = SystemAnalysis()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_SystemAnalysis_get_label(self):
         tested = SystemAnalysis()
         tested.get_label()
         pass
 
-    def test_SystemAnalysis_get_type(self):
+    def test_SystemAnalysis_get_element_type(self):
         tested = SystemAnalysis()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_SystemAnalysis_get_container(self):
@@ -4527,11 +4672,14 @@ class capella_tests(unittest.TestCase):
         tested.get_mission_pkg()
         pass
 
+    def test_SystemAnalysis_system(self):
+        tested = SystemAnalysis()
+        tested.get_system()
+        pass
+
     def test_SystemFunctionPkg_owned_property_value_pkgs(self):
         tested = SystemFunctionPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_SystemFunctionPkg_id(self):
@@ -4597,9 +4745,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_owned_constraints(self):
         tested = SystemFunctionPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_SystemFunctionPkg_constraints(self):
@@ -4609,9 +4755,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_owned_property_values(self):
         tested = SystemFunctionPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_SystemFunctionPkg_applied_property_values(self):
@@ -4621,9 +4765,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_owned_property_value_groups(self):
         tested = SystemFunctionPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_SystemFunctionPkg_applied_property_value_groups(self):
@@ -4633,9 +4775,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_owned_enumeration_property_types(self):
         tested = SystemFunctionPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_SystemFunctionPkg_owned_diagrams(self):
@@ -4658,14 +4798,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_SystemFunctionPkg__r_e_cs(self):
+        tested = SystemFunctionPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_SystemFunctionPkg__r_p_ls(self):
+        tested = SystemFunctionPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_SystemFunctionPkg_get_label(self):
         tested = SystemFunctionPkg()
         tested.get_label()
         pass
 
-    def test_SystemFunctionPkg_get_type(self):
+    def test_SystemFunctionPkg_get_element_type(self):
         tested = SystemFunctionPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_SystemFunctionPkg_get_container(self):
@@ -4702,16 +4856,17 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_owned_system_function_pkgs(self):
         tested = SystemFunctionPkg()
-        value = SystemFunctionPkg()
-        tested.get_owned_system_function_pkgs().add(value)
-        self.assertEqual(tested.get_owned_system_function_pkgs().get(0), value)
+        tested.get_owned_system_function_pkgs()
         pass
 
     def test_SystemFunctionPkg_owned_system_functions(self):
         tested = SystemFunctionPkg()
-        value = SystemFunction()
-        tested.get_owned_system_functions().add(value)
-        self.assertEqual(tested.get_owned_system_functions().get(0), value)
+        tested.get_owned_system_functions()
+        pass
+
+    def test_SystemFunctionPkg_owned_categories(self):
+        tested = SystemFunctionPkg()
+        tested.get_owned_categories()
         pass
 
     def test_SystemFunction_kind(self):
@@ -4730,16 +4885,12 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_inputs(self):
         tested = SystemFunction()
-        value = FunctionInputPort()
-        tested.get_inputs().add(value)
-        self.assertEqual(tested.get_inputs().get(0), value)
+        tested.get_inputs()
         pass
 
     def test_SystemFunction_outputs(self):
         tested = SystemFunction()
-        value = FunctionOutputPort()
-        tested.get_outputs().add(value)
-        self.assertEqual(tested.get_outputs().get(0), value)
+        tested.get_outputs()
         pass
 
     def test_SystemFunction_incoming(self):
@@ -4842,9 +4993,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_owned_constraints(self):
         tested = SystemFunction()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_SystemFunction_constraints(self):
@@ -4854,9 +5003,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_owned_property_values(self):
         tested = SystemFunction()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_SystemFunction_applied_property_values(self):
@@ -4866,9 +5013,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_owned_property_value_groups(self):
         tested = SystemFunction()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_SystemFunction_applied_property_value_groups(self):
@@ -4878,9 +5023,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_owned_enumeration_property_types(self):
         tested = SystemFunction()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_SystemFunction_owned_diagrams(self):
@@ -4903,14 +5046,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_SystemFunction__r_e_cs(self):
+        tested = SystemFunction()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_SystemFunction__r_p_ls(self):
+        tested = SystemFunction()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_SystemFunction_get_label(self):
         tested = SystemFunction()
         tested.get_label()
         pass
 
-    def test_SystemFunction_get_type(self):
+    def test_SystemFunction_get_element_type(self):
         tested = SystemFunction()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_SystemFunction_get_container(self):
@@ -4952,9 +5109,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_owned_system_function_pkgs(self):
         tested = SystemFunction()
-        value = SystemFunctionPkg()
-        tested.get_owned_system_function_pkgs().add(value)
-        self.assertEqual(tested.get_owned_system_function_pkgs().get(0), value)
+        tested.get_owned_system_function_pkgs()
         pass
 
     def test_SystemFunction_realized_operational_activities(self):
@@ -4969,9 +5124,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_owned_property_value_pkgs(self):
         tested = CapabilityPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_CapabilityPkg_id(self):
@@ -5037,9 +5190,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_owned_constraints(self):
         tested = CapabilityPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_CapabilityPkg_constraints(self):
@@ -5049,9 +5200,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_owned_property_values(self):
         tested = CapabilityPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_CapabilityPkg_applied_property_values(self):
@@ -5061,9 +5210,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_owned_property_value_groups(self):
         tested = CapabilityPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_CapabilityPkg_applied_property_value_groups(self):
@@ -5073,9 +5220,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_owned_enumeration_property_types(self):
         tested = CapabilityPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_CapabilityPkg_owned_diagrams(self):
@@ -5098,14 +5243,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CapabilityPkg__r_e_cs(self):
+        tested = CapabilityPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CapabilityPkg__r_p_ls(self):
+        tested = CapabilityPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CapabilityPkg_get_label(self):
         tested = CapabilityPkg()
         tested.get_label()
         pass
 
-    def test_CapabilityPkg_get_type(self):
+    def test_CapabilityPkg_get_element_type(self):
         tested = CapabilityPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CapabilityPkg_get_container(self):
@@ -5142,16 +5301,12 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_owned_capability_pkgs(self):
         tested = CapabilityPkg()
-        value = CapabilityPkg()
-        tested.get_owned_capability_pkgs().add(value)
-        self.assertEqual(tested.get_owned_capability_pkgs().get(0), value)
+        tested.get_owned_capability_pkgs()
         pass
 
     def test_CapabilityPkg_owned_capabilities(self):
         tested = CapabilityPkg()
-        value = Capability()
-        tested.get_owned_capabilities().add(value)
-        self.assertEqual(tested.get_owned_capabilities().get(0), value)
+        tested.get_owned_capabilities()
         pass
 
     def test_Capability_owned_functional_chains(self):
@@ -5227,9 +5382,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_owned_property_value_pkgs(self):
         tested = Capability()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_Capability_id(self):
@@ -5295,9 +5448,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_owned_constraints(self):
         tested = Capability()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Capability_constraints(self):
@@ -5307,9 +5458,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_owned_property_values(self):
         tested = Capability()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Capability_applied_property_values(self):
@@ -5319,9 +5468,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_owned_property_value_groups(self):
         tested = Capability()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Capability_applied_property_value_groups(self):
@@ -5331,9 +5478,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_owned_enumeration_property_types(self):
         tested = Capability()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Capability_owned_diagrams(self):
@@ -5356,14 +5501,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Capability__r_e_cs(self):
+        tested = Capability()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Capability__r_p_ls(self):
+        tested = Capability()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Capability_get_label(self):
         tested = Capability()
         tested.get_label()
         pass
 
-    def test_Capability_get_type(self):
+    def test_Capability_get_element_type(self):
         tested = Capability()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Capability_get_container(self):
@@ -5422,9 +5581,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_property_value_pkgs(self):
         tested = SystemComponentPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_SystemComponentPkg_id(self):
@@ -5490,9 +5647,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_constraints(self):
         tested = SystemComponentPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_SystemComponentPkg_constraints(self):
@@ -5502,9 +5657,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_property_values(self):
         tested = SystemComponentPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_SystemComponentPkg_applied_property_values(self):
@@ -5514,9 +5667,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_property_value_groups(self):
         tested = SystemComponentPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_SystemComponentPkg_applied_property_value_groups(self):
@@ -5526,9 +5677,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_enumeration_property_types(self):
         tested = SystemComponentPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_SystemComponentPkg_owned_diagrams(self):
@@ -5551,14 +5700,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_SystemComponentPkg__r_e_cs(self):
+        tested = SystemComponentPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_SystemComponentPkg__r_p_ls(self):
+        tested = SystemComponentPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_SystemComponentPkg_get_label(self):
         tested = SystemComponentPkg()
         tested.get_label()
         pass
 
-    def test_SystemComponentPkg_get_type(self):
+    def test_SystemComponentPkg_get_element_type(self):
         tested = SystemComponentPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_SystemComponentPkg_get_container(self):
@@ -5595,9 +5758,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_system_component_pkgs(self):
         tested = SystemComponentPkg()
-        value = SystemComponentPkg()
-        tested.get_owned_system_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_system_component_pkgs().get(0), value)
+        tested.get_owned_system_component_pkgs()
         pass
 
     def test_SystemComponentPkg_owned_system(self):
@@ -5607,16 +5768,22 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_owned_actors(self):
         tested = SystemComponentPkg()
-        value = SystemActor()
-        tested.get_owned_actors().add(value)
-        self.assertEqual(tested.get_owned_actors().get(0), value)
+        tested.get_owned_actors()
+        pass
+
+    def test_SystemComponentPkg_owned_component_exchange_categories(self):
+        tested = SystemComponentPkg()
+        tested.get_owned_component_exchange_categories()
+        pass
+
+    def test_SystemComponentPkg_owned_physical_link_categories(self):
+        tested = SystemComponentPkg()
+        tested.get_owned_physical_link_categories()
         pass
 
     def test_System_contained_component_ports(self):
         tested = System()
-        value = ComponentPort()
-        tested.get_contained_component_ports().add(value)
-        self.assertEqual(tested.get_contained_component_ports().get(0), value)
+        tested.get_contained_component_ports()
         pass
 
     def test_System_incoming_component_exchanges(self):
@@ -5663,9 +5830,12 @@ class capella_tests(unittest.TestCase):
 
     def test_System_owned_state_machines(self):
         tested = System()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
+        pass
+
+    def test_System_owned_component_exchange_categories(self):
+        tested = System()
+        tested.get_owned_component_exchange_categories()
         pass
 
     def test_System_id(self):
@@ -5733,9 +5903,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_owned_constraints(self):
         tested = System()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_System_constraints(self):
@@ -5747,9 +5915,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_owned_property_values(self):
         tested = System()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_System_applied_property_values(self):
@@ -5759,9 +5925,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_owned_property_value_groups(self):
         tested = System()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_System_applied_property_value_groups(self):
@@ -5771,9 +5935,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_owned_enumeration_property_types(self):
         tested = System()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_System_owned_diagrams(self):
@@ -5800,14 +5962,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_System__r_e_cs(self):
+        tested = System()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_System__r_p_ls(self):
+        tested = System()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_System_get_label(self):
         tested = System()
         tested.get_label()
         pass
 
-    def test_System_get_type(self):
+    def test_System_get_element_type(self):
         tested = System()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_System_get_container(self):
@@ -5844,9 +6020,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_contained_physical_ports(self):
         tested = System()
-        value = PhysicalPort()
-        tested.get_contained_physical_ports().add(value)
-        self.assertEqual(tested.get_contained_physical_ports().get(0), value)
+        tested.get_contained_physical_ports()
         pass
 
     def test_System_physical_links(self):
@@ -5861,11 +6035,19 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_physical_paths()
         pass
 
+    def test_System_owned_physical_link_categories(self):
+        tested = System()
+        tested.get_owned_physical_link_categories()
+        pass
+
+    def test_System_owned_physical_paths(self):
+        tested = System()
+        tested.get_owned_physical_paths()
+        pass
+
     def test_SystemActor_contained_component_ports(self):
         tested = SystemActor()
-        value = ComponentPort()
-        tested.get_contained_component_ports().add(value)
-        self.assertEqual(tested.get_contained_component_ports().get(0), value)
+        tested.get_contained_component_ports()
         pass
 
     def test_SystemActor_incoming_component_exchanges(self):
@@ -5912,9 +6094,12 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_owned_state_machines(self):
         tested = SystemActor()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
+        pass
+
+    def test_SystemActor_owned_component_exchange_categories(self):
+        tested = SystemActor()
+        tested.get_owned_component_exchange_categories()
         pass
 
     def test_SystemActor_id(self):
@@ -5982,9 +6167,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_owned_constraints(self):
         tested = SystemActor()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_SystemActor_constraints(self):
@@ -5996,9 +6179,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_owned_property_values(self):
         tested = SystemActor()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_SystemActor_applied_property_values(self):
@@ -6008,9 +6189,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_owned_property_value_groups(self):
         tested = SystemActor()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_SystemActor_applied_property_value_groups(self):
@@ -6020,9 +6199,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_owned_enumeration_property_types(self):
         tested = SystemActor()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_SystemActor_owned_diagrams(self):
@@ -6049,14 +6226,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_SystemActor__r_e_cs(self):
+        tested = SystemActor()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_SystemActor__r_p_ls(self):
+        tested = SystemActor()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_SystemActor_get_label(self):
         tested = SystemActor()
         tested.get_label()
         pass
 
-    def test_SystemActor_get_type(self):
+    def test_SystemActor_get_element_type(self):
         tested = SystemActor()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_SystemActor_get_container(self):
@@ -6093,9 +6284,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_contained_physical_ports(self):
         tested = SystemActor()
-        value = PhysicalPort()
-        tested.get_contained_physical_ports().add(value)
-        self.assertEqual(tested.get_contained_physical_ports().get(0), value)
+        tested.get_contained_physical_ports()
         pass
 
     def test_SystemActor_physical_links(self):
@@ -6110,6 +6299,16 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_physical_paths()
         pass
 
+    def test_SystemActor_owned_physical_link_categories(self):
+        tested = SystemActor()
+        tested.get_owned_physical_link_categories()
+        pass
+
+    def test_SystemActor_owned_physical_paths(self):
+        tested = SystemActor()
+        tested.get_owned_physical_paths()
+        pass
+
     def test_SystemActor_is_human(self):
         tested = SystemActor()
         value = True
@@ -6119,16 +6318,12 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_owned_actors(self):
         tested = SystemActor()
-        value = SystemActor()
-        tested.get_owned_actors().add(value)
-        self.assertEqual(tested.get_owned_actors().get(0), value)
+        tested.get_owned_actors()
         pass
 
     def test_SystemActor_owned_system_component_pkgs(self):
         tested = SystemActor()
-        value = SystemComponentPkg()
-        tested.set_owned_system_component_pkgs(value)
-        self.assertEqual(tested.get_owned_system_component_pkgs(), value)
+        tested.get_owned_system_component_pkgs()
         pass
 
     def test_SystemActor_involving_missions(self):
@@ -6161,9 +6356,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_owned_property_value_pkgs(self):
         tested = MissionPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_MissionPkg_id(self):
@@ -6229,9 +6422,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_owned_constraints(self):
         tested = MissionPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_MissionPkg_constraints(self):
@@ -6241,9 +6432,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_owned_property_values(self):
         tested = MissionPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_MissionPkg_applied_property_values(self):
@@ -6253,9 +6442,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_owned_property_value_groups(self):
         tested = MissionPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_MissionPkg_applied_property_value_groups(self):
@@ -6265,9 +6452,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_owned_enumeration_property_types(self):
         tested = MissionPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_MissionPkg_owned_diagrams(self):
@@ -6290,14 +6475,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_MissionPkg__r_e_cs(self):
+        tested = MissionPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_MissionPkg__r_p_ls(self):
+        tested = MissionPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_MissionPkg_get_label(self):
         tested = MissionPkg()
         tested.get_label()
         pass
 
-    def test_MissionPkg_get_type(self):
+    def test_MissionPkg_get_element_type(self):
         tested = MissionPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_MissionPkg_get_container(self):
@@ -6334,16 +6533,12 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_owned_mission_pkgs(self):
         tested = MissionPkg()
-        value = MissionPkg()
-        tested.get_owned_mission_pkgs().add(value)
-        self.assertEqual(tested.get_owned_mission_pkgs().get(0), value)
+        tested.get_owned_mission_pkgs()
         pass
 
     def test_MissionPkg_owned_missions(self):
         tested = MissionPkg()
-        value = Mission()
-        tested.get_owned_missions().add(value)
-        self.assertEqual(tested.get_owned_missions().get(0), value)
+        tested.get_owned_missions()
         pass
 
     def test_Mission_id(self):
@@ -6409,9 +6604,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_owned_constraints(self):
         tested = Mission()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Mission_constraints(self):
@@ -6421,9 +6614,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_owned_property_values(self):
         tested = Mission()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Mission_applied_property_values(self):
@@ -6433,9 +6624,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_owned_property_value_groups(self):
         tested = Mission()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Mission_applied_property_value_groups(self):
@@ -6445,9 +6634,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_owned_enumeration_property_types(self):
         tested = Mission()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Mission_owned_diagrams(self):
@@ -6470,14 +6657,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Mission__r_e_cs(self):
+        tested = Mission()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Mission__r_p_ls(self):
+        tested = Mission()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Mission_get_label(self):
         tested = Mission()
         tested.get_label()
         pass
 
-    def test_Mission_get_type(self):
+    def test_Mission_get_element_type(self):
         tested = Mission()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Mission_get_container(self):
@@ -6526,9 +6727,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_owned_property_value_pkgs(self):
         tested = LogicalArchitecture()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_LogicalArchitecture_id(self):
@@ -6594,9 +6793,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_owned_constraints(self):
         tested = LogicalArchitecture()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_LogicalArchitecture_constraints(self):
@@ -6606,9 +6803,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_owned_property_values(self):
         tested = LogicalArchitecture()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_LogicalArchitecture_applied_property_values(self):
@@ -6618,9 +6813,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_owned_property_value_groups(self):
         tested = LogicalArchitecture()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_LogicalArchitecture_applied_property_value_groups(self):
@@ -6630,9 +6823,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_owned_enumeration_property_types(self):
         tested = LogicalArchitecture()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_LogicalArchitecture_owned_diagrams(self):
@@ -6655,14 +6846,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_LogicalArchitecture__r_e_cs(self):
+        tested = LogicalArchitecture()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_LogicalArchitecture__r_p_ls(self):
+        tested = LogicalArchitecture()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_LogicalArchitecture_get_label(self):
         tested = LogicalArchitecture()
         tested.get_label()
         pass
 
-    def test_LogicalArchitecture_get_type(self):
+    def test_LogicalArchitecture_get_element_type(self):
         tested = LogicalArchitecture()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_LogicalArchitecture_get_container(self):
@@ -6722,11 +6927,14 @@ class capella_tests(unittest.TestCase):
         tested.get_logical_component_pkg()
         pass
 
+    def test_LogicalArchitecture_logical_system(self):
+        tested = LogicalArchitecture()
+        tested.get_logical_system()
+        pass
+
     def test_LogicalFunctionPkg_owned_property_value_pkgs(self):
         tested = LogicalFunctionPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_LogicalFunctionPkg_id(self):
@@ -6792,9 +7000,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_owned_constraints(self):
         tested = LogicalFunctionPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_LogicalFunctionPkg_constraints(self):
@@ -6804,9 +7010,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_owned_property_values(self):
         tested = LogicalFunctionPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_LogicalFunctionPkg_applied_property_values(self):
@@ -6816,9 +7020,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_owned_property_value_groups(self):
         tested = LogicalFunctionPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_LogicalFunctionPkg_applied_property_value_groups(self):
@@ -6828,9 +7030,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_owned_enumeration_property_types(self):
         tested = LogicalFunctionPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_LogicalFunctionPkg_owned_diagrams(self):
@@ -6853,14 +7053,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_LogicalFunctionPkg__r_e_cs(self):
+        tested = LogicalFunctionPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_LogicalFunctionPkg__r_p_ls(self):
+        tested = LogicalFunctionPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_LogicalFunctionPkg_get_label(self):
         tested = LogicalFunctionPkg()
         tested.get_label()
         pass
 
-    def test_LogicalFunctionPkg_get_type(self):
+    def test_LogicalFunctionPkg_get_element_type(self):
         tested = LogicalFunctionPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_LogicalFunctionPkg_get_container(self):
@@ -6897,16 +7111,17 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_owned_logical_function_pkgs(self):
         tested = LogicalFunctionPkg()
-        value = LogicalFunctionPkg()
-        tested.get_owned_logical_function_pkgs().add(value)
-        self.assertEqual(tested.get_owned_logical_function_pkgs().get(0), value)
+        tested.get_owned_logical_function_pkgs()
         pass
 
     def test_LogicalFunctionPkg_owned_logical_functions(self):
         tested = LogicalFunctionPkg()
-        value = LogicalFunction()
-        tested.get_owned_logical_functions().add(value)
-        self.assertEqual(tested.get_owned_logical_functions().get(0), value)
+        tested.get_owned_logical_functions()
+        pass
+
+    def test_LogicalFunctionPkg_owned_categories(self):
+        tested = LogicalFunctionPkg()
+        tested.get_owned_categories()
         pass
 
     def test_LogicalFunction_kind(self):
@@ -6925,16 +7140,12 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_inputs(self):
         tested = LogicalFunction()
-        value = FunctionInputPort()
-        tested.get_inputs().add(value)
-        self.assertEqual(tested.get_inputs().get(0), value)
+        tested.get_inputs()
         pass
 
     def test_LogicalFunction_outputs(self):
         tested = LogicalFunction()
-        value = FunctionOutputPort()
-        tested.get_outputs().add(value)
-        self.assertEqual(tested.get_outputs().get(0), value)
+        tested.get_outputs()
         pass
 
     def test_LogicalFunction_incoming(self):
@@ -7037,9 +7248,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_owned_constraints(self):
         tested = LogicalFunction()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_LogicalFunction_constraints(self):
@@ -7049,9 +7258,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_owned_property_values(self):
         tested = LogicalFunction()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_LogicalFunction_applied_property_values(self):
@@ -7061,9 +7268,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_owned_property_value_groups(self):
         tested = LogicalFunction()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_LogicalFunction_applied_property_value_groups(self):
@@ -7073,9 +7278,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_owned_enumeration_property_types(self):
         tested = LogicalFunction()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_LogicalFunction_owned_diagrams(self):
@@ -7098,14 +7301,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_LogicalFunction__r_e_cs(self):
+        tested = LogicalFunction()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_LogicalFunction__r_p_ls(self):
+        tested = LogicalFunction()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_LogicalFunction_get_label(self):
         tested = LogicalFunction()
         tested.get_label()
         pass
 
-    def test_LogicalFunction_get_type(self):
+    def test_LogicalFunction_get_element_type(self):
         tested = LogicalFunction()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_LogicalFunction_get_container(self):
@@ -7147,9 +7364,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_owned_logical_function_pkgs(self):
         tested = LogicalFunction()
-        value = LogicalFunctionPkg()
-        tested.get_owned_logical_function_pkgs().add(value)
-        self.assertEqual(tested.get_owned_logical_function_pkgs().get(0), value)
+        tested.get_owned_logical_function_pkgs()
         pass
 
     def test_LogicalFunction_realized_system_functions(self):
@@ -7164,9 +7379,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_owned_property_value_pkgs(self):
         tested = CapabilityRealizationPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_CapabilityRealizationPkg_id(self):
@@ -7232,9 +7445,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_owned_constraints(self):
         tested = CapabilityRealizationPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_CapabilityRealizationPkg_constraints(self):
@@ -7244,9 +7455,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_owned_property_values(self):
         tested = CapabilityRealizationPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_CapabilityRealizationPkg_applied_property_values(self):
@@ -7256,9 +7465,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_owned_property_value_groups(self):
         tested = CapabilityRealizationPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_CapabilityRealizationPkg_applied_property_value_groups(self):
@@ -7268,9 +7475,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_owned_enumeration_property_types(self):
         tested = CapabilityRealizationPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_CapabilityRealizationPkg_owned_diagrams(self):
@@ -7293,14 +7498,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CapabilityRealizationPkg__r_e_cs(self):
+        tested = CapabilityRealizationPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CapabilityRealizationPkg__r_p_ls(self):
+        tested = CapabilityRealizationPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CapabilityRealizationPkg_get_label(self):
         tested = CapabilityRealizationPkg()
         tested.get_label()
         pass
 
-    def test_CapabilityRealizationPkg_get_type(self):
+    def test_CapabilityRealizationPkg_get_element_type(self):
         tested = CapabilityRealizationPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CapabilityRealizationPkg_get_container(self):
@@ -7337,16 +7556,12 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_owned_capability_realization_pkgs(self):
         tested = CapabilityRealizationPkg()
-        value = CapabilityRealizationPkg()
-        tested.get_owned_capability_realization_pkgs().add(value)
-        self.assertEqual(tested.get_owned_capability_realization_pkgs().get(0), value)
+        tested.get_owned_capability_realization_pkgs()
         pass
 
     def test_CapabilityRealizationPkg_owned_capability_realizations(self):
         tested = CapabilityRealizationPkg()
-        value = CapabilityRealization()
-        tested.get_owned_capability_realizations().add(value)
-        self.assertEqual(tested.get_owned_capability_realizations().get(0), value)
+        tested.get_owned_capability_realizations()
         pass
 
     def test_CapabilityRealization_owned_functional_chains(self):
@@ -7422,9 +7637,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_owned_property_value_pkgs(self):
         tested = CapabilityRealization()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_CapabilityRealization_id(self):
@@ -7490,9 +7703,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_owned_constraints(self):
         tested = CapabilityRealization()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_CapabilityRealization_constraints(self):
@@ -7502,9 +7713,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_owned_property_values(self):
         tested = CapabilityRealization()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_CapabilityRealization_applied_property_values(self):
@@ -7514,9 +7723,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_owned_property_value_groups(self):
         tested = CapabilityRealization()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_CapabilityRealization_applied_property_value_groups(self):
@@ -7526,9 +7733,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_owned_enumeration_property_types(self):
         tested = CapabilityRealization()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_CapabilityRealization_owned_diagrams(self):
@@ -7551,14 +7756,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CapabilityRealization__r_e_cs(self):
+        tested = CapabilityRealization()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CapabilityRealization__r_p_ls(self):
+        tested = CapabilityRealization()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CapabilityRealization_get_label(self):
         tested = CapabilityRealization()
         tested.get_label()
         pass
 
-    def test_CapabilityRealization_get_type(self):
+    def test_CapabilityRealization_get_element_type(self):
         tested = CapabilityRealization()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CapabilityRealization_get_container(self):
@@ -7638,9 +7857,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_property_value_pkgs(self):
         tested = LogicalComponentPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_LogicalComponentPkg_id(self):
@@ -7706,9 +7923,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_constraints(self):
         tested = LogicalComponentPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_LogicalComponentPkg_constraints(self):
@@ -7718,9 +7933,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_property_values(self):
         tested = LogicalComponentPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_LogicalComponentPkg_applied_property_values(self):
@@ -7730,9 +7943,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_property_value_groups(self):
         tested = LogicalComponentPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_LogicalComponentPkg_applied_property_value_groups(self):
@@ -7742,9 +7953,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_enumeration_property_types(self):
         tested = LogicalComponentPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_LogicalComponentPkg_owned_diagrams(self):
@@ -7767,14 +7976,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_LogicalComponentPkg__r_e_cs(self):
+        tested = LogicalComponentPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_LogicalComponentPkg__r_p_ls(self):
+        tested = LogicalComponentPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_LogicalComponentPkg_get_label(self):
         tested = LogicalComponentPkg()
         tested.get_label()
         pass
 
-    def test_LogicalComponentPkg_get_type(self):
+    def test_LogicalComponentPkg_get_element_type(self):
         tested = LogicalComponentPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_LogicalComponentPkg_get_container(self):
@@ -7821,23 +8044,27 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_owned_logical_actors(self):
         tested = LogicalComponentPkg()
-        value = LogicalActor()
-        tested.get_owned_logical_actors().add(value)
-        self.assertEqual(tested.get_owned_logical_actors().get(0), value)
+        tested.get_owned_logical_actors()
         pass
 
     def test_LogicalComponentPkg_owned_logical_components(self):
         tested = LogicalComponentPkg()
-        value = LogicalComponent()
-        tested.get_owned_logical_components().add(value)
-        self.assertEqual(tested.get_owned_logical_components().get(0), value)
+        tested.get_owned_logical_components()
+        pass
+
+    def test_LogicalComponentPkg_owned_component_exchange_categories(self):
+        tested = LogicalComponentPkg()
+        tested.get_owned_component_exchange_categories()
+        pass
+
+    def test_LogicalComponentPkg_owned_physical_link_categories(self):
+        tested = LogicalComponentPkg()
+        tested.get_owned_physical_link_categories()
         pass
 
     def test_LogicalSystem_contained_component_ports(self):
         tested = LogicalSystem()
-        value = ComponentPort()
-        tested.get_contained_component_ports().add(value)
-        self.assertEqual(tested.get_contained_component_ports().get(0), value)
+        tested.get_contained_component_ports()
         pass
 
     def test_LogicalSystem_incoming_component_exchanges(self):
@@ -7884,9 +8111,12 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_owned_state_machines(self):
         tested = LogicalSystem()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
+        pass
+
+    def test_LogicalSystem_owned_component_exchange_categories(self):
+        tested = LogicalSystem()
+        tested.get_owned_component_exchange_categories()
         pass
 
     def test_LogicalSystem_id(self):
@@ -7954,9 +8184,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_owned_constraints(self):
         tested = LogicalSystem()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_LogicalSystem_constraints(self):
@@ -7968,9 +8196,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_owned_property_values(self):
         tested = LogicalSystem()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_LogicalSystem_applied_property_values(self):
@@ -7980,9 +8206,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_owned_property_value_groups(self):
         tested = LogicalSystem()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_LogicalSystem_applied_property_value_groups(self):
@@ -7992,9 +8216,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_owned_enumeration_property_types(self):
         tested = LogicalSystem()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_LogicalSystem_owned_diagrams(self):
@@ -8021,14 +8243,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_LogicalSystem__r_e_cs(self):
+        tested = LogicalSystem()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_LogicalSystem__r_p_ls(self):
+        tested = LogicalSystem()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_LogicalSystem_get_label(self):
         tested = LogicalSystem()
         tested.get_label()
         pass
 
-    def test_LogicalSystem_get_type(self):
+    def test_LogicalSystem_get_element_type(self):
         tested = LogicalSystem()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_LogicalSystem_get_container(self):
@@ -8065,9 +8301,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_contained_physical_ports(self):
         tested = LogicalSystem()
-        value = PhysicalPort()
-        tested.get_contained_physical_ports().add(value)
-        self.assertEqual(tested.get_contained_physical_ports().get(0), value)
+        tested.get_contained_physical_ports()
         pass
 
     def test_LogicalSystem_physical_links(self):
@@ -8082,18 +8316,24 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_physical_paths()
         pass
 
+    def test_LogicalSystem_owned_physical_link_categories(self):
+        tested = LogicalSystem()
+        tested.get_owned_physical_link_categories()
+        pass
+
+    def test_LogicalSystem_owned_physical_paths(self):
+        tested = LogicalSystem()
+        tested.get_owned_physical_paths()
+        pass
+
     def test_LogicalSystem_owned_logical_components(self):
         tested = LogicalSystem()
-        value = LogicalComponent()
-        tested.get_owned_logical_components().add(value)
-        self.assertEqual(tested.get_owned_logical_components().get(0), value)
+        tested.get_owned_logical_components()
         pass
 
     def test_LogicalSystem_owned_logical_component_pkgs(self):
         tested = LogicalSystem()
-        value = LogicalComponentPkg()
-        tested.get_owned_logical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_logical_component_pkgs().get(0), value)
+        tested.get_owned_logical_component_pkgs()
         pass
 
     def test_LogicalComponent_contained_component_ports(self):
@@ -8135,9 +8375,12 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_owned_state_machines(self):
         tested = LogicalComponent()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
+        pass
+
+    def test_LogicalComponent_owned_component_exchange_categories(self):
+        tested = LogicalComponent()
+        tested.get_owned_component_exchange_categories()
         pass
 
     def test_LogicalComponent_id(self):
@@ -8203,9 +8446,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_owned_constraints(self):
         tested = LogicalComponent()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_LogicalComponent_constraints(self):
@@ -8215,9 +8456,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_owned_property_values(self):
         tested = LogicalComponent()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_LogicalComponent_applied_property_values(self):
@@ -8227,9 +8466,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_owned_property_value_groups(self):
         tested = LogicalComponent()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_LogicalComponent_applied_property_value_groups(self):
@@ -8239,9 +8476,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_owned_enumeration_property_types(self):
         tested = LogicalComponent()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_LogicalComponent_owned_diagrams(self):
@@ -8264,14 +8499,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_LogicalComponent__r_e_cs(self):
+        tested = LogicalComponent()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_LogicalComponent__r_p_ls(self):
+        tested = LogicalComponent()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_LogicalComponent_get_label(self):
         tested = LogicalComponent()
         tested.get_label()
         pass
 
-    def test_LogicalComponent_get_type(self):
+    def test_LogicalComponent_get_element_type(self):
         tested = LogicalComponent()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_LogicalComponent_get_container(self):
@@ -8308,16 +8557,12 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_owned_logical_components(self):
         tested = LogicalComponent()
-        value = LogicalComponent()
-        tested.get_owned_logical_components().add(value)
-        self.assertEqual(tested.get_owned_logical_components().get(0), value)
+        tested.get_owned_logical_components()
         pass
 
     def test_LogicalComponent_owned_logical_component_pkgs(self):
         tested = LogicalComponent()
-        value = LogicalComponentPkg()
-        tested.get_owned_logical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_logical_component_pkgs().get(0), value)
+        tested.get_owned_logical_component_pkgs()
         pass
 
     def test_LogicalComponent_is_human(self):
@@ -8382,9 +8627,12 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_owned_state_machines(self):
         tested = LogicalActor()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
+        pass
+
+    def test_LogicalActor_owned_component_exchange_categories(self):
+        tested = LogicalActor()
+        tested.get_owned_component_exchange_categories()
         pass
 
     def test_LogicalActor_id(self):
@@ -8450,9 +8698,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_owned_constraints(self):
         tested = LogicalActor()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_LogicalActor_constraints(self):
@@ -8462,9 +8708,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_owned_property_values(self):
         tested = LogicalActor()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_LogicalActor_applied_property_values(self):
@@ -8474,9 +8718,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_owned_property_value_groups(self):
         tested = LogicalActor()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_LogicalActor_applied_property_value_groups(self):
@@ -8486,9 +8728,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_owned_enumeration_property_types(self):
         tested = LogicalActor()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_LogicalActor_owned_diagrams(self):
@@ -8511,14 +8751,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_LogicalActor__r_e_cs(self):
+        tested = LogicalActor()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_LogicalActor__r_p_ls(self):
+        tested = LogicalActor()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_LogicalActor_get_label(self):
         tested = LogicalActor()
         tested.get_label()
         pass
 
-    def test_LogicalActor_get_type(self):
+    def test_LogicalActor_get_element_type(self):
         tested = LogicalActor()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_LogicalActor_get_container(self):
@@ -8570,18 +8824,24 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_physical_paths()
         pass
 
+    def test_LogicalActor_owned_physical_link_categories(self):
+        tested = LogicalActor()
+        tested.get_owned_physical_link_categories()
+        pass
+
+    def test_LogicalActor_owned_physical_paths(self):
+        tested = LogicalActor()
+        tested.get_owned_physical_paths()
+        pass
+
     def test_LogicalActor_owned_logical_actors(self):
         tested = LogicalActor()
-        value = LogicalActor()
-        tested.get_owned_logical_actors().add(value)
-        self.assertEqual(tested.get_owned_logical_actors().get(0), value)
+        tested.get_owned_logical_actors()
         pass
 
     def test_LogicalActor_owned_logical_component_pkgs(self):
         tested = LogicalActor()
-        value = LogicalComponentPkg()
-        tested.get_owned_logical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_logical_component_pkgs().get(0), value)
+        tested.get_owned_logical_component_pkgs()
         pass
 
     def test_LogicalActor_realized_system_actors(self):
@@ -8612,9 +8872,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_owned_property_value_pkgs(self):
         tested = PhysicalArchitecture()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_PhysicalArchitecture_id(self):
@@ -8680,9 +8938,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_owned_constraints(self):
         tested = PhysicalArchitecture()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalArchitecture_constraints(self):
@@ -8692,9 +8948,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_owned_property_values(self):
         tested = PhysicalArchitecture()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalArchitecture_applied_property_values(self):
@@ -8704,9 +8958,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_owned_property_value_groups(self):
         tested = PhysicalArchitecture()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalArchitecture_applied_property_value_groups(self):
@@ -8716,9 +8968,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_owned_enumeration_property_types(self):
         tested = PhysicalArchitecture()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalArchitecture_owned_diagrams(self):
@@ -8741,14 +8991,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalArchitecture__r_e_cs(self):
+        tested = PhysicalArchitecture()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalArchitecture__r_p_ls(self):
+        tested = PhysicalArchitecture()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalArchitecture_get_label(self):
         tested = PhysicalArchitecture()
         tested.get_label()
         pass
 
-    def test_PhysicalArchitecture_get_type(self):
+    def test_PhysicalArchitecture_get_element_type(self):
         tested = PhysicalArchitecture()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalArchitecture_get_container(self):
@@ -8808,11 +9072,14 @@ class capella_tests(unittest.TestCase):
         tested.get_physical_component_pkg()
         pass
 
+    def test_PhysicalArchitecture_physical_system(self):
+        tested = PhysicalArchitecture()
+        tested.get_physical_system()
+        pass
+
     def test_PhysicalFunctionPkg_owned_property_value_pkgs(self):
         tested = PhysicalFunctionPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_PhysicalFunctionPkg_id(self):
@@ -8878,9 +9145,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_owned_constraints(self):
         tested = PhysicalFunctionPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalFunctionPkg_constraints(self):
@@ -8890,9 +9155,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_owned_property_values(self):
         tested = PhysicalFunctionPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalFunctionPkg_applied_property_values(self):
@@ -8902,9 +9165,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_owned_property_value_groups(self):
         tested = PhysicalFunctionPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalFunctionPkg_applied_property_value_groups(self):
@@ -8914,9 +9175,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_owned_enumeration_property_types(self):
         tested = PhysicalFunctionPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalFunctionPkg_owned_diagrams(self):
@@ -8939,14 +9198,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalFunctionPkg__r_e_cs(self):
+        tested = PhysicalFunctionPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalFunctionPkg__r_p_ls(self):
+        tested = PhysicalFunctionPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalFunctionPkg_get_label(self):
         tested = PhysicalFunctionPkg()
         tested.get_label()
         pass
 
-    def test_PhysicalFunctionPkg_get_type(self):
+    def test_PhysicalFunctionPkg_get_element_type(self):
         tested = PhysicalFunctionPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalFunctionPkg_get_container(self):
@@ -8983,16 +9256,17 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_owned_physical_function_pkgs(self):
         tested = PhysicalFunctionPkg()
-        value = PhysicalFunctionPkg()
-        tested.get_owned_physical_function_pkgs().add(value)
-        self.assertEqual(tested.get_owned_physical_function_pkgs().get(0), value)
+        tested.get_owned_physical_function_pkgs()
         pass
 
     def test_PhysicalFunctionPkg_owned_physical_functions(self):
         tested = PhysicalFunctionPkg()
-        value = PhysicalFunction()
-        tested.get_owned_physical_functions().add(value)
-        self.assertEqual(tested.get_owned_physical_functions().get(0), value)
+        tested.get_owned_physical_functions()
+        pass
+
+    def test_PhysicalFunctionPkg_owned_categories(self):
+        tested = PhysicalFunctionPkg()
+        tested.get_owned_categories()
         pass
 
     def test_PhysicalFunction_kind(self):
@@ -9011,16 +9285,12 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_inputs(self):
         tested = PhysicalFunction()
-        value = FunctionInputPort()
-        tested.get_inputs().add(value)
-        self.assertEqual(tested.get_inputs().get(0), value)
+        tested.get_inputs()
         pass
 
     def test_PhysicalFunction_outputs(self):
         tested = PhysicalFunction()
-        value = FunctionOutputPort()
-        tested.get_outputs().add(value)
-        self.assertEqual(tested.get_outputs().get(0), value)
+        tested.get_outputs()
         pass
 
     def test_PhysicalFunction_incoming(self):
@@ -9123,9 +9393,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_owned_constraints(self):
         tested = PhysicalFunction()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalFunction_constraints(self):
@@ -9135,9 +9403,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_owned_property_values(self):
         tested = PhysicalFunction()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalFunction_applied_property_values(self):
@@ -9147,9 +9413,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_owned_property_value_groups(self):
         tested = PhysicalFunction()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalFunction_applied_property_value_groups(self):
@@ -9159,9 +9423,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_owned_enumeration_property_types(self):
         tested = PhysicalFunction()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalFunction_owned_diagrams(self):
@@ -9184,14 +9446,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalFunction__r_e_cs(self):
+        tested = PhysicalFunction()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalFunction__r_p_ls(self):
+        tested = PhysicalFunction()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalFunction_get_label(self):
         tested = PhysicalFunction()
         tested.get_label()
         pass
 
-    def test_PhysicalFunction_get_type(self):
+    def test_PhysicalFunction_get_element_type(self):
         tested = PhysicalFunction()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalFunction_get_container(self):
@@ -9233,9 +9509,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_owned_physical_function_pkgs(self):
         tested = PhysicalFunction()
-        value = PhysicalFunctionPkg()
-        tested.get_owned_physical_function_pkgs().add(value)
-        self.assertEqual(tested.get_owned_physical_function_pkgs().get(0), value)
+        tested.get_owned_physical_function_pkgs()
         pass
 
     def test_PhysicalFunction_realized_logical_functions(self):
@@ -9245,9 +9519,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_property_value_pkgs(self):
         tested = PhysicalComponentPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_PhysicalComponentPkg_id(self):
@@ -9313,9 +9585,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_constraints(self):
         tested = PhysicalComponentPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalComponentPkg_constraints(self):
@@ -9325,9 +9595,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_property_values(self):
         tested = PhysicalComponentPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalComponentPkg_applied_property_values(self):
@@ -9337,9 +9605,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_property_value_groups(self):
         tested = PhysicalComponentPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalComponentPkg_applied_property_value_groups(self):
@@ -9349,9 +9615,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_enumeration_property_types(self):
         tested = PhysicalComponentPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalComponentPkg_owned_diagrams(self):
@@ -9374,14 +9638,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalComponentPkg__r_e_cs(self):
+        tested = PhysicalComponentPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalComponentPkg__r_p_ls(self):
+        tested = PhysicalComponentPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalComponentPkg_get_label(self):
         tested = PhysicalComponentPkg()
         tested.get_label()
         pass
 
-    def test_PhysicalComponentPkg_get_type(self):
+    def test_PhysicalComponentPkg_get_element_type(self):
         tested = PhysicalComponentPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalComponentPkg_get_container(self):
@@ -9418,9 +9696,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_physical_component_pkgs(self):
         tested = PhysicalComponentPkg()
-        value = PhysicalComponentPkg()
-        tested.get_owned_physical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_physical_component_pkgs().get(0), value)
+        tested.get_owned_physical_component_pkgs()
         pass
 
     def test_PhysicalComponentPkg_owned_physical_system(self):
@@ -9430,16 +9706,22 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_owned_physical_actors(self):
         tested = PhysicalComponentPkg()
-        value = PhysicalActor()
-        tested.get_owned_physical_actors().add(value)
-        self.assertEqual(tested.get_owned_physical_actors().get(0), value)
+        tested.get_owned_physical_actors()
         pass
 
     def test_PhysicalComponentPkg_owned_physical_components(self):
         tested = PhysicalComponentPkg()
-        value = NodePC()
-        tested.get_owned_physical_components().add(value)
-        self.assertEqual(tested.get_owned_physical_components().get(0), value)
+        tested.get_owned_physical_components()
+        pass
+
+    def test_PhysicalComponentPkg_owned_component_exchange_categories(self):
+        tested = PhysicalComponentPkg()
+        tested.get_owned_component_exchange_categories()
+        pass
+
+    def test_PhysicalComponentPkg_owned_physical_link_categories(self):
+        tested = PhysicalComponentPkg()
+        tested.get_owned_physical_link_categories()
         pass
 
     def test_PhysicalSystem_id(self):
@@ -9507,9 +9789,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_owned_constraints(self):
         tested = PhysicalSystem()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalSystem_constraints(self):
@@ -9521,9 +9801,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_owned_property_values(self):
         tested = PhysicalSystem()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalSystem_applied_property_values(self):
@@ -9533,9 +9811,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_owned_property_value_groups(self):
         tested = PhysicalSystem()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalSystem_applied_property_value_groups(self):
@@ -9545,9 +9821,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_owned_enumeration_property_types(self):
         tested = PhysicalSystem()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalSystem_owned_diagrams(self):
@@ -9574,14 +9848,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalSystem__r_e_cs(self):
+        tested = PhysicalSystem()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalSystem__r_p_ls(self):
+        tested = PhysicalSystem()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalSystem_get_label(self):
         tested = PhysicalSystem()
         tested.get_label()
         pass
 
-    def test_PhysicalSystem_get_type(self):
+    def test_PhysicalSystem_get_element_type(self):
         tested = PhysicalSystem()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalSystem_get_container(self):
@@ -9616,18 +9904,41 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_PhysicalSystem_contained_physical_ports(self):
+        tested = PhysicalSystem()
+        tested.get_contained_physical_ports()
+        pass
+
+    def test_PhysicalSystem_physical_links(self):
+        tested = PhysicalSystem()
+        value = PhysicalLink()
+        tested.get_physical_links().add(value)
+        self.assertEqual(tested.get_physical_links().get(0), value)
+        pass
+
+    def test_PhysicalSystem_involving_physical_paths(self):
+        tested = PhysicalSystem()
+        tested.get_involving_physical_paths()
+        pass
+
+    def test_PhysicalSystem_owned_physical_link_categories(self):
+        tested = PhysicalSystem()
+        tested.get_owned_physical_link_categories()
+        pass
+
+    def test_PhysicalSystem_owned_physical_paths(self):
+        tested = PhysicalSystem()
+        tested.get_owned_physical_paths()
+        pass
+
     def test_PhysicalSystem_owned_physical_components(self):
         tested = PhysicalSystem()
-        value = NodePC()
-        tested.get_owned_physical_components().add(value)
-        self.assertEqual(tested.get_owned_physical_components().get(0), value)
+        tested.get_owned_physical_components()
         pass
 
     def test_PhysicalSystem_owned_physical_component_pkgs(self):
         tested = PhysicalSystem()
-        value = PhysicalComponentPkg()
-        tested.get_owned_physical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_physical_component_pkgs().get(0), value)
+        tested.get_owned_physical_component_pkgs()
         pass
 
     def test_BehaviorPC_kind(self):
@@ -9639,16 +9950,12 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_owned_physical_components(self):
         tested = BehaviorPC()
-        value = NodePC()
-        tested.get_owned_physical_components().add(value)
-        self.assertEqual(tested.get_owned_physical_components().get(0), value)
+        tested.get_owned_physical_components()
         pass
 
     def test_BehaviorPC_owned_physical_component_pkgs(self):
         tested = BehaviorPC()
-        value = PhysicalComponentPkg()
-        tested.get_owned_physical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_physical_component_pkgs().get(0), value)
+        tested.get_owned_physical_component_pkgs()
         pass
 
     def test_BehaviorPC_is_human(self):
@@ -9731,9 +10038,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_owned_constraints(self):
         tested = BehaviorPC()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_BehaviorPC_constraints(self):
@@ -9743,9 +10048,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_owned_property_values(self):
         tested = BehaviorPC()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_BehaviorPC_applied_property_values(self):
@@ -9755,9 +10058,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_owned_property_value_groups(self):
         tested = BehaviorPC()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_BehaviorPC_applied_property_value_groups(self):
@@ -9767,9 +10068,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_owned_enumeration_property_types(self):
         tested = BehaviorPC()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_BehaviorPC_owned_diagrams(self):
@@ -9792,14 +10091,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_BehaviorPC__r_e_cs(self):
+        tested = BehaviorPC()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_BehaviorPC__r_p_ls(self):
+        tested = BehaviorPC()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_BehaviorPC_get_label(self):
         tested = BehaviorPC()
         tested.get_label()
         pass
 
-    def test_BehaviorPC_get_type(self):
+    def test_BehaviorPC_get_element_type(self):
         tested = BehaviorPC()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_BehaviorPC_get_container(self):
@@ -9877,9 +10190,12 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_owned_state_machines(self):
         tested = BehaviorPC()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
+        pass
+
+    def test_BehaviorPC_owned_component_exchange_categories(self):
+        tested = BehaviorPC()
+        tested.get_owned_component_exchange_categories()
         pass
 
     def test_BehaviorPC_deploying_node_p_c(self):
@@ -9901,16 +10217,12 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_owned_physical_components(self):
         tested = NodePC()
-        value = NodePC()
-        tested.get_owned_physical_components().add(value)
-        self.assertEqual(tested.get_owned_physical_components().get(0), value)
+        tested.get_owned_physical_components()
         pass
 
     def test_NodePC_owned_physical_component_pkgs(self):
         tested = NodePC()
-        value = PhysicalComponentPkg()
-        tested.get_owned_physical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_physical_component_pkgs().get(0), value)
+        tested.get_owned_physical_component_pkgs()
         pass
 
     def test_NodePC_is_human(self):
@@ -9993,9 +10305,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_owned_constraints(self):
         tested = NodePC()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_NodePC_constraints(self):
@@ -10005,9 +10315,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_owned_property_values(self):
         tested = NodePC()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_NodePC_applied_property_values(self):
@@ -10017,9 +10325,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_owned_property_value_groups(self):
         tested = NodePC()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_NodePC_applied_property_value_groups(self):
@@ -10029,9 +10335,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_owned_enumeration_property_types(self):
         tested = NodePC()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_NodePC_owned_diagrams(self):
@@ -10054,14 +10358,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_NodePC__r_e_cs(self):
+        tested = NodePC()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_NodePC__r_p_ls(self):
+        tested = NodePC()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_NodePC_get_label(self):
         tested = NodePC()
         tested.get_label()
         pass
 
-    def test_NodePC_get_type(self):
+    def test_NodePC_get_element_type(self):
         tested = NodePC()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_NodePC_get_container(self):
@@ -10111,6 +10429,16 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_physical_paths()
         pass
 
+    def test_NodePC_owned_physical_link_categories(self):
+        tested = NodePC()
+        tested.get_owned_physical_link_categories()
+        pass
+
+    def test_NodePC_owned_physical_paths(self):
+        tested = NodePC()
+        tested.get_owned_physical_paths()
+        pass
+
     def test_NodePC_deployed_behavior_p_cs(self):
         tested = NodePC()
         value = BehaviorPC()
@@ -10120,9 +10448,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_owned_state_machines(self):
         tested = NodePC()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
         pass
 
     def test_PhysicalActor_contained_component_ports(self):
@@ -10168,9 +10494,12 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_owned_state_machines(self):
         tested = PhysicalActor()
-        value = StateMachine()
-        tested.get_owned_state_machines().add(value)
-        self.assertEqual(tested.get_owned_state_machines().get(0), value)
+        tested.get_owned_state_machines()
+        pass
+
+    def test_PhysicalActor_owned_component_exchange_categories(self):
+        tested = PhysicalActor()
+        tested.get_owned_component_exchange_categories()
         pass
 
     def test_PhysicalActor_id(self):
@@ -10236,9 +10565,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_owned_constraints(self):
         tested = PhysicalActor()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalActor_constraints(self):
@@ -10248,9 +10575,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_owned_property_values(self):
         tested = PhysicalActor()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalActor_applied_property_values(self):
@@ -10260,9 +10585,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_owned_property_value_groups(self):
         tested = PhysicalActor()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalActor_applied_property_value_groups(self):
@@ -10272,9 +10595,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_owned_enumeration_property_types(self):
         tested = PhysicalActor()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalActor_owned_diagrams(self):
@@ -10297,14 +10618,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalActor__r_e_cs(self):
+        tested = PhysicalActor()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalActor__r_p_ls(self):
+        tested = PhysicalActor()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalActor_get_label(self):
         tested = PhysicalActor()
         tested.get_label()
         pass
 
-    def test_PhysicalActor_get_type(self):
+    def test_PhysicalActor_get_element_type(self):
         tested = PhysicalActor()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalActor_get_container(self):
@@ -10356,18 +10691,24 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_physical_paths()
         pass
 
+    def test_PhysicalActor_owned_physical_link_categories(self):
+        tested = PhysicalActor()
+        tested.get_owned_physical_link_categories()
+        pass
+
+    def test_PhysicalActor_owned_physical_paths(self):
+        tested = PhysicalActor()
+        tested.get_owned_physical_paths()
+        pass
+
     def test_PhysicalActor_owned_physical_actors(self):
         tested = PhysicalActor()
-        value = PhysicalActor()
-        tested.get_owned_physical_actors().add(value)
-        self.assertEqual(tested.get_owned_physical_actors().get(0), value)
+        tested.get_owned_physical_actors()
         pass
 
     def test_PhysicalActor_owned_physical_component_pkgs(self):
         tested = PhysicalActor()
-        value = PhysicalComponentPkg()
-        tested.get_owned_physical_component_pkgs().add(value)
-        self.assertEqual(tested.get_owned_physical_component_pkgs().get(0), value)
+        tested.get_owned_physical_component_pkgs()
         pass
 
     def test_PhysicalActor_realized_logical_actors(self):
@@ -10391,9 +10732,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_owned_property_value_pkgs(self):
         tested = EPBSArchitecture()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_EPBSArchitecture_id(self):
@@ -10459,9 +10798,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_owned_constraints(self):
         tested = EPBSArchitecture()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_EPBSArchitecture_constraints(self):
@@ -10471,9 +10808,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_owned_property_values(self):
         tested = EPBSArchitecture()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_EPBSArchitecture_applied_property_values(self):
@@ -10483,9 +10818,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_owned_property_value_groups(self):
         tested = EPBSArchitecture()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_EPBSArchitecture_applied_property_value_groups(self):
@@ -10495,9 +10828,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_owned_enumeration_property_types(self):
         tested = EPBSArchitecture()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_EPBSArchitecture_owned_diagrams(self):
@@ -10520,14 +10851,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_EPBSArchitecture__r_e_cs(self):
+        tested = EPBSArchitecture()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_EPBSArchitecture__r_p_ls(self):
+        tested = EPBSArchitecture()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_EPBSArchitecture_get_label(self):
         tested = EPBSArchitecture()
         tested.get_label()
         pass
 
-    def test_EPBSArchitecture_get_type(self):
+    def test_EPBSArchitecture_get_element_type(self):
         tested = EPBSArchitecture()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_EPBSArchitecture_get_container(self):
@@ -10574,16 +10919,12 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_data_pkg(self):
         tested = EPBSArchitecture()
-        value = DataPkg()
-        tested.set_data_pkg(value)
-        self.assertEqual(tested.get_data_pkg(), value)
+        tested.get_data_pkg()
         pass
 
     def test_ConfigurationItemPkg_owned_property_value_pkgs(self):
         tested = ConfigurationItemPkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_ConfigurationItemPkg_id(self):
@@ -10649,9 +10990,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_owned_constraints(self):
         tested = ConfigurationItemPkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ConfigurationItemPkg_constraints(self):
@@ -10661,9 +11000,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_owned_property_values(self):
         tested = ConfigurationItemPkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ConfigurationItemPkg_applied_property_values(self):
@@ -10673,9 +11010,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_owned_property_value_groups(self):
         tested = ConfigurationItemPkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ConfigurationItemPkg_applied_property_value_groups(self):
@@ -10685,9 +11020,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_owned_enumeration_property_types(self):
         tested = ConfigurationItemPkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ConfigurationItemPkg_owned_diagrams(self):
@@ -10710,14 +11043,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ConfigurationItemPkg__r_e_cs(self):
+        tested = ConfigurationItemPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ConfigurationItemPkg__r_p_ls(self):
+        tested = ConfigurationItemPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ConfigurationItemPkg_get_label(self):
         tested = ConfigurationItemPkg()
         tested.get_label()
         pass
 
-    def test_ConfigurationItemPkg_get_type(self):
+    def test_ConfigurationItemPkg_get_element_type(self):
         tested = ConfigurationItemPkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ConfigurationItemPkg_get_container(self):
@@ -10754,16 +11101,12 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_owned_configuration_item_pkgs(self):
         tested = ConfigurationItemPkg()
-        value = ConfigurationItemPkg()
-        tested.get_owned_configuration_item_pkgs().add(value)
-        self.assertEqual(tested.get_owned_configuration_item_pkgs().get(0), value)
+        tested.get_owned_configuration_item_pkgs()
         pass
 
     def test_ConfigurationItemPkg_owned_configuration_items(self):
         tested = ConfigurationItemPkg()
-        value = ConfigurationItem()
-        tested.get_owned_configuration_items().add(value)
-        self.assertEqual(tested.get_owned_configuration_items().get(0), value)
+        tested.get_owned_configuration_items()
         pass
 
     def test_ConfigurationItem_id(self):
@@ -10829,9 +11172,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_owned_constraints(self):
         tested = ConfigurationItem()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ConfigurationItem_constraints(self):
@@ -10841,9 +11182,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_owned_property_values(self):
         tested = ConfigurationItem()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ConfigurationItem_applied_property_values(self):
@@ -10853,9 +11192,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_owned_property_value_groups(self):
         tested = ConfigurationItem()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ConfigurationItem_applied_property_value_groups(self):
@@ -10865,9 +11202,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_owned_enumeration_property_types(self):
         tested = ConfigurationItem()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ConfigurationItem_owned_diagrams(self):
@@ -10890,14 +11225,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ConfigurationItem__r_e_cs(self):
+        tested = ConfigurationItem()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ConfigurationItem__r_p_ls(self):
+        tested = ConfigurationItem()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ConfigurationItem_get_label(self):
         tested = ConfigurationItem()
         tested.get_label()
         pass
 
-    def test_ConfigurationItem_get_type(self):
+    def test_ConfigurationItem_get_element_type(self):
         tested = ConfigurationItem()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ConfigurationItem_get_container(self):
@@ -10948,16 +11297,12 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_owned_configuration_items(self):
         tested = ConfigurationItem()
-        value = ConfigurationItem()
-        tested.get_owned_configuration_items().add(value)
-        self.assertEqual(tested.get_owned_configuration_items().get(0), value)
+        tested.get_owned_configuration_items()
         pass
 
     def test_ConfigurationItem_owned_configuration_item_pkgs(self):
         tested = ConfigurationItem()
-        value = ConfigurationItemPkg()
-        tested.get_owned_configuration_item_pkgs().add(value)
-        self.assertEqual(tested.get_owned_configuration_item_pkgs().get(0), value)
+        tested.get_owned_configuration_item_pkgs()
         pass
 
     def test_ConfigurationItem_allocated_physical_artifacts(self):
@@ -11028,9 +11373,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_owned_constraints(self):
         tested = StateMachine()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_StateMachine_constraints(self):
@@ -11040,9 +11383,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_owned_property_values(self):
         tested = StateMachine()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_StateMachine_applied_property_values(self):
@@ -11052,9 +11393,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_owned_property_value_groups(self):
         tested = StateMachine()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_StateMachine_applied_property_value_groups(self):
@@ -11064,9 +11403,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_owned_enumeration_property_types(self):
         tested = StateMachine()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_StateMachine_owned_diagrams(self):
@@ -11089,14 +11426,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_StateMachine__r_e_cs(self):
+        tested = StateMachine()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_StateMachine__r_p_ls(self):
+        tested = StateMachine()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_StateMachine_get_label(self):
         tested = StateMachine()
         tested.get_label()
         pass
 
-    def test_StateMachine_get_type(self):
+    def test_StateMachine_get_element_type(self):
         tested = StateMachine()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_StateMachine_get_container(self):
@@ -11133,9 +11484,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_owned_regions(self):
         tested = StateMachine()
-        value = Region()
-        tested.get_owned_regions().add(value)
-        self.assertEqual(tested.get_owned_regions().get(0), value)
+        tested.get_owned_regions()
         pass
 
     def test_State_incoming(self):
@@ -11225,9 +11574,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_owned_constraints(self):
         tested = State()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_State_constraints(self):
@@ -11237,9 +11584,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_owned_property_values(self):
         tested = State()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_State_applied_property_values(self):
@@ -11249,9 +11594,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_owned_property_value_groups(self):
         tested = State()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_State_applied_property_value_groups(self):
@@ -11261,9 +11604,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_owned_enumeration_property_types(self):
         tested = State()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_State_owned_diagrams(self):
@@ -11286,14 +11627,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_State__r_e_cs(self):
+        tested = State()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_State__r_p_ls(self):
+        tested = State()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_State_get_label(self):
         tested = State()
         tested.get_label()
         pass
 
-    def test_State_get_type(self):
+    def test_State_get_element_type(self):
         tested = State()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_State_get_container(self):
@@ -11330,9 +11685,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_owned_regions(self):
         tested = State()
-        value = Region()
-        tested.get_owned_regions().add(value)
-        self.assertEqual(tested.get_owned_regions().get(0), value)
+        tested.get_owned_regions()
         pass
 
     def test_State_available_activities_functions(self):
@@ -11382,9 +11735,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_owned_regions(self):
         tested = Mode()
-        value = Region()
-        tested.get_owned_regions().add(value)
-        self.assertEqual(tested.get_owned_regions().get(0), value)
+        tested.get_owned_regions()
         pass
 
     def test_Mode_available_activities_functions(self):
@@ -11519,9 +11870,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_owned_constraints(self):
         tested = Mode()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Mode_constraints(self):
@@ -11531,9 +11880,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_owned_property_values(self):
         tested = Mode()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Mode_applied_property_values(self):
@@ -11543,9 +11890,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_owned_property_value_groups(self):
         tested = Mode()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Mode_applied_property_value_groups(self):
@@ -11555,9 +11900,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_owned_enumeration_property_types(self):
         tested = Mode()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Mode_owned_diagrams(self):
@@ -11580,14 +11923,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Mode__r_e_cs(self):
+        tested = Mode()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Mode__r_p_ls(self):
+        tested = Mode()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Mode_get_label(self):
         tested = Mode()
         tested.get_label()
         pass
 
-    def test_Mode_get_type(self):
+    def test_Mode_get_element_type(self):
         tested = Mode()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Mode_get_container(self):
@@ -11715,9 +12072,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_owned_constraints(self):
         tested = Pseudostate()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Pseudostate_constraints(self):
@@ -11729,9 +12084,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_owned_property_values(self):
         tested = Pseudostate()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Pseudostate_applied_property_values(self):
@@ -11741,9 +12094,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_owned_property_value_groups(self):
         tested = Pseudostate()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Pseudostate_applied_property_value_groups(self):
@@ -11753,9 +12104,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_owned_enumeration_property_types(self):
         tested = Pseudostate()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Pseudostate_owned_diagrams(self):
@@ -11782,14 +12131,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Pseudostate__r_e_cs(self):
+        tested = Pseudostate()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Pseudostate__r_p_ls(self):
+        tested = Pseudostate()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Pseudostate_get_label(self):
         tested = Pseudostate()
         tested.get_label()
         pass
 
-    def test_Pseudostate_get_type(self):
+    def test_Pseudostate_get_element_type(self):
         tested = Pseudostate()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Pseudostate_get_container(self):
@@ -11892,9 +12255,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_owned_constraints(self):
         tested = Region()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Region_constraints(self):
@@ -11904,9 +12265,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_owned_property_values(self):
         tested = Region()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Region_applied_property_values(self):
@@ -11916,9 +12275,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_owned_property_value_groups(self):
         tested = Region()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Region_applied_property_value_groups(self):
@@ -11928,9 +12285,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_owned_enumeration_property_types(self):
         tested = Region()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Region_owned_diagrams(self):
@@ -11953,14 +12308,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Region__r_e_cs(self):
+        tested = Region()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Region__r_p_ls(self):
+        tested = Region()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Region_get_label(self):
         tested = Region()
         tested.get_label()
         pass
 
-    def test_Region_get_type(self):
+    def test_Region_get_element_type(self):
         tested = Region()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Region_get_container(self):
@@ -11997,9 +12366,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_owned_states(self):
         tested = Region()
-        value = Pseudostate()
-        tested.get_owned_states().add(value)
-        self.assertEqual(tested.get_owned_states().get(0), value)
+        tested.get_owned_states()
         pass
 
     def test_StateTransition_id(self):
@@ -12065,9 +12432,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_owned_constraints(self):
         tested = StateTransition()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_StateTransition_constraints(self):
@@ -12077,9 +12442,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_owned_property_values(self):
         tested = StateTransition()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_StateTransition_applied_property_values(self):
@@ -12089,9 +12452,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_owned_property_value_groups(self):
         tested = StateTransition()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_StateTransition_applied_property_value_groups(self):
@@ -12101,9 +12462,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_owned_enumeration_property_types(self):
         tested = StateTransition()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_StateTransition_owned_diagrams(self):
@@ -12126,14 +12485,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_StateTransition__r_e_cs(self):
+        tested = StateTransition()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_StateTransition__r_p_ls(self):
+        tested = StateTransition()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_StateTransition_get_label(self):
         tested = StateTransition()
         tested.get_label()
         pass
 
-    def test_StateTransition_get_type(self):
+    def test_StateTransition_get_element_type(self):
         tested = StateTransition()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_StateTransition_get_container(self):
@@ -12279,9 +12652,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_owned_constraints(self):
         tested = ChangeEvent()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ChangeEvent_constraints(self):
@@ -12291,9 +12662,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_owned_property_values(self):
         tested = ChangeEvent()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ChangeEvent_applied_property_values(self):
@@ -12303,9 +12672,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_owned_property_value_groups(self):
         tested = ChangeEvent()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ChangeEvent_applied_property_value_groups(self):
@@ -12315,9 +12682,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_owned_enumeration_property_types(self):
         tested = ChangeEvent()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ChangeEvent_owned_diagrams(self):
@@ -12340,14 +12705,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ChangeEvent__r_e_cs(self):
+        tested = ChangeEvent()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ChangeEvent__r_p_ls(self):
+        tested = ChangeEvent()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ChangeEvent_get_label(self):
         tested = ChangeEvent()
         tested.get_label()
         pass
 
-    def test_ChangeEvent_get_type(self):
+    def test_ChangeEvent_get_element_type(self):
         tested = ChangeEvent()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ChangeEvent_get_container(self):
@@ -12450,9 +12829,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_owned_constraints(self):
         tested = TimeEvent()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_TimeEvent_constraints(self):
@@ -12462,9 +12839,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_owned_property_values(self):
         tested = TimeEvent()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_TimeEvent_applied_property_values(self):
@@ -12474,9 +12849,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_owned_property_value_groups(self):
         tested = TimeEvent()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_TimeEvent_applied_property_value_groups(self):
@@ -12486,9 +12859,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_owned_enumeration_property_types(self):
         tested = TimeEvent()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_TimeEvent_owned_diagrams(self):
@@ -12511,14 +12882,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_TimeEvent__r_e_cs(self):
+        tested = TimeEvent()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_TimeEvent__r_p_ls(self):
+        tested = TimeEvent()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_TimeEvent_get_label(self):
         tested = TimeEvent()
         tested.get_label()
         pass
 
-    def test_TimeEvent_get_type(self):
+    def test_TimeEvent_get_element_type(self):
         tested = TimeEvent()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_TimeEvent_get_container(self):
@@ -12628,9 +13013,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_owned_constraints(self):
         tested = Scenario()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Scenario_constraints(self):
@@ -12640,9 +13023,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_owned_property_values(self):
         tested = Scenario()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Scenario_applied_property_values(self):
@@ -12652,9 +13033,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_owned_property_value_groups(self):
         tested = Scenario()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Scenario_applied_property_value_groups(self):
@@ -12664,9 +13043,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_owned_enumeration_property_types(self):
         tested = Scenario()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Scenario_owned_diagrams(self):
@@ -12689,14 +13066,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Scenario__r_e_cs(self):
+        tested = Scenario()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Scenario__r_p_ls(self):
+        tested = Scenario()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Scenario_get_label(self):
         tested = Scenario()
         tested.get_label()
         pass
 
-    def test_Scenario_get_type(self):
+    def test_Scenario_get_element_type(self):
         tested = Scenario()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Scenario_get_container(self):
@@ -12853,9 +13244,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_owned_constraints(self):
         tested = InstanceRole()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_InstanceRole_constraints(self):
@@ -12865,9 +13254,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_owned_property_values(self):
         tested = InstanceRole()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_InstanceRole_applied_property_values(self):
@@ -12877,9 +13264,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_owned_property_value_groups(self):
         tested = InstanceRole()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_InstanceRole_applied_property_value_groups(self):
@@ -12889,9 +13274,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_owned_enumeration_property_types(self):
         tested = InstanceRole()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_InstanceRole_owned_diagrams(self):
@@ -12914,14 +13297,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_InstanceRole__r_e_cs(self):
+        tested = InstanceRole()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_InstanceRole__r_p_ls(self):
+        tested = InstanceRole()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_InstanceRole_get_label(self):
         tested = InstanceRole()
         tested.get_label()
         pass
 
-    def test_InstanceRole_get_type(self):
+    def test_InstanceRole_get_element_type(self):
         tested = InstanceRole()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_InstanceRole_get_container(self):
@@ -13024,9 +13421,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_owned_constraints(self):
         tested = SequenceMessage()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_SequenceMessage_constraints(self):
@@ -13036,9 +13431,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_owned_property_values(self):
         tested = SequenceMessage()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_SequenceMessage_applied_property_values(self):
@@ -13048,9 +13441,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_owned_property_value_groups(self):
         tested = SequenceMessage()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_SequenceMessage_applied_property_value_groups(self):
@@ -13060,9 +13451,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_owned_enumeration_property_types(self):
         tested = SequenceMessage()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_SequenceMessage_owned_diagrams(self):
@@ -13085,14 +13474,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_SequenceMessage__r_e_cs(self):
+        tested = SequenceMessage()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_SequenceMessage__r_p_ls(self):
+        tested = SequenceMessage()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_SequenceMessage_get_label(self):
         tested = SequenceMessage()
         tested.get_label()
         pass
 
-    def test_SequenceMessage_get_type(self):
+    def test_SequenceMessage_get_element_type(self):
         tested = SequenceMessage()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_SequenceMessage_get_container(self):
@@ -13225,9 +13628,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_owned_constraints(self):
         tested = StateFragment()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_StateFragment_constraints(self):
@@ -13237,9 +13638,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_owned_property_values(self):
         tested = StateFragment()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_StateFragment_applied_property_values(self):
@@ -13249,9 +13648,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_owned_property_value_groups(self):
         tested = StateFragment()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_StateFragment_applied_property_value_groups(self):
@@ -13261,9 +13658,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_owned_enumeration_property_types(self):
         tested = StateFragment()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_StateFragment_owned_diagrams(self):
@@ -13286,14 +13681,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_StateFragment__r_e_cs(self):
+        tested = StateFragment()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_StateFragment__r_p_ls(self):
+        tested = StateFragment()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_StateFragment_get_label(self):
         tested = StateFragment()
         tested.get_label()
         pass
 
-    def test_StateFragment_get_type(self):
+    def test_StateFragment_get_element_type(self):
         tested = StateFragment()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_StateFragment_get_container(self):
@@ -13406,9 +13815,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_owned_constraints(self):
         tested = CombinedFragment()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_CombinedFragment_constraints(self):
@@ -13418,9 +13825,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_owned_property_values(self):
         tested = CombinedFragment()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_CombinedFragment_applied_property_values(self):
@@ -13430,9 +13835,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_owned_property_value_groups(self):
         tested = CombinedFragment()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_CombinedFragment_applied_property_value_groups(self):
@@ -13442,9 +13845,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_owned_enumeration_property_types(self):
         tested = CombinedFragment()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_CombinedFragment_owned_diagrams(self):
@@ -13467,14 +13868,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CombinedFragment__r_e_cs(self):
+        tested = CombinedFragment()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CombinedFragment__r_p_ls(self):
+        tested = CombinedFragment()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CombinedFragment_get_label(self):
         tested = CombinedFragment()
         tested.get_label()
         pass
 
-    def test_CombinedFragment_get_type(self):
+    def test_CombinedFragment_get_element_type(self):
         tested = CombinedFragment()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CombinedFragment_get_container(self):
@@ -13587,9 +14002,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_owned_constraints(self):
         tested = Operand()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Operand_constraints(self):
@@ -13599,9 +14012,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_owned_property_values(self):
         tested = Operand()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Operand_applied_property_values(self):
@@ -13611,9 +14022,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_owned_property_value_groups(self):
         tested = Operand()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Operand_applied_property_value_groups(self):
@@ -13623,9 +14032,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_owned_enumeration_property_types(self):
         tested = Operand()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Operand_owned_diagrams(self):
@@ -13648,14 +14055,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Operand__r_e_cs(self):
+        tested = Operand()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Operand__r_p_ls(self):
+        tested = Operand()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Operand_get_label(self):
         tested = Operand()
         tested.get_label()
         pass
 
-    def test_Operand_get_type(self):
+    def test_Operand_get_element_type(self):
         tested = Operand()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Operand_get_container(self):
@@ -13770,9 +14191,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_owned_constraints(self):
         tested = ConstraintDuration()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ConstraintDuration_constraints(self):
@@ -13782,9 +14201,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_owned_property_values(self):
         tested = ConstraintDuration()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ConstraintDuration_applied_property_values(self):
@@ -13794,9 +14211,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_owned_property_value_groups(self):
         tested = ConstraintDuration()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ConstraintDuration_applied_property_value_groups(self):
@@ -13806,9 +14221,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_owned_enumeration_property_types(self):
         tested = ConstraintDuration()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ConstraintDuration_owned_diagrams(self):
@@ -13831,14 +14244,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ConstraintDuration__r_e_cs(self):
+        tested = ConstraintDuration()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ConstraintDuration__r_p_ls(self):
+        tested = ConstraintDuration()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ConstraintDuration_get_label(self):
         tested = ConstraintDuration()
         tested.get_label()
         pass
 
-    def test_ConstraintDuration_get_type(self):
+    def test_ConstraintDuration_get_element_type(self):
         tested = ConstraintDuration()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ConstraintDuration_get_container(self):
@@ -13948,9 +14375,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_owned_constraints(self):
         tested = PhysicalPort()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalPort_constraints(self):
@@ -13960,9 +14385,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_owned_property_values(self):
         tested = PhysicalPort()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalPort_applied_property_values(self):
@@ -13972,9 +14395,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_owned_property_value_groups(self):
         tested = PhysicalPort()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalPort_applied_property_value_groups(self):
@@ -13984,9 +14405,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_owned_enumeration_property_types(self):
         tested = PhysicalPort()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalPort_owned_diagrams(self):
@@ -14009,14 +14428,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalPort__r_e_cs(self):
+        tested = PhysicalPort()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalPort__r_p_ls(self):
+        tested = PhysicalPort()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalPort_get_label(self):
         tested = PhysicalPort()
         tested.get_label()
         pass
 
-    def test_PhysicalPort_get_type(self):
+    def test_PhysicalPort_get_element_type(self):
         tested = PhysicalPort()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalPort_get_container(self):
@@ -14139,9 +14572,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_owned_constraints(self):
         tested = PhysicalLink()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalLink_constraints(self):
@@ -14151,9 +14582,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_owned_property_values(self):
         tested = PhysicalLink()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalLink_applied_property_values(self):
@@ -14163,9 +14592,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_owned_property_value_groups(self):
         tested = PhysicalLink()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalLink_applied_property_value_groups(self):
@@ -14175,9 +14602,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_owned_enumeration_property_types(self):
         tested = PhysicalLink()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalLink_owned_diagrams(self):
@@ -14200,14 +14625,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalLink__r_e_cs(self):
+        tested = PhysicalLink()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalLink__r_p_ls(self):
+        tested = PhysicalLink()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalLink_get_label(self):
         tested = PhysicalLink()
         tested.get_label()
         pass
 
-    def test_PhysicalLink_get_type(self):
+    def test_PhysicalLink_get_element_type(self):
         tested = PhysicalLink()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalLink_get_container(self):
@@ -14344,9 +14783,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_owned_constraints(self):
         tested = PhysicalLinkCategory()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalLinkCategory_constraints(self):
@@ -14356,9 +14793,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_owned_property_values(self):
         tested = PhysicalLinkCategory()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalLinkCategory_applied_property_values(self):
@@ -14368,9 +14803,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_owned_property_value_groups(self):
         tested = PhysicalLinkCategory()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalLinkCategory_applied_property_value_groups(self):
@@ -14380,9 +14813,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_owned_enumeration_property_types(self):
         tested = PhysicalLinkCategory()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalLinkCategory_owned_diagrams(self):
@@ -14405,14 +14836,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalLinkCategory__r_e_cs(self):
+        tested = PhysicalLinkCategory()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalLinkCategory__r_p_ls(self):
+        tested = PhysicalLinkCategory()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalLinkCategory_get_label(self):
         tested = PhysicalLinkCategory()
         tested.get_label()
         pass
 
-    def test_PhysicalLinkCategory_get_type(self):
+    def test_PhysicalLinkCategory_get_element_type(self):
         tested = PhysicalLinkCategory()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalLinkCategory_get_container(self):
@@ -14517,9 +14962,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_owned_constraints(self):
         tested = PhysicalPath()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalPath_constraints(self):
@@ -14529,9 +14972,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_owned_property_values(self):
         tested = PhysicalPath()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalPath_applied_property_values(self):
@@ -14541,9 +14982,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_owned_property_value_groups(self):
         tested = PhysicalPath()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalPath_applied_property_value_groups(self):
@@ -14553,9 +14992,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_owned_enumeration_property_types(self):
         tested = PhysicalPath()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalPath_owned_diagrams(self):
@@ -14578,14 +15015,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalPath__r_e_cs(self):
+        tested = PhysicalPath()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalPath__r_p_ls(self):
+        tested = PhysicalPath()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalPath_get_label(self):
         tested = PhysicalPath()
         tested.get_label()
         pass
 
-    def test_PhysicalPath_get_type(self):
+    def test_PhysicalPath_get_element_type(self):
         tested = PhysicalPath()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalPath_get_container(self):
@@ -14647,9 +15098,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_owned_property_value_pkgs(self):
         tested = InterfacePkg()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_InterfacePkg_id(self):
@@ -14715,9 +15164,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_owned_constraints(self):
         tested = InterfacePkg()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_InterfacePkg_constraints(self):
@@ -14727,9 +15174,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_owned_property_values(self):
         tested = InterfacePkg()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_InterfacePkg_applied_property_values(self):
@@ -14739,9 +15184,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_owned_property_value_groups(self):
         tested = InterfacePkg()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_InterfacePkg_applied_property_value_groups(self):
@@ -14751,9 +15194,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_owned_enumeration_property_types(self):
         tested = InterfacePkg()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_InterfacePkg_owned_diagrams(self):
@@ -14776,14 +15217,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_InterfacePkg__r_e_cs(self):
+        tested = InterfacePkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_InterfacePkg__r_p_ls(self):
+        tested = InterfacePkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_InterfacePkg_get_label(self):
         tested = InterfacePkg()
         tested.get_label()
         pass
 
-    def test_InterfacePkg_get_type(self):
+    def test_InterfacePkg_get_element_type(self):
         tested = InterfacePkg()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_InterfacePkg_get_container(self):
@@ -14820,23 +15275,17 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_owned_interface_pkgs(self):
         tested = InterfacePkg()
-        value = InterfacePkg()
-        tested.get_owned_interface_pkgs().add(value)
-        self.assertEqual(tested.get_owned_interface_pkgs().get(0), value)
+        tested.get_owned_interface_pkgs()
         pass
 
     def test_InterfacePkg_owned_interfaces(self):
         tested = InterfacePkg()
-        value = Interface()
-        tested.get_owned_interfaces().add(value)
-        self.assertEqual(tested.get_owned_interfaces().get(0), value)
+        tested.get_owned_interfaces()
         pass
 
     def test_InterfacePkg_owned_exchange_items(self):
         tested = InterfacePkg()
-        value = ExchangeItem()
-        tested.get_owned_exchange_items().add(value)
-        self.assertEqual(tested.get_owned_exchange_items().get(0), value)
+        tested.get_owned_exchange_items()
         pass
 
     def test_Interface_id(self):
@@ -14902,9 +15351,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_owned_constraints(self):
         tested = Interface()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Interface_constraints(self):
@@ -14914,9 +15361,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_owned_property_values(self):
         tested = Interface()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Interface_applied_property_values(self):
@@ -14926,9 +15371,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_owned_property_value_groups(self):
         tested = Interface()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Interface_applied_property_value_groups(self):
@@ -14938,9 +15381,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_owned_enumeration_property_types(self):
         tested = Interface()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Interface_owned_diagrams(self):
@@ -14963,14 +15404,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Interface__r_e_cs(self):
+        tested = Interface()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Interface__r_p_ls(self):
+        tested = Interface()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Interface_get_label(self):
         tested = Interface()
         tested.get_label()
         pass
 
-    def test_Interface_get_type(self):
+    def test_Interface_get_element_type(self):
         tested = Interface()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Interface_get_container(self):
@@ -15014,9 +15469,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_owned_exchange_item_allocations(self):
         tested = Interface()
-        value = ExchangeItemAllocation()
-        tested.get_owned_exchange_item_allocations().add(value)
-        self.assertEqual(tested.get_owned_exchange_item_allocations().get(0), value)
+        tested.get_owned_exchange_item_allocations()
         pass
 
     def test_Interface_exchange_items(self):
@@ -15117,9 +15570,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_owned_constraints(self):
         tested = ExchangeItemAllocation()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ExchangeItemAllocation_constraints(self):
@@ -15129,9 +15580,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_owned_property_values(self):
         tested = ExchangeItemAllocation()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ExchangeItemAllocation_applied_property_values(self):
@@ -15141,9 +15590,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_owned_property_value_groups(self):
         tested = ExchangeItemAllocation()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ExchangeItemAllocation_applied_property_value_groups(self):
@@ -15153,9 +15600,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_owned_enumeration_property_types(self):
         tested = ExchangeItemAllocation()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ExchangeItemAllocation_owned_diagrams(self):
@@ -15178,14 +15623,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ExchangeItemAllocation__r_e_cs(self):
+        tested = ExchangeItemAllocation()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ExchangeItemAllocation__r_p_ls(self):
+        tested = ExchangeItemAllocation()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ExchangeItemAllocation_get_label(self):
         tested = ExchangeItemAllocation()
         tested.get_label()
         pass
 
-    def test_ExchangeItemAllocation_get_type(self):
+    def test_ExchangeItemAllocation_get_element_type(self):
         tested = ExchangeItemAllocation()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ExchangeItemAllocation_get_container(self):
@@ -15309,9 +15768,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_owned_constraints(self):
         tested = ExchangeItem()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ExchangeItem_constraints(self):
@@ -15321,9 +15778,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_owned_property_values(self):
         tested = ExchangeItem()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ExchangeItem_applied_property_values(self):
@@ -15333,9 +15788,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_owned_property_value_groups(self):
         tested = ExchangeItem()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ExchangeItem_applied_property_value_groups(self):
@@ -15345,9 +15798,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_owned_enumeration_property_types(self):
         tested = ExchangeItem()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ExchangeItem_owned_diagrams(self):
@@ -15370,14 +15821,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ExchangeItem__r_e_cs(self):
+        tested = ExchangeItem()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ExchangeItem__r_p_ls(self):
+        tested = ExchangeItem()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ExchangeItem_get_label(self):
         tested = ExchangeItem()
         tested.get_label()
         pass
 
-    def test_ExchangeItem_get_type(self):
+    def test_ExchangeItem_get_element_type(self):
         tested = ExchangeItem()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ExchangeItem_get_container(self):
@@ -15435,9 +15900,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_owned_elements(self):
         tested = ExchangeItem()
-        value = ExchangeItemElement()
-        tested.get_owned_elements().add(value)
-        self.assertEqual(tested.get_owned_elements().get(0), value)
+        tested.get_owned_elements()
         pass
 
     def test_ExchangeItem_allocator_interfaces(self):
@@ -15533,9 +15996,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_owned_constraints(self):
         tested = ExchangeItemElement()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ExchangeItemElement_constraints(self):
@@ -15545,9 +16006,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_owned_property_values(self):
         tested = ExchangeItemElement()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ExchangeItemElement_applied_property_values(self):
@@ -15557,9 +16016,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_owned_property_value_groups(self):
         tested = ExchangeItemElement()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ExchangeItemElement_applied_property_value_groups(self):
@@ -15569,9 +16026,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_owned_enumeration_property_types(self):
         tested = ExchangeItemElement()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ExchangeItemElement_owned_diagrams(self):
@@ -15594,14 +16049,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ExchangeItemElement__r_e_cs(self):
+        tested = ExchangeItemElement()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ExchangeItemElement__r_p_ls(self):
+        tested = ExchangeItemElement()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ExchangeItemElement_get_label(self):
         tested = ExchangeItemElement()
         tested.get_label()
         pass
 
-    def test_ExchangeItemElement_get_type(self):
+    def test_ExchangeItemElement_get_element_type(self):
         tested = ExchangeItemElement()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ExchangeItemElement_get_container(self):
@@ -15711,9 +16180,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_owned_constraints(self):
         tested = FunctionInputPort()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_FunctionInputPort_constraints(self):
@@ -15723,9 +16190,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_owned_property_values(self):
         tested = FunctionInputPort()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_FunctionInputPort_applied_property_values(self):
@@ -15735,9 +16200,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_owned_property_value_groups(self):
         tested = FunctionInputPort()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_FunctionInputPort_applied_property_value_groups(self):
@@ -15747,9 +16210,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_owned_enumeration_property_types(self):
         tested = FunctionInputPort()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_FunctionInputPort_owned_diagrams(self):
@@ -15772,14 +16233,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_FunctionInputPort__r_e_cs(self):
+        tested = FunctionInputPort()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_FunctionInputPort__r_p_ls(self):
+        tested = FunctionInputPort()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_FunctionInputPort_get_label(self):
         tested = FunctionInputPort()
         tested.get_label()
         pass
 
-    def test_FunctionInputPort_get_type(self):
+    def test_FunctionInputPort_get_element_type(self):
         tested = FunctionInputPort()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_FunctionInputPort_get_container(self):
@@ -15910,9 +16385,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_owned_constraints(self):
         tested = FunctionOutputPort()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_FunctionOutputPort_constraints(self):
@@ -15922,9 +16395,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_owned_property_values(self):
         tested = FunctionOutputPort()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_FunctionOutputPort_applied_property_values(self):
@@ -15934,9 +16405,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_owned_property_value_groups(self):
         tested = FunctionOutputPort()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_FunctionOutputPort_applied_property_value_groups(self):
@@ -15946,9 +16415,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_owned_enumeration_property_types(self):
         tested = FunctionOutputPort()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_FunctionOutputPort_owned_diagrams(self):
@@ -15971,14 +16438,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_FunctionOutputPort__r_e_cs(self):
+        tested = FunctionOutputPort()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_FunctionOutputPort__r_p_ls(self):
+        tested = FunctionOutputPort()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_FunctionOutputPort_get_label(self):
         tested = FunctionOutputPort()
         tested.get_label()
         pass
 
-    def test_FunctionOutputPort_get_type(self):
+    def test_FunctionOutputPort_get_element_type(self):
         tested = FunctionOutputPort()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_FunctionOutputPort_get_container(self):
@@ -16102,9 +16583,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_owned_constraints(self):
         tested = FunctionalExchange()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_FunctionalExchange_constraints(self):
@@ -16114,9 +16593,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_owned_property_values(self):
         tested = FunctionalExchange()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_FunctionalExchange_applied_property_values(self):
@@ -16126,9 +16603,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_owned_property_value_groups(self):
         tested = FunctionalExchange()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_FunctionalExchange_applied_property_value_groups(self):
@@ -16138,9 +16613,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_owned_enumeration_property_types(self):
         tested = FunctionalExchange()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_FunctionalExchange_owned_diagrams(self):
@@ -16163,14 +16636,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_FunctionalExchange__r_e_cs(self):
+        tested = FunctionalExchange()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_FunctionalExchange__r_p_ls(self):
+        tested = FunctionalExchange()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_FunctionalExchange_get_label(self):
         tested = FunctionalExchange()
         tested.get_label()
         pass
 
-    def test_FunctionalExchange_get_type(self):
+    def test_FunctionalExchange_get_element_type(self):
         tested = FunctionalExchange()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_FunctionalExchange_get_container(self):
@@ -16330,9 +16817,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_owned_constraints(self):
         tested = ExchangeCategory()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ExchangeCategory_constraints(self):
@@ -16342,9 +16827,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_owned_property_values(self):
         tested = ExchangeCategory()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ExchangeCategory_applied_property_values(self):
@@ -16354,9 +16837,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_owned_property_value_groups(self):
         tested = ExchangeCategory()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ExchangeCategory_applied_property_value_groups(self):
@@ -16366,9 +16847,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_owned_enumeration_property_types(self):
         tested = ExchangeCategory()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ExchangeCategory_owned_diagrams(self):
@@ -16391,14 +16870,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ExchangeCategory__r_e_cs(self):
+        tested = ExchangeCategory()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ExchangeCategory__r_p_ls(self):
+        tested = ExchangeCategory()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ExchangeCategory_get_label(self):
         tested = ExchangeCategory()
         tested.get_label()
         pass
 
-    def test_ExchangeCategory_get_type(self):
+    def test_ExchangeCategory_get_element_type(self):
         tested = ExchangeCategory()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ExchangeCategory_get_container(self):
@@ -16503,9 +16996,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_owned_constraints(self):
         tested = FunctionalChain()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_FunctionalChain_constraints(self):
@@ -16515,9 +17006,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_owned_property_values(self):
         tested = FunctionalChain()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_FunctionalChain_applied_property_values(self):
@@ -16527,9 +17016,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_owned_property_value_groups(self):
         tested = FunctionalChain()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_FunctionalChain_applied_property_value_groups(self):
@@ -16539,9 +17026,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_owned_enumeration_property_types(self):
         tested = FunctionalChain()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_FunctionalChain_owned_diagrams(self):
@@ -16564,14 +17049,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_FunctionalChain__r_e_cs(self):
+        tested = FunctionalChain()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_FunctionalChain__r_p_ls(self):
+        tested = FunctionalChain()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_FunctionalChain_get_label(self):
         tested = FunctionalChain()
         tested.get_label()
         pass
 
-    def test_FunctionalChain_get_type(self):
+    def test_FunctionalChain_get_element_type(self):
         tested = FunctionalChain()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_FunctionalChain_get_container(self):
@@ -16725,9 +17224,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_owned_constraints(self):
         tested = ComponentPort()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ComponentPort_constraints(self):
@@ -16737,9 +17234,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_owned_property_values(self):
         tested = ComponentPort()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ComponentPort_applied_property_values(self):
@@ -16749,9 +17244,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_owned_property_value_groups(self):
         tested = ComponentPort()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ComponentPort_applied_property_value_groups(self):
@@ -16761,9 +17254,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_owned_enumeration_property_types(self):
         tested = ComponentPort()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ComponentPort_owned_diagrams(self):
@@ -16786,14 +17277,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ComponentPort__r_e_cs(self):
+        tested = ComponentPort()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ComponentPort__r_p_ls(self):
+        tested = ComponentPort()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ComponentPort_get_label(self):
         tested = ComponentPort()
         tested.get_label()
         pass
 
-    def test_ComponentPort_get_type(self):
+    def test_ComponentPort_get_element_type(self):
         tested = ComponentPort()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ComponentPort_get_container(self):
@@ -16933,9 +17438,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_owned_constraints(self):
         tested = ComponentExchange()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ComponentExchange_constraints(self):
@@ -16945,9 +17448,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_owned_property_values(self):
         tested = ComponentExchange()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ComponentExchange_applied_property_values(self):
@@ -16957,9 +17458,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_owned_property_value_groups(self):
         tested = ComponentExchange()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ComponentExchange_applied_property_value_groups(self):
@@ -16969,9 +17468,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_owned_enumeration_property_types(self):
         tested = ComponentExchange()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ComponentExchange_owned_diagrams(self):
@@ -16994,14 +17491,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ComponentExchange__r_e_cs(self):
+        tested = ComponentExchange()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ComponentExchange__r_p_ls(self):
+        tested = ComponentExchange()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ComponentExchange_get_label(self):
         tested = ComponentExchange()
         tested.get_label()
         pass
 
-    def test_ComponentExchange_get_type(self):
+    def test_ComponentExchange_get_element_type(self):
         tested = ComponentExchange()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ComponentExchange_get_container(self):
@@ -17167,9 +17678,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_owned_constraints(self):
         tested = ComponentExchangeCategory()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_ComponentExchangeCategory_constraints(self):
@@ -17179,9 +17688,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_owned_property_values(self):
         tested = ComponentExchangeCategory()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_ComponentExchangeCategory_applied_property_values(self):
@@ -17191,9 +17698,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_owned_property_value_groups(self):
         tested = ComponentExchangeCategory()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_ComponentExchangeCategory_applied_property_value_groups(self):
@@ -17203,9 +17708,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_owned_enumeration_property_types(self):
         tested = ComponentExchangeCategory()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_ComponentExchangeCategory_owned_diagrams(self):
@@ -17228,14 +17731,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_ComponentExchangeCategory__r_e_cs(self):
+        tested = ComponentExchangeCategory()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_ComponentExchangeCategory__r_p_ls(self):
+        tested = ComponentExchangeCategory()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_ComponentExchangeCategory_get_label(self):
         tested = ComponentExchangeCategory()
         tested.get_label()
         pass
 
-    def test_ComponentExchangeCategory_get_type(self):
+    def test_ComponentExchangeCategory_get_element_type(self):
         tested = ComponentExchangeCategory()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_ComponentExchangeCategory_get_container(self):
@@ -17458,9 +17975,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operation_owned_parameters(self):
         tested = Operation()
-        value = Parameter()
-        tested.get_owned_parameters().add(value)
-        self.assertEqual(tested.get_owned_parameters().get(0), value)
+        tested.get_owned_parameters()
         pass
 
     def test_Operation_thrown_exceptions(self):
@@ -17544,9 +18059,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_owned_property_value_pkgs(self):
         tested = Enumeration()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_Enumeration_id(self):
@@ -17612,9 +18125,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_owned_constraints(self):
         tested = Enumeration()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Enumeration_constraints(self):
@@ -17624,9 +18135,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_owned_property_values(self):
         tested = Enumeration()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Enumeration_applied_property_values(self):
@@ -17636,9 +18145,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_owned_property_value_groups(self):
         tested = Enumeration()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Enumeration_applied_property_value_groups(self):
@@ -17648,9 +18155,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_owned_enumeration_property_types(self):
         tested = Enumeration()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Enumeration_owned_diagrams(self):
@@ -17673,14 +18178,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Enumeration__r_e_cs(self):
+        tested = Enumeration()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Enumeration__r_p_ls(self):
+        tested = Enumeration()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Enumeration_get_label(self):
         tested = Enumeration()
         tested.get_label()
         pass
 
-    def test_Enumeration_get_type(self):
+    def test_Enumeration_get_element_type(self):
         tested = Enumeration()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Enumeration_get_container(self):
@@ -17738,9 +18257,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_owned_literals(self):
         tested = Enumeration()
-        value = EnumerationLiteral()
-        tested.get_owned_literals().add(value)
-        self.assertEqual(tested.get_owned_literals().get(0), value)
+        tested.get_owned_literals()
         pass
 
     def test_Enumeration_default_value(self):
@@ -17820,9 +18337,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_owned_property_value_pkgs(self):
         tested = BooleanType()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_BooleanType_id(self):
@@ -17888,9 +18403,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_owned_constraints(self):
         tested = BooleanType()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_BooleanType_constraints(self):
@@ -17900,9 +18413,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_owned_property_values(self):
         tested = BooleanType()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_BooleanType_applied_property_values(self):
@@ -17912,9 +18423,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_owned_property_value_groups(self):
         tested = BooleanType()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_BooleanType_applied_property_value_groups(self):
@@ -17924,9 +18433,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_owned_enumeration_property_types(self):
         tested = BooleanType()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_BooleanType_owned_diagrams(self):
@@ -17949,14 +18456,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_BooleanType__r_e_cs(self):
+        tested = BooleanType()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_BooleanType__r_p_ls(self):
+        tested = BooleanType()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_BooleanType_get_label(self):
         tested = BooleanType()
         tested.get_label()
         pass
 
-    def test_BooleanType_get_type(self):
+    def test_BooleanType_get_element_type(self):
         tested = BooleanType()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_BooleanType_get_container(self):
@@ -17993,9 +18514,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_owned_literals(self):
         tested = BooleanType()
-        value = LiteralBooleanValue()
-        tested.get_owned_literals().add(value)
-        self.assertEqual(tested.get_owned_literals().get(0), value)
+        tested.get_owned_literals()
         pass
 
     def test_BooleanType_default_value(self):
@@ -18053,9 +18572,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_owned_property_value_pkgs(self):
         tested = StringType()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_StringType_id(self):
@@ -18121,9 +18638,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_owned_constraints(self):
         tested = StringType()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_StringType_constraints(self):
@@ -18133,9 +18648,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_owned_property_values(self):
         tested = StringType()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_StringType_applied_property_values(self):
@@ -18145,9 +18658,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_owned_property_value_groups(self):
         tested = StringType()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_StringType_applied_property_value_groups(self):
@@ -18157,9 +18668,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_owned_enumeration_property_types(self):
         tested = StringType()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_StringType_owned_diagrams(self):
@@ -18182,14 +18691,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_StringType__r_e_cs(self):
+        tested = StringType()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_StringType__r_p_ls(self):
+        tested = StringType()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_StringType_get_label(self):
         tested = StringType()
         tested.get_label()
         pass
 
-    def test_StringType_get_type(self):
+    def test_StringType_get_element_type(self):
         tested = StringType()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_StringType_get_container(self):
@@ -18315,9 +18838,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_owned_property_value_pkgs(self):
         tested = NumericType()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_NumericType_id(self):
@@ -18383,9 +18904,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_owned_constraints(self):
         tested = NumericType()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_NumericType_constraints(self):
@@ -18395,9 +18914,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_owned_property_values(self):
         tested = NumericType()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_NumericType_applied_property_values(self):
@@ -18407,9 +18924,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_owned_property_value_groups(self):
         tested = NumericType()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_NumericType_applied_property_value_groups(self):
@@ -18419,9 +18934,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_owned_enumeration_property_types(self):
         tested = NumericType()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_NumericType_owned_diagrams(self):
@@ -18444,14 +18957,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_NumericType__r_e_cs(self):
+        tested = NumericType()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_NumericType__r_p_ls(self):
+        tested = NumericType()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_NumericType_get_label(self):
         tested = NumericType()
         tested.get_label()
         pass
 
-    def test_NumericType_get_type(self):
+    def test_NumericType_get_element_type(self):
         tested = NumericType()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_NumericType_get_container(self):
@@ -18632,9 +19159,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_owned_property_value_pkgs(self):
         tested = PhysicalQuantity()
-        value = PropertyValuePkg()
-        tested.get_owned_property_value_pkgs().add(value)
-        self.assertEqual(tested.get_owned_property_value_pkgs().get(0), value)
+        tested.get_owned_property_value_pkgs()
         pass
 
     def test_PhysicalQuantity_id(self):
@@ -18700,9 +19225,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_owned_constraints(self):
         tested = PhysicalQuantity()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_PhysicalQuantity_constraints(self):
@@ -18712,9 +19235,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_owned_property_values(self):
         tested = PhysicalQuantity()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_PhysicalQuantity_applied_property_values(self):
@@ -18724,9 +19245,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_owned_property_value_groups(self):
         tested = PhysicalQuantity()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_PhysicalQuantity_applied_property_value_groups(self):
@@ -18736,9 +19255,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_owned_enumeration_property_types(self):
         tested = PhysicalQuantity()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_PhysicalQuantity_owned_diagrams(self):
@@ -18761,14 +19278,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_PhysicalQuantity__r_e_cs(self):
+        tested = PhysicalQuantity()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_PhysicalQuantity__r_p_ls(self):
+        tested = PhysicalQuantity()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_PhysicalQuantity_get_label(self):
         tested = PhysicalQuantity()
         tested.get_label()
         pass
 
-    def test_PhysicalQuantity_get_type(self):
+    def test_PhysicalQuantity_get_element_type(self):
         tested = PhysicalQuantity()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_PhysicalQuantity_get_container(self):
@@ -18873,9 +19404,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_owned_constraints(self):
         tested = Unit()
-        value = Constraint()
-        tested.get_owned_constraints().add(value)
-        self.assertEqual(tested.get_owned_constraints().get(0), value)
+        tested.get_owned_constraints()
         pass
 
     def test_Unit_constraints(self):
@@ -18885,9 +19414,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_owned_property_values(self):
         tested = Unit()
-        value = PropertyValue()
-        tested.get_owned_property_values().add(value)
-        self.assertEqual(tested.get_owned_property_values().get(0), value)
+        tested.get_owned_property_values()
         pass
 
     def test_Unit_applied_property_values(self):
@@ -18897,9 +19424,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_owned_property_value_groups(self):
         tested = Unit()
-        value = PropertyValueGroup()
-        tested.get_owned_property_value_groups().add(value)
-        self.assertEqual(tested.get_owned_property_value_groups().get(0), value)
+        tested.get_owned_property_value_groups()
         pass
 
     def test_Unit_applied_property_value_groups(self):
@@ -18909,9 +19434,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_owned_enumeration_property_types(self):
         tested = Unit()
-        value = EnumerationPropertyType()
-        tested.get_owned_enumeration_property_types().add(value)
-        self.assertEqual(tested.get_owned_enumeration_property_types().get(0), value)
+        tested.get_owned_enumeration_property_types()
         pass
 
     def test_Unit_owned_diagrams(self):
@@ -18934,14 +19457,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Unit__r_e_cs(self):
+        tested = Unit()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Unit__r_p_ls(self):
+        tested = Unit()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Unit_get_label(self):
         tested = Unit()
         tested.get_label()
         pass
 
-    def test_Unit_get_type(self):
+    def test_Unit_get_element_type(self):
         tested = Unit()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Unit_get_container(self):
@@ -19016,8 +19553,8 @@ class capella_tests(unittest.TestCase):
 
     def test_RequirementAddOn_get_relation_type(self):
         tested = RequirementAddOn()
-        param1 = Attribute()
-        param2 = Attribute()
+        param1 = Folder()
+        param2 = Folder()
         tested.get_relation_type(param1, param2)
         pass
 
@@ -19041,14 +19578,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_CapellaModule__r_e_cs(self):
+        tested = CapellaModule()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_CapellaModule__r_p_ls(self):
+        tested = CapellaModule()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_CapellaModule_get_label(self):
         tested = CapellaModule()
         tested.get_label()
         pass
 
-    def test_CapellaModule_get_type(self):
+    def test_CapellaModule_get_element_type(self):
         tested = CapellaModule()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_CapellaModule_get_container(self):
@@ -19085,9 +19636,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaModule_owned_requirements(self):
         tested = CapellaModule()
-        value = Requirement()
-        tested.get_owned_requirements().add(value)
-        self.assertEqual(tested.get_owned_requirements().get(0), value)
+        tested.get_owned_requirements()
         pass
 
     def test_CapellaModule_id(self):
@@ -19138,14 +19687,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Requirement__r_e_cs(self):
+        tested = Requirement()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Requirement__r_p_ls(self):
+        tested = Requirement()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Requirement_get_label(self):
         tested = Requirement()
         tested.get_label()
         pass
 
-    def test_Requirement_get_type(self):
+    def test_Requirement_get_element_type(self):
         tested = Requirement()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Requirement_get_container(self):
@@ -19224,9 +19787,25 @@ class capella_tests(unittest.TestCase):
 
     def test_Requirement_owned_attributes(self):
         tested = Requirement()
-        value = Attribute()
-        tested.get_owned_attributes().add(value)
-        self.assertEqual(tested.get_owned_attributes().get(0), value)
+        tested.get_owned_attributes()
+        pass
+
+    def test_Requirement_get_all_attributes(self):
+        tested = Requirement()
+        tested.get_all_attributes()
+        pass
+
+    def test_Requirement_get_attribute(self):
+        tested = Requirement()
+        param1 = "value"
+        tested.get_attribute(param1)
+        pass
+
+    def test_Requirement_set_attribute(self):
+        tested = Requirement()
+        param1 = "value"
+        param2 = "value"
+        tested.set_attribute(param1, param2)
         pass
 
     def test_Requirement_get_incoming_linked_elems(self):
@@ -19283,9 +19862,25 @@ class capella_tests(unittest.TestCase):
 
     def test_Folder_owned_attributes(self):
         tested = Folder()
-        value = Attribute()
-        tested.get_owned_attributes().add(value)
-        self.assertEqual(tested.get_owned_attributes().get(0), value)
+        tested.get_owned_attributes()
+        pass
+
+    def test_Folder_get_all_attributes(self):
+        tested = Folder()
+        tested.get_all_attributes()
+        pass
+
+    def test_Folder_get_attribute(self):
+        tested = Folder()
+        param1 = "value"
+        tested.get_attribute(param1)
+        pass
+
+    def test_Folder_set_attribute(self):
+        tested = Folder()
+        param1 = "value"
+        param2 = "value"
+        tested.set_attribute(param1, param2)
         pass
 
     def test_Folder_get_incoming_linked_elems(self):
@@ -19318,14 +19913,28 @@ class capella_tests(unittest.TestCase):
         tested.get_representing_diagrams()
         pass
 
+    def test_Folder__r_e_cs(self):
+        tested = Folder()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        self.assertEqual(tested.get__r_e_cs().get(0), value)
+        pass
+
+    def test_Folder__r_p_ls(self):
+        tested = Folder()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        self.assertEqual(tested.get__r_p_ls().get(0), value)
+        pass
+
     def test_Folder_get_label(self):
         tested = Folder()
         tested.get_label()
         pass
 
-    def test_Folder_get_type(self):
+    def test_Folder_get_element_type(self):
         tested = Folder()
-        tested.get_type()
+        tested.get_element_type()
         pass
 
     def test_Folder_get_container(self):
@@ -19362,93 +19971,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Folder_owned_requirements(self):
         tested = Folder()
-        value = Requirement()
-        tested.get_owned_requirements().add(value)
-        self.assertEqual(tested.get_owned_requirements().get(0), value)
+        tested.get_owned_requirements()
         pass
 
-    def test_Attribute_owned_diagrams(self):
-        tested = Attribute()
-        tested.get_owned_diagrams()
-        pass
-
-    def test_Attribute_element_of_interest_for_diagrams(self):
-        tested = Attribute()
-        value = Diagram()
-        tested.get_element_of_interest_for_diagrams().add(value)
-        self.assertEqual(tested.get_element_of_interest_for_diagrams().get(0), value)
-        pass
-
-    def test_Attribute_contextual_element_for_diagrams(self):
-        tested = Attribute()
-        value = Diagram()
-        tested.get_contextual_element_for_diagrams().add(value)
-        self.assertEqual(tested.get_contextual_element_for_diagrams().get(0), value)
-        pass
-
-    def test_Attribute_representing_diagrams(self):
-        tested = Attribute()
-        tested.get_representing_diagrams()
-        pass
-
-    def test_Attribute_get_label(self):
-        tested = Attribute()
-        tested.get_label()
-        pass
-
-    def test_Attribute_get_type(self):
-        tested = Attribute()
-        tested.get_type()
-        pass
-
-    def test_Attribute_get_container(self):
-        tested = Attribute()
-        tested.get_container()
-        pass
-
-    def test_Attribute_get_contents(self):
-        tested = Attribute()
-        tested.get_contents()
-        pass
-
-    def test_Attribute_get_all_contents(self):
-        tested = Attribute()
-        tested.get_all_contents()
-        pass
-
-    def test_Attribute_get_all_contents_by_type(self):
-        tested = Attribute()
-        param1 = "value"
-        tested.get_all_contents_by_type(param1)
-        pass
-
-    def test_Attribute_get_available_s_b_queries(self):
-        tested = Attribute()
-        tested.get_available_s_b_queries()
-        pass
-
-    def test_Attribute_get_query_result(self):
-        tested = Attribute()
-        param1 = "value"
-        tested.get_query_result(param1)
-        pass
-
-    def test_Attribute_name(self):
-        tested = Attribute()
-        value = "value"
-        tested.set_name(value)
-        self.assertEqual(tested.get_name(), value)
-        pass
-
-    def test_Attribute_value(self):
-        tested = Attribute()
-        value = "value"
-        tested.set_value(value)
-        self.assertEqual(tested.get_value(), value)
-        pass
-
-    def test_Attribute_kind(self):
-        tested = Attribute()
-        tested.get_kind()
-        pass
 
