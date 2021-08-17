@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>GeneratePythonAPI</title>
+		<link type="text/css" rel="stylesheet" href="../../resources/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="../../resources/custom.css"/>
+	</head>
+	<body>
+		<h1 id="GeneratePythonAPI">Generate Python API</h1>
+		<p>This section describes how you can generate Python API for the Capella light metamodel.</p>
+		<p>The generator is defined in the 
+			<a href="https://github.com/labs4capella/python4capella/blob/master/plugins/org.eclipse.python4capella.gen/src/org/eclipse/python4capella/gen/handlers/ProduceCapellaPythonAPIFromCapellaHandler.java">ProduceCapellaPythonAPIFromCapellaHandler</a> Java class. It uses the simplified Capella metamodel defined in the 
+			<a href="https://github.com/labs4capella/python4capella/tree/master/specification">specification folder</a> of the git repository.
+		</p>
+		<p>The Capella Light Metamodel is defined using Capella 5.0, you will need this version to generate the Python API.</p>
+		<p>Start to import the 
+			<a href="https://github.com/labs4capella/python4capella/tree/master/plugins/org.eclipse.python4capella.gen">org.eclipse.python4capella.gen</a> project in your Capella 5.0 workspace and 
+			<a href="../../user/general/EnableDevelopmentCapabilities.html">enable developer capabilities</a> to launch a runtime:
+		</p>
+		<p>To open the specification model, you will need to import the project in the workspace of your runtime.</p>
+		<p>When you open the specification model, you can open the System Analysis, then the Data folder, then select the Capella Light Metamodel. You can right click on it and select the &#8220;Generate Python API from Capella&#8221; menu:</p>
+		<p>
+			<img alt="Generate Python API from Capella menu" title="Generate Python API from Capella menu" border="0" src="GeneratePythonAPI/GeneratePythonAPIMenu.png"/>
+		</p>
+		<p>By default this will generate a file &#8220;/tmp/capella/capella.py&#8221;. You can change this path by editing the generator class: ProduceCapellaPythonAPIFromCapellaHandler.</p>
+		<p>You can customize the generated code by placing a file with the name of the class and property you want to customize in the resources/customizations/classes of the org.eclipse.python4capella.gen project. You can see examples of existing customizations 
+			<a href="https://github.com/labs4capella/python4capella/tree/master/plugins/org.eclipse.python4capella.gen/resources/customizations/classes">here</a>.
+		</p>
+	</body>
+</html>

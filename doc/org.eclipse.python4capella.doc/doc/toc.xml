@@ -12,6 +12,8 @@
     </topic>
     <topic href="doc/developer/python/CreateWindowsPythonFile.html" label="Recreate the Windows Python 3.7 folder">
     </topic>
+    <topic href="doc/developer/python/GeneratePythonAPI.html" label="Generate Python API">
+    </topic>
     <topic href="doc/developer/python/GeneratePythonTests.html" label="Generate Python tests">
     </topic>
   </topic>

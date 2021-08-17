@@ -9,4 +9,6 @@ h2. Advanced Python users
 h2. Python4Capella contributors
 
 * "*Create a Python interpreter distribution for Windows*":python/CreateWindowsPythonFile.html Describes how you can recreate the Python interpreter zip file for Windows.
+* "*Generate Python API*":python/GeneratePythonTests.html Describes how you can generate Python API for the Python Capella light metamodel.
 * "*Generate Python tests*":python/GeneratePythonTests.html Describes how you can generate Python tests for the Python Capella light metamodel.
+
