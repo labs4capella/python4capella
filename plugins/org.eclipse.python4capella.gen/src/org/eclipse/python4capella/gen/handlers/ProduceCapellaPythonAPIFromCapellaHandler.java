@@ -67,15 +67,35 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	private void generateOneFile(DataPkg root) {
 
 		final Set<Class> remainingClasses = new LinkedHashSet<>();
+
+		DataPkg requirementPkg = null;
+		DataPkg pvmtPkg = null;
 		for (DataPkg pkg : root.getOwnedDataPkgs()) {
-			for (Class cls : pkg.getOwnedClasses()) {
-				remainingClasses.add(cls);
+			if ("PVMT".equals(pkg.getName())) {
+				pvmtPkg = pkg;
+			} else if ("Requirement".equals(pkg.getName())) {
+				requirementPkg = pkg;
+			} else {
+				remainingClasses.addAll(pkg.getOwnedClasses());
 			}
 		}
 
+		writeOneFile(remainingClasses, "capella");
+
+		remainingClasses.clear();
+		remainingClasses.addAll(pvmtPkg.getOwnedClasses());
+		writeOneFile(remainingClasses, "pvmt");
+
+		remainingClasses.clear();
+		remainingClasses.addAll(requirementPkg.getOwnedClasses());
+		writeOneFile(remainingClasses, "requirement");
+	}
+
+	private void writeOneFile(final Set<Class> remainingClasses, String fileName) {
 		final List<Class> orderedClasses = new ArrayList<>();
 		final Set<Class> knwonClasses = new HashSet<>();
 		while (!remainingClasses.isEmpty()) {
+			int lastSize = remainingClasses.size();
 			final List<Class> toRemove = new ArrayList<>();
 			for (Class cls : remainingClasses) {
 				if (knwonClasses.containsAll(getSuperClasses(cls))) {
@@ -85,22 +105,26 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				}
 			}
 			remainingClasses.removeAll(toRemove);
+			if (lastSize == remainingClasses.size()) {
+				orderedClasses.addAll(remainingClasses);
+				break;
+			}
 		}
 
-		final File file = new File("/tmp/capella/" + "capella" + ".py");
+		final File file = new File("/tmp/capella/" + fileName + ".py");
 		try {
 			if (!file.exists()) {
 				file.getParentFile().mkdirs();
 				file.createNewFile();
 			}
 			try (OutputStream os = new FileOutputStream(file)) {
-				os.write(getHeader("capella").getBytes());
+				os.write(getHeader(fileName).getBytes());
 				for (Class cls : orderedClasses) {
 					os.write(NL.getBytes());
 					os.write(generateClass(cls).getBytes());
 				}
 				os.write(NL.getBytes());
-				final String additions = getPackageAdditions("capella");
+				final String additions = getPackageAdditions(fileName);
 				if (additions != null) {
 					os.write(additions.getBytes());
 				}

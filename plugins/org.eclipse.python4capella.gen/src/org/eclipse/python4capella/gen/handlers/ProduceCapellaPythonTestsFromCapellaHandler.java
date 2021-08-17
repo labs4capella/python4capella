@@ -1331,6 +1331,12 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		res.append("include('workspace://Python4Capella/simplified_api/" + "capella" + ".py')" + NL);
 		res.append("if False:" + NL);
 		res.append("    from simplified_api." + "capella" + " import *" + NL);
+		res.append("include('workspace://Python4Capella/simplified_api/" + "pvmt" + ".py')" + NL);
+		res.append("if False:" + NL);
+		res.append("    from simplified_api." + "pvmt" + " import *" + NL);
+		res.append("include('workspace://Python4Capella/simplified_api/" + "requirement" + ".py')" + NL);
+		res.append("if False:" + NL);
+		res.append("    from simplified_api." + "requirement" + " import *" + NL);
 //		}
 		res.append(NL);
 		res.append("import unittest" + NL);

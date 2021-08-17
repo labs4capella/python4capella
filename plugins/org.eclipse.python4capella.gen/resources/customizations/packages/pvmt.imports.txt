@@ -1,0 +1,4 @@
+include('workspace://Python4Capella/simplified_api/capella.py')
+if False:
+    from simplified_api.capella import *
+
