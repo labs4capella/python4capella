@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
@@ -503,6 +504,16 @@ public class SiriusModule {
 		}
 
 		return stack.pop();
+	}
+
+	/**
+	 * Creates a new {@link NullProgressMonitor}.
+	 * 
+	 * @return a new {@link NullProgressMonitor}
+	 */
+	@WrapToScript
+	public IProgressMonitor createProgressMonitor() {
+		return new NullProgressMonitor();
 	}
 
 }

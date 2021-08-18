@@ -77,3 +77,7 @@ class Sirius:
     @staticmethod
     def rollback_transaction(session):
         return rollbackTransaction(session)
+    
+    @staticmethod
+    def createProgressMonitor():
+        return createProgressMonitor()

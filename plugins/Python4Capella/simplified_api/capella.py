@@ -50,7 +50,7 @@ class CapellaModel(JavaObject):
     def create(self, path):
         raise AttributeError("TODO")
     def save(self):
-        raise AttributeError("TODO")
+        self.session.save(Sirius.createProgressMonitor())
 
 class CapellaLibrary(CapellaModel):
     def __init__(self, java_object = None):

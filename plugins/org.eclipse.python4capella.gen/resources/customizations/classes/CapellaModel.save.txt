@@ -1,0 +1,3 @@
+    def save(self):
+        self.session.save(None)
+

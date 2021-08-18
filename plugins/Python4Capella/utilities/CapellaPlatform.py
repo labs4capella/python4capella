@@ -55,3 +55,10 @@ class CapellaPlatform():
         refresh the content of a folder in the Project Explorer
         """
         refreshResource(folder)
+    
+    @staticmethod
+    def getWorkspaceFile(file_name):
+        """
+        get the file with the given path 
+        """
+        return getFile("workspace:/" + file_name)
