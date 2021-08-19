@@ -1,0 +1,3 @@
+    def get_referenced_libraries(self):
+        return get_libraries(self.get_system_engineering())
+

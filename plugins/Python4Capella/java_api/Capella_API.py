@@ -37,3 +37,13 @@ def get_label(e_obj):
 
 def is_system(component):
     return isSystem(component)
+
+def get_libraries(system_engineering):
+    res = []
+    
+    if system_engineering is not None:
+        lib_cls = getattr(sys.modules["__main__"], "CapellaLibrary")
+        for value in getLibraries(system_engineering.get_java_object()):
+            res.append(lib_cls(value))
+        
+    return res

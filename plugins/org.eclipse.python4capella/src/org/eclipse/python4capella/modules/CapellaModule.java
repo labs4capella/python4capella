@@ -20,13 +20,22 @@ import java.util.Set;
 
 import org.eclipse.ease.modules.WrapToScript;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.polarsys.capella.common.helpers.EObjectExt;
 import org.polarsys.capella.common.helpers.query.IQuery;
+import org.polarsys.capella.common.libraries.ILibraryManager;
+import org.polarsys.capella.common.libraries.IModel;
+import org.polarsys.capella.common.libraries.manager.LibraryManagerExt;
 import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacommon.CapellacommonPackage;
+import org.polarsys.capella.core.data.capellamodeller.Project;
+import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
 import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.ComponentPkg;
+import org.polarsys.capella.core.libraries.model.CapellaModel;
+import org.polarsys.capella.core.libraries.queries.QueryExt;
 
 /**
  * EASE module for Capella.
@@ -154,6 +163,37 @@ public class CapellaModule {
 								break;
 							}
 						}
+					}
+				}
+			}
+		}
+
+		return res;
+	}
+
+	/**
+	 * Gets the {@link List} of {@link SystemEngineering} used as libraries of the
+	 * given {@link SystemEngineering}.
+	 * 
+	 * @param system {@link SystemEngineering}
+	 * @return the {@link List} of {@link SystemEngineering} used as libraries of
+	 *         the given {@link SystemEngineering}
+	 */
+	@WrapToScript
+	public List<SystemEngineering> getLibraries(SystemEngineering system) {
+		final List<SystemEngineering> res = new ArrayList<>();
+
+		if (system != null) {
+			final IModel currentProject = ILibraryManager.INSTANCE.getModel(system);
+			final TransactionalEditingDomain domain = new EObjectQuery(system).getSession()
+					.getTransactionalEditingDomain();
+			final Collection<IModel> libraries = LibraryManagerExt.getActivesReferences(currentProject);
+			for (IModel library : libraries) {
+				if (library instanceof CapellaModel) {
+					final Project libraryProject = ((CapellaModel) library).getProject(domain);
+					final SystemEngineering systemEngineering = QueryExt.getSystemEngineeringFrom(libraryProject);
+					if (systemEngineering != null) {
+						res.add(systemEngineering);
 					}
 				}
 			}

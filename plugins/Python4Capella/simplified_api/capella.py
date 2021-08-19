@@ -32,7 +32,7 @@ class CapellaModel(JavaObject):
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
     def get_referenced_libraries(self):
-        return create_e_list(self.get_java_object().getReferencedLibraries(), CapellaLibrary)
+        return get_libraries(self.get_system_engineering())
     def get_all_diagrams(self):
         res = []
         descriptors = Sirius.get_all_diagrams(self.session)
@@ -55,7 +55,7 @@ class CapellaModel(JavaObject):
 class CapellaLibrary(CapellaModel):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
         elif isinstance(java_object, CapellaLibrary):
             EObject.__init__(self, java_object.get_java_object())
         else:
