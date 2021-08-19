@@ -69,12 +69,17 @@ class EObject(JavaObject):
         except AttributeError:
             res = None
         
-        if res == LogicalComponent and e_object.isActor():
-            res = LogicalActor
+        if res == LogicalComponent:
+            if e_object.isActor():
+                res = LogicalActor
+            elif is_system(e_object):
+                res = LogicalSystem
         
         if res == PhysicalComponent:
             if e_object.isActor():
                 res = PhysicalActor
+            elif is_system(e_object):
+                res = PhysicalSystem
             else:
                 if e_object.getNature().getName() == "UNSET":
                     res = PhysicalComponent
@@ -104,6 +109,12 @@ class EObject(JavaObject):
 
         if res == None and e_object.eClass().getName() == "Service":
             res = Operation
+
+        if res == None and e_object.eClass().getName() == "SystemComponent":
+            if e_object.isActor():
+                res = SystemActor
+            elif is_system(e_object):
+                res = System
 
         return res
     def get_owned_diagrams(self):
@@ -2987,20 +2998,27 @@ class Capability(AbstractSystemCapability):
 class System(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
         elif isinstance(java_object, System):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if is_system(java_object):
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not a system.")
 
 class SystemActor(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
+            self.get_java_object().setActor(True)
         elif isinstance(java_object, SystemActor):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if java_object.isActor():
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not an actor.")
     def get_is_human(self):
         return self.get_java_object().isHuman()
     def set_is_human(self, value):
@@ -3050,11 +3068,14 @@ class CapabilityRealization(AbstractSystemCapability):
 class LogicalSystem(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
         elif isinstance(java_object, LogicalSystem):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if is_system(java_object):
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not a system.")
     def get_owned_logical_components(self):
         return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
     def get_owned_logical_component_pkgs(self):
@@ -3114,11 +3135,15 @@ class LogicalActor(BehavioralComponent, Node):
 class PhysicalSystem(CapellaElement, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            self.get_java_object().setActor(True)
         elif isinstance(java_object, PhysicalSystem):
             EObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            if is_system(java_object):
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not a system.")
     def get_owned_physical_components(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
     def get_owned_physical_component_pkgs(self):

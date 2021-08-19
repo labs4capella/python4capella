@@ -28,6 +28,13 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual(LogicalComponent, EObject.get_class(lc.get_java_object()))
         pass
 
+    def test_LogicalSystem_get_class(self):
+        lc_pkg = LogicalComponentPkg()
+        lc = LogicalComponent()
+        lc_pkg.get_owned_logical_components().add(lc)
+        self.assertEqual(LogicalSystem, EObject.get_class(lc.get_java_object()))
+        pass
+
     def test_LogicalActor_get_class(self):
         la = LogicalActor()
         self.assertEqual(LogicalActor, EObject.get_class(la.get_java_object()))
@@ -91,6 +98,13 @@ class capella_manual_tests(unittest.TestCase):
     def test_PhysicalActor_get_class(self):
         pa = PhysicalActor()
         self.assertEqual(PhysicalActor, EObject.get_class(pa.get_java_object()))
+        pass
+
+    def test_PhysicalSystem_get_class(self):
+        pc_pkg = PhysicalComponentPkg()
+        pc = PhysicalComponent()
+        pc_pkg.get_owned_physical_components().add(pc)
+        self.assertEqual(PhysicalSystem, EObject.get_class(pc.get_java_object()))
         pass
 
     def test_BehaviorPC_get_class(self):

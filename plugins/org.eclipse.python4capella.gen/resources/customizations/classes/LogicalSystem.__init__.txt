@@ -1,0 +1,11 @@
+    def __init__(self, java_object = None):
+        if java_object is None:
+            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+        elif isinstance(java_object, LogicalSystem):
+            EObject.__init__(self, java_object.get_java_object())
+        else:
+            if is_system(java_object):
+                EObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not a system.")
+

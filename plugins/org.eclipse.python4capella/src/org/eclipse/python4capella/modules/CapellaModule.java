@@ -25,6 +25,8 @@ import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacommon.CapellacommonPackage;
+import org.polarsys.capella.core.data.cs.Component;
+import org.polarsys.capella.core.data.cs.ComponentPkg;
 
 /**
  * EASE module for Capella.
@@ -125,6 +127,39 @@ public class CapellaModule {
 	@WrapToScript
 	public String getLabel(EObject eObject) {
 		return EObjectExt.getText(eObject);
+	}
+
+	/**
+	 * Tells if the given {@link Object} is a system.
+	 * 
+	 * @param component the {@link Object}
+	 * @return <code>true</code> if the given {@link Object} is a system,
+	 *         <code>false</code> otherwise
+	 */
+	@WrapToScript
+	public boolean isSystem(Object object) {
+		boolean res = false;
+
+		if (object instanceof Component) {
+			final Component component = (Component) object;
+			if (!component.isActor()) {
+				if (component.eContainer() instanceof ComponentPkg) {
+					final Object eGetValue = component.eContainer().eGet(component.eContainingFeature());
+					if (eGetValue instanceof List) {
+						@SuppressWarnings("unchecked")
+						final List<Component> components = (List<Component>) eGetValue;
+						for (Component comp : components) {
+							if (!comp.isActor()) {
+								res = comp == component;
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return res;
 	}
 
 }

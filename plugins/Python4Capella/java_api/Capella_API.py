@@ -34,3 +34,6 @@ def capella_version():
 
 def get_label(e_obj):
     return getLabel(e_obj.get_java_object())
+
+def is_system(component):
+    return isSystem(component)
