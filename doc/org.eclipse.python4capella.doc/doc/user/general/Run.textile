@@ -50,19 +50,19 @@ You can also run your Python4Capella script from the command line:
 
 Windows
 
-bc. eclipsec.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. eclipsec.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Linux and Mac OS X
 
-bc. ./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. ./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:
 
 Windows
 
-bc. capellac.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. capellac.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
 Linux and Mac OS X
 
-bc. ./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace -script workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+bc. ./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
