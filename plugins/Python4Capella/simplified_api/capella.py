@@ -1294,21 +1294,18 @@ class Mode(State):
             EObject.__init__(self, java_object)
 
 class Pseudostate(AbstractState):
-    def __init__(self, java_object = None):
+    def __init__(self, java_object = None, kind = "InitialPseudoState"):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Pseudostate"))
+            if kind in ["ChoicePseudoState", "DeepHistoryPseudoState", "EntryPointPseudoState", "ExitPointPseudoState", "ForkPseudoState", "InitialPseudoState", "JoinPseudoState", "ShallowHistoryPseudoState", "TerminatePseudoState", "FinalState"]:
+                EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), kind))
+            else:
+                raise ValueError("kind must be either \"ChoicePseudoState\", \"DeepHistoryPseudoState\", \"EntryPointPseudoState\", \"ExitPointPseudoState\", \"ForkPseudoState\", \"InitialPseudoState\", \"JoinPseudoState\", \"ShallowHistoryPseudoState\", \"TerminatePseudoState\", or \"FinalState\"")
         elif isinstance(java_object, Pseudostate):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
     def get_kind(self):
-        value =  self.get_java_object().getKind()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+        return self.java_object.eClass().getName()
 
 class Region(CapellaElement):
     def __init__(self, java_object = None):

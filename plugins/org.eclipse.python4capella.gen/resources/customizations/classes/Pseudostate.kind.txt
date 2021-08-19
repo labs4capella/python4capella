@@ -1,0 +1,3 @@
+    def get_kind(self):
+        return self.java_object.eClass().getName()
+
