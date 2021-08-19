@@ -254,23 +254,18 @@ class Constraint(CapellaElement):
         return capella_query_by_name(self, "Constrained Elements")
 
 class PropertyValue(CapellaElement):
-    def __init__(self, java_object = None):
+    def __init__(self, java_object = None, kind = "StringPropertyValue"):
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            if kind in ["BooleanPropertyValue", "EnumerationPropertyValue", "FloatPropertyValue", "IntegerPropertyValue", "StringPropertyValue" ]:
+                EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), kind))
+            else:
+                raise ValueError("kind must be either \"BooleanPropertyValue\", \"EnumerationPropertyValue\", \"FloatPropertyValue\", \"IntegerPropertyValue\", or \"StringPropertyValue\"")
         elif isinstance(java_object, PropertyValue):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
     def get_kind(self):
-        value =  self.get_java_object().getKind()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
-    def set_kind(self, value):
-        return self.get_java_object().setKind(value.get_java_object())
+        return self.java_object.eClass().getName()
     def get_value(self):
         return self.get_java_object().getValue()
     def set_value(self, value):
