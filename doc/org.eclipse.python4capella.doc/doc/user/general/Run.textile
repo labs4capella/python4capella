@@ -9,7 +9,7 @@ If you open provided scripts, you will notice some errors in them. Those errors 
 EASE is a scripting environment for Eclipse.
 It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 
 
-The PyDev editor only recognize the Python language, and EASE add a custom way to import other scripts, declare methods and variables. At runtime EASE will be used and everything will work properly.
+The PyDev editor only recognizes the Python language, and EASE adds a custom way to import other scripts, declare methods and variables. At runtime EASE will be used and everything will work properly.
 
 - some **import directives from EASE** are not recognized by PyDev
 
