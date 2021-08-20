@@ -45,12 +45,10 @@ ws = wb.active
 
 
 # list the name of physical components
-index = 1;
-for pc in se.get_physical_architecture().get_physical_component_pkg().get_owned_physical_components():
+for index, pc in enumerate(se.get_physical_architecture().get_physical_component_pkg().get_owned_physical_components(), start=1):
     #: :type pc: PhysicalComponent
     # append the names in the worksheet
     ws["A" + str(index)] = pc.get_name()
-    index = index + 1
     
 # Save the file
 wb.save(xlsx_file_name)
