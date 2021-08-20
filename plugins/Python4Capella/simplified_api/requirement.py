@@ -5,12 +5,7 @@ if False:
 
 class RequirementAddOn(JavaObject):
     def __init__(self, java_object = None):
-        if java_object is None:
-            raise ValueError("No matching EClass for this type")
-        elif isinstance(java_object, RequirementAddOn):
-            EObject.__init__(self, java_object.get_java_object())
-        else:
-            EObject.__init__(self, java_object)
+        EObject.__init__(self, java_object)
     @staticmethod
     def get_requirement_modules(capellaModel):
         #: :type capellaModel: CapellaModel
@@ -22,38 +17,28 @@ class RequirementAddOn(JavaObject):
                     res.append(CapellaModule(extension))
         return res
     @staticmethod
-    def get_incoming_requirements(capellaModel):
-        #: :type capellaModel: CapellaModel
+    def get_incoming_requirements(capellaElement):
         res = []
+        #: :type capellaModel: CapellaElement
+        capellaModel = CapellaModel(capellaElement)
         modules = RequirementAddOn.get_requirement_modules(capellaModel)
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():
                 for relation in requirement.getOwnedRelations():
-                    if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
-                        res.append(Requirement(requirement))
-                        break
-                try:
-                    res.index(requirement)
-                    break
-                except ValueError:
-                    continue
+                    if capellaElement.get_java_object() == relation.getTarget() and relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                        res.append(Requirement(relation.getSource()))
         return res
     @staticmethod
-    def get_outgoing_requirements(capellaModel):
-        #: :type capellaModel: CapellaModel
+    def get_outgoing_requirements(capellaElement):
         res = []
+        #: :type capellaModel: CapellaElement
+        capellaModel = CapellaModel(capellaElement)
         modules = RequirementAddOn.get_requirement_modules(capellaModel)
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():
                 for relation in requirement.getOwnedRelations():
-                    if relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
-                        res.append(Requirement(requirement))
-                        break
-                try:
-                    res.index(requirement)
-                    break
-                except ValueError:
-                    continue
+                    if capellaElement.get_java_object() == relation.getSource() and relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                        res.append(Requirement(relation.getTarget()))
         return res
     def get_relation_type(self, elem1, elem2):
         raise AttributeError("TODO")

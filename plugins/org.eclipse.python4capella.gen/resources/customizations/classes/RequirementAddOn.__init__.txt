@@ -1,0 +1,3 @@
+    def __init__(self, java_object = None):
+        EObject.__init__(self, java_object)
+

@@ -2,7 +2,7 @@
         if java_object is None:
             EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
             self.get_java_object().setActor(True)
-        elif isinstance(java_object, LogicalActor):
+        elif isinstance(java_object, SystemActor):
             EObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.isActor():

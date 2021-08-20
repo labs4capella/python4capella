@@ -1,18 +1,13 @@
     @staticmethod
-    def get_incoming_requirements(capellaModel):
-        #: :type capellaModel: CapellaModel
+    def get_incoming_requirements(capellaElement):
         res = []
+        #: :type capellaModel: CapellaElement
+        capellaModel = CapellaModel(capellaElement)
         modules = RequirementAddOn.get_requirement_modules(capellaModel)
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():
                 for relation in requirement.getOwnedRelations():
-                    if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/requirements":
-                        res.append(Requirement(requirement))
-                        break
-                try:
-                    res.index(requirement)
-                    break
-                except ValueError:
-                    continue
+                    if capellaElement.get_java_object() == relation.getTarget() and relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                        res.append(Requirement(relation.getSource()))
         return res
 
