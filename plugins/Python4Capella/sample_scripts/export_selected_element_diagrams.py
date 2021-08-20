@@ -5,6 +5,7 @@
 
 #
 # This script contributes a menu "Export Diagrams" on any CapellaElement in the Project Explorer.
+# To run it:
 # You can right click on the element to access the menu.
 # It will create a folder "Python4Capella_exported_diagrams" in your Capella project
 # and export diagrams to it.
