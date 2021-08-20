@@ -66,3 +66,6 @@ Linux and Mac OS X
 
 bc. ./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
+Note: To execute a script through command line, on a remote project created with **Team for Capella**, first you need to log to the remote project using a Team for Capella client and check the "Remember me" checkbox. This will save your credentials. This way, the command line will be able to connect to the remote repository.
+
+!Run/Team.for.Capella.png(The "Remember me" checkbox)!
