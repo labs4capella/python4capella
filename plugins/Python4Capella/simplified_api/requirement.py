@@ -18,7 +18,7 @@ class RequirementAddOn(JavaObject):
         se = capellaModel.get_system_engineering()
         for modelArchitecture in se.get_java_object().getOwnedArchitectures():
             for extension in modelArchitecture.getOwnedExtensions():
-                if extension.eClass().getName() == "CapellaModule" and extension.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/requirements":
+                if extension.eClass().getName() == "CapellaModule" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                     res.append(CapellaModule(extension))
         return res
     @staticmethod
@@ -29,7 +29,7 @@ class RequirementAddOn(JavaObject):
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():
                 for relation in requirement.getOwnedRelations():
-                    if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/requirements":
+                    if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                         res.append(Requirement(requirement))
                         break
                 try:
@@ -46,7 +46,7 @@ class RequirementAddOn(JavaObject):
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():
                 for relation in requirement.getOwnedRelations():
-                    if relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/requirements":
+                    if relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                         res.append(Requirement(requirement))
                         break
                 try:
