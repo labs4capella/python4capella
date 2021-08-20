@@ -4,11 +4,11 @@
 # popup                : enableFor(org.polarsys.capella.core.data.capellacore.CapellaElement)
 
 #
-# This script contribute a menu "Export Diagrams" on any CapellaElement in the Project Explorer.
+# This script contributes a menu "Export Diagrams" on any CapellaElement in the Project Explorer.
 # You can right click on the element to access the menu.
 # It will create a folder "Python4Capella_exported_diagrams" in your Capella project
 # and export diagrams to it.
-# it only exports the diagrams directly defined under the selected element!
+# It only exports the diagrams directly defined under the first selected element!
 
 # include needed for the Capella simplified API
 include('workspace://Python4Capella/simplified_api/capella.py')
