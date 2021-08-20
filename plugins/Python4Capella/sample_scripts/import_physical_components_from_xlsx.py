@@ -32,7 +32,7 @@ se = model.get_system_engineering()
 xlsx_file = CapellaPlatform.getWorkspaceFile(xlsx_path)
 xlsx_file_name = CapellaPlatform.getAbsolutePath(xlsx_file)
 
-print("reading " + xlsx_file_name)
+print("Read " + xlsx_file_name)
 
 # load the workbook
 wb = load_workbook(xlsx_file_name)
@@ -52,7 +52,7 @@ try:
             # create a PhysicalComponent
             pc = PhysicalComponent()
             #set its name
-            print(cell.value)
+            print("* Create a new physical component with name " + cell.value)
             pc.set_name(cell.value)
             #add the new PhysicalComponent
             pc_pkg.get_owned_physical_components().add(pc)
