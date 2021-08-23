@@ -1,0 +1,3 @@
+    def get_physical_system(self):
+        return self.get_physical_component_pkg().get_owned_physical_system()
+

@@ -1,0 +1,6 @@
+    def get_owned_physical_system(self):
+        for value in self.get_owned_physical_components():
+            if isinstance(value, PhysicalSystem):
+                return value
+        return None
+

@@ -1064,13 +1064,8 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
     def get_physical_system(self):
-        value =  self.get_java_object().getPhysicalSystem()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+        return self.get_physical_component_pkg().get_owned_physical_system()
+            
 
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -1098,13 +1093,10 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
     def get_owned_physical_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
     def get_owned_physical_system(self):
-        value =  self.get_java_object().getOwnedPhysicalSystem()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+        for value in self.get_owned_physical_components():
+            if isinstance(value, PhysicalSystem):
+                return value
+        return None
     def get_owned_physical_actors(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalActors(), PhysicalActor)
     def get_owned_physical_components(self):
@@ -3205,7 +3197,13 @@ class NodePC(PhysicalComponent, Node):
             else:
                 raise AttributeError("Passed component is an actor.")
     def get_deployed_behavior_p_cs(self):
-        return create_e_list(self.get_java_object().getDeployedBehaviorPCs(), BehaviorPC)
+        res = []
+        for pc in self.java_object.getDeployedPhysicalComponents():
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(pc)
+            if specific_cls == BehaviorPC:
+                res.append(specific_cls(pc))
+        return res
     def get_owned_state_machines(self):
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
 
