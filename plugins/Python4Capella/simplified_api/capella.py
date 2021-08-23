@@ -2042,9 +2042,7 @@ class ComponentPort(CapellaElement):
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_orientation(self, value):
         return self.get_java_object().setOrientation(value.get_java_object())
     def get_component_exchanges(self):

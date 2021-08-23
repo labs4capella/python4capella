@@ -50,7 +50,7 @@ for index, pc in enumerate(se.get_physical_architecture().get_physical_component
     # append the names in the worksheet
     ws["A" + str(index)] = pc.get_name()
     
-# Save the file
+# Save the xlsx file
 wb.save(xlsx_file_name)
 
 # refresh 
