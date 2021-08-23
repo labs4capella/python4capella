@@ -1,0 +1,15 @@
+    def get_target_function(self):
+        port =  self.get_java_object().getTargetFunctionInputPort()
+        if port is None:
+            return port
+        elif port.eContainer() is not None:
+            value = port.eContainer()
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is not None:
+                return specific_cls(value)
+            else:
+                return None
+        else:
+            return None
+

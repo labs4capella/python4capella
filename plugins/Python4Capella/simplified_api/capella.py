@@ -1912,25 +1912,33 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
     def set_target_port(self, value):
         return self.get_java_object().setTargetPort(value.get_java_object())
     def get_source_function(self):
-        value =  self.get_java_object().getSourceFunction()
-        if value is None:
-            return value
-        else:
+        port = self.get_java_object().getSourceFunctionOutputPort()
+        if port is None:
+            return port
+        elif port.eContainer() is not None:
+            value = port.eContainer()
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
-    def set_source_function(self, value):
-        return self.get_java_object().setSourceFunction(value.get_java_object())
+            if specific_cls is not None:
+                return specific_cls(value)
+            else:
+                return None
+        else:
+            return None
     def get_target_function(self):
-        value =  self.get_java_object().getTargetFunction()
-        if value is None:
-            return value
-        else:
+        port =  self.get_java_object().getTargetFunctionInputPort()
+        if port is None:
+            return port
+        elif port.eContainer() is not None:
+            value = port.eContainer()
             e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
-    def set_target_function(self, value):
-        return self.get_java_object().setTargetFunction(value.get_java_object())
+            if specific_cls is not None:
+                return specific_cls(value)
+            else:
+                return None
+        else:
+            return None
     def get_exchanged_items(self):
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_involving_functional_chains(self):
@@ -3304,15 +3312,22 @@ class Function(AbstractActivityFunction):
     def get_outgoing(self):
         return create_e_list(self.get_java_object().getOutgoing(), FunctionalExchange)
     def get_allocating_component(self):
-        value =  self.get_java_object().getAllocatingComponent()
-        if value is None:
-            return value
+        values = None
+        if isinstance(self, LogicalFunction):
+            values = self.get_java_object().getAllocatingLogicalComponents()
+        elif isinstance(self, OperationalActivity):
+            values = self.get_java_object().getAllocatingRoles()
+        elif isinstance(self, PhysicalFunction):
+            values = self.get_java_object().getAllocatingPhysicalComponents()
+        elif isinstance(self, SystemFunction):
+            values = self.get_java_object().getAllocatingSystemComponents()
+
+        if not values:
+            return None
         else:
             e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
-    def set_allocating_component(self, value):
-        return self.get_java_object().setAllocatingComponent(value.get_java_object())
+            specific_cls = e_object_class.get_class(values[0])
+            return specific_cls(values[0])
     def get_owned_functional_chains(self):
         return create_e_list(self.get_java_object().getOwnedFunctionalChains(), FunctionalChain)
     def get_involving_functional_chains(self):
