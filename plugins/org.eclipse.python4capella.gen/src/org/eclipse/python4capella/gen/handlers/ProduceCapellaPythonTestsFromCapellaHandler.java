@@ -1365,6 +1365,9 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		final String pythonName = ProduceCapellaPythonAPIFromEcoreHandler.getPythonName(operation.getName());
 		res.append("    def test_" + cls.getName() + "_" + pythonName + "(self):" + NL);
 		res.append("        tested = " + cls.getName() + "()" + NL);
+		if ("CapellaModel".equals(cls.getName())) {
+			res.append("        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")" + NL);
+		}
 
 		int index = 1;
 		final StringJoiner joiner = new StringJoiner(", ");
@@ -1372,6 +1375,9 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 			if (parameter.getDirection() != ParameterDirection.RETURN) {
 				final String paramName = "param" + index++;
 				res.append("        " + paramName + " = " + getTestValue(cls, parameter) + NL);
+				if ("CapellaModel".equals(parameter.getType().getLabel())) {
+					res.append("        " + paramName + ".open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")" + NL);
+				}
 				joiner.add(paramName);
 			}
 		}
@@ -1390,6 +1396,9 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		final String testName = "test_" + cls.getName() + "_" + pythonName;
 		res.append("    def " + testName + "(self):" + NL);
 		res.append("        tested = " + cls.getName() + "()" + NL);
+		if ("CapellaModel".equals(cls.getName())) {
+			res.append("        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")" + NL);
+		}
 		if (isScalar(property)) {
 			if (property.isIsReadOnly() || isQuery(cls, pythonName) || readOnlyTests.contains(testName)) {
 				res.append("        tested.get_" + pythonName + "()" + NL);

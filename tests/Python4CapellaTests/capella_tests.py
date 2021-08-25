@@ -14,16 +14,19 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaModel_system_engineering(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         tested.get_system_engineering()
         pass
 
     def test_CapellaModel_progress_status(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         tested.get_progress_status()
         pass
 
     def test_CapellaModel_referenced_libraries(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         value = CapellaLibrary()
         tested.get_referenced_libraries().add(value)
         self.assertEqual(tested.get_referenced_libraries().get(0), value)
@@ -31,29 +34,34 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaModel_all_diagrams(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         tested.get_all_diagrams()
         pass
 
     def test_CapellaModel_get_diagrams(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         param1 = "value"
         tested.get_diagrams(param1)
         pass
 
     def test_CapellaModel_open(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         param1 = "value"
         tested.open(param1)
         pass
 
     def test_CapellaModel_create(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         param1 = "value"
         tested.create(param1)
         pass
 
     def test_CapellaModel_save(self):
         tested = CapellaModel()
+        tested.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         tested.save()
         pass
 
@@ -19542,6 +19550,7 @@ class capella_tests(unittest.TestCase):
     def test_RequirementAddOn_get_requirement_modules(self):
         tested = RequirementAddOn()
         param1 = CapellaModel()
+        param1.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         tested.get_requirement_modules(param1)
         pass
 
