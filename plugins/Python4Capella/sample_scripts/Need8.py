@@ -40,7 +40,8 @@ def strip_tags(html):
 
 # change this path to execute the script on your model
 aird_path = '/In-Flight Entertainment System/In-Flight Entertainment System.aird'
-model = CapellaModel(aird_path)
+model = CapellaModel()
+model.open(aird_path)
 
 # gets the SystemEngineering and print its name
 se = model.get_system_engineering()

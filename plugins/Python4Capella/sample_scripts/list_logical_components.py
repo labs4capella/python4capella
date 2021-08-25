@@ -14,7 +14,8 @@ if False:
 
 # Load the Capella model from the first argument of the script
 aird_path = argv[0]
-model = CapellaModel(aird_path)
+model = CapellaModel()
+model.open(aird_path)
 
 # gets the SystemEngineering and print its name
 se = model.get_system_engineering()

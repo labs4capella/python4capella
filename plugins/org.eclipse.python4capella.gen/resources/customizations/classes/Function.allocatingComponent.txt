@@ -1,0 +1,18 @@
+    def get_allocating_component(self):
+        values = None
+        if isinstance(self, LogicalFunction):
+            values = self.get_java_object().getAllocatingLogicalComponents()
+        elif isinstance(self, OperationalActivity):
+            values = self.get_java_object().getAllocatingRoles()
+        elif isinstance(self, PhysicalFunction):
+            values = self.get_java_object().getAllocatingPhysicalComponents()
+        elif isinstance(self, SystemFunction):
+            values = self.get_java_object().getAllocatingSystemComponents()
+
+        if not values:
+            return None
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(values[0])
+            return specific_cls(values[0])
+

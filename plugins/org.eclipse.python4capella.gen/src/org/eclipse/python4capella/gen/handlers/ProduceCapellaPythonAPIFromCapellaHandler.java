@@ -205,7 +205,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		final StringBuilder res = new StringBuilder();
 
 		final String superClassNames;
-		if (cls.getSuperGeneralizations().isEmpty()) {
+		if (cls.getSuperGeneralizations().isEmpty() && !"CapellaModel".equals(cls.getName())) {
 			superClassNames = "JavaObject";
 		} else {
 			final StringJoiner joiner = new StringJoiner(", ");

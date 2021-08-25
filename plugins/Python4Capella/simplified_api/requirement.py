@@ -19,8 +19,9 @@ class RequirementAddOn(JavaObject):
     @staticmethod
     def get_incoming_requirements(capellaElement):
         res = []
-        #: :type capellaModel: CapellaElement
-        capellaModel = CapellaModel(capellaElement)
+        #: :type capellaElement: CapellaElement
+        capellaModel = CapellaModel()
+        capellaModel.open(capellaElement)
         modules = RequirementAddOn.get_requirement_modules(capellaModel)
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():
@@ -31,8 +32,9 @@ class RequirementAddOn(JavaObject):
     @staticmethod
     def get_outgoing_requirements(capellaElement):
         res = []
-        #: :type capellaModel: CapellaElement
-        capellaModel = CapellaModel(capellaElement)
+        #: :type capellaElement: CapellaElement
+        capellaModel = CapellaModel()
+        capellaModel.open(capellaElement)
         modules = RequirementAddOn.get_requirement_modules(capellaModel)
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():

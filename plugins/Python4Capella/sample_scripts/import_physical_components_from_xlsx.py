@@ -23,7 +23,8 @@ from openpyxl import *
 # Load the Capella model from the first argument of the script
 aird_path = argv[0]
 xlsx_path = argv[1]
-model = CapellaModel(aird_path)
+model = CapellaModel()
+model.open(aird_path)
 
 # gets the SystemEngineering
 se = model.get_system_engineering()

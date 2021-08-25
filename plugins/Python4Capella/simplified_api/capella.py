@@ -9,15 +9,7 @@ if False:
     from java_api.Sirius_API import *
 
 
-class CapellaModel(JavaObject):
-    # obj can be a path to the .aird file or an EObject
-    def __init__(self, obj):
-        if isinstance(obj, str):
-            self.session = Sirius.load_session(obj)
-        elif isinstance(obj, EObject):
-            self.session = Sirius.get_session(obj)
-        else:
-            raise AttributeError("You can pass a path to the .aird file or an EObject.")
+class CapellaModel():
     def start_transaction(self):
         Sirius.start_transaction(self.session)
     def commit_transaction(self):
@@ -51,8 +43,14 @@ class CapellaModel(JavaObject):
         for descriptor in descriptors:
             res.append(Diagram(descriptor))
         return res
-    def open(self, path):
-        raise AttributeError("TODO")
+    def open(self, obj):
+        # obj can be a path to the .aird file or an EObject
+        if isinstance(obj, str):
+            self.session = Sirius.load_session(obj)
+        elif isinstance(obj, EObject):
+            self.session = Sirius.get_session(obj)
+        else:
+            raise AttributeError("You can pass a path to the .aird file or an EObject.")
     def create(self, path):
         raise AttributeError("TODO")
     def save(self):
@@ -1065,7 +1063,6 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_physical_system(self):
         return self.get_physical_component_pkg().get_owned_physical_system()
-            
 
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
@@ -2043,8 +2040,6 @@ class ComponentPort(CapellaElement):
             return value
         else:
             return value.getName()
-    def set_orientation(self, value):
-        return self.get_java_object().setOrientation(value.get_java_object())
     def get_component_exchanges(self):
         return create_e_list(self.get_java_object().getComponentExchanges(), ComponentExchange)
     def get_allocated_function_ports(self):

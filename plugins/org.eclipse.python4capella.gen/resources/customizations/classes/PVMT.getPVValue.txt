@@ -1,3 +1,4 @@
+    @staticmethod
     def get_p_v_value(elem, PVName):
         for group in elem.get_java_object().getOwnedPropertyValueGroups():
             for pv in group.getOwnedPropertyValues():

@@ -24,6 +24,7 @@ if False:
 # Retrieve the Element from the current selection
 elem = CapellaElement(CapellaPlatform.getFirstSelectedElement())
 
+
 # create  a folder in the project
 model_path = CapellaPlatform.getModelPath(elem)
 project_name = model_path[0:(model_path.index("/", 1) + 1)]
