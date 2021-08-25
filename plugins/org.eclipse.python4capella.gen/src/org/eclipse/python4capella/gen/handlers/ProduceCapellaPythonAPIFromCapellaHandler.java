@@ -30,8 +30,11 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
+import org.polarsys.capella.core.data.capellacore.AbstractPropertyValue;
 import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
+import org.polarsys.capella.core.data.capellacore.PropertyValueGroup;
+import org.polarsys.capella.core.data.capellacore.StringPropertyValue;
 import org.polarsys.capella.core.data.information.Class;
 import org.polarsys.capella.core.data.information.DataPkg;
 import org.polarsys.capella.core.data.information.Operation;
@@ -44,8 +47,6 @@ import org.polarsys.capella.core.data.information.datavalue.NumericValue;
 public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 	private final List<EPackage> ePackages = initEPackages();
-
-	private final Map<String, String> featureRenames = initFeatureRenames();
 
 	final Map<String, List<ICategory>> queries = getQueryMapping();
 
@@ -373,8 +374,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	}
 
 	private String getJavaGetterName(Class cls, Property property) {
-		final String javaName = featureRenames.getOrDefault(cls.getName() + "." + property.getName(),
-				property.getName());
+		final String javaName = getJavaName(property);
 
 		if ("Boolean".equals(property.getType().getLabel())) {
 			return "is" + Character.toUpperCase(javaName.charAt(0)) + javaName.substring(1);
@@ -383,9 +383,22 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 	}
 
+	private String getJavaName(Property property) {
+		String res = property.getName();
+		
+		for (PropertyValueGroup group : property.getOwnedPropertyValueGroups()) {
+			for (AbstractPropertyValue pv : group.getOwnedPropertyValues()) {
+				if ("name".equals(pv.getName())) {
+					res = ((StringPropertyValue)pv).getValue();
+				}
+			}
+		}
+		
+		return res;
+	}
+
 	private String getJavaSetterName(Class cls, Property property) {
-		final String javaName = featureRenames.getOrDefault(cls.getName() + "." + property.getName(),
-				property.getName());
+		final String javaName = getJavaName(property);
 
 		return "set" + Character.toUpperCase(javaName.charAt(0)) + javaName.substring(1);
 	}
@@ -500,74 +513,6 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		} catch (Exception e) {
 			// nothing to do here
 		}
-
-		return res;
-	}
-
-	private Map<String, String> initFeatureRenames() {
-		final Map<String, String> res = new HashMap<>();
-
-		res.put("AbstractCapability.extendedCapabilities", "extendedAbstractCapabilities");
-		res.put("AbstractCapability.extendingCapabilities", "extendingAbstractCapabilities");
-		res.put("AbstractCapability.includedCapabilities", "includedAbstractCapabilities");
-		res.put("AbstractCapability.includingCapabilities", "includingAbstractCapabilities");
-		res.put("AbstractState.realizedStates", "realizedAbstractStates");
-		res.put("AbstractState.realizingStates", "realizingAbstractStates");
-		res.put("AbstractSystemCapability.involvedFunctions", "involvedAbstractFunctions");
-		res.put("CapellaElement.visibleForTraceability", "visibleInLM");
-		res.put("CapellaElement.visibleInDocumentation", "visibleInDoc");
-		res.put("EPBSArchitecture.capabilityRealizationPkg", "containedCapabilityRealizationPkg");
-		res.put("EPBSArchitecture.configurationItemPkg", "ownedConfigurationItemPkg");
-		res.put("EPBSArchitecture.dataPkg", "ownedDataPkg");
-		res.put("FunctionalChain.involvedFunctionalChains", "realizedFunctionalChains");
-		res.put("FunctionPort.allocatorComponentPort", "representedComponentPort");
-		res.put("LogicalArchitecture.capabilityRealizationPkg", "containedCapabilityRealizationPkg");
-		res.put("LogicalArchitecture.dataPkg", "ownedDataPkg");
-		res.put("LogicalArchitecture.interfacePkg", "ownedInterfacePkg");
-		res.put("LogicalArchitecture.logicalComponentPkg", "ownedLogicalComponentPkg");
-		res.put("LogicalArchitecture.logicalFunctionPkg", "containedLogicalFunctionPkg");
-		res.put("Node.physicalLinks", "involvedLinks");
-		res.put("OperationalAnalysis.dataPkg", "ownedDataPkg");
-		res.put("OperationalAnalysis.entityPkg", "ownedEntityPkg");
-		res.put("OperationalAnalysis.interfacePkg", "ownedInterfacePkg");
-		res.put("OperationalAnalysis.operationalActivityPkg", "containedOperationalActivityPkg");
-		res.put("OperationalAnalysis.operationalCapabilityPkg", "containedOperationalCapabilityPkg");
-		res.put("PhysicalArchitecture.capabilityRealizationPkg", "containedCapabilityRealizationPkg");
-		res.put("PhysicalArchitecture.dataPkg", "ownedDataPkg");
-		res.put("PhysicalArchitecture.interfacePkg", "ownedInterfacePkg");
-		res.put("PhysicalArchitecture.physicalComponentPkg", "ownedPhysicalComponentPkg");
-		res.put("PhysicalArchitecture.physicalFunctionPkg", "containedPhysicalFunctionPkg");
-		res.put("PhysicalPort.physicalLinks", "involvedLinks");
-		res.put("State.availableCapabilities", "availableAbstractCapabilities");
-		res.put("SystemAnalysis.capabilityPkg", "containedCapabilityPkg");
-		res.put("SystemAnalysis.dataPkg", "ownedDataPkg");
-		res.put("SystemAnalysis.interfacePkg", "ownedInterfacePkg");
-		res.put("SystemAnalysis.missionPkg", "ownedMissionPkg");
-		res.put("SystemAnalysis.systemComponentPkg", "ownedSystemComponentPkg");
-		res.put("SystemAnalysis.systemFunctionPkg", "containedSystemFunctionPkg");
-		res.put("Diagram.description", "documentation");
-		res.put("PrimitiveDataType.realizedInformations", "RealizedDataTypes");
-		res.put("PrimitiveDataType.realizingInformations", "RealizingDataTypes");
-
-		// requirement renames
-		res.put("CapellaModule.id", "ReqIFIdentifier");
-		res.put("CapellaModule.longName", "ReqIFLongName");
-		res.put("CapellaModule.name", "ReqIFName");
-		res.put("CapellaModule.prefix", "ReqIFPrefix");
-		res.put("Requirement.id", "ReqIFIdentifier");
-		res.put("Requirement.longName", "ReqIFLongName");
-		res.put("Requirement.name", "ReqIFName");
-		res.put("Requirement.chapterName", "ReqIFChapterName");
-		res.put("Requirement.prefix", "ReqIFPrefix");
-		res.put("Requirement.text", "ReqIFText");
-		res.put("Attribute.name", "ReqIFName");
-
-		// isHuman
-		res.put("SystemActor.isHuman", "human");
-		res.put("LogicalComponent.isHuman", "human");
-		res.put("LogicalActor.isHuman", "human");
-		res.put("PhysicalActor.isHuman", "human");
-		res.put("PhysicalComponent.isHuman", "human");
 
 		return res;
 	}
