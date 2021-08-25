@@ -11,11 +11,24 @@ class PVMT(JavaObject):
             EObject.__init__(self, java_object.get_java_object())
         else:
             EObject.__init__(self, java_object)
-    def get_p_v_names(self, elem):
-        raise AttributeError("TODO")
-    def is_p_v_defined(self, elem, PVName):
-        raise AttributeError("TODO")
-    def get_p_v_value(self, elem, PVName):
-        raise AttributeError("TODO")
-
-
+    @staticmethod
+    def get_p_v_names(elem):
+        #: :type elem: CapellaElement
+        res = []
+        for group in elem.get_java_object().getOwnedPropertyValueGroups():
+            for pv in group.getOwnedPropertyValues():
+                res.append(pv.getName())
+        return res
+    @staticmethod
+    def is_p_v_defined(elem, PVName):
+        return PVName in PVMT.get_p_v_names(elem)
+    @staticmethod
+    def get_p_v_value(elem, PVName):
+        for group in elem.get_java_object().getOwnedPropertyValueGroups():
+            for pv in group.getOwnedPropertyValues():
+                if PVName == pv.getName():
+                    if pv.eClass().getName() == "BooleanPropertyValue":
+                        return str(pv.isValue())
+                    else:
+                        return str(pv.getValue())
+        return None

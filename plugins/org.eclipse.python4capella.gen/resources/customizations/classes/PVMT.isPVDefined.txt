@@ -1,0 +1,4 @@
+    @staticmethod
+    def is_p_v_defined(elem, PVName):
+        return PVName in PVMT.get_p_v_names(elem)
+
