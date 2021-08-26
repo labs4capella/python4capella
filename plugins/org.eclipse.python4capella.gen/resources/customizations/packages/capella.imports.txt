@@ -7,4 +7,7 @@ if False:
 include('workspace://Python4Capella/java_api/Sirius_API.py')
 if False:
     from java_api.Sirius_API import *
+include('workspace://Python4Capella/utilities/CapellaPlatform.py')
+if False:
+    from utilities.CapellaPlatform import *
 

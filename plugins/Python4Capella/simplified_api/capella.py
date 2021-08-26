@@ -7,6 +7,9 @@ if False:
 include('workspace://Python4Capella/java_api/Sirius_API.py')
 if False:
     from java_api.Sirius_API import *
+include('workspace://Python4Capella/utilities/CapellaPlatform.py')
+if False:
+    from utilities.CapellaPlatform import *
 
 
 class CapellaModel():
@@ -46,6 +49,8 @@ class CapellaModel():
     def open(self, obj):
         # obj can be a path to the .aird file or an EObject
         if isinstance(obj, str):
+            if CapellaPlatform.getWorkspaceFile(obj) is None:
+                raise AttributeError("the .aird file doesn't exist: " + obj)
             self.session = Sirius.load_session(obj)
         elif isinstance(obj, EObject):
             self.session = Sirius.get_session(obj)
