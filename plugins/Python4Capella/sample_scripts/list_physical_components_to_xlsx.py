@@ -20,6 +20,12 @@ if False:
 # include needed to read/write xlsx files
 from openpyxl import *
 
+#check parameter numbers
+if len(argv) != 1:
+    print("You need one parameter the .aird file path:")
+    print("For instance: \"/In-Flight Entertainment System/In-Flight Entertainment System.aird\"")
+    quit()
+
 # Load the Capella model from the first argument of the script
 aird_path = argv[0]
 model = CapellaModel()
