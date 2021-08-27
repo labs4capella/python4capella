@@ -3,7 +3,7 @@ This script allow to extract Property Values defined with PVMT associated to ele
 '''
 # To run it:
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
-#  - launch the contextual menu "Run As / Run configurations..." on this scr
+#  - launch the contextual menu "Run As / Run configurations..." on this script
 #    - create a new "EASE Script" configuration
 #    - define the name of the configuration: "Need3b.py" (for instance)
 #    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Need3b.py"

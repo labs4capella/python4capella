@@ -10,7 +10,7 @@ This script allows to extract a table with:
 '''
 # To run it:
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
-#  - launch the contextual menu "Run As / Run configurations..." on this scr
+#  - launch the contextual menu "Run As / Run configurations..." on this script
 #    - create a new "EASE Script" configuration
 #    - define the name of the configuration: "Need1.py" (for instance)
 #    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Need1.py"

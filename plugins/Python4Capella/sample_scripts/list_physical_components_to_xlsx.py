@@ -2,7 +2,7 @@
 # This script loads the Capella model passed as first argument and list its root PhysicalComponent to an xlsx file.
 # To run it:
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
-#  - launch the contextual menu "Run As / Run configurations..." on this scr
+#  - launch the contextual menu "Run As / Run configurations..." on this script
 #    - create a new "EASE Script" configuration
 #    - define the name of the configuration: "list_physical_components_to_xlsx.py" (for instance)
 #    - define the Script Source path: "workspace://Python4Capella/sample_scripts/list_physical_components_to_xlsx.py"
