@@ -1,4 +1,4 @@
-h1. Generate Python Test
+h1. Generate Python Tests
 
 This section describes how you can generate Python tests for the simplified Capella Python metamodel.
 

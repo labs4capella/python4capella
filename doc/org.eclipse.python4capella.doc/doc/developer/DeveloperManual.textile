@@ -8,7 +8,9 @@ h2. Advanced Python users
 
 h2. Python4Capella contributors
 
+* "*Repository overview*":RepositoryOverview.html Describes the structure of the "git repository":https://github.com/labs4capella/python4capella.
 * "*Create a Python interpreter distribution for Windows*":python/CreateWindowsPythonFile.html Describes how you can recreate the Python interpreter zip file for Windows.
 * "*Generate Python API*":python/GeneratePythonAPI.html Describes how you can generate Python API for the Python Capella light metamodel.
 * "*Generate Python Tests*":python/GeneratePythonTests.html Describes how you can generate Python tests for the Python Capella light metamodel.
+* "*Run Python Tests*":python/RunPythonTests.html Describes how you can run Python tests for the Python Capella light metamodel.
 

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>RepositoryOverview</title>
+		<link type="text/css" rel="stylesheet" href="../resources/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="../resources/custom.css"/>
+	</head>
+	<body>
+		<h1 id="Repositoryoverview">Repository overview</h1>
+		<p>This section describes the structure of the 
+			<a href="https://github.com/labs4capella/python4capella">git repository</a>.
+		</p>
+		<h2 id="README">README</h2>
+		<p>The README.md contains the markdown displayed as the front page of the repository, all files needed are stored in the README directory.</p>
+		<h2 id=".githubfolder">.github folder</h2>
+		<p>This folder contains scripts needed by 
+			<a href="https://github.com/features/actions">github action</a> for the build. It also contains the JSON definition of the build matrix.
+		</p>
+		<h2 id="docfolder">doc folder</h2>
+		<p>The doc folder contains the documentation you are reading. To change the documentation, you can modify the textile files and run the launch config at the root of the documentation project.</p>
+		<p>Note this launch config is also ran during the build.</p>
+		<h2 id="featuresfolder">features folder</h2>
+		<p>This folder contains all feature projects included in the resulting update site:</p>
+		<ul>
+			<li>the command line feature</li>
+			<li>the main feature of Python4Capella</li>
+		</ul>
+		<h2 id="pluginsfolder">plugins folder</h2>
+		<p>This folder contains all plugin projects:</p>
+		<ul>
+			<li>the command line plugin</li>
+			<li>the main plugin for Python4Capella</li>
+			<li>the plugin that generates the Python API and tests (for developers)</li>
+			<li>the Python4Capella project that will be zipped in the org.eclipse.python4capella plugin during build</li>
+		</ul>
+		<h2 id="relengfolder">releng folder</h2>
+		<p>This folder contains release engineering projects like target platforms and the update site project.</p>
+		<h2 id="scriptsfolder">scripts folder</h2>
+		<p>This folder contains scripts needed to prepare deployed artifacts.</p>
+		<h2 id="specificationfolder">specification folder</h2>
+		<p>This folder contains the specification of the simplified Capella metamodel, status tooling, and 
+			<a href="https://www.m2doc.org/">M2Doc</a> generator.
+		</p>
+		<p>You can have a look at the dedicated 
+			<a href="https://github.com/labs4capella/python4capella/tree/master/specification">README file</a>.
+		</p>
+		<h2 id="testsfolder">tests folder</h2>
+		<p>This folder contains Java tests and also the Python4CapellaTests project that you can import in your workspace to test the Python part of Python4Capella. You can find the documentation on how to run those tests 
+			<a href="python/RunPythonTests.html">here</a>.
+		</p>
+	</body>
+</html>

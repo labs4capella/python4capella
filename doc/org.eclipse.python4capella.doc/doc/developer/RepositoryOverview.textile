@@ -1,0 +1,52 @@
+h1. Repository overview
+
+This section describes the structure of the "git repository":https://github.com/labs4capella/python4capella.
+
+h2. README
+
+The README.md contains the markdown displayed as the front page of the repository, all files needed are stored in the README directory.
+
+h2. .github folder
+
+This folder contains scripts needed by "github action":https://github.com/features/actions for the build. It also contains the JSON definition of the build matrix.
+
+h2. doc folder
+
+The doc folder contains the documentation you are reading. To change the documentation, you can modify the textile files and run the launch config at the root of the documentation project.
+
+Note this launch config is also ran during the build.
+
+h2. features folder
+
+This folder contains all feature projects included in the resulting update site:
+
+* the command line feature
+* the main feature of Python4Capella
+
+h2. plugins folder
+
+This folder contains all plugin projects:
+
+* the command line plugin
+* the main plugin for Python4Capella
+* the plugin that generates the Python API and tests (for developers)
+* the Python4Capella project that will be zipped in the org.eclipse.python4capella plugin during build
+
+h2. releng folder
+
+This folder contains release engineering projects like target platforms and the update site project.
+
+h2. scripts folder
+
+This folder contains scripts needed to prepare deployed artifacts.
+
+h2. specification folder
+
+This folder contains the specification of the simplified Capella metamodel, status tooling, and "M2Doc":https://www.m2doc.org/ generator.
+
+You can have a look at the dedicated "README file":https://github.com/labs4capella/python4capella/tree/master/specification.
+
+h2. tests folder
+
+This folder contains Java tests and also the Python4CapellaTests project that you can import in your workspace to test the Python part of Python4Capella. You can find the documentation on how to run those tests "here":python/RunPythonTests.html.
+
