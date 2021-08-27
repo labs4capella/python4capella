@@ -503,13 +503,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4d98a031-3ea3-4cb1-b499-7fec3a034c3c" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5794b858-5037-4c13-87d4-9af820b60716" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5e9d76e2-faba-4846-b2de-b44821853049" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b42403d5-74a4-4137-bd98-b553de101327" name="constraints_getter"
                     value="OK"/>
@@ -1156,13 +1156,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e120dcf3-a06b-4356-8e9c-4cafc3f260c5" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f2911646-4643-43f2-9242-a8ac19ebdfd4" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="42770551-35f3-475f-a6c1-907932232805" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f5fd562c-b10a-42ee-8f48-b7d4f2685ed6" name="constrainedElements_getter"
                     value="OK"/>
@@ -1327,13 +1327,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="47eb2948-a75a-4200-8c52-60721ae4637f" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fc6de35f-77e5-4ee8-b345-db5e53ddad03" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ebc17f23-8fbc-4a85-ada6-ab0a351c4cb9" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e8b06a31-81d4-4ae1-a056-e692cb6e8733" name="constraints_getter"
                     value="OK"/>
@@ -1511,13 +1511,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c0f309d1-d7b3-48ab-8250-68b8c192dc76" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a4b2d777-0e84-4d6e-b663-4c4e19cf893e" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6fd2d203-2f9c-4a0e-a399-9aaa267dbcfc" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="52ed718e-d8d0-40b1-aa0c-3354e300b059" name="constraints_getter"
                     value="OK"/>
@@ -1661,13 +1661,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="86e728ea-8eec-42c8-b618-c909e155049d" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ef18ccc4-439a-4f3f-825e-335f4c8caabe" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e96702b9-2588-4fab-952b-30561f192db9" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="886f40ef-075c-4531-91cc-dc42ac215506" name="constraints_getter"
                     value="OK"/>
@@ -1800,13 +1800,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fd4f24e0-9624-4eb3-a5bf-c360682d3204" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="699aaf43-f566-42a6-a19e-25989bf00937" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9f3709e0-e10f-48ed-8000-63eab2f76c93" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a391aefe-db10-42ec-9657-f19a982d2cdc" name="constraints_getter"
                     value="OK"/>
@@ -1947,13 +1947,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="37c50b7c-1166-4745-bb00-828335127d35" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="523810ac-2f69-47f9-ba1a-c450792c653e" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3a3c70a0-d7f2-4a72-8657-aecd12b82de5" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="dae0206a-5a05-42ab-b4a6-580d1dbfbb4f" name="constraints_getter"
                     value="OK"/>
@@ -3436,13 +3436,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="95009cda-35c7-4da6-b9c9-4efebc0c77f2" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4dd64c25-e9a4-404d-88a8-fa62eee15ef5" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b484f32d-bd95-48ea-820e-8baff31b9697" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="179a14d7-982c-4529-966f-0a5fd9b1cdda" name="constraints_getter"
                     value="OK"/>
@@ -3672,13 +3672,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5a2e8e51-33f2-490a-9842-fefc877ee11d" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="11dcc12f-e683-4a54-ba8b-32ea68dbc842" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7e6377eb-496f-48a4-8080-81df04913e05" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8c2a43c7-b4af-4fb0-9fa4-8e4747194358" name="constraints_getter"
                     value="OK"/>
@@ -3841,13 +3841,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="24a89a6f-3404-4a47-adc9-7da4f2359d26" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c0113f4b-a76e-434e-b30c-e500fad0b1bb" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d4869ca7-5bd5-4d23-9d25-172c348f6463" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9503fb15-87de-40f1-9bd5-4daae2103e43" name="availableInStates_getter"
                     value="OK"/>
@@ -4109,13 +4109,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6d42d735-a1ca-4f74-8440-04b7463632c9" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ce78d116-cc34-45ba-b0d4-6f21c0f5ff6b" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ad2b62e3-0e8a-4136-a389-78f8b6c0e9a5" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a004cad1-76c1-47d1-a7e1-a8cd655dd740" name="constraints_getter"
                     value="OK"/>
@@ -4321,13 +4321,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9eb26ac1-37df-4c85-b6c7-d88c9842b9a9" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="358c217a-262a-4637-85d4-fccbc0e46f8b" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6f27a39a-2594-4e7f-9cca-3bb502f2fbf5" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b050bfc1-686d-4b12-9558-13386af93c0d" name="availableInStates_getter"
                     value="OK"/>
@@ -4563,13 +4563,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="48f51cfc-5bfc-4234-b90f-b1593485106b" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="17d31cd7-8774-4260-9fb9-6922a1e2de2a" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3d706932-f1fa-4ecc-a0aa-466c0fb30c5f" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8c52d449-b99a-460a-b578-7938fbdec315" name="constraints_getter"
                     value="OK"/>
@@ -4726,13 +4726,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="33d02011-18a5-41a7-a6ee-1eba3482a51c" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6105850b-e98c-4c43-ac9d-00044e5fd0f2" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a95fd12a-b8fa-4150-a1d4-8beeb95b1951" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f2a3f4fc-d544-4585-85a3-6148986e2452" name="availableInStates_getter"
                     value="OK"/>
@@ -4987,13 +4987,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="66827223-aeed-4f84-bad5-540f0cda4c21" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3580f918-ada0-478c-84aa-b3916000963f" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0f5b9f1d-421a-4c69-953d-2c9329ed9b5e" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c2278e3b-fb2c-4ebc-9105-39edf39bb013" name="constraints_getter"
                     value="OK"/>
@@ -5164,13 +5164,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3795bded-0923-4dd2-a7f1-7bc77ba7434d" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="69bdd448-720c-4ce0-92e6-ce0a3c9396e0" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1e6d2434-5945-47f1-af54-492e1af8f2cc" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="28124747-611f-4a9e-9ae9-1588dfcf07f4" name="constraints_getter"
                     value="OK"/>
@@ -5353,13 +5353,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b0c13cbf-8f44-4afc-99a6-9c0362c091d8" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b865aa43-2f63-40e0-805f-1ebacdfd0057" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9b70606b-2624-4bbf-b37b-cbafb511facb" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3bc99c70-4063-406d-bb01-a684cfb58cba" name="constraints_getter"
                     value="OK"/>
@@ -5571,13 +5571,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5402cbfc-f39a-4c9b-ac87-e5e76847587e" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5facb9ef-9858-4b81-af5d-41bbc2cf6727" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="18b41f56-16d0-4ed3-9f16-99e36b96e88c" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="39cc7685-f1d9-40b1-81bc-19d290920af9" name="constraints_getter"
                     value="OK"/>
@@ -6046,13 +6046,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d9377114-9734-4b4a-b2fc-9ff9cdb04929" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a6987d7e-53fa-4a89-9167-7fa36c968dcf" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f207571c-8071-43dd-afa1-ab176be6e766" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2623566e-69a5-441a-8f70-31cd9385b609" name="capabilityPkg_getter"
                     value="OK"/>
@@ -6312,13 +6312,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="153b2433-adc9-43a2-b8ac-5d8455663a8a" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9b8223d5-fbdf-4d33-9a9b-99b74018b3eb" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b7048359-f744-45a5-ac89-4c15ee8181f6" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a2f9af95-9e25-45b6-9ac9-1cf55b92e089" name="constraints_getter"
                     value="OK"/>
@@ -6492,13 +6492,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7e2584a9-7cf9-4dab-a40e-fee623fd474a" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3a9577a8-c8eb-450b-a9d7-b61b88bf0164" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="cc76e525-a9cb-4fa0-91ff-2f12b383cfc4" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="95352eda-43fc-4f05-9edf-8d2eae1e41ae" name="availableInStates_getter"
                     value="OK"/>
@@ -6725,13 +6725,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d2897768-6650-42f7-bd8b-95d8cdb963d9" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="751ab750-9aea-40c1-abbb-81eee2e5d056" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="45921ff1-9b68-4d28-bd9a-5cd98c1b1602" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="397778b4-8aa0-4d3d-8616-10abfccda4e8" name="constraints_getter"
                     value="OK"/>
@@ -6887,13 +6887,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5f743dcb-86a6-4c40-87a7-27a720083206" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9491e84f-f49d-442f-ad9e-84d6cddda372" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="aa88b064-1f33-4c27-a8b2-5ec44086fb1f" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4070bb87-03b4-45ee-8341-73bdaad4b569" name="availableInStates_getter"
                     value="OK"/>
@@ -7161,13 +7161,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b74d93ab-5dba-4f33-8ac3-0de09a9cd7af" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5351efc7-d279-4798-89dd-906ba69ce48f" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ecb1657c-f0dd-4de0-87c5-43767a0dbbe7" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1e87e241-bf19-4232-bad9-6f3a8d647a19" name="constraints_getter"
                     value="OK"/>
@@ -7363,13 +7363,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6dd28adf-280a-4443-9802-7e8db1bfebb6" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2e54e628-edfc-4d7e-8c06-4437288baa49" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="932d9100-9d39-4cfd-b746-823a3ebc2d2e" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d01138fd-74fe-4fca-9771-320cefc10c4d" name="constraints_getter"
                     value="OK"/>
@@ -7573,13 +7573,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4c77cfd9-8c03-4d69-aa3c-4a8e589ffea7" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f858a84a-0e88-4ca7-aa7e-1bdbb34d6409" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="959408c7-c12f-4a0b-a9c7-2e7395f12ad4" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1c5f0b11-27b9-4142-a60c-70bfa61d4a05" name="constraints_getter"
                     value="OK"/>
@@ -7868,13 +7868,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="131c75d0-bdd2-4f65-943a-3468236f12d4" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b90cf695-5b52-4998-b7b0-208e3fcb3a26" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="38b83c4c-1583-4778-b097-6539d2d8ccb0" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="dc93f8b7-8d2b-448d-bea4-7c083fbe7ea0" name="constraints_getter"
                     value="OK"/>
@@ -8029,13 +8029,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c5e0efef-c888-41a9-b0e9-2872bf36aa77" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0c2df2ca-973b-418c-b8e7-c5bac664d5ee" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="02c70ebf-5341-414a-b93c-0908a93ea630" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ebf22e8c-d7d2-4d8f-9205-2924fd5a798c" name="constraints_getter"
                     value="OK"/>
@@ -8491,13 +8491,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="166ce804-c131-4a3d-acf4-4b4e47f61f33" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fcd718c4-f387-48c1-b557-9bce28db8f1a" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="04b1c2f3-2f0d-48e1-8dcb-8965191dbd50" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8b24e056-86ca-4e37-bda3-370c1b50b1df" name="capabilityRealizationPkg_getter"
                     value="OK"/>
@@ -8739,13 +8739,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="01bc0749-e6fd-46a1-9164-4f75ec2bf5a7" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8af964cd-07ac-414f-8e2d-8571141dbe98" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="29964d2b-f773-40ac-b031-20b4b899ae0d" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1e69150c-7e8f-4e4b-b1b3-5aaebdabdfc6" name="constraints_getter"
                     value="OK"/>
@@ -8919,13 +8919,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c501189c-8f94-4151-bb88-636d74d0f277" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9c2d2023-8984-4f7d-8be1-f70ae88d38cc" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1afa306f-e88a-4dab-8de2-cf90704fe249" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="04c858a3-dfe2-4d6f-8005-2115f4a4a314" name="availableInStates_getter"
                     value="OK"/>
@@ -9153,13 +9153,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fb18aa61-db1d-46b2-90d0-e0c265acebe0" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="14cd5f39-f2b8-4e1e-9be9-d70028b5baa1" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ae86583a-c248-4f69-8deb-97e1bc1fdaa3" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7e7f0ea7-870d-4b6c-9703-a0a7d4a751f8" name="constraints_getter"
                     value="OK"/>
@@ -9316,13 +9316,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="abdb9b09-4d6b-4ce2-8b81-9363aa861818" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f3a57d03-b94d-47ee-9fe6-7daa1e48d5c5" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e84ed988-39bc-4325-a5df-8650e5ae60ce" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4ecc0189-e560-478f-a3d5-6306588dc8d4" name="availableInStates_getter"
                     value="OK"/>
@@ -9641,13 +9641,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="285ec846-80b3-4831-9155-69e121ff9818" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="20625c41-ee78-4cb7-9240-11c71a15a51f" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5d2632f6-4827-4557-a232-73022e52e334" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2ac3ebee-9fa9-4d02-ba39-2add9b943990" name="constraints_getter"
                     value="OK"/>
@@ -9857,13 +9857,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="11ba756c-3b35-4c90-82c5-894693d7fb97" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="500e2e37-28cb-40a9-a127-1db866785e9d" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="38a2a910-46f0-43a9-9297-17ebb27013af" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f965a00b-c3e9-4876-9c5c-4afbe2a3864a" name="constraints_getter"
                     value="OK"/>
@@ -10092,13 +10092,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7d481fc1-9a21-403f-841d-b9c4c0dbe64a" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4d744bae-d978-49c7-ae8e-a35b12afba56" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7d23781a-e3a1-47e0-99c5-d71729b0b772" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ab789111-f9c6-4057-81dd-c96560e88708" name="constraints_getter"
                     value="OK"/>
@@ -10354,13 +10354,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a77a3f91-6f9f-42ce-b05e-2493efe831fd" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="32826133-0d55-402b-a539-06d13ebbc1db" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="028759d8-f0d3-4bfd-b002-7d6b97ae898e" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="127f3dbd-f25c-4904-9371-2db90c8d210f" name="constraints_getter"
                     value="OK"/>
@@ -10922,13 +10922,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1b4899b9-6ddc-4ff7-8924-438d794dc3bd" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="85170f54-08f2-4cb8-93d6-92ccdb505bba" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="81fe1798-bf67-4862-a93a-9c375f2caee0" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b67b584e-a292-46bb-b7dc-6bea212b7a26" name="capabilityRealizationPkg_getter"
                     value="OK"/>
@@ -11171,13 +11171,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f38057c8-2f40-49e2-a42c-ca1b67af791f" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="07cba2ff-fd69-459e-aaac-b6bb24721450" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fee14bd7-0fd9-4dc3-8327-2436baed7e2c" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="94f36533-43b8-4120-8495-0ed0b9f54840" name="constraints_getter"
                     value="OK"/>
@@ -11352,13 +11352,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f2200fbc-8b12-4e20-8308-278146843b8b" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0ed9e5dd-c431-4296-95a0-78c3f3fa9648" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5a8a80dd-a2d4-4423-8043-7281382999ad" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="61153e9d-5084-4534-b48f-26f486c3375f" name="availableInStates_getter"
                     value="OK"/>
@@ -11590,13 +11590,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a531ab02-1d29-4aa7-9e58-823f316dd182" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="484330c9-5554-41ce-97f2-ea3c4ba8c675" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1b13f222-bf59-4638-a821-895ed280d075" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2c803071-d854-4e17-8b85-c26ca51e4831" name="constraints_getter"
                     value="OK"/>
@@ -11800,13 +11800,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="508553f3-f66a-47ed-ae95-1d82606c2a78" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="bdabf7bb-5df4-4b1e-9393-1605e567f28e" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5e1fb0b3-fad6-4f5f-9e87-ddf7756d821e" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="960954da-591e-4cc4-9939-d0d56422eb7c" name="constraints_getter"
                     value="OK"/>
@@ -12073,13 +12073,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8bccad5c-f8ba-4ad9-b700-ab9bb66f07eb" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3596c66f-e956-43c0-b3a2-69e66a9de252" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3993a61c-e1ae-4a28-81de-dfd9c7424789" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="81222acf-dbcf-42fc-9529-9c6b72991a75" name="constraints_getter"
                     value="OK"/>
@@ -12315,13 +12315,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="af40bad1-e868-44cc-bbe1-454ea57e9c8b" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f41c9c96-b231-4fa1-be9c-eb6c2c916dce" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ddfa84ef-8f4f-40d3-9370-349897456e9a" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="37525e92-c9a7-471f-be63-60b3052ba7ec" name="constraints_getter"
                     value="OK"/>
@@ -12528,13 +12528,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f576c06c-59f0-4df3-8e8f-272d925340ca" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8b758769-11bb-4212-9e5d-435195f1d4e1" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9060d466-389e-4f3e-b2f0-0d5f9832ce4b" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6f26003a-aeb2-48aa-b7bd-7b6b405e561b" name="constraints_getter"
                     value="OK"/>
@@ -12919,13 +12919,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="16d665bc-e09a-4003-a59d-ae989667fa7c" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="838dd036-9238-4d72-983b-8be79caf0377" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d40fa891-ae90-4816-9dbd-b0b2fa1a06ac" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="879e846d-f5db-4179-97fd-e4d9d3caa04f" name="capabilityRealizationPkg_getter"
                     value="OK"/>
@@ -13117,13 +13117,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="26ff0fef-47c4-4ac7-9319-ddb8b8b7cdfe" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8365968e-3871-4a9e-a252-64db836a24f5" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="61609329-79da-4e80-b896-8a2abd689b2e" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6cc31e9c-a26d-478c-984d-baeacb096bce" name="constraints_getter"
                     value="OK"/>
@@ -13286,13 +13286,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="67363fbd-6279-42f7-bfcd-a20602e4bfc3" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7f36ac02-cdc2-4763-a5be-0c7a478748cf" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="95ba94bb-32a1-413a-a830-39bd934ca1c3" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5590e25a-4f92-431a-b425-4781308a1548" name="constraints_getter"
                     value="OK"/>
@@ -13622,13 +13622,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="60a03c14-6238-45c1-bbc4-90d5f550c19a" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="508c6bf7-7f1d-4aa7-8837-a06c0706b319" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c135ecec-e576-4fca-86f9-78532ddbcbe1" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="193c3701-6e02-4f5d-9fb6-a714b8f16b2d" name="constraints_getter"
                     value="OK"/>
@@ -13823,13 +13823,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fb559c7d-2b6d-4491-b518-fa961538667c" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5d65cd5b-9c6f-4b8d-b99d-9c0220a5fad9" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a1a722e1-1d51-4a46-a863-03289c37afcc" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="31688db3-30d5-49d9-8b64-90a57d5a8f41" name="availableActivitiesFunctions_getter"
                     value="KO"/>
@@ -14095,13 +14095,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7c5d8247-efd6-4a8a-9525-3c280e0182ae" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e7e5f42d-743e-4727-a532-2139ed36a2fb" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="bd0c1606-d59a-4762-bd13-b7d2c1d7ad1d" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="57e38289-386f-46a7-a5b0-34115000af27" name="availableActivitiesFunctions_getter"
                     value="KO"/>
@@ -14304,13 +14304,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="99d85288-c69c-43db-8dfa-d0a3d50cd52d" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="dd16713f-7dec-4ff0-a0a8-2c2479396350" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5404dbe3-f20b-4916-a01b-825d73048fac" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6e9c8d6d-0aff-4df5-b654-cea1538864b5" name="constraints_getter"
                     value="OK"/>
@@ -14473,13 +14473,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1609d39e-ec70-4f63-9b1e-141e615a86a0" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fcc61b04-dbae-44c9-859e-3bb2adcde66c" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a78715f1-59ef-4e0c-b40a-2138ccc07adb" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7c3c17d7-68d6-45ef-b8d2-61b0538e3e38" name="constraints_getter"
                     value="OK"/>
@@ -14619,13 +14619,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="42e1d252-05d1-480d-806f-d41f1c797d8a" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8f4518e5-e79e-4cb5-929e-54964c5f7f6e" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="92d9b357-2429-4234-ae0c-70a046ec9ff9" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="31245286-f622-4361-8d60-695cedebd567" name="constraints_getter"
                     value="OK"/>
@@ -14866,13 +14866,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a9d7a8e2-5988-4b93-adf9-c7a5c0ec1639" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8fe20896-8ae4-4ec5-b8db-135b7103d42d" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="cef6a1a3-c509-4d53-aa8c-88930583a107" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="869bd4f4-38a7-4639-80d9-853ef9252eb9" name="constraints_getter"
                     value="OK"/>
@@ -15014,13 +15014,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e521a062-1d43-4e7d-a23b-b2610d22bec9" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="acbff292-246a-47df-8377-890228b3cc0f" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="cd886555-76a2-417c-88b3-10e3757685fb" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e03426fd-6fdc-46ca-a6f2-2d7e1b012c78" name="constraints_getter"
                     value="OK"/>
@@ -15517,13 +15517,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="dc0b5a12-a9ce-433d-915e-5dc070aa047d" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f48abc1b-a3f1-44e7-bf93-9822a32d788b" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8b9d6880-4c37-432a-992f-73a3f7507792" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4aa40a4d-c1dc-4b51-a134-e2bd2bbbf224" name="constraints_getter"
                     value="OK"/>
@@ -15789,13 +15789,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c09d09d1-f497-4dc7-ad57-701e62b6afb6" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8b263a21-657a-4bcf-a94d-4460310e1b9c" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8f5382f7-ed4e-46f1-ae88-1d5b5f34bc6f" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d92bba63-6b51-4341-904e-ab5ea4d2e831" name="constraints_getter"
                     value="OK"/>
@@ -15949,13 +15949,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3556c824-c6ca-4202-997f-15a1134c2656" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="15d9ead9-588b-41be-b7fe-beca0b8c7a7e" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2736412c-8793-4c80-ba80-14f5d61e4479" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a0dbbb19-8f18-4f61-a714-a0f0e8bbe664" name="constraints_getter"
                     value="OK"/>
@@ -16189,13 +16189,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="97d46940-d6ee-41a8-8495-4ccd26e41ac1" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="429baa96-898a-467e-95fb-05cb4e95f195" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="43f13790-b6db-4608-8503-f96800d8885f" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3c4af0fa-4722-4933-8758-e44a90ce4ac7" name="constraints_getter"
                     value="OK"/>
@@ -16360,13 +16360,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f3d8d27e-1c95-4614-83e0-e851f565e7c7" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="845ca14e-93bd-466c-8e68-185599949f70" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="619b857d-884d-4be3-9042-cacc7b042f15" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="22208a7f-4a61-45b8-b28e-180a1fe549e9" name="constraints_getter"
                     value="OK"/>
@@ -16529,13 +16529,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7423b809-0b4e-48dc-963c-1f826fe92557" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e2154d4b-bc4a-4ee0-929f-57c3939889bb" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fad0501c-165f-43f7-a1ef-91b107ea9e6c" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5434d3ca-118f-497f-bed4-c82375d26d64" name="constraints_getter"
                     value="OK"/>
@@ -16712,13 +16712,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="53a60cc5-0e02-493b-a14b-23aedb18f20c" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="27f90e5a-111a-42a0-b550-e993d609eac7" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="24dfe1f7-4028-4592-b7cb-e2f826a01ed2" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4b9234f6-160a-4397-85bc-d036f3e19b00" name="constraints_getter"
                     value="OK"/>
@@ -17125,13 +17125,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d0993fa4-b7c7-46a0-ac91-b33f26e71341" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a8a431d5-f5b7-44c9-bd46-a79acf35de9a" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="fe3115eb-5226-4c10-b5c8-c893a52148a9" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f2954ee3-f5ec-42a7-8cbd-3d1838a78e97" name="constraints_getter"
                     value="OK"/>
@@ -17329,13 +17329,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e6db7612-80a7-4856-8033-0c82a4e1de4d" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="728c9b90-6bc9-40c8-a879-df5101896029" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8d07ef6d-25f8-4035-b54c-00ca2bb7a47c" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="67c1dc1e-f11a-4aaa-96d8-dba3fd15166e" name="categories_getter"
                     value="OK"/>
@@ -17555,13 +17555,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d6928f32-0d4e-4ac5-b337-f095f7d3b4a0" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0bab9c63-4ce3-412e-82fd-14877a228894" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9cfd9014-4d73-4e5c-b5bd-cb80c96db05e" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1c429c9a-3471-4ee8-a113-e9f634998dec" name="constraints_getter"
                     value="OK"/>
@@ -17710,13 +17710,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="57d89451-301a-465f-aa0c-c53487e659dd" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5e9dda47-a41b-4745-a629-db1e16da0e49" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c9b89905-24e0-4186-b75b-d2786216efd0" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ae74f31f-f5b5-41d2-85d6-06fe4e0273cd" name="constraints_getter"
                     value="OK"/>
@@ -17905,13 +17905,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="dac6097e-113b-4232-9488-1bb22e4c15cf" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="550cf17f-3e3e-4c7e-87bb-5451458b840d" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="969c9f62-6fc1-4cae-b77e-5ddfc8d0b974" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ae6f8287-ffff-46c5-8d8f-92c839f62b68" name="constraints_getter"
                     value="OK"/>
@@ -18079,13 +18079,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="89634a36-474c-4af8-ac1d-d993692d635b" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8804da31-8946-438a-b4de-db13742ca0b4" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2334f262-3a52-4461-b0ef-501af653a054" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7d83ddbb-0199-4cf9-b3f6-d90732087eaa" name="constraints_getter"
                     value="OK"/>
@@ -18357,13 +18357,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="3de97483-89bd-4d17-9067-5a6beee3fc56" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="51ffc001-362a-44a1-bc06-e09ca37fe13c" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1546d707-a763-4999-bd28-7a751db957c7" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e30299fb-29e4-4a67-b887-78e5d9cab37d" name="constraints_getter"
                     value="OK"/>
@@ -18557,13 +18557,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="09a0fe59-688e-4d6a-9ccd-7866d92ab470" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5af587a0-4eef-4f10-8deb-c6e911fb5cce" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="720bb730-686d-4429-bb82-0dfcbbd3c511" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="76731ad8-6bc9-4d29-bdd0-bcd487971ef3" name="constraints_getter"
                     value="OK"/>
@@ -18832,13 +18832,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c1577275-436f-4b1d-b5ae-2f79ac685d88" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5dc0f472-b309-4de0-9165-13afece159d0" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e2a66bbf-d8a8-43a0-9bd3-ab438f487bfb" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="59ef2811-f5f4-4484-89bc-d382fd09005a" name="constraints_getter"
                     value="OK"/>
@@ -19456,13 +19456,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9339e04d-9df1-4018-9e80-d1fccbcf9285" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5d520388-132d-4d43-b064-e2f24df78bf0" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7c5d50cb-0ecd-440f-98bd-3c55c80026d3" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6bec6cbb-f1a3-4fa4-973f-0fa61a383272" name="constraints_getter"
                     value="OK"/>
@@ -19654,13 +19654,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="157aa3e4-7318-49f3-97b5-bf27a46dc347" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5a9ee731-2885-41d0-a5b0-9bdbdd19813e" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="82886cb3-0714-4f38-bd09-b1c189745ab2" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="6d32262e-3660-4fed-a426-0b74f1557d4d" name="constraints_getter"
                     value="OK"/>
@@ -19861,13 +19861,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7ce5a679-dd26-4809-8d21-73900e31a2e2" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="add6b37e-7a80-49f7-808e-f16cbe2027cf" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0d7eef19-d1cf-4b8c-8f17-643fdab07a23" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c3629dd1-b863-4229-9bcc-45b6d8384bdf" name="categories_getter"
                     value="OK"/>
@@ -20149,13 +20149,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4fe35a48-1e7a-4f09-8432-d383a14b6ad0" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c76b97d5-3297-410b-8964-035ac5c77243" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e0cd9fb5-4d5c-4306-84e2-957728bdd35b" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="7752dac7-ec1c-4df2-ac35-470207e0e975" name="constraints_getter"
                     value="OK"/>
@@ -20298,13 +20298,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f24d41b3-1e02-4cb3-8755-f797278e4afe" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="325d36c3-2ded-4c43-9620-b884d2f1acf6" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="757c04a6-e7f1-47cb-a1b3-89721055bfa6" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="42594cb4-8df0-4e4e-88a2-6d6548f05a84" name="availableInStates_getter"
                     value="OK"/>
@@ -20682,13 +20682,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a2e0830d-4bc6-4761-af82-9077e58b1efa" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0d72fe44-7245-43e5-8dd8-d45cdb8f414a" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="1cf5997b-d0a7-496d-a6bc-093c0b972d11" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="80c0adb7-27f8-4303-9cb8-21be0579b6c8" name="componentExchanges_getter"
                     value="OK"/>
@@ -20935,13 +20935,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="47c092ad-cc45-47fc-b997-656ff6eef81f" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="cf4b725c-171a-42e1-9717-3ebdb950d3ba" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="8c05ab81-40ff-4b5a-a48e-d34dd98cb641" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="a1096bbe-30d6-4ae3-98cc-a0c52d2634f6" name="categories_getter"
                     value="OK"/>
@@ -21210,13 +21210,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="84322e1e-9494-4f32-8ca7-d5c8f2922427" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="efbc2a5f-5a3c-469e-866c-4a8c2cc41da4" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="bd30cba8-979f-4c48-979d-dc6fb4313565" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2db09ff3-8538-48a6-ac74-0cca5efd05cd" name="constraints_getter"
                     value="OK"/>
@@ -22677,13 +22677,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="ef8cfe02-d03a-4e85-ae40-a47759fe27bd" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e179e963-4866-49c4-8fa8-620affb307b0" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5b397484-323d-48d9-999c-1142edafc690" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e6492c19-b275-42db-9a6f-fec67bee4c17" name="constraints_getter"
                     value="OK"/>
@@ -22987,13 +22987,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="5b3bb5f5-1c87-4cae-b215-e7018784ba32" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e1bed791-24a2-4fe2-ac1f-edb6847941d3" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="4309bfbb-e43e-4dd1-813c-0ec3b159bcde" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="36fbfee4-5d46-4eb4-ac99-dcfcdd79998a" name="constraints_getter"
                     value="OK"/>
@@ -23196,13 +23196,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c0be2020-e480-4d38-a4d4-b7655976b6ce" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="d85c74ba-d8c5-45bc-9763-8e6012984e65" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="c24b3865-2eae-42e2-9fca-4de59e880d19" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="039b4909-6677-40fe-8c98-e8364f0707e7" name="constraints_getter"
                     value="OK"/>
@@ -23463,13 +23463,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="f70aae6b-7de3-4254-8a23-7680278f9039" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="913c5652-6b95-472b-b974-015d6be42a32" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2c89ad8a-680c-49d2-8aae-877973219c43" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0d5ce32b-0295-48a7-a8da-50765c621149" name="constraints_getter"
                     value="OK"/>
@@ -23741,13 +23741,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="2d2cc5f8-150e-459b-bd1d-cf2b2629d90d" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="488732ee-8f6b-475a-94f6-3e138aaf9dcf" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="b75d526c-bff1-4c36-80a6-271a7e92c202" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="10ea0f70-f9a7-4cc1-980c-f1d38d32a857" name="constraints_getter"
                     value="OK"/>
@@ -23965,13 +23965,13 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="9e3d858d-e6c1-4e97-a788-25c6c6e529ef" name="appliedPropertyValueGroups_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="277dd443-09a1-4e44-a7b6-23e2304ba3e6" name="appliedPropertyValues_getter"
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="08bc97b7-0938-4561-a076-277911ef9945" name="appliedPropertyValues_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="db15aed9-aa62-45ec-abc2-d374a2624834" name="constraints_getter"
                     value="OK"/>
@@ -24080,11 +24080,11 @@
               <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
                   id="a826b527-8041-444f-b720-46d3ec98dd89" name="ImplementationStatus">
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
-                    id="0eb70bf8-9a87-45c9-8526-e1c31c029894" name="getPVNames" value="KO"/>
+                    id="0eb70bf8-9a87-45c9-8526-e1c31c029894" name="getPVNames" value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
-                    id="32d7b49a-53c6-4fb1-819a-e7d445d56316" name="getPVValue" value="KO"/>
+                    id="32d7b49a-53c6-4fb1-819a-e7d445d56316" name="getPVValue" value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
-                    id="2a318eeb-ccbe-4084-80ab-3483b9a14947" name="isPVDefined" value="KO"/>
+                    id="2a318eeb-ccbe-4084-80ab-3483b9a14947" name="isPVDefined" value="OK"/>
               </ownedPropertyValueGroups>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
                   id="72cfadf7-3eb6-4bcc-ae7c-444a5f2a9adc" name="getPVNames">
