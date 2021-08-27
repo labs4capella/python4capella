@@ -1,12 +1,12 @@
-h1. Python4Capella Developer Manual
+h1. Python for Capella Developer Manual
 
-This document describes how to manage and improve technical aspects of your version of Python4Capella. It will be divided into two sections, one for advanced Python users and one for contributors.
+This document describes how to manage and improve technical aspects of your version of Python for Capella. It will be divided into two sections, one for advanced Python users and one for contributors.
 
 h2. Advanced Python users
 
 * "*Install new Python packages*":python/InstallNewPythonPackage.html Describes how you can install new Python packages.
 
-h2. Python4Capella contributors
+h2. Python for Capella contributors
 
 * "*Repository overview*":RepositoryOverview.html Describes the structure of the "git repository":https://github.com/labs4capella/python4capella.
 * "*Create a Python interpreter distribution for Windows*":python/CreateWindowsPythonFile.html Describes how you can recreate the Python interpreter zip file for Windows.

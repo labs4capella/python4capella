@@ -21,14 +21,14 @@ h2. features folder
 This folder contains all feature projects included in the resulting update site:
 
 * the command line feature
-* the main feature of Python4Capella
+* the main feature of Python for Capella
 
 h2. plugins folder
 
 This folder contains all plugin projects:
 
 * the command line plugin
-* the main plugin for Python4Capella
+* the main plugin for Python for Capella
 * the plugin that generates the Python API and tests (for developers)
 * the Python4Capella project that will be zipped in the org.eclipse.python4capella plugin during build
 
@@ -48,5 +48,5 @@ You can have a look at the dedicated "README file":https://github.com/labs4capel
 
 h2. tests folder
 
-This folder contains Java tests and also the Python4CapellaTests project that you can import in your workspace to test the Python part of Python4Capella. You can find the documentation on how to run those tests "here":python/RunPythonTests.html.
+This folder contains Java tests and also the Python4CapellaTests project that you can import in your workspace to test the Python part of Python for Capella. You can find the documentation on how to run those tests "here":python/RunPythonTests.html.
 

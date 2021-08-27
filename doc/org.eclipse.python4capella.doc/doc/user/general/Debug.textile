@@ -1,6 +1,6 @@
 h1. Debug a Python script
 
-This section explains how you can debug your Python4Capella script.
+This section explains how you can debug your Python for Capella script.
 
 
 h2. Within Capella

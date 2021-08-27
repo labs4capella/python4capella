@@ -1,6 +1,6 @@
 h1. Run a Python script
 
-This section explains how you can run your Python4Capella script either within Capella or from the command line.
+This section explains how you can run your Python for Capella script either within Capella or from the command line.
 
 Note:
 
@@ -45,8 +45,8 @@ h2. Command line
 
 This feature is available for Capella 1.4.1 and above.
 
-Even if you are running in a command line, Capella needs a graphical interface and a windows manager. If you are running Python4Capella on a Linux server, make sure you have a graphical interface and a window manager installed and runnning.
-You can also run your Python4Capella script from the command line:
+Even if you are running in a command line, Capella needs a graphical interface and a windows manager. If you are running Python for Capella on a Linux server, make sure you have a graphical interface and a window manager installed and runnning.
+You can also run your Python for Capella script from the command line:
 
 Windows
 

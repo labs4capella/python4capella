@@ -1,4 +1,4 @@
-h1. Python4Capella User Manual
+h1. Python for Capella User Manual
 
 This document describes how to use Python4Capella.
 

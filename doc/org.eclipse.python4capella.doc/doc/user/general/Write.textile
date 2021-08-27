@@ -1,10 +1,10 @@
 h1. Write a Python script
 
-This section explains how you can write your Python4Capella script.
+This section explains how you can write your Python for Capella script.
 
 h2. Create a Python project
 
-We advise that you store your own Python scripts in a separated project. This will prevent some losses when you update Python4Capella.
+We advise that you store your own Python scripts in a separated project. This will prevent some losses when you update Python for Capella.
 
 You can right click in the new / Project... menu, and select the PyDev project:
 

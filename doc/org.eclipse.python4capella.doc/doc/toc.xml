@@ -1,15 +1,15 @@
-<toc label="Python4Capella">
-  <topic href="doc/user/UserManual.html" label="Python4Capella User Manual">
+<toc label="Python for Capella">
+  <topic href="doc/user/UserManual.html" label="Python for Capella User Manual">
     <topic href="doc/user/general/Python4CapellaProjectSturcture.html" label="Python4Capella project structure">
     </topic>
-    <topic href="doc/user/general/Run.html" label="Run a Python4Capella script">
+    <topic href="doc/user/general/Run.html" label="Run a Python for Capella script">
     </topic>
-    <topic href="doc/user/general/Debug.html" label="Debug a Python4Capella script">
+    <topic href="doc/user/general/Debug.html" label="Debug a Python for Capella script">
     </topic>
-    <topic href="doc/user/general/Write.html" label="Write a Python4Capella script">
+    <topic href="doc/user/general/Write.html" label="Write a Python for Capella script">
         <topic href="doc/user/general/Write.html#CreateaPythonproject" label="Create a Python project">
         </topic>
-        <topic href="doc/user/general/Write.html#ReferencePython4Capellaproject" label="Reference the Python4Capella project">
+        <topic href="doc/user/general/Write.html#ReferencePython4Capellaproject" label="Reference the Python for Capella project">
         </topic>
         <topic href="doc/user/general/Write.html#CreateaPythonscript" label="Create a Python script">
         </topic>
@@ -19,7 +19,7 @@
         </topic>
     </topic>
   </topic>
-  <topic href="doc/developer/DeveloperManual.html" label="Python4Capella Developer Manual">
+  <topic href="doc/developer/DeveloperManual.html" label="Python for Capella Developer Manual">
     <topic href="doc/developer/RepositoryOverview.html" label="Repository Overview">
     </topic>
     <topic href="doc/developer/python/InstallNewPythonPackage.html" label="Install new Python packages">
