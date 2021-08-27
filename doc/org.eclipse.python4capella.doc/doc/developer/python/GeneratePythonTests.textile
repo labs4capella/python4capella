@@ -14,7 +14,7 @@ When you open the specification model, you can open the System Analysis, then th
 
 !GeneratePythonTests/GeneratePythonTestsMenu.png(Generate Python Tests from Capella menu)!
 
-By default this will generate a file "/tmp/capella/capella_tests.py". You can change this path by editing the generator class: ProduceCapellaPythonTestsFromCapellaHandler.
+By default this will generate Python files in "/tmp/capella/" under Windows check for a tmp folder at the root of your disk. You can change this path by editing the generator class: ProduceCapellaPythonTestsFromCapellaHandler.
 
 For the moment, the only customization you can add is to mark a test as read only. This will generate a test that only access a getter for this test and will not make use of any setter.
 
