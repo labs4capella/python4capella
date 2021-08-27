@@ -3,5 +3,5 @@
         if value is None:
             return value
         else:
-            return Status(value)
+            return value.getName()
 

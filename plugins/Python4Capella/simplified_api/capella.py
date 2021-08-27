@@ -367,7 +367,7 @@ class Diagram(JavaObject):
         if value is None:
             return value
         else:
-            return Status(value)
+            return value.getName()
     def get_review(self):
         return Sirius.get_review(self.get_java_object())
     def get_visible_in_documentation(self):
