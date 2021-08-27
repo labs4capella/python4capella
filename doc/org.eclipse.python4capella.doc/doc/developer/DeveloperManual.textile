@@ -1,4 +1,4 @@
-h1. Python4Capella User Manual
+h1. Python4Capella Developer Manual
 
 This document describes how to manage and improve technical aspects of your version of Python4Capella. It will be divided into two sections, one for advanced Python users and one for contributors.
 
@@ -9,6 +9,6 @@ h2. Advanced Python users
 h2. Python4Capella contributors
 
 * "*Create a Python interpreter distribution for Windows*":python/CreateWindowsPythonFile.html Describes how you can recreate the Python interpreter zip file for Windows.
-* "*Generate Python API*":python/GeneratePythonTests.html Describes how you can generate Python API for the Python Capella light metamodel.
+* "*Generate Python API*":python/GeneratePythonAPI.html Describes how you can generate Python API for the Python Capella light metamodel.
 * "*Generate Python Tests*":python/GeneratePythonTests.html Describes how you can generate Python tests for the Python Capella light metamodel.
 
