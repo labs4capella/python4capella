@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Python Scripting for Capella Tests
 Bundle-SymbolicName: org.eclipse.python4capella.tests;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
 Automatic-Module-Name: org.eclipse.python4capella.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
