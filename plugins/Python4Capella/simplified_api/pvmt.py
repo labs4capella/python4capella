@@ -5,12 +5,7 @@ if False:
 
 class PVMT(JavaObject):
     def __init__(self, java_object = None):
-        if java_object is None:
-            raise ValueError("No matching EClass for this type")
-        elif isinstance(java_object, PVMT):
-            EObject.__init__(self, java_object.get_java_object())
-        else:
-            EObject.__init__(self, java_object)
+        EObject.__init__(self, java_object)
     @staticmethod
     def get_p_v_names(elem):
         #: :type elem: CapellaElement
