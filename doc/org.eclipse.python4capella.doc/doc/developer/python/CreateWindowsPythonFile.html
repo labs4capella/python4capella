@@ -19,31 +19,37 @@
 		</p>
 		<pre><code>python get-pip.py
 </code></pre>
-		<p>Python will proceed with the download and installation of pip. One more step is needed before we can use pip. You need to edite the file python37._pth to add the created Lib\site-packages folder:</p>
+		<p>Python will proceed with the download and installation of pip. One more step is needed before we can use pip. You need to edit the file python37._pth to add the created Lib\site-packages folder:</p>
 		<pre><code>python37.zip
-    .
-    Lib\site-packages
+.
+Lib\site-packages
 </code></pre>
-		<p>Now we can install new packages. By default we are going to install a library to write to xlsx documents:</p>
-		<pre><code>Scripts\pip install XlsxWriter
+		<p>Now we can install new packages. By default we are going to install a library to read and write xlsx documents:</p>
+		<pre><code>Scripts\pip install openpyxl
 </code></pre>
 		<p>This will download the package and install it.</p>
-		<p>If you prefer, you can also install XlsxWriter from the source archive. Download the source archive from the following page:</p>
+		<p>If you prefer, you can also install openpyxl from the source archive. Download the source archive from the following page:</p>
 		<p>
-			<a href="https://pypi.org/project/XlsxWriter/#files">https://pypi.org/project/XlsxWriter/#files</a>
+			<a href="https://pypi.org/project/openpyxl/#files">https://pypi.org/project/openpyxl/#files</a>
 		</p>
 		<p>Then use the following command:</p>
-		<pre><code>Scripts\pip install XlsxWriter-x.y.z.tar.gz
+		<pre><code>Scripts\pip install openpyxl-x.y.z.tar.gz
 </code></pre>
-		<p>Where x.y.z is the version of the downloaded XlsxWriter archive.</p>
-		<p>Now you can import XlsxWriter in your Python scripts by adding the following import directive at the beginning of your script:</p>
-		<pre><code>import xlsxwriter
+		<p>Where x.y.z is the version of the downloaded openpyxl archive.</p>
+		<p>Now you can import openpyxl in your Python scripts by adding the following import directive at the beginning of your script:</p>
+		<pre><code>from openpyxl import Workbook
 </code></pre>
 		<p>You can have a look 
-			<a href="https://pypi.org/project/XlsxWriter/">here</a> for more information on XlsxWriter.
+			<a href="https://pypi.org/project/openpyxl/">here</a> for more information on openpyxl.
 		</p>
 		<p>You can find more packages to install 
 			<a href="https://pypi.org/">here</a>.
 		</p>
+		<p>To make this package usable by EASE, we need to unpack the python37.zip file to a folder named Lib and change the first line of the python37._pth to point this Lib folder:</p>
+		<pre><code>Lib
+.
+Lib\site-packages
+</code></pre>
+		<p>You can then delete the python37.zip file.</p>
 	</body>
 </html>
