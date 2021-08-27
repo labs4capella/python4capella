@@ -2,10 +2,11 @@
 # This script loads the Capella model passed as first argument and list its root LogicalComponent.
 # To run it:
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
-#  - right click this script and select the Run As / Run configuration menu
-#    - define the path to the aird file as first argument
-#      for instance: "/In-Flight Entertainment System/In-Flight Entertainment System.aird"
-#
+#  - launch the contextual menu "Run As / Run configurations..." on this scr
+#    - create a new "EASE Script" configuration
+#    - define the name of the configuration: "list_logical_components.py" (for instance)
+#    - define the Script Source path: "workspace://Python4Capella/sample_scripts/list_logical_components.py"
+#    - define the path to the aird file as first argument in "Script arguments" area: "/In-Flight Entertainment System/In-Flight Entertainment System.aird" (for instance)
 
 # include needed for the Capella modeller API
 include('workspace://Python4Capella/simplified_api/capella.py')

@@ -3,6 +3,13 @@ This script allows to extract the list of Functional Exchanges defined between 2
 
 It will create a folder result in the selected Capella project with the resulting xlsx file.
 '''
+# To run it:
+#  - enable Developer capabilities if not already done (see documentation in the help menu)
+#  - launch the contextual menu "Run As / Run configurations..." on this scr
+#    - create a new "EASE Script" configuration
+#    - define the name of the configuration: "Need3.py" (for instance)
+#    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Need3.py"
+#
 
 # include needed for the Capella modeller API
 include('workspace://Python4Capella/simplified_api/capella.py')
