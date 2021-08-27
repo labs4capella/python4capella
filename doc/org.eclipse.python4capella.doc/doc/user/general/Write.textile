@@ -57,3 +57,7 @@ You can also configure your Capella to show the line numbers in the PyDev editor
 !Write/Show_line_numbers.png(Show line numbers)!
 
 Then you can check the Show line numbers check box.
+
+h2. Installed libraries in the Windows Python distribution
+
+We packaged openpyxl with the Python37.zip file. You can have a look at provided sample scripts and "openpyxl project":https://openpyxl.readthedocs.io/en/stable/ page for usage.
