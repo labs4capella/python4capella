@@ -9,11 +9,11 @@
     <topic href="doc/user/general/Write.html" label="Write a Python4Capella script">
         <topic href="doc/user/general/Write.html#CreateaPythonproject" label="Create a Python project">
         </topic>
-        <topic href="doc/user/general/Write.html#ReferencePython4Capellaproject" label="Create a Python project">
+        <topic href="doc/user/general/Write.html#ReferencePython4Capellaproject" label="Reference the Python4Capella project">
         </topic>
-        <topic href="doc/user/general/Write.html#CreateaPythonscript" label="Create a Python project">
+        <topic href="doc/user/general/Write.html#CreateaPythonscript" label="Create a Python script">
         </topic>
-        <topic href="doc/user/general/Write.html#Importrequiredscripts" label="Create a Python project">
+        <topic href="doc/user/general/Write.html#Importrequiredscripts" label="Import required scripts">
         </topic>
     </topic>
   </topic>
