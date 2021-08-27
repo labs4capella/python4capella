@@ -8,7 +8,7 @@ In this folder, you will find:
  - **/org.eclipse.python4capella.validation**: a plugin defining some validation rules for the simplified metamodel
 
 # How-To generate simplified metamodel
-To generate the documentation of the simplified metamodel, you need a Capella 5.0.0 with M2Doc installed (M2Doc 3.1.1 for Capella 5.0.x).
+To generate the documentation of the simplified metamodel, you need a Capella 5.0.0 with (M2Doc)[https://www.m2doc.org/] installed (M2Doc 3.1.1 for Capella 5.0.x) see the [capella page](https://www.m2doc.org/capella/).
 
 You then need to execute a runtime with the plugin org.eclipse.python4capella.m2doc.service, or you need to build and deploy this plugin.
 
