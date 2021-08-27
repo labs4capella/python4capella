@@ -1,0 +1,3 @@
+    def get_applied_property_values(self):
+        return create_e_list(self.get_java_object().getAppliedPropertyValues(), PropertyValue)
+

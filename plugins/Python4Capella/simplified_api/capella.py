@@ -125,6 +125,12 @@ class EObject(JavaObject):
             elif is_system(e_object):
                 res = System
 
+        if res == None and e_object.eClass().getName() in ["BooleanPropertyValue", "EnumerationPropertyValue", "FloatPropertyValue", "IntegerPropertyValue", "StringPropertyValue"]:
+            res = PropertyValue
+
+        if res == None and e_object.eClass().getName() in ["ChoicePseudoState", "DeepHistoryPseudoState", "EntryPointPseudoState", "ExitPointPseudoState", "ForkPseudoState", "InitialPseudoState", "JoinPseudoState", "ShallowHistoryPseudoState", "TerminatePseudoState", "FinalState"]:
+            res = Pseudostate
+
         return res
     def get_owned_diagrams(self):
         res = []
@@ -239,11 +245,11 @@ class CapellaElement(EObject):
     def get_owned_property_values(self):
         return create_e_list(self.get_java_object().getOwnedPropertyValues(), PropertyValue)
     def get_applied_property_values(self):
-        return capella_query_by_name(self, "Applied Property Values")
+        return create_e_list(self.get_java_object().getAppliedPropertyValues(), PropertyValue)
     def get_owned_property_value_groups(self):
         return create_e_list(self.get_java_object().getOwnedPropertyValueGroups(), PropertyValueGroup)
     def get_applied_property_value_groups(self):
-        return capella_query_by_name(self, "Applied Property Value Groups")
+        return create_e_list(self.get_java_object().getAppliedPropertyValueGroups(), PropertyValueGroup)
     def get_owned_enumeration_property_types(self):
         return create_e_list(self.get_java_object().getOwnedEnumerationPropertyTypes(), EnumerationPropertyType)
 

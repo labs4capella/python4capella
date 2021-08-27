@@ -52,5 +52,11 @@
             elif is_system(e_object):
                 res = System
 
+        if res == None and e_object.eClass().getName() in ["BooleanPropertyValue", "EnumerationPropertyValue", "FloatPropertyValue", "IntegerPropertyValue", "StringPropertyValue"]:
+            res = PropertyValue
+
+        if res == None and e_object.eClass().getName() in ["ChoicePseudoState", "DeepHistoryPseudoState", "EntryPointPseudoState", "ExitPointPseudoState", "ForkPseudoState", "InitialPseudoState", "JoinPseudoState", "ShallowHistoryPseudoState", "TerminatePseudoState", "FinalState"]:
+            res = Pseudostate
+
         return res
 
