@@ -1,0 +1,146 @@
+target "Capella 1.3.1 Target Platform"
+
+with source requirements
+
+//include "https://download.polarsys.org/capella/core/updates/releases/1.3.1-R20190520-182008/targets/capella.target-definition.targetplatform"
+
+location eclipse-releases-oxygen "http://download.eclipse.org/releases/oxygen/201803211000" {
+	org.eclipse.sdk.feature.group
+	org.eclipse.platform.feature.group
+	org.eclipse.emf.sdk.feature.group
+	org.eclipse.emf.query.feature.group
+	org.eclipse.emf.transaction.feature.group
+	org.eclipse.equinox.executable.feature.group
+	com.ibm.icu
+	org.eclipse.viatra.query.sdk.feature.source.feature.group
+}
+
+location sirius-6.1.x "http://download.eclipse.org/sirius/updates/releases/6.1.3/oxygen" {
+	org.eclipse.sirius.doc.feature.feature.group
+	org.eclipse.sirius.doc.feature.source.feature.group
+	org.eclipse.sirius.runtime.feature.group
+	org.eclipse.sirius.runtime.source.feature.group
+	org.eclipse.sirius.runtime.aql.feature.group
+	org.eclipse.sirius.runtime.aql.source.feature.group
+	org.eclipse.sirius.runtime.ide.ui.feature.group
+	org.eclipse.sirius.runtime.ide.ui.source.feature.group
+	org.eclipse.sirius.interpreter.feature.feature.group
+	org.eclipse.sirius.interpreter.feature.source.feature.group
+	org.eclipse.acceleo.ui.interpreter.feature.group
+	org.eclipse.acceleo.ui.interpreter.source.feature.group
+	org.eclipse.sirius.aql.feature.group
+	org.eclipse.sirius.aql.source.feature.group
+	org.eclipse.acceleo.query.feature.group
+	org.eclipse.acceleo.query.source.feature.group
+	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group
+	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group
+}
+
+location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtimecore/1.3.1/" {
+	org.polarsys.kitalpha.ad.runtime.feature.feature.group
+	org.polarsys.kitalpha.cadence.feature.feature.group
+	org.polarsys.kitalpha.common.feature.feature.group
+	org.polarsys.kitalpha.emde.feature.feature.group
+	org.polarsys.kitalpha.emde.ui.feature.feature.group
+	org.polarsys.kitalpha.massactions.feature.feature.group
+	org.polarsys.kitalpha.massactions.feature.source.feature.group
+	org.polarsys.kitalpha.model.common.share.feature.feature.group
+	org.polarsys.kitalpha.model.common.commands.feature.feature.group
+	org.polarsys.kitalpha.model.common.scrutiny.feature.feature.group
+	org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.feature.group
+	org.polarsys.kitalpha.model.detachment.feature.feature.group
+	org.polarsys.kitalpha.model.detachment.ui.feature.feature.group
+	org.polarsys.kitalpha.patterns.feature.feature.group
+	org.polarsys.kitalpha.report.feature.feature.group
+	org.polarsys.kitalpha.report.ui.feature.feature.group
+	org.polarsys.kitalpha.resourcereuse.emfscheme.feature.feature.group
+	org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.feature.group
+	org.polarsys.kitalpha.resourcereuse.feature.feature.group
+	org.polarsys.kitalpha.resourcereuse.ui.feature.feature.group
+	org.polarsys.kitalpha.richtext.widget.feature.feature.group
+	org.polarsys.kitalpha.richtext.widget.feature.source.feature.group
+	org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group
+	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group
+	org.polarsys.kitalpha.transposer.feature.feature.group
+}
+
+location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/release/sdk/1.3.1/" {
+	org.polarsys.kitalpha.doc.feature.feature.group
+	org.polarsys.kitalpha.emde.sdk.feature.feature.group
+}
+
+location diffmerge-core-master "http://download.eclipse.org/diffmerge/releases/0.11.2/emf-diffmerge-site" {
+	org.eclipse.emf.diffmerge.feature.feature.group
+	org.eclipse.emf.diffmerge.feature.source.feature.group
+	org.eclipse.emf.diffmerge.sirius.feature.feature.group
+	org.eclipse.emf.diffmerge.sirius.feature.source.feature.group
+	org.eclipse.emf.diffmerge.gmf.feature.feature.group
+	org.eclipse.emf.diffmerge.gmf.feature.source.feature.group
+}
+
+location diffmerge-patterns-master "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-patterns-site" {
+	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group
+	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group
+	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group
+	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group
+}
+
+location amalgam-1.10.1 "http://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190510/capella" {
+	org.eclipse.amalgam.explorer.activity.feature.group
+	org.eclipse.amalgam.explorer.activity.source.feature.group
+}
+
+location sirius-query-legacy-1.1.0 "http://download.eclipse.org/sirius/updates/legacy/1.1.0" {
+	org.eclipse.sirius.query.legacy.feature.feature.group
+	org.eclipse.sirius.query.legacy.feature.source.feature.group
+}
+
+// "https://ci.eclipse.org/egf/job/tycho-egf-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.egf.core.updatesite/target/repository/"
+location egf "http://download.eclipse.org/egf/updates/1.6.0/oxygen/" {
+	org.eclipse.egf.sdk.feature.feature.group	
+}
+
+location nebula-1.2.0 "http://download.eclipse.org/nebula/releases/1.2.0" {
+	org.eclipse.nebula.widgets.richtext.feature.feature.group
+}
+
+location eclipse-shared-license "http://download.eclipse.org/cbi/updates/license" {
+	org.eclipse.license.feature.group lazy
+}
+
+location orbit-R20130827064939 "http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository" {
+	org.apache.log4j [1.2.15.v201012070815,1.2.15.v201012070815]
+	org.apache.commons.lang [2.4.0.v201005080502,2.4.0.v201005080502]
+	org.apache.commons.net [3.2.0.v201305141515,3.2.0.v201305141515]
+	org.jsoup [1.7.2.v201304221138,1.7.2.v201304221138]
+}
+
+location orbit-R20140525021250 "http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository" {
+	com.google.guava [15.0.0.v201403281430,15.0.0.v201403281430]
+}
+location site_Capella "https://download.polarsys.org/capella/core/updates/releases/1.3.1-R20190520-182008/org.polarsys.capella.rcp.site/" {
+	org.polarsys.capella.core.feature.feature.group lazy
+}
+
+location eclipse-releases-oxygen "http://download.eclipse.org/releases/oxygen/201803211000" {
+	org.eclipse.emf.workspace lazy
+}
+
+location EASE "https://download.eclipse.org/ease/release/0.7.0/" {
+	org.eclipse.ease.lang.scriptarchive.feature.feature.group lazy
+	org.eclipse.ease.feature.feature.group lazy
+	org.eclipse.ease.ui.feature.feature.group lazy
+	org.eclipse.ease.lang.python.feature.feature.group lazy
+	org.eclipse.ease.lang.python.py4j.feature.feature.group lazy
+	org.eclipse.ease.lang.jvm.feature.feature.group lazy
+	org.eclipse.ease.modules.feature.feature.group lazy
+	org.eclipse.ease.lang.unittest.feature.feature.group lazy
+}
+
+location py4j "http://eclipse.py4j.org/" {
+	org.py4j.feature.feature.group lazy
+}
+
+location PyDev "https://www.pydev.org/update_sites/8.2.0" {
+	org.python.pydev.feature.feature.group lazy
+}
