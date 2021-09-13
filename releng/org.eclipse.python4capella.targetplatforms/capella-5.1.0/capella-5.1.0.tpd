@@ -123,7 +123,7 @@ location eclipse-shared-license "https://download.eclipse.org/cbi/updates/licens
 }
 
 
-location site_Capella "https://download.eclipse.org/capella/core/updates/stable/5.1.0-S20210512-105503/org.polarsys.capella.rcp.site/" {
+location site_Capella "https://download.eclipse.org/capella/core/updates/releases/5.1.0-R20210615-075512/org.polarsys.capella.rcp.site/" {
 	org.polarsys.capella.core.feature.feature.group lazy
 }
 
