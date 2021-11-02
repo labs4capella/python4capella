@@ -123,7 +123,9 @@ public class CapellaModule {
 	 */
 	@WrapToScript
 	public String getCapellaVersion() {
-		final String ensUri = CapellacommonPackage.eNS_URI;
+		// this need to be accessed via the instance to be independent from the build
+		// target platform
+		final String ensUri = CapellacommonPackage.eINSTANCE.getNsURI();
 
 		return ensUri.substring(ensUri.lastIndexOf('/') + 1);
 	}
