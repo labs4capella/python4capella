@@ -25,6 +25,7 @@ location eclipse "https://download.eclipse.org/releases/2019-06" {
 	org.eclipse.mylyn.team_feature.feature.group lazy
 	org.eclipse.mylyn.ide_feature.feature.group lazy
 	org.eclipse.mylyn.help.ui lazy
+	org.objectweb.asm lazy
 	
 	// For M2Doc
 	org.eclipse.platform.sdk lazy

@@ -19,6 +19,8 @@
    <feature id="org.python.pydev.feature" version="0.0.0"/>
    <feature id="org.py4j.feature" version="0.0.0"/>
 
+   <bundle id="org.objectweb.asm" version="0.0.0"/>
+
    <category-def name="org.eclipse.python4capella.category" label="Python4Capella">
       <description>
          plug-ins for the Python4Capella technology

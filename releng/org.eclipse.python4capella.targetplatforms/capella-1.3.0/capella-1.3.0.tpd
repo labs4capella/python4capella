@@ -10,6 +10,7 @@ location site_Capella "https://download.polarsys.org/capella/core/updates/releas
 
 location eclipse-releases-oxygen "http://download.eclipse.org/releases/oxygen/201803211000" {
 	org.eclipse.emf.workspace lazy
+	org.objectweb.asm lazy
 }
 
 location EASE "https://download.eclipse.org/ease/release/0.7.0/" {

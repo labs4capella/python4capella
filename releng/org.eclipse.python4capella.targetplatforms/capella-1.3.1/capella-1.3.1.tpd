@@ -5,103 +5,104 @@ with source requirements
 //include "https://download.polarsys.org/capella/core/updates/releases/1.3.1-R20190520-182008/targets/capella.target-definition.targetplatform"
 
 location eclipse-releases-oxygen "http://download.eclipse.org/releases/oxygen/201803211000" {
-	org.eclipse.sdk.feature.group
-	org.eclipse.platform.feature.group
-	org.eclipse.emf.sdk.feature.group
-	org.eclipse.emf.query.feature.group
-	org.eclipse.emf.transaction.feature.group
-	org.eclipse.equinox.executable.feature.group
-	com.ibm.icu
-	org.eclipse.viatra.query.sdk.feature.source.feature.group
+	org.eclipse.sdk.feature.group lazy
+	org.eclipse.platform.feature.group lazy
+	org.eclipse.emf.sdk.feature.group lazy
+	org.eclipse.emf.query.feature.group lazy
+	org.eclipse.emf.transaction.feature.group lazy
+	org.eclipse.equinox.executable.feature.group lazy
+	com.ibm.icu lazy
+	org.eclipse.viatra.query.sdk.feature.source.feature.group lazy
+	org.objectweb.asm lazy
 }
 
 location sirius-6.1.x "http://download.eclipse.org/sirius/updates/releases/6.1.3/oxygen" {
-	org.eclipse.sirius.doc.feature.feature.group
-	org.eclipse.sirius.doc.feature.source.feature.group
-	org.eclipse.sirius.runtime.feature.group
-	org.eclipse.sirius.runtime.source.feature.group
-	org.eclipse.sirius.runtime.aql.feature.group
-	org.eclipse.sirius.runtime.aql.source.feature.group
-	org.eclipse.sirius.runtime.ide.ui.feature.group
-	org.eclipse.sirius.runtime.ide.ui.source.feature.group
-	org.eclipse.sirius.interpreter.feature.feature.group
-	org.eclipse.sirius.interpreter.feature.source.feature.group
-	org.eclipse.acceleo.ui.interpreter.feature.group
-	org.eclipse.acceleo.ui.interpreter.source.feature.group
-	org.eclipse.sirius.aql.feature.group
-	org.eclipse.sirius.aql.source.feature.group
-	org.eclipse.acceleo.query.feature.group
-	org.eclipse.acceleo.query.source.feature.group
-	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group
-	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group
+	org.eclipse.sirius.doc.feature.feature.group lazy
+	org.eclipse.sirius.doc.feature.source.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.sirius.runtime.source.feature.group lazy
+	org.eclipse.sirius.runtime.aql.feature.group lazy
+	org.eclipse.sirius.runtime.aql.source.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.source.feature.group lazy
+	org.eclipse.sirius.interpreter.feature.feature.group lazy
+	org.eclipse.sirius.interpreter.feature.source.feature.group lazy
+	org.eclipse.acceleo.ui.interpreter.feature.group lazy
+	org.eclipse.acceleo.ui.interpreter.source.feature.group lazy
+	org.eclipse.sirius.aql.feature.group lazy
+	org.eclipse.sirius.aql.source.feature.group lazy
+	org.eclipse.acceleo.query.feature.group lazy
+	org.eclipse.acceleo.query.source.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
 }
 
 location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtimecore/1.3.1/" {
-	org.polarsys.kitalpha.ad.runtime.feature.feature.group
-	org.polarsys.kitalpha.cadence.feature.feature.group
-	org.polarsys.kitalpha.common.feature.feature.group
-	org.polarsys.kitalpha.emde.feature.feature.group
-	org.polarsys.kitalpha.emde.ui.feature.feature.group
-	org.polarsys.kitalpha.massactions.feature.feature.group
-	org.polarsys.kitalpha.massactions.feature.source.feature.group
-	org.polarsys.kitalpha.model.common.share.feature.feature.group
-	org.polarsys.kitalpha.model.common.commands.feature.feature.group
-	org.polarsys.kitalpha.model.common.scrutiny.feature.feature.group
-	org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.feature.group
-	org.polarsys.kitalpha.model.detachment.feature.feature.group
-	org.polarsys.kitalpha.model.detachment.ui.feature.feature.group
-	org.polarsys.kitalpha.patterns.feature.feature.group
-	org.polarsys.kitalpha.report.feature.feature.group
-	org.polarsys.kitalpha.report.ui.feature.feature.group
-	org.polarsys.kitalpha.resourcereuse.emfscheme.feature.feature.group
-	org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.feature.group
-	org.polarsys.kitalpha.resourcereuse.feature.feature.group
-	org.polarsys.kitalpha.resourcereuse.ui.feature.feature.group
-	org.polarsys.kitalpha.richtext.widget.feature.feature.group
-	org.polarsys.kitalpha.richtext.widget.feature.source.feature.group
-	org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group
-	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group
-	org.polarsys.kitalpha.transposer.feature.feature.group
+	org.polarsys.kitalpha.ad.runtime.feature.feature.group lazy
+	org.polarsys.kitalpha.cadence.feature.feature.group lazy
+	org.polarsys.kitalpha.common.feature.feature.group lazy
+	org.polarsys.kitalpha.emde.feature.feature.group lazy
+	org.polarsys.kitalpha.emde.ui.feature.feature.group lazy
+	org.polarsys.kitalpha.massactions.feature.feature.group lazy
+	org.polarsys.kitalpha.massactions.feature.source.feature.group lazy
+	org.polarsys.kitalpha.model.common.share.feature.feature.group lazy
+	org.polarsys.kitalpha.model.common.commands.feature.feature.group lazy
+	org.polarsys.kitalpha.model.common.scrutiny.feature.feature.group lazy
+	org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.feature.group lazy
+	org.polarsys.kitalpha.model.detachment.feature.feature.group lazy
+	org.polarsys.kitalpha.model.detachment.ui.feature.feature.group lazy
+	org.polarsys.kitalpha.patterns.feature.feature.group lazy
+	org.polarsys.kitalpha.report.feature.feature.group lazy
+	org.polarsys.kitalpha.report.ui.feature.feature.group lazy
+	org.polarsys.kitalpha.resourcereuse.emfscheme.feature.feature.group lazy
+	org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.feature.group lazy
+	org.polarsys.kitalpha.resourcereuse.feature.feature.group lazy
+	org.polarsys.kitalpha.resourcereuse.ui.feature.feature.group lazy
+	org.polarsys.kitalpha.richtext.widget.feature.feature.group lazy
+	org.polarsys.kitalpha.richtext.widget.feature.source.feature.group lazy
+	org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group lazy
+	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group lazy
+	org.polarsys.kitalpha.transposer.feature.feature.group lazy
 }
 
 location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/release/sdk/1.3.1/" {
-	org.polarsys.kitalpha.doc.feature.feature.group
-	org.polarsys.kitalpha.emde.sdk.feature.feature.group
+	org.polarsys.kitalpha.doc.feature.feature.group lazy
+	org.polarsys.kitalpha.emde.sdk.feature.feature.group lazy
 }
 
 location diffmerge-core-master "http://download.eclipse.org/diffmerge/releases/0.11.2/emf-diffmerge-site" {
-	org.eclipse.emf.diffmerge.feature.feature.group
-	org.eclipse.emf.diffmerge.feature.source.feature.group
-	org.eclipse.emf.diffmerge.sirius.feature.feature.group
-	org.eclipse.emf.diffmerge.sirius.feature.source.feature.group
-	org.eclipse.emf.diffmerge.gmf.feature.feature.group
-	org.eclipse.emf.diffmerge.gmf.feature.source.feature.group
+	org.eclipse.emf.diffmerge.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
+	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.sirius.feature.source.feature.group lazy
+	org.eclipse.emf.diffmerge.gmf.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.gmf.feature.source.feature.group lazy
 }
 
 location diffmerge-patterns-master "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-patterns-site" {
-	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group
-	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group
-	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group
-	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group
+	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
+	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
 location amalgam-1.10.1 "http://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190510/capella" {
-	org.eclipse.amalgam.explorer.activity.feature.group
-	org.eclipse.amalgam.explorer.activity.source.feature.group
+	org.eclipse.amalgam.explorer.activity.feature.group lazy
+	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 }
 
 location sirius-query-legacy-1.1.0 "http://download.eclipse.org/sirius/updates/legacy/1.1.0" {
-	org.eclipse.sirius.query.legacy.feature.feature.group
-	org.eclipse.sirius.query.legacy.feature.source.feature.group
+	org.eclipse.sirius.query.legacy.feature.feature.group lazy
+	org.eclipse.sirius.query.legacy.feature.source.feature.group lazy
 }
 
 // "https://ci.eclipse.org/egf/job/tycho-egf-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.egf.core.updatesite/target/repository/"
 location egf "http://download.eclipse.org/egf/updates/1.6.0/oxygen/" {
-	org.eclipse.egf.sdk.feature.feature.group	
+	org.eclipse.egf.sdk.feature.feature.group lazy
 }
 
 location nebula-1.2.0 "http://download.eclipse.org/nebula/releases/1.2.0" {
-	org.eclipse.nebula.widgets.richtext.feature.feature.group
+	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 }
 
 location eclipse-shared-license "http://download.eclipse.org/cbi/updates/license" {

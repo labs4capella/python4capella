@@ -30,6 +30,7 @@ location eclipse "https://download.eclipse.org/releases/2020-06" {
 	org.apache.log4j lazy
 	org.apache.commons.lang lazy
 	com.google.guava lazy
+	org.objectweb.asm [7.2.0,8.0.0)
 	
 	// For M2Doc
 	org.eclipse.platform.sdk lazy
