@@ -1,12 +1,12 @@
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
         elif isinstance(java_object, PhysicalComponent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
                 if java_object.getNature().getName() == "UNSET":
-                    EObject.__init__(self, java_object)
+                    JavaObject.__init__(self, java_object)
                 elif java_object.getNature().getName() == "BEHAVIOR":
                     raise AttributeError("Passed component is a behavior physical component.")
                 elif java_object.getNature().getName() == "NODE":

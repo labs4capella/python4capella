@@ -5,7 +5,7 @@ if False:
 
 class RequirementAddOn(JavaObject):
     def __init__(self, java_object = None):
-        EObject.__init__(self, java_object)
+        JavaObject.__init__(self, java_object)
     @staticmethod
     def get_requirement_modules(capellaModel):
         #: :type capellaModel: CapellaModel
@@ -48,11 +48,11 @@ class RequirementAddOn(JavaObject):
 class CapellaModule(EObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaModule"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaModule"))
         elif isinstance(java_object, CapellaModule):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_requirements(self):
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
     def get_id(self):
@@ -75,11 +75,11 @@ class CapellaModule(EObject):
 class Requirement(EObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Requirement"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Requirement"))
         elif isinstance(java_object, Requirement):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_id(self):
         return self.get_java_object().getReqIFIdentifier()
     def set_id(self, value):
@@ -136,11 +136,11 @@ class Requirement(EObject):
 class Folder(Requirement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Folder"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Folder"))
         elif isinstance(java_object, Folder):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_requirements(self):
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
 

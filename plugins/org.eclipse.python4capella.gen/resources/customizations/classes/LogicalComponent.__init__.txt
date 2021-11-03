@@ -1,11 +1,11 @@
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
         elif isinstance(java_object, LogicalComponent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is an actor.")
 

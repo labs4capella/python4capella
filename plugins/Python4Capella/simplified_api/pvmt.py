@@ -5,7 +5,7 @@ if False:
 
 class PVMT(JavaObject):
     def __init__(self, java_object = None):
-        EObject.__init__(self, java_object)
+        JavaObject.__init__(self, java_object)
     @staticmethod
     def get_p_v_names(elem):
         #: :type elem: CapellaElement

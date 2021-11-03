@@ -1,11 +1,11 @@
     def __init__(self, java_object = None, kind = "StringPropertyValue"):
         if java_object is None:
             if kind in ["BooleanPropertyValue", "EnumerationPropertyValue", "FloatPropertyValue", "IntegerPropertyValue", "StringPropertyValue" ]:
-                EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), kind))
+                JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), kind))
             else:
                 raise ValueError("kind must be either \"BooleanPropertyValue\", \"EnumerationPropertyValue\", \"FloatPropertyValue\", \"IntegerPropertyValue\", or \"StringPropertyValue\"")
         elif isinstance(java_object, PropertyValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 

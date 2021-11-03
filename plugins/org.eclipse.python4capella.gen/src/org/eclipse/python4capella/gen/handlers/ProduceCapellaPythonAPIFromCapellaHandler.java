@@ -290,16 +290,16 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				nsURIString = "\"" + eCls.getEPackage().getNsURI() + "\"";
 			}
 
-			res.append("            EObject.__init__(self, create_e_object(" + nsURIString + ", \"" + cls.getName()
+			res.append("            JavaObject.__init__(self, create_e_object(" + nsURIString + ", \"" + cls.getName()
 					+ "\"))" + NL);
 		} else {
 			res.append("            raise ValueError(\"No matching EClass for this type\")" + NL);
 		}
 
 		res.append("        elif isinstance(java_object, " + cls.getName() + "):" + NL);
-		res.append("            EObject.__init__(self, java_object.get_java_object())" + NL);
+		res.append("            JavaObject.__init__(self, java_object.get_java_object())" + NL);
 		res.append("        else:" + NL);
-		res.append("            EObject.__init__(self, java_object)" + NL);
+		res.append("            JavaObject.__init__(self, java_object)" + NL);
 
 		return res.toString();
 	}

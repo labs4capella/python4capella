@@ -499,12 +499,12 @@ public class ProduceCapellaPythonAPIFromEcoreHandler extends AbstractHandler {
 			nsURIString = "\"" + eCls.getEPackage().getNsURI() + "\"";
 		}
 
-		res.append("            EObject.__init__(self, create_e_object(" + nsURIString + ", \""
+		res.append("            JavaObject.__init__(self, create_e_object(" + nsURIString + ", \""
 				+ getPythonClassName(eCls) + "\"))" + NL);
 		res.append("        elif isinstance(java_object, " + getPythonClassName(eCls) + "):" + NL);
-		res.append("            EObject.__init__(self, java_object.get_java_object())" + NL);
+		res.append("            JavaObject.__init__(self, java_object.get_java_object())" + NL);
 		res.append("        else:" + NL);
-		res.append("            EObject.__init__(self, java_object)" + NL);
+		res.append("            JavaObject.__init__(self, java_object)" + NL);
 
 		final Set<String> pythonClassMembers = new HashSet<>();
 		for (EStructuralFeature feature : eCls.getEStructuralFeatures()) {

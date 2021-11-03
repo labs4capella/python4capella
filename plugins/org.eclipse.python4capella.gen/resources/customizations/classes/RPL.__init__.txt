@@ -1,12 +1,12 @@
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
             self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "RPL"))
         elif isinstance(java_object, RPL):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.getKind().getName() == "RPL":
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed catalog element is not a RPL.")
 

@@ -1,12 +1,12 @@
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, PhysicalSystem):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if is_system(java_object):
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is not a system.")
 

@@ -8696,6 +8696,13 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="debae4c8-3b78-4217-b6a6-27f130da5601" name="logicalSystem" abstractType="#4544641d-6da7-4384-9d7f-ec185db0cc4b"
                   aggregationKind="ASSOCIATION" isReadOnly="true">
+                <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                    id="099daa03-767e-4264-88ed-56ee6286e7fc" name="Technical.Mapping"
+                    appliedPropertyValueGroups="#e723309b-6d4d-4cd9-920b-2d162accaa15">
+                  <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                      id="818522d4-d11c-4419-b10a-03904604bac7" name="name" appliedPropertyValues="#cd8ce756-4398-4603-a76e-3ea276846009"
+                      value="system"/>
+                </ownedPropertyValueGroups>
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="2111f720-fa7a-4f41-8544-a7cfa48a91aa" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

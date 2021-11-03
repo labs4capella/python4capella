@@ -64,11 +64,11 @@ class CapellaModel():
 class CapellaLibrary(CapellaModel):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
         elif isinstance(java_object, CapellaLibrary):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class EObject(JavaObject):
     @staticmethod
@@ -195,11 +195,11 @@ class EObject(JavaObject):
 class CapellaElement(EObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "CapellaElement"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "CapellaElement"))
         elif isinstance(java_object, CapellaElement):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_id(self):
         return self.get_java_object().getId()
     def set_id(self, value):
@@ -256,11 +256,11 @@ class CapellaElement(EObject):
 class Constraint(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "Constraint"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "Constraint"))
         elif isinstance(java_object, Constraint):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_specification(self):
         return self.get_java_object().getSpecification()
     def set_specification(self, value):
@@ -272,13 +272,13 @@ class PropertyValue(CapellaElement):
     def __init__(self, java_object = None, kind = "StringPropertyValue"):
         if java_object is None:
             if kind in ["BooleanPropertyValue", "EnumerationPropertyValue", "FloatPropertyValue", "IntegerPropertyValue", "StringPropertyValue" ]:
-                EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), kind))
+                JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), kind))
             else:
                 raise ValueError("kind must be either \"BooleanPropertyValue\", \"EnumerationPropertyValue\", \"FloatPropertyValue\", \"IntegerPropertyValue\", or \"StringPropertyValue\"")
         elif isinstance(java_object, PropertyValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_kind(self):
         return self.java_object.eClass().getName()
     def get_value(self):
@@ -299,42 +299,42 @@ class PropertyValue(CapellaElement):
 class PropertyValueGroup(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValueGroup"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValueGroup"))
         elif isinstance(java_object, PropertyValueGroup):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_valued_elements(self):
         return capella_query_by_name(self, "Valued Elements")
 
 class EnumerationPropertyType(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyType"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyType"))
         elif isinstance(java_object, EnumerationPropertyType):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_literals(self):
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationPropertyLiteral)
 
 class EnumerationPropertyLiteral(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
         elif isinstance(java_object, EnumerationPropertyLiteral):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class PropertyValuePkgContainer(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, PropertyValuePkgContainer):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_property_value_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPropertyValuePkgs(), PropertyValuePkg)
 
@@ -410,9 +410,9 @@ class AbstractReElement(EObject):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, AbstractReElement):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_id(self):
         return self.get_java_object().getId()
     def set_id(self, value):
@@ -427,9 +427,9 @@ class AbstractCatalogElement(AbstractReElement):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, AbstractCatalogElement):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_decription(self):
         return self.get_java_object().getDecription()
     def set_decription(self, value):
@@ -450,13 +450,13 @@ class AbstractCatalogElement(AbstractReElement):
 class REC(AbstractCatalogElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
             self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "REC"))
         elif isinstance(java_object, RPL):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.getKind().getName() == "REC":
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed catalog element is not a REC.")
     def get_referenced_elements(self):
@@ -477,13 +477,13 @@ class REC(AbstractCatalogElement):
 class RPL(AbstractCatalogElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
             self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "RPL"))
         elif isinstance(java_object, RPL):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.getKind().getName() == "RPL":
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed catalog element is not a RPL.")
     def get_referenced_elements(self):
@@ -520,11 +520,11 @@ class RPL(AbstractCatalogElement):
 class CatalogElementPkg(AbstractReElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementPkg"))
         elif isinstance(java_object, CatalogElementPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_element_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedElementPkgs(), CatalogElementPkg)
     def get_owned_recs(self):
@@ -535,11 +535,11 @@ class CatalogElementPkg(AbstractReElement):
 class RecCatalog(CatalogElementPkg):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog"))
         elif isinstance(java_object, RecCatalog):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_compliancy_definition_pkg(self):
         value =  self.get_java_object().getOwnedCompliancyDefinitionPkg()
         if value is None:
@@ -552,22 +552,22 @@ class RecCatalog(CatalogElementPkg):
 class CompliancyDefinitionPkg(AbstractReElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinitionPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinitionPkg"))
         elif isinstance(java_object, CompliancyDefinitionPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_definitions(self):
         return create_e_list(self.get_java_object().getOwnedDefinitions(), CompliancyDefinition)
 
 class CompliancyDefinition(AbstractReElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinition"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinition"))
         elif isinstance(java_object, CompliancyDefinition):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_description(self):
         return self.get_java_object().getDescription()
     def set_description(self, value):
@@ -576,11 +576,11 @@ class CompliancyDefinition(AbstractReElement):
 class OperationalAnalysis(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalAnalysis"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalAnalysis"))
         elif isinstance(java_object, OperationalAnalysis):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_operational_activity_pkg(self):
         value =  self.get_java_object().getContainedOperationalActivityPkg()
         if value is None:
@@ -625,11 +625,11 @@ class OperationalAnalysis(PropertyValuePkgContainer):
 class OperationalActivityPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivityPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivityPkg"))
         elif isinstance(java_object, OperationalActivityPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_operational_activity_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedOperationalActivityPkgs(), OperationalActivityPkg)
     def get_owned_operational_activities(self):
@@ -638,11 +638,11 @@ class OperationalActivityPkg(PropertyValuePkgContainer):
 class OperationalProcess(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalProcess"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalProcess"))
         elif isinstance(java_object, OperationalProcess):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_involved_operational_activities(self):
         return capella_query_by_name(self, "Involved Operational Activities")
     def get_involved_interactions(self):
@@ -679,11 +679,11 @@ class OperationalProcess(CapellaElement):
 class OperationalCapabilityPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapabilityPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapabilityPkg"))
         elif isinstance(java_object, OperationalCapabilityPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_operational_capability_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedOperationalCapabilityPkgs(), OperationalCapabilityPkg)
     def get_owned_operational_capabilities(self):
@@ -692,11 +692,11 @@ class OperationalCapabilityPkg(PropertyValuePkgContainer):
 class EntityPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "EntityPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "EntityPkg"))
         elif isinstance(java_object, EntityPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_entity_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedEntityPkgs(), EntityPkg)
     def get_owned_entities(self):
@@ -705,13 +705,13 @@ class EntityPkg(PropertyValuePkgContainer):
 class OperationalActor(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, OperationalEntity):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.isActor():
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed entity is not an actor.")
     def get_incoming_communication_means(self):
@@ -730,11 +730,11 @@ class OperationalActor(CapellaElement):
 class CommunicationMean(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "CommunicationMean"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "CommunicationMean"))
         elif isinstance(java_object, CommunicationMean):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_source_entity(self):
         value =  self.get_java_object().getSourceEntity()
         if value is None:
@@ -765,11 +765,11 @@ class CommunicationMean(CapellaElement):
 class SystemAnalysis(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemAnalysis"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemAnalysis"))
         elif isinstance(java_object, SystemAnalysis):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_system_function_pkg(self):
         value =  self.get_java_object().getContainedSystemFunctionPkg()
         if value is None:
@@ -830,11 +830,11 @@ class SystemAnalysis(PropertyValuePkgContainer):
 class SystemFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunctionPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunctionPkg"))
         elif isinstance(java_object, SystemFunctionPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_system_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedSystemFunctionPkgs(), SystemFunctionPkg)
     def get_owned_system_functions(self):
@@ -845,11 +845,11 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
 class CapabilityPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "CapabilityPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "CapabilityPkg"))
         elif isinstance(java_object, CapabilityPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_capability_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedCapabilityPkgs(), CapabilityPkg)
     def get_owned_capabilities(self):
@@ -858,11 +858,11 @@ class CapabilityPkg(PropertyValuePkgContainer):
 class SystemComponentPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponentPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponentPkg"))
         elif isinstance(java_object, SystemComponentPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_system_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedSystemComponentPkgs(), SystemComponentPkg)
     def get_owned_system(self):
@@ -883,11 +883,11 @@ class SystemComponentPkg(PropertyValuePkgContainer):
 class MissionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "MissionPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "MissionPkg"))
         elif isinstance(java_object, MissionPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_mission_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedMissionPkgs(), MissionPkg)
     def get_owned_missions(self):
@@ -896,11 +896,11 @@ class MissionPkg(PropertyValuePkgContainer):
 class Mission(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Mission"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Mission"))
         elif isinstance(java_object, Mission):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_exploited_capabilities(self):
         return capella_query_by_name(self, "Exploited Capabilities")
     def get_involved_actors(self):
@@ -909,11 +909,11 @@ class Mission(CapellaElement):
 class LogicalArchitecture(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalArchitecture"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalArchitecture"))
         elif isinstance(java_object, LogicalArchitecture):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_logical_function_pkg(self):
         value =  self.get_java_object().getContainedLogicalFunctionPkg()
         if value is None:
@@ -966,11 +966,11 @@ class LogicalArchitecture(PropertyValuePkgContainer):
 class LogicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunctionPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunctionPkg"))
         elif isinstance(java_object, LogicalFunctionPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_logical_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedLogicalFunctionPkgs(), LogicalFunctionPkg)
     def get_owned_logical_functions(self):
@@ -981,11 +981,11 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
 class CapabilityRealizationPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealizationPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealizationPkg"))
         elif isinstance(java_object, CapabilityRealizationPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_capability_realization_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedCapabilityRealizationPkgs(), CapabilityRealizationPkg)
     def get_owned_capability_realizations(self):
@@ -994,11 +994,11 @@ class CapabilityRealizationPkg(PropertyValuePkgContainer):
 class LogicalComponentPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponentPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponentPkg"))
         elif isinstance(java_object, LogicalComponentPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_logical_component_pkgs(self):
         value =  self.get_java_object().getOwnedLogicalComponentPkgs()
         if value is None:
@@ -1027,11 +1027,11 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
 class PhysicalArchitecture(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalArchitecture"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalArchitecture"))
         elif isinstance(java_object, PhysicalArchitecture):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_physical_function_pkg(self):
         value =  self.get_java_object().getContainedPhysicalFunctionPkg()
         if value is None:
@@ -1078,11 +1078,11 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunctionPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunctionPkg"))
         elif isinstance(java_object, PhysicalFunctionPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_physical_function_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctionPkgs(), PhysicalFunctionPkg)
     def get_owned_physical_functions(self):
@@ -1093,11 +1093,11 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
 class PhysicalComponentPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentPkg"))
         elif isinstance(java_object, PhysicalComponentPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_physical_component_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
     def get_owned_physical_system(self):
@@ -1117,24 +1117,24 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
 class AbstractPhysicalArtifact(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "AbstractPhysicalArtifact"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "AbstractPhysicalArtifact"))
         elif isinstance(java_object, AbstractPhysicalArtifact):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_allocator_configuration_items(self):
         return create_e_list(self.get_java_object().getAllocatorConfigurationItems(), ConfigurationItem)
 
 class PhysicalComponent(AbstractPhysicalArtifact):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
         elif isinstance(java_object, PhysicalComponent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
                 if java_object.getNature().getName() == "UNSET":
-                    EObject.__init__(self, java_object)
+                    JavaObject.__init__(self, java_object)
                 elif java_object.getNature().getName() == "BEHAVIOR":
                     raise AttributeError("Passed component is a behavior physical component.")
                 elif java_object.getNature().getName() == "NODE":
@@ -1165,11 +1165,11 @@ class PhysicalComponent(AbstractPhysicalArtifact):
 class EPBSArchitecture(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "EPBSArchitecture"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "EPBSArchitecture"))
         elif isinstance(java_object, EPBSArchitecture):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_capability_realization_pkg(self):
         value =  self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
@@ -1198,11 +1198,11 @@ class EPBSArchitecture(PropertyValuePkgContainer):
 class ConfigurationItemPkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemPkg"))
         elif isinstance(java_object, ConfigurationItemPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_configuration_item_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedConfigurationItemPkgs(), ConfigurationItemPkg)
     def get_owned_configuration_items(self):
@@ -1211,11 +1211,11 @@ class ConfigurationItemPkg(PropertyValuePkgContainer):
 class ConfigurationItem(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItem"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItem"))
         elif isinstance(java_object, ConfigurationItem):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_item_identifier(self):
         return self.get_java_object().getItemIdentifier()
     def set_item_identifier(self, value):
@@ -1240,22 +1240,22 @@ class ConfigurationItem(CapellaElement):
 class StateMachine(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateMachine"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateMachine"))
         elif isinstance(java_object, StateMachine):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_regions(self):
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
 
 class AbstractState(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "AbstractState"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "AbstractState"))
         elif isinstance(java_object, AbstractState):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_incoming(self):
         return create_e_list(self.get_java_object().getIncoming(), StateTransition)
     def get_outgoing(self):
@@ -1268,11 +1268,11 @@ class AbstractState(CapellaElement):
 class State(AbstractState):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "State"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "State"))
         elif isinstance(java_object, State):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_regions(self):
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
     def get_available_activities_functions(self):
@@ -1293,45 +1293,45 @@ class State(AbstractState):
 class Mode(State):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Mode"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Mode"))
         elif isinstance(java_object, Mode):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class Pseudostate(AbstractState):
     def __init__(self, java_object = None, kind = "InitialPseudoState"):
         if java_object is None:
             if kind in ["ChoicePseudoState", "DeepHistoryPseudoState", "EntryPointPseudoState", "ExitPointPseudoState", "ForkPseudoState", "InitialPseudoState", "JoinPseudoState", "ShallowHistoryPseudoState", "TerminatePseudoState", "FinalState"]:
-                EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), kind))
+                JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), kind))
             else:
                 raise ValueError("kind must be either \"ChoicePseudoState\", \"DeepHistoryPseudoState\", \"EntryPointPseudoState\", \"ExitPointPseudoState\", \"ForkPseudoState\", \"InitialPseudoState\", \"JoinPseudoState\", \"ShallowHistoryPseudoState\", \"TerminatePseudoState\", or \"FinalState\"")
         elif isinstance(java_object, Pseudostate):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_kind(self):
         return self.java_object.eClass().getName()
 
 class Region(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Region"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Region"))
         elif isinstance(java_object, Region):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_states(self):
         return create_e_list(self.get_java_object().getOwnedStates(), AbstractState)
 
 class StateTransition(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateTransition"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateTransition"))
         elif isinstance(java_object, StateTransition):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_trigger_description(self):
         return self.get_java_object().getTriggerDescription()
     def set_trigger_description(self, value):
@@ -1362,29 +1362,29 @@ class StateTransition(CapellaElement):
 class AbstractAction(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction"))
         elif isinstance(java_object, AbstractAction):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class AbstractEvent(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/behavior/" + capella_version(), "AbstractEvent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/behavior/" + capella_version(), "AbstractEvent"))
         elif isinstance(java_object, AbstractEvent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class Scenario(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "Scenario"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "Scenario"))
         elif isinstance(java_object, Scenario):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_kind(self):
         value =  self.get_java_object().getKind()
         if value is None:
@@ -1433,31 +1433,31 @@ class Scenario(CapellaElement):
 class InstanceRole(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InstanceRole"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InstanceRole"))
         elif isinstance(java_object, InstanceRole):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_represented_instance(self):
         return capella_query_by_name(self, "Represented Instance")
 
 class AbstractInstance(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance"))
         elif isinstance(java_object, AbstractInstance):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class SequenceMessage(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "SequenceMessage"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "SequenceMessage"))
         elif isinstance(java_object, SequenceMessage):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_kind(self):
         value =  self.get_java_object().getKind()
         if value is None:
@@ -1508,20 +1508,20 @@ class AbstractExchange(JavaObject):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, AbstractExchange):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_invoking_sequence_messages(self):
         return create_e_list(self.get_java_object().getInvokingSequenceMessages(), SequenceMessage)
 
 class StateFragment(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "StateFragment"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "StateFragment"))
         elif isinstance(java_object, StateFragment):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_covered_instance_role(self):
         value =  self.get_java_object().getCoveredInstanceRole()
         if value is None:
@@ -1544,11 +1544,11 @@ class StateFragment(CapellaElement):
 class CombinedFragment(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "CombinedFragment"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "CombinedFragment"))
         elif isinstance(java_object, CombinedFragment):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_operator(self):
         value =  self.get_java_object().getOperator()
         if value is None:
@@ -1565,11 +1565,11 @@ class CombinedFragment(CapellaElement):
 class Operand(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InteractionOperand"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InteractionOperand"))
         elif isinstance(java_object, Operand):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_guard(self):
         value =  self.get_java_object().getGuard()
         if value is None:
@@ -1588,11 +1588,11 @@ class Operand(CapellaElement):
 class ConstraintDuration(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "ConstraintDuration"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "ConstraintDuration"))
         elif isinstance(java_object, ConstraintDuration):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_duration(self):
         return self.get_java_object().getDuration()
     def set_duration(self, value):
@@ -1603,9 +1603,9 @@ class Node(AbstractInstance):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, Node):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_contained_physical_ports(self):
         return create_e_list(self.get_java_object().getContainedPhysicalPorts(), PhysicalPort)
     def get_physical_links(self):
@@ -1620,11 +1620,11 @@ class Node(AbstractInstance):
 class PhysicalPort(AbstractPhysicalArtifact):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort"))
         elif isinstance(java_object, PhysicalPort):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_physical_links(self):
         return capella_query_by_name(self, "Physical Links")
     def get_allocated_component_ports(self):
@@ -1637,11 +1637,11 @@ class PhysicalPort(AbstractPhysicalArtifact):
 class PhysicalLink(AbstractPhysicalArtifact):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLink"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLink"))
         elif isinstance(java_object, PhysicalLink):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_connected_physical_ports(self):
         return create_e_list(self.get_java_object().getConnectedPhysicalPorts(), PhysicalPort)
     def get_categories(self):
@@ -1660,22 +1660,22 @@ class PhysicalLink(AbstractPhysicalArtifact):
 class PhysicalLinkCategory(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLinkCategory"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLinkCategory"))
         elif isinstance(java_object, PhysicalLinkCategory):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_links(self):
         return create_e_list(self.get_java_object().getLinks(), PhysicalLink)
 
 class PhysicalPath(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath"))
         elif isinstance(java_object, PhysicalPath):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_involved_physical_links(self):
         return capella_query_by_name(self, "Involved Physical Links")
     def get_involved_node_p_cs(self):
@@ -1690,11 +1690,11 @@ class PhysicalPath(CapellaElement):
 class InterfacePkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "InterfacePkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "InterfacePkg"))
         elif isinstance(java_object, InterfacePkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_interface_pkgs(self):
         return create_e_list(self.get_java_object().getOwnedInterfacePkgs(), InterfacePkg)
     def get_owned_interfaces(self):
@@ -1705,11 +1705,11 @@ class InterfacePkg(PropertyValuePkgContainer):
 class Interface(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Interface"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Interface"))
         elif isinstance(java_object, Interface):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_visibility(self):
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -1740,11 +1740,11 @@ class Interface(CapellaElement):
 class ExchangeItemAllocation(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "ExchangeItemAllocation"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "ExchangeItemAllocation"))
         elif isinstance(java_object, ExchangeItemAllocation):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_transmission_protocol(self):
         value =  self.get_java_object().getTransmissionProtocol()
         if value is None:
@@ -1781,11 +1781,11 @@ class ExchangeItemAllocation(CapellaElement):
 class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem"))
         elif isinstance(java_object, ExchangeItem):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_abstract(self):
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
@@ -1822,22 +1822,22 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
 class ExchangeItemElement(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItemElement"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItemElement"))
         elif isinstance(java_object, ExchangeItemElement):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_type(self):
         return capella_query_by_name(self, "Type")
 
 class FunctionPort(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionPort"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionPort"))
         elif isinstance(java_object, FunctionPort):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_allocator_component_port(self):
         value =  self.get_java_object().getRepresentedComponentPort()
         if value is None:
@@ -1852,11 +1852,11 @@ class FunctionPort(CapellaElement):
 class FunctionInputPort(FunctionPort):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionInputPort"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionInputPort"))
         elif isinstance(java_object, FunctionInputPort):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_incoming_functional_exchanges(self):
         return create_e_list(self.get_java_object().getIncomingFunctionalExchanges(), FunctionalExchange)
     def get_incoming_exchange_items(self):
@@ -1869,11 +1869,11 @@ class FunctionInputPort(FunctionPort):
 class FunctionOutputPort(FunctionPort):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionOutputPort"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionOutputPort"))
         elif isinstance(java_object, FunctionOutputPort):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_outgoing_functional_exchanges(self):
         return create_e_list(self.get_java_object().getOutgoingFunctionalExchanges(), FunctionalExchange)
     def get_outgoing_exchange_items(self):
@@ -1886,11 +1886,11 @@ class FunctionOutputPort(FunctionPort):
 class FunctionalExchange(AbstractEvent, AbstractExchange):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
         elif isinstance(java_object, FunctionalExchange):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_source_port(self):
         value =  self.get_java_object().getSourcePort()
         if value is None:
@@ -1957,22 +1957,22 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
 class ExchangeCategory(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ExchangeCategory"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ExchangeCategory"))
         elif isinstance(java_object, ExchangeCategory):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_exchanges(self):
         return create_e_list(self.get_java_object().getExchanges(), FunctionalExchange)
 
 class FunctionalChain(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalChain"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalChain"))
         elif isinstance(java_object, FunctionalChain):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_pre_condition(self):
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -2015,9 +2015,9 @@ class BehavioralComponent(CapellaElement, AbstractInstance):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, BehavioralComponent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_contained_component_ports(self):
         return create_e_list(self.get_java_object().getContainedComponentPorts(), ComponentPort)
     def get_incoming_component_exchanges(self):
@@ -2040,11 +2040,11 @@ class BehavioralComponent(CapellaElement, AbstractInstance):
 class ComponentPort(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPort"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPort"))
         elif isinstance(java_object, ComponentPort):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_orientation(self):
         value =  self.get_java_object().getOrientation()
         if value is None:
@@ -2069,11 +2069,11 @@ class ComponentPort(CapellaElement):
 class ComponentExchange(CapellaElement, AbstractExchange):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchange"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchange"))
         elif isinstance(java_object, ComponentExchange):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_kind(self):
         value =  self.get_java_object().getKind()
         if value is None:
@@ -2108,22 +2108,22 @@ class ComponentExchange(CapellaElement, AbstractExchange):
 class ComponentExchangeCategory(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeCategory"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeCategory"))
         elif isinstance(java_object, ComponentExchangeCategory):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_exchanges(self):
         return create_e_list(self.get_java_object().getExchanges(), ComponentExchange)
 
 class AbstractCapability(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "AbstractCapability"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "AbstractCapability"))
         elif isinstance(java_object, AbstractCapability):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_pre_condition(self):
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -2166,9 +2166,9 @@ class AbstractSystemCapability(AbstractCapability):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, AbstractSystemCapability):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_functional_chains(self):
         return create_e_list(self.get_java_object().getOwnedFunctionalChains(), FunctionalChain)
     def get_involved_functional_chains(self):
@@ -2179,155 +2179,155 @@ class AbstractSystemCapability(AbstractCapability):
 class DataValue(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "DataValue"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "DataValue"))
         elif isinstance(java_object, DataValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class LiteralBooleanValue(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralBooleanValue"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralBooleanValue"))
         elif isinstance(java_object, LiteralBooleanValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class BooleanReference(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BooleanReference"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BooleanReference"))
         elif isinstance(java_object, BooleanReference):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class EnumerationReference(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationReference"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationReference"))
         elif isinstance(java_object, EnumerationReference):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class LiteralStringValue(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralStringValue"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralStringValue"))
         elif isinstance(java_object, LiteralStringValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class StringReference(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "StringReference"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "StringReference"))
         elif isinstance(java_object, StringReference):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class LiteralNumericValue(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralNumericValue"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralNumericValue"))
         elif isinstance(java_object, LiteralNumericValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class NumericReference(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "NumericReference"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "NumericReference"))
         elif isinstance(java_object, NumericReference):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class ComplexValue(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValue"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValue"))
         elif isinstance(java_object, ComplexValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class ComplexValueReference(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValueReference"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValueReference"))
         elif isinstance(java_object, ComplexValueReference):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class BinaryExpression(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BinaryExpression"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BinaryExpression"))
         elif isinstance(java_object, BinaryExpression):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class UnaryExpression(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "UnaryExpression"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "UnaryExpression"))
         elif isinstance(java_object, UnaryExpression):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class CollectionValueReference(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValueReference"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValueReference"))
         elif isinstance(java_object, CollectionValueReference):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class CollectionValue(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValue"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValue"))
         elif isinstance(java_object, CollectionValue):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class DataPkg(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "DataPkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "DataPkg"))
         elif isinstance(java_object, DataPkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class DataType(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "DataType"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "DataType"))
         elif isinstance(java_object, DataType):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class Class(DataType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Class"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Class"))
         elif isinstance(java_object, Class):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_abstract(self):
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
@@ -2358,11 +2358,11 @@ class Class(DataType):
 class Collection(DataType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Collection"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Collection"))
         elif isinstance(java_object, Collection):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_ordered(self):
         return self.get_java_object().isOrdered()
     def set_ordered(self, value):
@@ -2443,11 +2443,11 @@ class Collection(DataType):
 class Union(DataType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Union"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Union"))
         elif isinstance(java_object, Union):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_final(self):
         return self.get_java_object().isFinal()
     def set_final(self, value):
@@ -2490,40 +2490,40 @@ class Union(DataType):
 class Association(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Association"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Association"))
         elif isinstance(java_object, Association):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class Property(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property"))
         elif isinstance(java_object, Property):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_type(self):
         return capella_query_by_name(self, "Type")
 
 class UnionProperty(Property):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "UnionProperty"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "UnionProperty"))
         elif isinstance(java_object, UnionProperty):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class Operation(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Service"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Service"))
         elif isinstance(java_object, Operation):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_visibility(self):
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -2544,20 +2544,20 @@ class Operation(JavaObject):
 class Parameter(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Parameter"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Parameter"))
         elif isinstance(java_object, Parameter):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class Exception(JavaObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception"))
         elif isinstance(java_object, Exception):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_abstract(self):
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
@@ -2582,9 +2582,9 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, PrimitiveDataType):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_abstract(self):
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
@@ -2619,11 +2619,11 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
 class Enumeration(PrimitiveDataType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "Enumeration"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "Enumeration"))
         elif isinstance(java_object, Enumeration):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_min_inclusive(self):
         return self.get_java_object().isMinInclusive()
     def set_min_inclusive(self, value):
@@ -2692,20 +2692,20 @@ class Enumeration(PrimitiveDataType):
 class EnumerationLiteral(DataValue):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationLiteral"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationLiteral"))
         elif isinstance(java_object, EnumerationLiteral):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class BooleanType(PrimitiveDataType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "BooleanType"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "BooleanType"))
         elif isinstance(java_object, BooleanType):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_literals(self):
         return create_e_list(self.get_java_object().getOwnedLiterals(), LiteralBooleanValue)
     def get_default_value(self):
@@ -2722,11 +2722,11 @@ class BooleanType(PrimitiveDataType):
 class StringType(PrimitiveDataType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "StringType"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "StringType"))
         elif isinstance(java_object, StringType):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_min_inclusive(self):
         return self.get_java_object().isMinInclusive()
     def set_min_inclusive(self, value):
@@ -2775,11 +2775,11 @@ class StringType(PrimitiveDataType):
 class NumericType(PrimitiveDataType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "NumericType"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "NumericType"))
         elif isinstance(java_object, NumericType):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_min_inclusive(self):
         return self.get_java_object().isMinInclusive()
     def set_min_inclusive(self, value):
@@ -2838,11 +2838,11 @@ class NumericType(PrimitiveDataType):
 class PhysicalQuantity(NumericType):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "PhysicalQuantity"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "PhysicalQuantity"))
         elif isinstance(java_object, PhysicalQuantity):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_unit(self):
         value =  self.get_java_object().getUnit()
         if value is None:
@@ -2857,20 +2857,20 @@ class PhysicalQuantity(NumericType):
 class Unit(CapellaElement):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Unit"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Unit"))
         elif isinstance(java_object, Unit):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class SystemEngineering(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
         elif isinstance(java_object, SystemEngineering):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_rec_catalogs(self):
         res = []
         for extension in self.get_java_object().getOwnedExtensions():
@@ -2896,20 +2896,20 @@ class SystemEngineering(PropertyValuePkgContainer):
 class PropertyValuePkg(PropertyValuePkgContainer):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValuePkg"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValuePkg"))
         elif isinstance(java_object, PropertyValuePkg):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
 class Interaction(AbstractEvent):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
         elif isinstance(java_object, Interaction):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_source(self):
         value =  self.get_java_object().getSource()
         if value is None:
@@ -2950,11 +2950,11 @@ class Interaction(AbstractEvent):
 class OperationalCapability(AbstractCapability):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapability"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapability"))
         elif isinstance(java_object, OperationalCapability):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_owned_operational_processes(self):
         return capella_query_by_name(self, "Owned Operational Processes")
     def get_involved_operational_processes(self):
@@ -2969,12 +2969,12 @@ class OperationalCapability(AbstractCapability):
 class OperationalEntity(OperationalActor):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
         elif isinstance(java_object, OperationalEntity):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed entity is an actor.")
     def get_owned_entities(self):
@@ -2983,11 +2983,11 @@ class OperationalEntity(OperationalActor):
 class Capability(AbstractSystemCapability):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Capability"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Capability"))
         elif isinstance(java_object, Capability):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_purpose_missions(self):
         return create_e_list(self.get_java_object().getPurposeMissions(), Mission)
     def get_realized_operational_capabilities(self):
@@ -3000,25 +3000,25 @@ class Capability(AbstractSystemCapability):
 class System(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
         elif isinstance(java_object, System):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if is_system(java_object):
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is not a system.")
 
 class SystemActor(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, SystemActor):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.isActor():
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is not an actor.")
     def get_is_human(self):
@@ -3047,11 +3047,11 @@ class SystemActor(BehavioralComponent, Node):
 class CapabilityRealization(AbstractSystemCapability):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealization"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealization"))
         elif isinstance(java_object, CapabilityRealization):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_realized_capabilities(self):
         return capella_query_by_name(self, "Realized Capabilities")
     def get_realized_capability_realizations(self):
@@ -3070,12 +3070,12 @@ class CapabilityRealization(AbstractSystemCapability):
 class LogicalSystem(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
         elif isinstance(java_object, LogicalSystem):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if is_system(java_object):
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is not a system.")
     def get_owned_logical_components(self):
@@ -3086,12 +3086,12 @@ class LogicalSystem(BehavioralComponent, Node):
 class LogicalComponent(BehavioralComponent):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
         elif isinstance(java_object, LogicalComponent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is an actor.")
     def get_owned_logical_components(self):
@@ -3110,13 +3110,13 @@ class LogicalComponent(BehavioralComponent):
 class LogicalActor(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, LogicalActor):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.isActor():
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is not an actor.")
     def get_owned_logical_actors(self):
@@ -3137,13 +3137,13 @@ class LogicalActor(BehavioralComponent, Node):
 class PhysicalSystem(CapellaElement, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, PhysicalSystem):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if is_system(java_object):
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is not a system.")
     def get_owned_physical_components(self):
@@ -3154,16 +3154,16 @@ class PhysicalSystem(CapellaElement, Node):
 class BehaviorPC(PhysicalComponent, BehavioralComponent):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
             self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "BEHAVIOR"))
         elif isinstance(java_object, BehaviorPC):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
                 if java_object.getNature().getName() == "UNSET":
                     raise AttributeError("Passed component is a physical component.")
                 elif java_object.getNature().getName() == "BEHAVIOR":
-                    EObject.__init__(self, java_object)
+                    JavaObject.__init__(self, java_object)
                 elif java_object.getNature().getName() == "NODE":
                     raise AttributeError("Passed component is a node physical component.")
                 else:
@@ -3186,10 +3186,10 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
 class NodePC(PhysicalComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
             self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "NODE"))
         elif isinstance(java_object, NodePC):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if not java_object.isActor():
                 if java_object.getNature().getName() == "UNSET":
@@ -3197,7 +3197,7 @@ class NodePC(PhysicalComponent, Node):
                 elif java_object.getNature().getName() == "BEHAVIOR":
                     raise AttributeError("Passed component is a behavior physical component.")
                 elif java_object.getNature().getName() == "NODE":
-                    EObject.__init__(self, java_object)
+                    JavaObject.__init__(self, java_object)
                 else:
                     raise AttributeError("Passed component has unexpected nature.")
             else:
@@ -3216,13 +3216,13 @@ class NodePC(PhysicalComponent, Node):
 class PhysicalActor(BehavioralComponent, Node):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, PhysicalActor):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
             if java_object.isActor():
-                EObject.__init__(self, java_object)
+                JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed component is not an actor.")
     def get_owned_physical_actors(self):
@@ -3241,11 +3241,11 @@ class PhysicalActor(BehavioralComponent, Node):
 class ChangeEvent(AbstractEvent):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "ChangeEvent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "ChangeEvent"))
         elif isinstance(java_object, ChangeEvent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_expression(self):
         return self.get_java_object().getExpression()
     def set_expression(self, value):
@@ -3254,11 +3254,11 @@ class ChangeEvent(AbstractEvent):
 class TimeEvent(AbstractEvent):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEvent"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEvent"))
         elif isinstance(java_object, TimeEvent):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_kind(self):
         value =  self.get_java_object().getKind()
         if value is None:
@@ -3279,9 +3279,9 @@ class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, AbstractActivityFunction):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_available_in_states(self):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
 
@@ -3290,9 +3290,9 @@ class Function(AbstractActivityFunction):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
         elif isinstance(java_object, Function):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_kind(self):
         value =  self.get_java_object().getKind()
         if value is None:
@@ -3342,11 +3342,11 @@ class Function(AbstractActivityFunction):
 class OperationalActivity(AbstractActivityFunction):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivity"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivity"))
         elif isinstance(java_object, OperationalActivity):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_contained_operational_activities(self):
         return create_e_list(self.get_java_object().getContainedOperationalActivities(), OperationalActivity)
     def get_owned_operational_activity_pkgs(self):
@@ -3369,11 +3369,11 @@ class OperationalActivity(AbstractActivityFunction):
 class SystemFunction(Function):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunction"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunction"))
         elif isinstance(java_object, SystemFunction):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_contained_system_functions(self):
         return create_e_list(self.get_java_object().getContainedSystemFunctions(), SystemFunction)
     def get_owned_system_function_pkgs(self):
@@ -3386,11 +3386,11 @@ class SystemFunction(Function):
 class LogicalFunction(Function):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunction"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunction"))
         elif isinstance(java_object, LogicalFunction):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_contained_logical_functions(self):
         return create_e_list(self.get_java_object().getContainedLogicalFunctions(), LogicalFunction)
     def get_owned_logical_function_pkgs(self):
@@ -3403,11 +3403,11 @@ class LogicalFunction(Function):
 class PhysicalFunction(Function):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunction"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunction"))
         elif isinstance(java_object, PhysicalFunction):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
     def get_contained_physical_functions(self):
         return create_e_list(self.get_java_object().getContainedPhysicalFunctions(), PhysicalFunction)
     def get_owned_physical_function_pkgs(self):
@@ -3418,9 +3418,9 @@ class PhysicalFunction(Function):
 class Status(EObject):
     def __init__(self, java_object = None):
         if java_object is None:
-            EObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
         elif isinstance(java_object, Status):
-            EObject.__init__(self, java_object.get_java_object())
+            JavaObject.__init__(self, java_object.get_java_object())
         else:
-            EObject.__init__(self, java_object)
+            JavaObject.__init__(self, java_object)
 
