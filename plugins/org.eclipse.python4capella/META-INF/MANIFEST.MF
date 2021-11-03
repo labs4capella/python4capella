@@ -24,5 +24,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.capella.common.ui.massactions;bundle-version="[1.3.0,5.2.0)",
  org.polarsys.capella.common.ui.massactions.core;bundle-version="[1.3.0,5.2.0)",
  org.polarsys.capella.common.libraries;bundle-version="[1.3.0,5.2.0)",
- org.polarsys.capella.core.libraries;bundle-version="[1.3.0,5.2.0)"
+ org.polarsys.capella.core.libraries;bundle-version="[1.3.0,5.2.0)",
+ org.polarsys.capella.common.re;bundle-version="[1.3.0,5.2.0)",
+ org.polarsys.capella.common.re.gen;bundle-version="[1.3.0,5.2.0)",
+ org.polarsys.capella.common.re.gen.edit;bundle-version="[1.3.0,5.2.0)",
+ org.polarsys.capella.common.re.ui;bundle-version="[1.3.0,5.2.0)"
 Export-Package: org.eclipse.python4capella.modules

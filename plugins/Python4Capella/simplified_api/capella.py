@@ -150,9 +150,9 @@ class EObject(JavaObject):
             res.append(Diagram(element))
         return res
     def get__r_e_cs(self):
-        return create_e_list(self.get_java_object().getRECs(), REC)
+        return capella_query("org.polarsys.capella.common.re.ui.queries.ReferencingReplicableElements", self)
     def get__r_p_ls(self):
-        return create_e_list(self.get_java_object().getRPLs(), RPL)
+        return capella_query("org.polarsys.capella.common.re.ui.queries.ReferencingReplicas", self)
     def get_label(self):
         return get_label(self)
     def get_element_type(self):
