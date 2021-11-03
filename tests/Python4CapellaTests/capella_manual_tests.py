@@ -226,7 +226,8 @@ class capella_manual_tests(unittest.TestCase):
         """
         This test need the IFE project to be in the workspace to run
         """
-        model = CapellaModel("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         se = model.get_system_engineering()
         self.assertEqual("In-Flight Entertainment System", se.get_name())
         model.start_transaction()
