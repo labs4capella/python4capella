@@ -19,7 +19,7 @@ class CapellaPlatform():
     @staticmethod
     def getModelPath(elem):
         """
-        return the relavite path toward the aird file of a CapellaElement or Diagram
+        return the relative path toward the aird file of a CapellaElement or Diagram
         """
         res = Sirius.get_session(elem.java_object).getSessionResource().getURI().toPlatformString(True)
         res = res[1:res.rfind(".")] + ".aird"

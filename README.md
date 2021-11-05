@@ -120,7 +120,7 @@ You now have the following Python4Capella project in your workspace:
 
 ![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-04.png)
 
-Now you need to refence your Python 3.7 interpreter:
+Now you need to reference your Python 3.7 interpreter:
 
 Select the Window > Preferences menu
 - select the PyDev / Interpreters / Python Interpreter
@@ -138,7 +138,7 @@ When you will open your fist Python file, you will be prompted by PyDev to defin
 
 You can validate the dialog by clicking the OK button.
 
-You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from capella, then on the right tree, you can select Python4Capella.
+You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from Capella, then on the right tree, you can select Python4Capella.
 
 # Errors in provided scripts
 
