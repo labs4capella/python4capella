@@ -1,0 +1,10 @@
+    def get_involved_actors(self):
+        res = []
+        for system_comp in self.get_java_object().getInvolvedSystemComponents():
+            if system_comp is not None:
+                e_object_class = getattr(sys.modules["__main__"], "EObject")
+                specific_cls = e_object_class.get_class(system_comp)
+                if specific_cls is not None and specific_cls.__name__.endswith('Actor'):
+                    res.append(specific_cls(system_comp))
+        return res
+

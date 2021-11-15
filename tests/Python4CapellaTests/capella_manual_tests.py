@@ -248,3 +248,45 @@ class capella_manual_tests(unittest.TestCase):
         else:
             model.commit_transaction()
             pass
+
+    def test_FunctionalChain_involved_functions(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for fc in se.get_all_contents_by_type(FunctionalChain):
+            #: :type fc: Mission
+            if fc.get_name() == 'Broadcast Audio Announcement':
+                tested = fc
+                break
+        involved_functions = tested.get_involved_functions()
+        self.assertEqual(6, len(involved_functions))
+        self.assertEqual("Perform Cabin Management Activities", involved_functions[0].get_name())
+        self.assertEqual("Send Audio Announcement", involved_functions[1].get_name())
+        self.assertEqual("Provide Aircraft Information, Commands and Means", involved_functions[2].get_name())
+        self.assertEqual("Broadcast Audio Video Streams", involved_functions[3].get_name())
+        self.assertEqual("Manage Passenger Service Interruptions", involved_functions[4].get_name())
+        self.assertEqual("Listen to Audio Announcement", involved_functions[5].get_name())
+
+    def test_Mission_involved_actors_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for mission in se.get_all_contents_by_type(Mission):
+            #: :type mission: Mission
+            if mission.get_name() == 'Provide Cabin Management Solutions':
+                tested = mission
+                break
+        involved_actors = tested.get_involved_actors()
+        self.assertEqual(3, len(involved_actors))
+        self.assertEqual("Cabin Crew", involved_actors[0].get_name())
+        self.assertEqual("Passenger", involved_actors[1].get_name())
+        self.assertEqual("Aircraft", involved_actors[2].get_name())
+
