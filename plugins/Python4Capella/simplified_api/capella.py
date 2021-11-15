@@ -804,7 +804,13 @@ class OperationalProcess(CapellaElement):
             JavaObject.__init__(self, java_object)
 
     def get_involved_operational_activities(self):
-        return capella_query_by_name(self, "Involved Operational Activities")
+        res = []
+        for involved_element in self.get_java_object().getInvolvedElements():
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(involved_element)
+            if specific_cls is not None and specific_cls.__name__ == "OperationalActivity":
+                res.append(specific_cls(involved_element))
+        return res
 
     def get_involved_interactions(self):
         res = []
