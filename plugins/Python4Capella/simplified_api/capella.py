@@ -1994,7 +1994,15 @@ class FunctionalChain(CapellaElement):
     def set_post_condition(self, value):
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_involved_functions(self):
-        return capella_query_by_name(self, "Involved Functions")
+        res = []
+        for involvment in self.get_java_object().getOwnedFunctionalChainInvolvements():
+            if involvment.eClass().getName() == 'FunctionalChainInvolvementFunction':
+                involvedElement = involvment.getInvolvedElement()
+                if involvedElement is not None:
+                    e_object_class = getattr(sys.modules["__main__"], "EObject")
+                    specific_cls = e_object_class.get_class(involvedElement)
+                    res.append(specific_cls(involvedElement))
+        return res
     def get_involved_functional_exchanges(self):
         return create_e_list(self.get_java_object().getInvolvedFunctionalExchanges(), FunctionalExchange)
     def get_involved_functional_chains(self):

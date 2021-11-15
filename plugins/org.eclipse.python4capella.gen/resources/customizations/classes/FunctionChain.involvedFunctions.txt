@@ -1,0 +1,11 @@
+    def get_involved_functions(self):
+        res = []
+        for involvment in self.get_java_object().getOwnedFunctionalChainInvolvements():
+            if involvment.eClass().getName() == 'FunctionalChainInvolvementFunction':
+                involvedElement = involvment.getInvolvedElement()
+                if involvedElement is not None:
+                    e_object_class = getattr(sys.modules["__main__"], "EObject")
+                    specific_cls = e_object_class.get_class(involvedElement)
+                    res.append(specific_cls(involvedElement))
+        return res
+
