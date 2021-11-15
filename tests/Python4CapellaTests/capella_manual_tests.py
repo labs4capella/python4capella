@@ -290,3 +290,21 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual("Passenger", involved_actors[1].get_name())
         self.assertEqual("Aircraft", involved_actors[2].get_name())
 
+    def test_OperationalProcess_involved_interactions_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for operational_process in se.get_all_contents_by_type(OperationalProcess):
+            #: :type operational_process: OperationalProcess
+            if operational_process.get_name() == 'Broadcast Safety Instructions Movie':
+                tested = operational_process
+                break
+        involved_interactions = tested.get_involved_interactions()
+        self.assertEqual(2, len(involved_interactions))
+        self.assertEqual("Safety Instructions", involved_interactions[0].get_name())
+        self.assertEqual("Imposed Movie", involved_interactions[1].get_name())
+

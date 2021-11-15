@@ -807,7 +807,13 @@ class OperationalProcess(CapellaElement):
         return capella_query_by_name(self, "Involved Operational Activities")
 
     def get_involved_interactions(self):
-        return create_e_list(self.get_java_object().getInvolvedInteractions(), Interaction)
+        res = []
+        for involved_element in self.get_java_object().getInvolvedElements():
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(involved_element)
+            if specific_cls is not None and specific_cls.__name__ == "FunctionalExchange":
+                res.append(Interaction(involved_element))
+        return res
 
     def get_involved_operational_processes(self):
         return capella_query_by_name(self, "Involved Operational Processes")
