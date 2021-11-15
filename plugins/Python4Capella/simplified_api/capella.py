@@ -852,7 +852,7 @@ class OperationalProcess(CapellaElement):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
 
     def get_involving_operational_capabilities(self):
-        return capella_query_by_name(self, "Involving Operational Capabilities")
+        return create_e_list(self.get_java_object().getInvolvingOperationalCapabilities(), OperationalCapability)
 
     def get_realizing_functional_chains(self):
         return create_e_list(self.get_java_object().getRealizingFunctionalChains(), FunctionalChain)
