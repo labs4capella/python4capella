@@ -1,0 +1,3 @@
+    def get__r_p_ls(self):
+        return capella_query("org.polarsys.capella.common.re.ui.queries.ReferencingReplicas", self)
+

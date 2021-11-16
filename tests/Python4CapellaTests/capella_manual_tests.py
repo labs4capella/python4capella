@@ -322,8 +322,6 @@ class capella_manual_tests(unittest.TestCase):
                 tested = operational_process
                 break
         involved_activities = tested.get_involved_operational_activities()
-        for f in involved_activities:
-            print(f.get_name())
         self.assertEqual(3, len(involved_activities))
         self.assertEqual("Broadcast Movies", involved_activities[0].get_name())
         self.assertEqual("Play Imposed Movie", involved_activities[1].get_name())

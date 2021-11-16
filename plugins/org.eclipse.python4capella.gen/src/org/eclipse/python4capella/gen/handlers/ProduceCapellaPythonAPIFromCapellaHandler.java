@@ -31,6 +31,7 @@ import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacore.AbstractPropertyValue;
+import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
 import org.polarsys.capella.core.data.capellacore.PropertyValueGroup;
@@ -226,6 +227,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 
 		res.append("class " + cls.getName() + "(" + superClassNames + "):" + NL);
+		res.append(getDocumentation(cls));
 		final String initCursomization = getClassCustomization(cls.getName() + ".__init__");
 		if (initCursomization != null) {
 			res.append(initCursomization);
@@ -244,6 +246,29 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					res.append(generateFeature(cls, feature));
 				}
 			}
+		}
+
+		return res.toString();
+	}
+
+	/**
+	 * Gets the Python documentation from the given {@link CapellaElement}.
+	 * 
+	 * @param element the {@link CapellaElement}
+	 * @return the Python documentation from the given {@link CapellaElement}
+	 */
+	private String getDocumentation(CapellaElement element) {
+		final StringBuilder res = new StringBuilder();
+
+		if (element.getSummary() != null && !element.getSummary().isEmpty()) {
+			String padding = "    ";
+			if (!(element instanceof Class)) {
+				padding = padding + padding;
+			}
+
+			res.append(padding + "\"\"\"" + NL);
+			res.append(padding + element.getSummary().replaceAll("\\n\\r|\\n", NL + padding) + NL);
+			res.append(padding + "\"\"\"" + NL);
 		}
 
 		return res.toString();
@@ -327,11 +352,14 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			if (isScalar(property)) {
 				if (isAttribute(property)) {
 					res.append("    def " + getterName + "(self):" + NL);
+					res.append(getDocumentation(property));
 					res.append("        return self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
 					res.append("    def " + setterName + "(self, value):" + NL);
+					res.append(getDocumentation(property));
 					res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(value)" + NL);
 				} else {
 					res.append("    def " + getterName + "(self):" + NL);
+					res.append(getDocumentation(property));
 					res.append(
 							"        value =  self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
 					res.append("        if value is None:" + NL);
@@ -341,13 +369,15 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					res.append("            specific_cls = e_object_class.get_class(value)" + NL);
 					res.append("            return specific_cls(value)" + NL);
 					if (!property.isIsReadOnly() && !property.isIsDerived()) {
-						res.append("    def set_" + getPythonName(property.getName()) + "(self, value):" + NL);
+						res.append("    def " + setterName + "(self, value):" + NL);
+						res.append(getDocumentation(property));
 						res.append("        return self.get_java_object()." + getJavaSetterName(cls, property)
 								+ "(value.get_java_object())" + NL);
 					}
 				}
 			} else {
 				res.append("    def " + getterName + "(self):" + NL);
+				res.append(getDocumentation(property));
 				res.append("        return create_e_list(self.get_java_object()." + getJavaGetterName(cls, property)
 						+ "(), " + property.getType().getLabel() + ")" + NL);
 			}
@@ -368,6 +398,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 
 		res.append("    def " + getPythonName(operation.getName()) + "(" + joiner.toString() + "):" + NL);
+		res.append(getDocumentation(operation));
 		res.append("        raise AttributeError(\"TODO\")" + NL);
 
 		return res.toString();
@@ -385,15 +416,15 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 	private String getJavaName(Property property) {
 		String res = property.getName();
-		
+
 		for (PropertyValueGroup group : property.getOwnedPropertyValueGroups()) {
 			for (AbstractPropertyValue pv : group.getOwnedPropertyValues()) {
 				if ("name".equals(pv.getName())) {
-					res = ((StringPropertyValue)pv).getValue();
+					res = ((StringPropertyValue) pv).getValue();
 				}
 			}
 		}
-		
+
 		return res;
 	}
 
