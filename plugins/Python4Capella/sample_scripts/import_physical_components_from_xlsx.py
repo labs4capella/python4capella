@@ -23,13 +23,14 @@ from openpyxl import *
 
 #check parameter numbers
 if len(argv) != 2:
-    print("You need two parameters the .aird file path and the .xlsx file path:")
-    print("For instance: \"/In-Flight Entertainment System/In-Flight Entertainment System.aird\" \"/Python4Capella/resources/physical_components.xlsx\"")
-    quit()
+    # use IFE default values
+    aird_path = "/In-Flight Entertainment System/In-Flight Entertainment System.aird"
+    xlsx_path = "/Python4Capella/resources/physical_components.xlsx"
+else:
+    # Load the Capella model from the first argument of the script
+    aird_path = argv[0]
+    xlsx_path = argv[1]
 
-# Load the Capella model from the first argument of the script
-aird_path = argv[0]
-xlsx_path = argv[1]
 model = CapellaModel()
 model.open(aird_path)
 
