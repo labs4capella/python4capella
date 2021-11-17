@@ -260,14 +260,14 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	private String getDocumentation(CapellaElement element) {
 		final StringBuilder res = new StringBuilder();
 
-		if (element.getSummary() != null && !element.getSummary().isEmpty()) {
+		if (element.getDescription() != null && !element.getDescription().isEmpty()) {
 			String padding = "    ";
 			if (!(element instanceof Class)) {
 				padding = padding + padding;
 			}
 
 			res.append(padding + "\"\"\"" + NL);
-			res.append(padding + element.getSummary().replaceAll("\\n\\r|\\n", NL + padding) + NL);
+			res.append(padding + element.getDescription().replaceAll("\\n\\r|\\n", NL + padding) + NL);
 			res.append(padding + "\"\"\"" + NL);
 		}
 

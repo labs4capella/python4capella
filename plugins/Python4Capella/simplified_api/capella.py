@@ -13,6 +13,10 @@ if False:
 
 
 class CapellaModel():
+    """
+    <p>A Capella model. Used to defined the content of a model, and how to read a model</p>
+    
+    """
     def start_transaction(self):
         Sirius.start_transaction(self.session)
     def commit_transaction(self):
@@ -62,6 +66,10 @@ class CapellaModel():
         self.session.save(Sirius.createProgressMonitor())
 
 class CapellaLibrary(CapellaModel):
+    """
+    <p>A Capella Library. A library is a model which can be referenced by other models in order to reuse its content</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
@@ -71,6 +79,10 @@ class CapellaLibrary(CapellaModel):
             JavaObject.__init__(self, java_object)
 
 class EObject(JavaObject):
+    """
+    <p>A generic object. Defines generic relations which are available for all elements</p>
+    
+    """
     @staticmethod
     def get_class(e_object):
         try:
@@ -193,6 +205,10 @@ class EObject(JavaObject):
         return capella_query_by_name(self, name)
 
 class CapellaElement(EObject):
+    """
+    <p>A generic Capella model Element. Used to define generic attributes and relations inherited by most Capella elements</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "CapellaElement"))
@@ -254,6 +270,10 @@ class CapellaElement(EObject):
         return create_e_list(self.get_java_object().getOwnedEnumerationPropertyTypes(), EnumerationPropertyType)
 
 class Constraint(CapellaElement):
+    """
+    <p>A generic constraint which can be defined on Capella elements</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "Constraint"))
@@ -269,6 +289,10 @@ class Constraint(CapellaElement):
         return capella_query_by_name(self, "Constrained Elements")
 
 class PropertyValue(CapellaElement):
+    """
+    <p>A generic property with a name and value&nbsp;which can be added to Capella elements</p>
+    
+    """
     def __init__(self, java_object = None, kind = "StringPropertyValue"):
         if java_object is None:
             if kind in ["BooleanPropertyValue", "EnumerationPropertyValue", "FloatPropertyValue", "IntegerPropertyValue", "StringPropertyValue" ]:
@@ -297,6 +321,10 @@ class PropertyValue(CapellaElement):
             return specific_cls(value)
 
 class PropertyValueGroup(CapellaElement):
+    """
+    <p>A group which can contain several PropertyValue and be applied to CapellaElements</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValueGroup"))
@@ -308,6 +336,10 @@ class PropertyValueGroup(CapellaElement):
         return capella_query_by_name(self, "Valued Elements")
 
 class EnumerationPropertyType(CapellaElement):
+    """
+    <p>The definition of an Enumeration to type a PropertyValue</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyType"))
@@ -319,6 +351,10 @@ class EnumerationPropertyType(CapellaElement):
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationPropertyLiteral)
 
 class EnumerationPropertyLiteral(CapellaElement):
+    """
+    <p>A value defined in an EnumerationPropertyType</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
@@ -328,6 +364,10 @@ class EnumerationPropertyLiteral(CapellaElement):
             JavaObject.__init__(self, java_object)
 
 class PropertyValuePkgContainer(CapellaElement):
+    """
+    <p>An abstract type to define all elements which can contain PropertyValuePkg</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -339,6 +379,10 @@ class PropertyValuePkgContainer(CapellaElement):
         return create_e_list(self.get_java_object().getOwnedPropertyValuePkgs(), PropertyValuePkg)
 
 class Diagram(JavaObject):
+    """
+    <p>A generic Capella diagram</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.eclipse.org/sirius/1.1.0", "DRepresentationDescriptor"))
@@ -406,6 +450,10 @@ class Diagram(JavaObject):
         Sirius.export_image(self.get_java_object(), file_path)
 
 class AbstractReElement(EObject):
+    """
+    <p>An abstract type to define the generic attributes of REC / RPL and packages&nbsp;elements</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -423,6 +471,10 @@ class AbstractReElement(EObject):
         self.get_java_object().setName(value)
 
 class AbstractCatalogElement(AbstractReElement):
+    """
+    <p>An abstract type to define the generic attributes and relations&nbsp;of REC / RPL elements</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -448,6 +500,10 @@ class AbstractCatalogElement(AbstractReElement):
         self.get_java_object().setTags(value)
 
 class REC(AbstractCatalogElement):
+    """
+    <p>A Record element is the definition of a set of elements to be replicated together</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
@@ -475,6 +531,10 @@ class REC(AbstractCatalogElement):
         return create_e_list(self.get_java_object().getReplicatedElements(), RPL)
 
 class RPL(AbstractCatalogElement):
+    """
+    <p>A replay element is the instantiation of a record element</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
@@ -518,6 +578,10 @@ class RPL(AbstractCatalogElement):
         return self.get_java_object().setCurrentCompliancy(value.get_java_object())
 
 class CatalogElementPkg(AbstractReElement):
+    """
+    <p>A package to structure the definition of REC / RPL elements</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementPkg"))
@@ -533,6 +597,10 @@ class CatalogElementPkg(AbstractReElement):
         return create_e_list(self.get_java_object().getOwnedRpls(), RPL)
 
 class RecCatalog(CatalogElementPkg):
+    """
+    <p>The root package which contains the REC / RPL definitions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog"))
@@ -550,6 +618,10 @@ class RecCatalog(CatalogElementPkg):
             return specific_cls(value)
 
 class CompliancyDefinitionPkg(AbstractReElement):
+    """
+    <p>A package to contain CompliancyDefinitions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinitionPkg"))
@@ -561,6 +633,16 @@ class CompliancyDefinitionPkg(AbstractReElement):
         return create_e_list(self.get_java_object().getOwnedDefinitions(), CompliancyDefinition)
 
 class CompliancyDefinition(AbstractReElement):
+    """
+    <p>The type of compliancy which have to be respected by the RPL regarding its REC definition. Default list of compliancies is:</p>
+    
+    <ul>
+    	<li>BLACK_BOX</li>
+    	<li>CONSTRAINT_REUSE</li>
+    	<li>INHERITANCY_REUSE</li>
+    </ul>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinition"))
@@ -574,6 +656,12 @@ class CompliancyDefinition(AbstractReElement):
         self.get_java_object().setDescription(value)
 
 class OperationalAnalysis(PropertyValuePkgContainer):
+    """
+    <p>The element containing all definitions from the Operational Analysis.</p>
+    
+    <p>The Operational Analysis aims at defining what the users of the system need to accomplish</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalAnalysis"))
@@ -623,6 +711,10 @@ class OperationalAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
 
 class OperationalActivityPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain OperationalActivity</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivityPkg"))
@@ -636,6 +728,10 @@ class OperationalActivityPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedOperationalActivities(), OperationalActivity)
 
 class OperationalProcess(CapellaElement):
+    """
+    <p>An operational process is used to describe a particular context for performing operational activities to contribute to one or more operational capabilities</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalProcess"))
@@ -689,6 +785,10 @@ class OperationalProcess(CapellaElement):
         return create_e_list(self.get_java_object().getRealizingFunctionalChains(), FunctionalChain)
 
 class OperationalCapabilityPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain OperationalCapabilities</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapabilityPkg"))
@@ -702,6 +802,10 @@ class OperationalCapabilityPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedOperationalCapabilities(), OperationalCapability)
 
 class EntityPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to define Operational entities / actors</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "EntityPkg"))
@@ -715,6 +819,10 @@ class EntityPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedEntities(), OperationalActor)
 
 class OperationalActor(CapellaElement):
+    """
+    <p>An Operational Actor is a kind of Operational Entity, usually human. It cannot be broken down</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
@@ -740,6 +848,10 @@ class OperationalActor(CapellaElement):
         return create_e_list(self.get_java_object().getRealizingSystemActors(), SystemActor)
 
 class CommunicationMean(CapellaElement):
+    """
+    <p>Describes the media between the Operational Entities / Actors&nbsp;to support the Operational Interactions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "CommunicationMean"))
@@ -775,6 +887,12 @@ class CommunicationMean(CapellaElement):
         return create_e_list(self.get_java_object().getRealizingComponentExchanges(), ComponentExchange)
 
 class SystemAnalysis(PropertyValuePkgContainer):
+    """
+    <p>The element containing all definitions from the System Analysis.</p>
+    
+    <p>The System Analysis aims at defining what the system has to accomplish for the users</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemAnalysis"))
@@ -840,6 +958,10 @@ class SystemAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
 
 class SystemFunctionPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain SystemFunctions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunctionPkg"))
@@ -855,6 +977,10 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
 class CapabilityPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain Capabilities</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "CapabilityPkg"))
@@ -868,6 +994,10 @@ class CapabilityPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedCapabilities(), Capability)
 
 class SystemComponentPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain the System and the Actors</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponentPkg"))
@@ -893,6 +1023,10 @@ class SystemComponentPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
 class MissionPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain Missions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "MissionPkg"))
@@ -906,6 +1040,10 @@ class MissionPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedMissions(), Mission)
 
 class Mission(CapellaElement):
+    """
+    <p>High-level goal to which the System should contribute. To be fulfilled, a Mission should use a number of system Functions regrouped within one or more Capabilities</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Mission"))
@@ -926,6 +1064,12 @@ class Mission(CapellaElement):
         return res
 
 class LogicalArchitecture(PropertyValuePkgContainer):
+    """
+    <p>The element containing all definitions from the Logical Architecture.</p>
+    
+    <p>The Logical Architecture (or conceptual solution)&nbsp;aims at defining how the system will work in order to fulfil expectations</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalArchitecture"))
@@ -983,6 +1127,10 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
 
 class LogicalFunctionPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain LogicalFunctions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunctionPkg"))
@@ -998,6 +1146,10 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
 class CapabilityRealizationPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain CapabilityRealizations</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealizationPkg"))
@@ -1011,6 +1163,10 @@ class CapabilityRealizationPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedCapabilityRealizations(), CapabilityRealization)
 
 class LogicalComponentPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain the LogicalSystem, LogicalComponents and LogicalActors</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponentPkg"))
@@ -1044,6 +1200,12 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
 class PhysicalArchitecture(PropertyValuePkgContainer):
+    """
+    <p>The element containing all definitions from the Physical Architecture.</p>
+    
+    <p>The Physical Architecture (or finalized solution)&nbsp;aims at defining how the system will be developed and built</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalArchitecture"))
@@ -1095,6 +1257,10 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
         return self.get_physical_component_pkg().get_owned_physical_system()
 
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain PhysicalFunctions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunctionPkg"))
@@ -1110,6 +1276,10 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
 class PhysicalComponentPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain the PhysicalSystem, PhysicalComponents and PhysicalActors</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentPkg"))
@@ -1134,6 +1304,10 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
 class AbstractPhysicalArtifact(CapellaElement):
+    """
+    <p>An abstract type to defined the relation between elements of the Physical Architecture and ConfigurationItems</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "AbstractPhysicalArtifact"))
@@ -1145,6 +1319,10 @@ class AbstractPhysicalArtifact(CapellaElement):
         return create_e_list(self.get_java_object().getAllocatorConfigurationItems(), ConfigurationItem)
 
 class PhysicalComponent(AbstractPhysicalArtifact):
+    """
+    <p>A generic Physical Component which can be either a BehaviorPC or a NodePC</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
@@ -1182,6 +1360,12 @@ class PhysicalComponent(AbstractPhysicalArtifact):
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
 class EPBSArchitecture(PropertyValuePkgContainer):
+    """
+    <p>The element containing all definitions from the End-Product Breakdown Structure.</p>
+    
+    <p>The End-Product Breakdown Structure aims at defining the construction strategy of the product, taking into account industrial and subcontracting constraints</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "EPBSArchitecture"))
@@ -1215,6 +1399,10 @@ class EPBSArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
 
 class ConfigurationItemPkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain ConfigurationItems</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemPkg"))
@@ -1228,6 +1416,10 @@ class ConfigurationItemPkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedConfigurationItems(), ConfigurationItem)
 
 class ConfigurationItem(CapellaElement):
+    """
+    <p>System part to be acquired or produced, in as many copies as the physical architecture requires</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItem"))
@@ -1257,6 +1449,10 @@ class ConfigurationItem(CapellaElement):
         return create_e_list(self.get_java_object().getAllocatedPhysicalArtifacts(), AbstractPhysicalArtifact)
 
 class StateMachine(CapellaElement):
+    """
+    <p>State Machine is a way to define some of&nbsp;the expected behavior of the System, a Component or an external Actor</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateMachine"))
@@ -1268,6 +1464,10 @@ class StateMachine(CapellaElement):
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
 
 class AbstractState(CapellaElement):
+    """
+    <p>An abstract type to define the generic relation of modes and states</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "AbstractState"))
@@ -1285,6 +1485,10 @@ class AbstractState(CapellaElement):
         return create_e_list(self.get_java_object().getRealizingAbstractStates(), AbstractState)
 
 class State(AbstractState):
+    """
+    <p>A State is a context undergone by the system, an actor or a component in specific circumstances (for example imposed by the environment)</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "State"))
@@ -1310,6 +1514,10 @@ class State(AbstractState):
         return create_e_list(self.get_java_object().getAvailableAbstractCapabilities(), AbstractCapability)
 
 class Mode(State):
+    """
+    <p>A Mode is a behavior expected from the system,&nbsp;an Actor or a component&nbsp;in chosen conditions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Mode"))
@@ -1319,6 +1527,10 @@ class Mode(State):
             JavaObject.__init__(self, java_object)
 
 class Pseudostate(AbstractState):
+    """
+    <p>A pseudo states are transitive states (meaning they don&#39;t remain active). They are used to define entry / exit point of a state machine, and to connect multiple transitions into more complex transition paths</p>
+    
+    """
     def __init__(self, java_object = None, kind = "InitialPseudoState"):
         if java_object is None:
             if kind in ["ChoicePseudoState", "DeepHistoryPseudoState", "EntryPointPseudoState", "ExitPointPseudoState", "ForkPseudoState", "InitialPseudoState", "JoinPseudoState", "ShallowHistoryPseudoState", "TerminatePseudoState", "FinalState"]:
@@ -1333,6 +1545,12 @@ class Pseudostate(AbstractState):
         return self.java_object.eClass().getName()
 
 class Region(CapellaElement):
+    """
+    <p>A region is an orthogonal part of either a composite state or a state machine.</p>
+    
+    <p>Inside of a region, only one more or state can be active at a time</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Region"))
@@ -1344,6 +1562,10 @@ class Region(CapellaElement):
         return create_e_list(self.get_java_object().getOwnedStates(), AbstractState)
 
 class StateTransition(CapellaElement):
+    """
+    <p>A possible transition between 2 modes or 2 states</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateTransition"))
@@ -1379,6 +1601,10 @@ class StateTransition(CapellaElement):
         return create_e_list(self.get_java_object().getRealizingStateTransitions(), StateTransition)
 
 class AbstractAction(JavaObject):
+    """
+    <p>A generic action which can be triggered by a Mode / State or a StateTransition</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction"))
@@ -1388,6 +1614,10 @@ class AbstractAction(JavaObject):
             JavaObject.__init__(self, java_object)
 
 class AbstractEvent(CapellaElement):
+    """
+    <p>An generic event which can trigger a transition</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/behavior/" + capella_version(), "AbstractEvent"))
@@ -1397,6 +1627,10 @@ class AbstractEvent(CapellaElement):
             JavaObject.__init__(self, java_object)
 
 class Scenario(CapellaElement):
+    """
+    <p>A scenario of use of the system defined by a specific sequence</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "Scenario"))
@@ -1450,6 +1684,10 @@ class Scenario(CapellaElement):
         return capella_query_by_name(self, "Realizing Scenarios")
 
 class InstanceRole(CapellaElement):
+    """
+    <p>The involvement of an element (function, system, component or actor)&nbsp;in a scenario</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InstanceRole"))
@@ -1461,6 +1699,10 @@ class InstanceRole(CapellaElement):
         return capella_query_by_name(self, "Represented Instance")
 
 class AbstractInstance(JavaObject):
+    """
+    <p>A generic element which can be involved in a scenario as an InstanceRole</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance"))
@@ -1470,6 +1712,10 @@ class AbstractInstance(JavaObject):
             JavaObject.__init__(self, java_object)
 
 class SequenceMessage(CapellaElement):
+    """
+    <p>An exchange between InstanceRole performed in the frame of a scenario</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "SequenceMessage"))
@@ -1523,6 +1769,10 @@ class SequenceMessage(CapellaElement):
             return specific_cls(value)
 
 class AbstractExchange(JavaObject):
+    """
+    <p>A generic exchange which can be used in a scenario as a sequence message</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -1534,6 +1784,10 @@ class AbstractExchange(JavaObject):
         return create_e_list(self.get_java_object().getInvokingSequenceMessages(), SequenceMessage)
 
 class StateFragment(CapellaElement):
+    """
+    <p>The call of a function or mode / state&nbsp;by an InstanceRole in the context of a scenario</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "StateFragment"))
@@ -1561,6 +1815,10 @@ class StateFragment(CapellaElement):
             return specific_cls(value)
 
 class CombinedFragment(CapellaElement):
+    """
+    <p>The identification of a specific operator (ALT, OPT, LOOP...)&nbsp;in the sequence of a scenario</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "CombinedFragment"))
@@ -1582,6 +1840,12 @@ class CombinedFragment(CapellaElement):
         return create_e_list(self.get_java_object().getCoveredInstanceRoles(), InstanceRole)
 
 class Operand(CapellaElement):
+    """
+    <p>A specific &quot;region&quot; in a Combined Fragment</p>
+    
+    <p>For example, an ALTERNATIVE contains one operand for each of the alternative conditions</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InteractionOperand"))
@@ -1605,6 +1869,10 @@ class Operand(CapellaElement):
         return create_e_list(self.get_java_object().getReferencedFragments(), StateFragment)
 
 class ConstraintDuration(CapellaElement):
+    """
+    <p>A constraint about the execution time of a scenario defined between 2 points</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "ConstraintDuration"))
@@ -1618,6 +1886,10 @@ class ConstraintDuration(CapellaElement):
         self.get_java_object().setDuration(value)
 
 class Node(AbstractInstance):
+    """
+    <p>An abstract type defining the generic relation of a Node (implementation ressource)&nbsp;element</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -1637,6 +1909,10 @@ class Node(AbstractInstance):
         return create_e_list(self.get_java_object().getOwnedPhysicalPaths(), PhysicalPath)
 
 class PhysicalPort(AbstractPhysicalArtifact):
+    """
+    <p>A port on a Node component defining a physical interaction point</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort"))
@@ -1654,6 +1930,10 @@ class PhysicalPort(AbstractPhysicalArtifact):
         return create_e_list(self.get_java_object().getRealizingPhysicalPorts(), PhysicalPort)
 
 class PhysicalLink(AbstractPhysicalArtifact):
+    """
+    <p>Means of communication, transport or routing between two Node components, used as a support for behavioral exchanges</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLink"))
@@ -1677,6 +1957,10 @@ class PhysicalLink(AbstractPhysicalArtifact):
         return create_e_list(self.get_java_object().getRealizingPhysicalLinks(), PhysicalLink)
 
 class PhysicalLinkCategory(CapellaElement):
+    """
+    <p>A regroupement of PhysicalLinks for graphical simplification of diagrams</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLinkCategory"))
@@ -1688,6 +1972,10 @@ class PhysicalLinkCategory(CapellaElement):
         return create_e_list(self.get_java_object().getLinks(), PhysicalLink)
 
 class PhysicalPath(CapellaElement):
+    """
+    <p>Set of Physical Links defining a continuous path likely to route one or more behavioral exchanges</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath"))
@@ -1707,6 +1995,10 @@ class PhysicalPath(CapellaElement):
         return create_e_list(self.get_java_object().getRealizingPhysicalPaths(), PhysicalPath)
 
 class InterfacePkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain Interfaces</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "InterfacePkg"))
@@ -1722,6 +2014,10 @@ class InterfacePkg(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getOwnedExchangeItems(), ExchangeItem)
 
 class Interface(CapellaElement):
+    """
+    <p>The definition of ExchangeItems which can be send / received by a ComponentPort</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Interface"))
@@ -1757,6 +2053,12 @@ class Interface(CapellaElement):
         return create_e_list(self.get_java_object().getSub(), Interface)
 
 class ExchangeItemAllocation(CapellaElement):
+    """
+    <p>The involvement of an ExchangeItem by an Interface.</p>
+    
+    <p>Mainly used for the involvement of ExchangeItems in Interface Scenarios based on the definition of Interfaces between components</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "ExchangeItemAllocation"))
@@ -1798,6 +2100,10 @@ class ExchangeItemAllocation(CapellaElement):
         return create_e_list(self.get_java_object().getInvokingSequenceMessages(), SequenceMessage)
 
 class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
+    """
+    <p>Ordered set of references to elements carried together during an interaction or exchange between functions, components and actors. The elements are carried simultaneously, in the same conditions, with the same non-functional properties. The &ldquo;elements&rdquo; are called data</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem"))
@@ -1839,6 +2145,10 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
         return create_e_list(self.get_java_object().getRealizingOperations(), Operation)
 
 class ExchangeItemElement(CapellaElement):
+    """
+    <p>A part of the information contained by an ExchangeItem</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItemElement"))
@@ -1850,6 +2160,12 @@ class ExchangeItemElement(CapellaElement):
         return capella_query_by_name(self, "Type")
 
 class FunctionPort(CapellaElement):
+    """
+    <p>An generic FunctionPort to define the allocation with ComponentPorts</p>
+    
+    <p>A Function Port specify what a Function is capable of producing or is requiring</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionPort"))
@@ -1869,6 +2185,10 @@ class FunctionPort(CapellaElement):
         return self.get_java_object().setRepresentedComponentPort(value.get_java_object())
 
 class FunctionInputPort(FunctionPort):
+    """
+    <p>An FunctionInputPort defines what a Function is requiring</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionInputPort"))
@@ -1886,6 +2206,10 @@ class FunctionInputPort(FunctionPort):
         return create_e_list(self.get_java_object().getRealizingFunctionInputPorts(), FunctionInputPort)
 
 class FunctionOutputPort(FunctionPort):
+    """
+    <p>A FunctionOutputPort defines what a Function is capable of producing</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionOutputPort"))
@@ -1903,6 +2227,10 @@ class FunctionOutputPort(FunctionPort):
         return create_e_list(self.get_java_object().getRealizingFunctionOutputPorts(), FunctionOutputPort)
 
 class FunctionalExchange(AbstractEvent, AbstractExchange):
+    """
+    <p>A functional exchange represents a dependency between a source function and a target one. Exchanges connect Function Ports, which specify what a Function is capable of producing or is requiring.</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
@@ -1974,6 +2302,10 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
         return capella_query_by_name(self, "Realized Interactions")
 
 class ExchangeCategory(CapellaElement):
+    """
+    <p>A regroupement of FunctionalExchanges for graphical simplification of diagrams</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ExchangeCategory"))
@@ -1985,6 +2317,10 @@ class ExchangeCategory(CapellaElement):
         return create_e_list(self.get_java_object().getExchanges(), FunctionalExchange)
 
 class FunctionalChain(CapellaElement):
+    """
+    <p>Describe the system behaviour in a particular usage context with references towards Functions and Functional Exchanges</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalChain"))
@@ -2038,6 +2374,10 @@ class FunctionalChain(CapellaElement):
         return capella_query_by_name(self, "Realizing Functional Chains")
 
 class BehavioralComponent(CapellaElement, AbstractInstance):
+    """
+    <p>An abstract type to define the generic relation of behavioral elements</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -2065,6 +2405,10 @@ class BehavioralComponent(CapellaElement, AbstractInstance):
         return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
 
 class ComponentPort(CapellaElement):
+    """
+    <p>A port on a BehavioralComponent defining a logical interaction point</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPort"))
@@ -2094,6 +2438,10 @@ class ComponentPort(CapellaElement):
         return capella_query_by_name(self, "Realizing Component Ports")
 
 class ComponentExchange(CapellaElement, AbstractExchange):
+    """
+    <p>Represent the interactions between Logical / Behavioral&nbsp;Components. Exchanges connects Component Ports.</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchange"))
@@ -2133,6 +2481,10 @@ class ComponentExchange(CapellaElement, AbstractExchange):
         return capella_query_by_name(self, "Realizing Component Exchanges")
 
 class ComponentExchangeCategory(CapellaElement):
+    """
+    <p>A regroupement of ComponentExchanges for graphical simplification of diagrams</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeCategory"))
@@ -2144,6 +2496,10 @@ class ComponentExchangeCategory(CapellaElement):
         return create_e_list(self.get_java_object().getExchanges(), ComponentExchange)
 
 class AbstractCapability(PropertyValuePkgContainer):
+    """
+    <p>An abstract type to define the generic relations of all capabilities (operational and system)</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "AbstractCapability"))
@@ -2189,6 +2545,10 @@ class AbstractCapability(PropertyValuePkgContainer):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
 
 class AbstractSystemCapability(AbstractCapability):
+    """
+    <p>An abstract type to define the generic relation of system capabilities (as defined in SA, LA and PA)</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -2891,6 +3251,10 @@ class Unit(CapellaElement):
             JavaObject.__init__(self, java_object)
 
 class SystemEngineering(PropertyValuePkgContainer):
+    """
+    <p>The main element in the definition of a Capella model. Contains the perspectives of the Arcadia methodology</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
@@ -2921,6 +3285,10 @@ class SystemEngineering(PropertyValuePkgContainer):
             return EPBSArchitecture(epbsa)
 
 class PropertyValuePkg(PropertyValuePkgContainer):
+    """
+    <p>A package to contain PropertyValues&nbsp;and/or&nbsp;PropertyValueGroups</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValuePkg"))
@@ -2930,6 +3298,10 @@ class PropertyValuePkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, java_object)
 
 class Interaction(AbstractEvent):
+    """
+    <p>Oriented dependency between Operational Activities</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
@@ -2975,6 +3347,10 @@ class Interaction(AbstractEvent):
         return create_e_list(self.get_java_object().getRealizingFunctionalExchanges(), FunctionalExchange)
 
 class OperationalCapability(AbstractCapability):
+    """
+    <p>An operational capability is an ability, expected of one or more operational entities / actors. An operational capability is characterized by a set of operational processes and scenarios</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapability"))
@@ -2994,6 +3370,10 @@ class OperationalCapability(AbstractCapability):
         return capella_query_by_name(self, "Realizing Capabilities")
 
 class OperationalEntity(OperationalActor):
+    """
+    <p>An Operational Entity is a real world entity (other system, device, group or organisation&hellip;) carrying Operational Activities to which the system is likely to contribute</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
@@ -3008,6 +3388,10 @@ class OperationalEntity(OperationalActor):
         return create_e_list(self.get_java_object().getOwnedEntities(), OperationalEntity)
 
 class Capability(AbstractSystemCapability):
+    """
+    <p>The ability of the system to supply a service contributing to fulfilling one or more Missions. A Capability represents a system usage context. It is characterized by a set of Functional Chains and Scenarios it references.</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Capability"))
@@ -3025,6 +3409,12 @@ class Capability(AbstractSystemCapability):
         return create_e_list(self.get_java_object().getInvolvedSystemActors(), SystemActor)
 
 class System(BehavioralComponent, Node):
+    """
+    <p>Set of elements functioning as a whole, responding to customer and user demand and needs</p>
+    
+    <p>The System defined in the SystemAnalysis is seen as a black box</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
@@ -3037,6 +3427,10 @@ class System(BehavioralComponent, Node):
                 raise AttributeError("Passed component is not a system.")
 
 class SystemActor(BehavioralComponent, Node):
+    """
+    <p>Entity (human or not) that is external to the System (in term of responsibility), interacting with it, via its interfaces</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
@@ -3072,6 +3466,10 @@ class SystemActor(BehavioralComponent, Node):
         return create_e_list(self.get_java_object().getRealizingLogicalActors(), LogicalActor)
 
 class CapabilityRealization(AbstractSystemCapability):
+    """
+    <p>The implementation of the system Capabilities in Logical Architecture and Physical Architecture</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealization"))
@@ -3095,6 +3493,10 @@ class CapabilityRealization(AbstractSystemCapability):
         return create_e_list(self.get_java_object().getInvolvedPhysicalActors(), PhysicalActor)
 
 class LogicalSystem(BehavioralComponent, Node):
+    """
+    <p>The definition of the system in Logical Architecture</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
@@ -3111,6 +3513,12 @@ class LogicalSystem(BehavioralComponent, Node):
         return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
 
 class LogicalComponent(BehavioralComponent):
+    """
+    <p>Logical Components are the artefacts enabling a notional decomposition of the system as a &quot;white box&quot;, independently from any technological solutions, but dealing with major system decomposition constraints</p>
+    
+    <p>Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
@@ -3135,6 +3543,10 @@ class LogicalComponent(BehavioralComponent):
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
 class LogicalActor(BehavioralComponent, Node):
+    """
+    <p>An external Actor defined in the Logical Architecture</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
@@ -3162,6 +3574,10 @@ class LogicalActor(BehavioralComponent, Node):
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
 class PhysicalSystem(CapellaElement, Node):
+    """
+    <p>The definition of the system in Physical Architecture</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
@@ -3179,6 +3595,10 @@ class PhysicalSystem(CapellaElement, Node):
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
 
 class BehaviorPC(PhysicalComponent, BehavioralComponent):
+    """
+    <p>System component in charge of implementing / realizing some of the functions devoted to the system</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
@@ -3211,6 +3631,10 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
         return create_e_list(self.get_java_object().getRealizedLogicalComponents(), LogicalComponent)
 
 class NodePC(PhysicalComponent, Node):
+    """
+    <p>Component hosting a number of behavioral components, providing them with the resource they require to function and to interact with their environment</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
@@ -3241,6 +3665,10 @@ class NodePC(PhysicalComponent, Node):
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
 
 class PhysicalActor(BehavioralComponent, Node):
+    """
+    <p>An external Actor defined in the Physical Architecture</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
@@ -3266,6 +3694,10 @@ class PhysicalActor(BehavioralComponent, Node):
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
 class ChangeEvent(AbstractEvent):
+    """
+    <p>An event defined by WHEN something occurs</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "ChangeEvent"))
@@ -3279,6 +3711,10 @@ class ChangeEvent(AbstractEvent):
         self.get_java_object().setExpression(value)
 
 class TimeEvent(AbstractEvent):
+    """
+    <p>An event defined by AT a given time, or AFTER a certain time</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEvent"))
@@ -3302,6 +3738,10 @@ class TimeEvent(AbstractEvent):
         self.get_java_object().setExpression(value)
 
 class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
+    """
+    <p>An abstract type to define the link between mode / state and activity / function (available in states)</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -3313,6 +3753,10 @@ class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
 
 class Function(AbstractActivityFunction):
+    """
+    <p>Action performed by the System, an Actor or a component, in order to realize a Capability</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             raise ValueError("No matching EClass for this type")
@@ -3367,6 +3811,10 @@ class Function(AbstractActivityFunction):
         return create_e_list(self.get_java_object().getInvolvingCapabilities(), AbstractSystemCapability)
 
 class OperationalActivity(AbstractActivityFunction):
+    """
+    <p>Process step or action/operation/service performed by an Operational entity / actor&nbsp;and likely to influence the system definition or usage. Implementing operational activities generally produces elements of interactions expected by other activities</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivity"))
@@ -3394,6 +3842,10 @@ class OperationalActivity(AbstractActivityFunction):
         return capella_query_by_name(self, "Realizing System Functions")
 
 class SystemFunction(Function):
+    """
+    <p>The definition of a Function in the System Analysis</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunction"))
@@ -3411,6 +3863,10 @@ class SystemFunction(Function):
         return capella_query_by_name(self, "Realizing Logical Functions")
 
 class LogicalFunction(Function):
+    """
+    <p>The definition of a Function in the Logical Architecture</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunction"))
@@ -3428,6 +3884,10 @@ class LogicalFunction(Function):
         return capella_query_by_name(self, "Realizing Physical Functions")
 
 class PhysicalFunction(Function):
+    """
+    <p>The definition of a Function in the Physical Architecture</p>
+    
+    """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunction"))
