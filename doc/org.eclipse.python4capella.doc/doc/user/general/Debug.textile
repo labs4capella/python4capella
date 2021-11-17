@@ -1,6 +1,7 @@
 h1. Debug a Python script
 
-This section explains how you can debug your Python for Capella script.
+This section explains how you can debug your Python for Capella script. The debug mode allows you to execute your script step by step and see the value of each variables.
+It can help you find and fix bugs from your scripts.
 
 
 h2. Within Capella
@@ -9,11 +10,10 @@ You will need to "enable Development capabilities":EnableDevelopmentCapabilities
  
 To add a breakpoint, you can double click on the left ruler of the Python editor. This will add a breakpoint on the selected instruction.
 
+!Debug/Debug_Breakpoint.png(Add a breakpoint)!
+
 You can now select your script and right click on it:
  - select the Debug As / EASE Script menu
-
-When the the debugger stops on the break point, you will be prompted to change the perspective to the debug perspective.
-This perspective will allow to control the debugger and see the internal state of your script.
 
 If your script takes some arguments, you can change the launch configuration by right clicking on your script:
  - select the Debug As / Debug configuration.
@@ -22,7 +22,52 @@ This will open the launch configuration for your script and you can edit it to a
 
 !Debug/Debug_Configurations.png(Debug Configurations with parameter)!
 
+If you have errors launching your script in debug mode you can try to change the execution engine to "Python (Jython Debugger)".
+
+When the debugger stops on the breakpoint, you will be prompted to change the perspective to the debug perspective.
+
+!Debug/Debug_Switch_perspective.png(Switch to debug perspective)!
+
+You can then click the switch button.
+
+This perspective will allow to control the debugger and see the internal state of your script.
+
 To step over/into/return you can use the tool bar at the top:
 
 !Debug/toolbar.png(Debug toolbar)!
 
+!Debug/resume.png(Resume)!
+
+p=. Executes all instructions until the next breakpoint
+
+!Debug/suspend.png(Suspend)!
+
+p=. Suspends the execution on the current instruction
+
+!Debug/stop.png(Stop)!
+
+p=. Stops the debugger
+
+!Debug/disconnect.png(Disconnect)!
+
+p=. Disconnects the debugger
+
+!Debug/stepInto.png(Step into)!
+
+p=. Steps into the code of the called function
+
+!Debug/stepOver.png(Step over)!
+
+p=. Executes the next instruction
+
+!Debug/stepReturn.png(Step return)!
+
+p=. Steps to the instruction that called the current function
+
+When the execution is suspended you can check the value of variables in the variables view:
+
+!Debug/Debug_variables_view.png(Variables view)!
+
+You can use the breakpoints view to remove or edit breakpoints:
+
+!Debug/Debug_breakpoints_view.png(Breakpoints view)!
