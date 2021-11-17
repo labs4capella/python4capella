@@ -127,7 +127,7 @@ Select the Window > Preferences menu
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the New button
 - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the Browse button
-- select the Scripting / Script Locations
+- select the Scripting / Script Locations (not for Capella 5.x)
   - add /Python4Capella/sample_scripts by clicking the Add Workspace button
 
 You can click the Apply and close button to finish your setup.
@@ -140,7 +140,7 @@ You can validate the dialog by clicking the OK button.
 
 You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from Capella, then on the right tree, you can select Python4Capella.
 
-# Errors in provided scripts
+# False errors in provided scripts
 
 If you open provided scripts, you will notice some errors in them. Those errors can be ignored. They are related to the use of EASE that allows access to Java objects with the PyDev editor.
 
