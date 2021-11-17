@@ -127,7 +127,7 @@ Select the Window > Preferences menu
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the New button
 - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the Browse button
-- select the Scripting / Script Locations
+- select the Scripting / Script Locations (not for Capella 5.x)
   - add /Python4Capella/sample_scripts by clicking the Add Workspace button
 
 You can click the Apply and close button to finish your setup.
