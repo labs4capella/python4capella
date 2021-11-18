@@ -44,7 +44,7 @@ More in details, the solution supports:
 - **easy to share**: scripts are defined in the workspace, can be exported in a zip file and imported by another user
 - **easy to use**: scripts can be executed from
   - contribution to contextual menu (right click on a model element)
-  - right click on the script, execute
+  - right click on the script, execute (by default, IFE sample aird path is defined in sample scripts)
   - command line (for automatic extraction for example)
 - **high customization capabilities** as all of the scripts are accessible by users to be modified / extended if necessary
 - **extensibility of Capella metamodel by add-ons** (any information from the model can be accessed, even information from add-ons)
@@ -127,7 +127,7 @@ Select the Window > Preferences menu
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the New button
 - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the Browse button
-- select the Scripting / Script Locations (not for Capella 5.x)
+- select the Scripting / Script Locations
   - add /Python4Capella/sample_scripts by clicking the Add Workspace button
 
 You can click the Apply and close button to finish your setup.
