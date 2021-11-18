@@ -258,7 +258,7 @@ class capella_manual_tests(unittest.TestCase):
         se = model.get_system_engineering()
         tested = None
         for fc in se.get_all_contents_by_type(FunctionalChain):
-            #: :type fc: Mission
+            #: :type fc: FunctionalChain
             if fc.get_name() == 'Broadcast Audio Announcement':
                 tested = fc
                 break
@@ -308,7 +308,7 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual("Safety Instructions", involved_interactions[0].get_name())
         self.assertEqual("Imposed Movie", involved_interactions[1].get_name())
 
-    def test_OperationalProcess_involved_activities_getter(self):
+    def test_OperationalProcess_involved_operational_activities_getter(self):
         """
         This test need the IFE project to be in the workspace to run
         """
@@ -327,4 +327,168 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual("Play Imposed Movie", involved_activities[1].get_name())
         self.assertEqual("Watch Movie", involved_activities[2].get_name())
 
+    def test_CapabilityRealization_owned_functional_chains_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for cr in se.get_all_contents_by_type(CapabilityRealization):
+            #: :type cr: CapabilityRealization
+            if cr.get_name() == 'Provide Audio and Video Intercommunication Means':
+                tested = cr
+                break
+        fc = tested.get_owned_functional_chains()
+        self.assertEqual(5, fc.size())
+        self.assertEqual("Watch Imposed Video on Cabin Screen", fc.get(0).get_name())
+        self.assertEqual("Watch Imposed Video on Private Screen", fc.get(1).get_name())
+        self.assertEqual("Broadcast Audio Announcement", fc.get(2).get_name())
+        self.assertEqual("Stop Playing Imposed Video [NOT DONE]", fc.get(3).get_name())
+        self.assertEqual("Pause Running Imposed Video [NOT DONE]", fc.get(4).get_name())
 
+    def test_CapabilityRealization_owned_scenarios_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for cr in se.get_all_contents_by_type(CapabilityRealization):
+            #: :type cr: CapabilityRealization
+            if cr.get_name() == 'Provide Audio and Video Intercommunication Means':
+                tested = cr
+                break
+        scenarii = tested.get_owned_scenarios()
+        self.assertEqual(2, scenarii.size())
+        self.assertEqual("[FS] Perform Audio Announcement", scenarii.get(0).get_name())
+        self.assertEqual("[ES] Perform Audio Announcement", scenarii.get(1).get_name())
+
+    def test_Capability_purpose_missions_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for capability in se.get_all_contents_by_type(Capability):
+            #: :type capability: Capability
+            if capability.get_name() == 'Provide Audio and Video Intercommunication Means':
+                tested = capability
+                break
+        missions = tested.get_purpose_missions()
+        self.assertEqual(1, missions.size())
+        self.assertEqual("Provide Cabin Management Solutions", missions.get(0).get_name())
+
+    def test_FunctionalChain_involving_capabilities_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for fc in se.get_all_contents_by_type(FunctionalChain):
+            #: :type fc: FunctionalChain
+            if fc.get_name() == 'Watch Imposed Video on Cabin Screen':
+                tested = fc
+                break
+        capabilities = tested.get_involving_capabilities()
+        self.assertEqual(1, len(capabilities))
+        self.assertEqual("Provide Audio and Video Intercommunication Means", capabilities[0].get_name())
+
+    def test_Mission_exploited_capabilities_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for mission in se.get_all_contents_by_type(Mission):
+            #: :type mission: Mission
+            if mission.get_name() == 'Provide Entertainement Solutions':
+                tested = mission
+                break
+        capabilities = tested.get_exploited_capabilities()
+        self.assertEqual(4, len(capabilities))
+        self.assertEqual("Provide Moving-Map Services", capabilities[0].get_name())
+        self.assertEqual("Provide Audio Entertainment Services", capabilities[1].get_name())
+        self.assertEqual("Provide Video Entertainment Services", capabilities[2].get_name())
+        self.assertEqual("Provide Video Gaming Services", capabilities[3].get_name())
+
+    def test_Capability_involved_functional_chains_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for capability in se.get_all_contents_by_type(Capability):
+            #: :type capability: Capability
+            if capability.get_name() == 'Provide Audio and Video Intercommunication Means':
+                tested = capability
+                break
+        functional_chains = tested.get_involved_functional_chains()
+        self.assertEqual(5, functional_chains.size())
+        self.assertEqual("Pause Running Imposed Video [NOT DONE]", functional_chains.get(0).get_name())
+        self.assertEqual("Stop Playing Imposed Video [NOT DONE]", functional_chains.get(1).get_name())
+        self.assertEqual("Watch Imposed Video on Cabin Screen", functional_chains.get(2).get_name())
+        self.assertEqual("Broadcast Audio Announcement", functional_chains.get(3).get_name())
+        self.assertEqual("Watch Imposed Video on Private Screen", functional_chains.get(4).get_name())
+
+    def test_OperationalProcess_involving_operational_capabilities_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for operational_process in se.get_all_contents_by_type(OperationalProcess):
+            #: :type operational_process: OperationalProcess
+            if operational_process.get_name() == 'Broadcast Safety Instructions Movie':
+                tested = operational_process
+                break
+        capabilities = tested.get_involving_operational_capabilities()
+        self.assertEqual(0, capabilities.size())
+
+    def test_OperationalProcess_realizing_functional_chains_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for operational_process in se.get_all_contents_by_type(OperationalProcess):
+            #: :type operational_process: OperationalProcess
+            if operational_process.get_name() == 'Broadcast Safety Instructions Movie':
+                tested = operational_process
+                break
+        functional_chains = tested.get_realizing_functional_chains()
+        self.assertEqual(0, functional_chains.size())
+
+    def test_PhysicalPath_involved_physical_links_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for physical_path in se.get_all_contents_by_type(PhysicalPath):
+            #: :type physical_path: PhysicalPath
+            if physical_path.get_name() == 'Network Path':
+                tested = physical_path
+                break
+        physical_links = tested.get_involved_physical_links()
+        self.assertEqual(4, len(physical_links))
+        self.assertEqual("Ethernet Connector", physical_links[0].get_name())
+        self.assertEqual("Gigabit Ethernet", physical_links[1].get_name())
+        self.assertEqual("Gigabit Ethernet", physical_links[2].get_name())
+        self.assertEqual("Ethernet Connector", physical_links[3].get_name())
