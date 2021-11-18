@@ -1,3 +1,13 @@
     def __init__(self, java_object = None):
         JavaObject.__init__(self, java_object)
+    @staticmethod
+    def get_system_engineering(capellaElement):
+        container = capellaElement.get_java_object().eContainer()
+        if container is None:
+            return container
+        else:
+            if container.eClass().getName() == "SystemEngineering" and container.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/core/modeller"):
+                return SystemEngineering(container)
+            else:
+                return RequirementAddOn.get_system_engineering(JavaObject(container))
 

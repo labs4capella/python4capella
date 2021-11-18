@@ -2,9 +2,7 @@
     def get_outgoing_requirements(capellaElement):
         res = []
         #: :type capellaElement: CapellaElement
-        capellaModel = CapellaModel()
-        capellaModel.open(capellaElement)
-        modules = RequirementAddOn.get_requirement_modules(capellaModel)
+        modules = RequirementAddOn.get_requirement_modules(capellaElement)
         for module in modules:
             for requirement in module.get_java_object().getOwnedRequirements():
                 for relation in requirement.getOwnedRelations():
