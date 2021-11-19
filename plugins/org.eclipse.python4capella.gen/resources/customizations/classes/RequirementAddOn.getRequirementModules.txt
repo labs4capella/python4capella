@@ -1,8 +1,8 @@
     @staticmethod
-    def get_requirement_modules(capellaModel):
-        #: :type capellaModel: CapellaModel
+    def get_requirement_modules(capellaElement):
+        #: :type capellaElement: CapellaElement
         res = []
-        se = capellaModel.get_system_engineering()
+        se = RequirementAddOn.get_system_engineering(capellaElement)
         for modelArchitecture in se.get_java_object().getOwnedArchitectures():
             for extension in modelArchitecture.getOwnedExtensions():
                 if extension.eClass().getName() == "CapellaModule" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):

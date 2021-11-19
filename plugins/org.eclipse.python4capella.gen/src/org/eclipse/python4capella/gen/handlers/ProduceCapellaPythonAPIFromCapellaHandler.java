@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
@@ -27,6 +28,9 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.safety.Whitelist;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
@@ -267,7 +271,23 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			}
 
 			res.append(padding + "\"\"\"" + NL);
-			res.append(padding + element.getDescription().replaceAll("\\n\\r|\\n", NL + padding) + NL);
+			final Document document = Jsoup.parse(element.getDescription());
+			// makes html() preserve linebreaks and spacing
+			document.outputSettings(new Document.OutputSettings().prettyPrint(false));
+			document.select("br").append("\\n");
+			document.select("p").prepend("\\n");
+			document.select("li").prepend("\\n");
+			final String htmlString = document.html().replaceAll("\\\\n", "\n");
+			final String text = Jsoup.clean(htmlString, "", Whitelist.none(),
+					new Document.OutputSettings().prettyPrint(false));
+			try (Scanner scanner = new Scanner(text)) {
+				while (scanner.hasNextLine()) {
+					final String line = scanner.nextLine();
+					if (!line.trim().isEmpty()) {
+						res.append(padding + line + NL);
+					}
+				}
+			}
 			res.append(padding + "\"\"\"" + NL);
 		}
 

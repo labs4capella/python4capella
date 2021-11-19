@@ -71,3 +71,35 @@ Note: To execute a script through command line, on a remote project created with
 !Run/Team.for.Capella.png(The "Remember me" checkbox)!
 
 Note: when an element is locked and prevent a modification, you will have a dialog when running with the graphical environment but no log when in command line.
+
+h2. Jenkins
+
+You can run the previous from your jenkins job. You will need to add a build step in your build configuration. Go to your build configuration in Jenkins and add a build step (or pre/post build step):
+
+!Run/Jenkins_addBuildStep.png(Add a build step)!
+
+If you are using Windows select the "Execute Windows batch command" menu, if you are using Linux or Mac OS X select the "Execute shell" menu.
+
+Then for Windows and Capella below version 5.x set the command to:
+
+bc. pushd *path to your Capella installation*
+eclipsec.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+popd
+
+Then for Windows and Capella 5.x or above set the command to:
+
+bc. pushd *path to your Capella installation*
+capellac.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+popd
+
+For Linux or Mac OS X and Capella below version 5.x set the command to:
+
+bc. cd *path to your Capella installation*
+./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+cd -
+
+For Linux or Mac OS X and Capella 5.x or above set the command to:
+
+bc. cd *path to your Capella installation*
+./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
+cd -

@@ -18,6 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.capella.core.sirius.analysis,
  org.polarsys.capella.core.sirius.ui,
  org.polarsys.capella.core.semantic.queries,
- org.polarsys.capella.common.ui.toolkit.browser
+ org.polarsys.capella.common.ui.toolkit.browser,
+ org.jsoup
 Export-Package: org.eclipse.python4capella.gen.handlers
 Bundle-ClassPath: .

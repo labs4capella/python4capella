@@ -3,6 +3,12 @@
     <topic href="doc/user/general/Python4CapellaProjectSturcture.html" label="Python4Capella project structure">
     </topic>
     <topic href="doc/user/general/Run.html" label="Run a Python for Capella script">
+        <topic href="doc/user/general/Run.html#WithinCapella" label="Within Capella">
+        </topic>
+        <topic href="doc/user/general/Run.html#Commandline" label="Command line">
+        </topic>
+        <topic href="doc/user/general/Run.html#Jenkins" label="Jenkins">
+        </topic>
     </topic>
     <topic href="doc/user/general/Debug.html" label="Debug a Python for Capella script">
     </topic>

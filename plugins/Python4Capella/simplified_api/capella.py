@@ -14,8 +14,7 @@ if False:
 
 class CapellaModel():
     """
-    <p>A Capella model. Used to defined the content of a model, and how to read a model</p>
-    
+    A Capella model. Used to defined the content of a model, and how to read a model
     """
     def start_transaction(self):
         Sirius.start_transaction(self.session)
@@ -67,8 +66,7 @@ class CapellaModel():
 
 class CapellaLibrary(CapellaModel):
     """
-    <p>A Capella Library. A library is a model which can be referenced by other models in order to reuse its content</p>
-    
+    A Capella Library. A library is a model which can be referenced by other models in order to reuse its content
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -80,8 +78,7 @@ class CapellaLibrary(CapellaModel):
 
 class EObject(JavaObject):
     """
-    <p>A generic object. Defines generic relations which are available for all elements</p>
-    
+    A generic object. Defines generic relations which are available for all elements
     """
     @staticmethod
     def get_class(e_object):
@@ -206,8 +203,7 @@ class EObject(JavaObject):
 
 class CapellaElement(EObject):
     """
-    <p>A generic Capella model Element. Used to define generic attributes and relations inherited by most Capella elements</p>
-    
+    A generic Capella model Element. Used to define generic attributes and relations inherited by most Capella elements
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -271,8 +267,7 @@ class CapellaElement(EObject):
 
 class Constraint(CapellaElement):
     """
-    <p>A generic constraint which can be defined on Capella elements</p>
-    
+    A generic constraint which can be defined on Capella elements
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -290,8 +285,7 @@ class Constraint(CapellaElement):
 
 class PropertyValue(CapellaElement):
     """
-    <p>A generic property with a name and value&nbsp;which can be added to Capella elements</p>
-    
+    A generic property with a name and value&nbsp;which can be added to Capella elements
     """
     def __init__(self, java_object = None, kind = "StringPropertyValue"):
         if java_object is None:
@@ -322,8 +316,7 @@ class PropertyValue(CapellaElement):
 
 class PropertyValueGroup(CapellaElement):
     """
-    <p>A group which can contain several PropertyValue and be applied to CapellaElements</p>
-    
+    A group which can contain several PropertyValue and be applied to CapellaElements
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -337,8 +330,7 @@ class PropertyValueGroup(CapellaElement):
 
 class EnumerationPropertyType(CapellaElement):
     """
-    <p>The definition of an Enumeration to type a PropertyValue</p>
-    
+    The definition of an Enumeration to type a PropertyValue
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -352,8 +344,7 @@ class EnumerationPropertyType(CapellaElement):
 
 class EnumerationPropertyLiteral(CapellaElement):
     """
-    <p>A value defined in an EnumerationPropertyType</p>
-    
+    A value defined in an EnumerationPropertyType
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -365,8 +356,7 @@ class EnumerationPropertyLiteral(CapellaElement):
 
 class PropertyValuePkgContainer(CapellaElement):
     """
-    <p>An abstract type to define all elements which can contain PropertyValuePkg</p>
-    
+    An abstract type to define all elements which can contain PropertyValuePkg
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -380,8 +370,7 @@ class PropertyValuePkgContainer(CapellaElement):
 
 class Diagram(JavaObject):
     """
-    <p>A generic Capella diagram</p>
-    
+    A generic Capella diagram
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -451,8 +440,7 @@ class Diagram(JavaObject):
 
 class AbstractReElement(EObject):
     """
-    <p>An abstract type to define the generic attributes of REC / RPL and packages&nbsp;elements</p>
-    
+    An abstract type to define the generic attributes of REC / RPL and packages&nbsp;elements
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -472,8 +460,7 @@ class AbstractReElement(EObject):
 
 class AbstractCatalogElement(AbstractReElement):
     """
-    <p>An abstract type to define the generic attributes and relations&nbsp;of REC / RPL elements</p>
-    
+    An abstract type to define the generic attributes and relations&nbsp;of REC / RPL elements
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -501,8 +488,7 @@ class AbstractCatalogElement(AbstractReElement):
 
 class REC(AbstractCatalogElement):
     """
-    <p>A Record element is the definition of a set of elements to be replicated together</p>
-    
+    A Record element is the definition of a set of elements to be replicated together
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -532,8 +518,7 @@ class REC(AbstractCatalogElement):
 
 class RPL(AbstractCatalogElement):
     """
-    <p>A replay element is the instantiation of a record element</p>
-    
+    A replay element is the instantiation of a record element
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -579,8 +564,7 @@ class RPL(AbstractCatalogElement):
 
 class CatalogElementPkg(AbstractReElement):
     """
-    <p>A package to structure the definition of REC / RPL elements</p>
-    
+    A package to structure the definition of REC / RPL elements
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -598,8 +582,7 @@ class CatalogElementPkg(AbstractReElement):
 
 class RecCatalog(CatalogElementPkg):
     """
-    <p>The root package which contains the REC / RPL definitions</p>
-    
+    The root package which contains the REC / RPL definitions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -619,8 +602,7 @@ class RecCatalog(CatalogElementPkg):
 
 class CompliancyDefinitionPkg(AbstractReElement):
     """
-    <p>A package to contain CompliancyDefinitions</p>
-    
+    A package to contain CompliancyDefinitions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -634,14 +616,10 @@ class CompliancyDefinitionPkg(AbstractReElement):
 
 class CompliancyDefinition(AbstractReElement):
     """
-    <p>The type of compliancy which have to be respected by the RPL regarding its REC definition. Default list of compliancies is:</p>
-    
-    <ul>
-    	<li>BLACK_BOX</li>
-    	<li>CONSTRAINT_REUSE</li>
-    	<li>INHERITANCY_REUSE</li>
-    </ul>
-    
+    The type of compliancy which have to be respected by the RPL regarding its REC definition. Default list of compliancies is:
+    BLACK_BOX
+    CONSTRAINT_REUSE
+    INHERITANCY_REUSE
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -657,10 +635,8 @@ class CompliancyDefinition(AbstractReElement):
 
 class OperationalAnalysis(PropertyValuePkgContainer):
     """
-    <p>The element containing all definitions from the Operational Analysis.</p>
-    
-    <p>The Operational Analysis aims at defining what the users of the system need to accomplish</p>
-    
+    The element containing all definitions from the Operational Analysis.
+    The Operational Analysis aims at defining what the users of the system need to accomplish
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -712,8 +688,7 @@ class OperationalAnalysis(PropertyValuePkgContainer):
 
 class OperationalActivityPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain OperationalActivity</p>
-    
+    A package to contain OperationalActivity
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -729,8 +704,7 @@ class OperationalActivityPkg(PropertyValuePkgContainer):
 
 class OperationalProcess(CapellaElement):
     """
-    <p>An operational process is used to describe a particular context for performing operational activities to contribute to one or more operational capabilities</p>
-    
+    An operational process is used to describe a particular context for performing operational activities to contribute to one or more operational capabilities
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -786,8 +760,7 @@ class OperationalProcess(CapellaElement):
 
 class OperationalCapabilityPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain OperationalCapabilities</p>
-    
+    A package to contain OperationalCapabilities
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -803,8 +776,7 @@ class OperationalCapabilityPkg(PropertyValuePkgContainer):
 
 class EntityPkg(PropertyValuePkgContainer):
     """
-    <p>A package to define Operational entities / actors</p>
-    
+    A package to define Operational entities / actors
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -820,8 +792,7 @@ class EntityPkg(PropertyValuePkgContainer):
 
 class OperationalActor(CapellaElement):
     """
-    <p>An Operational Actor is a kind of Operational Entity, usually human. It cannot be broken down</p>
-    
+    An Operational Actor is a kind of Operational Entity, usually human. It cannot be broken down
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -849,8 +820,7 @@ class OperationalActor(CapellaElement):
 
 class CommunicationMean(CapellaElement):
     """
-    <p>Describes the media between the Operational Entities / Actors&nbsp;to support the Operational Interactions</p>
-    
+    Describes the media between the Operational Entities / Actors&nbsp;to support the Operational Interactions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -888,10 +858,8 @@ class CommunicationMean(CapellaElement):
 
 class SystemAnalysis(PropertyValuePkgContainer):
     """
-    <p>The element containing all definitions from the System Analysis.</p>
-    
-    <p>The System Analysis aims at defining what the system has to accomplish for the users</p>
-    
+    The element containing all definitions from the System Analysis.
+    The System Analysis aims at defining what the system has to accomplish for the users
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -959,8 +927,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
 
 class SystemFunctionPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain SystemFunctions</p>
-    
+    A package to contain SystemFunctions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -978,8 +945,7 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
 
 class CapabilityPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain Capabilities</p>
-    
+    A package to contain Capabilities
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -995,8 +961,7 @@ class CapabilityPkg(PropertyValuePkgContainer):
 
 class SystemComponentPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain the System and the Actors</p>
-    
+    A package to contain the System and the Actors
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1024,8 +989,7 @@ class SystemComponentPkg(PropertyValuePkgContainer):
 
 class MissionPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain Missions</p>
-    
+    A package to contain Missions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1041,8 +1005,7 @@ class MissionPkg(PropertyValuePkgContainer):
 
 class Mission(CapellaElement):
     """
-    <p>High-level goal to which the System should contribute. To be fulfilled, a Mission should use a number of system Functions regrouped within one or more Capabilities</p>
-    
+    High-level goal to which the System should contribute. To be fulfilled, a Mission should use a number of system Functions regrouped within one or more Capabilities
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1065,10 +1028,8 @@ class Mission(CapellaElement):
 
 class LogicalArchitecture(PropertyValuePkgContainer):
     """
-    <p>The element containing all definitions from the Logical Architecture.</p>
-    
-    <p>The Logical Architecture (or conceptual solution)&nbsp;aims at defining how the system will work in order to fulfil expectations</p>
-    
+    The element containing all definitions from the Logical Architecture.
+    The Logical Architecture (or conceptual solution)&nbsp;aims at defining how the system will work in order to fulfil expectations
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1128,8 +1089,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
 
 class LogicalFunctionPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain LogicalFunctions</p>
-    
+    A package to contain LogicalFunctions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1147,8 +1107,7 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
 
 class CapabilityRealizationPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain CapabilityRealizations</p>
-    
+    A package to contain CapabilityRealizations
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1164,8 +1123,7 @@ class CapabilityRealizationPkg(PropertyValuePkgContainer):
 
 class LogicalComponentPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain the LogicalSystem, LogicalComponents and LogicalActors</p>
-    
+    A package to contain the LogicalSystem, LogicalComponents and LogicalActors
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1201,10 +1159,8 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
 
 class PhysicalArchitecture(PropertyValuePkgContainer):
     """
-    <p>The element containing all definitions from the Physical Architecture.</p>
-    
-    <p>The Physical Architecture (or finalized solution)&nbsp;aims at defining how the system will be developed and built</p>
-    
+    The element containing all definitions from the Physical Architecture.
+    The Physical Architecture (or finalized solution)&nbsp;aims at defining how the system will be developed and built
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1258,8 +1214,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
 
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain PhysicalFunctions</p>
-    
+    A package to contain PhysicalFunctions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1277,8 +1232,7 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
 
 class PhysicalComponentPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain the PhysicalSystem, PhysicalComponents and PhysicalActors</p>
-    
+    A package to contain the PhysicalSystem, PhysicalComponents and PhysicalActors
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1305,8 +1259,7 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
 
 class AbstractPhysicalArtifact(CapellaElement):
     """
-    <p>An abstract type to defined the relation between elements of the Physical Architecture and ConfigurationItems</p>
-    
+    An abstract type to defined the relation between elements of the Physical Architecture and ConfigurationItems
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1320,8 +1273,7 @@ class AbstractPhysicalArtifact(CapellaElement):
 
 class PhysicalComponent(AbstractPhysicalArtifact):
     """
-    <p>A generic Physical Component which can be either a BehaviorPC or a NodePC</p>
-    
+    A generic Physical Component which can be either a BehaviorPC or a NodePC
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1361,10 +1313,8 @@ class PhysicalComponent(AbstractPhysicalArtifact):
 
 class EPBSArchitecture(PropertyValuePkgContainer):
     """
-    <p>The element containing all definitions from the End-Product Breakdown Structure.</p>
-    
-    <p>The End-Product Breakdown Structure aims at defining the construction strategy of the product, taking into account industrial and subcontracting constraints</p>
-    
+    The element containing all definitions from the End-Product Breakdown Structure.
+    The End-Product Breakdown Structure aims at defining the construction strategy of the product, taking into account industrial and subcontracting constraints
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1400,8 +1350,7 @@ class EPBSArchitecture(PropertyValuePkgContainer):
 
 class ConfigurationItemPkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain ConfigurationItems</p>
-    
+    A package to contain ConfigurationItems
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1417,8 +1366,7 @@ class ConfigurationItemPkg(PropertyValuePkgContainer):
 
 class ConfigurationItem(CapellaElement):
     """
-    <p>System part to be acquired or produced, in as many copies as the physical architecture requires</p>
-    
+    System part to be acquired or produced, in as many copies as the physical architecture requires
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1450,8 +1398,7 @@ class ConfigurationItem(CapellaElement):
 
 class StateMachine(CapellaElement):
     """
-    <p>State Machine is a way to define some of&nbsp;the expected behavior of the System, a Component or an external Actor</p>
-    
+    State Machine is a way to define some of&nbsp;the expected behavior of the System, a Component or an external Actor
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1465,8 +1412,7 @@ class StateMachine(CapellaElement):
 
 class AbstractState(CapellaElement):
     """
-    <p>An abstract type to define the generic relation of modes and states</p>
-    
+    An abstract type to define the generic relation of modes and states
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1486,8 +1432,7 @@ class AbstractState(CapellaElement):
 
 class State(AbstractState):
     """
-    <p>A State is a context undergone by the system, an actor or a component in specific circumstances (for example imposed by the environment)</p>
-    
+    A State is a context undergone by the system, an actor or a component in specific circumstances (for example imposed by the environment)
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1515,8 +1460,7 @@ class State(AbstractState):
 
 class Mode(State):
     """
-    <p>A Mode is a behavior expected from the system,&nbsp;an Actor or a component&nbsp;in chosen conditions</p>
-    
+    A Mode is a behavior expected from the system,&nbsp;an Actor or a component&nbsp;in chosen conditions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1528,8 +1472,7 @@ class Mode(State):
 
 class Pseudostate(AbstractState):
     """
-    <p>A pseudo states are transitive states (meaning they don&#39;t remain active). They are used to define entry / exit point of a state machine, and to connect multiple transitions into more complex transition paths</p>
-    
+    A pseudo states are transitive states (meaning they don't remain active). They are used to define entry / exit point of a state machine, and to connect multiple transitions into more complex transition paths
     """
     def __init__(self, java_object = None, kind = "InitialPseudoState"):
         if java_object is None:
@@ -1546,10 +1489,8 @@ class Pseudostate(AbstractState):
 
 class Region(CapellaElement):
     """
-    <p>A region is an orthogonal part of either a composite state or a state machine.</p>
-    
-    <p>Inside of a region, only one more or state can be active at a time</p>
-    
+    A region is an orthogonal part of either a composite state or a state machine.
+    Inside of a region, only one more or state can be active at a time
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1563,8 +1504,7 @@ class Region(CapellaElement):
 
 class StateTransition(CapellaElement):
     """
-    <p>A possible transition between 2 modes or 2 states</p>
-    
+    A possible transition between 2 modes or 2 states
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1602,8 +1542,7 @@ class StateTransition(CapellaElement):
 
 class AbstractAction(JavaObject):
     """
-    <p>A generic action which can be triggered by a Mode / State or a StateTransition</p>
-    
+    A generic action which can be triggered by a Mode / State or a StateTransition
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1615,8 +1554,7 @@ class AbstractAction(JavaObject):
 
 class AbstractEvent(CapellaElement):
     """
-    <p>An generic event which can trigger a transition</p>
-    
+    An generic event which can trigger a transition
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1628,8 +1566,7 @@ class AbstractEvent(CapellaElement):
 
 class Scenario(CapellaElement):
     """
-    <p>A scenario of use of the system defined by a specific sequence</p>
-    
+    A scenario of use of the system defined by a specific sequence
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1685,8 +1622,7 @@ class Scenario(CapellaElement):
 
 class InstanceRole(CapellaElement):
     """
-    <p>The involvement of an element (function, system, component or actor)&nbsp;in a scenario</p>
-    
+    The involvement of an element (function, system, component or actor)&nbsp;in a scenario
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1700,8 +1636,7 @@ class InstanceRole(CapellaElement):
 
 class AbstractInstance(JavaObject):
     """
-    <p>A generic element which can be involved in a scenario as an InstanceRole</p>
-    
+    A generic element which can be involved in a scenario as an InstanceRole
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1713,8 +1648,7 @@ class AbstractInstance(JavaObject):
 
 class SequenceMessage(CapellaElement):
     """
-    <p>An exchange between InstanceRole performed in the frame of a scenario</p>
-    
+    An exchange between InstanceRole performed in the frame of a scenario
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1770,8 +1704,7 @@ class SequenceMessage(CapellaElement):
 
 class AbstractExchange(JavaObject):
     """
-    <p>A generic exchange which can be used in a scenario as a sequence message</p>
-    
+    A generic exchange which can be used in a scenario as a sequence message
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1785,8 +1718,7 @@ class AbstractExchange(JavaObject):
 
 class StateFragment(CapellaElement):
     """
-    <p>The call of a function or mode / state&nbsp;by an InstanceRole in the context of a scenario</p>
-    
+    The call of a function or mode / state&nbsp;by an InstanceRole in the context of a scenario
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1816,8 +1748,7 @@ class StateFragment(CapellaElement):
 
 class CombinedFragment(CapellaElement):
     """
-    <p>The identification of a specific operator (ALT, OPT, LOOP...)&nbsp;in the sequence of a scenario</p>
-    
+    The identification of a specific operator (ALT, OPT, LOOP...)&nbsp;in the sequence of a scenario
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1841,10 +1772,8 @@ class CombinedFragment(CapellaElement):
 
 class Operand(CapellaElement):
     """
-    <p>A specific &quot;region&quot; in a Combined Fragment</p>
-    
-    <p>For example, an ALTERNATIVE contains one operand for each of the alternative conditions</p>
-    
+    A specific "region" in a Combined Fragment
+    For example, an ALTERNATIVE contains one operand for each of the alternative conditions
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1870,8 +1799,7 @@ class Operand(CapellaElement):
 
 class ConstraintDuration(CapellaElement):
     """
-    <p>A constraint about the execution time of a scenario defined between 2 points</p>
-    
+    A constraint about the execution time of a scenario defined between 2 points
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1887,8 +1815,7 @@ class ConstraintDuration(CapellaElement):
 
 class Node(AbstractInstance):
     """
-    <p>An abstract type defining the generic relation of a Node (implementation ressource)&nbsp;element</p>
-    
+    An abstract type defining the generic relation of a Node (implementation ressource)&nbsp;element
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1910,8 +1837,7 @@ class Node(AbstractInstance):
 
 class PhysicalPort(AbstractPhysicalArtifact):
     """
-    <p>A port on a Node component defining a physical interaction point</p>
-    
+    A port on a Node component defining a physical interaction point
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1931,8 +1857,7 @@ class PhysicalPort(AbstractPhysicalArtifact):
 
 class PhysicalLink(AbstractPhysicalArtifact):
     """
-    <p>Means of communication, transport or routing between two Node components, used as a support for behavioral exchanges</p>
-    
+    Means of communication, transport or routing between two Node components, used as a support for behavioral exchanges
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1958,8 +1883,7 @@ class PhysicalLink(AbstractPhysicalArtifact):
 
 class PhysicalLinkCategory(CapellaElement):
     """
-    <p>A regroupement of PhysicalLinks for graphical simplification of diagrams</p>
-    
+    A regroupement of PhysicalLinks for graphical simplification of diagrams
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1973,8 +1897,7 @@ class PhysicalLinkCategory(CapellaElement):
 
 class PhysicalPath(CapellaElement):
     """
-    <p>Set of Physical Links defining a continuous path likely to route one or more behavioral exchanges</p>
-    
+    Set of Physical Links defining a continuous path likely to route one or more behavioral exchanges
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -1996,8 +1919,7 @@ class PhysicalPath(CapellaElement):
 
 class InterfacePkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain Interfaces</p>
-    
+    A package to contain Interfaces
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2015,8 +1937,7 @@ class InterfacePkg(PropertyValuePkgContainer):
 
 class Interface(CapellaElement):
     """
-    <p>The definition of ExchangeItems which can be send / received by a ComponentPort</p>
-    
+    The definition of ExchangeItems which can be send / received by a ComponentPort
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2054,10 +1975,8 @@ class Interface(CapellaElement):
 
 class ExchangeItemAllocation(CapellaElement):
     """
-    <p>The involvement of an ExchangeItem by an Interface.</p>
-    
-    <p>Mainly used for the involvement of ExchangeItems in Interface Scenarios based on the definition of Interfaces between components</p>
-    
+    The involvement of an ExchangeItem by an Interface.
+    Mainly used for the involvement of ExchangeItems in Interface Scenarios based on the definition of Interfaces between components
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2101,8 +2020,7 @@ class ExchangeItemAllocation(CapellaElement):
 
 class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
     """
-    <p>Ordered set of references to elements carried together during an interaction or exchange between functions, components and actors. The elements are carried simultaneously, in the same conditions, with the same non-functional properties. The &ldquo;elements&rdquo; are called data</p>
-    
+    Ordered set of references to elements carried together during an interaction or exchange between functions, components and actors. The elements are carried simultaneously, in the same conditions, with the same non-functional properties. The “elements” are called data
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2146,8 +2064,7 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
 
 class ExchangeItemElement(CapellaElement):
     """
-    <p>A part of the information contained by an ExchangeItem</p>
-    
+    A part of the information contained by an ExchangeItem
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2161,10 +2078,8 @@ class ExchangeItemElement(CapellaElement):
 
 class FunctionPort(CapellaElement):
     """
-    <p>An generic FunctionPort to define the allocation with ComponentPorts</p>
-    
-    <p>A Function Port specify what a Function is capable of producing or is requiring</p>
-    
+    An generic FunctionPort to define the allocation with ComponentPorts
+    A Function Port specify what a Function is capable of producing or is requiring
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2186,8 +2101,7 @@ class FunctionPort(CapellaElement):
 
 class FunctionInputPort(FunctionPort):
     """
-    <p>An FunctionInputPort defines what a Function is requiring</p>
-    
+    An FunctionInputPort defines what a Function is requiring
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2207,8 +2121,7 @@ class FunctionInputPort(FunctionPort):
 
 class FunctionOutputPort(FunctionPort):
     """
-    <p>A FunctionOutputPort defines what a Function is capable of producing</p>
-    
+    A FunctionOutputPort defines what a Function is capable of producing
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2228,8 +2141,7 @@ class FunctionOutputPort(FunctionPort):
 
 class FunctionalExchange(AbstractEvent, AbstractExchange):
     """
-    <p>A functional exchange represents a dependency between a source function and a target one. Exchanges connect Function Ports, which specify what a Function is capable of producing or is requiring.</p>
-    
+    A functional exchange represents a dependency between a source function and a target one. Exchanges connect Function Ports, which specify what a Function is capable of producing or is requiring.
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2303,8 +2215,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
 
 class ExchangeCategory(CapellaElement):
     """
-    <p>A regroupement of FunctionalExchanges for graphical simplification of diagrams</p>
-    
+    A regroupement of FunctionalExchanges for graphical simplification of diagrams
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2318,8 +2229,7 @@ class ExchangeCategory(CapellaElement):
 
 class FunctionalChain(CapellaElement):
     """
-    <p>Describe the system behaviour in a particular usage context with references towards Functions and Functional Exchanges</p>
-    
+    Describe the system behaviour in a particular usage context with references towards Functions and Functional Exchanges
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2375,8 +2285,7 @@ class FunctionalChain(CapellaElement):
 
 class BehavioralComponent(CapellaElement, AbstractInstance):
     """
-    <p>An abstract type to define the generic relation of behavioral elements</p>
-    
+    An abstract type to define the generic relation of behavioral elements
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2406,8 +2315,7 @@ class BehavioralComponent(CapellaElement, AbstractInstance):
 
 class ComponentPort(CapellaElement):
     """
-    <p>A port on a BehavioralComponent defining a logical interaction point</p>
-    
+    A port on a BehavioralComponent defining a logical interaction point
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2439,8 +2347,7 @@ class ComponentPort(CapellaElement):
 
 class ComponentExchange(CapellaElement, AbstractExchange):
     """
-    <p>Represent the interactions between Logical / Behavioral&nbsp;Components. Exchanges connects Component Ports.</p>
-    
+    Represent the interactions between Logical / Behavioral&nbsp;Components. Exchanges connects Component Ports.
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2482,8 +2389,7 @@ class ComponentExchange(CapellaElement, AbstractExchange):
 
 class ComponentExchangeCategory(CapellaElement):
     """
-    <p>A regroupement of ComponentExchanges for graphical simplification of diagrams</p>
-    
+    A regroupement of ComponentExchanges for graphical simplification of diagrams
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2497,8 +2403,7 @@ class ComponentExchangeCategory(CapellaElement):
 
 class AbstractCapability(PropertyValuePkgContainer):
     """
-    <p>An abstract type to define the generic relations of all capabilities (operational and system)</p>
-    
+    An abstract type to define the generic relations of all capabilities (operational and system)
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -2546,8 +2451,7 @@ class AbstractCapability(PropertyValuePkgContainer):
 
 class AbstractSystemCapability(AbstractCapability):
     """
-    <p>An abstract type to define the generic relation of system capabilities (as defined in SA, LA and PA)</p>
-    
+    An abstract type to define the generic relation of system capabilities (as defined in SA, LA and PA)
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3252,8 +3156,7 @@ class Unit(CapellaElement):
 
 class SystemEngineering(PropertyValuePkgContainer):
     """
-    <p>The main element in the definition of a Capella model. Contains the perspectives of the Arcadia methodology</p>
-    
+    The main element in the definition of a Capella model. Contains the perspectives of the Arcadia methodology
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3286,8 +3189,7 @@ class SystemEngineering(PropertyValuePkgContainer):
 
 class PropertyValuePkg(PropertyValuePkgContainer):
     """
-    <p>A package to contain PropertyValues&nbsp;and/or&nbsp;PropertyValueGroups</p>
-    
+    A package to contain PropertyValues&nbsp;and/or&nbsp;PropertyValueGroups
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3299,8 +3201,7 @@ class PropertyValuePkg(PropertyValuePkgContainer):
 
 class Interaction(AbstractEvent):
     """
-    <p>Oriented dependency between Operational Activities</p>
-    
+    Oriented dependency between Operational Activities
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3348,8 +3249,7 @@ class Interaction(AbstractEvent):
 
 class OperationalCapability(AbstractCapability):
     """
-    <p>An operational capability is an ability, expected of one or more operational entities / actors. An operational capability is characterized by a set of operational processes and scenarios</p>
-    
+    An operational capability is an ability, expected of one or more operational entities / actors. An operational capability is characterized by a set of operational processes and scenarios
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3371,8 +3271,7 @@ class OperationalCapability(AbstractCapability):
 
 class OperationalEntity(OperationalActor):
     """
-    <p>An Operational Entity is a real world entity (other system, device, group or organisation&hellip;) carrying Operational Activities to which the system is likely to contribute</p>
-    
+    An Operational Entity is a real world entity (other system, device, group or organisation…) carrying Operational Activities to which the system is likely to contribute
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3389,8 +3288,7 @@ class OperationalEntity(OperationalActor):
 
 class Capability(AbstractSystemCapability):
     """
-    <p>The ability of the system to supply a service contributing to fulfilling one or more Missions. A Capability represents a system usage context. It is characterized by a set of Functional Chains and Scenarios it references.</p>
-    
+    The ability of the system to supply a service contributing to fulfilling one or more Missions. A Capability represents a system usage context. It is characterized by a set of Functional Chains and Scenarios it references.
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3410,10 +3308,8 @@ class Capability(AbstractSystemCapability):
 
 class System(BehavioralComponent, Node):
     """
-    <p>Set of elements functioning as a whole, responding to customer and user demand and needs</p>
-    
-    <p>The System defined in the SystemAnalysis is seen as a black box</p>
-    
+    Set of elements functioning as a whole, responding to customer and user demand and needs
+    The System defined in the SystemAnalysis is seen as a black box
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3428,8 +3324,7 @@ class System(BehavioralComponent, Node):
 
 class SystemActor(BehavioralComponent, Node):
     """
-    <p>Entity (human or not) that is external to the System (in term of responsibility), interacting with it, via its interfaces</p>
-    
+    Entity (human or not) that is external to the System (in term of responsibility), interacting with it, via its interfaces
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3467,8 +3362,7 @@ class SystemActor(BehavioralComponent, Node):
 
 class CapabilityRealization(AbstractSystemCapability):
     """
-    <p>The implementation of the system Capabilities in Logical Architecture and Physical Architecture</p>
-    
+    The implementation of the system Capabilities in Logical Architecture and Physical Architecture
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3494,8 +3388,7 @@ class CapabilityRealization(AbstractSystemCapability):
 
 class LogicalSystem(BehavioralComponent, Node):
     """
-    <p>The definition of the system in Logical Architecture</p>
-    
+    The definition of the system in Logical Architecture
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3514,10 +3407,8 @@ class LogicalSystem(BehavioralComponent, Node):
 
 class LogicalComponent(BehavioralComponent):
     """
-    <p>Logical Components are the artefacts enabling a notional decomposition of the system as a &quot;white box&quot;, independently from any technological solutions, but dealing with major system decomposition constraints</p>
-    
-    <p>Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)</p>
-    
+    Logical Components are the artefacts enabling a notional decomposition of the system as a "white box", independently from any technological solutions, but dealing with major system decomposition constraints
+    Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3544,8 +3435,7 @@ class LogicalComponent(BehavioralComponent):
 
 class LogicalActor(BehavioralComponent, Node):
     """
-    <p>An external Actor defined in the Logical Architecture</p>
-    
+    An external Actor defined in the Logical Architecture
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3575,8 +3465,7 @@ class LogicalActor(BehavioralComponent, Node):
 
 class PhysicalSystem(CapellaElement, Node):
     """
-    <p>The definition of the system in Physical Architecture</p>
-    
+    The definition of the system in Physical Architecture
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3596,8 +3485,7 @@ class PhysicalSystem(CapellaElement, Node):
 
 class BehaviorPC(PhysicalComponent, BehavioralComponent):
     """
-    <p>System component in charge of implementing / realizing some of the functions devoted to the system</p>
-    
+    System component in charge of implementing / realizing some of the functions devoted to the system
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3632,8 +3520,7 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
 
 class NodePC(PhysicalComponent, Node):
     """
-    <p>Component hosting a number of behavioral components, providing them with the resource they require to function and to interact with their environment</p>
-    
+    Component hosting a number of behavioral components, providing them with the resource they require to function and to interact with their environment
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3666,8 +3553,7 @@ class NodePC(PhysicalComponent, Node):
 
 class PhysicalActor(BehavioralComponent, Node):
     """
-    <p>An external Actor defined in the Physical Architecture</p>
-    
+    An external Actor defined in the Physical Architecture
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3695,8 +3581,7 @@ class PhysicalActor(BehavioralComponent, Node):
 
 class ChangeEvent(AbstractEvent):
     """
-    <p>An event defined by WHEN something occurs</p>
-    
+    An event defined by WHEN something occurs
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3712,8 +3597,7 @@ class ChangeEvent(AbstractEvent):
 
 class TimeEvent(AbstractEvent):
     """
-    <p>An event defined by AT a given time, or AFTER a certain time</p>
-    
+    An event defined by AT a given time, or AFTER a certain time
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3739,8 +3623,7 @@ class TimeEvent(AbstractEvent):
 
 class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
     """
-    <p>An abstract type to define the link between mode / state and activity / function (available in states)</p>
-    
+    An abstract type to define the link between mode / state and activity / function (available in states)
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3754,8 +3637,7 @@ class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
 
 class Function(AbstractActivityFunction):
     """
-    <p>Action performed by the System, an Actor or a component, in order to realize a Capability</p>
-    
+    Action performed by the System, an Actor or a component, in order to realize a Capability
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3812,8 +3694,7 @@ class Function(AbstractActivityFunction):
 
 class OperationalActivity(AbstractActivityFunction):
     """
-    <p>Process step or action/operation/service performed by an Operational entity / actor&nbsp;and likely to influence the system definition or usage. Implementing operational activities generally produces elements of interactions expected by other activities</p>
-    
+    Process step or action/operation/service performed by an Operational entity / actor&nbsp;and likely to influence the system definition or usage. Implementing operational activities generally produces elements of interactions expected by other activities
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3843,8 +3724,7 @@ class OperationalActivity(AbstractActivityFunction):
 
 class SystemFunction(Function):
     """
-    <p>The definition of a Function in the System Analysis</p>
-    
+    The definition of a Function in the System Analysis
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3864,8 +3744,7 @@ class SystemFunction(Function):
 
 class LogicalFunction(Function):
     """
-    <p>The definition of a Function in the Logical Architecture</p>
-    
+    The definition of a Function in the Logical Architecture
     """
     def __init__(self, java_object = None):
         if java_object is None:
@@ -3885,8 +3764,7 @@ class LogicalFunction(Function):
 
 class PhysicalFunction(Function):
     """
-    <p>The definition of a Function in the Physical Architecture</p>
-    
+    The definition of a Function in the Physical Architecture
     """
     def __init__(self, java_object = None):
         if java_object is None:
