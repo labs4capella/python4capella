@@ -41,12 +41,9 @@ class RequirementAddOn(JavaObject):
     def get_outgoing_requirements(capellaElement):
         res = []
         #: :type capellaElement: CapellaElement
-        modules = RequirementAddOn.get_requirement_modules(capellaElement)
-        for module in modules:
-            for requirement in module.get_java_object().getOwnedRequirements():
-                for relation in requirement.getOwnedRelations():
-                    if capellaElement.get_java_object() == relation.getSource() and relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
-                        res.append(Requirement(relation.getTarget()))
+        for extension in capellaElement.get_java_object().getOwnedExtensions():
+            if extension.eClass().getName() == "CapellaOutgoingRelation" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                res.append(Requirement(extension.getTarget()))
         return res
     def get_relation_type(self, elem1, elem2):
         raise AttributeError("TODO")

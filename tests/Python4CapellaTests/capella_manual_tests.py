@@ -2,6 +2,14 @@ include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
     from simplified_api.capella import *
 
+include('workspace://Python4Capella/simplified_api/requirement.py')
+if False:
+    from simplified_api.requirement import *
+
+include('workspace://Python4Capella/simplified_api/pvmt.py')
+if False:
+    from simplified_api.pvmt import *
+
 import unittest
 
 class capella_manual_tests(unittest.TestCase):
@@ -492,3 +500,84 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual("Gigabit Ethernet", physical_links[1].get_name())
         self.assertEqual("Gigabit Ethernet", physical_links[2].get_name())
         self.assertEqual("Ethernet Connector", physical_links[3].get_name())
+
+    def test_RequirementAddOn_get_incoming_requirements(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for oa in se.get_all_contents_by_type(OperationalActivity):
+            #: :type oa: OperationalActivity
+            if oa.get_name() == 'Broadcast Movies':
+                tested = oa
+                break
+        requirements = RequirementAddOn.get_incoming_requirements(tested)
+        self.assertEqual(1, len(requirements))
+        self.assertEqual("Display of VOD Movies List", requirements[0].get_name())
+
+    def test_RequirementAddOn_get_outgoing_requirements(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for fa in se.get_all_contents_by_type(FunctionalExchange):
+            #: :type fa: FunctionalExchange
+            if fa.get_name() == 'Displayed Movies List':
+                tested = fa
+                break
+        requirements = RequirementAddOn.get_outgoing_requirements(tested)
+        self.assertEqual(1, len(requirements))
+        self.assertEqual("Display of VOD Movies List", requirements[0].get_name())
+    def test_PVMT_get_p_v_names(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for sf in se.get_all_contents_by_type(SystemFunction):
+            #: :type sf: SystemFunction
+            if sf.get_name() == 'Retrieve VOD Movie Data':
+                tested = sf
+                break
+        names = PVMT.get_p_v_names(tested)
+        self.assertEqual(1, len(names))
+        self.assertEqual("Version", names[0])
+
+    def test_PVMT_is_p_v_defined(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for sf in se.get_all_contents_by_type(SystemFunction):
+            #: :type sf: SystemFunction
+            if sf.get_name() == 'Retrieve VOD Movie Data':
+                tested = sf
+                break
+        self.assertEqual(False, PVMT.is_p_v_defined(tested, 'not existing'))
+        self.assertEqual(True, PVMT.is_p_v_defined(tested, 'Version'))
+
+    def test_PVMT_get_p_v_value(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for sf in se.get_all_contents_by_type(SystemFunction):
+            #: :type sf: SystemFunction
+            if sf.get_name() == 'Retrieve VOD Movie Data':
+                tested = sf
+                break
+        self.assertEqual("1", PVMT.get_p_v_value(tested, 'Version'))
