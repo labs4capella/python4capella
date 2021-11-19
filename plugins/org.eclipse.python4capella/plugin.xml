@@ -64,5 +64,146 @@
          </projectDescriptor>
       </example>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors.templates">
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python"
+            description="Add import for simplified_api.capella"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.import.simplified_api.capella"
+            name="import simplified_api.capella (Python4Capella)">
+         <pattern>
+            # include needed for the Capella modeller API
+include(&apos;workspace://Python4Capella/simplified_api/capella.py&apos;)
+if False:
+    from simplified_api.capella import *
+         </pattern>
+      </template>
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python"
+            description="Add import for utilities.CapellaPlatform"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.import.utilities.CapellaPlatform"
+            name="import utilities.CapellaPlatform (Python4Capella)">
+         <pattern>
+            # include needed for utilities
+include(&apos;workspace://Python4Capella/utilities/CapellaPlatform.py&apos;)
+if False:
+    from utilities.CapellaPlatform import *
+         </pattern>
+      </template>
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python"
+            description="Add import for simplified_api.requirement"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.import.simplified_api.requirement"
+            name="import simplified_api.requirement (Python4Capella)">
+         <pattern>
+            # include needed for the requirement API
+include('workspace://Python4Capella/simplified_api/requirement.py')
+if False:
+    from simplified_api.requirement import *
+         </pattern>
+      </template>
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python"
+            description="Add import for simplified_api.pvmt"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.import.simplified_api.pvmt"
+            name="import simplified_api.pvmt (Python4Capella)">
+         <pattern>
+            # include needed for the pvmt API
+include(&apos;workspace://Python4Capella/simplified_api/pvmt.py&apos;)
+if False:
+    from simplified_api.pvmt import *
+         </pattern>
+      </template>
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python.modules"
+            description="Initialize the module to use Python4Capella"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.module.capella"
+            name="Module: Python4Capella">
+         <pattern>
+            &apos;&apos;&apos;
+Created on ${date}
+
+@author: ${user}
+&apos;&apos;&apos;
+# include needed for the Capella modeller API
+include(&apos;workspace://Python4Capella/simplified_api/capella.py&apos;)
+if False:
+    from simplified_api.capella import *
+
+# include needed for utilities
+include(&apos;workspace://Python4Capella/utilities/CapellaPlatform.py&apos;)
+if False:
+    from utilities.CapellaPlatform import *
+         </pattern>
+      </template>
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python.modules"
+            description="Initialize the module to use Python4Capella and the requirements addon"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.module.capella.requirements"
+            name="Module: Python4Capella + Requirements">
+         <pattern>
+            &apos;&apos;&apos;
+Created on ${date}
+
+@author: ${user}
+&apos;&apos;&apos;
+# include needed for the Capella modeller API
+include(&apos;workspace://Python4Capella/simplified_api/capella.py&apos;)
+if False:
+    from simplified_api.capella import *
+
+# include needed for utilities
+include(&apos;workspace://Python4Capella/utilities/CapellaPlatform.py&apos;)
+if False:
+    from utilities.CapellaPlatform import *
+
+# include needed for the requirement API
+include(&apos;workspace://Python4Capella/simplified_api/requirement.py&apos;)
+if False:
+    from simplified_api.requirement import *
+         </pattern>
+      </template>
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python.modules"
+            description="Initialize the module to use Python4Capella and the PVMT addon"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.module.capella.pvmt"
+            name="Module: Python4Capella + PVMT">
+         <pattern>
+            &apos;&apos;&apos;
+Created on ${date}
+
+@author: ${user}
+&apos;&apos;&apos;
+# include needed for the Capella modeller API
+include(&apos;workspace://Python4Capella/simplified_api/capella.py&apos;)
+if False:
+    from simplified_api.capella import *
+
+# include needed for utilities
+include(&apos;workspace://Python4Capella/utilities/CapellaPlatform.py&apos;)
+if False:
+    from utilities.CapellaPlatform import *
+
+# include needed for the pvmt API
+include(&apos;workspace://Python4Capella/simplified_api/pvmt.py&apos;)
+if False:
+    from simplified_api.pvmt import *
+         </pattern>
+      </template>
+   </extension>
 
 </plugin>

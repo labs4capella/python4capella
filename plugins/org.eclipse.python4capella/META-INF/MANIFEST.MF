@@ -28,5 +28,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.capella.common.re,
  org.polarsys.capella.common.re.gen,
  org.polarsys.capella.common.re.gen.edit,
- org.polarsys.capella.common.re.ui
+ org.polarsys.capella.common.re.ui,
+ org.eclipse.ui.editors
 Export-Package: org.eclipse.python4capella.modules
