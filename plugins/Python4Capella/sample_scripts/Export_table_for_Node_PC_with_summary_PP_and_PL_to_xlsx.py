@@ -11,12 +11,12 @@ This script allows to extract a table with:
 # To run it:
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
 #  - you can run this script by launching the contextual menu "Run As / EASE Script..." 
-#    on this script and select "Run As". 
+#    on this script. 
 #    - By default, the model selected is IFE sample (aird path of the model written below)
 
 #  - you can also run this script according to a configuration (script selected, arguments) 
 #    and modify the configuration by launching the contextual menu "Run As / Run configurations..." 
-#    on this script and select "Run Configurations". 
+#    on this script. 
 #    - create a new "EASE Script" configuration
 #    - define the name of the configuration: "Export_table_for_Node_PC_with_summary_PP_and_PL_to_xlsx.py" (for instance)
 #    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Export_table_for_Node_PC_with_summary_PP_and_PL_to_xlsx.py"
