@@ -2151,7 +2151,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
         else:
             JavaObject.__init__(self, java_object)
     def get_source_port(self):
-        value =  self.get_java_object().getSourcePort()
+        value =  self.get_java_object().getSource()
         if value is None:
             return value
         else:
@@ -2159,9 +2159,9 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
     def set_source_port(self, value):
-        return self.get_java_object().setSourcePort(value.get_java_object())
+        return self.get_java_object().setSource(value.get_java_object())
     def get_target_port(self):
-        value =  self.get_java_object().getTargetPort()
+        value =  self.get_java_object().getTarget()
         if value is None:
             return value
         else:
@@ -2169,7 +2169,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             specific_cls = e_object_class.get_class(value)
             return specific_cls(value)
     def set_target_port(self, value):
-        return self.get_java_object().setTargetPort(value.get_java_object())
+        return self.get_java_object().setTarget(value.get_java_object())
     def get_source_function(self):
         port = self.get_java_object().getSourceFunctionOutputPort()
         if port is None:
