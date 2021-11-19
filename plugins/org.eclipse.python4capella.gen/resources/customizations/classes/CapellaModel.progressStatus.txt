@@ -1,0 +1,7 @@
+    def get_progress_status(self):
+        value =  self.get_system_engineering().get_java_object().getStatus()
+        if value is None:
+            return value
+        else:
+            return value.getName()
+
