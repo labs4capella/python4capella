@@ -4,8 +4,8 @@
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
 #  - launch the contextual menu "Run As / Run configurations..." on this script
 #    - create a new "EASE Script" configuration
-#    - define the name of the configuration: "import_physical_components_from_xlsx.py" (for instance)
-#    - define the Script Source path: "workspace://Python4Capella/sample_scripts/import_physical_components_from_xlsx.py"
+#    - define the name of the configuration: "Import_physical_components_from_xlsx.py" (for instance)
+#    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Import_physical_components_from_xlsx.py"
 #    - define the path to the aird file as first argument and the xlsx file as second argument in "Script arguments" area: "/In-Flight Entertainment System/In-Flight Entertainment System.aird" "/Python4Capella/resources/physical_components.xlsx" (for instance)
 
 # include needed for the Capella modeller API
