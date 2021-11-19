@@ -4,12 +4,12 @@ This script allow to extract Property Values defined with PVMT associated to ele
 # To run it:
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
 #  - you can run this script by launching the contextual menu "Run As / EASE Script..." 
-#    on this script and select "Run As". 
+#    on this script. 
 #    - By default, the model selected is IFE sample (aird path of the model written below)
 
 #  - you can also run this script according to a configuration (script selected, arguments) 
 #    and modify the configuration by launching the contextual menu "Run As / Run configurations..." 
-#    on this script and select "Run Configurations". 
+#    on this script. 
 #    - create a new "EASE Script" configuration
 #    - define the name of the configuration: "Export_Property_Values_associated_to_elements_to_xlsx.py" (for instance)
 #    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Export_Property_Values_associated_to_elements_to_xlsx.py"
