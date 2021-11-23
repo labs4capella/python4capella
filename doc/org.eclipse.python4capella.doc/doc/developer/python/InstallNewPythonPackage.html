@@ -9,7 +9,10 @@
 	<body>
 		<h1 id="InstallnewPythonpackage">Install new Python package</h1>
 		<p>To install new Python packages on Linux or Mac OS X, please refer to your distribution documentation.</p>
-		<p>If you are using Windows and the python37.zip file provided with Python for Capella, you can install a new package using the following command from the folder where you extracted the python37.zip:</p>
+		<p>If you are using Windows and the python37.zip file provided with Python for Capella, you will need to update pip using the following command from the folder where you extracted the python37.zip:</p>
+		<pre><code>python -m pip install --upgrade pip
+</code></pre>
+		<p>You can then install a new package using the following command from the folder where you extracted the python37.zip:</p>
 		<pre><code>Scripts\pip install *package name*
 </code></pre>
 		<p>For instance:</p>
