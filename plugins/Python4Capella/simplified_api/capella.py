@@ -28,13 +28,11 @@ class CapellaModel():
         else:
             return SystemEngineering(Sirius.get_system_engineering(self.session))
     def get_progress_status(self):
-        value =  self.get_java_object().getProgressStatus()
+        value =  self.get_system_engineering().get_java_object().getStatus()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def get_referenced_libraries(self):
         return get_libraries(self.get_system_engineering())
     def get_all_diagrams(self):

@@ -2,7 +2,11 @@ h1. Install new Python package
 
 To install new Python packages on Linux or Mac OS X, please refer to your distribution documentation.
 
-If you are using Windows and the python37.zip file provided with Python for Capella, you can install a new package using the following command from the folder where you extracted the python37.zip:
+If you are using Windows and the python37.zip file provided with Python for Capella, you will need to update pip using the following command from the folder where you extracted the python37.zip:
+
+bc. python -m pip install --upgrade pip
+
+You can then install a new package using the following command from the folder where you extracted the python37.zip:
 
 bc. Scripts\pip install *package name*
 
