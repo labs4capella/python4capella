@@ -581,3 +581,11 @@ class capella_manual_tests(unittest.TestCase):
                 tested = sf
                 break
         self.assertEqual("1", PVMT.get_p_v_value(tested, 'Version'))
+
+    def test_CapellaModel_progress_status_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        self.assertEqual("DRAFT", model.get_progress_status())
