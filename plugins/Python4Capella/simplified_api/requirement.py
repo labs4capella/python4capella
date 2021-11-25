@@ -30,12 +30,14 @@ class RequirementAddOn(JavaObject):
     def get_incoming_requirements(capellaElement):
         res = []
         #: :type capellaElement: CapellaElement
-        modules = RequirementAddOn.get_requirement_modules(capellaElement)
-        for module in modules:
-            for requirement in module.get_java_object().getOwnedRequirements():
-                for relation in requirement.getOwnedRelations():
-                    if capellaElement.get_java_object() == relation.getTarget() and relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
-                        res.append(Requirement(relation.getSource()))
+        for relation in e_inverse(capellaElement.get_java_object(), "target"):
+            if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                capella_element = relation.getSource()
+                if capella_element is not None:
+                    e_object_class = getattr(sys.modules["__main__"], "EObject")
+                    specific_cls = e_object_class.get_class(capella_element)
+                    if specific_cls is not None:
+                        res.append(specific_cls(capella_element))
         return res
     @staticmethod
     def get_outgoing_requirements(capellaElement):
@@ -115,9 +117,10 @@ class Requirement(EObject):
         raise AttributeError("TODO")
     def get_incoming_linked_elems(self):
         res = []
-        for relation in self.java_object.getOwnedRelations():
-            if relation.eClass().getName() == "CapellaIncomingRelation":
-                capella_element = relation.getTarget()
+        #: :type capellaElement: CapellaElement
+        for relation in e_inverse(self.get_java_object(), "target"):
+            if relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                capella_element = relation.getSource()
                 if capella_element is not None:
                     e_object_class = getattr(sys.modules["__main__"], "EObject")
                     specific_cls = e_object_class.get_class(capella_element)
@@ -127,8 +130,8 @@ class Requirement(EObject):
     def get_outgoing_linked_elems(self):
         res = []
         for relation in self.java_object.getOwnedRelations():
-            if relation.eClass().getName() == "CapellaOutgoingRelation":
-                capella_element = relation.getSource()
+            if relation.eClass().getName() == "CapellaIncomingRelation":
+                capella_element = relation.getTarget()
                 if capella_element is not None:
                     e_object_class = getattr(sys.modules["__main__"], "EObject")
                     specific_cls = e_object_class.get_class(capella_element)

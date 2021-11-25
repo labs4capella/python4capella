@@ -28,3 +28,7 @@ def create_e_list(java_list, cls):
 def get_enum_literal(ns_uri, enum_name, literal_name):
     """Gets the enum literal"""
     return getEnumLiteral(ns_uri, enum_name, literal_name)
+
+def e_inverse(e_obj, reference_name):
+    """Gets the List of object referencing the given EObject via an EReference with the given name"""
+    return eInverse(e_obj, reference_name)
