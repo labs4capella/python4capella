@@ -24,7 +24,9 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
 
 /**
  * EASE module for EMF.
@@ -118,6 +120,20 @@ public class EMFModule {
 	public Enumerator getEnumLiteral(String nsURI, String enumName, String literalName) {
 		return ((EEnum) EPackage.Registry.INSTANCE.getEPackage(nsURI).getEClassifier(enumName))
 				.getEEnumLiteral(literalName).getInstance();
+	}
+
+	/**
+	 * Gets the {@link List} of object referencing the given {@link EObject} via an
+	 * {@link EReference} with the given name.
+	 * 
+	 * @param eObj          the {@link EObject}
+	 * @param referenceName the {@link EReference} name
+	 * @return the {@link List} of object referencing the given {@link EObject} via
+	 *         an {@link EReference} with the given name
+	 */
+	@WrapToScript
+	public List<EObject> eInverse(EObject eObj, String referenceName) {
+		return new ArrayList<EObject>(new EObjectQuery(eObj).getInverseReferences(referenceName));
 	}
 
 }

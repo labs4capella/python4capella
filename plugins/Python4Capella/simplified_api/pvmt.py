@@ -4,10 +4,17 @@ if False:
 
 
 class PVMT(JavaObject):
+    """
+    """
     def __init__(self, java_object = None):
+        """
+        """
         JavaObject.__init__(self, java_object)
     @staticmethod
     def get_p_v_names(elem):
+        """
+        status: OK
+        """
         #: :type elem: CapellaElement
         res = []
         for group in elem.get_java_object().getOwnedPropertyValueGroups():
@@ -16,9 +23,15 @@ class PVMT(JavaObject):
         return res
     @staticmethod
     def is_p_v_defined(elem, PVName):
+        """
+        status: OK
+        """
         return PVName in PVMT.get_p_v_names(elem)
     @staticmethod
     def get_p_v_value(elem, PVName):
+        """
+        status: OK
+        """
         for group in elem.get_java_object().getOwnedPropertyValueGroups():
             for pv in group.getOwnedPropertyValues():
                 if PVName == pv.getName():
@@ -27,4 +40,5 @@ class PVMT(JavaObject):
                     else:
                         return str(pv.getValue())
         return None
+
 

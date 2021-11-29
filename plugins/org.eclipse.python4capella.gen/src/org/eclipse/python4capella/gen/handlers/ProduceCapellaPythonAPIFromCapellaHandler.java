@@ -31,6 +31,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.safety.Whitelist;
+import org.polarsys.capella.common.data.modellingcore.AbstractNamedElement;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
 import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
@@ -231,16 +232,16 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 
 		res.append("class " + cls.getName() + "(" + superClassNames + "):" + NL);
-		res.append(getDocumentation(cls));
-		final String initCursomization = getClassCustomization(cls.getName() + ".__init__");
-		if (initCursomization != null) {
+		res.append(getDocumentation(cls, false));
+		final String initCursomization = getClassCustomization(cls.getName() + ".__init__", null);
+		if (!initCursomization.isBlank()) {
 			res.append(initCursomization);
 		} else {
 			res.append(generateClassInit(cls));
 		}
 		for (Feature feature : cls.getOwnedFeatures()) {
-			final String featureCustomization = getClassCustomization(cls.getName() + "." + feature.getName());
-			if (featureCustomization != null) {
+			final String featureCustomization = getClassCustomization(cls.getName() + "." + feature.getName(), feature);
+			if (!featureCustomization.isBlank()) {
 				res.append(featureCustomization);
 			} else {
 				final String generatedQuery = generateQuery(cls, feature);
@@ -258,17 +259,18 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	/**
 	 * Gets the Python documentation from the given {@link CapellaElement}.
 	 * 
-	 * @param element the {@link CapellaElement}
+	 * @param element  the {@link CapellaElement}
+	 * @param isSetter tells if the setter status should be used
 	 * @return the Python documentation from the given {@link CapellaElement}
 	 */
-	private String getDocumentation(CapellaElement element) {
+	private String getDocumentation(CapellaElement element, boolean isSetter) {
 		final StringBuilder res = new StringBuilder();
 
-		if (element.getDescription() != null && !element.getDescription().isEmpty()) {
-			String padding = "    ";
-			if (!(element instanceof Class)) {
-				padding = padding + padding;
-			}
+		String padding = "    ";
+		if (!(element instanceof Class)) {
+			padding = padding + padding;
+		}
+		if (element != null && element.getDescription() != null && !element.getDescription().isEmpty()) {
 
 			res.append(padding + "\"\"\"" + NL);
 			final Document document = Jsoup.parse(element.getDescription());
@@ -288,8 +290,34 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					}
 				}
 			}
+		} else {
 			res.append(padding + "\"\"\"" + NL);
 		}
+		if (element instanceof Property || element instanceof Operation) {
+			CapellaElement container = (CapellaElement) element.eContainer();
+			statusFound: for (PropertyValueGroup group : container.getOwnedPropertyValueGroups()) {
+				if ("ImplementationStatus".equals(group.getName())) {
+					for (AbstractPropertyValue property : group.getOwnedPropertyValues()) {
+						final String propertyName;
+						if (element instanceof Property) {
+							if (isSetter) {
+								propertyName = property.getName() + "_getter";
+							} else {
+								propertyName = property.getName() + "_setter";
+							}
+						} else {
+							propertyName = property.getName();
+						}
+						if (property instanceof StringPropertyValue
+								&& ((AbstractNamedElement) element).getName().equals(propertyName)) {
+							res.append(padding + "status: " + ((StringPropertyValue) property).getValue() + NL);
+							break statusFound;
+						}
+					}
+				}
+			}
+		}
+		res.append(padding + "\"\"\"" + NL);
 
 		return res.toString();
 	}
@@ -304,10 +332,10 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			final List<ICategory> categories = queries.get(eCls.getInstanceClass().getCanonicalName());
 			if (categories != null) {
 				for (ICategory category : categories) {
-					final IQuery query = getQuery(category);
 					final String queryGetterName = "get_" + getCategoryPythonName(category.getName());
 					if (featureGetterName.equals(queryGetterName)) {
 						res.append("    def " + queryGetterName + "(self):" + NL);
+						res.append(getDocumentation(feature, false));
 						res.append("        return capella_query_by_name(self, \"" + category.getName() + "\")" + NL);
 						break;
 					}
@@ -372,14 +400,14 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			if (isScalar(property)) {
 				if (isAttribute(property)) {
 					res.append("    def " + getterName + "(self):" + NL);
-					res.append(getDocumentation(property));
+					res.append(getDocumentation(property, false));
 					res.append("        return self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
 					res.append("    def " + setterName + "(self, value):" + NL);
-					res.append(getDocumentation(property));
+					res.append(getDocumentation(property, false));
 					res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(value)" + NL);
 				} else {
 					res.append("    def " + getterName + "(self):" + NL);
-					res.append(getDocumentation(property));
+					res.append(getDocumentation(property, false));
 					res.append(
 							"        value =  self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
 					res.append("        if value is None:" + NL);
@@ -390,14 +418,14 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					res.append("            return specific_cls(value)" + NL);
 					if (!property.isIsReadOnly() && !property.isIsDerived()) {
 						res.append("    def " + setterName + "(self, value):" + NL);
-						res.append(getDocumentation(property));
+						res.append(getDocumentation(property, true));
 						res.append("        return self.get_java_object()." + getJavaSetterName(cls, property)
 								+ "(value.get_java_object())" + NL);
 					}
 				}
 			} else {
 				res.append("    def " + getterName + "(self):" + NL);
-				res.append(getDocumentation(property));
+				res.append(getDocumentation(property, false));
 				res.append("        return create_e_list(self.get_java_object()." + getJavaGetterName(cls, property)
 						+ "(), " + property.getType().getLabel() + ")" + NL);
 			}
@@ -418,7 +446,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 
 		res.append("    def " + getPythonName(operation.getName()) + "(" + joiner.toString() + "):" + NL);
-		res.append(getDocumentation(operation));
+		res.append(getDocumentation(operation, false));
 		res.append("        raise AttributeError(\"TODO\")" + NL);
 
 		return res.toString();
@@ -526,18 +554,29 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		return (EClass) res;
 	}
 
-	private String getClassCustomization(String clsNameAndFeatureName) {
-		String res = null;
+	private String getClassCustomization(String clsNameAndFeatureName, CapellaElement element) {
+		StringBuilder res = new StringBuilder();
 
 		try (InputStream is = getClass().getClassLoader()
 				.getResourceAsStream("resources/customizations/classes/" + clsNameAndFeatureName + ".txt");) {
-			res = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines()
-					.collect(Collectors.joining(NL));
+			if (is != null) {
+				final List<String> lines = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines()
+						.collect(Collectors.toList());
+				for (String line : lines) {
+					if (!line.isBlank()) {
+						res.append(line + NL);
+						if (line.trim().startsWith("def ")) {
+							res.append(getDocumentation(element, line.trim().startsWith("def set_")));
+						}
+					}
+				}
+			}
 		} catch (Exception e) {
 			// nothing to do here
+			e.printStackTrace();
 		}
 
-		return res;
+		return res.toString();
 	}
 
 	private String getPackageImports(String packageName) {

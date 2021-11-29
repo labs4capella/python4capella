@@ -1,8 +1,8 @@
     def get_outgoing_linked_elems(self):
         res = []
         for relation in self.java_object.getOwnedRelations():
-            if relation.eClass().getName() == "CapellaOutgoingRelation":
-                capella_element = relation.getSource()
+            if relation.eClass().getName() == "CapellaIncomingRelation":
+                capella_element = relation.getTarget()
                 if capella_element is not None:
                     e_object_class = getattr(sys.modules["__main__"], "EObject")
                     specific_cls = e_object_class.get_class(capella_element)

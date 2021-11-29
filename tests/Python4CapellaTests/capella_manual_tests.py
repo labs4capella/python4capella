@@ -534,6 +534,43 @@ class capella_manual_tests(unittest.TestCase):
         requirements = RequirementAddOn.get_outgoing_requirements(tested)
         self.assertEqual(1, len(requirements))
         self.assertEqual("Display of VOD Movies List", requirements[0].get_name())
+
+    def test_Requirement_get_incoming_linked_elems(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for requirement in se.get_all_contents_by_type(Requirement):
+            #: :type requirement: Requirement
+            if requirement.get_name() == 'Display of VOD Movies List':
+                tested = requirement
+                break
+        elements = tested.get_incoming_linked_elems()
+        self.assertEqual(1, len(elements))
+        self.assertEqual("Displayed Movies List", elements[0].get_name())
+        self.assertEqual(FunctionalExchange, type(elements[0]))
+
+    def test_Requirement_get_outgoing_linked_elems(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for requirement in se.get_all_contents_by_type(Requirement):
+            #: :type requirement: Requirement
+            if requirement.get_name() == 'Display of VOD Movies List':
+                tested = requirement
+                break
+        elements = tested.get_outgoing_linked_elems()
+        self.assertEqual(1, len(elements))
+        self.assertEqual("Broadcast Movies", elements[0].get_name())
+        self.assertEqual(OperationalActivity, type(elements[0]))
+
     def test_PVMT_get_p_v_names(self):
         """
         This test need the IFE project to be in the workspace to run
@@ -581,3 +618,11 @@ class capella_manual_tests(unittest.TestCase):
                 tested = sf
                 break
         self.assertEqual("1", PVMT.get_p_v_value(tested, 'Version'))
+
+    def test_CapellaModel_progress_status_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        self.assertEqual("DRAFT", model.get_progress_status())
