@@ -85,10 +85,10 @@ for req in se.get_all_contents_by_type(Requirement):
     worksheet["B" + str(i)] = req.get_text()
     incoming_req_names = []
     for res in req.get_incoming_linked_elems():
-        incoming_req_names.append(req.get_name())
+        incoming_req_names.append(res.get_name())
     outgoing_req_names = []
     for res in req.get_outgoing_linked_elems():
-        outgoing_req_names.append(req.get_name())
+        outgoing_req_names.append(res.get_name())
     worksheet["C" + str(i)] = ', '.join(incoming_req_names)
     worksheet["D" + str(i)] = ', '.join(outgoing_req_names)
     
