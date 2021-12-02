@@ -71,7 +71,7 @@ location sirius "https://download.eclipse.org/sirius/updates/releases/6.5.1/2020
 	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
 }
 
-location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/stable/runtime/5.1.0-S202106140930" {	
+location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtime/5.1.0" {	
 	org.polarsys.kitalpha.ad.runtime.feature.source.feature.group lazy
 	org.polarsys.kitalpha.cadence.feature.source.feature.group lazy
 	org.polarsys.kitalpha.common.feature.source.feature.group lazy
@@ -94,12 +94,12 @@ location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/upd
 	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group lazy
 	org.polarsys.kitalpha.transposer.feature.source.feature.group lazy
 }
-location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/stable/sdk/5.1.0-S202106140930" {
+location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/release/sdk/5.1.0" {
 	org.polarsys.kitalpha.doc.feature.feature.group lazy
 	org.polarsys.kitalpha.emde.sdk.feature.source.feature.group lazy
 }
 
-location diffmerge-core "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/emf-diffmerge-site" {
+location diffmerge-core "https://download.eclipse.org/diffmerge/releases/0.13.1/emf-diffmerge-site" {
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.gmf.feature.source.feature.group lazy
@@ -107,7 +107,7 @@ location diffmerge-core "https://download.eclipse.org/diffmerge/stable/0.13.1-M3
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.12.1-S20210330/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/releases/1.12.1/capella" {
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 }
 
