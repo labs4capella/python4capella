@@ -81,7 +81,7 @@ location sirius "https://download.eclipse.org/sirius/updates/releases/6.3.2/2019
 	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
 }
 
-location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/stable/runtime/1.4.1.IT5-1" {	
+location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtime/1.4.1" {	
 	org.polarsys.kitalpha.ad.runtime.feature.feature.group lazy
 	org.polarsys.kitalpha.cadence.feature.feature.group lazy
 	org.polarsys.kitalpha.common.feature.feature.group lazy
@@ -108,7 +108,7 @@ location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/upd
 	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group lazy
 	org.polarsys.kitalpha.transposer.feature.feature.group lazy
 }
-location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/stable/sdk/1.4.1.IT5-1" {
+location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/release/sdk/1.4.1" {
 	org.polarsys.kitalpha.doc.feature.feature.group lazy
 	org.polarsys.kitalpha.emde.sdk.feature.feature.group lazy
 }
@@ -133,7 +133,7 @@ location diffmerge-patterns-master "https://download.eclipse.org/diffmerge/relea
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20191007/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/releases/1.11.0/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 }

@@ -86,7 +86,7 @@ location diffmerge-patterns-master "http://download.eclipse.org/diffmerge/releas
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location amalgam-1.10.1 "http://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190510/capella" {
+location amalgam-1.10.1 "http://download.eclipse.org/modeling/amalgam/updates/releases/1.10.1/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 }
