@@ -171,6 +171,7 @@ location EASE "https://download.eclipse.org/ease/release/0.7.0/" {
 	org.eclipse.ease.ui.feature.feature.group lazy
 	org.eclipse.ease.lang.python.feature.feature.group lazy
 	org.eclipse.ease.lang.python.py4j.feature.feature.group lazy
+	org.eclipse.ease.python.jython.feature.feature.group lazy
 	org.eclipse.ease.lang.jvm.feature.feature.group lazy
 	org.eclipse.ease.modules.feature.feature.group lazy
 	org.eclipse.ease.lang.unittest.feature.feature.group lazy

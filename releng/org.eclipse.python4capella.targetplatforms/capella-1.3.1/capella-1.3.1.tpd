@@ -16,7 +16,7 @@ location eclipse-releases-oxygen "http://download.eclipse.org/releases/oxygen/20
 	org.objectweb.asm lazy
 }
 
-location sirius-6.1.x "http://download.eclipse.org/sirius/updates/releases/6.1.3/oxygen" {
+location sirius-6.1.3 "http://archive.eclipse.org/sirius/updates/releases/6.1.3/oxygen" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.doc.feature.source.feature.group lazy
 	org.eclipse.sirius.runtime.feature.group lazy
@@ -133,6 +133,7 @@ location EASE "https://download.eclipse.org/ease/release/0.7.0/" {
 	org.eclipse.ease.ui.feature.feature.group lazy
 	org.eclipse.ease.lang.python.feature.feature.group lazy
 	org.eclipse.ease.lang.python.py4j.feature.feature.group lazy
+	org.eclipse.ease.python.jython.feature.feature.group lazy
 	org.eclipse.ease.lang.jvm.feature.feature.group lazy
 	org.eclipse.ease.modules.feature.feature.group lazy
 	org.eclipse.ease.lang.unittest.feature.feature.group lazy

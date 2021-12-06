@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 5.1.0 Target Platform" sequenceNumber="1635850832">
+<target name="Capella 5.1.0 Target Platform" sequenceNumber="1638789602">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -127,6 +127,7 @@
       <unit id="org.eclipse.ease.ui.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.lang.python.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.lang.python.py4j.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ease.python.jython.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.lang.jvm.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.modules.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.lang.unittest.feature.feature.group" version="0.0.0"/>
