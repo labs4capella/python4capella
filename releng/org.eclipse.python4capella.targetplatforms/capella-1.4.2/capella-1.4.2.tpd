@@ -60,7 +60,7 @@ location "https://download.eclipse.org/releases/2020-09" {
 	org.eclipse.gmf.runtime.notation lazy
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/6.3.3/2019-06/" {
+location sirius "https://archive.eclipse.org/sirius/updates/releases/6.3.3/2019-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.doc.feature.source.feature.group lazy
 	org.eclipse.sirius.runtime.feature.group lazy

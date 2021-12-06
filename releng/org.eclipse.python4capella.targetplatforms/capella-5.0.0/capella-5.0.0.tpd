@@ -67,7 +67,7 @@ location GMF-Runtime-1.13.0 "https://download.eclipse.org/modeling/gmp/gmf-runti
 }
 
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-06" {
+location sirius "https://archive.eclipse.org/sirius/updates/releases/6.4.0/2020-06" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.doc.feature.source.feature.group lazy
 	org.eclipse.sirius.runtime.source.feature.group lazy
