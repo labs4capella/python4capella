@@ -139,6 +139,11 @@ location EASE "https://download.eclipse.org/ease/release/0.7.0/" {
 	org.eclipse.ease.lang.unittest.feature.feature.group lazy
 }
 
+location "https://eclipse-ease-addons.github.io/org.eclipse.ease.engines.p2/latest" ease-engines {
+	// jython interpreter
+	org.eclipse.ease.engine.jython.feature.feature.group lazy
+}
+
 location py4j "http://eclipse.py4j.org/" {
 	org.py4j.feature.feature.group lazy
 }
