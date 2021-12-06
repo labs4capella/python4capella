@@ -1,3 +1,7 @@
+# name                 : Extract a pseudo hierarchy of PA elements to xlsx
+# script-type          : Python
+# description          : Extract a pseudo hierarchy of PA elements to xlsx
+# popup                : enableFor(org.polarsys.capella.core.data.capellacore.CapellaElement)
 '''
 This script allows to extract a pseudo-hierarchy of elements defined in Physical Architecture starting from the Node PC,
 getting the sub-NodePC and deployed BehaviorPV, from the BehaviorPV getting the sub-Behavior PV and allocated functions
@@ -30,6 +34,10 @@ if False:
     
 # include needed to read/write xlsx files
 from openpyxl import *
+from openpyxl.formatting.rule import ColorScaleRule,CellIsRule,FormulaRule
+from openpyxl.styles import Alignment, NamedStyle, Font, colors, Color, PatternFill
+from openpyxl.styles.differential import DifferentialStyle
+from openpyxl.styles.borders import Border, Side
 
 # we define a generic method to retrieve the sub-elements of any kind of element
 def getSubElements(ws, i, j, elem):
@@ -54,10 +62,15 @@ def getSubElements(ws, i, j, elem):
     # we have nothing more to do if we have a function
     return i
 
-# change this path to execute the script on your model (here is the IFE sample). 
-# comment it if you want to use the "Run configuration" instead
-aird_path = '/In-Flight Entertainment System/In-Flight Entertainment System.aird'
+# Retrieve the Element from the current selection and its aird model path
+selected_elem = CapellaElement(CapellaPlatform.getFirstSelectedElement())
+aird_path = '/'+ CapellaPlatform.getModelPath(selected_elem)
 
+'''
+# change this path to execute the script on your model (here is the IFE sample). 
+# Uncomment it if you want to use the "Run configuration" instead
+aird_path = '/In-Flight Entertainment System/In-Flight Entertainment System.aird'
+'''
 '''
 #Here is the "Run Configuration" part to uncomment if you want to use this functionality :
 
@@ -104,6 +117,33 @@ i=2
 for npc in se.get_physical_architecture().get_physical_system().get_owned_physical_components():
     if (isinstance(npc, NodePC)):
         i = getSubElements(worksheet, i, 1, npc)
+        
+bd = Side(border_style='medium')
+chosen_border = Border(left=bd, top=bd,right=bd, bottom=bd)
+chosen_alignment = Alignment(wrap_text=True,vertical='top')
+
+
+first_row = worksheet[1]
+Color_font = Font(color= colors.BLUE)
+for cell in first_row:
+    cell.font = Color_font
+          
+for row in worksheet.iter_rows():
+
+    for cell in row:
+        cell.alignment = chosen_alignment
+        cell.border = chosen_border
+        
+column_width = 17
+worksheet.column_dimensions['A'].width = column_width
+worksheet.column_dimensions['B'].width = column_width
+worksheet.column_dimensions['C'].width = column_width
+worksheet.column_dimensions['D'].width = column_width
+worksheet.column_dimensions['E'].width = column_width  
+worksheet.column_dimensions['F'].width = column_width  
+worksheet.column_dimensions['G'].width = column_width  
+worksheet.column_dimensions['H'].width = column_width
+worksheet.column_dimensions['I'].width = column_width  
         
 # Save the xlsx file
 workbook.save(xlsx_file_name)
