@@ -122,6 +122,41 @@ if False:
     from simplified_api.pvmt import *
          </pattern>
       </template>
+      <template 
+            autoinsert="true"
+            contextTypeId="org.python.pydev.editor.templates.python"
+            description="Add a transaction for a Capella model"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.model.transaction"
+            name="transaction">
+		<pattern>
+aird_path = &apos;&apos;
+
+model = CapellaModel()
+model.open(aird_path)
+
+# gets the SystemEngineering
+se = model.get_system_engineering()
+
+# start a transaction to modify the Capella model
+model.start_transaction()
+try:
+    # Do something here
+    print(se.get_name())
+	${cursor}
+except:
+    # if something went wrong we rollback the transaction
+    model.rollback_transaction()
+    raise
+else:
+    # if everything is ok we commit the transaction
+    model.commit_transaction()
+
+# save the Capella model
+
+model.save()
+         </pattern>
+      </template>
       <template
             autoinsert="false"
             contextTypeId="org.python.pydev.editor.templates.python.modules"
