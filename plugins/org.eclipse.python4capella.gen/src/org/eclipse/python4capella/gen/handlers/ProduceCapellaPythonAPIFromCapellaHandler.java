@@ -234,14 +234,14 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		res.append("class " + cls.getName() + "(" + superClassNames + "):" + NL);
 		res.append(getDocumentation(cls, false));
 		final String initCursomization = getClassCustomization(cls.getName() + ".__init__", null);
-		if (!initCursomization.isBlank()) {
+		if (!initCursomization.trim().isEmpty()) {
 			res.append(initCursomization);
 		} else {
 			res.append(generateClassInit(cls));
 		}
 		for (Feature feature : cls.getOwnedFeatures()) {
 			final String featureCustomization = getClassCustomization(cls.getName() + "." + feature.getName(), feature);
-			if (!featureCustomization.isBlank()) {
+			if (!featureCustomization.trim().isEmpty()) {
 				res.append(featureCustomization);
 			} else {
 				final String generatedQuery = generateQuery(cls, feature);
@@ -563,7 +563,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				final List<String> lines = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines()
 						.collect(Collectors.toList());
 				for (String line : lines) {
-					if (!line.isBlank()) {
+					if (!line.trim().isEmpty()) {
 						res.append(line + NL);
 						if (line.trim().startsWith("def ")) {
 							res.append(getDocumentation(element, line.trim().startsWith("def set_")));

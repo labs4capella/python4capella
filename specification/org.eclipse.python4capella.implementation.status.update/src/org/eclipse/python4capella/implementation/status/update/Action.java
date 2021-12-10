@@ -99,7 +99,7 @@ public class Action implements IObjectActionDelegate {
 				NodeList list = doc.getElementsByTagName("testcase");
 
 				for (int i = 0; i < list.getLength(); i++) {
-					System.out.println(" - Analyzing Node " + i + "/" + list.getLength());
+					System.out.println(" - Analyzing Node " + (i + 1) + "/" + list.getLength());
 					Node node = list.item(i);
 					if (node.getNodeType() == Node.ELEMENT_NODE) {
 						Element element = (Element) node;

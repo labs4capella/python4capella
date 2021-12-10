@@ -25,7 +25,7 @@ class RequirementAddOn(JavaObject):
     @staticmethod
     def get_requirement_modules(capellaElement):
         """
-        status: OK
+        status: KO
         """
         #: :type capellaElement: CapellaElement
         res = []
@@ -38,7 +38,7 @@ class RequirementAddOn(JavaObject):
     @staticmethod
     def get_incoming_requirements(capellaElement):
         """
-        status: KO
+        status: OK
         """
         res = []
         #: :type capellaElement: CapellaElement
@@ -54,7 +54,7 @@ class RequirementAddOn(JavaObject):
     @staticmethod
     def get_outgoing_requirements(capellaElement):
         """
-        status: KO
+        status: OK
         """
         res = []
         #: :type capellaElement: CapellaElement
