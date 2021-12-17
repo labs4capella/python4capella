@@ -61,6 +61,10 @@ More in details, the solution supports:
 
 Python4Capella relies on a simplified metamodel in order to ease the definition of scripts by end-users.
 
+What are the concepts of interest and their relations ? To which elements from which types can I access from a given element ?
+Data packages with classes (for instance 'LogicalArchitecture) and their relations are defined. 
+Class Diagram Blanks can be displayed : [CDB] LogicalArchitecture to have information with concepts/classes related for example to the class 'Logical Architecture.
+
 This simplified metamodel is defined in a Capella model (**using Capella 5.0.0**).
 
 Please have a look in the documentation tab of the model to know more about its content.
@@ -74,6 +78,12 @@ PS: the Capella model can be retrieved by cloning the git repository, or by down
 For this last option, you need to go this the main page (https://github.com/labs4capella/python4capella) and select Code / Download ZIP
 
 ![Python4Capella Download](./README/python4capella_download.jpg)
+
+This conceptual metamodel is used to generate
+- Python API code
+- Metamodel documentation (including the implementation status)
+- Some tests and document the test relsults
+![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Generations_from_metamodel.png)
 
 # Installation
 
