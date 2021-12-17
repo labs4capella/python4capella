@@ -64,7 +64,6 @@ Python4Capella relies on a simplified metamodel in order to ease the definition 
 What are the concepts of interest and their relations ? To which elements from which types can I access from a given element ?
 
 Data packages with classes (for instance 'LogicalArchitecture') and their relations are defined. 
-
 Class Diagram Blanks can be displayed : [CDB] LogicalArchitecture to have information with concepts/classes related for example to the class 'Logical Architecture.
 
 This simplified metamodel is defined in a Capella model (**using Capella 5.0.0**).
