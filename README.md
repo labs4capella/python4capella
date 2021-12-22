@@ -85,7 +85,7 @@ This conceptual metamodel is used to generate
 - Metamodel documentation (including the implementation status)
 - Some tests and document the test results
 
-![Generations from conceptual metamodel](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Generations_from_metamodel.png)
+![Generations from conceptual metamodel](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Generations_from_metamodel.PNG)
 
 # Installation
 
