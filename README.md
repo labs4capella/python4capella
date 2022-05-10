@@ -92,15 +92,13 @@ This conceptual metamodel is used to generate
 You can install Python4Capella in your Capella thanks to an update site.
 Then you will need to setup Python 3.7 in your environment.
 
-You will need to add the update site to your Capella installation, you can see available releases [here](https://github.com/labs4capella/python4capella/releases).
+1) You need to download the zip file from the available releases [here](https://github.com/labs4capella/python4capella/releases). You don’t need to decompress it
+2) On the installation dialog, click the “Add…” button at the top to add an update site.
+3) Select the “Archive…” button and select the zip file: ‘org.eclipse.python4capella.update.zip’
+![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install.png)
+4) Click the next button and complete the installation by clicking the finish button.
 
 If you don't know how to install from an update site you can have a look at our [video](https://www.youtube.com/watch?v=qYTrO7THer0).
-
-Then select the Python4Capella feature:
-
-![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install.png)
-
-Click the next button and complete the installation by clicking the finish button.
 
 ## Python 3.7 installation
 
