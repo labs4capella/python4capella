@@ -11,6 +11,17 @@ class PVMT(JavaObject):
         """
         JavaObject.__init__(self, java_object)
     @staticmethod
+    def get_p_v(elem):
+        """
+        status: OK
+        """
+        #: :type elem: CapellaElement
+        res = []
+        for group in elem.get_java_object().getOwnedPropertyValueGroups():
+            for pv in group.getOwnedPropertyValues():
+                res.append(pv)
+        return res
+    @staticmethod
     def get_p_v_names(elem):
         """
         status: OK
@@ -37,6 +48,11 @@ class PVMT(JavaObject):
                 if PVName == pv.getName():
                     if pv.eClass().getName() == "BooleanPropertyValue":
                         return str(pv.isValue())
+                    elif pv.eClass().getName() == "EnumerationPropertyValue":
+                        if pv.getValue() is not None:
+                            return pv.getValue().getName()
+                        else:
+                            return None
                     else:
                         return str(pv.getValue())
         return None
