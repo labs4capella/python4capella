@@ -5,7 +5,7 @@
 
 '''
 Author: Jean GODOT - ALL4TEC
-Version: 20220425
+Version: 20220722
 
 This script loads the Capella model passed as first argument and add the name of the functional exchange or component exchange or physical link to the name of the related ports
 from Tools.scripts.ndiff import fopen
