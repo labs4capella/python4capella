@@ -5,7 +5,7 @@
 
 '''
 Author: Jean GODOT - ALL4TEC
-Version: 20220425
+Version: 20220722
 
 This script loads the Capella model passed as first argument and add the name of the functional exchange or component exchange or physical link to the name of the related ports
 from Tools.scripts.ndiff import fopen
@@ -84,31 +84,33 @@ try:
         fe_name = fe.get_name()
         # get the source port
         fe_sp = fe.get_source_port()
-        # get the current name of the source port
-        name_sp = fe_sp.get_label()
-        # check if the name of the source port has already been changed
-        # Does it contain "FOP" and is it smaller than 7 characters "FOP xx -" (considering that xx will never be greater than 99) ?
-        if (name_sp[:len(DEFAULT_FUNCTION_SOURCE_PORT_NAME)] == DEFAULT_FUNCTION_SOURCE_PORT_NAME) and (len(name_sp) < 7):
-            # prepare the new name
-            new_name_sp = name_sp + ' - ' + fe_name
-            # set the new name to the source port
-            fe_sp.set_name(new_name_sp)
-            print("Rename: " + new_name_sp)
-            nb_renamed_ports = nb_renamed_ports + 1
+        if fe_sp != None :
+            # get the current name of the source port
+            name_sp = fe_sp.get_label()
+            # check if the name of the source port has already been changed
+            # Does it contain "FOP" and is it smaller than 7 characters "FOP xx -" (considering that xx will never be greater than 99) ?
+            if (name_sp[:len(DEFAULT_FUNCTION_SOURCE_PORT_NAME)] == DEFAULT_FUNCTION_SOURCE_PORT_NAME) and (len(name_sp) < 7):
+                # prepare the new name
+                new_name_sp = name_sp + ' - ' + fe_name
+                # set the new name to the source port
+                fe_sp.set_name(new_name_sp)
+                print("Rename: " + new_name_sp)
+                nb_renamed_ports = nb_renamed_ports + 1
         
         # get the target port
         fe_tp = fe.get_target_port()
-        # get the current name of the target port
-        name_tp = fe_tp.get_label()
-        # check if the name of the target port has already been changed
-        # Does it contain "FIP" and is it smaller than 7 characters "FIP xx -" (considering that xx will never be greater than 99) ?
-        if (name_tp[:len(DEFAULT_FUNCTION_TARGET_PORT_NAME)] == DEFAULT_FUNCTION_TARGET_PORT_NAME) and (len(name_tp) < 7):
-            # prepare the new name
-            new_name_tp = name_tp + ' - ' + fe_name
-            # set the new name to the source port
-            fe_tp.set_name(new_name_tp)
-            print("Rename: " + new_name_tp)
-            nb_renamed_ports = nb_renamed_ports + 1
+        if fe_tp != None :
+            # get the current name of the target port
+            name_tp = fe_tp.get_label()
+            # check if the name of the target port has already been changed
+            # Does it contain "FIP" and is it smaller than 7 characters "FIP xx -" (considering that xx will never be greater than 99) ?
+            if (name_tp[:len(DEFAULT_FUNCTION_TARGET_PORT_NAME)] == DEFAULT_FUNCTION_TARGET_PORT_NAME) and (len(name_tp) < 7):
+                # prepare the new name
+                new_name_tp = name_tp + ' - ' + fe_name
+                # set the new name to the source port
+                fe_tp.set_name(new_name_tp)
+                print("Rename: " + new_name_tp)
+                nb_renamed_ports = nb_renamed_ports + 1
     print("Number of renamed ports :", nb_renamed_ports)
     print("\n")
     nb_renamed_ports = 0
