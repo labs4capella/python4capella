@@ -242,10 +242,10 @@ class EObject(JavaObject):
         """
         """
         return available_query_names(self)
-    def get_query_result(self, name):
+    def get_query_result(self, name, cls = None):
         """
         """
-        return capella_query_by_name(self, name)
+        return capella_query_by_name(self, name, cls)
 
 class CapellaElement(EObject):
     """
