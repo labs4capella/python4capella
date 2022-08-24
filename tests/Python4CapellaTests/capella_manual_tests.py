@@ -37,7 +37,9 @@ class capella_manual_tests(unittest.TestCase):
         pass
 
     def test_LogicalSystem_get_class(self):
+        la = LogicalArchitecture()
         lc_pkg = LogicalComponentPkg()
+        la.get_java_object().setOwnedLogicalComponentPkg(lc_pkg.get_java_object())
         lc = LogicalComponent()
         lc_pkg.get_owned_logical_components().add(lc)
         self.assertEqual(LogicalSystem, EObject.get_class(lc.get_java_object()))
@@ -109,7 +111,9 @@ class capella_manual_tests(unittest.TestCase):
         pass
 
     def test_PhysicalSystem_get_class(self):
+        pa = PhysicalArchitecture();
         pc_pkg = PhysicalComponentPkg()
+        pa.get_java_object().setOwnedPhysicalComponentPkg(pc_pkg.get_java_object())
         pc = PhysicalComponent()
         pc_pkg.get_owned_physical_components().add(pc)
         self.assertEqual(PhysicalSystem, EObject.get_class(pc.get_java_object()))

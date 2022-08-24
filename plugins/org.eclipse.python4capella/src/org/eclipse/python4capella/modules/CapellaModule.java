@@ -32,6 +32,7 @@ import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.capellacommon.CapellacommonPackage;
 import org.polarsys.capella.core.data.capellamodeller.Project;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
+import org.polarsys.capella.core.data.cs.BlockArchitecture;
 import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.ComponentPkg;
 import org.polarsys.capella.core.libraries.model.CapellaModel;
@@ -154,7 +155,8 @@ public class CapellaModule {
 		if (object instanceof Component) {
 			final Component component = (Component) object;
 			if (!component.isActor()) {
-				if (component.eContainer() instanceof ComponentPkg) {
+				if (component.eContainer() instanceof ComponentPkg
+						&& component.eContainer().eContainer() instanceof BlockArchitecture) {
 					final Object eGetValue = component.eContainer().eGet(component.eContainingFeature());
 					if (eGetValue instanceof List) {
 						@SuppressWarnings("unchecked")
