@@ -2704,13 +2704,11 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_exchange_mechanism(self, value):
         """
         """
-        return self.get_java_object().setExchangeMechanism(value.get_java_object())
+        return self.get_java_object().setExchangeMechanism(get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeMechanism", value))
     def get_owned_elements(self):
         """
         """
