@@ -66,10 +66,10 @@ jobs:
 
     - name: Build with Maven (${{ matrix.profile }})
       env:
-        MAVEN_OPTS: -XX:MaxPermSize=512m -Xmx2048m -Xms1024m
-      uses: GabrielBB/xvfb-action@v1
+        MAVEN_OPTS: ${{ matrix.mavenOpt }}
+      uses: GabrielBB/xvfb-action@v1.6
       with:
-        run: mvn clean verify -fae -P${{ matrix.profile }}
+        run: mvn clean verify -fae -P${{ matrix.profile }} "-Dtycho=${{ matrix.tycho }}"
 
     - name: Prepare deploy local directory
       id: prepare_deploy
