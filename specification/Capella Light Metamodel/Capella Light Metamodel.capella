@@ -21819,7 +21819,11 @@
               </ownedConstraints>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="d28e6b9f-65e2-45f2-a52c-b6a860047e71" name="DataType" abstract="true"/>
+                id="d28e6b9f-65e2-45f2-a52c-b6a860047e71" name="DataType" abstract="true">
+              <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
+                  id="de424b05-23af-4f49-bc3d-2978ec8d2a00" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
+                  sub="#d28e6b9f-65e2-45f2-a52c-b6a860047e71"/>
+            </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="a07b37c6-4954-4867-8d53-841c325d041c" name="Class">
               <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"

@@ -3472,7 +3472,7 @@ class DataPkg(JavaObject):
         else:
             JavaObject.__init__(self, java_object)
 
-class DataType(JavaObject):
+class DataType(CapellaElement):
     """
     """
     def __init__(self, java_object = None):
