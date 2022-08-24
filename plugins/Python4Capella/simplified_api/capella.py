@@ -406,7 +406,10 @@ class PropertyValue(CapellaElement):
     def get_value(self):
         """
         """
-        return self.get_java_object().getValue()
+        if self.java_object.eClass().getName() == "BooleanPropertyValue":
+            return self.get_java_object().isValue()
+        else:
+            return self.get_java_object().getValue()
     def set_value(self, value):
         """
         """

@@ -1,0 +1,8 @@
+    def get_value(self):
+        if self.java_object.eClass().getName() == "BooleanPropertyValue":
+            return self.get_java_object().isValue()
+        else:
+            return self.get_java_object().getValue()
+    def set_value(self, value):
+        self.get_java_object().setValue(value)
+
