@@ -1,5 +1,5 @@
 /**
- *   Copyright (c) 2021 THALES GLOBAL SERVICES
+ *   Copyright (c) 2021, 2022 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -77,9 +77,10 @@ public class Python4CapellaCommandLine extends DefaultCommandLine {
 
 				try {
 					System.out.println("Executing " + scriptPath + " with arguments: " + Arrays.deepToString(argv));
-					final ScriptResult scriptResult = engine.executeSync(script);
+					final ScriptResult scriptResult = engine.execute(script);
+					engine.schedule();
 
-					final Object result = scriptResult.getResult();
+					final Object result = scriptResult.get();
 					if (result != null) {
 						if (ScriptResult.VOID.equals(result)) {
 							return true;
@@ -92,7 +93,7 @@ public class Python4CapellaCommandLine extends DefaultCommandLine {
 						}
 
 						try {
-							return new Double(Double.parseDouble(result.toString())).intValue() == 0;
+							return Double.valueOf(result.toString()).intValue() == 0;
 						} catch (final Exception e) {
 							// no double
 						}

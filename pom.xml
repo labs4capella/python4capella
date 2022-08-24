@@ -11,6 +11,7 @@
 
   <modules>
     <!-- Capella -->
+    <module>releng/org.eclipse.python4capella.targetplatforms/capella-6.0.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-5.1.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-5.0.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-1.4.2</module>
@@ -26,8 +27,8 @@
   </modules>
 
   <properties>
-    <tycho-version>1.7.0</tycho-version>
-    <tycho-extras-version>1.7.0</tycho-extras-version>
+    <tycho-version>${tycho}</tycho-version>
+    <tycho-extras-version>${tycho}</tycho-extras-version>
     <resource-encoding>UTF-8</resource-encoding>
     <maven-resources-version>2.6</maven-resources-version>
     <antrun-version>1.7</antrun-version>
@@ -245,6 +246,33 @@
     </profile>
 
     <!-- Capella -->
+    <profile>
+      <id>platform-capella-6.0.0</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <property>
+          <name>platform-version-name</name>
+          <value>capella-6.0.0</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <configuration>
+              <target>
+                <artifact>
+                  <groupId>org.eclipse.python4capella</groupId>
+                  <artifactId>capella-6.0.0</artifactId>
+                  <version>1.0.1-SNAPSHOT</version>
+                </artifact>
+              </target>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>platform-capella-5.1.0</id>
       <activation>
