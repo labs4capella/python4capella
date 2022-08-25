@@ -1516,13 +1516,7 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
     def get_owned_logical_component_pkgs(self):
         """
         """
-        value =  self.get_java_object().getOwnedLogicalComponentPkgs()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+        return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
     def get_owned_logical_system(self):
         """
         """

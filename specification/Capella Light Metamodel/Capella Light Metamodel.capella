@@ -9779,9 +9779,9 @@
                   abstractType="#d511de9e-4401-41b4-951e-8609bd3f305b" aggregationKind="COMPOSITION"
                   isReadOnly="true">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
-                    id="9cd7f8c9-ef71-4caf-a1ca-f1e0bc578199" value="1"/>
+                    id="178bf547-6eab-49aa-b727-627a5d0ba98f" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
-                    id="2d798117-ab39-40c8-b9f8-df9dbd835b3c" value="1"/>
+                    id="8560f0fa-6d25-461c-9cee-d25b3d24faee" name="" value="*"/>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="7c6647a1-e444-49c1-9b33-fb9b46c04fb3" name="ownedLogicalSystem"
