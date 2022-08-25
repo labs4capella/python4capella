@@ -2215,23 +2215,31 @@ class SequenceMessage(CapellaElement):
     def get_sending_instance_role(self):
         """
         """
-        value =  self.get_java_object().getSendingInstanceRole()
-        if value is None:
-            return value
+        part =  self.get_java_object().getSendingPart()
+        if part is None:
+            return part
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            value = part.getType()
+            if value is None:
+                return value
+            else:
+                e_object_class = getattr(sys.modules["__main__"], "EObject")
+                specific_cls = e_object_class.get_class(value)
+                return specific_cls(value)
     def get_receiving_instance_role(self):
         """
         """
-        value =  self.get_java_object().getReceivingInstanceRole()
-        if value is None:
-            return value
+        part =  self.get_java_object().getReceivingPart()
+        if part is None:
+            return part
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            value = part.getType()
+            if value is None:
+                return value
+            else:
+                e_object_class = getattr(sys.modules["__main__"], "EObject")
+                specific_cls = e_object_class.get_class(value)
+                return specific_cls(value)
     def get_invoked_exchange(self):
         """
         """
