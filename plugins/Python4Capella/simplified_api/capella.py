@@ -158,6 +158,8 @@ class EObject(JavaObject):
             res = PropertyValue
         if res == None and e_object.eClass().getName() in ["ChoicePseudoState", "DeepHistoryPseudoState", "EntryPointPseudoState", "ExitPointPseudoState", "ForkPseudoState", "InitialPseudoState", "JoinPseudoState", "ShallowHistoryPseudoState", "TerminatePseudoState", "FinalState"]:
             res = Pseudostate
+        if res == None and e_object.eClass().getName() == "Exception":
+            res = CapellaException
         return res
     @staticmethod
     def copy_e_object(e_object):
@@ -3840,7 +3842,7 @@ class Operation(JavaObject):
     def get_thrown_exceptions(self):
         """
         """
-        return create_e_list(self.get_java_object().getThrownExceptions(), Exception)
+        return create_e_list(self.get_java_object().getThrownExceptions(), CapellaException)
 
 class Parameter(JavaObject):
     """
@@ -3853,13 +3855,13 @@ class Parameter(JavaObject):
         else:
             JavaObject.__init__(self, java_object)
 
-class Exception(JavaObject):
+class CapellaException(JavaObject):
     """
     """
     def __init__(self, java_object = None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception"))
-        elif isinstance(java_object, Exception):
+        elif isinstance(java_object, CapellaException):
             JavaObject.__init__(self, java_object.get_java_object())
         else:
             JavaObject.__init__(self, java_object)
@@ -3888,11 +3890,11 @@ class Exception(JavaObject):
     def get_super(self):
         """
         """
-        return create_e_list(self.get_java_object().getSuper(), Exception)
+        return create_e_list(self.get_java_object().getSuper(), CapellaException)
     def get_sub(self):
         """
         """
-        return create_e_list(self.get_java_object().getSub(), Exception)
+        return create_e_list(self.get_java_object().getSub(), CapellaException)
 
 class PrimitiveDataType(PropertyValuePkgContainer, DataType):
     """

@@ -1,0 +1,8 @@
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception"))
+        elif isinstance(java_object, CapellaException):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)
+

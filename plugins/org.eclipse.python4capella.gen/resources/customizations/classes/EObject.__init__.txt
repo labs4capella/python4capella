@@ -58,6 +58,9 @@
         if res == None and e_object.eClass().getName() in ["ChoicePseudoState", "DeepHistoryPseudoState", "EntryPointPseudoState", "ExitPointPseudoState", "ForkPseudoState", "InitialPseudoState", "JoinPseudoState", "ShallowHistoryPseudoState", "TerminatePseudoState", "FinalState"]:
             res = Pseudostate
 
+        if res == None and e_object.eClass().getName() == "Exception":
+            res = CapellaException
+
         return res
     @staticmethod
     def copy_e_object(e_object):

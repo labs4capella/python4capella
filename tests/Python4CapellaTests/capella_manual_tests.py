@@ -647,3 +647,7 @@ class capella_manual_tests(unittest.TestCase):
         copied = EObject.copy_all_e_objects(to_copy)
         self.assertEqual(copied[1], copied[0].get_source_port())
         
+    def test_CapellaException_get_class(self):
+        e = CapellaException()
+        self.assertEqual(CapellaException, EObject.get_class(e.get_java_object()))
+        pass

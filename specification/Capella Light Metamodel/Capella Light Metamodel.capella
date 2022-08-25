@@ -22280,7 +22280,7 @@
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="c86d97b6-4621-4ee7-bfea-2251a96b13a9" name="Parameter"/>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="85479e43-1868-40af-96d1-02f4e23c79f4" name="Exception">
+                id="85479e43-1868-40af-96d1-02f4e23c79f4" name="CapellaException">
               <ownedConstraints xsi:type="org.polarsys.capella.core.data.capellacore:Constraint"
                   id="dd3c763c-d305-4d08-9a55-e7827ebb87fc" name="Note: Technical metamodel contains more information about Exception, but this element is barely implemented in Capella (not even displayable in diagrams...)"
                   constrainedElements="#85479e43-1868-40af-96d1-02f4e23c79f4">
@@ -22314,6 +22314,11 @@
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="23b7b054-5af6-48a7-af1f-1439e9447c67" name="visibility_setter"
                     value="KO"/>
+              </ownedPropertyValueGroups>
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="adf906f3-5f1f-4d72-8b65-aaf60c111ef1" name="Technical.Mapping">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="67612614-03df-4996-87aa-ddb9f7076934" name="name" value="Exception"/>
               </ownedPropertyValueGroups>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="29d28ed3-8ca1-4704-b96b-e9e5f990eadc" name="abstract" abstractType="#58144e7b-e746-4a45-a846-f6b14d28cd98">
