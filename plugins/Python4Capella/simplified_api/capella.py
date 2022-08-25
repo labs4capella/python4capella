@@ -2482,7 +2482,12 @@ class PhysicalLink(AbstractPhysicalArtifact):
     def get_connected_physical_ports(self):
         """
         """
-        return create_e_list(self.get_java_object().getConnectedPhysicalPorts(), PhysicalPort)
+        res = []
+        if self.get_java_object().getSourcePhysicalPort() is not None:
+            res.append(PhysicalPort(self.get_java_object().getSourcePhysicalPort()))
+        if self.get_java_object().getTargetPhysicalPort() is not None:
+            res.append(PhysicalPort(self.get_java_object().getTargetPhysicalPort()))
+        return res
     def get_categories(self):
         """
         """

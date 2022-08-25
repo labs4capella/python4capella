@@ -1,0 +1,8 @@
+    def get_connected_physical_ports(self):
+        res = []
+        if self.get_java_object().getSourcePhysicalPort() is not None:
+            res.append(PhysicalPort(self.get_java_object().getSourcePhysicalPort()))
+        if self.get_java_object().getTargetPhysicalPort() is not None:
+            res.append(PhysicalPort(self.get_java_object().getTargetPhysicalPort()))
+        return res
+
