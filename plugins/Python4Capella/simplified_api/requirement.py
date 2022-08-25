@@ -161,6 +161,14 @@ class Requirement(EObject):
         """
         """
         self.get_java_object().setReqIFChapterName(value)
+    def get_description(self):
+        """
+        """
+        return self.get_java_object().getReqIFDescription()
+    def set_description(self, value):
+        """
+        """
+        self.get_java_object().setReqIFDescription(value)
     def get_prefix(self):
         """
         """
@@ -181,12 +189,24 @@ class Requirement(EObject):
         """
         status: KO
         """
-        raise AttributeError("TODO")
+        res = []
+        for child in self.get_java_object().eContents():
+             specific_cls_name = child.eClass().getName()
+             if (specific_cls_name == "StringValueAttribute") or \
+                (specific_cls_name == "IntegerValueAttribute") or \
+                (specific_cls_name == "EnumerationValueAttribute") or \
+                (specific_cls_name == "BooleanValueAttribute") or \
+                (specific_cls_name == "RealValueAttribute"):
+                 res.append(Attribute(child))
+        return res
     def get_attribute(self, attributeName):
         """
         status: KO
         """
-        raise AttributeError("TODO")
+        for attr in self.get_all_attributes():
+            if attributeName == attr.get_definition().getReqIFLongName():
+                return attr
+        return None
     def set_attribute(self, attributeName, value):
         """
         status: KO
@@ -221,6 +241,11 @@ class Requirement(EObject):
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
         return res
+    def get_owned_relations(self):
+        """
+        """
+        return create_e_list(self.java_object.getOwnedRelations(), AbstractRelation)
+
 
 class Folder(Requirement):
     """
@@ -239,4 +264,155 @@ class Folder(Requirement):
         """
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
 
+class Attribute(EObject):
+    """
+    """
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Attribute"))
+        elif isinstance(java_object, Attribute):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)
+    
+    def get_definition(self):
+        """
+        """
+        return self.get_java_object().getDefinition()
+    
+    def get_value(self):
+        """
+        """
+        return self.get_java_object().getValue()
+    
+class ReqIFElement(EObject):
+    """
+    """
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "ReqIFElement"))
+        elif isinstance(java_object, ReqIFElement):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)
+            
 
+class AbstractRelation(ReqIFElement):
+    """
+    """
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            raise ValueError("No matching EClass for this type")
+        elif isinstance(java_object, AbstractRelation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)
+            
+    def get_relation_type(self):
+        """
+        """
+        return RelationType(self.get_java_object().getRelationType())
+    def set_relation_type(self, value):
+        """
+        """
+        self.get_java_object().setRelationType(value.get_java_object())
+
+class CapellaIncomingRelation(AbstractRelation):
+    """
+    """
+    def __init__(self, java_object = None):
+        if java_object is None:
+           JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation"))
+        elif isinstance(java_object, CapellaIncomingRelation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)  
+    def set_source(self, value):
+        """
+        """
+        self.get_java_object().setSource(value.get_java_object())
+    def set_target(self, value):
+        """
+        """
+        self.get_java_object().setTarget(value.get_java_object())
+        
+
+class CapellaOutgoingRelation(AbstractRelation):
+    """
+    """
+    def __init__(self, java_object = None):
+        if java_object is None:
+           JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation"))
+        elif isinstance(java_object, CapellaOutgoingRelation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)  
+    def set_source(self, value):
+        """
+        """
+        self.get_java_object().setSource(value.get_java_object())
+    def set_target(self, value):
+        """
+        """
+        self.get_java_object().setTarget(value.get_java_object())
+
+
+class AbstractType(CapellaElement):
+    """
+    """
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "AbstractType"))
+        elif isinstance(java_object, AbstractType):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)
+    
+class RelationType(AbstractType):
+    """
+    """
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "RelationType"))
+        elif isinstance(java_object, RelationType):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)
+
+    @staticmethod
+    def get_relation_types(architecture):
+        """
+        """
+        res = []
+        for fld in architecture.get_java_object().eContents():
+            if fld.eClass().getName() == "CapellaTypesFolder":
+                for rel in fld.eContents():
+                    if rel.eClass().getName() == "RelationType":
+                        res.append(RelationType(rel))
+        
+        return res
+    
+    @staticmethod
+    def get_relation_type_by_name(architecture, name):
+        """
+        """
+        for rel in RelationType.get_relation_types(architecture):
+            if rel.get_name() == name:
+                return rel
+        return None
+    
+    def get_name(self):
+        """
+        """
+        return self.get_java_object().getReqIFLongName()
+        
