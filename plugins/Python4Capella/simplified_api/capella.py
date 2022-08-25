@@ -3497,6 +3497,14 @@ class DataPkg(JavaObject):
             JavaObject.__init__(self, java_object.get_java_object())
         else:
             JavaObject.__init__(self, java_object)
+    def get_owned_classes(self):
+        """
+        """
+        return create_e_list(self.get_java_object().getOwnedClasses(), Class)
+    def get_owned_data_pkgs(self):
+        """
+        """
+        return create_e_list(self.get_java_object().getOwnedDataPkgs(), DataPkg)
 
 class DataType(CapellaElement):
     """
@@ -3859,6 +3867,8 @@ class CapellaException(JavaObject):
     """
     """
     def __init__(self, java_object = None):
+        """
+        """
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception"))
         elif isinstance(java_object, CapellaException):
