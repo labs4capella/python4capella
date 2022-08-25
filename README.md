@@ -135,12 +135,23 @@ You now have the following Python4Capella project in your workspace:
 Now you need to reference your Python 3.7 interpreter:
 
 Select the Window > Preferences menu
+
+![Preference menu](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/preference_menu.png)
+
 - select the PyDev / Interpreters / Python Interpreter
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the New button
+
+  ![PyDev interpreter](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/PyDev_interpreter.png)
+
 - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
   - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the Browse button
+
+  ![EASE Python interpreter](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/EASE_interpreter.png)
+
 - select the Scripting / Script Locations
   - add /Python4Capella/sample_scripts by clicking the Add Workspace button
+
+  ![Select script location](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/EASE_script_location.png)
 
 You can click the Apply and close button to finish your setup.
 
