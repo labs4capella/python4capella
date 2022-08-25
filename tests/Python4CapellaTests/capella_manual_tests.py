@@ -630,3 +630,20 @@ class capella_manual_tests(unittest.TestCase):
         model = CapellaModel()
         model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
         self.assertEqual("DRAFT", model.get_progress_status())
+
+    def test_EObject_copy_e_object(self):
+        lc = LogicalComponent()
+        lc.set_name("LC1")
+        lc_copy = EObject.copy_e_object(lc)
+        self.assertEqual("LC1", lc_copy.get_name())
+        
+    def test_EObject_copy_all_e_objects(self):
+        fe = FunctionalExchange()
+        fp = FunctionOutputPort()
+        fe.set_source_port(fp)
+        to_copy = []
+        to_copy.append(fe)
+        to_copy.append(fp)
+        copied = EObject.copy_all_e_objects(to_copy)
+        self.assertEqual(copied[1], copied[0].get_source_port())
+        

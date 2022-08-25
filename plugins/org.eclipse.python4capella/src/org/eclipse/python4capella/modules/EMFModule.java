@@ -1,5 +1,5 @@
 /**
- *   Copyright (c) 2021 THALES GLOBAL SERVICES
+ *   Copyright (c) 2021, 2022 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -134,6 +134,16 @@ public class EMFModule {
 	@WrapToScript
 	public List<EObject> eInverse(EObject eObj, String referenceName) {
 		return new ArrayList<EObject>(new EObjectQuery(eObj).getInverseReferences(referenceName));
+	}
+
+	@WrapToScript
+	public EObject copy(EObject eObj) {
+		return EcoreUtil.copy(eObj);
+	}
+
+	@WrapToScript
+	public List<EObject> copyAll(List<EObject> eObjects) {
+		return new ArrayList<>(EcoreUtil.copyAll(eObjects));
 	}
 
 }

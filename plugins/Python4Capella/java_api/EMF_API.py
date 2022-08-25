@@ -32,3 +32,11 @@ def get_enum_literal(ns_uri, enum_name, literal_name):
 def e_inverse(e_obj, reference_name):
     """Gets the List of object referencing the given EObject via an EReference with the given name"""
     return eInverse(e_obj, reference_name)
+
+def copy_e_object(e_obj):
+    """Copies the given EObject"""
+    return copy(e_obj)
+
+def copy_all_e_objects(e_objs):
+    """Copies all given EObject"""
+    return copyAll(e_objs)
