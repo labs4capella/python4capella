@@ -1724,13 +1724,11 @@ class PhysicalComponent(AbstractPhysicalArtifact):
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value):
         """
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentKind", value))
     def get_owned_physical_components(self):
         """
         """

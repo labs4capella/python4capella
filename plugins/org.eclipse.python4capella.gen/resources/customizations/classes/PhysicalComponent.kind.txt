@@ -1,0 +1,9 @@
+    def get_kind(self):
+        value =  self.get_java_object().getKind()
+        if value is None:
+            return value
+        else:
+            return value.getName()
+    def set_kind(self, value):
+        self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentKind", value))
+
