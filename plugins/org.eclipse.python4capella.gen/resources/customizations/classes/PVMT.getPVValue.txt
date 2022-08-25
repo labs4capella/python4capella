@@ -5,6 +5,11 @@
                 if PVName == pv.getName():
                     if pv.eClass().getName() == "BooleanPropertyValue":
                         return str(pv.isValue())
+                    elif pv.eClass().getName() == "EnumerationPropertyValue":
+                        if pv.getValue() is not None:
+                            return pv.getValue().getName()
+                        else:
+                            return None
                     else:
                         return str(pv.getValue())
         return None
