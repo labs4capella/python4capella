@@ -1927,15 +1927,15 @@ class State(AbstractState):
     def get_entry(self):
         """
         """
-        return create_e_list(self.get_java_object().getEntry(), AbstractAction)
+        return create_e_list(self.get_java_object().getEntry(), AbstractEvent)
     def get_do(self):
         """
         """
-        return create_e_list(self.get_java_object().getDo(), AbstractAction)
+        return create_e_list(self.get_java_object().getDoActivity(), AbstractEvent)
     def get_exit(self):
         """
         """
-        return create_e_list(self.get_java_object().getExit(), AbstractAction)
+        return create_e_list(self.get_java_object().getExit(), AbstractEvent)
     def get_available_functional_chains(self):
         """
         """
