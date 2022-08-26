@@ -542,7 +542,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	private List<EPackage> initEPackages() {
 		final List<EPackage> res = new ArrayList<>();
 
-		for (Object obj : new ArrayList(EPackage.Registry.INSTANCE.values())) {
+		for (Object obj : new ArrayList<>(EPackage.Registry.INSTANCE.values())) {
 			if (obj instanceof EPackage.Descriptor && isEPackageOfInterest(((EPackage.Descriptor) obj).getEPackage())) {
 				res.add(((EPackage.Descriptor) obj).getEPackage());
 			} else if (obj instanceof EPackage && isEPackageOfInterest((EPackage) obj)) {

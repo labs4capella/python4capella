@@ -19,12 +19,12 @@ class JavaIterator(JavaObject):
     def __init__(self, java_object, cls):
         JavaObject.__init__(self, java_object)
         self.cls = cls;
+        self.e_object_class = getattr(sys.modules["__main__"], "EObject")
     def next(self):
         """Gets the next element"""
         if iteratorHasNext(self.get_java_object()):
             next = iteratorNext(self.get_java_object())
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(next)
+            specific_cls = self.e_object_class.get_class(next)
             return specific_cls(next)
         else:
             raise StopIteration
@@ -36,6 +36,7 @@ class JavaList(JavaObject):
     def __init__(self, java_object, cls):
         JavaObject.__init__(self, java_object)
         self.cls = cls;
+        self.e_object_class = getattr(sys.modules["__main__"], "EObject")
     def __iter__(self):
         return JavaIterator(self.get_java_object().iterator(), self.cls)
     def add(self, obj):
@@ -77,8 +78,7 @@ class JavaList(JavaObject):
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
+            specific_cls = self.e_object_class.get_class(value)
             if specific_cls is not None:
                 return specific_cls(value)
             else:

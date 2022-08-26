@@ -239,8 +239,8 @@ class EObject(JavaObject):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for value in self.get_java_object().eContents():
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             if specific_cls is not None:
                 res.append(specific_cls(value))
@@ -249,8 +249,8 @@ class EObject(JavaObject):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for value in e_all_contents(self.get_java_object()):
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(value)
             if specific_cls is not None:
                 res.append(specific_cls(value))
@@ -617,8 +617,8 @@ class Diagram(JavaObject):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for element in Sirius.get_represented_elements(self.get_java_object()):
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(element)
             if specific_cls is not None:
                 res.append(specific_cls(element))
@@ -1018,8 +1018,8 @@ class OperationalProcess(CapellaElement):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for involved_element in self.get_java_object().getInvolvedElements():
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(involved_element)
             if specific_cls is not None and specific_cls.__name__ == "OperationalActivity":
                 res.append(specific_cls(involved_element))
@@ -1028,8 +1028,8 @@ class OperationalProcess(CapellaElement):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for involved_element in self.get_java_object().getInvolvedElements():
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(involved_element)
             if specific_cls is not None and specific_cls.__name__ == "FunctionalExchange":
                 res.append(Interaction(involved_element))
@@ -1438,9 +1438,9 @@ class Mission(CapellaElement):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for system_comp in self.get_java_object().getInvolvedSystemComponents():
             if system_comp is not None:
-                e_object_class = getattr(sys.modules["__main__"], "EObject")
                 specific_cls = e_object_class.get_class(system_comp)
                 if specific_cls is not None and specific_cls.__name__.endswith('Actor'):
                     res.append(specific_cls(system_comp))
@@ -3170,11 +3170,11 @@ class FunctionalChain(CapellaElement):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for involvment in self.get_java_object().getOwnedFunctionalChainInvolvements():
             if involvment.eClass().getName() == 'FunctionalChainInvolvementFunction':
                 involvedElement = involvment.getInvolvedElement()
                 if involvedElement is not None:
-                    e_object_class = getattr(sys.modules["__main__"], "EObject")
                     specific_cls = e_object_class.get_class(involvedElement)
                     res.append(specific_cls(involvedElement))
         return res
@@ -5109,8 +5109,8 @@ class NodePC(PhysicalComponent, Node):
         """
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for pc in self.java_object.getDeployedPhysicalComponents():
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(pc)
             if specific_cls == BehaviorPC:
                 res.append(specific_cls(pc))

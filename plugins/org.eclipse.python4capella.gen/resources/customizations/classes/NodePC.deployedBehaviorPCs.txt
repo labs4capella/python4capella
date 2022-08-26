@@ -1,7 +1,7 @@
     def get_deployed_behavior_p_cs(self):
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for pc in self.java_object.getDeployedPhysicalComponents():
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
             specific_cls = e_object_class.get_class(pc)
             if specific_cls == BehaviorPC:
                 res.append(specific_cls(pc))

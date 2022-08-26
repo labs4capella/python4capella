@@ -42,11 +42,11 @@ class RequirementAddOn(JavaObject):
         """
         res = []
         #: :type capellaElement: CapellaElement
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for relation in e_inverse(capellaElement.get_java_object(), "target"):
             if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                 capella_element = relation.getSource()
                 if capella_element is not None:
-                    e_object_class = getattr(sys.modules["__main__"], "EObject")
                     specific_cls = e_object_class.get_class(capella_element)
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
@@ -78,8 +78,10 @@ class CapellaModule(EObject):
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaModule"))
         elif isinstance(java_object, CapellaModule):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaModule").isInstance(java_object):
             JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_requirements(self):
         """
         """
@@ -127,8 +129,10 @@ class Requirement(EObject):
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Requirement"))
         elif isinstance(java_object, Requirement):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Requirement").isInstance(java_object):
             JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_id(self):
         """
         """
@@ -198,11 +202,11 @@ class Requirement(EObject):
         """
         res = []
         #: :type capellaElement: CapellaElement
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for relation in e_inverse(self.get_java_object(), "target"):
             if relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                 capella_element = relation.getSource()
                 if capella_element is not None:
-                    e_object_class = getattr(sys.modules["__main__"], "EObject")
                     specific_cls = e_object_class.get_class(capella_element)
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
@@ -212,11 +216,11 @@ class Requirement(EObject):
         status: OK
         """
         res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
         for relation in self.java_object.getOwnedRelations():
             if relation.eClass().getName() == "CapellaIncomingRelation":
                 capella_element = relation.getTarget()
                 if capella_element is not None:
-                    e_object_class = getattr(sys.modules["__main__"], "EObject")
                     specific_cls = e_object_class.get_class(capella_element)
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
@@ -232,8 +236,10 @@ class Folder(Requirement):
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Folder"))
         elif isinstance(java_object, Folder):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Folder").isInstance(java_object):
             JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_requirements(self):
         """
         """
