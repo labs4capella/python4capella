@@ -58,6 +58,7 @@ import org.polarsys.capella.core.data.capellamodeller.ModelRoot;
 import org.polarsys.capella.core.data.capellamodeller.Project;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
 import org.polarsys.capella.core.data.cs.Part;
+import org.polarsys.capella.core.diagram.helpers.DiagramHelper;
 import org.polarsys.capella.core.diagram.helpers.RepresentationAnnotationHelper;
 
 /**
@@ -516,4 +517,15 @@ public class SiriusModule {
 		return new NullProgressMonitor();
 	}
 
+	/**
+	 * Gets the package name of the given {@link DRepresentationDescriptor}.
+	 * 
+	 * @param descriptor the {@link DRepresentationDescriptor}
+	 * @return the package name of the given {@link DRepresentationDescriptor} if
+	 *         any, <code>null</code> otherwise
+	 */
+	@WrapToScript
+	public String getPackage(DRepresentationDescriptor descriptor) {
+		return DiagramHelper.getService().getPackageName(descriptor);
+	}
 }

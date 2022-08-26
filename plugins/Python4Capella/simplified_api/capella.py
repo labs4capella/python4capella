@@ -567,10 +567,7 @@ class Diagram(JavaObject):
     def get_package(self):
         """
         """
-        if self.get_java_object().getTarget() is None:
-            return None
-        else:
-            return self.get_java_object().getTarget().eClass().getEPackage().getName()
+        return Sirius.get_package(self)
     def get_description(self):
         """
         """

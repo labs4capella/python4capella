@@ -81,3 +81,7 @@ class Sirius:
     @staticmethod
     def createProgressMonitor():
         return createProgressMonitor()
+
+    @staticmethod
+    def get_package(descriptor):
+        return getPackage(descriptor)
