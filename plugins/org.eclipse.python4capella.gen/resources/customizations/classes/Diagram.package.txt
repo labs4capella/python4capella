@@ -1,3 +1,3 @@
     def get_package(self):
-        return Sirius.get_package(self)
+        return Sirius.get_package(self.get_java_object())
 

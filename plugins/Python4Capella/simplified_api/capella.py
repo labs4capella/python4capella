@@ -567,7 +567,7 @@ class Diagram(JavaObject):
     def get_package(self):
         """
         """
-        return Sirius.get_package(self)
+        return Sirius.get_package(self.get_java_object())
     def get_description(self):
         """
         """

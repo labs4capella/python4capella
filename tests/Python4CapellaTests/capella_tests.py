@@ -16759,7 +16759,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_entry_setter(self):
         tested = State()
-        value = ExchangeItem()
+        value = FunctionalExchange()
         tested.get_entry().add(value)
         pass
 
@@ -16770,7 +16770,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_do_setter(self):
         tested = State()
-        value = ExchangeItem()
+        value = FunctionalExchange()
         tested.get_do().add(value)
         pass
 
@@ -16781,7 +16781,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_exit_setter(self):
         tested = State()
-        value = ExchangeItem()
+        value = FunctionalExchange()
         tested.get_exit().add(value)
         pass
 
@@ -16841,7 +16841,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_entry_setter(self):
         tested = Mode()
-        value = ExchangeItem()
+        value = FunctionalExchange()
         tested.get_entry().add(value)
         pass
 
@@ -16852,7 +16852,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_do_setter(self):
         tested = Mode()
-        value = ExchangeItem()
+        value = FunctionalExchange()
         tested.get_do().add(value)
         pass
 
@@ -16863,7 +16863,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_exit_setter(self):
         tested = Mode()
-        value = ExchangeItem()
+        value = FunctionalExchange()
         tested.get_exit().add(value)
         pass
 
@@ -25761,6 +25761,276 @@ class capella_tests(unittest.TestCase):
         tested.get_exchanges().add(value)
         pass
 
+    def test_DataPkg_owned_classes_getter(self):
+        tested = DataPkg()
+        tested.get_owned_classes()
+        pass
+
+    def test_DataPkg_owned_classes_setter(self):
+        tested = DataPkg()
+        value = Class()
+        tested.get_owned_classes().add(value)
+        pass
+
+    def test_DataPkg_owned_data_pkgs_getter(self):
+        tested = DataPkg()
+        tested.get_owned_data_pkgs()
+        pass
+
+    def test_DataPkg_owned_data_pkgs_setter(self):
+        tested = DataPkg()
+        value = DataPkg()
+        tested.get_owned_data_pkgs().add(value)
+        pass
+
+    def test_Class_id_getter(self):
+        tested = Class()
+        tested.get_id()
+        pass
+
+    def test_Class_id_setter(self):
+        tested = Class()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Class_sid_getter(self):
+        tested = Class()
+        tested.get_sid()
+        pass
+
+    def test_Class_sid_setter(self):
+        tested = Class()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_Class_name_getter(self):
+        tested = Class()
+        tested.get_name()
+        pass
+
+    def test_Class_name_setter(self):
+        tested = Class()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_Class_summary_getter(self):
+        tested = Class()
+        tested.get_summary()
+        pass
+
+    def test_Class_summary_setter(self):
+        tested = Class()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_Class_description_getter(self):
+        tested = Class()
+        tested.get_description()
+        pass
+
+    def test_Class_description_setter(self):
+        tested = Class()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_Class_status_getter(self):
+        tested = Class()
+        tested.get_status()
+        pass
+
+    def test_Class_status_setter(self):
+        tested = Class()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_Class_review_getter(self):
+        tested = Class()
+        tested.get_review()
+        pass
+
+    def test_Class_review_setter(self):
+        tested = Class()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_Class_visible_in_documentation_getter(self):
+        tested = Class()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_Class_visible_in_documentation_setter(self):
+        tested = Class()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_Class_visible_for_traceability_getter(self):
+        tested = Class()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_Class_visible_for_traceability_setter(self):
+        tested = Class()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_Class_owned_constraints_getter(self):
+        tested = Class()
+        tested.get_owned_constraints()
+        pass
+
+    def test_Class_constraints_getter(self):
+        tested = Class()
+        tested.get_constraints()
+        pass
+
+    def test_Class_constraints_setter(self):
+        tested = Class()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_Class_owned_property_values_getter(self):
+        tested = Class()
+        tested.get_owned_property_values()
+        pass
+
+    def test_Class_applied_property_values_getter(self):
+        tested = Class()
+        tested.get_applied_property_values()
+        pass
+
+    def test_Class_applied_property_values_setter(self):
+        tested = Class()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_Class_owned_property_value_groups_getter(self):
+        tested = Class()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_Class_applied_property_value_groups_getter(self):
+        tested = Class()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_Class_applied_property_value_groups_setter(self):
+        tested = Class()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_Class_owned_enumeration_property_types_getter(self):
+        tested = Class()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Class_owned_diagrams_getter(self):
+        tested = Class()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_Class_element_of_interest_for_diagrams_getter(self):
+        tested = Class()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_Class_element_of_interest_for_diagrams_setter(self):
+        tested = Class()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_Class_contextual_element_for_diagrams_getter(self):
+        tested = Class()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_Class_contextual_element_for_diagrams_setter(self):
+        tested = Class()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_Class_representing_diagrams_getter(self):
+        tested = Class()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_Class__r_e_cs_getter(self):
+        tested = Class()
+        tested.get__r_e_cs()
+        pass
+
+    def test_Class__r_e_cs_setter(self):
+        tested = Class()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_Class__r_p_ls_getter(self):
+        tested = Class()
+        tested.get__r_p_ls()
+        pass
+
+    def test_Class__r_p_ls_setter(self):
+        tested = Class()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_Class_get_label(self):
+        tested = Class()
+        tested.get_label()
+        pass
+
+    def test_Class_get_element_type(self):
+        tested = Class()
+        tested.get_element_type()
+        pass
+
+    def test_Class_get_container(self):
+        tested = Class()
+        tested.get_container()
+        pass
+
+    def test_Class_get_contents(self):
+        tested = Class()
+        tested.get_contents()
+        pass
+
+    def test_Class_get_all_contents(self):
+        tested = Class()
+        tested.get_all_contents()
+        pass
+
+    def test_Class_get_all_contents_by_type(self):
+        tested = Class()
+        param1 = "value"
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_Class_get_available_s_b_queries(self):
+        tested = Class()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_Class_get_query_result(self):
+        tested = Class()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
     def test_Class_abstract_getter(self):
         tested = Class()
         tested.get_abstract()
@@ -25813,6 +26083,254 @@ class capella_tests(unittest.TestCase):
     def test_Class_contained_operations_getter(self):
         tested = Class()
         tested.get_contained_operations()
+        pass
+
+    def test_Collection_id_getter(self):
+        tested = Collection()
+        tested.get_id()
+        pass
+
+    def test_Collection_id_setter(self):
+        tested = Collection()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Collection_sid_getter(self):
+        tested = Collection()
+        tested.get_sid()
+        pass
+
+    def test_Collection_sid_setter(self):
+        tested = Collection()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_Collection_name_getter(self):
+        tested = Collection()
+        tested.get_name()
+        pass
+
+    def test_Collection_name_setter(self):
+        tested = Collection()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_Collection_summary_getter(self):
+        tested = Collection()
+        tested.get_summary()
+        pass
+
+    def test_Collection_summary_setter(self):
+        tested = Collection()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_Collection_description_getter(self):
+        tested = Collection()
+        tested.get_description()
+        pass
+
+    def test_Collection_description_setter(self):
+        tested = Collection()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_Collection_status_getter(self):
+        tested = Collection()
+        tested.get_status()
+        pass
+
+    def test_Collection_status_setter(self):
+        tested = Collection()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_Collection_review_getter(self):
+        tested = Collection()
+        tested.get_review()
+        pass
+
+    def test_Collection_review_setter(self):
+        tested = Collection()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_Collection_visible_in_documentation_getter(self):
+        tested = Collection()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_Collection_visible_in_documentation_setter(self):
+        tested = Collection()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_Collection_visible_for_traceability_getter(self):
+        tested = Collection()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_Collection_visible_for_traceability_setter(self):
+        tested = Collection()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_Collection_owned_constraints_getter(self):
+        tested = Collection()
+        tested.get_owned_constraints()
+        pass
+
+    def test_Collection_constraints_getter(self):
+        tested = Collection()
+        tested.get_constraints()
+        pass
+
+    def test_Collection_constraints_setter(self):
+        tested = Collection()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_Collection_owned_property_values_getter(self):
+        tested = Collection()
+        tested.get_owned_property_values()
+        pass
+
+    def test_Collection_applied_property_values_getter(self):
+        tested = Collection()
+        tested.get_applied_property_values()
+        pass
+
+    def test_Collection_applied_property_values_setter(self):
+        tested = Collection()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_Collection_owned_property_value_groups_getter(self):
+        tested = Collection()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_Collection_applied_property_value_groups_getter(self):
+        tested = Collection()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_Collection_applied_property_value_groups_setter(self):
+        tested = Collection()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_Collection_owned_enumeration_property_types_getter(self):
+        tested = Collection()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Collection_owned_diagrams_getter(self):
+        tested = Collection()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_Collection_element_of_interest_for_diagrams_getter(self):
+        tested = Collection()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_Collection_element_of_interest_for_diagrams_setter(self):
+        tested = Collection()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_Collection_contextual_element_for_diagrams_getter(self):
+        tested = Collection()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_Collection_contextual_element_for_diagrams_setter(self):
+        tested = Collection()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_Collection_representing_diagrams_getter(self):
+        tested = Collection()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_Collection__r_e_cs_getter(self):
+        tested = Collection()
+        tested.get__r_e_cs()
+        pass
+
+    def test_Collection__r_e_cs_setter(self):
+        tested = Collection()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_Collection__r_p_ls_getter(self):
+        tested = Collection()
+        tested.get__r_p_ls()
+        pass
+
+    def test_Collection__r_p_ls_setter(self):
+        tested = Collection()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_Collection_get_label(self):
+        tested = Collection()
+        tested.get_label()
+        pass
+
+    def test_Collection_get_element_type(self):
+        tested = Collection()
+        tested.get_element_type()
+        pass
+
+    def test_Collection_get_container(self):
+        tested = Collection()
+        tested.get_container()
+        pass
+
+    def test_Collection_get_contents(self):
+        tested = Collection()
+        tested.get_contents()
+        pass
+
+    def test_Collection_get_all_contents(self):
+        tested = Collection()
+        tested.get_all_contents()
+        pass
+
+    def test_Collection_get_all_contents_by_type(self):
+        tested = Collection()
+        param1 = "value"
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_Collection_get_available_s_b_queries(self):
+        tested = Collection()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_Collection_get_query_result(self):
+        tested = Collection()
+        param1 = "value"
+        tested.get_query_result(param1)
         pass
 
     def test_Collection_ordered_getter(self):
@@ -25940,6 +26458,254 @@ class capella_tests(unittest.TestCase):
         tested.get_max_card()
         pass
 
+    def test_Union_id_getter(self):
+        tested = Union()
+        tested.get_id()
+        pass
+
+    def test_Union_id_setter(self):
+        tested = Union()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Union_sid_getter(self):
+        tested = Union()
+        tested.get_sid()
+        pass
+
+    def test_Union_sid_setter(self):
+        tested = Union()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_Union_name_getter(self):
+        tested = Union()
+        tested.get_name()
+        pass
+
+    def test_Union_name_setter(self):
+        tested = Union()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_Union_summary_getter(self):
+        tested = Union()
+        tested.get_summary()
+        pass
+
+    def test_Union_summary_setter(self):
+        tested = Union()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_Union_description_getter(self):
+        tested = Union()
+        tested.get_description()
+        pass
+
+    def test_Union_description_setter(self):
+        tested = Union()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_Union_status_getter(self):
+        tested = Union()
+        tested.get_status()
+        pass
+
+    def test_Union_status_setter(self):
+        tested = Union()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_Union_review_getter(self):
+        tested = Union()
+        tested.get_review()
+        pass
+
+    def test_Union_review_setter(self):
+        tested = Union()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_Union_visible_in_documentation_getter(self):
+        tested = Union()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_Union_visible_in_documentation_setter(self):
+        tested = Union()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_Union_visible_for_traceability_getter(self):
+        tested = Union()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_Union_visible_for_traceability_setter(self):
+        tested = Union()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_Union_owned_constraints_getter(self):
+        tested = Union()
+        tested.get_owned_constraints()
+        pass
+
+    def test_Union_constraints_getter(self):
+        tested = Union()
+        tested.get_constraints()
+        pass
+
+    def test_Union_constraints_setter(self):
+        tested = Union()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_Union_owned_property_values_getter(self):
+        tested = Union()
+        tested.get_owned_property_values()
+        pass
+
+    def test_Union_applied_property_values_getter(self):
+        tested = Union()
+        tested.get_applied_property_values()
+        pass
+
+    def test_Union_applied_property_values_setter(self):
+        tested = Union()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_Union_owned_property_value_groups_getter(self):
+        tested = Union()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_Union_applied_property_value_groups_getter(self):
+        tested = Union()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_Union_applied_property_value_groups_setter(self):
+        tested = Union()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_Union_owned_enumeration_property_types_getter(self):
+        tested = Union()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Union_owned_diagrams_getter(self):
+        tested = Union()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_Union_element_of_interest_for_diagrams_getter(self):
+        tested = Union()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_Union_element_of_interest_for_diagrams_setter(self):
+        tested = Union()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_Union_contextual_element_for_diagrams_getter(self):
+        tested = Union()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_Union_contextual_element_for_diagrams_setter(self):
+        tested = Union()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_Union_representing_diagrams_getter(self):
+        tested = Union()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_Union__r_e_cs_getter(self):
+        tested = Union()
+        tested.get__r_e_cs()
+        pass
+
+    def test_Union__r_e_cs_setter(self):
+        tested = Union()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_Union__r_p_ls_getter(self):
+        tested = Union()
+        tested.get__r_p_ls()
+        pass
+
+    def test_Union__r_p_ls_setter(self):
+        tested = Union()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_Union_get_label(self):
+        tested = Union()
+        tested.get_label()
+        pass
+
+    def test_Union_get_element_type(self):
+        tested = Union()
+        tested.get_element_type()
+        pass
+
+    def test_Union_get_container(self):
+        tested = Union()
+        tested.get_container()
+        pass
+
+    def test_Union_get_contents(self):
+        tested = Union()
+        tested.get_contents()
+        pass
+
+    def test_Union_get_all_contents(self):
+        tested = Union()
+        tested.get_all_contents()
+        pass
+
+    def test_Union_get_all_contents_by_type(self):
+        tested = Union()
+        param1 = "value"
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_Union_get_available_s_b_queries(self):
+        tested = Union()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_Union_get_query_result(self):
+        tested = Union()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
     def test_Union_final_getter(self):
         tested = Union()
         tested.get_final()
@@ -26050,51 +26816,51 @@ class capella_tests(unittest.TestCase):
 
     def test_Operation_thrown_exceptions_setter(self):
         tested = Operation()
-        value = Exception()
+        value = CapellaException()
         tested.get_thrown_exceptions().add(value)
         pass
 
-    def test_Exception_abstract_getter(self):
-        tested = Exception()
+    def test_CapellaException_abstract_getter(self):
+        tested = CapellaException()
         tested.get_abstract()
         pass
 
-    def test_Exception_abstract_setter(self):
-        tested = Exception()
+    def test_CapellaException_abstract_setter(self):
+        tested = CapellaException()
         value = True
         tested.set_abstract(value)
         pass
 
-    def test_Exception_visibility_getter(self):
-        tested = Exception()
+    def test_CapellaException_visibility_getter(self):
+        tested = CapellaException()
         tested.get_visibility()
         pass
 
-    def test_Exception_visibility_setter(self):
-        tested = Exception()
+    def test_CapellaException_visibility_setter(self):
+        tested = CapellaException()
         value = VisibilityKind()
         tested.set_visibility(value)
         pass
 
-    def test_Exception_super_getter(self):
-        tested = Exception()
+    def test_CapellaException_super_getter(self):
+        tested = CapellaException()
         tested.get_super()
         pass
 
-    def test_Exception_super_setter(self):
-        tested = Exception()
-        value = Exception()
+    def test_CapellaException_super_setter(self):
+        tested = CapellaException()
+        value = CapellaException()
         tested.get_super().add(value)
         pass
 
-    def test_Exception_sub_getter(self):
-        tested = Exception()
+    def test_CapellaException_sub_getter(self):
+        tested = CapellaException()
         tested.get_sub()
         pass
 
-    def test_Exception_sub_setter(self):
-        tested = Exception()
-        value = Exception()
+    def test_CapellaException_sub_setter(self):
+        tested = CapellaException()
+        value = CapellaException()
         tested.get_sub().add(value)
         pass
 
