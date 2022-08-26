@@ -4,9 +4,12 @@
             self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "REC"))
         elif isinstance(java_object, RPL):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement").isInstance(java_object):
+            JavaObject.__init__(self, java_object)
             if java_object.getKind().getName() == "REC":
                 JavaObject.__init__(self, java_object)
             else:
                 raise AttributeError("Passed catalog element is not a REC.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 

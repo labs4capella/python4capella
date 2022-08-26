@@ -6,6 +6,8 @@
                 raise ValueError("kind must be either \"BooleanPropertyValue\", \"EnumerationPropertyValue\", \"FloatPropertyValue\", \"IntegerPropertyValue\", or \"StringPropertyValue\"")
         elif isinstance(java_object, PropertyValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "AbstractPropertyValue").isInstance(java_object):
             JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 

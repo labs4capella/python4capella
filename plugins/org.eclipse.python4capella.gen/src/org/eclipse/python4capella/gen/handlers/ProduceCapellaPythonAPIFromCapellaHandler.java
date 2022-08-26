@@ -371,8 +371,25 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 		res.append("        elif isinstance(java_object, " + cls.getName() + "):" + NL);
 		res.append("            JavaObject.__init__(self, java_object.get_java_object())" + NL);
-		res.append("        else:" + NL);
-		res.append("            JavaObject.__init__(self, java_object)" + NL);
+		if (eCls != null) {
+			final String nsURIString;
+			if (eCls.getEPackage().getNsURI().contains("capella")) {
+				nsURIString = "\""
+						+ eCls.getEPackage().getNsURI().substring(0, eCls.getEPackage().getNsURI().lastIndexOf("/") + 1)
+						+ "\"" + " + capella_version()";
+			} else {
+				nsURIString = "\"" + eCls.getEPackage().getNsURI() + "\"";
+			}
+
+			res.append("        elif get_e_classifier(" + nsURIString + ", \"" + cls.getName()
+					+ "\").isInstance(java_object):" + NL);
+			res.append("            JavaObject.__init__(self, java_object)" + NL);
+			res.append("        else:" + NL);
+			res.append("            raise AttributeError(\"Passed object is not compatible with \" + self.__class__.__name__ + \": \" + str(java_object))" + NL);
+		} else {
+			res.append("        else:" + NL);
+			res.append("            JavaObject.__init__(self, java_object)" + NL);
+		}
 
 		return res.toString();
 	}
