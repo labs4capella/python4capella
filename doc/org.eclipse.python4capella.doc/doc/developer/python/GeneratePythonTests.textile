@@ -16,6 +16,9 @@ When you open the specification model, you can open the System Analysis, then th
 
 By default this will generate Python files in "/tmp/capella/" under Windows check for a tmp folder at the root of your disk. You can change this path by editing the generator class: ProduceCapellaPythonTestsFromCapellaHandler.
 
-For the moment, the only customization you can add is to mark a test as read only. This will generate a test that only access a getter for this test and will not make use of any setter.
+You can mark a test as read only. This will generate a test that only access a getter for this test and will not make use of any setter.
+
+You can also customize the generated code by placing a file with the name of the test you want to customize in the resources/customizations/tests of the org.eclipse.python4capella.gen project. You can see examples of existing customizations "here":https://github.com/labs4capella/python4capella/tree/master/plugins/org.eclipse.python4capella.gen/resources/customizations/tests.
+
 
 If you want to add custom tests, you can add them to the capella_manual_tests.py file. You can also add your own Python file and add it to the ManualTestsuite.suite file.

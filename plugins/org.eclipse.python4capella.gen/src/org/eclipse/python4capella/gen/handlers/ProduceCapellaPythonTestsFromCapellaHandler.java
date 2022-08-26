@@ -22,6 +22,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
 import org.polarsys.capella.core.data.capellacore.TypedElement;
@@ -170,30 +171,38 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		final StringBuilder res = new StringBuilder();
 
 		final String pythonName = ProduceCapellaPythonAPIFromEcoreHandler.getPythonName(operation.getName());
-		res.append("    def test_" + cls.getName() + "_" + pythonName + "(self):" + NL);
-		res.append("        tested = " + cls.getName() + "()" + NL);
-		if ("CapellaModel".equals(cls.getName())) {
-			res.append("        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")"
-					+ NL);
-		}
-
-		int index = 1;
-		final StringJoiner joiner = new StringJoiner(", ");
-		for (Parameter parameter : operation.getOwnedParameters()) {
-			if (parameter.getDirection() != ParameterDirection.RETURN) {
-				final String paramName = "param" + index++;
-				res.append("        " + paramName + " = " + getTestValue(cls, parameter) + NL);
-				if ("CapellaModel".equals(parameter.getType().getLabel())) {
-					res.append("        " + paramName
-							+ ".open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")" + NL);
-				}
-				joiner.add(paramName);
+		final String testName = "test_" + cls.getName() + "_" + pythonName;
+		final String testCustomization = getTestCustomization(testName);
+		if (!testCustomization.trim().isEmpty()) {
+			res.append(testCustomization);
+		} else {
+			res.append("    def " + testName + "(self):" + NL);
+			res.append("        tested = " + cls.getName() + "()" + NL);
+			if ("CapellaModel".equals(cls.getName())) {
+				res.append(
+						"        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")"
+								+ NL);
 			}
-		}
 
-		res.append("        tested." + pythonName + "(" + joiner.toString() + ")" + NL);
-		res.append("        pass" + NL);
-		res.append(NL);
+			int index = 1;
+			final StringJoiner joiner = new StringJoiner(", ");
+			for (Parameter parameter : operation.getOwnedParameters()) {
+				if (parameter.getDirection() != ParameterDirection.RETURN) {
+					final String paramName = "param" + index++;
+					res.append("        " + paramName + " = " + getTestValue(cls, parameter) + NL);
+					if ("CapellaModel".equals(parameter.getType().getLabel())) {
+						res.append("        " + paramName
+								+ ".open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")"
+								+ NL);
+					}
+					joiner.add(paramName);
+				}
+			}
+
+			res.append("        tested." + pythonName + "(" + joiner.toString() + ")" + NL);
+			res.append("        pass" + NL);
+			res.append(NL);
+		}
 
 		return res.toString();
 	}
@@ -203,20 +212,26 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 
 		final String pythonName = ProduceCapellaPythonAPIFromEcoreHandler.getPythonName(property.getName());
 		final String testName = "test_" + cls.getName() + "_" + pythonName + "_getter";
-		res.append("    def " + testName + "(self):" + NL);
-		res.append("        tested = " + cls.getName() + "()" + NL);
-		if ("CapellaModel".equals(cls.getName())) {
-			res.append("        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")"
-					+ NL);
-		}
-		if (isScalar(property)) {
-			res.append("        tested.get_" + pythonName + "()" + NL);
+		final String testCustomization = getTestCustomization(testName);
+		if (!testCustomization.trim().isEmpty()) {
+			res.append(testCustomization);
 		} else {
-			// collection
-			res.append("        tested.get_" + pythonName + "()" + NL);
+			res.append("    def " + testName + "(self):" + NL);
+			res.append("        tested = " + cls.getName() + "()" + NL);
+			if ("CapellaModel".equals(cls.getName())) {
+				res.append(
+						"        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")"
+								+ NL);
+			}
+			if (isScalar(property)) {
+				res.append("        tested.get_" + pythonName + "()" + NL);
+			} else {
+				// collection
+				res.append("        tested.get_" + pythonName + "()" + NL);
+			}
+			res.append("        pass" + NL);
+			res.append(NL);
 		}
-		res.append("        pass" + NL);
-		res.append(NL);
 
 		return res.toString();
 	}
@@ -226,22 +241,28 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 
 		final String pythonName = ProduceCapellaPythonAPIFromEcoreHandler.getPythonName(property.getName());
 		final String testName = "test_" + cls.getName() + "_" + pythonName + "_setter";
-		res.append("    def " + testName + "(self):" + NL);
-		res.append("        tested = " + cls.getName() + "()" + NL);
-		if ("CapellaModel".equals(cls.getName())) {
-			res.append("        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")"
-					+ NL);
-		}
-		if (isScalar(property)) {
-			res.append("        value = " + getTestValue(cls, property) + NL);
-			res.append("        tested.set_" + pythonName + "(value)" + NL);
+		final String testCustomization = getTestCustomization(testName);
+		if (!testCustomization.trim().isEmpty()) {
+			res.append(testCustomization);
 		} else {
-			// collection
-			res.append("        value = " + getTestValue(cls, property) + NL);
-			res.append("        tested.get_" + pythonName + "().add(value)" + NL);
+			res.append("    def " + testName + "(self):" + NL);
+			res.append("        tested = " + cls.getName() + "()" + NL);
+			if ("CapellaModel".equals(cls.getName())) {
+				res.append(
+						"        tested.open(\"/In-Flight Entertainment System/In-Flight Entertainment System.aird\")"
+								+ NL);
+			}
+			if (isScalar(property)) {
+				res.append("        value = " + getTestValue(cls, property) + NL);
+				res.append("        tested.set_" + pythonName + "(value)" + NL);
+			} else {
+				// collection
+				res.append("        value = " + getTestValue(cls, property) + NL);
+				res.append("        tested.get_" + pythonName + "().add(value)" + NL);
+			}
+			res.append("        pass" + NL);
+			res.append(NL);
 		}
-		res.append("        pass" + NL);
-		res.append(NL);
 
 		return res.toString();
 	}
@@ -257,6 +278,10 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 			res = "42";
 		} else if ("String".equals(typedElement.getType().getLabel())) {
 			res = "\"value\"";
+		} else if ("PhysicalComponentKind".equals(typedElement.getType().getLabel())) {
+			res = "\"HARDWARE\"";
+		} else if ("ExchangeMechanism".equals(typedElement.getType().getLabel())) {
+			res = "\"FLOW\"";
 		} else {
 			if (typedElement.getType() instanceof Class && ((Class) typedElement.getType()).isAbstract()) {
 				res = concreteClass.get(typedElement.getType()).getLabel() + "()";
@@ -272,6 +297,29 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		final NumericValue ownedMaxCard = property.getOwnedMaxCard();
 		return ownedMaxCard instanceof LiteralNumericValue
 				&& "1".equals(((LiteralNumericValue) ownedMaxCard).getValue());
+	}
+
+	private String getTestCustomization(String testName) {
+		StringBuilder res = new StringBuilder();
+
+		try (InputStream is = getClass().getClassLoader()
+				.getResourceAsStream("resources/customizations/tests/" + testName + ".txt");) {
+			if (is != null) {
+				final List<String> lines = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8)).lines()
+						.collect(Collectors.toList());
+				for (String line : lines) {
+					if (!line.trim().isEmpty()) {
+						res.append(line + NL);
+					}
+				}
+				res.append(NL);
+			}
+		} catch (Exception e) {
+			// nothing to do here
+			e.printStackTrace();
+		}
+
+		return res.toString();
 	}
 
 }

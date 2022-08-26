@@ -1,0 +1,6 @@
+    def test_NodePC_kind_setter(self):
+        tested = NodePC()
+        value = "HARDWARE"
+        tested.set_kind(value)
+        pass
+

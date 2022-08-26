@@ -14219,7 +14219,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_kind_setter(self):
         tested = BehaviorPC()
-        value = PhysicalComponentKind()
+        value = "HARDWARE"
         tested.set_kind(value)
         pass
 
@@ -14624,7 +14624,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_kind_setter(self):
         tested = NodePC()
-        value = PhysicalComponentKind()
+        value = "HARDWARE"
         tested.set_kind(value)
         pass
 
@@ -22885,7 +22885,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_exchange_mechanism_setter(self):
         tested = ExchangeItem()
-        value = ExchangeMechanism()
+        value = "FLOW"
         tested.set_exchange_mechanism(value)
         pass
 

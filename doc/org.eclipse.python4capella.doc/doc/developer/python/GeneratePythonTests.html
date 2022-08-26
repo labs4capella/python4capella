@@ -24,7 +24,10 @@
 			<img alt="Generate Python Tests from Capella menu" title="Generate Python Tests from Capella menu" border="0" src="GeneratePythonTests/GeneratePythonTestsMenu.png"/>
 		</p>
 		<p>By default this will generate Python files in &#8220;/tmp/capella/&#8221; under Windows check for a tmp folder at the root of your disk. You can change this path by editing the generator class: ProduceCapellaPythonTestsFromCapellaHandler.</p>
-		<p>For the moment, the only customization you can add is to mark a test as read only. This will generate a test that only access a getter for this test and will not make use of any setter.</p>
+		<p>You can mark a test as read only. This will generate a test that only access a getter for this test and will not make use of any setter.</p>
+		<p>You can also customize the generated code by placing a file with the name of the test you want to customize in the resources/customizations/tests of the org.eclipse.python4capella.gen project. You can see examples of existing customizations 
+			<a href="https://github.com/labs4capella/python4capella/tree/master/plugins/org.eclipse.python4capella.gen/resources/customizations/tests">here</a>.
+		</p>
 		<p>If you want to add custom tests, you can add them to the capella_manual_tests.py file. You can also add your own Python file and add it to the ManualTestsuite.suite file.</p>
 	</body>
 </html>
