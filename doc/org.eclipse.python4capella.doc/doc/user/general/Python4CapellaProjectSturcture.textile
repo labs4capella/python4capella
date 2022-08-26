@@ -4,5 +4,7 @@ The Python4Capella project provides everything needed to interact with your Cape
 It contains three different folders:
 
 - *java_api*: This folder contains the low level APIs needed to interact with the Java world.
+- *resources*: This folder contains sample resources for sample scripts.
 - *simplified_api*: This folder contains the simplified APIs to interact with Capella and some of its add-ons.
 - *sample_scripts*: This folder contains some sample scripts that demonstrate how you can use the simplified APIs.
+- *utilies*: This folder contains utility script that helps for interactions with Eclipse.
