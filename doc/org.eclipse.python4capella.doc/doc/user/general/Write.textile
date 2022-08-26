@@ -61,3 +61,29 @@ Then you can check the Show line numbers check box.
 h2. Installed libraries in the Windows Python distribution
 
 We packaged openpyxl with the Python37.zip file. You can have a look at provided sample scripts and "openpyxl project":https://openpyxl.readthedocs.io/en/stable/ page for usage.
+
+h2. Contribute your scripts to the Capella user interface
+
+It's possible to contribute a menu to Capella that will run your script by adding the following header at the beginning of your script:
+
+bc. # name                 : Export Diagrams
+# script-type          : Python
+# description          : Exports diagrams of the selected Element
+# popup                : enableFor(org.polarsys.capella.core.data.capellacore.CapellaElement)
+
+The name define the name of the menu. The script-type is the scripting language used, Python in the case of Python4Capella. The description is the description of the menu. popup tells that we want a popup menu on objects with the type CapellaElement. The type is the qualified name of the Java class.
+
+You can find more ways to contribute your scripts in the "EASE documentation":https://wiki.eclipse.org/EASE/Scripts.
+
+You can then get the selected element with the following code:
+
+bc. selected = CapellaElement(CapellaPlatform.getFirstSelectedElement())
+
+You can adapt the type according to the type defined in the header. You can also use the EObject.get_class() to get the specific type of the selected object:
+
+bc. specific_cls = EObect.get_class(CapellaPlatform.getFirstSelectedElement())
+selected = Node
+if specific_cls is not None:
+    selected = specific_cls(CapellaPlatform.getFirstSelectedElement())
+
+NOTE: all classes of the Capella metamodel are not present in the simplified Python one. You can check the specification model or the MS Word document to have a description of the simplified metamodel.

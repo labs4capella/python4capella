@@ -58,5 +58,26 @@ if False:
 		<p>We packaged openpyxl with the Python37.zip file. You can have a look at provided sample scripts and 
 			<a href="https://openpyxl.readthedocs.io/en/stable/">openpyxl project</a> page for usage.
 		</p>
+		<h2 id="ContributeyourscriptstotheCapellauserinterface">Contribute your scripts to the Capella user interface</h2>
+		<p>It&#8217;s possible to contribute a menu to Capella that will run your script by adding the following header at the beginning of your script:</p>
+		<pre><code># name                 : Export Diagrams
+# script-type          : Python
+# description          : Exports diagrams of the selected Element
+# popup                : enableFor(org.polarsys.capella.core.data.capellacore.CapellaElement)
+</code></pre>
+		<p>The name define the name of the menu. The script-type is the scripting language used, Python in the case of Python4Capella. The description is the description of the menu. popup tells that we want a popup menu on objects with the type CapellaElement. The type is the qualified name of the Java class.</p>
+		<p>You can find more ways to contribute your scripts in the 
+			<a href="https://wiki.eclipse.org/EASE/Scripts">EASE documentation</a>.
+		</p>
+		<p>You can then get the selected element with the following code:</p>
+		<pre><code>selected = CapellaElement(CapellaPlatform.getFirstSelectedElement())
+</code></pre>
+		<p>You can adapt the type according to the type defined in the header. You can also use the EObject.get_class() to get the specific type of the selected object:</p>
+		<pre><code>specific_cls = EObect.get_class(CapellaPlatform.getFirstSelectedElement())
+selected = Node
+if specific_cls is not None:
+    selected = specific_cls(CapellaPlatform.getFirstSelectedElement())
+</code></pre>
+		<p>NOTE: all classes of the Capella metamodel are not present in the simplified Python one. You can check the specification model or the MS Word document to have a description of the simplified metamodel.</p>
 	</body>
 </html>
