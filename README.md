@@ -90,7 +90,7 @@ This conceptual metamodel is used to generate
 # Installation
 
 You can install Python4Capella in your Capella thanks to an update site.
-Then you will need to setup Python 3.7 in your environment.
+Then you will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python.
 
 1) You need to download the zip file from the available releases [here](https://github.com/labs4capella/python4capella/releases). You don’t need to decompress it
 2) On the installation dialog, click the “Add…” button at the top to add an update site.
@@ -98,6 +98,7 @@ Then you will need to setup Python 3.7 in your environment.
 ![Select the org.eclipse.python4capella.update.zip archive](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install1.png)
 4) Select Python4Capella feature.
 ![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install2.png)
+   * If you are installing Python4Capella [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) or above on Capella 1.4.x, you will need to install PyDev 8.2.0 instead of the version provided in the update site. You can get PyDev 8.2.0 by using this update site: https://www.pydev.org/update_sites/8.2.0.
 4) Click the next button and complete the installation by clicking the finish button.
 
 If you don't know how to install from an update site you can have a look at our [video](https://www.youtube.com/watch?v=qYTrO7THer0).
