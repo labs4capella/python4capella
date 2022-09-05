@@ -90,7 +90,7 @@ This conceptual metamodel is used to generate
 # Installation
 
 You can install Python4Capella in your Capella thanks to an update site.
-Then you will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python.
+Then you will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python see the [Python Installation](#python-installation) section.
 
 1) You need to download the zip file from the available releases [here](https://github.com/labs4capella/python4capella/releases). You don’t need to decompress it
 2) On the installation dialog, click the “Add…” button at the top to add an update site.
@@ -103,13 +103,15 @@ Then you will need to setup Python 3.7 in your environment for release before [2
 
 If you don't know how to install from an update site you can have a look at our [video](https://www.youtube.com/watch?v=qYTrO7THer0).
 
-## Python 3.7 installation
+## Python Installation
+
+You will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29).
 
 If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
 [https://github.com/labs4capella/python4capella/releases/download/2021-07-16/Python37.zip](https://github.com/labs4capella/python4capella/releases/download/2021-07-16/Python37.zip)
 
-If you are running Linux or MacOS X, please check your distribution documentation to install Python 3.7 on your system.
+If you are running Linux or MacOS X, please check your distribution documentation to install Python 3.7 on your system. For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python. In order to run provided sample scripts, you will also need to install [openpyxl](https://openpyxl.readthedocs.io/en/stable/). You can check the [Install new Python package](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/developer/python/InstallNewPythonPackage.textile) page for more details or directly use your Python interpreter documentation.
 
 # Python4Capella configuration
 
@@ -140,12 +142,12 @@ Select the Window > Preferences menu
 ![Preference menu](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/preference_menu.png)
 
 - select the PyDev / Interpreters / Python Interpreter
-  - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the New button
+  - select the python executable from the [Python installation section](#python-installation) by clicking the New button
 
   ![PyDev interpreter](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/PyDev_interpreter.png)
 
 - select the Scripting / Python Scripting (using Py4J) (/!\ not Scripting PyDev)
-  - select the python executable from the [Python 3.7 installation section](#python-37-installation) by clicking the Browse button
+  - select the python executable from the [Python installation section](#python-installation) by clicking the Browse button
 
   ![EASE Python interpreter](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/EASE_interpreter.png)
 
@@ -164,7 +166,7 @@ You can validate the dialog by clicking the OK button.
 
 # Documentation
 
-You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from Capella, then on the right tree, you can select Python4Capella. To get started, you can have a look at the [writing script documentation](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Write.textile).
+You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from Capella, then on the right tree, you can select Python4Capella. To get started, you can have a look at the [writing script documentation](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Write.textile). You can also read the [run a Python script](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Run.textile) page to run one of the provided sample script.
 
 # False errors in provided scripts
 
