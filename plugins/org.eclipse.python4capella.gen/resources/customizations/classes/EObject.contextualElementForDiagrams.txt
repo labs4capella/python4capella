@@ -1,6 +1,3 @@
     def get_contextual_element_for_diagrams(self):
-        res = []
-        for element in Sirius.get_contextual_element_for_diagrams(self.get_java_object()):
-            res.append(Diagram(element))
-        return res
+        return Sirius.get_contextual_element_for_diagrams(self.get_java_object())
 

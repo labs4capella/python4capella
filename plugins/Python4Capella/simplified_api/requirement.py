@@ -44,8 +44,8 @@ class RequirementAddOn(JavaObject):
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for relation in e_inverse(capellaElement.get_java_object(), "target"):
-            if relation.eClass().getName() == "CapellaIncomingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
-                capella_element = relation.getSource()
+            if relation.get_java_object().eClass().getName() == "CapellaIncomingRelation" and relation.get_java_object().eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                capella_element = relation.get_java_object().getSource()
                 if capella_element is not None:
                     specific_cls = e_object_class.get_class(capella_element)
                     if specific_cls is not None:
@@ -204,8 +204,8 @@ class Requirement(EObject):
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for relation in e_inverse(self.get_java_object(), "target"):
-            if relation.eClass().getName() == "CapellaOutgoingRelation" and relation.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
-                capella_element = relation.getSource()
+            if relation.get_java_object().eClass().getName() == "CapellaOutgoingRelation" and relation.get_java_object().eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                capella_element = relation.get_java_object().getSource()
                 if capella_element is not None:
                     specific_cls = e_object_class.get_class(capella_element)
                     if specific_cls is not None:

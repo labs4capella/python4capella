@@ -70,14 +70,8 @@
         return e_object.__class__(copy_e_object(e_object.get_java_object()))
     @staticmethod
     def copy_all_e_objects(e_objects):
-        res = []
         e_objs = []
         for  element in e_objects:
             e_objs.append(element.get_java_object());
-        e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for copy in copy_all_e_objects(e_objs):
-            specific_cls = e_object_class.get_class(copy)
-            if specific_cls is not None:
-                res.append(specific_cls(copy))
-        return res
+        return copy_all_e_objects(e_objs)
 

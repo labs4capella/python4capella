@@ -59,11 +59,7 @@ class CapellaModel():
         """
         status: OK
         """
-        res = []
-        descriptors = Sirius.get_diagrams(self.session, diagram_type)
-        for descriptor in descriptors:
-            res.append(Diagram(descriptor))
-        return res
+        return Sirius.get_diagrams(self.session, diagram_type)
     def open(self, obj):
         """
         status: KO
@@ -174,23 +170,14 @@ class EObject(JavaObject):
     def copy_all_e_objects(e_objects):
         """
         """
-        res = []
         e_objs = []
         for  element in e_objects:
             e_objs.append(element.get_java_object());
-        e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for copy in copy_all_e_objects(e_objs):
-            specific_cls = e_object_class.get_class(copy)
-            if specific_cls is not None:
-                res.append(specific_cls(copy))
-        return res
+        return copy_all_e_objects(e_objs)
     def get_owned_diagrams(self):
         """
         """
-        res = []
-        for element in Sirius.get_representation_descriptors(self.get_java_object()):
-            res.append(Diagram(element))
-        return res
+        return Sirius.get_representation_descriptors(self.get_java_object())
     def get_element_of_interest_for_diagrams(self):
         """
         """
@@ -198,17 +185,11 @@ class EObject(JavaObject):
     def get_contextual_element_for_diagrams(self):
         """
         """
-        res = []
-        for element in Sirius.get_contextual_element_for_diagrams(self.get_java_object()):
-            res.append(Diagram(element))
-        return res
+        return Sirius.get_contextual_element_for_diagrams(self.get_java_object())
     def get_representing_diagrams(self):
         """
         """
-        res = []
-        for element in Sirius.get_representing_diagrams(self.get_java_object()):
-            res.append(Diagram(element))
-        return res
+        return Sirius.get_representing_diagrams(self.get_java_object())
     def get__r_e_cs(self):
         """
         """
@@ -248,13 +229,7 @@ class EObject(JavaObject):
     def get_all_contents(self):
         """
         """
-        res = []
-        e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for value in e_all_contents(self.get_java_object()):
-            specific_cls = e_object_class.get_class(value)
-            if specific_cls is not None:
-                res.append(specific_cls(value))
-        return res
+        return e_all_contents(self.get_java_object())
     def get_all_contents_by_type(self, cls):
         """
         """
@@ -613,13 +588,7 @@ class Diagram(JavaObject):
     def get_represented_elements(self):
         """
         """
-        res = []
-        e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for element in Sirius.get_represented_elements(self.get_java_object()):
-            specific_cls = e_object_class.get_class(element)
-            if specific_cls is not None:
-                res.append(specific_cls(element))
-        return res
+        return Sirius.get_represented_elements(self.get_java_object())
     def get_contextual_elements(self):
         """
         """

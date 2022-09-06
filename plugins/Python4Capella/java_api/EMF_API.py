@@ -7,7 +7,8 @@ import sys
 
 def e_all_contents(e_obj):
     """Gets all elements contained directly and indirectly in the given EObject"""
-    return eAllContents(e_obj);
+    e_object_class = getattr(sys.modules["__main__"], "EObject")
+    return JavaList(eAllContents(e_obj), e_object_class);
 
 
 def get_e_classifier(ns_uri, eclass_name):
@@ -31,7 +32,8 @@ def get_enum_literal(ns_uri, enum_name, literal_name):
 
 def e_inverse(e_obj, reference_name):
     """Gets the List of object referencing the given EObject via an EReference with the given name"""
-    return eInverse(e_obj, reference_name)
+    e_object_class = getattr(sys.modules["__main__"], "EObject")
+    return JavaList(eInverse(e_obj, reference_name), e_object_class);
 
 def copy_e_object(e_obj):
     """Copies the given EObject"""
@@ -39,4 +41,5 @@ def copy_e_object(e_obj):
 
 def copy_all_e_objects(e_objs):
     """Copies all given EObject"""
-    return copyAll(e_objs)
+    e_object_class = getattr(sys.modules["__main__"], "EObject")
+    return JavaList(copyAll(e_objs), e_object_class);

@@ -25,7 +25,10 @@ class JavaIterator(JavaObject):
         if iteratorHasNext(self.get_java_object()):
             next = iteratorNext(self.get_java_object())
             specific_cls = self.e_object_class.get_class(next)
-            return specific_cls(next)
+            if specific_cls is not None:
+                return specific_cls(next)
+            else:
+                return self.cls(next)
         else:
             raise StopIteration
     def __next__(self):
@@ -72,6 +75,8 @@ class JavaList(JavaObject):
     def last_index_of(self, obj):
         """Gets the last index of hte given Object in this List"""
         return self.get_java_object().lastIndexOf(obj.get_java_object())
+    def __getitem__(self, items):
+        return self.get(items)
     def get(self, index):
         """Gets the Object at the given index"""
         value = self.get_java_object().get(index)
@@ -82,10 +87,14 @@ class JavaList(JavaObject):
             if specific_cls is not None:
                 return specific_cls(value)
             else:
-                return None
+                return self.cls(value)
     def clear(self):
         """Removes all elements from this List"""
         return self.get_java_object().clear()
+    def __len__(self):
+        return self.size()
+    def len(self):
+        return self.size()
     def size(self):
         """Gets the size of this List"""
         return self.get_java_object().size()

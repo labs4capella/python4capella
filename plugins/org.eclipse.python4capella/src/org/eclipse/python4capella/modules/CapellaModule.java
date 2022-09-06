@@ -66,15 +66,15 @@ public class CapellaModule {
 	}
 
 	/**
-	 * Gets the list of available semantic browser queries for the given
+	 * Gets the array of available semantic browser queries for the given
 	 * {@link EObject}.
 	 * 
 	 * @param obj the {@link EObject}
-	 * @return the list of available semantic browser queries for the given
+	 * @return the array of available semantic browser queries for the given
 	 *         {@link EObject}
 	 */
 	@WrapToScript
-	public List<String> getAvailableSBQueries(EObject obj) {
+	public String[] getAvailableSBQueries(EObject obj) {
 		List<String> result = new ArrayList<String>();
 		Collection<EObject> col = new ArrayList<EObject>();
 		col.add(obj);
@@ -82,7 +82,7 @@ public class CapellaModule {
 		for (ICategory cat : SBQueries) {
 			result.add(cat.getName());
 		}
-		return result;
+		return result.toArray(new String[result.size()]);
 	}
 
 	/**
@@ -176,15 +176,15 @@ public class CapellaModule {
 	}
 
 	/**
-	 * Gets the {@link List} of {@link SystemEngineering} used as libraries of the
-	 * given {@link SystemEngineering}.
+	 * Gets the array of {@link SystemEngineering} used as libraries of the given
+	 * {@link SystemEngineering}.
 	 * 
 	 * @param system {@link SystemEngineering}
-	 * @return the {@link List} of {@link SystemEngineering} used as libraries of
-	 *         the given {@link SystemEngineering}
+	 * @return the array of {@link SystemEngineering} used as libraries of the given
+	 *         {@link SystemEngineering}
 	 */
 	@WrapToScript
-	public List<SystemEngineering> getLibraries(SystemEngineering system) {
+	public SystemEngineering[] getLibraries(SystemEngineering system) {
 		final List<SystemEngineering> res = new ArrayList<>();
 
 		if (system != null) {
@@ -203,7 +203,7 @@ public class CapellaModule {
 			}
 		}
 
-		return res;
+		return res.toArray(new SystemEngineering[res.size()]);
 	}
 
 }

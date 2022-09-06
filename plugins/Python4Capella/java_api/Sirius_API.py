@@ -1,4 +1,7 @@
 loadModule('/Capella/Sirius')
+include('workspace://Python4Capella/java_api/Java_API.py')
+if False:
+    from java_api.Java_API import *
 
 
 class Sirius:
@@ -6,7 +9,8 @@ class Sirius:
     @staticmethod
     def get_representation_descriptors(eObject):
         """Gets the List of RepresentationDescriptor for the given EObject"""
-        return getRepresentationDescriptors(eObject);
+        diagram_class = getattr(sys.modules["__main__"], "Diagram")
+        return JavaList(getRepresentationDescriptors(eObject), diagram_class)
 
     @staticmethod
     def export_image(self, file_path):
@@ -23,7 +27,8 @@ class Sirius:
 
     @staticmethod
     def get_represented_elements(descriptor):
-        return getRepresentedElements(descriptor)
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
+        return JavaList(getRepresentedElements(descriptor), e_object_class)
 
     @staticmethod
     def is_visible_in_documentation(descriptor):
@@ -51,15 +56,18 @@ class Sirius:
 
     @staticmethod
     def get_diagrams(session, cls):
-        return getDiagrams(session, cls)
+        diagram_class = getattr(sys.modules["__main__"], "Diagram")
+        return JavaList(getDiagrams(session, cls), diagram_class)
 
     @staticmethod
     def get_representing_diagrams(e_object):
-        return getRepresentingDiagrams(e_object)
+        diagram_class = getattr(sys.modules["__main__"], "Diagram")
+        return JavaList(getRepresentingDiagrams(e_object), diagram_class)
 
     @staticmethod
     def get_contextual_element_for_diagrams(e_object):
-        return getContextualElementForDiagrams(e_object)
+        diagram_class = getattr(sys.modules["__main__"], "Diagram")
+        return JavaList(getContextualElementForDiagrams(e_object), diagram_class)
     
     @staticmethod
     def get_session(e_object):

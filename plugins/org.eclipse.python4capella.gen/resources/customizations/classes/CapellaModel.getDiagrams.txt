@@ -1,7 +1,3 @@
     def get_diagrams(self, diagram_type):
-        res = []
-        descriptors = Sirius.get_diagrams(self.session, diagram_type)
-        for descriptor in descriptors:
-            res.append(Diagram(descriptor))
-        return res
+        return Sirius.get_diagrams(self.session, diagram_type)
 

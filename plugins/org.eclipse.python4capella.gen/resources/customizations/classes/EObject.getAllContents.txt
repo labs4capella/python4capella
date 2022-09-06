@@ -1,9 +1,3 @@
     def get_all_contents(self):
-        res = []
-        e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for value in e_all_contents(self.get_java_object()):
-            specific_cls = e_object_class.get_class(value)
-            if specific_cls is not None:
-                res.append(specific_cls(value))
-        return res
+        return e_all_contents(self.get_java_object())
 
