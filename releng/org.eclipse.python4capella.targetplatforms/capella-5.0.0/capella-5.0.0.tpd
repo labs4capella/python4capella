@@ -80,7 +80,7 @@ location sirius "https://archive.eclipse.org/sirius/updates/releases/6.4.0/2020-
 	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
 }
 
-location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtime/5.0.0" {	
+location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/releases/runtime/5.0.0" {	
 	org.polarsys.kitalpha.ad.runtime.feature.source.feature.group lazy
 	org.polarsys.kitalpha.cadence.feature.source.feature.group lazy
 	org.polarsys.kitalpha.common.feature.source.feature.group lazy
@@ -103,7 +103,7 @@ location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/upd
 	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group lazy
 	org.polarsys.kitalpha.transposer.feature.source.feature.group lazy
 }
-location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/release/sdk/5.0.0" {
+location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/releases/sdk/5.0.0" {
 	org.polarsys.kitalpha.doc.feature.feature.group lazy
 	org.polarsys.kitalpha.emde.sdk.feature.source.feature.group lazy
 }
