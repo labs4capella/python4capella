@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 6.0.0 Target Platform" sequenceNumber="1661328770">
+<target name="Capella 6.0.0 Target Platform" sequenceNumber="1663337293">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -60,7 +60,7 @@
       <unit id="org.eclipse.sirius.aql.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/milestones/7.0.2rc3/2021-06"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/7.0.4/2021-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.apache.batik.bridge.source" version="0.0.0"/>
@@ -99,12 +99,12 @@
       <unit id="org.polarsys.kitalpha.richtext.widget.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.transposer.feature.source.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/stable/runtime/6.0.0.S202208171220/"/>
+      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/stable/runtime/6.0.0.S202208240845/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.doc.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.emde.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/stable/sdk/6.0.0.S202208171220/"/>
+      <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/stable/sdk/6.0.0.S202208240845/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.source.feature.group" version="0.0.0"/>
@@ -137,7 +137,7 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
-      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/stable/6.0.0-S20220817-190901/org.polarsys.capella.rcp.site/"/>
+      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/6.0.0//org.polarsys.capella.rcp.site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.ease.lang.scriptarchive.feature.feature.group" version="0.0.0"/>
