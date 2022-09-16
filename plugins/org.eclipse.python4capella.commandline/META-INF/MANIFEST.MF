@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Python4Capella Command Line Interface
 Bundle-SymbolicName: org.eclipse.python4capella.commandline;singleton:=true
-Bundle-Version: 1.0.1.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Vendor: Eclipse Modeling Project
 Automatic-Module-Name: org.eclipse.python4capella.commandline
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
