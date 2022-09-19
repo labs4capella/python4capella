@@ -124,7 +124,7 @@ location egf "https://download.eclipse.org/egf/updates/1.6.2/2019-06/" {
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
 
-location nebula "https://download.eclipse.org/nebula/releases/1.4.0/" {
+location nebula "https://archive.eclipse.org/nebula/releases/1.4.0/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 }
 

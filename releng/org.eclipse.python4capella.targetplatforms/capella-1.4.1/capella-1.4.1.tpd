@@ -81,7 +81,7 @@ location sirius "https://archive.eclipse.org/sirius/updates/releases/6.3.2/2019-
 	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
 }
 
-location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtime/1.4.1" {	
+location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/releases/runtime/1.4.1" {	
 	org.polarsys.kitalpha.ad.runtime.feature.feature.group lazy
 	org.polarsys.kitalpha.cadence.feature.feature.group lazy
 	org.polarsys.kitalpha.common.feature.feature.group lazy
@@ -108,7 +108,7 @@ location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/upd
 	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group lazy
 	org.polarsys.kitalpha.transposer.feature.feature.group lazy
 }
-location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/release/sdk/1.4.1" {
+location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/releases/sdk/1.4.1" {
 	org.polarsys.kitalpha.doc.feature.feature.group lazy
 	org.polarsys.kitalpha.emde.sdk.feature.feature.group lazy
 }
@@ -147,7 +147,7 @@ location egf "https://download.eclipse.org/egf/updates/1.6.1/2019-06/" {
 	org.eclipse.egf.sdk.feature.feature.group lazy
 }
 
-location nebula "https://download.eclipse.org/nebula/releases/1.4.0/" {
+location nebula "https://archive.eclipse.org/nebula/releases/1.4.0/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 }
 
