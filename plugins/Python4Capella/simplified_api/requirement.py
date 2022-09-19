@@ -189,19 +189,23 @@ class Requirement(EObject):
         """
         """
         self.get_java_object().setReqIFText(value)
+    def get_owned_attributes(self):
+        """
+        """
+        return create_e_list(self.get_java_object().getOwnedAttributes(), Attribute)
+    def get_owned_relations(self):
+        """
+        """
+        return create_e_list(self.get_java_object().getOwnedRelations(), AbstractRelation)
     def get_all_attributes(self):
         """
         status: KO
         """
         res = []
         for child in self.get_java_object().eContents():
-             specific_cls_name = child.eClass().getName()
-             if (specific_cls_name == "StringValueAttribute") or \
-                (specific_cls_name == "IntegerValueAttribute") or \
-                (specific_cls_name == "EnumerationValueAttribute") or \
-                (specific_cls_name == "BooleanValueAttribute") or \
-                (specific_cls_name == "RealValueAttribute"):
-                 res.append(Attribute(child))
+            specific_cls_name = child.eClass().getName()
+            if specific_cls_name in ["StringValueAttribute", "IntegerValueAttribute", "EnumerationValueAttribute", "BooleanValueAttribute", "RealValueAttribute"]:
+                res.append(Attribute(child))
         return res
     def get_attribute(self, attributeName):
         """
@@ -245,11 +249,6 @@ class Requirement(EObject):
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
         return res
-    def get_owned_relations(self):
-        """
-        """
-        return create_e_list(self.java_object.getOwnedRelations(), AbstractRelation)
-
 
 class Folder(Requirement):
     """
@@ -273,128 +272,199 @@ class Folder(Requirement):
 class Attribute(EObject):
     """
     """
-    def __init__(self, java_object = None):
+    def __init__(self, java_object = None, kind = "StringValueAttribute"):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Attribute"))
+            if kind in ["StringValueAttribute", "IntegerValueAttribute", "EnumerationValueAttribute", "BooleanValueAttribute", "RealValueAttribute"]:
+                JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", kind))
+            else:
+                raise ValueError("kind must be either \"StringValueAttribute\", \"IntegerValueAttribute\", \"EnumerationValueAttribute\", \"BooleanValueAttribute\", or \"RealValueAttribute\"")
         elif isinstance(java_object, Attribute):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Attribute").isInstance(java_object):
             JavaObject.__init__(self, java_object)
-    
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_definition(self):
         """
         """
         return self.get_java_object().getDefinition()
-    
+    def set_definition(self, value):
+        """
+        """
+        self.get_java_object().setDefinition(value)
     def get_value(self):
         """
         """
-        return self.get_java_object().getValue()
-    
+        if self.get_java_object().eClass().getName() == "BooleanValueAttribute":
+            return self.get_java_object().isValue()
+        else:
+            return self.get_java_object().getValue()
+    def set_value(self, value):
+        """
+        """
+        self.get_java_object().setValue(value)
+
 class ReqIFElement(EObject):
     """
     """
     def __init__(self, java_object = None):
-        """
-        """
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "ReqIFElement"))
         elif isinstance(java_object, ReqIFElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "ReqIFElement").isInstance(java_object):
             JavaObject.__init__(self, java_object)
-            
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 
 class AbstractRelation(ReqIFElement):
     """
     """
     def __init__(self, java_object = None):
-        """
-        """
         if java_object is None:
-            raise ValueError("No matching EClass for this type")
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "AbstractRelation"))
         elif isinstance(java_object, AbstractRelation):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "AbstractRelation").isInstance(java_object):
             JavaObject.__init__(self, java_object)
-            
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_relation_type(self):
         """
         """
-        return RelationType(self.get_java_object().getRelationType())
-    def set_relation_type(self, value):
-        """
-        """
-        self.get_java_object().setRelationType(value.get_java_object())
+        return capella_query_by_name(self, "Relation Type")
 
 class CapellaIncomingRelation(AbstractRelation):
     """
     """
     def __init__(self, java_object = None):
+        """
+        """
         if java_object is None:
-           JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation"))
         elif isinstance(java_object, CapellaIncomingRelation):
             JavaObject.__init__(self, java_object.get_java_object())
+        elif get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation").isInstance(java_object):
+            JavaObject.__init__(self, java_object)
         else:
-            JavaObject.__init__(self, java_object)  
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_source(self):
+        """
+        """
+        value = self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            return Requirement(value)
     def set_source(self, value):
         """
         """
         self.get_java_object().setSource(value.get_java_object())
+    def get_target(self):
+        """
+        """
+        value = self.get_java_object().getTarget()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is None:
+                return None
+            else:
+                return specific_cls(value)
     def set_target(self, value):
         """
         """
         self.get_java_object().setTarget(value.get_java_object())
-        
 
 class CapellaOutgoingRelation(AbstractRelation):
     """
     """
     def __init__(self, java_object = None):
+        """
+        """
         if java_object is None:
-           JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation"))
         elif isinstance(java_object, CapellaOutgoingRelation):
             JavaObject.__init__(self, java_object.get_java_object())
+        elif get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation").isInstance(java_object):
+            JavaObject.__init__(self, java_object)
         else:
-            JavaObject.__init__(self, java_object)  
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_source(self):
+        """
+        """
+        value = self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is None:
+                return None
+            else:
+                return specific_cls(value)
     def set_source(self, value):
         """
         """
         self.get_java_object().setSource(value.get_java_object())
+    def get_target(self):
+        """
+        """
+        value = self.get_java_object().getTarget()
+        if value is None:
+            return value
+        else:
+            return Requirement(value)
     def set_target(self, value):
         """
         """
         self.get_java_object().setTarget(value.get_java_object())
 
-
 class AbstractType(CapellaElement):
     """
     """
     def __init__(self, java_object = None):
-        """
-        """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "AbstractType"))
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractType"))
         elif isinstance(java_object, AbstractType):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractType").isInstance(java_object):
             JavaObject.__init__(self, java_object)
-    
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
 class RelationType(AbstractType):
     """
     """
     def __init__(self, java_object = None):
-        """
-        """
         if java_object is None:
             JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "RelationType"))
         elif isinstance(java_object, RelationType):
             JavaObject.__init__(self, java_object.get_java_object())
-        else:
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "RelationType").isInstance(java_object):
             JavaObject.__init__(self, java_object)
-
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_long_name(self):
+        """
+        """
+        return self.get_java_object().getReqIFLongName()
+    def set_long_name(self, value):
+        """
+        """
+        self.get_java_object().setReqIFLongName(value)
+    def get_name(self):
+        """
+        """
+        return self.get_java_object().getReqIFName()
+    def set_name(self, value):
+        """
+        """
+        self.get_java_object().setReqIFName(value)
     @staticmethod
     def get_relation_types(architecture):
         """
@@ -405,9 +475,15 @@ class RelationType(AbstractType):
                 for rel in fld.eContents():
                     if rel.eClass().getName() == "RelationType":
                         res.append(RelationType(rel))
-        
         return res
-    
+    @staticmethod
+    def get_relation_type_by_long_name(architecture, long_name):
+        """
+        """
+        for rel in RelationType.get_relation_types(architecture):
+            if rel.get_long_name() == long_name:
+                return rel
+        return None
     @staticmethod
     def get_relation_type_by_name(architecture, name):
         """
@@ -416,9 +492,5 @@ class RelationType(AbstractType):
             if rel.get_name() == name:
                 return rel
         return None
-    
-    def get_name(self):
-        """
-        """
-        return self.get_java_object().getReqIFLongName()
-        
+
+

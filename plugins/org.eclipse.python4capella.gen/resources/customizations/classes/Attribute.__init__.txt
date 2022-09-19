@@ -1,6 +1,9 @@
-    def __init__(self, java_object = None):
+    def __init__(self, java_object = None, kind = "StringValueAttribute"):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Attribute"))
+            if kind in ["StringValueAttribute", "IntegerValueAttribute", "EnumerationValueAttribute", "BooleanValueAttribute", "RealValueAttribute"]:
+                JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", kind))
+            else:
+                raise ValueError("kind must be either \"StringValueAttribute\", \"IntegerValueAttribute\", \"EnumerationValueAttribute\", \"BooleanValueAttribute\", or \"RealValueAttribute\"")
         elif isinstance(java_object, Attribute):
             JavaObject.__init__(self, java_object.get_java_object())
         elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Attribute").isInstance(java_object):

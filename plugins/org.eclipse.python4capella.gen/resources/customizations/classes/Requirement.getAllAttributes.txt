@@ -1,0 +1,8 @@
+    def get_all_attributes(self):
+        res = []
+        for child in self.get_java_object().eContents():
+            specific_cls_name = child.eClass().getName()
+            if specific_cls_name in ["StringValueAttribute", "IntegerValueAttribute", "EnumerationValueAttribute", "BooleanValueAttribute", "RealValueAttribute"]:
+                res.append(Attribute(child))
+        return res
+

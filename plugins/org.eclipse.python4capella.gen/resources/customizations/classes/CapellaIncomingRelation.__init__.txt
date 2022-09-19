@@ -1,0 +1,10 @@
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation"))
+        elif isinstance(java_object, CapellaIncomingRelation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation").isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+

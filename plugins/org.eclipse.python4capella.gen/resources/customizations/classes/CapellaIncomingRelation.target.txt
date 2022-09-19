@@ -1,0 +1,13 @@
+    def get_target(self):
+        value = self.get_java_object().getTarget()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is None:
+                return None
+            else:
+                return specific_cls(value)
+    def set_target(self, value):
+        self.get_java_object().setTarget(value.get_java_object())

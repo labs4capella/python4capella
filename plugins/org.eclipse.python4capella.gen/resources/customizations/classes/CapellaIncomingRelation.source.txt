@@ -1,0 +1,8 @@
+    def get_source(self):
+        value = self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            return Requirement(value)
+    def set_source(self, value):
+        self.get_java_object().setSource(value.get_java_object())

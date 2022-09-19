@@ -160,6 +160,8 @@ class EObject(JavaObject):
             res = State
         if res == None and e_object.eClass().getName() == "Exception":
             res = CapellaException
+        if res == None and e_object.eClass().getName() in ["StringValueAttribute", "IntegerValueAttribute", "EnumerationValueAttribute", "BooleanValueAttribute", "RealValueAttribute"]:
+            res = Attribute
         return res
     @staticmethod
     def copy_e_object(e_object):

@@ -1,0 +1,9 @@
+    @staticmethod
+    def get_relation_types(architecture):
+        res = []
+        for fld in architecture.get_java_object().eContents():
+            if fld.eClass().getName() == "CapellaTypesFolder":
+                for rel in fld.eContents():
+                    if rel.eClass().getName() == "RelationType":
+                        res.append(RelationType(rel))
+        return res

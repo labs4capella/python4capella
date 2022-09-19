@@ -1,0 +1,14 @@
+    def get_source(self):
+        value = self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is None:
+                return None
+            else:
+                return specific_cls(value)
+    def set_source(self, value):
+        self.get_java_object().setSource(value.get_java_object())
+
