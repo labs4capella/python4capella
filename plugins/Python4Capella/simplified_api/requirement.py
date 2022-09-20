@@ -54,7 +54,7 @@ class RequirementAddOn(JavaObject):
     @staticmethod
     def get_outgoing_requirements(capellaElement):
         """
-        status: OK
+        status: KO
         """
         res = []
         #: :type capellaElement: CapellaElement
@@ -199,7 +199,7 @@ class Requirement(EObject):
         return create_e_list(self.get_java_object().getOwnedRelations(), AbstractRelation)
     def get_all_attributes(self):
         """
-        status: KO
+        status: OK
         """
         res = []
         for child in self.get_java_object().eContents():
@@ -209,7 +209,7 @@ class Requirement(EObject):
         return res
     def get_attribute(self, attributeName):
         """
-        status: KO
+        status: OK
         """
         for attr in self.get_all_attributes():
             if attributeName == attr.get_definition().getReqIFLongName():
@@ -457,17 +457,10 @@ class RelationType(AbstractType):
         """
         """
         self.get_java_object().setReqIFLongName(value)
-    def get_name(self):
-        """
-        """
-        return self.get_java_object().getReqIFName()
-    def set_name(self, value):
-        """
-        """
-        self.get_java_object().setReqIFName(value)
     @staticmethod
     def get_relation_types(architecture):
         """
+        status: KO
         """
         res = []
         for fld in architecture.get_java_object().eContents():
@@ -479,17 +472,10 @@ class RelationType(AbstractType):
     @staticmethod
     def get_relation_type_by_long_name(architecture, long_name):
         """
+        status: KO
         """
         for rel in RelationType.get_relation_types(architecture):
             if rel.get_long_name() == long_name:
-                return rel
-        return None
-    @staticmethod
-    def get_relation_type_by_name(architecture, name):
-        """
-        """
-        for rel in RelationType.get_relation_types(architecture):
-            if rel.get_name() == name:
                 return rel
         return None
 

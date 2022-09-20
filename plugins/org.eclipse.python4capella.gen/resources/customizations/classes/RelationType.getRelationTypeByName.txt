@@ -1,6 +1,0 @@
-    @staticmethod
-    def get_relation_type_by_name(architecture, name):
-        for rel in RelationType.get_relation_types(architecture):
-            if rel.get_name() == name:
-                return rel
-        return None

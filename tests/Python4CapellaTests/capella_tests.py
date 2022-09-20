@@ -30780,17 +30780,6 @@ class capella_tests(unittest.TestCase):
         tested.set_long_name(value)
         pass
 
-    def test_RelationType_name_getter(self):
-        tested = RelationType()
-        tested.get_name()
-        pass
-
-    def test_RelationType_name_setter(self):
-        tested = RelationType()
-        value = "value"
-        tested.set_name(value)
-        pass
-
     def test_RelationType_get_relation_types(self):
         tested = RelationType()
         tested.get_relation_types()
@@ -30799,11 +30788,6 @@ class capella_tests(unittest.TestCase):
     def test_RelationType_get_relation_type_by_long_name(self):
         tested = RelationType()
         tested.get_relation_type_by_long_name()
-        pass
-
-    def test_RelationType_get_relation_type_by_name(self):
-        tested = RelationType()
-        tested.get_relation_type_by_name()
         pass
 
 
