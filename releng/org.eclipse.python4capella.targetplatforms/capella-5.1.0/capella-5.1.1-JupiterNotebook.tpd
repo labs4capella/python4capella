@@ -58,7 +58,7 @@ location eclipse "https://download.eclipse.org/releases/2020-06" {
 	org.eclipse.pde.feature.group lazy
 }
 
-location sirius "https://archive.eclipse.org/sirius/updates/releases/6.5.1/2020-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/releases/6.5.1/2020-06" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.doc.feature.source.feature.group lazy
 	org.eclipse.sirius.runtime.source.feature.group lazy
@@ -71,7 +71,18 @@ location sirius "https://archive.eclipse.org/sirius/updates/releases/6.5.1/2020-
 	org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group lazy
 }
 
-location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/releases/runtime/5.1.0" {	
+location Orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/repository" {
+	org.mockito [1.9.5,2.0.0)
+	org.hamcrest [1.1.0,2.0.0)
+	org.json
+	com.fasterxml.jackson.core.jackson-annotations
+	com.fasterxml.jackson.core.jackson-core
+	com.fasterxml.jackson.core.jackson-databind
+	org.apache.commons.lang3
+	org.apache.commons.io
+}
+
+location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/updates/release/runtime/5.1.0" {	
 	org.polarsys.kitalpha.ad.runtime.feature.source.feature.group lazy
 	org.polarsys.kitalpha.cadence.feature.source.feature.group lazy
 	org.polarsys.kitalpha.common.feature.source.feature.group lazy
@@ -94,7 +105,7 @@ location kitalpha-runtime-core-master "https://download.eclipse.org/kitalpha/upd
 	org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group lazy
 	org.polarsys.kitalpha.transposer.feature.source.feature.group lazy
 }
-location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/releases/sdk/5.1.0" {
+location kitalpha-sdk-master "https://download.eclipse.org/kitalpha/updates/release/sdk/5.1.0" {
 	org.polarsys.kitalpha.doc.feature.feature.group lazy
 	org.polarsys.kitalpha.emde.sdk.feature.source.feature.group lazy
 }
@@ -115,7 +126,7 @@ location egf "https://download.eclipse.org/egf/updates/1.6.2/2019-06/" {
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
 
-location nebula "https://archive.eclipse.org/nebula/releases/1.4.0/" {
+location nebula "https://download.eclipse.org/nebula/releases/1.4.0/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 }
 
@@ -143,6 +154,10 @@ location EASE "https://download.eclipse.org/ease/release/0.8.0/" {
 location "https://eclipse-ease-addons.github.io/org.eclipse.ease.engines.p2/latest" ease-engines {
 	// jython interpreter
 	org.eclipse.ease.engine.jython.feature.feature.group lazy
+//	// groovy interpreter
+//	org.eclipse.ease.engine.groovy.feature.feature.group lazy
+//	// ruby interpreter
+//	org.eclipse.ease.engine.jruby.feature.feature.group lazy
 }
 
 location py4j "http://eclipse.py4j.org/" {
