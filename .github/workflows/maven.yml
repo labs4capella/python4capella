@@ -69,7 +69,7 @@ jobs:
         MAVEN_OPTS: ${{ matrix.mavenOpt }}
       uses: GabrielBB/xvfb-action@v1.6
       with:
-        run: mvn clean verify -fae -P${{ matrix.profile }} "-Dtycho=${{ matrix.tycho }}"
+        run: mvn clean verify -fae -P${{ matrix.profile }} "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory
       id: prepare_deploy
