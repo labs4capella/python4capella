@@ -9,23 +9,23 @@ jobs:
 
   matrix_prep:
     # Using a separate job and agent so as to be able to use tools like 'sed' and 'jq'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     # Defining outputs of a job allows for easier consumption and use
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
     # Checking out code as the set-matrix step utilizes a file named matrix_includes.json
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     # This step is explained more in a following section
     - id: set-matrix
       run: |
         matrix=$(jq . .github/workflows/matrix_includes.json)
-        echo ::set-output name=matrix::{\"include\":$(echo $matrix)}\"
+        echo "matrix={\"include\":$(echo $matrix)}\"" >> $GITHUB_OUTPUT
 
   build:
     needs: matrix_prep
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       # We need to convert the json string output into an object that the GitHub Workflow expects.
       # Thankfully, the json-schema for Workflows allows 'matrix' to be set to an expression.
@@ -38,10 +38,12 @@ jobs:
         echo GITHUB_REF $GITHUB_REF
         echo GITHUB_SHA $GITHUB_SHA
         echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
+        echo JAVA ${{ matrix.java }}
         echo PROFILE ${{ matrix.profile }}
+        echo TYCHO ${{ matrix.tycho }}
 
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
 
     - name: Check if release is needed
@@ -50,26 +52,37 @@ jobs:
         PROFILE: ${{ matrix.profile }}
       run: |
         if [[ "$PROFILE" == *"updatesite"* && "$(git tag --points-at HEAD)" != "" ]]; then export IS_RELEASE=true; fi
-        echo ::set-output name=IS_RELEASE::${IS_RELEASE}
+        echo "IS_RELEASE=${IS_RELEASE}" >> $GITHUB_OUTPUT
 
     - name: Set up JDK ${{ matrix.java }}
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v3
       with:
+        distribution: 'adopt'
         java-version: ${{ matrix.java }}
 
-    - uses: actions/cache@v1
+    - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml', '**/*.product') }}
         restore-keys: |
           ${{ runner.os }}-maven-
 
+    - name: Install metacity and xvfb
+      uses: awalsh128/cache-apt-pkgs-action@v1.3.0
+      with:
+        packages: xvfb metacity
+        version: 1.0
+
     - name: Build with Maven (${{ matrix.profile }})
+      id: maven_build
       env:
         MAVEN_OPTS: ${{ matrix.mavenOpt }}
-      uses: GabrielBB/xvfb-action@v1.6
-      with:
-        run: mvn clean verify -fae -P${{ matrix.profile }} "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
+      run: |
+        /usr/bin/Xvfb :99 -ac -screen 0 1440x900x16&
+        ps auxwww | grep Xvfb
+        export DISPLAY=:99
+        echo DISPLAY $DISPLAY
+        mvn clean verify -fae -P${{ matrix.profile }} "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory
       id: prepare_deploy
@@ -79,12 +92,12 @@ jobs:
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
         chmod a+x ./scripts/prepare-deploy-local-dir.sh
         ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
-        echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
+        echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
 
     - name: Create Release ${{ github.ref }}
       id: create_release
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/create-release@v1
+      uses: actions/create-release@v1.1.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -96,7 +109,7 @@ jobs:
     - name: Upload Release Asset
       id: upload_release_asset 
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/upload-release-asset@v1
+      uses: actions/upload-release-asset@v1.0.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
