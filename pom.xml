@@ -274,6 +274,7 @@
         </plugins>
       </build>
     </profile>
+    <profile>
       <id>platform-capella-6.0.0</id>
       <activation>
         <activeByDefault>false</activeByDefault>
