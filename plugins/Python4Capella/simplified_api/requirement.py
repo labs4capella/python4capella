@@ -318,6 +318,43 @@ class ReqIFElement(EObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_id(self):
+        """
+        """
+        return self.get_java_object().getReqIFIdentifier()
+    def set_id(self, value):
+        """
+        """
+        self.get_java_object().setReqIFIdentifier(value)
+    def get_long_name(self):
+        """
+        """
+        return self.get_java_object().getReqIFLongName()
+    def set_long_name(self, value):
+        """
+        """
+        self.get_java_object().setReqIFLongName(value)
+    def get_description(self):
+        """
+        """
+        return self.get_java_object().getReqIFDescription()
+    def set_description(self, value):
+        """
+        """
+        self.get_java_object().setReqIFDescription(value)
+
+class EnumValue(ReqIFElement):
+    """
+    """
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "EnumValue"))
+        elif isinstance(java_object, EnumValue):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "EnumValue").isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 
 class AbstractRelation(ReqIFElement):
     """
@@ -407,6 +444,43 @@ class CapellaOutgoingRelation(AbstractRelation):
                 return None
             else:
                 return specific_cls(value)
+    def set_source(self, value):
+        """
+        """
+        self.get_java_object().setSource(value.get_java_object())
+    def get_target(self):
+        """
+        """
+        value = self.get_java_object().getTarget()
+        if value is None:
+            return value
+        else:
+            return Requirement(value)
+    def set_target(self, value):
+        """
+        """
+        self.get_java_object().setTarget(value.get_java_object())
+
+class InternalRelation(AbstractRelation):
+    """
+    """
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "InternalRelation"))
+        elif isinstance(java_object, InternalRelation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "InternalRelation").isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_source(self):
+        """
+        """
+        value = self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            return Requirement(value)
     def set_source(self, value):
         """
         """

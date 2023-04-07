@@ -29950,6 +29950,201 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_ReqIFElement_id_getter(self):
+        tested = ReqIFElement()
+        tested.get_id()
+        pass
+
+    def test_ReqIFElement_id_setter(self):
+        tested = ReqIFElement()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_ReqIFElement_long_name_getter(self):
+        tested = ReqIFElement()
+        tested.get_long_name()
+        pass
+
+    def test_ReqIFElement_long_name_setter(self):
+        tested = ReqIFElement()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_ReqIFElement_description_getter(self):
+        tested = ReqIFElement()
+        tested.get_description()
+        pass
+
+    def test_ReqIFElement_description_setter(self):
+        tested = ReqIFElement()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_EnumValue_id_getter(self):
+        tested = EnumValue()
+        tested.get_id()
+        pass
+
+    def test_EnumValue_id_setter(self):
+        tested = EnumValue()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_EnumValue_long_name_getter(self):
+        tested = EnumValue()
+        tested.get_long_name()
+        pass
+
+    def test_EnumValue_long_name_setter(self):
+        tested = EnumValue()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_EnumValue_description_getter(self):
+        tested = EnumValue()
+        tested.get_description()
+        pass
+
+    def test_EnumValue_description_setter(self):
+        tested = EnumValue()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_EnumValue_owned_diagrams_getter(self):
+        tested = EnumValue()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_EnumValue_element_of_interest_for_diagrams_getter(self):
+        tested = EnumValue()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_EnumValue_element_of_interest_for_diagrams_setter(self):
+        tested = EnumValue()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_EnumValue_contextual_element_for_diagrams_getter(self):
+        tested = EnumValue()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_EnumValue_contextual_element_for_diagrams_setter(self):
+        tested = EnumValue()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_EnumValue_representing_diagrams_getter(self):
+        tested = EnumValue()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_EnumValue__r_e_cs_getter(self):
+        tested = EnumValue()
+        tested.get__r_e_cs()
+        pass
+
+    def test_EnumValue__r_e_cs_setter(self):
+        tested = EnumValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_EnumValue__r_p_ls_getter(self):
+        tested = EnumValue()
+        tested.get__r_p_ls()
+        pass
+
+    def test_EnumValue__r_p_ls_setter(self):
+        tested = EnumValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_EnumValue_get_label(self):
+        tested = EnumValue()
+        tested.get_label()
+        pass
+
+    def test_EnumValue_get_element_type(self):
+        tested = EnumValue()
+        tested.get_element_type()
+        pass
+
+    def test_EnumValue_get_container(self):
+        tested = EnumValue()
+        tested.get_container()
+        pass
+
+    def test_EnumValue_get_contents(self):
+        tested = EnumValue()
+        tested.get_contents()
+        pass
+
+    def test_EnumValue_get_all_contents(self):
+        tested = EnumValue()
+        tested.get_all_contents()
+        pass
+
+    def test_EnumValue_get_all_contents_by_type(self):
+        tested = EnumValue()
+        param1 = "value"
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_EnumValue_get_available_s_b_queries(self):
+        tested = EnumValue()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_EnumValue_get_query_result(self):
+        tested = EnumValue()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_AbstractRelation_id_getter(self):
+        tested = AbstractRelation()
+        tested.get_id()
+        pass
+
+    def test_AbstractRelation_id_setter(self):
+        tested = AbstractRelation()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_AbstractRelation_long_name_getter(self):
+        tested = AbstractRelation()
+        tested.get_long_name()
+        pass
+
+    def test_AbstractRelation_long_name_setter(self):
+        tested = AbstractRelation()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_AbstractRelation_description_getter(self):
+        tested = AbstractRelation()
+        tested.get_description()
+        pass
+
+    def test_AbstractRelation_description_setter(self):
+        tested = AbstractRelation()
+        value = "value"
+        tested.set_description(value)
+        pass
+
     def test_AbstractRelation_owned_diagrams_getter(self):
         tested = AbstractRelation()
         tested.get_owned_diagrams()
@@ -30054,6 +30249,39 @@ class capella_tests(unittest.TestCase):
     def test_CapellaIncomingRelation_relation_type_getter(self):
         tested = CapellaIncomingRelation()
         tested.get_relation_type()
+        pass
+
+    def test_CapellaIncomingRelation_id_getter(self):
+        tested = CapellaIncomingRelation()
+        tested.get_id()
+        pass
+
+    def test_CapellaIncomingRelation_id_setter(self):
+        tested = CapellaIncomingRelation()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_CapellaIncomingRelation_long_name_getter(self):
+        tested = CapellaIncomingRelation()
+        tested.get_long_name()
+        pass
+
+    def test_CapellaIncomingRelation_long_name_setter(self):
+        tested = CapellaIncomingRelation()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_CapellaIncomingRelation_description_getter(self):
+        tested = CapellaIncomingRelation()
+        tested.get_description()
+        pass
+
+    def test_CapellaIncomingRelation_description_setter(self):
+        tested = CapellaIncomingRelation()
+        value = "value"
+        tested.set_description(value)
         pass
 
     def test_CapellaIncomingRelation_owned_diagrams_getter(self):
@@ -30167,6 +30395,39 @@ class capella_tests(unittest.TestCase):
         tested.get_relation_type()
         pass
 
+    def test_CapellaOutgoingRelation_id_getter(self):
+        tested = CapellaOutgoingRelation()
+        tested.get_id()
+        pass
+
+    def test_CapellaOutgoingRelation_id_setter(self):
+        tested = CapellaOutgoingRelation()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_CapellaOutgoingRelation_long_name_getter(self):
+        tested = CapellaOutgoingRelation()
+        tested.get_long_name()
+        pass
+
+    def test_CapellaOutgoingRelation_long_name_setter(self):
+        tested = CapellaOutgoingRelation()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_CapellaOutgoingRelation_description_getter(self):
+        tested = CapellaOutgoingRelation()
+        tested.get_description()
+        pass
+
+    def test_CapellaOutgoingRelation_description_setter(self):
+        tested = CapellaOutgoingRelation()
+        value = "value"
+        tested.set_description(value)
+        pass
+
     def test_CapellaOutgoingRelation_owned_diagrams_getter(self):
         tested = CapellaOutgoingRelation()
         tested.get_owned_diagrams()
@@ -30270,6 +30531,150 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaOutgoingRelation_target_getter(self):
         tested = CapellaOutgoingRelation()
+        tested.get_target()
+        pass
+
+    def test_InternalRelation_relation_type_getter(self):
+        tested = InternalRelation()
+        tested.get_relation_type()
+        pass
+
+    def test_InternalRelation_id_getter(self):
+        tested = InternalRelation()
+        tested.get_id()
+        pass
+
+    def test_InternalRelation_id_setter(self):
+        tested = InternalRelation()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_InternalRelation_long_name_getter(self):
+        tested = InternalRelation()
+        tested.get_long_name()
+        pass
+
+    def test_InternalRelation_long_name_setter(self):
+        tested = InternalRelation()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_InternalRelation_description_getter(self):
+        tested = InternalRelation()
+        tested.get_description()
+        pass
+
+    def test_InternalRelation_description_setter(self):
+        tested = InternalRelation()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_InternalRelation_owned_diagrams_getter(self):
+        tested = InternalRelation()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_InternalRelation_element_of_interest_for_diagrams_getter(self):
+        tested = InternalRelation()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_InternalRelation_element_of_interest_for_diagrams_setter(self):
+        tested = InternalRelation()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_InternalRelation_contextual_element_for_diagrams_getter(self):
+        tested = InternalRelation()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_InternalRelation_contextual_element_for_diagrams_setter(self):
+        tested = InternalRelation()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_InternalRelation_representing_diagrams_getter(self):
+        tested = InternalRelation()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_InternalRelation__r_e_cs_getter(self):
+        tested = InternalRelation()
+        tested.get__r_e_cs()
+        pass
+
+    def test_InternalRelation__r_e_cs_setter(self):
+        tested = InternalRelation()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_InternalRelation__r_p_ls_getter(self):
+        tested = InternalRelation()
+        tested.get__r_p_ls()
+        pass
+
+    def test_InternalRelation__r_p_ls_setter(self):
+        tested = InternalRelation()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_InternalRelation_get_label(self):
+        tested = InternalRelation()
+        tested.get_label()
+        pass
+
+    def test_InternalRelation_get_element_type(self):
+        tested = InternalRelation()
+        tested.get_element_type()
+        pass
+
+    def test_InternalRelation_get_container(self):
+        tested = InternalRelation()
+        tested.get_container()
+        pass
+
+    def test_InternalRelation_get_contents(self):
+        tested = InternalRelation()
+        tested.get_contents()
+        pass
+
+    def test_InternalRelation_get_all_contents(self):
+        tested = InternalRelation()
+        tested.get_all_contents()
+        pass
+
+    def test_InternalRelation_get_all_contents_by_type(self):
+        tested = InternalRelation()
+        param1 = "value"
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_InternalRelation_get_available_s_b_queries(self):
+        tested = InternalRelation()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_InternalRelation_get_query_result(self):
+        tested = InternalRelation()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_InternalRelation_source_getter(self):
+        tested = InternalRelation()
+        tested.get_source()
+        pass
+
+    def test_InternalRelation_target_getter(self):
+        tested = InternalRelation()
         tested.get_target()
         pass
 
