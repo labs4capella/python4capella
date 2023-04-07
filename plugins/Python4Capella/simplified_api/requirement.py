@@ -71,14 +71,15 @@ class RequirementAddOn(JavaObject):
 class CapellaModule(EObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaModule")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaModule"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaModule):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaModule").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -122,14 +123,15 @@ class CapellaModule(EObject):
 class Requirement(EObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Requirement")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Requirement"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Requirement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Requirement").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -253,14 +255,15 @@ class Requirement(EObject):
 class Folder(Requirement):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Folder")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "Folder"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Folder):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Folder").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -309,12 +312,13 @@ class Attribute(EObject):
 class ReqIFElement(EObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "ReqIFElement")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "ReqIFElement"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ReqIFElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "ReqIFElement").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -346,12 +350,13 @@ class ReqIFElement(EObject):
 class EnumValue(ReqIFElement):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "EnumValue")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "EnumValue"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "EnumValue").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -359,12 +364,13 @@ class EnumValue(ReqIFElement):
 class AbstractRelation(ReqIFElement):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "AbstractRelation")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "AbstractRelation"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractRelation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "AbstractRelation").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -376,14 +382,15 @@ class AbstractRelation(ReqIFElement):
 class CapellaIncomingRelation(AbstractRelation):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaIncomingRelation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -420,14 +427,15 @@ class CapellaIncomingRelation(AbstractRelation):
 class CapellaOutgoingRelation(AbstractRelation):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaOutgoingRelation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -464,12 +472,13 @@ class CapellaOutgoingRelation(AbstractRelation):
 class InternalRelation(AbstractRelation):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "InternalRelation")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "InternalRelation"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, InternalRelation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "InternalRelation").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -501,12 +510,13 @@ class InternalRelation(AbstractRelation):
 class AbstractType(CapellaElement):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractType")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractType"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractType").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -514,12 +524,13 @@ class AbstractType(CapellaElement):
 class RelationType(AbstractType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "RelationType")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/kitalpha/requirements", "RelationType"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, RelationType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "RelationType").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))

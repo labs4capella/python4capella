@@ -1,6 +1,6 @@
     def get_all_contents_by_type(self, cls):
         res = []
-        for value in self.get_all_contents():
+        for value in e_all_contents_by_type(self.get_java_object(), cls):
             if isinstance(value, cls):
                 res.append(value)
         return res

@@ -88,14 +88,15 @@ class CapellaLibrary(CapellaModel):
     """
     A Capella Library. A library is a model which can be referenced by other models in order to reuse its content
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaLibrary):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -236,7 +237,7 @@ class EObject(JavaObject):
         """
         """
         res = []
-        for value in self.get_all_contents():
+        for value in e_all_contents_by_type(self.get_java_object(), cls):
             if isinstance(value, cls):
                 res.append(value)
         return res
@@ -253,12 +254,13 @@ class CapellaElement(EObject):
     """
     A generic Capella model Element. Used to define generic attributes and relations inherited by most Capella elements
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "CapellaElement")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "CapellaElement"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "CapellaElement").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -367,12 +369,13 @@ class Constraint(CapellaElement):
     """
     A generic constraint which can be defined on Capella elements
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Constraint")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "Constraint"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Constraint):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Constraint").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -441,12 +444,13 @@ class PropertyValueGroup(CapellaElement):
     """
     A group which can contain several PropertyValue and be applied to CapellaElements
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValueGroup")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValueGroup"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PropertyValueGroup):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValueGroup").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -459,12 +463,13 @@ class EnumerationPropertyType(CapellaElement):
     """
     The definition of an Enumeration to type a PropertyValue
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyType")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyType"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationPropertyType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyType").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -477,12 +482,13 @@ class EnumerationPropertyLiteral(CapellaElement):
     """
     A value defined in an EnumerationPropertyType
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationPropertyLiteral):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -507,14 +513,15 @@ class Diagram(JavaObject):
     """
     A generic Capella diagram
     """
+    e_class = get_e_classifier("http://www.eclipse.org/sirius/1.1.0", "DRepresentationDescriptor")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.eclipse.org/sirius/1.1.0", "DRepresentationDescriptor"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Diagram):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.eclipse.org/sirius/1.1.0", "DRepresentationDescriptor").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -681,15 +688,16 @@ class REC(AbstractCatalogElement):
     """
     A Record element is the definition of a set of elements to be replicated together
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "REC"))
         elif isinstance(java_object, RPL):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if java_object.getKind().getName() == "REC":
                 JavaObject.__init__(self, java_object)
@@ -724,15 +732,16 @@ class RPL(AbstractCatalogElement):
     """
     A replay element is the instantiation of a record element
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "RPL"))
         elif isinstance(java_object, RPL):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if java_object.getKind().getName() == "RPL":
                 JavaObject.__init__(self, java_object)
@@ -793,12 +802,13 @@ class CatalogElementPkg(AbstractReElement):
     """
     A package to structure the definition of REC / RPL elements
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CatalogElementPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -819,12 +829,13 @@ class RecCatalog(CatalogElementPkg):
     """
     The root package which contains the REC / RPL definitions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, RecCatalog):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -843,12 +854,13 @@ class CompliancyDefinitionPkg(AbstractReElement):
     """
     A package to contain CompliancyDefinitions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinitionPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinitionPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CompliancyDefinitionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinitionPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -864,12 +876,13 @@ class CompliancyDefinition(AbstractReElement):
     CONSTRAINT_REUSE
     INHERITANCY_REUSE
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinition")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinition"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CompliancyDefinition):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinition").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -887,12 +900,13 @@ class OperationalAnalysis(PropertyValuePkgContainer):
     The element containing all definitions from the Operational Analysis.
     The Operational Analysis aims at defining what the users of the system need to accomplish
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalAnalysis")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalAnalysis"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalAnalysis):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalAnalysis").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -951,12 +965,13 @@ class OperationalActivityPkg(PropertyValuePkgContainer):
     """
     A package to contain OperationalActivity
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivityPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivityPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalActivityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivityPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -973,12 +988,13 @@ class OperationalProcess(CapellaElement):
     """
     An operational process is used to describe a particular context for performing operational activities to contribute to one or more operational capabilities
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalProcess")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalProcess"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalProcess):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalProcess").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1051,12 +1067,13 @@ class OperationalCapabilityPkg(PropertyValuePkgContainer):
     """
     A package to contain OperationalCapabilities
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapabilityPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapabilityPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalCapabilityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapabilityPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1073,12 +1090,13 @@ class EntityPkg(PropertyValuePkgContainer):
     """
     A package to define Operational entities / actors
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "EntityPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "EntityPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EntityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "EntityPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1095,15 +1113,16 @@ class OperationalActor(CapellaElement):
     """
     An Operational Actor is a kind of Operational Entity, usually human. It cannot be broken down
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, OperationalEntity):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if java_object.isActor():
                 JavaObject.__init__(self, java_object)
@@ -1140,12 +1159,13 @@ class CommunicationMean(CapellaElement):
     """
     Describes the media between the Operational Entities / Actors&nbsp;to support the Operational Interactions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "CommunicationMean")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "CommunicationMean"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CommunicationMean):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "CommunicationMean").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1195,12 +1215,13 @@ class SystemAnalysis(PropertyValuePkgContainer):
     The element containing all definitions from the System Analysis.
     The System Analysis aims at defining what the system has to accomplish for the users
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemAnalysis")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemAnalysis"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemAnalysis):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemAnalysis").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1279,12 +1300,13 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
     """
     A package to contain SystemFunctions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunctionPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunctionPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemFunctionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunctionPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1305,12 +1327,13 @@ class CapabilityPkg(PropertyValuePkgContainer):
     """
     A package to contain Capabilities
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "CapabilityPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "CapabilityPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapabilityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "CapabilityPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1327,12 +1350,13 @@ class SystemComponentPkg(PropertyValuePkgContainer):
     """
     A package to contain the System and the Actors
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponentPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponentPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemComponentPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponentPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1367,12 +1391,13 @@ class MissionPkg(PropertyValuePkgContainer):
     """
     A package to contain Missions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "MissionPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "MissionPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, MissionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "MissionPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1389,12 +1414,13 @@ class Mission(CapellaElement):
     """
     High-level goal to which the System should contribute. To be fulfilled, a Mission should use a number of system Functions regrouped within one or more Capabilities
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Mission")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Mission"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Mission):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Mission").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1419,12 +1445,13 @@ class LogicalArchitecture(PropertyValuePkgContainer):
     The element containing all definitions from the Logical Architecture.
     The Logical Architecture (or conceptual solution)&nbsp;aims at defining how the system will work in order to fulfil expectations
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalArchitecture")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalArchitecture"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalArchitecture):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalArchitecture").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1493,12 +1520,13 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
     """
     A package to contain LogicalFunctions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunctionPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunctionPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalFunctionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunctionPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1519,12 +1547,13 @@ class CapabilityRealizationPkg(PropertyValuePkgContainer):
     """
     A package to contain CapabilityRealizations
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealizationPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealizationPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapabilityRealizationPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealizationPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1541,12 +1570,13 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
     """
     A package to contain the LogicalSystem, LogicalComponents and LogicalActors
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponentPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponentPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalComponentPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponentPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1586,12 +1616,13 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
     The element containing all definitions from the Physical Architecture.
     The Physical Architecture (or finalized solution)&nbsp;aims at defining how the system will be developed and built
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalArchitecture")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalArchitecture"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalArchitecture):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalArchitecture").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1654,12 +1685,13 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
     """
     A package to contain PhysicalFunctions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunctionPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunctionPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalFunctionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunctionPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1680,12 +1712,13 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
     """
     A package to contain the PhysicalSystem, PhysicalComponents and PhysicalActors
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalComponentPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1721,12 +1754,13 @@ class AbstractPhysicalArtifact(CapellaElement):
     """
     An abstract type to defined the relation between elements of the Physical Architecture and ConfigurationItems
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "AbstractPhysicalArtifact")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "AbstractPhysicalArtifact"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractPhysicalArtifact):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "AbstractPhysicalArtifact").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1739,14 +1773,15 @@ class PhysicalComponent(AbstractPhysicalArtifact):
     """
     A generic Physical Component which can be either a BehaviorPC or a NodePC
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalComponent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if not java_object.isActor():
                 if java_object.getNature().getName() == "UNSET":
@@ -1797,12 +1832,13 @@ class EPBSArchitecture(PropertyValuePkgContainer):
     The element containing all definitions from the End-Product Breakdown Structure.
     The End-Product Breakdown Structure aims at defining the construction strategy of the product, taking into account industrial and subcontracting constraints
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "EPBSArchitecture")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "EPBSArchitecture"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EPBSArchitecture):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "EPBSArchitecture").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1841,12 +1877,13 @@ class ConfigurationItemPkg(PropertyValuePkgContainer):
     """
     A package to contain ConfigurationItems
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ConfigurationItemPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1863,12 +1900,13 @@ class ConfigurationItem(CapellaElement):
     """
     System part to be acquired or produced, in as many copies as the physical architecture requires
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItem")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItem"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ConfigurationItem):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItem").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1911,12 +1949,13 @@ class StateMachine(CapellaElement):
     """
     State Machine is a way to define some of&nbsp;the expected behavior of the System, a Component or an external Actor
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateMachine")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateMachine"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StateMachine):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateMachine").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1929,12 +1968,13 @@ class AbstractState(CapellaElement):
     """
     An abstract type to define the generic relation of modes and states
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "AbstractState")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "AbstractState"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractState):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "AbstractState").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1959,12 +1999,13 @@ class State(AbstractState):
     """
     A State is a context undergone by the system, an actor or a component in specific circumstances (for example imposed by the environment)
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "State")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "State"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, State):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "State").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2005,12 +2046,13 @@ class Mode(State):
     """
     A Mode is a behavior expected from the system,&nbsp;an Actor or a component&nbsp;in chosen conditions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Mode")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Mode"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Mode):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Mode").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2019,6 +2061,7 @@ class Pseudostate(AbstractState):
     """
     A pseudo states are transitive states (meaning they don't remain active). They are used to define entry / exit point of a state machine, and to connect multiple transitions into more complex transition paths
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Pseudostate")
     def __init__(self, java_object = None, kind = "InitialPseudoState"):
         """
         """
@@ -2029,7 +2072,7 @@ class Pseudostate(AbstractState):
                 raise ValueError("kind must be either \"ChoicePseudoState\", \"DeepHistoryPseudoState\", \"EntryPointPseudoState\", \"ExitPointPseudoState\", \"ForkPseudoState\", \"InitialPseudoState\", \"JoinPseudoState\", \"ShallowHistoryPseudoState\", or \"TerminatePseudoState\"")
         elif isinstance(java_object, Pseudostate):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Pseudostate").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2043,12 +2086,13 @@ class Region(CapellaElement):
     A region is an orthogonal part of either a composite state or a state machine.
     Inside of a region, only one more or state can be active at a time
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Region")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "Region"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Region):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Region").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2061,12 +2105,13 @@ class StateTransition(CapellaElement):
     """
     A possible transition between 2 modes or 2 states
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateTransition")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateTransition"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StateTransition):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateTransition").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2121,12 +2166,13 @@ class AbstractAction(JavaObject):
     """
     A generic action which can be triggered by a Mode / State or a StateTransition
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractAction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2135,12 +2181,13 @@ class AbstractEvent(CapellaElement):
     """
     An generic event which can trigger a transition
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/behavior/" + capella_version(), "AbstractEvent")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/behavior/" + capella_version(), "AbstractEvent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractEvent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/behavior/" + capella_version(), "AbstractEvent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2149,12 +2196,13 @@ class Scenario(CapellaElement):
     """
     A scenario of use of the system defined by a specific sequence
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "Scenario")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "Scenario"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Scenario):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "Scenario").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2233,12 +2281,13 @@ class InstanceRole(CapellaElement):
     """
     The involvement of an element (function, system, component or actor)&nbsp;in a scenario
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InstanceRole")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InstanceRole"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, InstanceRole):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InstanceRole").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2251,12 +2300,13 @@ class AbstractInstance(JavaObject):
     """
     A generic element which can be involved in a scenario as an InstanceRole
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractInstance):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2265,12 +2315,13 @@ class SequenceMessage(CapellaElement):
     """
     An exchange between InstanceRole performed in the frame of a scenario
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "SequenceMessage")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "SequenceMessage"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SequenceMessage):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "SequenceMessage").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2361,12 +2412,13 @@ class StateFragment(CapellaElement):
     """
     The call of a function or mode / state&nbsp;by an InstanceRole in the context of a scenario
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "StateFragment")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "StateFragment"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StateFragment):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "StateFragment").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2399,12 +2451,13 @@ class CombinedFragment(CapellaElement):
     """
     The identification of a specific operator (ALT, OPT, LOOP...)&nbsp;in the sequence of a scenario
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "CombinedFragment")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "CombinedFragment"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CombinedFragment):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "CombinedFragment").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2432,14 +2485,15 @@ class Operand(CapellaElement):
     A specific "region" in a Combined Fragment
     For example, an ALTERNATIVE contains one operand for each of the alternative conditions
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InteractionOperand")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InteractionOperand"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Operand):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InteractionOperand").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2470,12 +2524,13 @@ class ConstraintDuration(CapellaElement):
     """
     A constraint about the execution time of a scenario defined between 2 points
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "ConstraintDuration")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "ConstraintDuration"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ConstraintDuration):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "ConstraintDuration").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2524,12 +2579,13 @@ class PhysicalPort(AbstractPhysicalArtifact):
     """
     A port on a Node component defining a physical interaction point
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2554,12 +2610,13 @@ class PhysicalLink(AbstractPhysicalArtifact):
     """
     Means of communication, transport or routing between two Node components, used as a support for behavioral exchanges
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLink")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLink"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalLink):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLink").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2601,12 +2658,13 @@ class PhysicalLinkCategory(CapellaElement):
     """
     A regroupement of PhysicalLinks for graphical simplification of diagrams
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLinkCategory")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLinkCategory"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalLinkCategory):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLinkCategory").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2619,12 +2677,13 @@ class PhysicalPath(CapellaElement):
     """
     Set of Physical Links defining a continuous path likely to route one or more behavioral exchanges
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalPath):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2653,12 +2712,13 @@ class InterfacePkg(PropertyValuePkgContainer):
     """
     A package to contain Interfaces
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "InterfacePkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "InterfacePkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, InterfacePkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "InterfacePkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2679,12 +2739,13 @@ class Interface(CapellaElement):
     """
     The definition of ExchangeItems which can be send / received by a ComponentPort
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Interface")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Interface"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Interface):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Interface").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2740,12 +2801,13 @@ class ExchangeItemAllocation(CapellaElement):
     The involvement of an ExchangeItem by an Interface.
     Mainly used for the involvement of ExchangeItems in Interface Scenarios based on the definition of Interfaces between components
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "ExchangeItemAllocation")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/cs/" + capella_version(), "ExchangeItemAllocation"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeItemAllocation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "ExchangeItemAllocation").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2800,12 +2862,13 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
     """
     Ordered set of references to elements carried together during an interaction or exchange between functions, components and actors. The elements are carried simultaneously, in the same conditions, with the same non-functional properties. The “elements” are called data
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeItem):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2870,12 +2933,13 @@ class ExchangeItemElement(CapellaElement):
     """
     A part of the information contained by an ExchangeItem
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItemElement")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItemElement"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeItemElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItemElement").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2889,12 +2953,13 @@ class FunctionPort(CapellaElement):
     An generic FunctionPort to define the allocation with ComponentPorts
     A Function Port specify what a Function is capable of producing or is requiring
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionPort")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionPort"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionPort").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2917,12 +2982,13 @@ class FunctionInputPort(FunctionPort):
     """
     An FunctionInputPort defines what a Function is requiring
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionInputPort")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionInputPort"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionInputPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionInputPort").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2947,12 +3013,13 @@ class FunctionOutputPort(FunctionPort):
     """
     A FunctionOutputPort defines what a Function is capable of producing
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionOutputPort")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionOutputPort"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionOutputPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionOutputPort").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2977,12 +3044,13 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
     """
     A functional exchange represents a dependency between a source function and a target one. Exchanges connect Function Ports, which specify what a Function is capable of producing or is requiring.
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionalExchange):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3079,12 +3147,13 @@ class ExchangeCategory(CapellaElement):
     """
     A regroupement of FunctionalExchanges for graphical simplification of diagrams
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ExchangeCategory")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ExchangeCategory"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeCategory):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ExchangeCategory").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3097,12 +3166,13 @@ class FunctionalChain(CapellaElement):
     """
     Describe the system behaviour in a particular usage context with references towards Functions and Functional Exchanges
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalChain")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalChain"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionalChain):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalChain").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3227,12 +3297,13 @@ class ComponentPort(CapellaElement):
     """
     A port on a BehavioralComponent defining a logical interaction point
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPort")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPort"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPort").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3277,12 +3348,13 @@ class ComponentExchange(CapellaElement, AbstractExchange):
     """
     Represent the interactions between Logical / Behavioral&nbsp;Components. Exchanges connects Component Ports.
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchange")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchange"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentExchange):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchange").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3345,12 +3417,13 @@ class ComponentExchangeCategory(CapellaElement):
     """
     A regroupement of ComponentExchanges for graphical simplification of diagrams
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeCategory")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeCategory"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentExchangeCategory):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeCategory").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3363,12 +3436,13 @@ class AbstractCapability(PropertyValuePkgContainer):
     """
     An abstract type to define the generic relations of all capabilities (operational and system)
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "AbstractCapability")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "AbstractCapability"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractCapability):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "AbstractCapability").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3460,12 +3534,13 @@ class AbstractSystemCapability(AbstractCapability):
 class DataValue(JavaObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "DataValue")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "DataValue"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, DataValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "DataValue").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3473,12 +3548,13 @@ class DataValue(JavaObject):
 class LiteralBooleanValue(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralBooleanValue")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralBooleanValue"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LiteralBooleanValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralBooleanValue").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3486,12 +3562,13 @@ class LiteralBooleanValue(DataValue):
 class BooleanReference(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BooleanReference")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BooleanReference"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, BooleanReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BooleanReference").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3499,12 +3576,13 @@ class BooleanReference(DataValue):
 class EnumerationReference(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationReference")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationReference"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationReference").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3512,12 +3590,13 @@ class EnumerationReference(DataValue):
 class LiteralStringValue(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralStringValue")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralStringValue"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LiteralStringValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralStringValue").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3525,12 +3604,13 @@ class LiteralStringValue(DataValue):
 class StringReference(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "StringReference")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "StringReference"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StringReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "StringReference").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3538,12 +3618,13 @@ class StringReference(DataValue):
 class LiteralNumericValue(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralNumericValue")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralNumericValue"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LiteralNumericValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralNumericValue").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3551,12 +3632,13 @@ class LiteralNumericValue(DataValue):
 class NumericReference(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "NumericReference")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "NumericReference"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, NumericReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "NumericReference").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3564,12 +3646,13 @@ class NumericReference(DataValue):
 class ComplexValue(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValue")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValue"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComplexValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValue").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3577,12 +3660,13 @@ class ComplexValue(DataValue):
 class ComplexValueReference(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValueReference")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValueReference"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComplexValueReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValueReference").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3590,12 +3674,13 @@ class ComplexValueReference(DataValue):
 class BinaryExpression(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BinaryExpression")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BinaryExpression"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, BinaryExpression):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BinaryExpression").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3603,12 +3688,13 @@ class BinaryExpression(DataValue):
 class UnaryExpression(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "UnaryExpression")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "UnaryExpression"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, UnaryExpression):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "UnaryExpression").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3616,12 +3702,13 @@ class UnaryExpression(DataValue):
 class CollectionValueReference(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValueReference")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValueReference"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CollectionValueReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValueReference").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3629,12 +3716,13 @@ class CollectionValueReference(DataValue):
 class CollectionValue(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValue")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValue"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CollectionValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValue").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3642,12 +3730,13 @@ class CollectionValue(DataValue):
 class DataPkg(JavaObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "DataPkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "DataPkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, DataPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "DataPkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3663,12 +3752,13 @@ class DataPkg(JavaObject):
 class DataType(CapellaElement):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "DataType")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "DataType"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, DataType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "DataType").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3676,12 +3766,13 @@ class DataType(CapellaElement):
 class Class(DataType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Class")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Class"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Class):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Class").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3735,12 +3826,13 @@ class Class(DataType):
 class Collection(DataType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Collection")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Collection"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Collection):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Collection").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3870,12 +3962,13 @@ class Collection(DataType):
 class Union(DataType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Union")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Union"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Union):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Union").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3941,12 +4034,13 @@ class Union(DataType):
 class Association(JavaObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Association")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Association"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Association):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Association").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3954,12 +4048,13 @@ class Association(JavaObject):
 class Property(JavaObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Property):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3971,12 +4066,13 @@ class Property(JavaObject):
 class UnionProperty(Property):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "UnionProperty")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "UnionProperty"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, UnionProperty):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "UnionProperty").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3984,14 +4080,15 @@ class UnionProperty(Property):
 class Operation(JavaObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Service")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Service"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Operation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Service").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4025,12 +4122,13 @@ class Operation(JavaObject):
 class Parameter(JavaObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Parameter")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Parameter"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Parameter):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Parameter").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4038,14 +4136,15 @@ class Parameter(JavaObject):
 class CapellaException(JavaObject):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaException):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "Exception").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4148,12 +4247,13 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
 class Enumeration(PrimitiveDataType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "Enumeration")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "Enumeration"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Enumeration):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "Enumeration").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4259,12 +4359,13 @@ class Enumeration(PrimitiveDataType):
 class EnumerationLiteral(DataValue):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationLiteral")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationLiteral"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationLiteral):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationLiteral").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4272,12 +4373,13 @@ class EnumerationLiteral(DataValue):
 class BooleanType(PrimitiveDataType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "BooleanType")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "BooleanType"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, BooleanType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "BooleanType").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4303,12 +4405,13 @@ class BooleanType(PrimitiveDataType):
 class StringType(PrimitiveDataType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "StringType")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "StringType"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StringType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "StringType").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4380,12 +4483,13 @@ class StringType(PrimitiveDataType):
 class NumericType(PrimitiveDataType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "NumericType")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "NumericType"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, NumericType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "NumericType").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4471,12 +4575,13 @@ class NumericType(PrimitiveDataType):
 class PhysicalQuantity(NumericType):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "PhysicalQuantity")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "PhysicalQuantity"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalQuantity):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "PhysicalQuantity").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4498,12 +4603,13 @@ class PhysicalQuantity(NumericType):
 class Unit(CapellaElement):
     """
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Unit")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/information/" + capella_version(), "Unit"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Unit):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Unit").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4512,12 +4618,13 @@ class SystemEngineering(PropertyValuePkgContainer):
     """
     The main element in the definition of a Capella model. Contains the perspectives of the Arcadia methodology
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemEngineering):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4559,12 +4666,13 @@ class PropertyValuePkg(PropertyValuePkgContainer):
     """
     A package to contain PropertyValues&nbsp;and/or&nbsp;PropertyValueGroups
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValuePkg")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValuePkg"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PropertyValuePkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValuePkg").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4573,14 +4681,15 @@ class Interaction(AbstractEvent):
     """
     Oriented dependency between Operational Activities
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Interaction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4643,12 +4752,13 @@ class OperationalCapability(AbstractCapability):
     """
     An operational capability is an ability, expected of one or more operational entities / actors. An operational capability is characterized by a set of operational processes and scenarios
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapability")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapability"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalCapability):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapability").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4677,14 +4787,15 @@ class OperationalEntity(OperationalActor):
     """
     An Operational Entity is a real world entity (other system, device, group or organisation…) carrying Operational Activities to which the system is likely to contribute
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalEntity):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "Entity").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if not java_object.isActor():
                 JavaObject.__init__(self, java_object)
@@ -4701,12 +4812,13 @@ class Capability(AbstractSystemCapability):
     """
     The ability of the system to supply a service contributing to fulfilling one or more Missions. A Capability represents a system usage context. It is characterized by a set of Functional Chains and Scenarios it references.
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Capability")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Capability"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Capability):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Capability").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4732,14 +4844,15 @@ class System(BehavioralComponent, Node):
     Set of elements functioning as a whole, responding to customer and user demand and needs
     The System defined in the SystemAnalysis is seen as a black box
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, System):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if is_system(java_object):
                 JavaObject.__init__(self, java_object)
@@ -4752,15 +4865,16 @@ class SystemActor(BehavioralComponent, Node):
     """
     Entity (human or not) that is external to the System (in term of responsibility), interacting with it, via its interfaces
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, SystemActor):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if java_object.isActor():
                 JavaObject.__init__(self, java_object)
@@ -4811,12 +4925,13 @@ class CapabilityRealization(AbstractSystemCapability):
     """
     The implementation of the system Capabilities in Logical Architecture and Physical Architecture
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealization")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealization"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapabilityRealization):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealization").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4853,14 +4968,15 @@ class LogicalSystem(BehavioralComponent, Node):
     """
     The definition of the system in Logical Architecture
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalSystem):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if is_system(java_object):
                 JavaObject.__init__(self, java_object)
@@ -4882,14 +4998,15 @@ class LogicalComponent(BehavioralComponent):
     Logical Components are the artefacts enabling a notional decomposition of the system as a "white box", independently from any technological solutions, but dealing with major system decomposition constraints
     Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalComponent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if not java_object.isActor():
                 JavaObject.__init__(self, java_object)
@@ -4926,15 +5043,16 @@ class LogicalActor(BehavioralComponent, Node):
     """
     An external Actor defined in the Logical Architecture
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, LogicalActor):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if java_object.isActor():
                 JavaObject.__init__(self, java_object)
@@ -4975,15 +5093,16 @@ class PhysicalSystem(CapellaElement, Node):
     """
     The definition of the system in Physical Architecture
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, PhysicalSystem):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if is_system(java_object):
                 JavaObject.__init__(self, java_object)
@@ -5004,15 +5123,16 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
     """
     System component in charge of implementing / realizing some of the functions devoted to the system
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "BEHAVIOR"))
         elif isinstance(java_object, BehaviorPC):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if not java_object.isActor():
                 if java_object.getNature().getName() == "UNSET":
@@ -5050,15 +5170,16 @@ class NodePC(PhysicalComponent, Node):
     """
     Component hosting a number of behavioral components, providing them with the resource they require to function and to interact with their environment
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "NODE"))
         elif isinstance(java_object, NodePC):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if not java_object.isActor():
                 if java_object.getNature().getName() == "UNSET":
@@ -5092,15 +5213,16 @@ class PhysicalActor(BehavioralComponent, Node):
     """
     An external Actor defined in the Physical Architecture
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
     def __init__(self, java_object = None):
         """
         """
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setActor(True)
         elif isinstance(java_object, PhysicalActor):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if java_object.isActor():
                 JavaObject.__init__(self, java_object)
@@ -5137,12 +5259,13 @@ class ChangeEvent(AbstractEvent):
     """
     An event defined by WHEN something occurs
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "ChangeEvent")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "ChangeEvent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ChangeEvent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "ChangeEvent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5159,12 +5282,13 @@ class TimeEvent(AbstractEvent):
     """
     An event defined by AT a given time, or AFTER a certain time
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEvent")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEvent"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, TimeEvent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEvent").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5291,12 +5415,13 @@ class OperationalActivity(AbstractActivityFunction):
     """
     Process step or action/operation/service performed by an Operational entity / actor&nbsp;and likely to influence the system definition or usage. Implementing operational activities generally produces elements of interactions expected by other activities
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivity")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivity"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalActivity):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivity").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5341,12 +5466,13 @@ class SystemFunction(Function):
     """
     The definition of a Function in the System Analysis
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunction")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunction"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemFunction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunction").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5371,12 +5497,13 @@ class LogicalFunction(Function):
     """
     The definition of a Function in the Logical Architecture
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunction")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunction"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalFunction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunction").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5401,12 +5528,13 @@ class PhysicalFunction(Function):
     """
     The definition of a Function in the Physical Architecture
     """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunction")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunction"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalFunction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunction").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))

@@ -1,10 +1,11 @@
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement")
     def __init__(self, java_object = None):
         if java_object is None:
-            JavaObject.__init__(self, create_e_object("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement"))
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
             self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementKind", "RPL"))
         elif isinstance(java_object, RPL):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElement").isInstance(java_object):
+        elif self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
             if java_object.getKind().getName() == "RPL":
                 JavaObject.__init__(self, java_object)

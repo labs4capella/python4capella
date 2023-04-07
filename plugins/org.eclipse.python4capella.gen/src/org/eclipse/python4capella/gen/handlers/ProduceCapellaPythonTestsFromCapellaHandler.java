@@ -282,6 +282,8 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 			res = "\"HARDWARE\"";
 		} else if ("ExchangeMechanism".equals(typedElement.getType().getLabel())) {
 			res = "\"FLOW\"";
+		} else if ("PythonClass".equals(typedElement.getType().getLabel())) {
+			res = "LogicalComponent";
 		} else {
 			if (typedElement.getType() instanceof Class && ((Class) typedElement.getType()).isAbstract()) {
 				res = concreteClass.get(typedElement.getType()).getLabel() + "()";

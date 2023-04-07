@@ -1,5 +1,5 @@
 /**
- *   Copyright (c) 2021, 2022 THALES GLOBAL SERVICES
+ *   Copyright (c) 2021, 2023 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -60,6 +60,18 @@ public class EMFModule {
 	@WrapToScript
 	public EObject create(String nsURI, String eClassName) {
 		final EClassifier eClassifier = EPackage.Registry.INSTANCE.getEPackage(nsURI).getEClassifier(eClassName);
+
+		return createFromEClassifier(eClassifier);
+	}
+
+	/**
+	 * Creates an instance of the given {@link EClassifier}.
+	 * 
+	 * @param eClassifier
+	 * @return the created instance of the given {@link EClassifier}
+	 */
+	@WrapToScript
+	public EObject createFromEClassifier(EClassifier eClassifier) {
 		if (eClassifier instanceof EClass) {
 			return EcoreUtil.create((EClass) eClassifier);
 		} else {
@@ -99,6 +111,32 @@ public class EMFModule {
 		while (it.hasNext()) {
 			final EObject child = it.next();
 			res.add(child);
+		}
+
+		return res;
+	}
+
+	/**
+	 * Gets the {@link List} all {@link EObject} contained directly or indirectly in
+	 * the given {@link EObject} that are instances of the given
+	 * {@link EClassifier}.
+	 * 
+	 * @param eObj        the {@link EObject}
+	 * @param eClassifier the {@link EClassifier} to use as filter
+	 * @return the {@link List} all {@link EObject} contained directly or indirectly
+	 *         in the given {@link EObject} that are instances of the given
+	 *         {@link EClassifier}
+	 */
+	@WrapToScript
+	public List<EObject> eAllContentsByType(EObject eObj, EClassifier eClassifier) {
+		final List<EObject> res = new ArrayList<EObject>();
+
+		final Iterator<EObject> it = eObj.eAllContents();
+		while (it.hasNext()) {
+			final EObject child = it.next();
+			if (eClassifier.isInstance(child)) {
+				res.add(child);
+			}
 		}
 
 		return res;

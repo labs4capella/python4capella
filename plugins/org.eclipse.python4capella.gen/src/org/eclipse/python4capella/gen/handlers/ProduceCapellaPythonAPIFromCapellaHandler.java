@@ -349,9 +349,6 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 	private String generateClassInit(Class cls) {
 		final StringBuilder res = new StringBuilder();
 
-		res.append("    def __init__(self, java_object = None):" + NL);
-		res.append("        if java_object is None:" + NL);
-
 		final EClass eCls = findCorrespondingEClass(cls);
 		if (eCls != null) {
 			final String nsURIString;
@@ -363,26 +360,20 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				nsURIString = "\"" + eCls.getEPackage().getNsURI() + "\"";
 			}
 
-			res.append("            JavaObject.__init__(self, create_e_object(" + nsURIString + ", \"" + cls.getName()
-					+ "\"))" + NL);
+			res.append("    e_class = get_e_classifier(" + nsURIString + ", \"" + cls.getName()			+ "\")"+ NL);
+			res.append("    def __init__(self, java_object = None):" + NL);
+			res.append("        if java_object is None:" + NL);
+			res.append("            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))" + NL);
 		} else {
+			res.append("    def __init__(self, java_object = None):" + NL);
+			res.append("        if java_object is None:" + NL);
 			res.append("            raise ValueError(\"No matching EClass for this type\")" + NL);
 		}
 
 		res.append("        elif isinstance(java_object, " + cls.getName() + "):" + NL);
 		res.append("            JavaObject.__init__(self, java_object.get_java_object())" + NL);
 		if (eCls != null) {
-			final String nsURIString;
-			if (eCls.getEPackage().getNsURI().contains("capella")) {
-				nsURIString = "\""
-						+ eCls.getEPackage().getNsURI().substring(0, eCls.getEPackage().getNsURI().lastIndexOf("/") + 1)
-						+ "\"" + " + capella_version()";
-			} else {
-				nsURIString = "\"" + eCls.getEPackage().getNsURI() + "\"";
-			}
-
-			res.append("        elif get_e_classifier(" + nsURIString + ", \"" + cls.getName()
-					+ "\").isInstance(java_object):" + NL);
+			res.append("        elif self.e_class.isInstance(java_object):" + NL);
 			res.append("            JavaObject.__init__(self, java_object)" + NL);
 			res.append("        else:" + NL);
 			res.append("            raise AttributeError(\"Passed object is not compatible with \" + self.__class__.__name__ + \": \" + str(java_object))" + NL);

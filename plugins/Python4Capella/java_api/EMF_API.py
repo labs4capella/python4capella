@@ -10,6 +10,11 @@ def e_all_contents(e_obj):
     e_object_class = getattr(sys.modules["__main__"], "EObject")
     return JavaList(eAllContents(e_obj), e_object_class);
 
+def e_all_contents_by_type(e_obj, cls):
+    """Gets all elements contained directly and indirectly in the given EObject that are instances of the given cls"""
+    e_object_class = getattr(sys.modules["__main__"], "EObject")
+    return JavaList(eAllContentsByType(e_obj, cls.e_class), e_object_class);
+
 
 def get_e_classifier(ns_uri, eclass_name):
     """Gets the EClassifier for the given namespace URI and eclassifier name"""
@@ -19,6 +24,10 @@ def get_e_classifier(ns_uri, eclass_name):
 def create_e_object(ns_uri, eclass_name):
     """Creates an EObject of the given type (namespace URI and EClass name)"""
     return create(ns_uri, eclass_name)
+
+def create_e_object_from_e_classifier(e_class):
+    """Creates an EObject of the given EClass"""
+    return createFromEClassifier(e_class)
 
 
 def create_e_list(java_list, cls):

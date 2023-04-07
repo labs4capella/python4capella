@@ -103,6 +103,8 @@
               id="c9eed328-450e-48a4-adc9-eceb44a674ec" name="Integer" visibility="PUBLIC"/>
           <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:StringType"
               id="459bd24b-1c4e-4697-af50-3e4bde4f6dc2" name="String" visibility="PUBLIC"/>
+          <ownedDataTypes xsi:type="org.polarsys.capella.core.data.information.datatype:StringType"
+              id="e05d6624-f935-4808-8e8a-c3a87aee15f3" name="PythonClass" visibility="PUBLIC"/>
         </ownedDataPkgs>
         <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
             id="532bb9ca-7e9f-45ef-9326-4cc59106e08d" name="Capella Light Metamodel">
@@ -882,7 +884,7 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
                   id="9aa2c6fe-1fea-4c66-92ed-92cfbc6730b3" name="getAllContentsByType">
                 <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
-                    id="420a6ef6-a64d-4d2f-a59c-647310e2b36e" name="type" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
+                    id="420a6ef6-a64d-4d2f-a59c-647310e2b36e" name="type" abstractType="#e05d6624-f935-4808-8e8a-c3a87aee15f3">
                   <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                       id="f4c55441-5ad3-4057-84ea-0af13c243f9f" value="1"/>
                   <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
