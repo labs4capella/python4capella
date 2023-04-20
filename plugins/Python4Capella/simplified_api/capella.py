@@ -70,7 +70,7 @@ class CapellaModel():
                 raise AttributeError("the .aird file doesn't exist: " + obj)
             self.session = Sirius.load_session(obj)
         elif isinstance(obj, EObject):
-            self.session = Sirius.get_session(obj)
+            self.session = Sirius.get_session(obj.get_java_object())
         else:
             raise AttributeError("You can pass a path to the .aird file or an EObject.")
     def create(self, path):
