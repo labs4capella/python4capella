@@ -1,5 +1,5 @@
 /**
- *   Copyright (c) 2021, 2022 THALES GLOBAL SERVICES
+ *   Copyright (c) 2021, 2023 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -14,7 +14,10 @@ package org.eclipse.python4capella.commandline;
 
 import java.util.Arrays;
 
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.ease.IScriptEngine;
 import org.eclipse.ease.ScriptResult;
@@ -25,7 +28,7 @@ import org.eclipse.ease.service.ScriptType;
 import org.eclipse.ease.tools.ResourceTools;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.polarsys.capella.core.commandline.core.CommandLineException;
-import org.polarsys.capella.core.commandline.core.DefaultCommandLine;
+import org.polarsys.capella.core.commandline.core.ui.AbstractWorkbenchCommandLine;
 
 /**
  * Command line to launch Python4Capella.
@@ -33,7 +36,7 @@ import org.polarsys.capella.core.commandline.core.DefaultCommandLine;
  * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
  *
  */
-public class Python4CapellaCommandLine extends DefaultCommandLine {
+public class Python4CapellaCommandLine extends AbstractWorkbenchCommandLine {
 
 	// @formatter:off
 // ./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data workspace workspace://Python4Capella/sample_scripts/list_logical_components.py "In-Flight Entertainment System/In-Flight Entertainment System.aird"	
@@ -116,6 +119,13 @@ public class Python4CapellaCommandLine extends DefaultCommandLine {
 		} else {
 			System.err.println("Can't find script engine for: " + scriptPath);
 		}
+
+		try {
+			ResourcesPlugin.getWorkspace().save(true, new NullProgressMonitor());
+		} catch (CoreException e) {
+			System.err.println("Can't save workspace: " + e.getMessage());
+		}
+
 		return false;
 	}
 
@@ -130,4 +140,8 @@ public class Python4CapellaCommandLine extends DefaultCommandLine {
 		super.printHelp();
 	}
 
+	@Override
+	protected IStatus executeWithinWorkbench() {
+		return Status.OK_STATUS;
+	}
 }
