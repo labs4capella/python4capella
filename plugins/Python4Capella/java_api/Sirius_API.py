@@ -1,3 +1,44 @@
+def getRepresentationDescriptors(e_obj): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def exportImage(descriptor, file_path): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def loadSiriusSession(aird_path): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getEngineering(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getRepresentedElements(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def isVisibleInDocumentation(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def isVisibleForTraceability(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def isSynchronized(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getStatus(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getReview(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getAllDiagrams(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getDiagrams(session, cls): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getRepresentingDiagrams(e_object): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getContextualElementForDiagrams(e_object): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getSession(e_object): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def startTransaction(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def commitTransaction(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def rollbackTransaction(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def createProgressMonitor(): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+def getPackage(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+    pass
+
 loadModule('/Capella/Sirius')
 include('workspace://Python4Capella/java_api/Java_API.py')
 if False:
@@ -13,9 +54,9 @@ class Sirius:
         return JavaList(getRepresentationDescriptors(eObject), diagram_class)
 
     @staticmethod
-    def export_image(self, file_path):
+    def export_image(descriptor, file_path):
         """Exports an image to the given file path from the given RepresentationDescriptor"""
-        exportImage(self, file_path)
+        exportImage(descriptor, file_path)
 
     @staticmethod
     def load_session(aird_path):

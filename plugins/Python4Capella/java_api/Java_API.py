@@ -1,3 +1,8 @@
+def iteratorHasNext(iterator): # provider by org.eclipse.python4capella.modules.JavaModule
+    pass
+def iteratorNext(iterator): # provider by org.eclipse.python4capella.modules.JavaModule
+    pass
+
 loadModule('/Capella/Java')
 import sys
 

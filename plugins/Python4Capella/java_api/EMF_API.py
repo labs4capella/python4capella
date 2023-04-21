@@ -1,3 +1,22 @@
+def eAllContents(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def eAllContentsByType(e_obj, e_class): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def getEClassifier(ns_uri, eclass_name): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def create(ns_uri, eclass_name): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def createFromEClassifier(e_class): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def getEnumLiteral(ns_uri, enum_name, literal_name): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def eInverse(e_obj, reference_name): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def copy(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def copyAll(e_objs): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+
 loadModule('/Capella/EMF')
 include('workspace://Python4Capella/java_api/Java_API.py')
 if False:
