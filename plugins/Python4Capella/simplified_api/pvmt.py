@@ -24,6 +24,8 @@ class PVMT(JavaObject):
     @staticmethod
     def get_p_v_names(elem):
         """
+        Parameters: elem: CapellaElement
+        Returns: String[*]
         status: OK
         """
         #: :type elem: CapellaElement
@@ -35,12 +37,16 @@ class PVMT(JavaObject):
     @staticmethod
     def is_p_v_defined(elem, PVName):
         """
+        Parameters: elem: CapellaElement, PVName: String
+        Returns: Boolean
         status: OK
         """
         return PVName in PVMT.get_p_v_names(elem)
     @staticmethod
     def get_p_v_value(elem, PVName):
         """
+        Parameters: elem: CapellaElement, PVName: String
+        Returns: String
         status: OK
         """
         for group in elem.get_java_object().getOwnedPropertyValueGroups():

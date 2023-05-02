@@ -41,14 +41,18 @@ import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
 import org.polarsys.capella.core.data.capellacore.PropertyValueGroup;
 import org.polarsys.capella.core.data.capellacore.StringPropertyValue;
+import org.polarsys.capella.core.data.capellacore.TypedElement;
 import org.polarsys.capella.core.data.information.Class;
 import org.polarsys.capella.core.data.information.DataPkg;
+import org.polarsys.capella.core.data.information.MultiplicityElement;
 import org.polarsys.capella.core.data.information.Operation;
 import org.polarsys.capella.core.data.information.Parameter;
 import org.polarsys.capella.core.data.information.ParameterDirection;
 import org.polarsys.capella.core.data.information.Property;
+import org.polarsys.capella.core.data.information.datatype.Enumeration;
 import org.polarsys.capella.core.data.information.datavalue.LiteralNumericValue;
 import org.polarsys.capella.core.data.information.datavalue.NumericValue;
+import org.polarsys.capella.core.data.information.util.PropertyNamingHelper;
 
 public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
@@ -280,28 +284,27 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					res.append(padding + "Java class: " + instanceCls.getCanonicalName() + NL);
 				}
 			}
-		}
-
-		if (element != null && element.getDescription() != null && !element.getDescription().isEmpty()) {
-			final Document document = Jsoup.parse(element.getDescription());
-			// makes html() preserve linebreaks and spacing
-			document.outputSettings(new Document.OutputSettings().prettyPrint(false));
-			document.select("br").append("\\n");
-			document.select("p").prepend("\\n");
-			document.select("li").prepend("\\n");
-			final String htmlString = document.html().replaceAll("\\\\n", "\n");
-			final String text = Jsoup.clean(htmlString, "", Whitelist.none(),
-					new Document.OutputSettings().prettyPrint(false));
-			try (Scanner scanner = new Scanner(text)) {
-				while (scanner.hasNextLine()) {
-					final String line = scanner.nextLine();
-					if (!line.trim().isEmpty()) {
-						res.append(padding + line + NL);
+		} else if (element instanceof Property || element instanceof Operation) {
+			if (element instanceof Operation) {
+				StringJoiner joiner = new StringJoiner(", ");
+				Parameter returnPrameter = null;
+				for (Parameter parameter : ((Operation) element).getOwnedParameters()) {
+					if (parameter.getDirection() == ParameterDirection.RETURN) {
+						returnPrameter = parameter;
+					} else {
+						joiner.add(parameter.getName() + ": " + getTypeAndCardinality(parameter));
 					}
 				}
+				final String parametersString = joiner.toString();
+				if (!parametersString.isBlank()) {
+					res.append(padding + "Parameters: " + parametersString + NL);
+				}
+				if (returnPrameter != null) {
+					res.append(padding + "Returns: " + getTypeAndCardinality(returnPrameter) + NL);
+				}
+			} else if (element instanceof Property) {
+				res.append(padding + "Returns: " + getTypeAndCardinality((TypedElement) element) + NL);
 			}
-		}
-		if (element instanceof Property || element instanceof Operation) {
 			CapellaElement container = (CapellaElement) element.eContainer();
 			statusFound: for (PropertyValueGroup group : container.getOwnedPropertyValueGroups()) {
 				if ("ImplementationStatus".equals(group.getName())) {
@@ -325,7 +328,42 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 				}
 			}
 		}
+
+		if (element != null && element.getDescription() != null && !element.getDescription().isEmpty()) {
+			final Document document = Jsoup.parse(element.getDescription());
+			// makes html() preserve linebreaks and spacing
+			document.outputSettings(new Document.OutputSettings().prettyPrint(false));
+			document.select("br").append("\\n");
+			document.select("p").prepend("\\n");
+			document.select("li").prepend("\\n");
+			final String htmlString = document.html().replaceAll("\\\\n", "\n");
+			final String text = Jsoup.clean(htmlString, "", Whitelist.none(),
+					new Document.OutputSettings().prettyPrint(false));
+			try (Scanner scanner = new Scanner(text)) {
+				while (scanner.hasNextLine()) {
+					final String line = scanner.nextLine();
+					if (!line.trim().isEmpty()) {
+						res.append(padding + line + NL);
+					}
+				}
+			}
+		}
 		res.append(padding + "\"\"\"" + NL);
+
+		return res.toString();
+	}
+
+	private String getTypeAndCardinality(TypedElement typedElement) {
+		final StringBuilder res = new StringBuilder();
+
+		if (typedElement.getType() instanceof Enumeration) {
+			res.append("String");
+		} else {
+			res.append(typedElement.getType().getLabel());
+		}
+		if (typedElement instanceof MultiplicityElement) {
+			res.append(PropertyNamingHelper.multiplicityToStringDisplay((MultiplicityElement) typedElement));
+		}
 
 		return res.toString();
 	}

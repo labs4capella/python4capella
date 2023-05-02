@@ -30,6 +30,7 @@ class CapellaModel():
         Sirius.rollback_transaction(self.session)
     def get_system_engineering(self):
         """
+        Returns: SystemEngineering
         """
         if self.session is None:
             return None
@@ -37,6 +38,7 @@ class CapellaModel():
             return SystemEngineering(Sirius.get_system_engineering(self.session))
     def get_progress_status(self):
         """
+        Returns: EnumerationPropertyType
         """
         value =  self.get_system_engineering().get_java_object().getStatus()
         if value is None:
@@ -45,10 +47,12 @@ class CapellaModel():
             return value.getName()
     def get_referenced_libraries(self):
         """
+        Returns: CapellaLibrary[*]
         """
         return get_libraries(self.get_system_engineering())
     def get_all_diagrams(self):
         """
+        Returns: Diagram[*]
         """
         res = []
         descriptors = Sirius.get_all_diagrams(self.session)
@@ -57,11 +61,14 @@ class CapellaModel():
         return res
     def get_diagrams(self, diagram_type):
         """
+        Parameters: diagramType: String
+        Returns: Diagram[*]
         status: OK
         """
         return Sirius.get_diagrams(self.session, diagram_type)
     def open(self, obj):
         """
+        Parameters: path: String
         status: KO
         """
         # obj can be a path to the .aird file or an EObject
@@ -75,6 +82,7 @@ class CapellaModel():
             raise AttributeError("You can pass a path to the .aird file or an EObject.")
     def create(self, path):
         """
+        Parameters: path: String
         status: KO
         """
         raise AttributeError("TODO")
@@ -179,38 +187,47 @@ class EObject(JavaObject):
         return copy_all_e_objects(e_objs)
     def get_owned_diagrams(self):
         """
+        Returns: Diagram[*]
         """
         return Sirius.get_representation_descriptors(self.get_java_object())
     def get_element_of_interest_for_diagrams(self):
         """
+        Returns: Diagram[*]
         """
         return capella_query_by_name(self, "Element of Interest for Diagram", Diagram)
     def get_contextual_element_for_diagrams(self):
         """
+        Returns: Diagram[*]
         """
         return Sirius.get_contextual_element_for_diagrams(self.get_java_object())
     def get_representing_diagrams(self):
         """
+        Returns: Diagram[*]
         """
         return Sirius.get_representing_diagrams(self.get_java_object())
     def get__r_e_cs(self):
         """
+        Returns: REC[*]
         """
         return capella_query("org.polarsys.capella.common.re.ui.queries.ReferencingReplicableElements", self)
     def get__r_p_ls(self):
         """
+        Returns: RPL[*]
         """
         return capella_query("org.polarsys.capella.common.re.ui.queries.ReferencingReplicas", self)
     def get_label(self):
         """
+        Returns: String
         """
         return get_label(self)
     def get_element_type(self):
         """
+        Returns: String
         """
         raise AttributeError("TODO")
     def get_container(self):
         """
+        Returns: EObject
         """
         value = self.get_java_object().eContainer()
         if value is not None:
@@ -221,6 +238,7 @@ class EObject(JavaObject):
         return None
     def get_contents(self):
         """
+        Returns: EObject[*]
         """
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
@@ -231,10 +249,13 @@ class EObject(JavaObject):
         return res
     def get_all_contents(self):
         """
+        Returns: EObject[*]
         """
         return e_all_contents(self.get_java_object())
     def get_all_contents_by_type(self, cls):
         """
+        Parameters: type: PythonClass
+        Returns: EObject[*]
         """
         res = []
         for value in e_all_contents_by_type(self.get_java_object(), cls):
@@ -243,10 +264,13 @@ class EObject(JavaObject):
         return res
     def get_available_s_b_queries(self):
         """
+        Returns: String[*]
         """
         return available_query_names(self)
     def get_query_result(self, name, cls = None):
         """
+        Parameters: queryName: String
+        Returns: EObject[0..1]
         """
         return capella_query_by_name(self, name, cls)
 
@@ -267,46 +291,57 @@ class CapellaElement(EObject):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_id(self):
         """
+        Returns: String
         """
         return self.get_java_object().getId()
     def set_id(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setId(value)
     def get_sid(self):
         """
+        Returns: String
         """
         return self.get_java_object().getSid()
     def set_sid(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setSid(value)
     def get_name(self):
         """
+        Returns: String
         """
         return self.get_java_object().getName()
     def set_name(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setName(value)
     def get_summary(self):
         """
+        Returns: String
         """
         return self.get_java_object().getSummary()
     def set_summary(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setSummary(value)
     def get_description(self):
         """
+        Returns: String
         """
         return self.get_java_object().getDescription()
     def set_description(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setDescription(value)
     def get_status(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getStatus()
         if value is None:
@@ -315,54 +350,67 @@ class CapellaElement(EObject):
             return value.getName()
     def get_review(self):
         """
+        Returns: String
         """
         return self.get_java_object().getReview()
     def set_review(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setReview(value)
     def get_visible_in_documentation(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isVisibleInDoc()
     def set_visible_in_documentation(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setVisibleInDoc(value)
     def get_visible_for_traceability(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isVisibleInLM()
     def set_visible_for_traceability(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setVisibleInLM(value)
     def get_owned_constraints(self):
         """
+        Returns: Constraint[*]
         """
         return create_e_list(self.get_java_object().getOwnedConstraints(), Constraint)
     def get_constraints(self):
         """
+        Returns: Constraint[*]
         """
         return create_e_list(self.get_java_object().getConstraints(), Constraint)
     def get_owned_property_values(self):
         """
+        Returns: PropertyValue[*]
         """
         return create_e_list(self.get_java_object().getOwnedPropertyValues(), PropertyValue)
     def get_applied_property_values(self):
         """
+        Returns: PropertyValue[*]
         """
         return create_e_list(self.get_java_object().getAppliedPropertyValues(), PropertyValue)
     def get_owned_property_value_groups(self):
         """
+        Returns: PropertyValueGroup[*]
         """
         return create_e_list(self.get_java_object().getOwnedPropertyValueGroups(), PropertyValueGroup)
     def get_applied_property_value_groups(self):
         """
+        Returns: PropertyValueGroup[*]
         """
         return create_e_list(self.get_java_object().getAppliedPropertyValueGroups(), PropertyValueGroup)
     def get_owned_enumeration_property_types(self):
         """
+        Returns: EnumerationPropertyType[*]
         """
         return create_e_list(self.get_java_object().getOwnedEnumerationPropertyTypes(), EnumerationPropertyType)
 
@@ -383,14 +431,17 @@ class Constraint(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_specification(self):
         """
+        Returns: String
         """
         return self.get_java_object().getSpecification()
     def set_specification(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setSpecification(value)
     def get_constrained_elements(self):
         """
+        Returns: CapellaElement[*]
         """
         return capella_query_by_name(self, "Constrained Elements")
 
@@ -414,10 +465,12 @@ class PropertyValue(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_kind(self):
         """
+        Returns: String
         """
         return self.java_object.eClass().getName()
     def get_value(self):
         """
+        Returns: String
         """
         if self.java_object.eClass().getName() == "BooleanPropertyValue":
             return self.get_java_object().isValue()
@@ -425,14 +478,17 @@ class PropertyValue(CapellaElement):
             return self.get_java_object().getValue()
     def set_value(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setValue(value)
     def get_valued_elements(self):
         """
+        Returns: CapellaElement[*]
         """
         return create_e_list(self.get_java_object().getValuedElements(), CapellaElement)
     def get_type(self):
         """
+        Returns: EnumerationPropertyType[0..1]
         """
         value =  self.get_java_object().getType()
         if value is None:
@@ -459,6 +515,7 @@ class PropertyValueGroup(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_valued_elements(self):
         """
+        Returns: CapellaElement[*]
         """
         return capella_query_by_name(self, "Valued Elements")
 
@@ -479,6 +536,7 @@ class EnumerationPropertyType(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_literals(self):
         """
+        Returns: EnumerationPropertyLiteral[*]
         """
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationPropertyLiteral)
 
@@ -511,6 +569,7 @@ class PropertyValuePkgContainer(CapellaElement):
             JavaObject.__init__(self, java_object)
     def get_owned_property_value_pkgs(self):
         """
+        Returns: PropertyValuePkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPropertyValuePkgs(), PropertyValuePkg)
 
@@ -532,22 +591,27 @@ class Diagram(JavaObject):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_uid(self):
         """
+        Returns: String
         """
         return self.get_java_object().getUid()
     def set_uid(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setUid(value)
     def get_name(self):
         """
+        Returns: String
         """
         return self.get_java_object().getName()
     def set_name(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setName(value)
     def get_type(self):
         """
+        Returns: String
         """
         if self.get_java_object().getDescription() is None:
             return None
@@ -555,18 +619,22 @@ class Diagram(JavaObject):
             return self.get_java_object().getDescription().getName()
     def get_package(self):
         """
+        Returns: String
         """
         return Sirius.get_package(self.get_java_object())
     def get_description(self):
         """
+        Returns: String
         """
         return self.get_java_object().getDocumentation()
     def set_description(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setDocumentation(value)
     def get_status(self):
         """
+        Returns: String
         """
         value = Sirius.get_status(self.get_java_object())
         if value is None:
@@ -575,22 +643,27 @@ class Diagram(JavaObject):
             return value.getName()
     def get_review(self):
         """
+        Returns: String
         """
         return Sirius.get_review(self.get_java_object())
     def get_visible_in_documentation(self):
         """
+        Returns: Boolean
         """
         return Sirius.is_visible_in_documentation(self.get_java_object())
     def get_visible_for_traceability(self):
         """
+        Returns: Boolean
         """
         return Sirius.is_visible_for_traceability(self.get_java_object())
     def get_synchronized(self):
         """
+        Returns: Boolean
         """
         return Sirius.is_synchronized(self.get_java_object())
     def get_target(self):
         """
+        Returns: EObject
         """
         value =  self.get_java_object().getTarget()
         if value is None:
@@ -601,18 +674,22 @@ class Diagram(JavaObject):
             return specific_cls(value)
     def get_represented_elements(self):
         """
+        Returns: EObject[*]
         """
         return Sirius.get_represented_elements(self.get_java_object())
     def get_contextual_elements(self):
         """
+        Returns: EObject[*]
         """
         return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToContextualElement", self)
     def get_elements_of_interest(self):
         """
+        Returns: EObject[*]
         """
         return capella_query("org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToElement", self)
     def export_as_image(self, file_path):
         """
+        Parameters: filePath: String, format: String
         status: KO
         """
         Sirius.export_image(self.get_java_object(), file_path)
@@ -630,18 +707,22 @@ class AbstractReElement(EObject):
             JavaObject.__init__(self, java_object)
     def get_id(self):
         """
+        Returns: String
         """
         return self.get_java_object().getId()
     def set_id(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setId(value)
     def get_name(self):
         """
+        Returns: String
         """
         return self.get_java_object().getName()
     def set_name(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setName(value)
 
@@ -658,34 +739,42 @@ class AbstractCatalogElement(AbstractReElement):
             JavaObject.__init__(self, java_object)
     def get_decription(self):
         """
+        Returns: String
         """
         return self.get_java_object().getDecription()
     def set_decription(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setDecription(value)
     def get_author(self):
         """
+        Returns: String
         """
         return self.get_java_object().getAuthor()
     def set_author(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setAuthor(value)
     def get_environment(self):
         """
+        Returns: String
         """
         return self.get_java_object().getEnvironment()
     def set_environment(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setEnvironment(value)
     def get_tags(self):
         """
+        Returns: String
         """
         return self.get_java_object().getTags()
     def set_tags(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setTags(value)
 
@@ -712,10 +801,12 @@ class REC(AbstractCatalogElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_referenced_elements(self):
         """
+        Returns: EObject[*]
         """
         return create_e_list(self.get_java_object().getReferencedElements(), EObject)
     def get_default_replica_compliancy(self):
         """
+        Returns: CompliancyDefinition
         """
         value =  self.get_java_object().getDefaultReplicaCompliancy()
         if value is None:
@@ -726,10 +817,12 @@ class REC(AbstractCatalogElement):
             return specific_cls(value)
     def set_default_replica_compliancy(self, value):
         """
+        Returns: CompliancyDefinition
         """
         return self.get_java_object().setDefaultReplicaCompliancy(value.get_java_object())
     def get_replicated_elements(self):
         """
+        Returns: RPL[*]
         """
         return create_e_list(self.get_java_object().getReplicatedElements(), RPL)
 
@@ -756,26 +849,32 @@ class RPL(AbstractCatalogElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_referenced_elements(self):
         """
+        Returns: EObject[*]
         """
         return create_e_list(self.get_java_object().getReferencedElements(), EObject)
     def get_suffix(self):
         """
+        Returns: String
         """
         return self.get_java_object().getSuffix()
     def set_suffix(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setSuffix(value)
     def get_read_only(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isReadOnly()
     def set_read_only(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setReadOnly(value)
     def get_origin(self):
         """
+        Returns: REC
         """
         value =  self.get_java_object().getOrigin()
         if value is None:
@@ -786,10 +885,12 @@ class RPL(AbstractCatalogElement):
             return specific_cls(value)
     def set_origin(self, value):
         """
+        Returns: REC
         """
         return self.get_java_object().setOrigin(value.get_java_object())
     def get_current_compliancy(self):
         """
+        Returns: CompliancyDefinition
         """
         value =  self.get_java_object().getCurrentCompliancy()
         if value is None:
@@ -800,6 +901,7 @@ class RPL(AbstractCatalogElement):
             return specific_cls(value)
     def set_current_compliancy(self, value):
         """
+        Returns: CompliancyDefinition
         """
         return self.get_java_object().setCurrentCompliancy(value.get_java_object())
 
@@ -820,14 +922,17 @@ class CatalogElementPkg(AbstractReElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_element_pkgs(self):
         """
+        Returns: CatalogElementPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedElementPkgs(), CatalogElementPkg)
     def get_owned_recs(self):
         """
+        Returns: REC[*]
         """
         return create_e_list(self.get_java_object().getOwnedRecs(), REC)
     def get_owned_rpls(self):
         """
+        Returns: RPL[*]
         """
         return create_e_list(self.get_java_object().getOwnedRpls(), RPL)
 
@@ -848,6 +953,7 @@ class RecCatalog(CatalogElementPkg):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_compliancy_definition_pkg(self):
         """
+        Returns: CompliancyDefinitionPkg
         """
         value =  self.get_java_object().getOwnedCompliancyDefinitionPkg()
         if value is None:
@@ -874,6 +980,7 @@ class CompliancyDefinitionPkg(AbstractReElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_definitions(self):
         """
+        Returns: CompliancyDefinition[*]
         """
         return create_e_list(self.get_java_object().getOwnedDefinitions(), CompliancyDefinition)
 
@@ -897,10 +1004,12 @@ class CompliancyDefinition(AbstractReElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_description(self):
         """
+        Returns: String
         """
         return self.get_java_object().getDescription()
     def set_description(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setDescription(value)
 
@@ -922,6 +1031,7 @@ class OperationalAnalysis(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_operational_activity_pkg(self):
         """
+        Returns: OperationalActivityPkg
         """
         value =  self.get_java_object().getContainedOperationalActivityPkg()
         if value is None:
@@ -932,6 +1042,7 @@ class OperationalAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_operational_capability_pkg(self):
         """
+        Returns: OperationalCapabilityPkg
         """
         value =  self.get_java_object().getContainedOperationalCapabilityPkg()
         if value is None:
@@ -942,6 +1053,7 @@ class OperationalAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_interface_pkg(self):
         """
+        Returns: InterfacePkg
         """
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -952,6 +1064,7 @@ class OperationalAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_data_pkg(self):
         """
+        Returns: DataPkg
         """
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -962,6 +1075,7 @@ class OperationalAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_entity_pkg(self):
         """
+        Returns: EntityPkg
         """
         value =  self.get_java_object().getOwnedEntityPkg()
         if value is None:
@@ -988,10 +1102,12 @@ class OperationalActivityPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_operational_activity_pkgs(self):
         """
+        Returns: OperationalActivityPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedOperationalActivityPkgs(), OperationalActivityPkg)
     def get_owned_operational_activities(self):
         """
+        Returns: OperationalActivity[*]
         """
         return create_e_list(self.get_java_object().getOwnedOperationalActivities(), OperationalActivity)
 
@@ -1012,6 +1128,7 @@ class OperationalProcess(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_involved_operational_activities(self):
         """
+        Returns: OperationalActivity[*]
         """
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
@@ -1022,6 +1139,7 @@ class OperationalProcess(CapellaElement):
         return res
     def get_involved_interactions(self):
         """
+        Returns: Interaction[*]
         """
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
@@ -1032,10 +1150,12 @@ class OperationalProcess(CapellaElement):
         return res
     def get_involved_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return capella_query_by_name(self, "Involved Operational Processes")
     def get_pre_condition(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -1046,10 +1166,12 @@ class OperationalProcess(CapellaElement):
             return specific_cls(value)
     def set_pre_condition(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getPostCondition()
         if value is None:
@@ -1060,18 +1182,22 @@ class OperationalProcess(CapellaElement):
             return specific_cls(value)
     def set_post_condition(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_available_in_states(self):
         """
+        Returns: State[*]
         """
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
     def get_involving_operational_capabilities(self):
         """
+        Returns: OperationalCapability[*]
         """
         return create_e_list(self.get_java_object().getInvolvingOperationalCapabilities(), OperationalCapability)
     def get_realizing_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return create_e_list(self.get_java_object().getRealizingFunctionalChains(), FunctionalChain)
 
@@ -1092,10 +1218,12 @@ class OperationalCapabilityPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_operational_capability_pkgs(self):
         """
+        Returns: OperationalCapabilityPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedOperationalCapabilityPkgs(), OperationalCapabilityPkg)
     def get_owned_operational_capabilities(self):
         """
+        Returns: OperationalCapability[*]
         """
         return create_e_list(self.get_java_object().getOwnedOperationalCapabilities(), OperationalCapability)
 
@@ -1116,10 +1244,12 @@ class EntityPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_entity_pkgs(self):
         """
+        Returns: EntityPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedEntityPkgs(), EntityPkg)
     def get_owned_entities(self):
         """
+        Returns: OperationalActor[*]
         """
         return create_e_list(self.get_java_object().getOwnedEntities(), OperationalActor)
 
@@ -1146,26 +1276,32 @@ class OperationalActor(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_incoming_communication_means(self):
         """
+        Returns: CommunicationMean[*]
         """
         return create_e_list(self.get_java_object().getIncomingCommunicationMeans(), CommunicationMean)
     def get_outgoing_communication_means(self):
         """
+        Returns: CommunicationMean[*]
         """
         return create_e_list(self.get_java_object().getOutgoingCommunicationMeans(), CommunicationMean)
     def get_allocated_operational_activities(self):
         """
+        Returns: OperationalActivity[*]
         """
         return create_e_list(self.get_java_object().getAllocatedOperationalActivities(), OperationalActivity)
     def get_involving_operational_capabilities(self):
         """
+        Returns: OperationalCapability[*]
         """
         return create_e_list(self.get_java_object().getInvolvingOperationalCapabilities(), OperationalCapability)
     def get_owned_state_machines(self):
         """
+        Returns: StateMachine[*]
         """
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
     def get_realizing_system_actors(self):
         """
+        Returns: SystemActor[*]
         """
         return create_e_list(self.get_java_object().getRealizingSystemActors(), SystemActor)
 
@@ -1186,6 +1322,7 @@ class CommunicationMean(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_source_entity(self):
         """
+        Returns: OperationalActor
         """
         value =  self.get_java_object().getSourceEntity()
         if value is None:
@@ -1196,10 +1333,12 @@ class CommunicationMean(CapellaElement):
             return specific_cls(value)
     def set_source_entity(self, value):
         """
+        Returns: OperationalActor
         """
         return self.get_java_object().setSourceEntity(value.get_java_object())
     def get_target_entity(self):
         """
+        Returns: OperationalActor
         """
         value =  self.get_java_object().getTargetEntity()
         if value is None:
@@ -1210,18 +1349,22 @@ class CommunicationMean(CapellaElement):
             return specific_cls(value)
     def set_target_entity(self, value):
         """
+        Returns: OperationalActor
         """
         return self.get_java_object().setTargetEntity(value.get_java_object())
     def get_allocated_interactions(self):
         """
+        Returns: Interaction[*]
         """
         return capella_query_by_name(self, "Allocated Interactions")
     def get_convoyed_informations(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getConvoyedInformations(), ExchangeItem)
     def get_realizing_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return create_e_list(self.get_java_object().getRealizingComponentExchanges(), ComponentExchange)
 
@@ -1243,6 +1386,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_system_function_pkg(self):
         """
+        Returns: SystemFunctionPkg
         """
         value =  self.get_java_object().getContainedSystemFunctionPkg()
         if value is None:
@@ -1253,6 +1397,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_capability_pkg(self):
         """
+        Returns: CapabilityPkg
         """
         value =  self.get_java_object().getContainedCapabilityPkg()
         if value is None:
@@ -1263,6 +1408,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_interface_pkg(self):
         """
+        Returns: InterfacePkg
         """
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -1273,6 +1419,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_data_pkg(self):
         """
+        Returns: DataPkg
         """
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -1283,6 +1430,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_system_component_pkg(self):
         """
+        Returns: SystemComponentPkg
         """
         value =  self.get_java_object().getOwnedSystemComponentPkg()
         if value is None:
@@ -1293,6 +1441,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_mission_pkg(self):
         """
+        Returns: MissionPkg
         """
         value =  self.get_java_object().getOwnedMissionPkg()
         if value is None:
@@ -1303,6 +1452,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_system(self):
         """
+        Returns: System
         """
         value =  self.get_java_object().getSystem()
         if value is None:
@@ -1329,14 +1479,17 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_system_function_pkgs(self):
         """
+        Returns: SystemFunctionPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedSystemFunctionPkgs(), SystemFunctionPkg)
     def get_owned_system_functions(self):
         """
+        Returns: SystemFunction[*]
         """
         return create_e_list(self.get_java_object().getOwnedSystemFunctions(), SystemFunction)
     def get_owned_categories(self):
         """
+        Returns: ExchangeCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
@@ -1357,10 +1510,12 @@ class CapabilityPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_capability_pkgs(self):
         """
+        Returns: CapabilityPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedCapabilityPkgs(), CapabilityPkg)
     def get_owned_capabilities(self):
         """
+        Returns: Capability[*]
         """
         return create_e_list(self.get_java_object().getOwnedCapabilities(), Capability)
 
@@ -1381,10 +1536,12 @@ class SystemComponentPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_system_component_pkgs(self):
         """
+        Returns: SystemComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedSystemComponentPkgs(), SystemComponentPkg)
     def get_owned_system(self):
         """
+        Returns: System
         """
         value =  self.get_java_object().getOwnedSystem()
         if value is None:
@@ -1395,14 +1552,17 @@ class SystemComponentPkg(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_owned_actors(self):
         """
+        Returns: SystemActor[*]
         """
         return create_e_list(self.get_java_object().getOwnedActors(), SystemActor)
     def get_owned_component_exchange_categories(self):
         """
+        Returns: ComponentExchangeCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
     def get_owned_physical_link_categories(self):
         """
+        Returns: PhysicalLinkCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
@@ -1423,10 +1583,12 @@ class MissionPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_mission_pkgs(self):
         """
+        Returns: MissionPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedMissionPkgs(), MissionPkg)
     def get_owned_missions(self):
         """
+        Returns: Mission[*]
         """
         return create_e_list(self.get_java_object().getOwnedMissions(), Mission)
 
@@ -1447,10 +1609,12 @@ class Mission(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_exploited_capabilities(self):
         """
+        Returns: Capability[*]
         """
         return capella_query_by_name(self, "Exploited Capabilities")
     def get_involved_actors(self):
         """
+        Returns: SystemActor[*]
         """
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
@@ -1479,6 +1643,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_logical_function_pkg(self):
         """
+        Returns: LogicalFunctionPkg
         """
         value =  self.get_java_object().getContainedLogicalFunctionPkg()
         if value is None:
@@ -1489,6 +1654,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_capability_realization_pkg(self):
         """
+        Returns: CapabilityRealizationPkg
         """
         value =  self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
@@ -1499,6 +1665,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_interface_pkg(self):
         """
+        Returns: InterfacePkg
         """
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -1509,6 +1676,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_data_pkg(self):
         """
+        Returns: DataPkg
         """
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -1519,6 +1687,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_logical_component_pkg(self):
         """
+        Returns: LogicalComponentPkg
         """
         value =  self.get_java_object().getOwnedLogicalComponentPkg()
         if value is None:
@@ -1529,6 +1698,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_logical_system(self):
         """
+        Returns: LogicalSystem
         """
         value =  self.get_java_object().getSystem()
         if value is None:
@@ -1555,14 +1725,17 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_logical_function_pkgs(self):
         """
+        Returns: LogicalFunctionPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalFunctionPkgs(), LogicalFunctionPkg)
     def get_owned_logical_functions(self):
         """
+        Returns: LogicalFunction[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalFunctions(), LogicalFunction)
     def get_owned_categories(self):
         """
+        Returns: ExchangeCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
@@ -1583,10 +1756,12 @@ class CapabilityRealizationPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_capability_realization_pkgs(self):
         """
+        Returns: CapabilityRealizationPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedCapabilityRealizationPkgs(), CapabilityRealizationPkg)
     def get_owned_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return create_e_list(self.get_java_object().getOwnedCapabilityRealizations(), CapabilityRealization)
 
@@ -1607,10 +1782,12 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_logical_component_pkgs(self):
         """
+        Returns: LogicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
     def get_owned_logical_system(self):
         """
+        Returns: LogicalSystem
         """
         value =  self.get_java_object().getOwnedLogicalSystem()
         if value is None:
@@ -1621,18 +1798,22 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_owned_logical_actors(self):
         """
+        Returns: LogicalActor[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalActors(), LogicalActor)
     def get_owned_logical_components(self):
         """
+        Returns: LogicalComponent[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
     def get_owned_component_exchange_categories(self):
         """
+        Returns: ComponentExchangeCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
     def get_owned_physical_link_categories(self):
         """
+        Returns: PhysicalLinkCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
@@ -1654,6 +1835,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_physical_function_pkg(self):
         """
+        Returns: PhysicalFunctionPkg
         """
         value =  self.get_java_object().getContainedPhysicalFunctionPkg()
         if value is None:
@@ -1664,6 +1846,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_capability_realization_pkg(self):
         """
+        Returns: CapabilityRealizationPkg
         """
         value =  self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
@@ -1674,6 +1857,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_interface_pkg(self):
         """
+        Returns: InterfacePkg
         """
         value =  self.get_java_object().getOwnedInterfacePkg()
         if value is None:
@@ -1684,6 +1868,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_data_pkg(self):
         """
+        Returns: DataPkg
         """
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -1694,6 +1879,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_physical_component_pkg(self):
         """
+        Returns: PhysicalComponentPkg
         """
         value =  self.get_java_object().getOwnedPhysicalComponentPkg()
         if value is None:
@@ -1704,6 +1890,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_physical_system(self):
         """
+        Returns: PhysicalSystem
         """
         return self.get_physical_component_pkg().get_owned_physical_system()
 
@@ -1724,14 +1911,17 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_physical_function_pkgs(self):
         """
+        Returns: PhysicalFunctionPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctionPkgs(), PhysicalFunctionPkg)
     def get_owned_physical_functions(self):
         """
+        Returns: PhysicalFunction[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctions(), PhysicalFunction)
     def get_owned_categories(self):
         """
+        Returns: ExchangeCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedCategories(), ExchangeCategory)
 
@@ -1752,10 +1942,12 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_physical_component_pkgs(self):
         """
+        Returns: PhysicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
     def get_owned_physical_system(self):
         """
+        Returns: PhysicalSystem
         """
         for value in self.get_owned_physical_components():
             if isinstance(value, PhysicalSystem):
@@ -1763,18 +1955,22 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
         return None
     def get_owned_physical_actors(self):
         """
+        Returns: PhysicalActor[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalActors(), PhysicalActor)
     def get_owned_physical_components(self):
         """
+        Returns: PhysicalComponent[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
     def get_owned_component_exchange_categories(self):
         """
+        Returns: ComponentExchangeCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
     def get_owned_physical_link_categories(self):
         """
+        Returns: PhysicalLinkCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
@@ -1795,6 +1991,7 @@ class AbstractPhysicalArtifact(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_allocator_configuration_items(self):
         """
+        Returns: ConfigurationItem[*]
         """
         return create_e_list(self.get_java_object().getAllocatorConfigurationItems(), ConfigurationItem)
 
@@ -1826,6 +2023,7 @@ class PhysicalComponent(AbstractPhysicalArtifact):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -1834,26 +2032,32 @@ class PhysicalComponent(AbstractPhysicalArtifact):
             return value.getName()
     def set_kind(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentKind", value))
     def get_owned_physical_components(self):
         """
+        Returns: PhysicalComponent[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
     def get_owned_physical_component_pkgs(self):
         """
+        Returns: PhysicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
     def get_is_human(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isHuman()
     def set_is_human(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setHuman(value)
     def get_involving_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
@@ -1875,6 +2079,7 @@ class EPBSArchitecture(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_capability_realization_pkg(self):
         """
+        Returns: CapabilityRealizationPkg
         """
         value =  self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
@@ -1885,6 +2090,7 @@ class EPBSArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_configuration_item_pkg(self):
         """
+        Returns: ConfigurationItemPkg
         """
         value =  self.get_java_object().getOwnedConfigurationItemPkg()
         if value is None:
@@ -1895,6 +2101,7 @@ class EPBSArchitecture(PropertyValuePkgContainer):
             return specific_cls(value)
     def get_data_pkg(self):
         """
+        Returns: DataPkg
         """
         value =  self.get_java_object().getOwnedDataPkg()
         if value is None:
@@ -1921,10 +2128,12 @@ class ConfigurationItemPkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_configuration_item_pkgs(self):
         """
+        Returns: ConfigurationItemPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedConfigurationItemPkgs(), ConfigurationItemPkg)
     def get_owned_configuration_items(self):
         """
+        Returns: ConfigurationItem[*]
         """
         return create_e_list(self.get_java_object().getOwnedConfigurationItems(), ConfigurationItem)
 
@@ -1945,14 +2154,17 @@ class ConfigurationItem(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_item_identifier(self):
         """
+        Returns: String
         """
         return self.get_java_object().getItemIdentifier()
     def set_item_identifier(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setItemIdentifier(value)
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -1963,18 +2175,22 @@ class ConfigurationItem(CapellaElement):
             return specific_cls(value)
     def set_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_owned_configuration_items(self):
         """
+        Returns: ConfigurationItem[*]
         """
         return create_e_list(self.get_java_object().getOwnedConfigurationItems(), ConfigurationItem)
     def get_owned_configuration_item_pkgs(self):
         """
+        Returns: ConfigurationItemPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedConfigurationItemPkgs(), ConfigurationItemPkg)
     def get_allocated_physical_artifacts(self):
         """
+        Returns: AbstractPhysicalArtifact[*]
         """
         return create_e_list(self.get_java_object().getAllocatedPhysicalArtifacts(), AbstractPhysicalArtifact)
 
@@ -1995,6 +2211,7 @@ class StateMachine(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_regions(self):
         """
+        Returns: Region[*]
         """
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
 
@@ -2015,18 +2232,22 @@ class AbstractState(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_incoming(self):
         """
+        Returns: StateTransition[*]
         """
         return create_e_list(self.get_java_object().getIncoming(), StateTransition)
     def get_outgoing(self):
         """
+        Returns: StateTransition[*]
         """
         return create_e_list(self.get_java_object().getOutgoing(), StateTransition)
     def get_realized_states(self):
         """
+        Returns: AbstractState[*]
         """
         return create_e_list(self.get_java_object().getRealizedAbstractStates(), AbstractState)
     def get_realizing_states(self):
         """
+        Returns: AbstractState[*]
         """
         return create_e_list(self.get_java_object().getRealizingAbstractStates(), AbstractState)
 
@@ -2047,34 +2268,42 @@ class State(AbstractState):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_regions(self):
         """
+        Returns: Region[*]
         """
         return create_e_list(self.get_java_object().getOwnedRegions(), Region)
     def get_available_activities_functions(self):
         """
+        Returns: AbstractActivityFunction[*]
         """
         return create_e_list(self.get_java_object().getAvailableActivitiesFunctions(), AbstractActivityFunction)
     def get_entry(self):
         """
+        Returns: AbstractEvent[*]
         """
         return create_e_list(self.get_java_object().getEntry(), AbstractEvent)
     def get_do(self):
         """
+        Returns: AbstractEvent[*]
         """
         return create_e_list(self.get_java_object().getDoActivity(), AbstractEvent)
     def get_exit(self):
         """
+        Returns: AbstractEvent[*]
         """
         return create_e_list(self.get_java_object().getExit(), AbstractEvent)
     def get_available_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return create_e_list(self.get_java_object().getAvailableFunctionalChains(), FunctionalChain)
     def get_available_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return create_e_list(self.get_java_object().getAvailableOperationalProcesses(), OperationalProcess)
     def get_available_capabilities(self):
         """
+        Returns: AbstractCapability[*]
         """
         return create_e_list(self.get_java_object().getAvailableAbstractCapabilities(), AbstractCapability)
 
@@ -2116,6 +2345,7 @@ class Pseudostate(AbstractState):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_kind(self):
         """
+        Returns: String
         """
         return self.java_object.eClass().getName()
 
@@ -2137,6 +2367,7 @@ class Region(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_states(self):
         """
+        Returns: AbstractState[*]
         """
         return create_e_list(self.get_java_object().getOwnedStates(), AbstractState)
 
@@ -2157,26 +2388,32 @@ class StateTransition(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_trigger_description(self):
         """
+        Returns: String
         """
         return self.get_java_object().getTriggerDescription()
     def set_trigger_description(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setTriggerDescription(value)
     def get_source(self):
         """
+        Returns: AbstractState
         """
         return capella_query_by_name(self, "Source")
     def get_target(self):
         """
+        Returns: AbstractState
         """
         return capella_query_by_name(self, "Target")
     def get_triggers(self):
         """
+        Returns: AbstractEvent[*]
         """
         return create_e_list(self.get_java_object().getTriggers(), AbstractEvent)
     def get_guard(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getGuard()
         if value is None:
@@ -2187,18 +2424,22 @@ class StateTransition(CapellaElement):
             return specific_cls(value)
     def set_guard(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setGuard(value.get_java_object())
     def get_effects(self):
         """
+        Returns: AbstractAction[*]
         """
         return create_e_list(self.get_java_object().getEffects(), AbstractAction)
     def get_realized_state_transitions(self):
         """
+        Returns: StateTransition[*]
         """
         return create_e_list(self.get_java_object().getRealizedStateTransitions(), StateTransition)
     def get_realizing_state_transitions(self):
         """
+        Returns: StateTransition[*]
         """
         return create_e_list(self.get_java_object().getRealizingStateTransitions(), StateTransition)
 
@@ -2251,6 +2492,7 @@ class Scenario(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -2261,6 +2503,7 @@ class Scenario(CapellaElement):
             return specific_cls(value)
     def get_pre_condition(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -2271,10 +2514,12 @@ class Scenario(CapellaElement):
             return specific_cls(value)
     def set_pre_condition(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getPostCondition()
         if value is None:
@@ -2285,38 +2530,47 @@ class Scenario(CapellaElement):
             return specific_cls(value)
     def set_post_condition(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_owned_instance_roles(self):
         """
+        Returns: InstanceRole[*]
         """
         return create_e_list(self.get_java_object().getOwnedInstanceRoles(), InstanceRole)
     def get_owned_messages(self):
         """
+        Returns: SequenceMessage[*]
         """
         return create_e_list(self.get_java_object().getOwnedMessages(), SequenceMessage)
     def get_owned_state_fragments(self):
         """
+        Returns: StateFragment[*]
         """
         return create_e_list(self.get_java_object().getOwnedStateFragments(), StateFragment)
     def get_owned_combined_fragments(self):
         """
+        Returns: CombinedFragment[*]
         """
         return create_e_list(self.get_java_object().getOwnedCombinedFragments(), CombinedFragment)
     def get_owned_constraint_durations(self):
         """
+        Returns: ConstraintDuration[*]
         """
         return create_e_list(self.get_java_object().getOwnedConstraintDurations(), ConstraintDuration)
     def get_referenced_scenarios(self):
         """
+        Returns: Scenario[*]
         """
         return create_e_list(self.get_java_object().getReferencedScenarios(), Scenario)
     def get_realized_scenarios(self):
         """
+        Returns: Scenario[*]
         """
         return capella_query_by_name(self, "Realized Scenarios")
     def get_realizing_scenarios(self):
         """
+        Returns: Scenario[*]
         """
         return capella_query_by_name(self, "Realizing Scenarios")
 
@@ -2337,6 +2591,7 @@ class InstanceRole(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_represented_instance(self):
         """
+        Returns: AbstractInstance
         """
         return capella_query_by_name(self, "Represented Instance")
 
@@ -2373,6 +2628,7 @@ class SequenceMessage(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -2383,6 +2639,7 @@ class SequenceMessage(CapellaElement):
             return specific_cls(value)
     def get_sending_instance_role(self):
         """
+        Returns: InstanceRole
         """
         part =  self.get_java_object().getSendingPart()
         if part is None:
@@ -2397,6 +2654,7 @@ class SequenceMessage(CapellaElement):
                 return specific_cls(value)
     def get_receiving_instance_role(self):
         """
+        Returns: InstanceRole
         """
         part =  self.get_java_object().getReceivingPart()
         if part is None:
@@ -2411,6 +2669,7 @@ class SequenceMessage(CapellaElement):
                 return specific_cls(value)
     def get_invoked_exchange(self):
         """
+        Returns: AbstractExchange[0..1]
         """
         value =  self.get_java_object().getInvokedExchange()
         if value is None:
@@ -2421,14 +2680,17 @@ class SequenceMessage(CapellaElement):
             return specific_cls(value)
     def get_exchanged_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_invoked_operation(self):
         """
+        Returns: ExchangeItemAllocation[0..1]
         """
         return capella_query_by_name(self, "Invoked Operation")
     def get_exchange_context(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getExchangeContext()
         if value is None:
@@ -2451,6 +2713,7 @@ class AbstractExchange(JavaObject):
             JavaObject.__init__(self, java_object)
     def get_invoking_sequence_messages(self):
         """
+        Returns: SequenceMessage[*]
         """
         return create_e_list(self.get_java_object().getInvokingSequenceMessages(), SequenceMessage)
 
@@ -2471,6 +2734,7 @@ class StateFragment(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_covered_instance_role(self):
         """
+        Returns: InstanceRole
         """
         value =  self.get_java_object().getCoveredInstanceRole()
         if value is None:
@@ -2481,10 +2745,12 @@ class StateFragment(CapellaElement):
             return specific_cls(value)
     def get_related_state(self):
         """
+        Returns: State[0..1]
         """
         return capella_query_by_name(self, "Related State")
     def get_related_activity_function(self):
         """
+        Returns: AbstractActivityFunction[0..1]
         """
         value =  self.get_java_object().getRelatedActivityFunction()
         if value is None:
@@ -2511,6 +2777,7 @@ class CombinedFragment(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_operator(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getOperator()
         if value is None:
@@ -2521,10 +2788,12 @@ class CombinedFragment(CapellaElement):
             return specific_cls(value)
     def get_operands(self):
         """
+        Returns: Operand[1..*]
         """
         return create_e_list(self.get_java_object().getOperands(), Operand)
     def get_covered_instance_roles(self):
         """
+        Returns: InstanceRole[1..*]
         """
         return create_e_list(self.get_java_object().getCoveredInstanceRoles(), InstanceRole)
 
@@ -2547,6 +2816,7 @@ class Operand(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_guard(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getGuard()
         if value is None:
@@ -2557,14 +2827,17 @@ class Operand(CapellaElement):
             return specific_cls(value)
     def set_guard(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setGuard(value.get_java_object())
     def get_referenced_messages(self):
         """
+        Returns: SequenceMessage[*]
         """
         return create_e_list(self.get_java_object().getReferencedMessages(), SequenceMessage)
     def get_referenced_fragments(self):
         """
+        Returns: StateFragment[*]
         """
         return create_e_list(self.get_java_object().getReferencedFragments(), StateFragment)
 
@@ -2585,10 +2858,12 @@ class ConstraintDuration(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_duration(self):
         """
+        Returns: String
         """
         return self.get_java_object().getDuration()
     def set_duration(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setDuration(value)
 
@@ -2605,22 +2880,27 @@ class Node(AbstractInstance):
             JavaObject.__init__(self, java_object)
     def get_contained_physical_ports(self):
         """
+        Returns: PhysicalPort[*]
         """
         return create_e_list(self.get_java_object().getContainedPhysicalPorts(), PhysicalPort)
     def get_physical_links(self):
         """
+        Returns: PhysicalLink[*]
         """
         return create_e_list(self.get_java_object().getInvolvedLinks(), PhysicalLink)
     def get_involving_physical_paths(self):
         """
+        Returns: PhysicalPath[*]
         """
         return create_e_list(self.get_java_object().getInvolvingPhysicalPaths(), PhysicalPath)
     def get_owned_physical_link_categories(self):
         """
+        Returns: PhysicalLinkCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
     def get_owned_physical_paths(self):
         """
+        Returns: PhysicalPath[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalPaths(), PhysicalPath)
 
@@ -2641,18 +2921,22 @@ class PhysicalPort(AbstractPhysicalArtifact):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_physical_links(self):
         """
+        Returns: PhysicalLink[*]
         """
         return capella_query_by_name(self, "Physical Links")
     def get_allocated_component_ports(self):
         """
+        Returns: ComponentPort[*]
         """
         return capella_query_by_name(self, "Allocated Component Ports")
     def get_realized_physical_ports(self):
         """
+        Returns: PhysicalPort[*]
         """
         return create_e_list(self.get_java_object().getRealizedPhysicalPorts(), PhysicalPort)
     def get_realizing_physical_ports(self):
         """
+        Returns: PhysicalPort[*]
         """
         return create_e_list(self.get_java_object().getRealizingPhysicalPorts(), PhysicalPort)
 
@@ -2673,6 +2957,7 @@ class PhysicalLink(AbstractPhysicalArtifact):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_connected_physical_ports(self):
         """
+        Returns: PhysicalPort[2]
         """
         res = []
         if self.get_java_object().getSourcePhysicalPort() is not None:
@@ -2682,26 +2967,32 @@ class PhysicalLink(AbstractPhysicalArtifact):
         return res
     def get_categories(self):
         """
+        Returns: PhysicalLinkCategory[*]
         """
         return capella_query_by_name(self, "Categories")
     def get_involving_physical_paths(self):
         """
+        Returns: PhysicalPath[*]
         """
         return create_e_list(self.get_java_object().getInvolvingPhysicalPaths(), PhysicalPath)
     def get_connected_components(self):
         """
+        Returns: Node[2]
         """
         return create_e_list(self.get_java_object().getConnectedComponents(), Node)
     def get_allocated_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return capella_query_by_name(self, "Allocated Component Exchanges")
     def get_realized_physical_links(self):
         """
+        Returns: PhysicalLink[*]
         """
         return create_e_list(self.get_java_object().getRealizedPhysicalLinks(), PhysicalLink)
     def get_realizing_physical_links(self):
         """
+        Returns: PhysicalLink[*]
         """
         return create_e_list(self.get_java_object().getRealizingPhysicalLinks(), PhysicalLink)
 
@@ -2722,6 +3013,7 @@ class PhysicalLinkCategory(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_links(self):
         """
+        Returns: PhysicalLink[*]
         """
         return create_e_list(self.get_java_object().getLinks(), PhysicalLink)
 
@@ -2742,22 +3034,27 @@ class PhysicalPath(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_involved_physical_links(self):
         """
+        Returns: PhysicalLink[*]
         """
         return capella_query_by_name(self, "Involved Physical Links")
     def get_involved_node_p_cs(self):
         """
+        Returns: Node[*]
         """
         return create_e_list(self.get_java_object().getInvolvedNodePCs(), Node)
     def get_allocated_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return capella_query_by_name(self, "Allocated Component Exchanges")
     def get_realized_physical_paths(self):
         """
+        Returns: PhysicalPath[*]
         """
         return create_e_list(self.get_java_object().getRealizedPhysicalPaths(), PhysicalPath)
     def get_realizing_physical_paths(self):
         """
+        Returns: PhysicalPath[*]
         """
         return create_e_list(self.get_java_object().getRealizingPhysicalPaths(), PhysicalPath)
 
@@ -2778,14 +3075,17 @@ class InterfacePkg(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_interface_pkgs(self):
         """
+        Returns: InterfacePkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedInterfacePkgs(), InterfacePkg)
     def get_owned_interfaces(self):
         """
+        Returns: Interface[*]
         """
         return create_e_list(self.get_java_object().getOwnedInterfaces(), Interface)
     def get_owned_exchange_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getOwnedExchangeItems(), ExchangeItem)
 
@@ -2806,6 +3106,7 @@ class Interface(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_visibility(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -2816,38 +3117,47 @@ class Interface(CapellaElement):
             return specific_cls(value)
     def set_visibility(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_owned_exchange_item_allocations(self):
         """
+        Returns: ExchangeItemAllocation[*]
         """
         return create_e_list(self.get_java_object().getOwnedExchangeItemAllocations(), ExchangeItemAllocation)
     def get_exchange_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return capella_query_by_name(self, "Exchange Items")
     def get_providing_component_ports(self):
         """
+        Returns: ComponentPort[*]
         """
         return create_e_list(self.get_java_object().getProvidingComponentPorts(), ComponentPort)
     def get_requiring_component_ports(self):
         """
+        Returns: ComponentPort[*]
         """
         return create_e_list(self.get_java_object().getRequiringComponentPorts(), ComponentPort)
     def get_user_components(self):
         """
+        Returns: BehavioralComponent[*]
         """
         return create_e_list(self.get_java_object().getUserComponents(), BehavioralComponent)
     def get_implementor_components(self):
         """
+        Returns: BehavioralComponent[*]
         """
         return create_e_list(self.get_java_object().getImplementorComponents(), BehavioralComponent)
     def get_super(self):
         """
+        Returns: Interface[*]
         """
         return create_e_list(self.get_java_object().getSuper(), Interface)
     def get_sub(self):
         """
+        Returns: Interface[*]
         """
         return create_e_list(self.get_java_object().getSub(), Interface)
 
@@ -2869,6 +3179,7 @@ class ExchangeItemAllocation(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_transmission_protocol(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getTransmissionProtocol()
         if value is None:
@@ -2879,10 +3190,12 @@ class ExchangeItemAllocation(CapellaElement):
             return specific_cls(value)
     def set_transmission_protocol(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setTransmissionProtocol(value.get_java_object())
     def get_acquisition_protocol(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getAcquisitionProtocol()
         if value is None:
@@ -2893,10 +3206,12 @@ class ExchangeItemAllocation(CapellaElement):
             return specific_cls(value)
     def set_acquisition_protocol(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setAcquisitionProtocol(value.get_java_object())
     def get_allocated_item(self):
         """
+        Returns: ExchangeItem
         """
         value =  self.get_java_object().getAllocatedItem()
         if value is None:
@@ -2907,10 +3222,12 @@ class ExchangeItemAllocation(CapellaElement):
             return specific_cls(value)
     def set_allocated_item(self, value):
         """
+        Returns: ExchangeItem
         """
         return self.get_java_object().setAllocatedItem(value.get_java_object())
     def get_invoking_sequence_messages(self):
         """
+        Returns: SequenceMessage[*]
         """
         return create_e_list(self.get_java_object().getInvokingSequenceMessages(), SequenceMessage)
 
@@ -2931,22 +3248,27 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_abstract(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setAbstract(value)
     def get_final(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isFinal()
     def set_final(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setFinal(value)
     def get_exchange_mechanism(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getExchangeMechanism()
         if value is None:
@@ -2955,34 +3277,42 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
             return value.getName()
     def set_exchange_mechanism(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setExchangeMechanism(get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeMechanism", value))
     def get_owned_elements(self):
         """
+        Returns: ExchangeItemElement[*]
         """
         return create_e_list(self.get_java_object().getOwnedElements(), ExchangeItemElement)
     def get_allocator_interfaces(self):
         """
+        Returns: Interface[*]
         """
         return create_e_list(self.get_java_object().getAllocatorInterfaces(), Interface)
     def get_super(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getSuper(), ExchangeItem)
     def get_sub(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getSub(), ExchangeItem)
     def get_realized_exchange_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return capella_query_by_name(self, "Realized Exchange Items")
     def get_realizing_exchange_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return capella_query_by_name(self, "Realizing Exchange Items")
     def get_realizing_operations(self):
         """
+        Returns: Operation[*]
         """
         return create_e_list(self.get_java_object().getRealizingOperations(), Operation)
 
@@ -3003,6 +3333,7 @@ class ExchangeItemElement(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_type(self):
         """
+        Returns: DataType
         """
         return capella_query_by_name(self, "Type")
 
@@ -3024,6 +3355,7 @@ class FunctionPort(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_allocator_component_port(self):
         """
+        Returns: ComponentPort[0..1]
         """
         value =  self.get_java_object().getRepresentedComponentPort()
         if value is None:
@@ -3034,6 +3366,7 @@ class FunctionPort(CapellaElement):
             return specific_cls(value)
     def set_allocator_component_port(self, value):
         """
+        Returns: ComponentPort[0..1]
         """
         return self.get_java_object().setRepresentedComponentPort(value.get_java_object())
 
@@ -3054,18 +3387,22 @@ class FunctionInputPort(FunctionPort):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_incoming_functional_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getIncomingFunctionalExchanges(), FunctionalExchange)
     def get_incoming_exchange_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getIncomingExchangeItems(), ExchangeItem)
     def get_realized_function_input_ports(self):
         """
+        Returns: FunctionInputPort[*]
         """
         return create_e_list(self.get_java_object().getRealizedFunctionInputPorts(), FunctionInputPort)
     def get_realizing_function_input_ports(self):
         """
+        Returns: FunctionInputPort[*]
         """
         return create_e_list(self.get_java_object().getRealizingFunctionInputPorts(), FunctionInputPort)
 
@@ -3086,18 +3423,22 @@ class FunctionOutputPort(FunctionPort):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_outgoing_functional_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getOutgoingFunctionalExchanges(), FunctionalExchange)
     def get_outgoing_exchange_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getOutgoingExchangeItems(), ExchangeItem)
     def get_realized_function_output_ports(self):
         """
+        Returns: FunctionOutputPort[*]
         """
         return create_e_list(self.get_java_object().getRealizedFunctionOutputPorts(), FunctionOutputPort)
     def get_realizing_function_output_ports(self):
         """
+        Returns: FunctionOutputPort[*]
         """
         return create_e_list(self.get_java_object().getRealizingFunctionOutputPorts(), FunctionOutputPort)
 
@@ -3118,6 +3459,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_source_port(self):
         """
+        Returns: FunctionOutputPort
         """
         value =  self.get_java_object().getSource()
         if value is None:
@@ -3128,10 +3470,12 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             return specific_cls(value)
     def set_source_port(self, value):
         """
+        Returns: FunctionOutputPort
         """
         return self.get_java_object().setSource(value.get_java_object())
     def get_target_port(self):
         """
+        Returns: FunctionInputPort
         """
         value =  self.get_java_object().getTarget()
         if value is None:
@@ -3142,10 +3486,12 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             return specific_cls(value)
     def set_target_port(self, value):
         """
+        Returns: FunctionInputPort
         """
         return self.get_java_object().setTarget(value.get_java_object())
     def get_source_function(self):
         """
+        Returns: Function
         """
         port = self.get_java_object().getSourceFunctionOutputPort()
         if port is None:
@@ -3162,6 +3508,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             return None
     def get_target_function(self):
         """
+        Returns: Function
         """
         port =  self.get_java_object().getTargetFunctionInputPort()
         if port is None:
@@ -3178,30 +3525,37 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             return None
     def get_exchanged_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_involving_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return create_e_list(self.get_java_object().getInvolvingFunctionalChains(), FunctionalChain)
     def get_categories(self):
         """
+        Returns: ExchangeCategory[*]
         """
         return capella_query_by_name(self, "Categories")
     def get_allocating_component_exchange(self):
         """
+        Returns: ComponentExchange[0..1]
         """
         return capella_query_by_name(self, "Allocating Component Exchange")
     def get_realized_functional_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getRealizedFunctionalExchanges(), FunctionalExchange)
     def get_realizing_functional_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return capella_query_by_name(self, "Realizing Functional Exchanges")
     def get_realized_interactions(self):
         """
+        Returns: Interaction[*]
         """
         return capella_query_by_name(self, "Realized Interactions")
 
@@ -3222,6 +3576,7 @@ class ExchangeCategory(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getExchanges(), FunctionalExchange)
 
@@ -3242,6 +3597,7 @@ class FunctionalChain(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_pre_condition(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -3252,10 +3608,12 @@ class FunctionalChain(CapellaElement):
             return specific_cls(value)
     def set_pre_condition(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self):
         """
+        Returns: Constraint[0..1]
         """
         value =  self.get_java_object().getPostCondition()
         if value is None:
@@ -3266,10 +3624,12 @@ class FunctionalChain(CapellaElement):
             return specific_cls(value)
     def set_post_condition(self, value):
         """
+        Returns: Constraint[0..1]
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_involved_functions(self):
         """
+        Returns: Function[*]
         """
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
@@ -3282,30 +3642,37 @@ class FunctionalChain(CapellaElement):
         return res
     def get_involved_functional_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getInvolvedFunctionalExchanges(), FunctionalExchange)
     def get_involved_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return capella_query_by_name(self, "Involved Functional Chains")
     def get_involving_capabilities(self):
         """
+        Returns: AbstractSystemCapability[*]
         """
         return capella_query_by_name(self, "Involving Capabilities")
     def get_available_in_states(self):
         """
+        Returns: State[*]
         """
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
     def get_realized_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return capella_query_by_name(self, "Realized Operational Processes")
     def get_realized_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return capella_query_by_name(self, "Realized Functional Chains")
     def get_realizing_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return capella_query_by_name(self, "Realizing Functional Chains")
 
@@ -3322,38 +3689,47 @@ class BehavioralComponent(CapellaElement, AbstractInstance):
             JavaObject.__init__(self, java_object)
     def get_contained_component_ports(self):
         """
+        Returns: ComponentPort[*]
         """
         return create_e_list(self.get_java_object().getContainedComponentPorts(), ComponentPort)
     def get_incoming_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return create_e_list(self.get_java_object().getIncomingComponentExchanges(), ComponentExchange)
     def get_outgoing_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return create_e_list(self.get_java_object().getOutgoingComponentExchanges(), ComponentExchange)
     def get_inout_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return create_e_list(self.get_java_object().getInoutComponentExchanges(), ComponentExchange)
     def get_allocated_functions(self):
         """
+        Returns: Function[*]
         """
         return create_e_list(self.get_java_object().getAllocatedFunctions(), Function)
     def get_used_interfaces(self):
         """
+        Returns: Interface[*]
         """
         return create_e_list(self.get_java_object().getUsedInterfaces(), Interface)
     def get_implemented_interfaces(self):
         """
+        Returns: Interface[*]
         """
         return create_e_list(self.get_java_object().getImplementedInterfaces(), Interface)
     def get_owned_state_machines(self):
         """
+        Returns: StateMachine[*]
         """
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
     def get_owned_component_exchange_categories(self):
         """
+        Returns: ComponentExchangeCategory[*]
         """
         return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
 
@@ -3374,6 +3750,7 @@ class ComponentPort(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_orientation(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getOrientation()
         if value is None:
@@ -3382,30 +3759,37 @@ class ComponentPort(CapellaElement):
             return value.getName()
     def get_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return create_e_list(self.get_java_object().getComponentExchanges(), ComponentExchange)
     def get_allocated_function_ports(self):
         """
+        Returns: FunctionPort[*]
         """
         return capella_query_by_name(self, "Allocated Function Ports")
     def get_provided_interfaces(self):
         """
+        Returns: Interface[*]
         """
         return capella_query_by_name(self, "Provided Interfaces")
     def get_required_interfaces(self):
         """
+        Returns: Interface[*]
         """
         return capella_query_by_name(self, "Required Interfaces")
     def get_allocating_physical_ports(self):
         """
+        Returns: PhysicalPort[0..1]
         """
         return capella_query_by_name(self, "Allocating Physical Ports")
     def get_realized_component_ports(self):
         """
+        Returns: ComponentPort[*]
         """
         return capella_query_by_name(self, "Realized Component Ports")
     def get_realizing_component_ports(self):
         """
+        Returns: ComponentPort[*]
         """
         return capella_query_by_name(self, "Realizing Component Ports")
 
@@ -3426,6 +3810,7 @@ class ComponentExchange(CapellaElement, AbstractExchange):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -3436,46 +3821,57 @@ class ComponentExchange(CapellaElement, AbstractExchange):
             return specific_cls(value)
     def set_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_connected_component_ports(self):
         """
+        Returns: ComponentPort[2]
         """
         return create_e_list(self.get_java_object().getConnectedComponentPorts(), ComponentPort)
     def get_connected_components(self):
         """
+        Returns: BehavioralComponent[2]
         """
         return capella_query_by_name(self, "Connected Components")
     def get_categories(self):
         """
+        Returns: ComponentExchangeCategory[*]
         """
         return capella_query_by_name(self, "Categories")
     def get_allocated_functional_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return capella_query_by_name(self, "Allocated Functional Exchanges")
     def get_convoyed_informations(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getConvoyedInformations(), ExchangeItem)
     def get_allocating_physical_link(self):
         """
+        Returns: PhysicalLink[0..1]
         """
         return capella_query_by_name(self, "Allocating Physical Link")
     def get_allocating_physical_path(self):
         """
+        Returns: PhysicalPath[0..1]
         """
         return capella_query_by_name(self, "Allocating Physical Path")
     def get_realized_communication_means(self):
         """
+        Returns: CommunicationMean[*]
         """
         return create_e_list(self.get_java_object().getRealizedCommunicationMeans(), CommunicationMean)
     def get_realized_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return create_e_list(self.get_java_object().getRealizedComponentExchanges(), ComponentExchange)
     def get_realizing_component_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return capella_query_by_name(self, "Realizing Component Exchanges")
 
@@ -3496,6 +3892,7 @@ class ComponentExchangeCategory(CapellaElement):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_exchanges(self):
         """
+        Returns: ComponentExchange[*]
         """
         return create_e_list(self.get_java_object().getExchanges(), ComponentExchange)
 
@@ -3516,6 +3913,7 @@ class AbstractCapability(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_pre_condition(self):
         """
+        Returns: Constraint
         """
         value =  self.get_java_object().getPreCondition()
         if value is None:
@@ -3526,10 +3924,12 @@ class AbstractCapability(PropertyValuePkgContainer):
             return specific_cls(value)
     def set_pre_condition(self, value):
         """
+        Returns: Constraint
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self):
         """
+        Returns: Constraint
         """
         value =  self.get_java_object().getPostCondition()
         if value is None:
@@ -3540,38 +3940,47 @@ class AbstractCapability(PropertyValuePkgContainer):
             return specific_cls(value)
     def set_post_condition(self, value):
         """
+        Returns: Constraint
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_owned_scenarios(self):
         """
+        Returns: Scenario[*]
         """
         return create_e_list(self.get_java_object().getOwnedScenarios(), Scenario)
     def get_super(self):
         """
+        Returns: AbstractCapability[*]
         """
         return create_e_list(self.get_java_object().getSuper(), AbstractCapability)
     def get_sub(self):
         """
+        Returns: AbstractCapability[*]
         """
         return create_e_list(self.get_java_object().getSub(), AbstractCapability)
     def get_included_capabilities(self):
         """
+        Returns: AbstractCapability[*]
         """
         return capella_query_by_name(self, "Included Capabilities")
     def get_including_capabilities(self):
         """
+        Returns: AbstractCapability[*]
         """
         return capella_query_by_name(self, "Including Capabilities")
     def get_extended_capabilities(self):
         """
+        Returns: AbstractCapability[*]
         """
         return capella_query_by_name(self, "Extended Capabilities")
     def get_extending_capabilities(self):
         """
+        Returns: AbstractCapability[*]
         """
         return capella_query_by_name(self, "Extending Capabilities")
     def get_available_in_states(self):
         """
+        Returns: State[*]
         """
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
 
@@ -3588,14 +3997,17 @@ class AbstractSystemCapability(AbstractCapability):
             JavaObject.__init__(self, java_object)
     def get_owned_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return create_e_list(self.get_java_object().getOwnedFunctionalChains(), FunctionalChain)
     def get_involved_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return create_e_list(self.get_java_object().getInvolvedFunctionalChains(), FunctionalChain)
     def get_involved_functions(self):
         """
+        Returns: Function[*]
         """
         return create_e_list(self.get_java_object().getInvolvedAbstractFunctions(), Function)
 
@@ -3825,10 +4237,12 @@ class DataPkg(JavaObject):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_classes(self):
         """
+        Returns: Class[*]
         """
         return create_e_list(self.get_java_object().getOwnedClasses(), Class)
     def get_owned_data_pkgs(self):
         """
+        Returns: DataPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedDataPkgs(), DataPkg)
 
@@ -3863,30 +4277,37 @@ class Class(DataType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_abstract(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setAbstract(value)
     def get_final(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isFinal()
     def set_final(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setFinal(value)
     def get_primitive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isPrimitive()
     def set_primitive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setPrimitive(value)
     def get_visibility(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -3897,14 +4318,17 @@ class Class(DataType):
             return specific_cls(value)
     def set_visibility(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_contained_properties(self):
         """
+        Returns: Property[*]
         """
         return create_e_list(self.get_java_object().getContainedProperties(), Property)
     def get_contained_operations(self):
         """
+        Returns: Operation[*]
         """
         return create_e_list(self.get_java_object().getContainedOperations(), Operation)
 
@@ -3924,62 +4348,77 @@ class Collection(DataType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_ordered(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isOrdered()
     def set_ordered(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setOrdered(value)
     def get_unique(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isUnique()
     def set_unique(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setUnique(value)
     def get_min_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMinInclusive()
     def set_min_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMinInclusive(value)
     def get_max_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMaxInclusive()
     def set_max_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMaxInclusive(value)
     def get_abstract(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setAbstract(value)
     def get_final(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isFinal()
     def set_final(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setFinal(value)
     def get_primitive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isPrimitive()
     def set_primitive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setPrimitive(value)
     def get_collection_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getCollectionKind()
         if value is None:
@@ -3990,10 +4429,12 @@ class Collection(DataType):
             return specific_cls(value)
     def set_collection_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setCollectionKind(value.get_java_object())
     def get_aggregation_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getAggregationKind()
         if value is None:
@@ -4004,10 +4445,12 @@ class Collection(DataType):
             return specific_cls(value)
     def set_aggregation_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setAggregationKind(value.get_java_object())
     def get_visibility(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -4018,14 +4461,17 @@ class Collection(DataType):
             return specific_cls(value)
     def set_visibility(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_contained_operations(self):
         """
+        Returns: Operation[*]
         """
         return create_e_list(self.get_java_object().getContainedOperations(), Operation)
     def get_min_card(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getMinCard()
         if value is None:
@@ -4036,6 +4482,7 @@ class Collection(DataType):
             return specific_cls(value)
     def get_max_card(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getMaxCard()
         if value is None:
@@ -4061,18 +4508,22 @@ class Union(DataType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_final(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isFinal()
     def set_final(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setFinal(value)
     def get_contained_union_properties(self):
         """
+        Returns: UnionProperty[*]
         """
         return create_e_list(self.get_java_object().getContainedUnionProperties(), UnionProperty)
     def get_discriminant(self):
         """
+        Returns: UnionProperty[0..1]
         """
         value =  self.get_java_object().getDiscriminant()
         if value is None:
@@ -4083,10 +4534,12 @@ class Union(DataType):
             return specific_cls(value)
     def set_discriminant(self, value):
         """
+        Returns: UnionProperty[0..1]
         """
         return self.get_java_object().setDiscriminant(value.get_java_object())
     def get_default_property(self):
         """
+        Returns: UnionProperty[0..1]
         """
         value =  self.get_java_object().getDefaultProperty()
         if value is None:
@@ -4097,10 +4550,12 @@ class Union(DataType):
             return specific_cls(value)
     def set_default_property(self, value):
         """
+        Returns: UnionProperty[0..1]
         """
         return self.get_java_object().setDefaultProperty(value.get_java_object())
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -4111,10 +4566,12 @@ class Union(DataType):
             return specific_cls(value)
     def set_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_contained_operations(self):
         """
+        Returns: Operation[*]
         """
         return create_e_list(self.get_java_object().getContainedOperations(), Operation)
 
@@ -4149,6 +4606,7 @@ class Property(JavaObject):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_type(self):
         """
+        Returns: DataType
         """
         return capella_query_by_name(self, "Type")
 
@@ -4185,6 +4643,7 @@ class Operation(JavaObject):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_visibility(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -4195,18 +4654,22 @@ class Operation(JavaObject):
             return specific_cls(value)
     def set_visibility(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_realized_exchange_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getRealizedExchangeItems(), ExchangeItem)
     def get_owned_parameters(self):
         """
+        Returns: Parameter[*]
         """
         return create_e_list(self.get_java_object().getOwnedParameters(), Parameter)
     def get_thrown_exceptions(self):
         """
+        Returns: CapellaException[*]
         """
         return create_e_list(self.get_java_object().getThrownExceptions(), CapellaException)
 
@@ -4242,14 +4705,17 @@ class CapellaException(JavaObject):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_abstract(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setAbstract(value)
     def get_visibility(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -4260,14 +4726,17 @@ class CapellaException(JavaObject):
             return specific_cls(value)
     def set_visibility(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_super(self):
         """
+        Returns: CapellaException[*]
         """
         return create_e_list(self.get_java_object().getSuper(), CapellaException)
     def get_sub(self):
         """
+        Returns: CapellaException[*]
         """
         return create_e_list(self.get_java_object().getSub(), CapellaException)
 
@@ -4283,30 +4752,37 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
             JavaObject.__init__(self, java_object)
     def get_abstract(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isAbstract()
     def set_abstract(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setAbstract(value)
     def get_final(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isFinal()
     def set_final(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setFinal(value)
     def get_discrete(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isDiscrete()
     def set_discrete(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setDiscrete(value)
     def get_visibility(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getVisibility()
         if value is None:
@@ -4317,22 +4793,27 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
             return specific_cls(value)
     def set_visibility(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_super(self):
         """
+        Returns: PrimitiveDataType[*]
         """
         return create_e_list(self.get_java_object().getSuper(), PrimitiveDataType)
     def get_sub(self):
         """
+        Returns: PrimitiveDataType[*]
         """
         return create_e_list(self.get_java_object().getSub(), PrimitiveDataType)
     def get_realized_informations(self):
         """
+        Returns: PrimitiveDataType[*]
         """
         return create_e_list(self.get_java_object().getRealizedDataTypes(), PrimitiveDataType)
     def get_realizing_informations(self):
         """
+        Returns: PrimitiveDataType[*]
         """
         return create_e_list(self.get_java_object().getRealizingDataTypes(), PrimitiveDataType)
 
@@ -4352,34 +4833,42 @@ class Enumeration(PrimitiveDataType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_min_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMinInclusive()
     def set_min_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMinInclusive(value)
     def get_max_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMaxInclusive()
     def set_max_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMaxInclusive(value)
     def get_pattern(self):
         """
+        Returns: String
         """
         return self.get_java_object().getPattern()
     def set_pattern(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setPattern(value)
     def get_owned_literals(self):
         """
+        Returns: EnumerationLiteral[*]
         """
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationLiteral)
     def get_default_value(self):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         value =  self.get_java_object().getDefaultValue()
         if value is None:
@@ -4390,10 +4879,12 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_default_value(self, value):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setDefaultValue(value.get_java_object())
     def get_min_value(self):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         value =  self.get_java_object().getMinValue()
         if value is None:
@@ -4404,10 +4895,12 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_min_value(self, value):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setMinValue(value.get_java_object())
     def get_max_value(self):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         value =  self.get_java_object().getMaxValue()
         if value is None:
@@ -4418,10 +4911,12 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_max_value(self, value):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setMaxValue(value.get_java_object())
     def get_null_value(self):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         value =  self.get_java_object().getNullValue()
         if value is None:
@@ -4432,10 +4927,12 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_null_value(self, value):
         """
+        Returns: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setNullValue(value.get_java_object())
     def get_domain_type(self):
         """
+        Returns: PrimitiveDataType[0..1]
         """
         value =  self.get_java_object().getDomainType()
         if value is None:
@@ -4446,6 +4943,7 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_domain_type(self, value):
         """
+        Returns: PrimitiveDataType[0..1]
         """
         return self.get_java_object().setDomainType(value.get_java_object())
 
@@ -4480,10 +4978,12 @@ class BooleanType(PrimitiveDataType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_literals(self):
         """
+        Returns: LiteralBooleanValue[0..2]
         """
         return create_e_list(self.get_java_object().getOwnedLiterals(), LiteralBooleanValue)
     def get_default_value(self):
         """
+        Returns: LiteralBooleanValue[0..1]
         """
         value =  self.get_java_object().getDefaultValue()
         if value is None:
@@ -4494,6 +4994,7 @@ class BooleanType(PrimitiveDataType):
             return specific_cls(value)
     def set_default_value(self, value):
         """
+        Returns: LiteralBooleanValue[0..1]
         """
         return self.get_java_object().setDefaultValue(value.get_java_object())
 
@@ -4513,30 +5014,37 @@ class StringType(PrimitiveDataType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_min_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMinInclusive()
     def set_min_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMinInclusive(value)
     def get_max_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMaxInclusive()
     def set_max_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMaxInclusive(value)
     def get_pattern(self):
         """
+        Returns: String
         """
         return self.get_java_object().getPattern()
     def set_pattern(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setPattern(value)
     def get_min_length(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getMinLength()
         if value is None:
@@ -4547,6 +5055,7 @@ class StringType(PrimitiveDataType):
             return specific_cls(value)
     def get_max_length(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getMaxLength()
         if value is None:
@@ -4557,6 +5066,7 @@ class StringType(PrimitiveDataType):
             return specific_cls(value)
     def get_default_value(self):
         """
+        Returns: LiteralStringValue[0..1]
         """
         value =  self.get_java_object().getDefaultValue()
         if value is None:
@@ -4567,6 +5077,7 @@ class StringType(PrimitiveDataType):
             return specific_cls(value)
     def get_null_value(self):
         """
+        Returns: LiteralStringValue[0..1]
         """
         value =  self.get_java_object().getNullValue()
         if value is None:
@@ -4592,30 +5103,37 @@ class NumericType(PrimitiveDataType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_min_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMinInclusive()
     def set_min_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMinInclusive(value)
     def get_max_inclusive(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isMaxInclusive()
     def set_max_inclusive(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setMaxInclusive(value)
     def get_pattern(self):
         """
+        Returns: String
         """
         return self.get_java_object().getPattern()
     def set_pattern(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setPattern(value)
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -4626,10 +5144,12 @@ class NumericType(PrimitiveDataType):
             return specific_cls(value)
     def set_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_min_value(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getMinValue()
         if value is None:
@@ -4640,6 +5160,7 @@ class NumericType(PrimitiveDataType):
             return specific_cls(value)
     def get_max_value(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getMaxValue()
         if value is None:
@@ -4650,6 +5171,7 @@ class NumericType(PrimitiveDataType):
             return specific_cls(value)
     def get_default_value(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getDefaultValue()
         if value is None:
@@ -4660,6 +5182,7 @@ class NumericType(PrimitiveDataType):
             return specific_cls(value)
     def get_null_value(self):
         """
+        Returns: LiteralNumericValue[0..1]
         """
         value =  self.get_java_object().getNullValue()
         if value is None:
@@ -4685,6 +5208,7 @@ class PhysicalQuantity(NumericType):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_unit(self):
         """
+        Returns: Unit[0..1]
         """
         value =  self.get_java_object().getUnit()
         if value is None:
@@ -4695,6 +5219,7 @@ class PhysicalQuantity(NumericType):
             return specific_cls(value)
     def set_unit(self, value):
         """
+        Returns: Unit[0..1]
         """
         return self.get_java_object().setUnit(value.get_java_object())
 
@@ -4730,6 +5255,7 @@ class SystemEngineering(PropertyValuePkgContainer):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_rec_catalogs(self):
         """
+        Returns: RecCatalog[*]
         """
         res = []
         for extension in self.get_java_object().getOwnedExtensions():
@@ -4738,26 +5264,31 @@ class SystemEngineering(PropertyValuePkgContainer):
         return res
     def get_operational_analysis(self):
         """
+        Returns: OperationalAnalysis
         """
         for oa in self.get_java_object().getContainedOperationalAnalysis():
             return OperationalAnalysis(oa)
     def get_system_analysis(self):
         """
+        Returns: SystemAnalysis
         """
         for sa in self.get_java_object().getContainedSystemAnalysis():
             return SystemAnalysis(sa)
     def get_logical_architecture(self):
         """
+        Returns: LogicalArchitecture
         """
         for la in self.get_java_object().getContainedLogicalArchitectures():
             return LogicalArchitecture(la)
     def get_physical_architecture(self):
         """
+        Returns: PhysicalArchitecture
         """
         for pa in self.get_java_object().getContainedPhysicalArchitectures():
             return PhysicalArchitecture(pa)
     def get_e_p_b_s_architecture(self):
         """
+        Returns: EPBSArchitecture
         """
         for epbsa in self.get_java_object().getContainedEPBSArchitectures():
             return EPBSArchitecture(epbsa)
@@ -4796,6 +5327,7 @@ class Interaction(AbstractEvent):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_source(self):
         """
+        Returns: OperationalActivity
         """
         value =  self.get_java_object().getSource()
         if value is None:
@@ -4806,10 +5338,12 @@ class Interaction(AbstractEvent):
             return specific_cls(value)
     def set_source(self, value):
         """
+        Returns: OperationalActivity
         """
         return self.get_java_object().setSource(value.get_java_object())
     def get_target(self):
         """
+        Returns: OperationalActivity
         """
         value =  self.get_java_object().getTarget()
         if value is None:
@@ -4820,10 +5354,12 @@ class Interaction(AbstractEvent):
             return specific_cls(value)
     def set_target(self, value):
         """
+        Returns: OperationalActivity
         """
         return self.get_java_object().setTarget(value.get_java_object())
     def get_allocating_communication_mean(self):
         """
+        Returns: CommunicationMean[0..1]
         """
         value =  self.get_java_object().getAllocatingCommunicationMean()
         if value is None:
@@ -4834,18 +5370,22 @@ class Interaction(AbstractEvent):
             return specific_cls(value)
     def set_allocating_communication_mean(self, value):
         """
+        Returns: CommunicationMean[0..1]
         """
         return self.get_java_object().setAllocatingCommunicationMean(value.get_java_object())
     def get_involving_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return create_e_list(self.get_java_object().getInvolvingOperationalProcesses(), OperationalProcess)
     def get_exchanged_items(self):
         """
+        Returns: ExchangeItem[*]
         """
         return create_e_list(self.get_java_object().getExchangedItems(), ExchangeItem)
     def get_realizing_functional_exchanges(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getRealizingFunctionalExchanges(), FunctionalExchange)
 
@@ -4866,22 +5406,27 @@ class OperationalCapability(AbstractCapability):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return capella_query_by_name(self, "Owned Operational Processes")
     def get_involved_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return capella_query_by_name(self, "Involved Operational Processes")
     def get_involved_operational_activities(self):
         """
+        Returns: OperationalActivity[*]
         """
         return create_e_list(self.get_java_object().getInvolvedOperationalActivities(), OperationalActivity)
     def get_involved_entities(self):
         """
+        Returns: OperationalActor[*]
         """
         return capella_query_by_name(self, "Involved Entities")
     def get_realizing_capabilities(self):
         """
+        Returns: Capability[*]
         """
         return capella_query_by_name(self, "Realizing Capabilities")
 
@@ -4907,6 +5452,7 @@ class OperationalEntity(OperationalActor):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_entities(self):
         """
+        Returns: OperationalEntity[*]
         """
         return create_e_list(self.get_java_object().getOwnedEntities(), OperationalEntity)
 
@@ -4927,18 +5473,22 @@ class Capability(AbstractSystemCapability):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_purpose_missions(self):
         """
+        Returns: Mission[*]
         """
         return create_e_list(self.get_java_object().getPurposeMissions(), Mission)
     def get_realized_operational_capabilities(self):
         """
+        Returns: OperationalCapability[*]
         """
         return capella_query_by_name(self, "Realized Operational Capabilities")
     def get_realizing_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return capella_query_by_name(self, "Realizing Capability Realizations")
     def get_involved_system_actors(self):
         """
+        Returns: SystemActor[*]
         """
         return create_e_list(self.get_java_object().getInvolvedSystemActors(), SystemActor)
 
@@ -4987,18 +5537,22 @@ class SystemActor(BehavioralComponent, Node):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_is_human(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isHuman()
     def set_is_human(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setHuman(value)
     def get_owned_actors(self):
         """
+        Returns: SystemActor[*]
         """
         return create_e_list(self.get_java_object().getOwnedActors(), SystemActor)
     def get_owned_system_component_pkgs(self):
         """
+        Returns: SystemComponentPkg
         """
         value =  self.get_java_object().getOwnedSystemComponentPkgs()
         if value is None:
@@ -5009,18 +5563,22 @@ class SystemActor(BehavioralComponent, Node):
             return specific_cls(value)
     def get_involving_missions(self):
         """
+        Returns: Mission[*]
         """
         return create_e_list(self.get_java_object().getInvolvingMissions(), Mission)
     def get_realized_operational_entities(self):
         """
+        Returns: OperationalActor[*]
         """
         return create_e_list(self.get_java_object().getRealizedOperationalEntities(), OperationalActor)
     def get_involving_capabilities(self):
         """
+        Returns: Capability[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilities(), Capability)
     def get_realizing_logical_actors(self):
         """
+        Returns: LogicalActor[*]
         """
         return create_e_list(self.get_java_object().getRealizingLogicalActors(), LogicalActor)
 
@@ -5041,30 +5599,37 @@ class CapabilityRealization(AbstractSystemCapability):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_realized_capabilities(self):
         """
+        Returns: Capability[*]
         """
         return capella_query_by_name(self, "Realized Capabilities")
     def get_realized_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return capella_query_by_name(self, "Realized Capability Realizations")
     def get_realizing_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return capella_query_by_name(self, "Realizing Capability Realizations")
     def get_involved_logical_actors(self):
         """
+        Returns: LogicalActor[*]
         """
         return create_e_list(self.get_java_object().getInvolvedLogicalActors(), LogicalActor)
     def get_involved_logical_components(self):
         """
+        Returns: LogicalComponent[*]
         """
         return create_e_list(self.get_java_object().getInvolvedLogicalComponents(), LogicalComponent)
     def get_involved_physical_components(self):
         """
+        Returns: PhysicalComponent[*]
         """
         return create_e_list(self.get_java_object().getInvolvedPhysicalComponents(), PhysicalComponent)
     def get_involved_physical_actors(self):
         """
+        Returns: PhysicalActor[*]
         """
         return create_e_list(self.get_java_object().getInvolvedPhysicalActors(), PhysicalActor)
 
@@ -5090,10 +5655,12 @@ class LogicalSystem(BehavioralComponent, Node):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_logical_components(self):
         """
+        Returns: LogicalComponent[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
     def get_owned_logical_component_pkgs(self):
         """
+        Returns: LogicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
 
@@ -5121,26 +5688,32 @@ class LogicalComponent(BehavioralComponent):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_logical_components(self):
         """
+        Returns: LogicalComponent[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
     def get_owned_logical_component_pkgs(self):
         """
+        Returns: LogicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
     def get_is_human(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isHuman()
     def set_is_human(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setHuman(value)
     def get_realizing_behavior_p_cs(self):
         """
+        Returns: BehaviorPC[*]
         """
         return create_e_list(self.get_java_object().getRealizingBehaviorPCs(), BehaviorPC)
     def get_involving_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
@@ -5167,30 +5740,37 @@ class LogicalActor(BehavioralComponent, Node):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_logical_actors(self):
         """
+        Returns: LogicalActor[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalActors(), LogicalActor)
     def get_owned_logical_component_pkgs(self):
         """
+        Returns: LogicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
     def get_realized_system_actors(self):
         """
+        Returns: SystemActor[*]
         """
         return create_e_list(self.get_java_object().getRealizedSystemActors(), SystemActor)
     def get_is_human(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isHuman()
     def set_is_human(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setHuman(value)
     def get_realizing_physical_actors(self):
         """
+        Returns: PhysicalActor[*]
         """
         return create_e_list(self.get_java_object().getRealizingPhysicalActors(), PhysicalActor)
     def get_involving_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
@@ -5217,10 +5797,12 @@ class PhysicalSystem(CapellaElement, Node):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_physical_components(self):
         """
+        Returns: PhysicalComponent[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponents(), PhysicalComponent)
     def get_owned_physical_component_pkgs(self):
         """
+        Returns: PhysicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
 
@@ -5254,6 +5836,7 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_deploying_node_p_c(self):
         """
+        Returns: NodePC[0..1]
         """
         value =  self.get_java_object().getDeployingNodePC()
         if value is None:
@@ -5264,10 +5847,12 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
             return specific_cls(value)
     def set_deploying_node_p_c(self, value):
         """
+        Returns: NodePC[0..1]
         """
         return self.get_java_object().setDeployingNodePC(value.get_java_object())
     def get_realized_logical_components(self):
         """
+        Returns: LogicalComponent[*]
         """
         return create_e_list(self.get_java_object().getRealizedLogicalComponents(), LogicalComponent)
 
@@ -5301,6 +5886,7 @@ class NodePC(PhysicalComponent, Node):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_deployed_behavior_p_cs(self):
         """
+        Returns: BehaviorPC[*]
         """
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
@@ -5311,6 +5897,7 @@ class NodePC(PhysicalComponent, Node):
         return res
     def get_owned_state_machines(self):
         """
+        Returns: StateMachine[*]
         """
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
 
@@ -5337,26 +5924,32 @@ class PhysicalActor(BehavioralComponent, Node):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_owned_physical_actors(self):
         """
+        Returns: PhysicalActor[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalActors(), PhysicalActor)
     def get_owned_physical_component_pkgs(self):
         """
+        Returns: PhysicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
     def get_realized_logical_actors(self):
         """
+        Returns: LogicalActor[*]
         """
         return create_e_list(self.get_java_object().getRealizedLogicalActors(), LogicalActor)
     def get_is_human(self):
         """
+        Returns: Boolean
         """
         return self.get_java_object().isHuman()
     def set_is_human(self, value):
         """
+        Returns: Boolean
         """
         self.get_java_object().setHuman(value)
     def get_involving_capability_realizations(self):
         """
+        Returns: CapabilityRealization[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
@@ -5377,10 +5970,12 @@ class ChangeEvent(AbstractEvent):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_expression(self):
         """
+        Returns: String
         """
         return self.get_java_object().getExpression()
     def set_expression(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setExpression(value)
 
@@ -5401,6 +5996,7 @@ class TimeEvent(AbstractEvent):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -5411,14 +6007,17 @@ class TimeEvent(AbstractEvent):
             return specific_cls(value)
     def set_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_expression(self):
         """
+        Returns: String
         """
         return self.get_java_object().getExpression()
     def set_expression(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setExpression(value)
 
@@ -5435,6 +6034,7 @@ class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
             JavaObject.__init__(self, java_object)
     def get_available_in_states(self):
         """
+        Returns: State[*]
         """
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
 
@@ -5451,6 +6051,7 @@ class Function(AbstractActivityFunction):
             JavaObject.__init__(self, java_object)
     def get_kind(self):
         """
+        Returns: String
         """
         value =  self.get_java_object().getKind()
         if value is None:
@@ -5461,34 +6062,42 @@ class Function(AbstractActivityFunction):
             return specific_cls(value)
     def set_kind(self, value):
         """
+        Returns: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_condition(self):
         """
+        Returns: String
         """
         return self.get_java_object().getCondition()
     def set_condition(self, value):
         """
+        Returns: String
         """
         self.get_java_object().setCondition(value)
     def get_inputs(self):
         """
+        Returns: FunctionInputPort[*]
         """
         return create_e_list(self.get_java_object().getInputs(), FunctionInputPort)
     def get_outputs(self):
         """
+        Returns: FunctionOutputPort[*]
         """
         return create_e_list(self.get_java_object().getOutputs(), FunctionOutputPort)
     def get_incoming(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getIncoming(), FunctionalExchange)
     def get_outgoing(self):
         """
+        Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getOutgoing(), FunctionalExchange)
     def get_allocating_component(self):
         """
+        Returns: BehavioralComponent[0..1]
         """
         values = None
         if isinstance(self, LogicalFunction):
@@ -5507,14 +6116,17 @@ class Function(AbstractActivityFunction):
             return specific_cls(values[0])
     def get_owned_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return create_e_list(self.get_java_object().getOwnedFunctionalChains(), FunctionalChain)
     def get_involving_functional_chains(self):
         """
+        Returns: FunctionalChain[*]
         """
         return create_e_list(self.get_java_object().getInvolvingFunctionalChains(), FunctionalChain)
     def get_involving_capabilities(self):
         """
+        Returns: AbstractSystemCapability[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilities(), AbstractSystemCapability)
 
@@ -5535,38 +6147,47 @@ class OperationalActivity(AbstractActivityFunction):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_contained_operational_activities(self):
         """
+        Returns: OperationalActivity[*]
         """
         return create_e_list(self.get_java_object().getContainedOperationalActivities(), OperationalActivity)
     def get_owned_operational_activity_pkgs(self):
         """
+        Returns: OperationalActivityPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedOperationalActivityPkgs(), OperationalActivityPkg)
     def get_incoming(self):
         """
+        Returns: Interaction[*]
         """
         return create_e_list(self.get_java_object().getIncoming(), Interaction)
     def get_outgoing(self):
         """
+        Returns: Interaction[*]
         """
         return create_e_list(self.get_java_object().getOutgoing(), Interaction)
     def get_allocating_entity(self):
         """
+        Returns: OperationalActor[0..1]
         """
         return capella_query_by_name(self, "Allocating Entity")
     def get_owned_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return capella_query_by_name(self, "Owned Operational Processes")
     def get_involving_operational_processes(self):
         """
+        Returns: OperationalProcess[*]
         """
         return create_e_list(self.get_java_object().getInvolvingOperationalProcesses(), OperationalProcess)
     def get_involving_operational_capabilities(self):
         """
+        Returns: OperationalCapability[*]
         """
         return create_e_list(self.get_java_object().getInvolvingOperationalCapabilities(), OperationalCapability)
     def get_realizing_system_functions(self):
         """
+        Returns: SystemFunction[*]
         """
         return capella_query_by_name(self, "Realizing System Functions")
 
@@ -5587,18 +6208,22 @@ class SystemFunction(Function):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_contained_system_functions(self):
         """
+        Returns: SystemFunction[*]
         """
         return create_e_list(self.get_java_object().getContainedSystemFunctions(), SystemFunction)
     def get_owned_system_function_pkgs(self):
         """
+        Returns: SystemFunctionPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedSystemFunctionPkgs(), SystemFunctionPkg)
     def get_realized_operational_activities(self):
         """
+        Returns: OperationalActivity[*]
         """
         return capella_query_by_name(self, "Realized Operational Activities")
     def get_realizing_logical_functions(self):
         """
+        Returns: LogicalFunction[*]
         """
         return capella_query_by_name(self, "Realizing Logical Functions")
 
@@ -5619,18 +6244,22 @@ class LogicalFunction(Function):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_contained_logical_functions(self):
         """
+        Returns: LogicalFunction[*]
         """
         return create_e_list(self.get_java_object().getContainedLogicalFunctions(), LogicalFunction)
     def get_owned_logical_function_pkgs(self):
         """
+        Returns: LogicalFunctionPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedLogicalFunctionPkgs(), LogicalFunctionPkg)
     def get_realized_system_functions(self):
         """
+        Returns: SystemFunction[*]
         """
         return capella_query_by_name(self, "Realized System Functions")
     def get_realizing_physical_functions(self):
         """
+        Returns: PhysicalFunction[*]
         """
         return capella_query_by_name(self, "Realizing Physical Functions")
 
@@ -5651,14 +6280,17 @@ class PhysicalFunction(Function):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     def get_contained_physical_functions(self):
         """
+        Returns: PhysicalFunction[*]
         """
         return create_e_list(self.get_java_object().getContainedPhysicalFunctions(), PhysicalFunction)
     def get_owned_physical_function_pkgs(self):
         """
+        Returns: PhysicalFunctionPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalFunctionPkgs(), PhysicalFunctionPkg)
     def get_realized_logical_functions(self):
         """
+        Returns: LogicalFunction[*]
         """
         return capella_query_by_name(self, "Realized Logical Functions")
 

@@ -26810,8 +26810,8 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
                   id="14d2a41e-1525-4a3e-a1a6-0df2f6f9b40f" name="getRelationTypes">
                 <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
-                    id="e11d7269-2d86-4dda-bea7-a59e0697e299" name="architecture"
-                    abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2" direction="RETURN">
+                    id="e11d7269-2d86-4dda-bea7-a59e0697e299" name="type" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2"
+                    direction="RETURN">
                   <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                       id="3aa337d9-07db-4d0c-8cd6-0de0a7c36d53" name="" value="1"/>
                   <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -26821,16 +26821,15 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
                   id="803f1cf0-0e31-4b79-a784-6046b940865d" name="getRelationTypeByLongName">
                 <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
-                    id="b62a9dd1-bfb2-4f04-9534-6bbcf9eaf58f" name="architecture"
-                    abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2" direction="RETURN">
+                    id="b62a9dd1-bfb2-4f04-9534-6bbcf9eaf58f" name="type" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2"
+                    direction="RETURN">
                   <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                       id="5ea0fbe0-3cb9-43e9-b548-3d579abfabf2" name="" value="1"/>
                   <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                       id="ca5476d4-f116-4884-8bdc-1c998ce8704b" name="" value="1"/>
                 </ownedParameters>
                 <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
-                    id="d864ca4b-83c7-4dcf-9761-eaf1e0d0600d" name="name" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2"
-                    direction="RETURN">
+                    id="d864ca4b-83c7-4dcf-9761-eaf1e0d0600d" name="name" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2">
                   <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                       id="1bc5e954-ac48-4447-a8fb-95522bc64e29" name="" value="1"/>
                   <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
