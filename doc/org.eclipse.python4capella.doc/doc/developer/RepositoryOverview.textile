@@ -14,7 +14,7 @@ h2. doc folder
 
 The doc folder contains the documentation you are reading. To change the documentation, you can modify the textile files and run the launch config at the root of the documentation project.
 
-Note this launch config is also ran during the build.
+bq. Note: this launch config is also ran during the build.
 
 h2. features folder
 

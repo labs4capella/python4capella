@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>TipsAndTricks</title>
+		<link type="text/css" rel="stylesheet" href="../../resources/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="../../resources/custom.css"/>
+	</head>
+	<body>
+		<h1 id="TipsandTricks">Tips and Tricks</h1>
+		<p>This section covers some tips and tricks to help you understand and trouble shoot Pyton4Capella.</p>
+		<h2 id="PythonandJava">Python and Java</h2>
+		<p>This section explains how the Python layer of Python4Capella and Java layer of Capella work together.</p>
+		<h3 id="Compatibilities">Compatibilities</h3>
+		<ul>
+			<li>Pyhton4Capella after 1.1.0:
+				<ul>
+					<li>Capella 5.x to Capella 6.x included
+						<ul>
+							<li>PyDev 9.3.0</li>
+						</ul>
+					</li>
+					<li>Capella 1.4.x
+						<ul>
+							<li>PyDev 8.2.0</li>
+						</ul>
+					</li>
+					<li>Python 3.10.x and lower (should work with newer version)</li>
+					<li>Java included with your version of Capella</li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>Pyhton4Capella before 1.1.0:
+				<ul>
+					<li>Capella 1.4.x to Capella 5.x included</li>
+					<li>PyDev 8.2.0</li>
+					<li>Python 3.7.x and lower</li>
+					<li>Java included with your version of Capella</li>
+				</ul>
+			</li>
+		</ul>
+		<h3 id="PassObjectsbetweenPythonandJava">Pass Objects between Python and Java</h3>
+		<p>The simplified Capella API implemented by Python4Capella is a Python layer above the complete Java Capella metamodel. So it&#8217;s possible to access the Java metmodel if needed from the Python API. It can be handy if some methods are missing from the simplified API and you know the Java metamodel of Capella.</p>
+		<p>The class 
+			<code>JavaObject</code> has a reference from the Python object to the Java object 
+			<code>JavaObject.get_java_object()</code> and all classes from the API extends this class. The object returned by this method is the corresponding Java object.
+		</p>
+		<p>Suppose you have a 
+			<code>LogicalComponent</code>, you can either call the Python API:
+		</p>
+		<pre><code>myLogicalComponent.get_name()
+</code></pre>
+		<p>or the corresponding Java method directly:</p>
+		<pre><code>myLogicalComponent.get_java_object().getName()
+</code></pre>
+		<blockquote>
+			<p>Note: if you need to pass a parameter to a Java method that comes from the Python API, you will need to first get its Java object: 
+				<code>someObject.get_java_object().someMethod(otherObject.get_java_object())</code>.
+			</p>
+		</blockquote>
+		<p>You can also get an object returned by a Java method and want to wrap it in a Python object. To do so, you only need to pass it to the constructor of the corresponding Python class:</p>
+		<pre><code>myLogicalComponent = LogicalComplenent(java_logical_component)
+</code></pre>
+		<p>Then you can use myLogicalComponent like any other Python object from the API.</p>
+		<p>If you don&#8217;t know the type of the returned Java object, you can get the matching class and create an instance:</p>
+		<pre><code>cls = EObject.get_class(java_object)
+if cls is not None:
+    my_object = cls(java_object)
+    # use my_object here
+</code></pre>
+		<blockquote>
+			<p>Note: you can also use a super type from the Python API if the specific type of the Java object doesn&#8217;t exists in the Python API. For instance imagine the LogicalFunction doesn&#8217;t exists in the Python API, you could use 
+				<code>my_function = Function(my_java_logical_function)</code>. You will not have access to specific methods of LogicalFunction unless you use directly the Java object.
+			</p>
+		</blockquote>
+		<p>When you call a constructor from the Python API without a Java object as parameter, the Java object is created if possible, otherwise an error will be raised:</p>
+		<pre><code>my_LogicalFunction = LogicalFunction()
+</code></pre>
+		<p>Most commons errors come from this navigating fron Python to Java and vise versa. You can check the 
+			<a href="#CommonRuntimeErrors">Common Runtime Errors</a> for more details.
+		</p>
+		<h3 id="FindJavamethods">Find Java methods</h3>
+		<p>You can use the 
+			<a href="https://www.eclipse.org/sirius/doc/specifier/general/Writing_Queries.html#aql">Sirius interpreter</a>, select an element and then use the following 
+			<a href="https://www.eclipse.org/acceleo/documentation/aql.html">AQL</a> expression to list all EStructuralFeatures:
+		</p>   self.eClass().eAllStructuralFeatures
+		<p>
+			<img alt="Features list" title="Features list" border="0" src="TipsAndTricks/FeatureList.png"/>
+		</p>
+		<p>You can then use the feature name to get the Java method name, for instance with a feature named someFeature:</p>
+		<ul>
+			<li>getSomeFeature() or isSomeFeature() for boolean features</li>
+			<li>setSomeFeature(value) for mono valued features</li>
+		</ul>
+		<p>You can also check the [Capella metamodel](https://github.com/eclipse/capella/tree/master/core/plugins/org.polarsys.capella.core.data.gen/model) or the [source code](https://github.com/eclipse/capella/tree/master/core/plugins/org.polarsys.capella.core.data.gen/generated/org/polarsys/capella/core/data).
+			<br/>You can also open a given Java class in your environment and navigate it using the 
+			<a href="https://www.eclipse.org/jdt">JDT</a>. For this you will need to 
+			<a href="EnableDevelopmentCapabilities.html">enable Development capabilities</a>.
+		</p>
+		<h2 id="CopyCapellaElement">Copy CapellaElement</h2>
+		<p>Copying a 
+			<code>CapellaElement</code> can be needed to keep most of the features of an object and only want to change a few one. Also not all features are exposed thru the Python simplified API, and making a copy of an existing 
+			<code>CapellaElement</code> will make sure to keep all values. You can copy a 
+			<code>CapellaElement</code> with the following code:
+		</p>
+		<pre><code>my_copy = EObject.copy_e_object(my_CapellaElement)
+</code></pre>
+		<p>If you need to copy a collection of 
+			<code>Capella</code> and want to keep references between copied objects, you can use the following method and pass a collection of 
+			<code>CapellaElement</code>:
+		</p>
+		<pre><code>my_copies = EObject.copy_all_e_objects(some_CapellaElements)
+</code></pre>
+		<h2 id="SemanticBrowserNavigation">Semantic Browser Navigation</h2>
+		<p>A convenient way to navigate in the Capella model as a Capella user is the Semantic Browser. Python4Capella provides methods to list and execute queries from the Semantic Browser.</p>
+		<p>To list available queries on a Capella element you can use:</p>
+		<pre><code>myCapellaElement.get_available_s_b_queries()
+</code></pre>
+		<p>You can also use:</p>
+		<pre><code>available_query_names(myCapellaElement)
+</code></pre>
+		<p>Both methods will list the name of all available Semantic Browser queries for the given element.</p>
+		<p>You can then use the name of one of the query to call it with:</p>
+		<pre><code>myCapellaElement.get_query_result('query name')
+</code></pre>
+		<p>You can also pass the expected result class if needed:</p>
+		<pre><code>myCapellaElement.get_query_result('query name', LogicalComponent)
+</code></pre>
+		<p>or:</p>
+		<pre><code>capella_query_by_name(myCapellaElement, 'query name')
+</code></pre>
+		<p>You can also pass the expected result class if needed:</p>
+		<pre><code>capella_query_by_name(myCapellaElement, 'query name', LogicalComponent)
+</code></pre>
+		<h2 id="ListavailableEASEmodules">List available EASE modules </h2>
+		<p>EASE modules provides methods to interact with the Eclipse platform which Capella is build on.</p>
+		<p>To list all available 
+			<a href="https://www.eclipse.org/ease/">EASE</a> module and see what thes provide, you can open the Module Explorer view:
+		</p>
+		<ul>
+			<li>use the menu Window / Show View / Other...</li>
+		</ul>
+		<p>
+			<img alt="Show view menu" title="Show view menu" border="0" src="TipsAndTricks/ShowView_menu.png"/>
+		</p>
+		<ul>
+			<li>select the Module Explorer view</li>
+		</ul>
+		<p>
+			<img alt="Show view Module Explorer" title="Show view Module Explorer" border="0" src="TipsAndTricks/ShowView_ModuleExplorer.png"/>
+		</p>
+		<h2 id="ContributetoCapellauserinterface">Contribute to Capella user interface</h2>
+		<p>If you want to use your scripts in an interactive way opposed to batch mode, you will need to contribute to the Capella user interface. This section will provides example of integrations with menu, toolbar and mutch more. Each example comes with a sample code. </p>
+		<h3 id="PopupMenu">Popup Menu</h3>
+		<p>It&#8217;s possible to contribute a popup menu to Capella that will run your script by adding the following header at the beginning of your script:</p>
+		<p>
+			<img alt="Popup menu contribution" title="Popup menu contribution" border="0" src="TipsAndTricks/PopupMenu.png"/>
+		</p>
+		<pre><code># name                 : My Menu
+#image                 : platform:/plugin/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/LogicalComponent.gif
+# script-type          : Python
+# description          : My Menu Description
+# popup                : enableFor(org.polarsys.capella.core.data.capellacore.CapellaElement)
+</code></pre>
+		<p>The name define the name of the menu, and image its icon. The script-type is the scripting language used, Python in the case of Python4Capella. The description is the description of the menu. popup tells that we want a popup menu on objects with the type CapellaElement. The type is the qualified name of the Java class.</p>
+		<p>You can find more ways to contribute your scripts in the 
+			<a href="https://wiki.eclipse.org/EASE/Scripts">EASE documentation</a>.
+		</p>
+		<p>You can then get the selected element with the following code:</p>
+		<pre><code>selected = CapellaElement(CapellaPlatform.getFirstSelectedElement())
+</code></pre>
+		<p>You can adapt the type according to the type defined in the header. You can also use the EObject.get_class() to get the specific type of the selected object:</p>
+		<pre><code>specific_cls = EObect.get_class(CapellaPlatform.getFirstSelectedElement())
+selected = Node
+if specific_cls is not None:
+    selected = specific_cls(CapellaPlatform.getFirstSelectedElement())
+</code></pre>
+		<blockquote>
+			<p>Note: all classes of the Capella metamodel are not present in the simplified Python one. You can check the specification model or the MS Word document to have a description of the simplified metamodel.</p>
+		</blockquote>
+		<blockquote>
+			<p>Note: You script need to be in the script location of 
+				<a href="https://www.eclipse.org/ease/">EASE</a>.
+				<br/>* open preferences: menu Window / Preferences
+				<br/>* select Scripting / String location on the right tree and add the path of your script if not already done.
+			</p>
+		</blockquote>
+		<h3 id="Toolbar">Toolbar</h3>
+		<p>It&#8217;s possible to contribute a Toolbar menu to Capella that will run your script by adding the following header at the beginning of your script:</p>
+		<p>
+			<img alt="Toolbar contribution" title="Toolbar contribution" border="0" src="TipsAndTricks/Toolbar.png"/>
+		</p>
+		<pre><code># name                 : My Menu
+# image                : platform:/plugin/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/LogicalComponent.gif
+# script-type          : Python
+# description          : My Menu Description
+# toolbar              : capella.project.explorer
+</code></pre>
+		<p>The name define the name of the menu, and image its icon. The script-type is the scripting language used, Python in the case of Python4Capella. The description is the description of the menu. toolbar tells that we want to contribute to the toolbar of the view with the name 
+			<code>capella.project.explorer</code>. You can also use the view name, for instance 
+			<code>Properties</code>.
+		</p>
+		<p>You can find more ways to contribute your scripts in the 
+			<a href="https://wiki.eclipse.org/EASE/Scripts">EASE documentation</a>.
+		</p>
+		<blockquote>
+			<p>Note: You script need to be in the script location of 
+				<a href="https://www.eclipse.org/ease/">EASE</a>.
+				<br/>* open preferences: menu Window / Preferences
+				<br/>* select Scripting / String location on the right tree and add the path of your script if not already done.
+			</p>
+		</blockquote>
+		<h3 id="ViewMenu">View Menu</h3>
+		<p>It&#8217;s possible to contribute a View menu to Capella that will run your script by adding the following header at the beginning of your script:</p>
+		<p>
+			<img alt="View Menu contribution" title="View Menu contribution" border="0" src="TipsAndTricks/ViewMenu.png"/>
+		</p>
+		<pre><code># name                 : My Menu
+# image                : platform:/plugin/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/LogicalComponent.gif
+# script-type          : Python
+# description          : My Menu Description
+# menu                 : capella.project.explorer
+</code></pre>
+		<p>The name define the name of the menu, and image its icon. The script-type is the scripting language used, Python in the case of Python4Capella. The description is the description of the menu. menu tells that we want to contribute to the menu of the view with the name 
+			<code>capella.project.explorer</code>. You can also use the view name, for instance 
+			<code>Properties</code>.
+		</p>
+		<p>You can find more ways to contribute your scripts in the 
+			<a href="https://wiki.eclipse.org/EASE/Scripts">EASE documentation</a>.
+		</p>
+		<blockquote>
+			<p>Note: You script need to be in the script location of 
+				<a href="https://www.eclipse.org/ease/">EASE</a>.
+				<br/>* open preferences: menu Window / Preferences
+				<br/>* select Scripting / String location on the right tree and add the path of your script if not already done.
+			</p>
+		</blockquote>
+		<h3 id="View">View</h3>
+		<p>TODO</p>
+		<h2 id="UserInput">User Input</h2>
+		<p>Some time selecting an element from your model or using an external source for your data is not enough and you will need to prompt the user to input some information. This section explains how you can get parameters passed to the script or create and use dialogs.</p>
+		<h3 id="Scriptparameters">Script parameters</h3>
+		<p>If you are calling the script from the 
+			<a href="Run.html#Commandline">command line</a> the easiest way it to provide parameters using the 
+			<a href="https://www.eclipse.org/ease/">EASE</a> 
+			<code>argv</code> variable:
+		</p>
+		<pre><code>#check parameter numbers
+if len(argv) != 1:
+    # use IFE default values
+    aird_path = "/In-Flight Entertainment System/In-Flight Entertainment System.aird"
+else:
+    # Load the Capella model from the first argument of the script
+    aird_path = argv[0]
+</code></pre>
+		<p>Here we are expecting one parameter and provide a default value otherwise. To run a script with parameter please check the 
+			<a href="Run.html">run documentation</a>.
+		</p>
+		<h3 id="GraphicalDialog">Graphical Dialog</h3>
+		<p>If your script is started from a menu or need to be integrated with the Capella user interface. 
+			<a href="https://www.eclipse.org/ease/">EASE</a> provide dialogs and ways to build your own interface to prompt the user for some input.
+		</p>
+		<p>Some basic dialogs are provided by the UI module:</p>
+		<pre><code>def showInputDialog():
+    pass
+
+loadModule('/System/UI')
+
+componentName = showInputDialog("Enter the component name:", "New Component 1")
+</code></pre>
+		<p>We first load the module and define method we will use from this module to prevent 
+			<a href="https://www.pydev.org/">PyDev</a> errors, this can be done once at the beginning of your script. Then open the input dialog with a default value. If the cancel button is pressed, the returned value is 
+			<code>None</code>.
+		</p>
+		<p>With the UI Builder module provided by 
+			<a href="https://www.eclipse.org/ease/">EASE</a>, you can also build more complex dialogs. A short example:
+		</p>
+		<pre><code>def createDialog():
+    pass
+def createText():
+    pass
+def createLabel():
+    pass
+def executeUI():
+    pass
+
+loadModule('/System/UI');
+loadModule('/System/UI Builder');
+
+# include needed for the Capella modeller API
+include('workspace://Python4Capella/simplified_api/capella.py')
+if False:
+    from simplified_api.capella import *
+
+class ComopnentDialog:
+    labelName = None
+    txtName = None
+    labelSummary = None
+    txtSummary = None
+
+    def build(self):
+        self.labelName = createLabel("Name:", "1/1 &lt;x");
+        self.txtName = createText("2-4/1 o!");
+        self.labelSummary = createLabel("Summary:", "1/2 &lt;x");
+        self.txtSummary = createText("2-4/2 o!");
+
+    def evaluate(self, javaDialog):
+        lc = LogicalComponent()
+        lc.set_name(str(javaDialog.getData(self.txtName)))
+        lc.set_summary(str(javaDialog.getData(self.txtSummary)))
+        print('Component ' + lc.get_name() + ' summary: ' + lc.get_summary())
+
+
+instance = ComopnentDialog()
+
+javaDialog = createDialog("instance.build()", "Component", "Enter component informations:");
+result = executeUI("javaDialog.open()");
+if result == 0:
+    instance.evaluate(javaDialog)
+else:
+    print("Dialog cancelled")
+</code></pre>
+		<p>This script create a dialog with two labels and text fields. One of each for the name and one of each for the summary. When the dialog is validated, the method 
+			<code>ComponentDialog.evaluate()</code> is executed. Here we simply create a 
+			<code>LogicalComponent</code> and set its name and summary. Then we display the component in the console.
+		</p>
+		<p>The dialog looks like this:</p>
+		<p>
+			<img alt="A custom dialog" title="A custom dialog" border="0" src="TipsAndTricks/CustomDialog.png"/>
+		</p>
+		<blockquote>
+			<p>Note: to run this script you will need to allow scripts to run code in UI thread:
+				<br/>* menu Window / Preferences
+				<br/>
+				<img alt="allow scripts to run code in UI thread" title="allow scripts to run code in UI thread" border="0" src="TipsAndTricks/Preferences _AllowUIScripts.png"/>
+			</p>
+		</blockquote>
+		<h2 id="Howtouseopenpyxl">How to use openpyxl</h2>
+		<p>Some of our sample scripts use the 
+			<a href="https://openpyxl.readthedocs.io/en/stable/">openpyxl</a> library. This library allows to read and write MS Excel documents (.xlsx files).
+		</p>
+		<p>But we will cover basic usage here to get you started.</p>
+		<p>First you will need to import the openpyxl library:</p>
+		<pre><code># include needed to read/write xlsx files
+from openpyxl import *
+</code></pre>
+		<p>Then you can either create a new 
+			<code>Workbook</code>:
+		</p>
+		<pre><code>wb = Workbook()
+</code></pre>
+		<p>Or open an existing 
+			<code>Workbook</code>:
+		</p>
+		<pre><code>xlsx_file_name = 'my_workbook.xlsx'
+wb = load_workbook(xlsx_file_name)
+</code></pre>
+		<p>At this point you are ready to use your 
+			<code>Workbook</code>. You need to select a worksheet.
+		</p>
+		<p>You can select the active one:</p>
+		<pre><code>ws = wb.active
+</code></pre>
+		<p>Or you can select one by name:</p>
+		<pre><code>ws = wb['my work sheet']
+</code></pre>
+		<p>At this point we need to reference a cell to either read its value or write a new value.</p>
+		<p>To read the value:</p>
+		<pre><code>value = ws.cell(row = 1, column = 1).value
+</code></pre>
+		<p>Or</p>
+		<pre><code>value = ws.cell["A1"].value
+</code></pre>
+		<p>To write to a cell:</p>
+		<pre><code>ws.cell(row = 1, column = 1) = "Some Text"
+</code></pre>
+		<p>Or</p>
+		<pre><code>ws.cell["A1"] = "Some Text"
+</code></pre>
+		<blockquote>
+			<p>Note: you can also set formula, for instance &#8220;=A2 + A3&#8221;.</p>
+		</blockquote>
+		<p>It you made some changes to the 
+			<code>Workbook</code> you will need to save it:
+		</p>
+		<pre><code>wb.save(xlsx_file_name)
+</code></pre>
+		<p>This is a quick introduction to the openpyxl library. You can check the 
+			<a href="https://openpyxl.readthedocs.io/en/stable/">project page</a> or provided examples to 
+			<a href="https://github.com/labs4capella/python4capella/blob/master/plugins/Python4Capella/sample_scripts/Import_breakdown_Node_PCs_from_xlsx.py">read from an xlsx file</a> or to 
+			<a href="https://github.com/labs4capella/python4capella/blob/master/plugins/Python4Capella/sample_scripts/Import_breakdown_Node_PCs_from_xlsx.py">write to an xlsx file</a> for more details.
+		</p>
+		<h2 id="ModifyyourCapellaModel">Modify your Capella Model</h2>
+		<h3 id="SaveyourModel">Save your Model</h3>
+		<p>The first step before modifying your Capella model with Python4Capella is to backup your project. You have several possibilities:</p>
+		<ul>
+			<li>put your project in a source 
+				<a href="https://en.wikipedia.org/wiki/Version_control">control system</a> for instance 
+				<a href="https://en.wikipedia.org/wiki/Git">git</a>. This way you will be able to restore the state of you model if something goes wrong. For instance with git you could use 
+				<a href="https://git-scm.com/docs/git-checkout">
+					<code>git checkout</code>
+				</a> to restore your project
+			</li>
+			<li>you can export your project as a zip file to save it and import it if you need to restore it afterward.
+				<ul>
+					<li>right click on your project and select the export menu then General / Archive file</li>
+					<li>right click in the project explorer and select the import menu then General / Existing Project into Workspace</li>
+				</ul>
+			</li>
+		</ul>
+		<blockquote>
+			<p>Note: both methods works for local projects and not remote projects like 
+				<a href="https://www.obeosoft.com/en/team-for-capella">Team for Capella</a> projects. For those projects please refere to the 
+				<a href="https://www.obeosoft.com/en/team-for-capella">Team for Capella</a> documentation to save and restore your projects.
+			</p>
+		</blockquote>
+		<h3 id="Transaction">Transaction</h3>
+		<p>To modify your Capella model, you will need to start a transaction. The transaction code looks like this:</p>
+		<pre><code>#declare and open the Capella model
+model = CapellaModel()
+model.open(aird_path)
+
+# start a transaction to modify the Capella model
+model.start_transaction()
+try:
+    # code modifying the Capella model
+except:
+    # if something went wrong we rollback the transaction
+    model.rollback_transaction()
+    raise
+else:
+    # if everything is ok we commit the transaction
+    model.commit_transaction()
+
+# save the Capella model
+model.save()
+</code></pre>
+		<blockquote>
+			<p>Note: This code also works for 
+				<a href="https://www.obeosoft.com/en/team-for-capella">Team for Capella</a> projects. You will need to make sure no one else has locked elements you intend to modify though.
+			</p>
+		</blockquote>
+		<h2 id="DropinsandUpdateSite">Dropins and Update Site</h2>
+		<p>When installing Python4Capella we recommend that you use the update site installation method detailed in the 
+			<a href="https://github.com/labs4capella/python4capella#installation">README</a>. We also encourage you to use the update site installation method with other add-ons you might use in the same installation of Capella. This make sure all dependencies are installed and no conflicts is present between installed softwares.
+		</p>
+		<p>The dropings method doesn&#8217;t check nor install missing dependencies. It doesn&#8217;t check conflicts neither, this can result in no working installations. Also if something went wrong, you will not have any information on the problem, where update site installation will prompt you with the original issue and a solutions on what can be installed.</p>
+		<h2 id="TestAPIreturnedvalue">Test API returned value</h2>
+		<p>Then you access a value in Python you might want to check for empty values. There a mainly three cases here.</p>
+		<h3 id="Nonevalue">None value</h3>
+		<p>The 
+			<code>None</code> value means no object is referenced. When calling an attribute or a method on a 
+			<code>None</code> variable you will have the following runtime error:
+		</p>
+		<pre><code>AttributeError: 'NoneType' object has no attribute '...'
+</code></pre>
+		<p>In this case you need to first check if the value is 
+			<code>None</code> with a 
+			<code>if</code> statement:
+		</p>
+		<pre><code>if my_variable is not None:
+    # your code goes here
+</code></pre>
+		<h3 id="EmptyString">Empty String</h3>
+		<p>When you get the name of an element or other string attribute, the returned value can be empty. Some time it might mean that you need to set this value. To check is a string is empty you can use the following 
+			<code>if</code> statement:
+		</p>
+		<pre><code>if len(my_string) == 0:
+     # you code does here
+</code></pre>
+		<h3 id="EmptyList">Empty List</h3>
+		<p>You can safely iterate over an empty list:</p>
+		<pre><code>for element in my_list:
+    # your code using element
+</code></pre>
+		<p>The code will never be called, but it will not produce an error at runtime.</p>
+		<p>But some time it can be handy to check if a list is empty to add default values or anything else. You can use the following 
+			<code>if</code> statement to check for empty list:
+		</p>
+		<pre><code>if len(my_list) == 0:
+    # your code for empty list
+</code></pre>
+		<h2 id="AddaspecificaddonAPI">Add a specific add-on API</h2>
+		<p>If you are using a Capella add-on that is not covered by Python4Capalla, you can create a Python file to provide an API and extends the capabilities of Python4Capella. To create such file you can have a look at the existing add-on API like the one for 
+			<a href="https://github.com/labs4capella/python4capella/blob/master/plugins/Python4Capella/simplified_api/requirement.py">requirements</a> or the 
+			<a href="https://github.com/labs4capella/python4capella/blob/master/plugins/Python4Capella/simplified_api/capella.py">Capella</a> API.
+		</p>
+		<p>If you think your new API can be useful for others, please consider contributing it. To do so you can start a discussion on the 
+			<a href="https://forum.mbse-capella.org/c/scripting-with-capella-python4capella/23">Scripting forum</a> and/or open a 
+			<a href="https://github.com/labs4capella/python4capella/pulls">pull request</a>.
+		</p>
+		<h2 id="CommonRuntimeErrors">Common Runtime Errors</h2>
+		<p>Some errors can show up at runtime. This section will give explainations on some of them.</p>
+		<h3 id="AttributeErrorNoneTypeobjecthasnoattribute">AttributeError: ‘NoneType’ object has no attribute</h3>
+		<p>This mean you called a Python method or attribute on a 
+			<code>None</code> value (same as 
+			<code>null</code> in Java). For instance:
+		</p>
+		<pre><code>AttributeError: 'NoneType' object has no attribute 'getLocation'
+</code></pre>
+		<p>when calling:</p>
+		<pre><code>folder.getLocation()
+</code></pre>
+		<p>Means 
+			<code>folder</code> is 
+			<code>None</code>. You probably want to check why 
+			<code>folder</code> is none, is it normal or not. Here we can assume the user passed a non existing folder so it is normal to have a 
+			<code>None</code> value here and we need to check for 
+			<code>None</code> value:
+		</p>
+		<pre><code>if folder is None:
+    print("file " + folder + " doesn't exists.")
+else:
+    location = folder.getLocation()
+    ...
+</code></pre>
+		<h3 id="Objecthasnoattributegetobjectid">Object has no attribute '_get_object_id'</h3>
+		<p>This error happens when a Python object is passed to a Java method, with Python4Capella to can use the 
+			<code>JavaObject.get_java_object()</code> to get the Java object from a Python object. For instance:
+		</p>
+		<pre><code>e_inverse(aClassInChildrenPackage, "type")
+</code></pre>
+		<p>should be:</p>
+		<pre><code>e_inverse(aClassInChildrenPackage.get_java_object(), "type")
+</code></pre>
+		<h3 id="AttributeErrorJavaMemberobjecthasnoattribute">AttributeError: ‘JavaMember’ object has no attribute</h3>
+		<p>This error happens when you are referencing a Java field or method from Python.
+			<br/>You will need to check if you didn&#8217;t forget to add the parenthesis on a method call:
+		</p>
+		<pre><code>get_java_object().getDeployedPhysicalComponents
+</code></pre>
+		<p>should be:</p>
+		<pre><code>get_java_object().getDeployedPhysicalComponents()
+</code></pre>
+		<p>Or if you a not accessing a field instead of using the corresponding getter:</p>
+		<pre><code>get_java_object().target
+</code></pre>
+		<p>should be:</p>
+		<pre><code>get_java_object().getTarget()
+</code></pre>
+		<h3 id="Py4JExceptionMethod...doesnotexist">Py4JException: Method ...([]) does not exist</h3>
+		<p>This exception happens when a Java method that doesn&#8217;t exist is called from Python. Since the Capella simplified API in Python is generated from a specifiaction model, it can append that a wrong call is made to the Java API. For instance the method has been renamed in the simplified API or the navigatio doesn&#8217;t match the Java metamodel one to one.</p>
+		<p>To solve this issue you can check Capella metamodel Java code or post a question on the 
+			<a href="https://forum.mbse-capella.org/c/scripting-with-capella-python4capella/23">Scripting forum</a>.
+		</p>
+		<h3 id="UnsupportedOperationExceptiononUnmodifiableEList">UnsupportedOperationException on UnmodifiableEList</h3>
+		<p>This happens when you are trying to add or remove an element from a list that can&#8217;t be modified in the Java Capella metamodel. Either the EStructuralFeature you are trying to modify is marked as read only or it is derived meaning it is computed when we access the getter.</p>
+		<p>In this case you will need to find the EStructuratFeature that can be modified. There is many cases where you can have derived features, but usually it&#8217;s used to give a more precise result than an existing EStructuralFeature that is not derived. It can be to filter on a specific type or on semantic data.</p>
+		<p>For instance 
+			<code>SystemFunction.get_contained_system_functions()</code> is derived but you can use 
+			<code>SystemFunction.get_owned_functions()</code>.
+		</p>
+		<blockquote>
+			<p>Note: If you have the Java source code of the Capella metamodel, you can check if a EStructuralFeature is derived by looking for 
+				<strong>derived=“true”</strong> in the Java documentation. You can also check the 
+				<a href="https://github.com/eclipse/capella/tree/master/core/plugins/org.polarsys.capella.core.data.gen/model">Capella ecore files</a>.
+			</p>
+		</blockquote>
+		<h3 id="java.lang.ArrayStoreException">java.lang.ArrayStoreException</h3>
+		<p>This happens when an element of the wrong type is added to a reference. In this case you need to check the type of the references you are modifying and the element you are trying to add.</p>
+		<p>You can check the type of the reference by looking at the Python code:</p>
+		<pre><code>def get_realizing_component_exchanges(self):
+        """
+        """
+        return create_e_list(self.get_java_object().getRealizingComponentExchanges(), ComponentExchange)
+</code></pre>
+		<p>Here you can see the 
+			<code>ComponentExchange</code> as the expected class.
+		</p>
+		<p>You can check the Python class of the element with:</p>
+		<pre><code>print(type(element))
+</code></pre>
+		<p>If you have the same type as the reference but still have this exception, you can check the type of the Java object referenced by the Python object:</p>
+		<pre><code>print(str(element.get_java_object()))
+</code></pre>
+		<p>The resulting string should look like this:</p>
+		<pre><code>rg.polarsys.capella.core.data.la.impl.LogicalComponentImpl@5c54c020 (id: 94f479d0-c672-4a9c-bfbb-1fb5e01a73ee, sid: null) (name: Cabin Crew) (visibleInDoc: true, visibleInLM: true, summary: null, review: null) (abstract: false, actor: true, human: true)
+</code></pre>
+		<p>Here we can see the Java object is a 
+			<code>LogicalComponent</code>.
+		</p>
+		<p>Once you have your element type you can fix your navigation to reach the intended element.</p>
+	</body>
+</html>

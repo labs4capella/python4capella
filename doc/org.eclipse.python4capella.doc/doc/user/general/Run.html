@@ -9,48 +9,54 @@
 	<body>
 		<h1 id="RunaPythonscript">Run a Python script</h1>
 		<p>This section explains how you can run your Python for Capella script either within Capella or from the command line.</p>
-		<p>Note:</p>
-		<p>If you open provided scripts, you will notice some errors in them. Those errors can be ignored or even 
-			<a href="RemoveFalseErrors.html">removed</a>. They are related to the use of EASE that allows access to Java objects with the PyDev editor.
-		</p>
-		<p>EASE is a scripting environment for Eclipse.
-			<br/>It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 
-		</p>
-		<p>The PyDev editor only recognizes the Python language, and EASE adds a custom way to import other scripts, declare methods and variables. At runtime EASE will be used and everything will work properly.</p>
-		<p>- some 
-			<b>import directives from EASE</b> are not recognized by PyDev
-		</p>
-		<p>
-			<img alt="Import error" title="Import error" border="0" src="Run/error_import.png"/>
-		</p>
-		<p>- some 
-			<b>methods</b> defined in EASE modules are not recognized by PyDev
-		</p>
-		<p>
-			<img alt="Method error" title="Method error" border="0" src="Run/error_method1.png"/>
-		</p>
-		<p>
-			<img alt="Method error" title="Method error" border="0" src="Run/error_method2.png"/>
-		</p>
-		<p>
-			<img alt="Method error" title="Method error" border="0" src="Run/error_method3.png"/>
-		</p>
-		<p>- some other errors can happen when accessing 
-			<b>variables defined by EASE</b>
-		</p>
-		<p>
-			<img alt="Import variable" title="Import variable" border="0" src="Run/error_variable.png"/>
-		</p>
+		<blockquote>
+			<p>Note:</p>
+			<p>If you open provided scripts, you will notice some errors in them. Those errors can be ignored or even 
+				<a href="RemoveFalseErrors.html">removed</a>. They are related to the use of 
+				<a href="https://www.eclipse.org/ease/">EASE</a> that allows access to Java objects with the 
+				<a href="https://www.pydev.org/">PyDev</a> editor.
+			</p>
+			<p>EASE is a scripting environment for Eclipse.
+				<br/>It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 
+			</p>
+			<p>The PyDev editor only recognizes the Python language, and EASE adds a custom way to import other scripts, declare methods and variables. At runtime EASE will be used and everything will work properly.</p>
+			<p>- some 
+				<b>import directives from EASE</b> are not recognized by PyDev
+			</p>
+			<p>
+				<img alt="Import error" title="Import error" border="0" src="Run/error_import.png"/>
+			</p>
+			<p>- some 
+				<b>methods</b> defined in EASE modules are not recognized by PyDev
+			</p>
+			<p>
+				<img alt="Method error" title="Method error" border="0" src="Run/error_method1.png"/>
+			</p>
+			<p>
+				<img alt="Method error" title="Method error" border="0" src="Run/error_method2.png"/>
+			</p>
+			<p>
+				<img alt="Method error" title="Method error" border="0" src="Run/error_method3.png"/>
+			</p>
+			<p>- some other errors can happen when accessing 
+				<b>variables defined by EASE</b>
+			</p>
+			<p>
+				<img alt="Import variable" title="Import variable" border="0" src="Run/error_variable.png"/>
+			</p>
+		</blockquote>
 		<h2 id="WithinCapella">Within Capella</h2>
 		<p>You will need to 
 			<a href="EnableDevelopmentCapabilities.html">enable Development capabilities</a> if it&#8217;s not already done.
 		</p>
-		<p>You can now select your script and right click on it:
-			<br/> - select the Run As / EASE Script menu
-		</p>
-		<p>If your script take some arguments, you can change the launch configuration by right clicking on your script:
-			<br/> - select the Run As / Run configuration menu.
-		</p>
+		<p>You can now select your script and right click on it:</p>
+		<ul>
+			<li>select the Run As / EASE Script menu</li>
+		</ul>
+		<p>If your script take some arguments, you can change the launch configuration by right clicking on your script:</p>
+		<ul>
+			<li>select the Run As / Run configuration menu.</li>
+		</ul>
 		<p>This will open the launch configuration for your script and you can edit it to add parameters for instance.</p>
 		<p>
 			<img alt="Run Configurations with parameter" title="Run Configurations with parameter" border="0" src="Run/Run_Configurations.png"/>
@@ -66,20 +72,26 @@
 		<p>Linux and Mac OS X</p>
 		<pre><code>./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 </code></pre>
-		<p>Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:</p>
+		<blockquote>
+			<p>Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:</p>
+		</blockquote>
 		<p>Windows</p>
 		<pre><code>capellac.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 </code></pre>
 		<p>Linux and Mac OS X</p>
 		<pre><code>./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 </code></pre>
-		<p>Note: To execute a script through command line, on a remote project created with 
-			<b>Team for Capella</b>, first you need to log to the remote project using a Team for Capella client and check the &#8220;Remember me&#8221; checkbox. This will save your credentials. This way, the command line will be able to connect to the remote repository.
-		</p>
-		<p>
-			<img alt="The &quot;Remember me&quot; checkbox" title="The &quot;Remember me&quot; checkbox" border="0" src="Run/Team.for.Capella.png"/>
-		</p>
-		<p>Note: when an element is locked and prevent a modification, you will have a dialog when running with the graphical environment but no log when in command line.</p>
+		<blockquote>
+			<p>Note: To execute a script through command line, on a remote project created with 
+				<b>Team for Capella</b>, first you need to log to the remote project using a Team for Capella client and check the &#8220;Remember me&#8221; checkbox. This will save your credentials. This way, the command line will be able to connect to the remote repository.
+			</p>
+			<p>
+				<img alt="The &quot;Remember me&quot; checkbox" title="The &quot;Remember me&quot; checkbox" border="0" src="Run/Team.for.Capella.png"/>
+			</p>
+		</blockquote>
+		<blockquote>
+			<p>Note: when an element is locked and prevent a modification, you will have a dialog when running with the graphical environment but no log when in command line.</p>
+		</blockquote>
 		<h2 id="Jenkins">Jenkins</h2>
 		<p>You can run the previous from your jenkins job. You will need to add a build step in your build configuration. Go to your build configuration in Jenkins and add a build step (or pre/post build step):</p>
 		<p>

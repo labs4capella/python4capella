@@ -13,10 +13,10 @@ To add a breakpoint, you can double click on the left ruler of the Python editor
 !Debug/Debug_Breakpoint.png(Add a breakpoint)!
 
 You can now select your script and right click on it:
- - select the Debug As / EASE Script menu
+* select the Debug As / EASE Script menu
 
 If your script takes some arguments, you can change the launch configuration by right clicking on your script:
- - select the Debug As / Debug configuration.
+* select the Debug As / Debug configuration.
 
 This will open the launch configuration for your script and you can edit it to add parameters for instance.
 

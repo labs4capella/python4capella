@@ -3,12 +3,12 @@ h1. Configure PyDev to remove false errors
 This section explains how you can configure "PyDev":https://www.pydev.org/ to remove false errors. This will help to "Write":Write.html your scripts.
 
 You will need to configure "PyDev":https://www.pydev.org/ preferences if it's not already done:
- - select the Window > Preferences menu
- - with the filter a the top left corner search for "analysis"
- - select the Code Analysis node on the left
- - select the Undefined tab and add the following keywords:
-   - include,loadModule,argv
- - click the Apply and Close button
+* select the Window > Preferences menu
+* with the filter a the top left corner search for "analysis"
+* select the Code Analysis node on the left
+* select the Undefined tab and add the following keywords:
+** include,loadModule,argv
+* click the Apply and Close button
 
  !RemoveFalseErrors/PyDev_keywords.png(Add keywords to PyDev configuration)!
  

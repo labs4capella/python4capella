@@ -1,6 +1,6 @@
 h1. Install new Python package
 
-NOTE: there is a known issue with the use of panda/numpy packages. See this "issue":https://github.com/labs4capella/python4capella/issues/112 for more details and workaround.
+bq. Note: there is a known issue with the use of panda/numpy packages. See this "issue":https://github.com/labs4capella/python4capella/issues/112 for more details and workaround.
 
 To install new Python packages on Linux or Mac OS X, please refer to your distribution documentation.
 
@@ -28,5 +28,5 @@ Once you downloaded the archive, from the folder where you extracted the python3
 
 bc. Scripts\pip install Python-Chart-1.39.tar.gz
 
-Note: the version in the archive name might be different in your case.
+bq. Note: the version in the archive name might be different in your case.
 

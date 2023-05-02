@@ -13,6 +13,7 @@
     <topic href="doc/user/general/Debug.html" label="Debug a Python for Capella script">
     </topic>
     <topic href="doc/user/general/RemoveFalseErrors.html" label="Remove False Errors">
+    </topic>
     <topic href="doc/user/general/Write.html" label="Write a Python for Capella script">
         <topic href="doc/user/general/Write.html#CreateaPythonproject" label="Create a Python project">
         </topic>
@@ -25,6 +26,46 @@
         <topic href="doc/user/general/Write.html#InstalledlibrariesintheWindowsPythondistribution" label="Installed libraries in the Windows Python distribution">
         </topic>
     </topic>
+	<topic href="doc/user/general/TipsAndTricks.html" label="Tips and Tricks">
+		<topic href="doc/user/general/TipsAndTricks.html#PythonandJava" label="Python and Java">
+			<topic href="doc/user/general/TipsAndTricks.html#Compatibilities" label="Compatibilities"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#PassObjectsbetweenPythonandJava" label="Pass Objects between Python and Java"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#FindJavamethods" label="Find Java methods"></topic>
+		</topic>
+		<topic href="doc/user/general/TipsAndTricks.html#CopyCapellaElement" label="Copy CapellaElement"></topic>
+		<topic href="doc/user/general/TipsAndTricks.html#SemanticBrowserNavigation" label="Semantic Browser Navigation"></topic>
+		<topic href="doc/user/general/TipsAndTricks.html#ListavailableEASEmodules" label="List available EASE modules "></topic>
+		<topic href="doc/user/general/TipsAndTricks.html#ContributetoCapellauserinterface" label="Contribute to Capella user interface">
+			<topic href="doc/user/general/TipsAndTricks.html#PopupMenu" label="Popup Menu"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#Toolbar" label="Toolbar"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#ViewMenu" label="View Menu"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#View" label="View"></topic>
+		</topic>
+		<topic href="doc/user/general/TipsAndTricks.html#UserInput" label="User Input">
+			<topic href="doc/user/general/TipsAndTricks.html#Scriptparameters" label="Script parameters"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#GraphicalDialog" label="Graphical Dialog"></topic>
+		</topic>
+		<topic href="doc/user/general/TipsAndTricks.html#Howtouseopenpyxl" label="How to use openpyxl"></topic>
+		<topic href="doc/user/general/TipsAndTricks.html#ModifyyourCapellaModel" label="Modify your Capella Model">
+			<topic href="doc/user/general/TipsAndTricks.html#SaveyourModel" label="Save your Model"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#Transaction" label="Transaction"></topic>
+		</topic>
+		<topic href="doc/user/general/TipsAndTricks.html#DropinsandUpdateSite" label="Dropins and Update Site"></topic>
+		<topic href="doc/user/general/TipsAndTricks.html#TestAPIreturnedvalue" label="Test API returned value">
+			<topic href="doc/user/general/TipsAndTricks.html#Nonevalue" label="None value"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#EmptyString" label="Empty String"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#EmptyList" label="Empty List"></topic>
+		</topic>
+		<topic href="doc/user/general/TipsAndTricks.html#AddaspecificaddonAPI" label="Add a specific add-on API"></topic>
+		<topic href="doc/user/general/TipsAndTricks.html#CommonRuntimeErrors" label="Common Runtime Errors">
+			<topic href="doc/user/general/TipsAndTricks.html#AttributeErrorNoneTypeobjecthasnoattribute" label="AttributeError: ‘NoneType’ object has no attribute"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#Objecthasnoattributegetobjectid" label="Object has no attribute &apos;_get_object_id&apos;"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#AttributeErrorJavaMemberobjecthasnoattribute" label="AttributeError: ‘JavaMember’ object has no attribute"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#Py4JExceptionMethod...doesnotexist" label="Py4JException: Method ...([]) does not exist"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#UnsupportedOperationExceptiononUnmodifiableEList" label="UnsupportedOperationException on UnmodifiableEList"></topic>
+			<topic href="doc/user/general/TipsAndTricks.html#java.lang.ArrayStoreException" label="java.lang.ArrayStoreException"></topic>
+		</topic>
+	</topic>
   </topic>
   <topic href="doc/developer/DeveloperManual.html" label="Python for Capella Developer Manual">
     <topic href="doc/developer/RepositoryOverview.html" label="Repository Overview">

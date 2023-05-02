@@ -14,13 +14,18 @@
 		</p>
 		<p>You will need to configure 
 			<a href="https://www.pydev.org/">PyDev</a> preferences if it&#8217;s not already done:
-			<br/> - select the Window &gt; Preferences menu
-			<br/> - with the filter a the top left corner search for "analysis"
-			<br/> - select the Code Analysis node on the left
-			<br/> - select the Undefined tab and add the following keywords:
-			<br/>   - include,loadModule,argv
-			<br/> - click the Apply and Close button
 		</p>
+		<ul>
+			<li>select the Window &gt; Preferences menu</li>
+			<li>with the filter a the top left corner search for "analysis"</li>
+			<li>select the Code Analysis node on the left</li>
+			<li>select the Undefined tab and add the following keywords:
+				<ul>
+					<li>include,loadModule,argv</li>
+				</ul>
+			</li>
+			<li>click the Apply and Close button</li>
+		</ul>
 		<img alt="Add keywords to PyDev configuration" title="Add keywords to PyDev configuration" border="0" src="RemoveFalseErrors/PyDev_keywords.png"/>
 		<p>When you load an 
 			<a href="https://www.eclipse.org/ease/">EASE</a> module and use specific methods from it, you can first declare the methods before the 

@@ -15,13 +15,13 @@ You can select a name for your project and click the finish button.
 Now you need to add your project to the list of script locations:
 
 Select the Window > Preferences menu
-  - select the Scripting / Script Locations
-    - add your project by clicking the Add Workspace button
+* select the Scripting / Script Locations
+** add your project by clicking the Add Workspace button
 
 
 h2. Reference Python4Capella project
 
-You need to add the Python4Capella project as a dependency of your project. To do so, you need to make sure you are in the PyDev perspective. If it's not the case, you can click on the perspective button on the top right corner of your Capella and select the PyDev perspective.
+You need to add the Python4Capella project as a dependency of your project. To do so, you need to make sure you are in the "PyDev":https://www.pydev.org/ perspective. If it's not the case, you can click on the perspective button on the top right corner of your Capella and select the PyDev perspective.
 Then right click on your project and select the Properties menu. Then select the Project References menu:
 
 !Write/Project_preferences.png(Project preferences)!
@@ -42,15 +42,15 @@ You can click next, select a name for your script and click finish, you will be 
 
 h2. Import required scripts
 
-You will need to import the Capella APIs (This statement can produce an error, but you can "remove":RemoveFalseErrors.html it):
+You will need to import the Capella APIs (This statement can produce an error, but you can ignore or "remove":RemoveFalseErrors.html it):
 
 bc. include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
     from simplified_api.capella import *
 
-The first line will produce an error because it's an EASE instruction that is not understood by PyDev but this will not prevent you from using your script.
+The first line will produce an error because it's an "EASE":https://www.eclipse.org/ease/ instruction that is not understood by PyDev but this will not prevent you from using your script. You can also configure PyDev to "remove":RemoveFalseErrors.html this error.
 
-Note: you can find existing examples in "Python4Capella/sample_scripts":https://github.com/labs4capella/python4capella/tree/master/plugins/Python4Capella/sample_scripts/.
+bq. Note: you can find existing examples in "Python4Capella/sample_scripts":https://github.com/labs4capella/python4capella/tree/master/plugins/Python4Capella/sample_scripts/.
 
 You can also configure your Capella to show the line numbers in the PyDev editor. Use the Window Preferences menu, and type line number in the filter:
 
@@ -64,7 +64,7 @@ We packaged openpyxl with the Python37.zip file. You can have a look at provided
 
 h2. Contribute your scripts to the Capella user interface
 
-It's possible to contribute a menu to Capella that will run your script by adding the following header at the beginning of your script:
+It's possible to contribute a popup menu to Capella that will run your script by adding the following header at the beginning of your script:
 
 bc. # name                 : Export Diagrams
 # script-type          : Python
@@ -86,4 +86,8 @@ selected = Node
 if specific_cls is not None:
     selected = specific_cls(CapellaPlatform.getFirstSelectedElement())
 
-NOTE: all classes of the Capella metamodel are not present in the simplified Python one. You can check the specification model or the MS Word document to have a description of the simplified metamodel.
+bq. Note: all classes of the Capella metamodel are not present in the simplified Python one. You can check the specification model or the MS Word document to have a description of the simplified metamodel.
+
+bq.. Note: You script need to be in the script location of "EASE":https://www.eclipse.org/ease/.
+- open preferences: menu Window / Preferences
+- select Scripting / String location on the right tree and add the path of your script if not already done.

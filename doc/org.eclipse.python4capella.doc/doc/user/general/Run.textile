@@ -2,9 +2,9 @@ h1. Run a Python script
 
 This section explains how you can run your Python for Capella script either within Capella or from the command line.
 
-Note:
+bq.. Note:
 
-If you open provided scripts, you will notice some errors in them. Those errors can be ignored or even "removed":RemoveFalseErrors.html. They are related to the use of EASE that allows access to Java objects with the PyDev editor.
+If you open provided scripts, you will notice some errors in them. Those errors can be ignored or even "removed":RemoveFalseErrors.html. They are related to the use of "EASE":https://www.eclipse.org/ease/ that allows access to Java objects with the "PyDev":https://www.pydev.org/ editor.
 
 EASE is a scripting environment for Eclipse.
 It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 
@@ -26,16 +26,15 @@ The PyDev editor only recognizes the Python language, and EASE adds a custom way
 - some other errors can happen when accessing **variables defined by EASE**
 
 !Run/error_variable.png(Import variable)!
-
 h2. Within Capella
 
 You will need to "enable Development capabilities":EnableDevelopmentCapabilities.html if it's not already done.
  
 You can now select your script and right click on it:
- - select the Run As / EASE Script menu
+* select the Run As / EASE Script menu
 
 If your script take some arguments, you can change the launch configuration by right clicking on your script:
- - select the Run As / Run configuration menu.
+* select the Run As / Run configuration menu.
 
 This will open the launch configuration for your script and you can edit it to add parameters for instance.
 
@@ -56,7 +55,7 @@ Linux and Mac OS X
 
 bc. ./eclipse -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
-Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:
+bq. Note: Since Capella 5.0 the eclipse executable has been renamed to capella, you should use:
 
 Windows
 
@@ -66,11 +65,10 @@ Linux and Mac OS X
 
 bc. ./capella -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data ./workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
 
-Note: To execute a script through command line, on a remote project created with **Team for Capella**, first you need to log to the remote project using a Team for Capella client and check the "Remember me" checkbox. This will save your credentials. This way, the command line will be able to connect to the remote repository.
+bq.. Note: To execute a script through command line, on a remote project created with **Team for Capella**, first you need to log to the remote project using a Team for Capella client and check the "Remember me" checkbox. This will save your credentials. This way, the command line will be able to connect to the remote repository.
 
 !Run/Team.for.Capella.png(The "Remember me" checkbox)!
-
-Note: when an element is locked and prevent a modification, you will have a dialog when running with the graphical environment but no log when in command line.
+bq. Note: when an element is locked and prevent a modification, you will have a dialog when running with the graphical environment but no log when in command line.
 
 h2. Jenkins
 
