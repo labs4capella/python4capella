@@ -1,4 +1,4 @@
-    def get_involved_interactions(self):
+    def get_involved_interactions(self) -> List[Interaction]:
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for involved_element in self.get_java_object().getInvolvedElements():

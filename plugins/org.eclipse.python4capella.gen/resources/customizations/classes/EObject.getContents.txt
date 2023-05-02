@@ -1,4 +1,4 @@
-    def get_contents(self):
+    def get_contents(self) -> List[EObject]:
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for value in self.get_java_object().eContents():

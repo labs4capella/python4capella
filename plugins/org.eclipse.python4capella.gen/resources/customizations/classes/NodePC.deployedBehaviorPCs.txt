@@ -1,4 +1,4 @@
-    def get_deployed_behavior_p_cs(self):
+    def get_deployed_behavior_p_cs(self) -> List[BehaviorPC]:
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for pc in self.java_object.getDeployedPhysicalComponents():

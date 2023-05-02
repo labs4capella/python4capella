@@ -1,4 +1,4 @@
-    def get_sending_instance_role(self):
+    def get_sending_instance_role(self) -> InstanceRole:
         part =  self.get_java_object().getSendingPart()
         if part is None:
             return part

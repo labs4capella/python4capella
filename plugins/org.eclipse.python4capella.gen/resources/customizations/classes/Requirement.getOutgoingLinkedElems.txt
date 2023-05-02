@@ -1,4 +1,4 @@
-    def get_outgoing_linked_elems(self):
+    def get_outgoing_linked_elems(self) -> List[EObject]:
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for relation in self.java_object.getOwnedRelations():

@@ -1,4 +1,4 @@
-    def open(self, obj):
+    def open(self, obj: Any):
         # obj can be a path to the .aird file or an EObject
         if isinstance(obj, str) or isinstance(obj, unicode):
             if CapellaPlatform.getWorkspaceFile(obj) is None:

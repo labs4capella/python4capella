@@ -1,5 +1,5 @@
     @staticmethod
-    def get_p_v_names(elem):
+    def get_p_v_names(elem: CapellaElement) -> List[str]:
         #: :type elem: CapellaElement
         res = []
         for group in elem.get_java_object().getOwnedPropertyValueGroups():

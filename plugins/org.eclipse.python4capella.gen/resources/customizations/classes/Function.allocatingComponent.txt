@@ -1,4 +1,4 @@
-    def get_allocating_component(self):
+    def get_allocating_component(self) -> BehavioralComponent:
         values = None
         if isinstance(self, LogicalFunction):
             values = self.get_java_object().getAllocatingLogicalComponents()

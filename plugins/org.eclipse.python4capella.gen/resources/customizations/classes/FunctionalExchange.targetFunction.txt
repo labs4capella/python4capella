@@ -1,4 +1,4 @@
-    def get_target_function(self):
+    def get_target_function(self) -> Function:
         port =  self.get_java_object().getTargetFunctionInputPort()
         if port is None:
             return port

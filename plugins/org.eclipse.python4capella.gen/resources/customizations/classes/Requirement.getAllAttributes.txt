@@ -1,4 +1,4 @@
-    def get_all_attributes(self):
+    def get_all_attributes(self) -> List[Attribute]:
         res = []
         for child in self.get_java_object().eContents():
             specific_cls_name = child.eClass().getName()

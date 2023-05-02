@@ -1,4 +1,4 @@
-    def get_all_contents_by_type(self, cls):
+    def get_all_contents_by_type(self, cls: type) -> List[EObject]:
         res = []
         for value in e_all_contents_by_type(self.get_java_object(), cls):
             if isinstance(value, cls):

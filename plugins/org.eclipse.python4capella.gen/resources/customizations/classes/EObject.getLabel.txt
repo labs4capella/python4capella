@@ -1,3 +1,3 @@
-    def get_label(self):
+    def get_label(self) -> str:
         return get_label(self)
 

@@ -1,3 +1,3 @@
-    def get_review(self):
+    def get_review(self) -> str:
         return Sirius.get_review(self.get_java_object())
 

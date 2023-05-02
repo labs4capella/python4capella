@@ -1,4 +1,4 @@
     @staticmethod
-    def is_p_v_defined(elem, PVName):
+    def is_p_v_defined(elem: CapellaElement, PVName: str) -> bool:
         return PVName in PVMT.get_p_v_names(elem)
 

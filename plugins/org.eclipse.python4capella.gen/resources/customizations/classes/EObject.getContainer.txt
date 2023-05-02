@@ -1,4 +1,4 @@
-    def get_container(self):
+    def get_container(self) -> EObject:
         value = self.get_java_object().eContainer()
         if value is not None:
             e_object_class = getattr(sys.modules["__main__"], "EObject")

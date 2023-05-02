@@ -1,4 +1,4 @@
-    def get_source(self):
+    def get_source(self) -> CapellaElement:
         value = self.get_java_object().getSource()
         if value is None:
             return value
@@ -9,6 +9,6 @@
                 return None
             else:
                 return specific_cls(value)
-    def set_source(self, value):
+    def set_source(self, value: CapellaElement):
         self.get_java_object().setSource(value.get_java_object())
 

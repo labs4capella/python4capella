@@ -1,4 +1,4 @@
-    def get_target(self):
+    def get_target(self) -> CapellaElement:
         value = self.get_java_object().getTarget()
         if value is None:
             return value
@@ -9,5 +9,5 @@
                 return None
             else:
                 return specific_cls(value)
-    def set_target(self, value):
+    def set_target(self, value: CapellaElement):
         self.get_java_object().setTarget(value.get_java_object())

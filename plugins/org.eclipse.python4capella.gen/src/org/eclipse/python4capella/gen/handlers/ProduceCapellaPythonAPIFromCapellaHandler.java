@@ -123,16 +123,24 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 
 		final File file = new File("/tmp/capella/" + fileName + ".py");
+		final File file_header = new File("/tmp/capella/" + fileName + "_header.py");
 		try {
 			if (!file.exists()) {
 				file.getParentFile().mkdirs();
 				file.createNewFile();
 			}
-			try (OutputStream os = new FileOutputStream(file)) {
+			if (!file_header.exists()) {
+				file_header.getParentFile().mkdirs();
+				file_header.createNewFile();
+			}
+			try (OutputStream os = new FileOutputStream(file);
+					OutputStream os_header = new FileOutputStream(file_header)) {
 				os.write(getHeader(fileName).getBytes());
 				for (Class cls : orderedClasses) {
 					os.write(NL.getBytes());
 					os.write(generateClass(cls).getBytes());
+					os_header.write(generateClassHeader(cls).getBytes());
+					os_header.write(NL.getBytes());
 				}
 				os.write(NL.getBytes());
 				final String additions = getPackageAdditions(fileName);
@@ -145,6 +153,15 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private String generateClassHeader(Class cls) {
+		final StringBuilder res = new StringBuilder();
+
+		res.append("class " + cls.getName() + ":" + NL);
+		res.append("    pass" + NL);
+
+		return res.toString();
 	}
 
 	private List<Class> getSuperClasses(Class cls) {
@@ -368,6 +385,36 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		return res.toString();
 	}
 
+	private String getTypeAnnotation(TypedElement typedElement) {
+		final StringBuilder res = new StringBuilder();
+
+		final String typeName;
+		if (typedElement.getType() instanceof Enumeration) {
+			typeName = "str";
+		} else if ("String".equals(typedElement.getType().getLabel())) {
+			typeName = "str";
+		} else if ("Integer".equals(typedElement.getType().getLabel())) {
+			typeName = "int";
+		} else if ("Boolean".equals(typedElement.getType().getLabel())) {
+			typeName = "bool";
+		} else if ("PythonClass".equals(typedElement.getType().getLabel())) {
+			typeName = "type";
+		} else {
+			typeName = typedElement.getType().getLabel();
+		}
+		if (typedElement instanceof MultiplicityElement) {
+			final MultiplicityElement multiplicity = (MultiplicityElement) typedElement;
+			if (multiplicity.getOwnedMaxCard() instanceof LiteralNumericValue
+					&& "*".equals(((LiteralNumericValue) multiplicity.getOwnedMaxCard()).getValue())) {
+				res.append("List[" + typeName + "]");
+			} else {
+				res.append(typeName);
+			}
+		}
+
+		return res.toString();
+	}
+
 	private String generateQuery(Class cls, Feature feature) {
 		final StringBuilder res = new StringBuilder();
 
@@ -455,14 +502,14 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 			if (isScalar(property)) {
 				if (isAttribute(property)) {
-					res.append("    def " + getterName + "(self):" + NL);
+					res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
 					res.append(getDocumentation(property, false));
 					res.append("        return self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
-					res.append("    def " + setterName + "(self, value):" + NL);
+					res.append("    def " + setterName + "(self, value: " + getTypeAnnotation(property) + "):" + NL);
 					res.append(getDocumentation(property, false));
 					res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(value)" + NL);
 				} else {
-					res.append("    def " + getterName + "(self):" + NL);
+					res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
 					res.append(getDocumentation(property, false));
 					res.append(
 							"        value =  self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
@@ -473,14 +520,15 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					res.append("            specific_cls = e_object_class.get_class(value)" + NL);
 					res.append("            return specific_cls(value)" + NL);
 					if (!property.isIsReadOnly() && !property.isIsDerived()) {
-						res.append("    def " + setterName + "(self, value):" + NL);
+						res.append(
+								"    def " + setterName + "(self, value: " + getTypeAnnotation(property) + "):" + NL);
 						res.append(getDocumentation(property, true));
 						res.append("        return self.get_java_object()." + getJavaSetterName(cls, property)
 								+ "(value.get_java_object())" + NL);
 					}
 				}
 			} else {
-				res.append("    def " + getterName + "(self):" + NL);
+				res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
 				res.append(getDocumentation(property, false));
 				res.append("        return create_e_list(self.get_java_object()." + getJavaGetterName(cls, property)
 						+ "(), " + property.getType().getLabel() + ")" + NL);
@@ -495,13 +543,24 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 		final StringJoiner joiner = new StringJoiner(", ");
 		joiner.add("self");
+		Parameter returnParameter = null;
 		for (Parameter parameter : operation.getOwnedParameters()) {
-			if (parameter.getDirection() != ParameterDirection.RETURN) {
-				joiner.add(parameter.getName());
+			if (parameter.getDirection() == ParameterDirection.RETURN) {
+				returnParameter = parameter;
+			} else {
+				joiner.add(parameter.getName() + ": " + getTypeAnnotation(parameter));
 			}
 		}
 
-		res.append("    def " + getPythonName(operation.getName()) + "(" + joiner.toString() + "):" + NL);
+		final String returnType;
+		if (returnParameter != null) {
+			returnType = " -> " + getTypeAnnotation(returnParameter);
+		} else {
+			returnType = "";
+		}
+
+		res.append("    def " + getPythonName(operation.getName()) + "(" + joiner.toString() + ")" + returnType + ":"
+				+ NL);
 		res.append(getDocumentation(operation, false));
 		res.append("        raise AttributeError(\"TODO\")" + NL);
 

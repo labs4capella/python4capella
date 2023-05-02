@@ -1,5 +1,5 @@
     @staticmethod
-    def get_class(e_object):
+    def get_class(e_object: EObject) -> type:
         try:
             res = getattr(sys.modules["__main__"], e_object.eClass().getName())
         except AttributeError:
@@ -69,10 +69,10 @@
 
         return res
     @staticmethod
-    def copy_e_object(e_object):
+    def copy_e_object(e_object: EObject) -> EObject:
         return e_object.__class__(copy_e_object(e_object.get_java_object()))
     @staticmethod
-    def copy_all_e_objects(e_objects):
+    def copy_all_e_objects(e_objects: List[EObject]) -> List[EObject]:
         e_objs = []
         for  element in e_objects:
             e_objs.append(element.get_java_object());

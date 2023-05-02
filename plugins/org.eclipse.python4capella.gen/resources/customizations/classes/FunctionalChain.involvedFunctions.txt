@@ -1,4 +1,4 @@
-    def get_involved_functions(self):
+    def get_involved_functions(self) -> List[Function]:
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for involvment in self.get_java_object().getOwnedFunctionalChainInvolvements():

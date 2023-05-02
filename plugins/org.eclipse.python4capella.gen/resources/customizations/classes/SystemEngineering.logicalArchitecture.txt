@@ -1,4 +1,4 @@
-    def get_logical_architecture(self):
+    def get_logical_architecture(self) -> LogicalArchitecture:
         for la in self.get_java_object().getContainedLogicalArchitectures():
             return LogicalArchitecture(la)
 

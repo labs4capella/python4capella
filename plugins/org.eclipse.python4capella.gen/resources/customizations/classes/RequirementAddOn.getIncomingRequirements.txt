@@ -1,5 +1,5 @@
     @staticmethod
-    def get_incoming_requirements(capellaElement):
+    def get_incoming_requirements(capellaElement: CapellaElement) -> List[Requirement]:
         res = []
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")

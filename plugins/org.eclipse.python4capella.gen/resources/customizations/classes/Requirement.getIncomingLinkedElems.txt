@@ -1,4 +1,4 @@
-    def get_incoming_linked_elems(self):
+    def get_incoming_linked_elems(self) -> List[EObject]:
         res = []
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")

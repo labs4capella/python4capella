@@ -1,4 +1,4 @@
-    def get_source_function(self):
+    def get_source_function(self) -> Function:
         port = self.get_java_object().getSourceFunctionOutputPort()
         if port is None:
             return port

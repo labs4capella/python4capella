@@ -10,4 +10,7 @@ if False:
 include('workspace://Python4Capella/utilities/CapellaPlatform.py')
 if False:
     from utilities.CapellaPlatform import *
+include('workspace://Python4Capella/simplified_api/capella_header.py')
+if False:
+    from simplified_api.capella_header import *
 

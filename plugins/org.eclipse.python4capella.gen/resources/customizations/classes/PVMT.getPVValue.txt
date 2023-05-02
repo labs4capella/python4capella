@@ -1,5 +1,5 @@
     @staticmethod
-    def get_p_v_value(elem, PVName):
+    def get_p_v_value(elem: CapellaElement, PVName: str) -> str:
         for group in elem.get_java_object().getOwnedPropertyValueGroups():
             for pv in group.getOwnedPropertyValues():
                 if PVName == pv.getName():

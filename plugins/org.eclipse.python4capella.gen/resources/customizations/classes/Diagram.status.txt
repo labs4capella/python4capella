@@ -1,4 +1,4 @@
-    def get_status(self):
+    def get_status(self) -> str:
         value = Sirius.get_status(self.get_java_object())
         if value is None:
             return value

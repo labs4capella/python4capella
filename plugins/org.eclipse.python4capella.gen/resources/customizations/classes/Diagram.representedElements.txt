@@ -1,3 +1,3 @@
-    def get_represented_elements(self):
+    def get_represented_elements(self) -> List[EObject]:
         return Sirius.get_represented_elements(self.get_java_object())
 

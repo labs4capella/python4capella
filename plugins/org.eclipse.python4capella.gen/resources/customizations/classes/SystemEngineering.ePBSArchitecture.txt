@@ -1,4 +1,4 @@
-    def get_e_p_b_s_architecture(self):
+    def get_e_p_b_s_architecture(self) -> EPBSArchitecture:
         for epbsa in self.get_java_object().getContainedEPBSArchitectures():
             return EPBSArchitecture(epbsa)
 

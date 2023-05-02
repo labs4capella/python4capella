@@ -1,5 +1,5 @@
     @staticmethod
-    def get_relation_type_by_long_name(architecture, long_name):
+    def get_relation_type_by_long_name(architecture: Any, long_name: str) -> RelationType:
         for rel in RelationType.get_relation_types(architecture):
             if rel.get_long_name() == long_name:
                 return rel

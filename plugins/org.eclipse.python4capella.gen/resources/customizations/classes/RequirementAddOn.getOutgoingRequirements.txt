@@ -1,5 +1,5 @@
     @staticmethod
-    def get_outgoing_requirements(capellaElement):
+    def get_outgoing_requirements(capellaElement: CapellaElement) -> List[Requirement]:
         res = []
         #: :type capellaElement: CapellaElement
         for extension in capellaElement.get_java_object().getOwnedExtensions():

@@ -1,7 +1,7 @@
     def __init__(self, java_object = None):
         JavaObject.__init__(self, java_object)
     @staticmethod
-    def get_system_engineering(capellaElement):
+    def get_system_engineering(capellaElement: CapellaElement) -> SystemEngineering:
         container = capellaElement.get_java_object().eContainer()
         if container is None:
             return container

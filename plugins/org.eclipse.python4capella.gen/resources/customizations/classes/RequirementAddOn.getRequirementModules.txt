@@ -1,5 +1,5 @@
     @staticmethod
-    def get_requirement_modules(capellaElement):
+    def get_requirement_modules(capellaElement: CapellaElement) -> List[CapellaModule]:
         #: :type capellaElement: CapellaElement
         res = []
         se = RequirementAddOn.get_system_engineering(capellaElement)

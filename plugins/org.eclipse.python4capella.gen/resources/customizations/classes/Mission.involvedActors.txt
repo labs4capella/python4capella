@@ -1,4 +1,4 @@
-    def get_involved_actors(self):
+    def get_involved_actors(self) -> List[SystemActor]:
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
         for system_comp in self.get_java_object().getInvolvedSystemComponents():

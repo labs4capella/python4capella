@@ -1,4 +1,4 @@
-    def get_type(self):
+    def get_type(self) -> str:
         if self.get_java_object().getDescription() is None:
             return None
         else:

@@ -1,8 +1,8 @@
-    def get_target(self):
+    def get_target(self) -> Requirement:
         value = self.get_java_object().getTarget()
         if value is None:
             return value
         else:
             return Requirement(value)
-    def set_target(self, value):
+    def set_target(self, value: Requirement):
         self.get_java_object().setTarget(value.get_java_object())

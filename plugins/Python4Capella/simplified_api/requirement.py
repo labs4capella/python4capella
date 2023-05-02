@@ -1,6 +1,9 @@
 include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
     from simplified_api.capella import *
+include('workspace://Python4Capella/simplified_api/requirement_header.py')
+if False:
+    from simplified_api.requirement_header import *
 
 
 class RequirementAddOn(JavaObject):
@@ -11,7 +14,7 @@ class RequirementAddOn(JavaObject):
         """
         JavaObject.__init__(self, java_object)
     @staticmethod
-    def get_system_engineering(capellaElement):
+    def get_system_engineering(capellaElement: CapellaElement) -> SystemEngineering:
         """
         """
         container = capellaElement.get_java_object().eContainer()
@@ -23,7 +26,7 @@ class RequirementAddOn(JavaObject):
             else:
                 return RequirementAddOn.get_system_engineering(JavaObject(container))
     @staticmethod
-    def get_requirement_modules(capellaElement):
+    def get_requirement_modules(capellaElement: CapellaElement) -> List[CapellaModule]:
         """
         Parameters: model: CapellaModel
         Returns: CapellaModule[*]
@@ -38,7 +41,7 @@ class RequirementAddOn(JavaObject):
                     res.append(CapellaModule(extension))
         return res
     @staticmethod
-    def get_incoming_requirements(capellaElement):
+    def get_incoming_requirements(capellaElement: CapellaElement) -> List[Requirement]:
         """
         Parameters: elem: CapellaElement
         Returns: Requirement[*]
@@ -56,7 +59,7 @@ class RequirementAddOn(JavaObject):
                         res.append(specific_cls(capella_element))
         return res
     @staticmethod
-    def get_outgoing_requirements(capellaElement):
+    def get_outgoing_requirements(capellaElement: CapellaElement) -> List[Requirement]:
         """
         Parameters: elem: CapellaElement
         Returns: Requirement[*]
@@ -68,7 +71,7 @@ class RequirementAddOn(JavaObject):
             if extension.eClass().getName() == "CapellaOutgoingRelation" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                 res.append(Requirement(extension.getTarget()))
         return res
-    def get_relation_type(self, elem1, elem2):
+    def get_relation_type(self, elem1: EObject, elem2: EObject) -> str:
         """
         Parameters: elem1: EObject, elem2: EObject
         Returns: String
@@ -92,47 +95,47 @@ class CapellaModule(EObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_owned_requirements(self):
+    def get_owned_requirements(self) -> List[Requirement]:
         """
         Returns: Requirement[*]
         """
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
-    def get_id(self):
+    def get_id(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFIdentifier()
-    def set_id(self, value):
+    def set_id(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFIdentifier(value)
-    def get_long_name(self):
+    def get_long_name(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFLongName()
-    def set_long_name(self, value):
+    def set_long_name(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFLongName(value)
-    def get_name(self):
+    def get_name(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFName()
-    def set_name(self, value):
+    def set_name(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFName(value)
-    def get_prefix(self):
+    def get_prefix(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFPrefix()
-    def set_prefix(self, value):
+    def set_prefix(self, value: str):
         """
         Returns: String
         """
@@ -154,87 +157,87 @@ class Requirement(EObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_id(self):
+    def get_id(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFIdentifier()
-    def set_id(self, value):
+    def set_id(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFIdentifier(value)
-    def get_long_name(self):
+    def get_long_name(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFLongName()
-    def set_long_name(self, value):
+    def set_long_name(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFLongName(value)
-    def get_name(self):
+    def get_name(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFName()
-    def set_name(self, value):
+    def set_name(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFName(value)
-    def get_chapter_name(self):
+    def get_chapter_name(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFChapterName()
-    def set_chapter_name(self, value):
+    def set_chapter_name(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFChapterName(value)
-    def get_description(self):
+    def get_description(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFDescription()
-    def set_description(self, value):
+    def set_description(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFDescription(value)
-    def get_prefix(self):
+    def get_prefix(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFPrefix()
-    def set_prefix(self, value):
+    def set_prefix(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFPrefix(value)
-    def get_text(self):
+    def get_text(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFText()
-    def set_text(self, value):
+    def set_text(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFText(value)
-    def get_owned_attributes(self):
+    def get_owned_attributes(self) -> List[Attribute]:
         """
         Returns: Attribute[*]
         """
         return create_e_list(self.get_java_object().getOwnedAttributes(), Attribute)
-    def get_owned_relations(self):
+    def get_owned_relations(self) -> List[AbstractRelation]:
         """
         Returns: AbstractRelation[*]
         """
         return create_e_list(self.get_java_object().getOwnedRelations(), AbstractRelation)
-    def get_all_attributes(self):
+    def get_all_attributes(self) -> List[Attribute]:
         """
         Returns: String[*]
         status: OK
@@ -245,7 +248,7 @@ class Requirement(EObject):
             if specific_cls_name in ["StringValueAttribute", "IntegerValueAttribute", "EnumerationValueAttribute", "BooleanValueAttribute", "RealValueAttribute"]:
                 res.append(Attribute(child))
         return res
-    def get_attribute(self, attributeName):
+    def get_attribute(self, attributeName: str) -> Attribute:
         """
         Parameters: attributeName: String
         Returns: String
@@ -255,13 +258,13 @@ class Requirement(EObject):
             if attributeName == attr.get_definition().getReqIFLongName():
                 return attr
         return None
-    def set_attribute(self, attributeName, value):
+    def set_attribute(self, attributeName: str, value: str):
         """
         Parameters: attributeName: String, value: String
         status: KO
         """
         raise AttributeError("TODO")
-    def get_incoming_linked_elems(self):
+    def get_incoming_linked_elems(self) -> List[EObject]:
         """
         Returns: EObject[*]
         status: OK
@@ -277,7 +280,7 @@ class Requirement(EObject):
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
         return res
-    def get_outgoing_linked_elems(self):
+    def get_outgoing_linked_elems(self) -> List[EObject]:
         """
         Returns: EObject[*]
         status: OK
@@ -309,7 +312,7 @@ class Folder(Requirement):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_owned_requirements(self):
+    def get_owned_requirements(self) -> List[Requirement]:
         """
         Returns: Requirement[*]
         """
@@ -333,17 +336,17 @@ class Attribute(EObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_definition(self):
+    def get_definition(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getDefinition()
-    def set_definition(self, value):
+    def set_definition(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setDefinition(value)
-    def get_value(self):
+    def get_value(self) -> Any:
         """
         Returns: String
         """
@@ -371,32 +374,32 @@ class ReqIFElement(EObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_id(self):
+    def get_id(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFIdentifier()
-    def set_id(self, value):
+    def set_id(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFIdentifier(value)
-    def get_long_name(self):
+    def get_long_name(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFLongName()
-    def set_long_name(self, value):
+    def set_long_name(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFLongName(value)
-    def get_description(self):
+    def get_description(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFDescription()
-    def set_description(self, value):
+    def set_description(self, value: str):
         """
         Returns: String
         """
@@ -453,7 +456,7 @@ class CapellaIncomingRelation(AbstractRelation):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_source(self):
+    def get_source(self) -> Requirement:
         """
         Returns: Requirement
         """
@@ -462,12 +465,12 @@ class CapellaIncomingRelation(AbstractRelation):
             return value
         else:
             return Requirement(value)
-    def set_source(self, value):
+    def set_source(self, value: Requirement):
         """
         Returns: Requirement
         """
         self.get_java_object().setSource(value.get_java_object())
-    def get_target(self):
+    def get_target(self) -> CapellaElement:
         """
         Returns: CapellaElement
         """
@@ -481,7 +484,7 @@ class CapellaIncomingRelation(AbstractRelation):
                 return None
             else:
                 return specific_cls(value)
-    def set_target(self, value):
+    def set_target(self, value: CapellaElement):
         """
         Returns: CapellaElement
         """
@@ -503,7 +506,7 @@ class CapellaOutgoingRelation(AbstractRelation):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_source(self):
+    def get_source(self) -> CapellaElement:
         """
         Returns: CapellaElement
         """
@@ -517,12 +520,12 @@ class CapellaOutgoingRelation(AbstractRelation):
                 return None
             else:
                 return specific_cls(value)
-    def set_source(self, value):
+    def set_source(self, value: CapellaElement):
         """
         Returns: CapellaElement
         """
         self.get_java_object().setSource(value.get_java_object())
-    def get_target(self):
+    def get_target(self) -> Requirement:
         """
         Returns: Requirement
         """
@@ -531,7 +534,7 @@ class CapellaOutgoingRelation(AbstractRelation):
             return value
         else:
             return Requirement(value)
-    def set_target(self, value):
+    def set_target(self, value: Requirement):
         """
         Returns: Requirement
         """
@@ -551,7 +554,7 @@ class InternalRelation(AbstractRelation):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_source(self):
+    def get_source(self) -> Requirement:
         """
         Returns: Requirement
         """
@@ -560,12 +563,12 @@ class InternalRelation(AbstractRelation):
             return value
         else:
             return Requirement(value)
-    def set_source(self, value):
+    def set_source(self, value: Requirement):
         """
         Returns: Requirement
         """
         self.get_java_object().setSource(value.get_java_object())
-    def get_target(self):
+    def get_target(self) -> Requirement:
         """
         Returns: Requirement
         """
@@ -574,7 +577,7 @@ class InternalRelation(AbstractRelation):
             return value
         else:
             return Requirement(value)
-    def set_target(self, value):
+    def set_target(self, value: Requirement):
         """
         Returns: Requirement
         """
@@ -609,18 +612,18 @@ class RelationType(AbstractType):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_long_name(self):
+    def get_long_name(self) -> str:
         """
         Returns: String
         """
         return self.get_java_object().getReqIFLongName()
-    def set_long_name(self, value):
+    def set_long_name(self, value: str):
         """
         Returns: String
         """
         self.get_java_object().setReqIFLongName(value)
     @staticmethod
-    def get_relation_types(architecture):
+    def get_relation_types(architecture: Any) -> RelationType:
         """
         Returns: String
         status: KO
@@ -633,7 +636,7 @@ class RelationType(AbstractType):
                         res.append(RelationType(rel))
         return res
     @staticmethod
-    def get_relation_type_by_long_name(architecture, long_name):
+    def get_relation_type_by_long_name(architecture: Any, long_name: str) -> RelationType:
         """
         Parameters: name: String
         Returns: String
