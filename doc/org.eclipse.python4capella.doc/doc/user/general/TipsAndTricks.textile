@@ -145,7 +145,7 @@ bc. # name                 : My Menu
 # description          : My Menu Description
 # popup                : enableFor(org.polarsys.capella.core.data.capellacore.CapellaElement)
 
-The name define the name of the menu, and image its icon. The script-type is the scripting language used, Python in the case of Python4Capella. The description is the description of the menu. popup tells that we want a popup menu on objects with the type CapellaElement. The type is the qualified name of the Java class.
+The name define the name of the menu, and image its icon. The script-type is the scripting language used, Python in the case of Python4Capella. The description is the description of the menu. popup tells that we want a popup menu on objects with the type CapellaElement. The type is the qualified name of the Java class. You can find the qualified name of the Java class in the Python class documentation.
 
 You can find more ways to contribute your scripts in the "EASE documentation":https://wiki.eclipse.org/EASE/Scripts.
 

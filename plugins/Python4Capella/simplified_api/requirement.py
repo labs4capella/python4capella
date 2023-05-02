@@ -70,6 +70,7 @@ class RequirementAddOn(JavaObject):
 
 class CapellaModule(EObject):
     """
+    Java class: org.polarsys.capella.vp.requirements.CapellaRequirements.CapellaModule
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaModule")
     def __init__(self, java_object = None):
@@ -122,6 +123,7 @@ class CapellaModule(EObject):
 
 class Requirement(EObject):
     """
+    Java class: org.polarsys.capella.core.data.requirement.Requirement
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Requirement")
     def __init__(self, java_object = None):
@@ -254,6 +256,7 @@ class Requirement(EObject):
 
 class Folder(Requirement):
     """
+    Java class: org.polarsys.capella.core.data.capellamodeller.Folder
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Folder")
     def __init__(self, java_object = None):
@@ -274,6 +277,7 @@ class Folder(Requirement):
 
 class Attribute(EObject):
     """
+    Java class: org.polarsys.kitalpha.vp.requirements.Requirements.Attribute
     """
     def __init__(self, java_object = None, kind = "StringValueAttribute"):
         """
@@ -311,6 +315,7 @@ class Attribute(EObject):
 
 class ReqIFElement(EObject):
     """
+    Java class: org.polarsys.kitalpha.vp.requirements.Requirements.ReqIFElement
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "ReqIFElement")
     def __init__(self, java_object = None):
@@ -349,6 +354,7 @@ class ReqIFElement(EObject):
 
 class EnumValue(ReqIFElement):
     """
+    Java class: org.polarsys.kitalpha.vp.requirements.Requirements.EnumValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "EnumValue")
     def __init__(self, java_object = None):
@@ -363,6 +369,7 @@ class EnumValue(ReqIFElement):
 
 class AbstractRelation(ReqIFElement):
     """
+    Java class: org.polarsys.kitalpha.vp.requirements.Requirements.AbstractRelation
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "AbstractRelation")
     def __init__(self, java_object = None):
@@ -381,6 +388,7 @@ class AbstractRelation(ReqIFElement):
 
 class CapellaIncomingRelation(AbstractRelation):
     """
+    Java class: org.polarsys.capella.vp.requirements.CapellaRequirements.CapellaIncomingRelation
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation")
     def __init__(self, java_object = None):
@@ -426,6 +434,7 @@ class CapellaIncomingRelation(AbstractRelation):
 
 class CapellaOutgoingRelation(AbstractRelation):
     """
+    Java class: org.polarsys.capella.vp.requirements.CapellaRequirements.CapellaOutgoingRelation
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation")
     def __init__(self, java_object = None):
@@ -471,6 +480,7 @@ class CapellaOutgoingRelation(AbstractRelation):
 
 class InternalRelation(AbstractRelation):
     """
+    Java class: org.polarsys.kitalpha.vp.requirements.Requirements.InternalRelation
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "InternalRelation")
     def __init__(self, java_object = None):
@@ -509,6 +519,7 @@ class InternalRelation(AbstractRelation):
 
 class AbstractType(CapellaElement):
     """
+    Java class: org.polarsys.capella.common.data.modellingcore.AbstractType
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractType")
     def __init__(self, java_object = None):
@@ -523,6 +534,7 @@ class AbstractType(CapellaElement):
 
 class RelationType(AbstractType):
     """
+    Java class: org.polarsys.kitalpha.vp.requirements.Requirements.RelationType
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "RelationType")
     def __init__(self, java_object = None):

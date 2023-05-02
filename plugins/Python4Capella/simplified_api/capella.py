@@ -252,6 +252,7 @@ class EObject(JavaObject):
 
 class CapellaElement(EObject):
     """
+    Java class: org.polarsys.capella.core.data.capellacore.CapellaElement
     A generic Capella model Element. Used to define generic attributes and relations inherited by most Capella elements
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "CapellaElement")
@@ -367,6 +368,7 @@ class CapellaElement(EObject):
 
 class Constraint(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacore.Constraint
     A generic constraint which can be defined on Capella elements
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Constraint")
@@ -442,6 +444,7 @@ class PropertyValue(CapellaElement):
 
 class PropertyValueGroup(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacore.PropertyValueGroup
     A group which can contain several PropertyValue and be applied to CapellaElements
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValueGroup")
@@ -461,6 +464,7 @@ class PropertyValueGroup(CapellaElement):
 
 class EnumerationPropertyType(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacore.EnumerationPropertyType
     The definition of an Enumeration to type a PropertyValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyType")
@@ -480,6 +484,7 @@ class EnumerationPropertyType(CapellaElement):
 
 class EnumerationPropertyLiteral(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacore.EnumerationPropertyLiteral
     A value defined in an EnumerationPropertyType
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "EnumerationPropertyLiteral")
@@ -800,6 +805,7 @@ class RPL(AbstractCatalogElement):
 
 class CatalogElementPkg(AbstractReElement):
     """
+    Java class: org.polarsys.capella.common.re.CatalogElementPkg
     A package to structure the definition of REC / RPL elements
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CatalogElementPkg")
@@ -827,6 +833,7 @@ class CatalogElementPkg(AbstractReElement):
 
 class RecCatalog(CatalogElementPkg):
     """
+    Java class: org.polarsys.capella.common.re.RecCatalog
     The root package which contains the REC / RPL definitions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog")
@@ -852,6 +859,7 @@ class RecCatalog(CatalogElementPkg):
 
 class CompliancyDefinitionPkg(AbstractReElement):
     """
+    Java class: org.polarsys.capella.common.re.CompliancyDefinitionPkg
     A package to contain CompliancyDefinitions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "CompliancyDefinitionPkg")
@@ -871,6 +879,7 @@ class CompliancyDefinitionPkg(AbstractReElement):
 
 class CompliancyDefinition(AbstractReElement):
     """
+    Java class: org.polarsys.capella.common.re.CompliancyDefinition
     The type of compliancy which have to be respected by the RPL regarding its REC definition. Default list of compliancies is:
     BLACK_BOX
     CONSTRAINT_REUSE
@@ -897,6 +906,7 @@ class CompliancyDefinition(AbstractReElement):
 
 class OperationalAnalysis(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.oa.OperationalAnalysis
     The element containing all definitions from the Operational Analysis.
     The Operational Analysis aims at defining what the users of the system need to accomplish
     """
@@ -963,6 +973,7 @@ class OperationalAnalysis(PropertyValuePkgContainer):
 
 class OperationalActivityPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.oa.OperationalActivityPkg
     A package to contain OperationalActivity
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivityPkg")
@@ -986,6 +997,7 @@ class OperationalActivityPkg(PropertyValuePkgContainer):
 
 class OperationalProcess(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.oa.OperationalProcess
     An operational process is used to describe a particular context for performing operational activities to contribute to one or more operational capabilities
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalProcess")
@@ -1065,6 +1077,7 @@ class OperationalProcess(CapellaElement):
 
 class OperationalCapabilityPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.oa.OperationalCapabilityPkg
     A package to contain OperationalCapabilities
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapabilityPkg")
@@ -1088,6 +1101,7 @@ class OperationalCapabilityPkg(PropertyValuePkgContainer):
 
 class EntityPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.oa.EntityPkg
     A package to define Operational entities / actors
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "EntityPkg")
@@ -1157,6 +1171,7 @@ class OperationalActor(CapellaElement):
 
 class CommunicationMean(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.oa.CommunicationMean
     Describes the media between the Operational Entities / Actors&nbsp;to support the Operational Interactions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "CommunicationMean")
@@ -1212,6 +1227,7 @@ class CommunicationMean(CapellaElement):
 
 class SystemAnalysis(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.ctx.SystemAnalysis
     The element containing all definitions from the System Analysis.
     The System Analysis aims at defining what the system has to accomplish for the users
     """
@@ -1298,6 +1314,7 @@ class SystemAnalysis(PropertyValuePkgContainer):
 
 class SystemFunctionPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.ctx.SystemFunctionPkg
     A package to contain SystemFunctions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunctionPkg")
@@ -1325,6 +1342,7 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
 
 class CapabilityPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.ctx.CapabilityPkg
     A package to contain Capabilities
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "CapabilityPkg")
@@ -1348,6 +1366,7 @@ class CapabilityPkg(PropertyValuePkgContainer):
 
 class SystemComponentPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.ctx.SystemComponentPkg
     A package to contain the System and the Actors
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponentPkg")
@@ -1389,6 +1408,7 @@ class SystemComponentPkg(PropertyValuePkgContainer):
 
 class MissionPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.ctx.MissionPkg
     A package to contain Missions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "MissionPkg")
@@ -1412,6 +1432,7 @@ class MissionPkg(PropertyValuePkgContainer):
 
 class Mission(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.ctx.Mission
     High-level goal to which the System should contribute. To be fulfilled, a Mission should use a number of system Functions regrouped within one or more Capabilities
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Mission")
@@ -1442,6 +1463,7 @@ class Mission(CapellaElement):
 
 class LogicalArchitecture(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.la.LogicalArchitecture
     The element containing all definitions from the Logical Architecture.
     The Logical Architecture (or conceptual solution)&nbsp;aims at defining how the system will work in order to fulfil expectations
     """
@@ -1518,6 +1540,7 @@ class LogicalArchitecture(PropertyValuePkgContainer):
 
 class LogicalFunctionPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.la.LogicalFunctionPkg
     A package to contain LogicalFunctions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunctionPkg")
@@ -1545,6 +1568,7 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
 
 class CapabilityRealizationPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.la.CapabilityRealizationPkg
     A package to contain CapabilityRealizations
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealizationPkg")
@@ -1568,6 +1592,7 @@ class CapabilityRealizationPkg(PropertyValuePkgContainer):
 
 class LogicalComponentPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.la.LogicalComponentPkg
     A package to contain the LogicalSystem, LogicalComponents and LogicalActors
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponentPkg")
@@ -1613,6 +1638,7 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
 
 class PhysicalArchitecture(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.pa.PhysicalArchitecture
     The element containing all definitions from the Physical Architecture.
     The Physical Architecture (or finalized solution)&nbsp;aims at defining how the system will be developed and built
     """
@@ -1683,6 +1709,7 @@ class PhysicalArchitecture(PropertyValuePkgContainer):
 
 class PhysicalFunctionPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.pa.PhysicalFunctionPkg
     A package to contain PhysicalFunctions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunctionPkg")
@@ -1710,6 +1737,7 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
 
 class PhysicalComponentPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.pa.PhysicalComponentPkg
     A package to contain the PhysicalSystem, PhysicalComponents and PhysicalActors
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentPkg")
@@ -1752,6 +1780,7 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
 
 class AbstractPhysicalArtifact(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.cs.AbstractPhysicalArtifact
     An abstract type to defined the relation between elements of the Physical Architecture and ConfigurationItems
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "AbstractPhysicalArtifact")
@@ -1771,6 +1800,7 @@ class AbstractPhysicalArtifact(CapellaElement):
 
 class PhysicalComponent(AbstractPhysicalArtifact):
     """
+    Java class: org.polarsys.capella.core.data.pa.PhysicalComponent
     A generic Physical Component which can be either a BehaviorPC or a NodePC
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
@@ -1829,6 +1859,7 @@ class PhysicalComponent(AbstractPhysicalArtifact):
 
 class EPBSArchitecture(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.epbs.EPBSArchitecture
     The element containing all definitions from the End-Product Breakdown Structure.
     The End-Product Breakdown Structure aims at defining the construction strategy of the product, taking into account industrial and subcontracting constraints
     """
@@ -1875,6 +1906,7 @@ class EPBSArchitecture(PropertyValuePkgContainer):
 
 class ConfigurationItemPkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.epbs.ConfigurationItemPkg
     A package to contain ConfigurationItems
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemPkg")
@@ -1898,6 +1930,7 @@ class ConfigurationItemPkg(PropertyValuePkgContainer):
 
 class ConfigurationItem(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.epbs.ConfigurationItem
     System part to be acquired or produced, in as many copies as the physical architecture requires
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItem")
@@ -1947,6 +1980,7 @@ class ConfigurationItem(CapellaElement):
 
 class StateMachine(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.StateMachine
     State Machine is a way to define some of&nbsp;the expected behavior of the System, a Component or an external Actor
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateMachine")
@@ -1966,6 +2000,7 @@ class StateMachine(CapellaElement):
 
 class AbstractState(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.AbstractState
     An abstract type to define the generic relation of modes and states
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "AbstractState")
@@ -1997,6 +2032,7 @@ class AbstractState(CapellaElement):
 
 class State(AbstractState):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.State
     A State is a context undergone by the system, an actor or a component in specific circumstances (for example imposed by the environment)
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "State")
@@ -2044,6 +2080,7 @@ class State(AbstractState):
 
 class Mode(State):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.Mode
     A Mode is a behavior expected from the system,&nbsp;an Actor or a component&nbsp;in chosen conditions
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Mode")
@@ -2059,6 +2096,7 @@ class Mode(State):
 
 class Pseudostate(AbstractState):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.Pseudostate
     A pseudo states are transitive states (meaning they don't remain active). They are used to define entry / exit point of a state machine, and to connect multiple transitions into more complex transition paths
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "Pseudostate")
@@ -2083,6 +2121,7 @@ class Pseudostate(AbstractState):
 
 class Region(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.Region
     A region is an orthogonal part of either a composite state or a state machine.
     Inside of a region, only one more or state can be active at a time
     """
@@ -2103,6 +2142,7 @@ class Region(CapellaElement):
 
 class StateTransition(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.StateTransition
     A possible transition between 2 modes or 2 states
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "StateTransition")
@@ -2164,6 +2204,7 @@ class StateTransition(CapellaElement):
 
 class AbstractAction(JavaObject):
     """
+    Java class: org.polarsys.capella.common.data.activity.AbstractAction
     A generic action which can be triggered by a Mode / State or a StateTransition
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/common/activity/" + capella_version(), "AbstractAction")
@@ -2179,6 +2220,7 @@ class AbstractAction(JavaObject):
 
 class AbstractEvent(CapellaElement):
     """
+    Java class: org.polarsys.capella.common.data.behavior.AbstractEvent
     An generic event which can trigger a transition
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/common/behavior/" + capella_version(), "AbstractEvent")
@@ -2194,6 +2236,7 @@ class AbstractEvent(CapellaElement):
 
 class Scenario(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.interaction.Scenario
     A scenario of use of the system defined by a specific sequence
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "Scenario")
@@ -2279,6 +2322,7 @@ class Scenario(CapellaElement):
 
 class InstanceRole(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.interaction.InstanceRole
     The involvement of an element (function, system, component or actor)&nbsp;in a scenario
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "InstanceRole")
@@ -2298,6 +2342,7 @@ class InstanceRole(CapellaElement):
 
 class AbstractInstance(JavaObject):
     """
+    Java class: org.polarsys.capella.core.data.information.AbstractInstance
     A generic element which can be involved in a scenario as an InstanceRole
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractInstance")
@@ -2313,6 +2358,7 @@ class AbstractInstance(JavaObject):
 
 class SequenceMessage(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.interaction.SequenceMessage
     An exchange between InstanceRole performed in the frame of a scenario
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "SequenceMessage")
@@ -2410,6 +2456,7 @@ class AbstractExchange(JavaObject):
 
 class StateFragment(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.interaction.StateFragment
     The call of a function or mode / state&nbsp;by an InstanceRole in the context of a scenario
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "StateFragment")
@@ -2449,6 +2496,7 @@ class StateFragment(CapellaElement):
 
 class CombinedFragment(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.interaction.CombinedFragment
     The identification of a specific operator (ALT, OPT, LOOP...)&nbsp;in the sequence of a scenario
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "CombinedFragment")
@@ -2522,6 +2570,7 @@ class Operand(CapellaElement):
 
 class ConstraintDuration(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.interaction.ConstraintDuration
     A constraint about the execution time of a scenario defined between 2 points
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "ConstraintDuration")
@@ -2577,6 +2626,7 @@ class Node(AbstractInstance):
 
 class PhysicalPort(AbstractPhysicalArtifact):
     """
+    Java class: org.polarsys.capella.core.data.cs.PhysicalPort
     A port on a Node component defining a physical interaction point
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort")
@@ -2608,6 +2658,7 @@ class PhysicalPort(AbstractPhysicalArtifact):
 
 class PhysicalLink(AbstractPhysicalArtifact):
     """
+    Java class: org.polarsys.capella.core.data.cs.PhysicalLink
     Means of communication, transport or routing between two Node components, used as a support for behavioral exchanges
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLink")
@@ -2656,6 +2707,7 @@ class PhysicalLink(AbstractPhysicalArtifact):
 
 class PhysicalLinkCategory(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.cs.PhysicalLinkCategory
     A regroupement of PhysicalLinks for graphical simplification of diagrams
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalLinkCategory")
@@ -2675,6 +2727,7 @@ class PhysicalLinkCategory(CapellaElement):
 
 class PhysicalPath(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.cs.PhysicalPath
     Set of Physical Links defining a continuous path likely to route one or more behavioral exchanges
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath")
@@ -2710,6 +2763,7 @@ class PhysicalPath(CapellaElement):
 
 class InterfacePkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.cs.InterfacePkg
     A package to contain Interfaces
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "InterfacePkg")
@@ -2737,6 +2791,7 @@ class InterfacePkg(PropertyValuePkgContainer):
 
 class Interface(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.cs.Interface
     The definition of ExchangeItems which can be send / received by a ComponentPort
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Interface")
@@ -2798,6 +2853,7 @@ class Interface(CapellaElement):
 
 class ExchangeItemAllocation(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.cs.ExchangeItemAllocation
     The involvement of an ExchangeItem by an Interface.
     Mainly used for the involvement of ExchangeItems in Interface Scenarios based on the definition of Interfaces between components
     """
@@ -2860,6 +2916,7 @@ class ExchangeItemAllocation(CapellaElement):
 
 class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
     """
+    Java class: org.polarsys.capella.core.data.information.ExchangeItem
     Ordered set of references to elements carried together during an interaction or exchange between functions, components and actors. The elements are carried simultaneously, in the same conditions, with the same non-functional properties. The “elements” are called data
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItem")
@@ -2931,6 +2988,7 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
 
 class ExchangeItemElement(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.information.ExchangeItemElement
     A part of the information contained by an ExchangeItem
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeItemElement")
@@ -2950,6 +3008,7 @@ class ExchangeItemElement(CapellaElement):
 
 class FunctionPort(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.fa.FunctionPort
     An generic FunctionPort to define the allocation with ComponentPorts
     A Function Port specify what a Function is capable of producing or is requiring
     """
@@ -2980,6 +3039,7 @@ class FunctionPort(CapellaElement):
 
 class FunctionInputPort(FunctionPort):
     """
+    Java class: org.polarsys.capella.core.data.fa.FunctionInputPort
     An FunctionInputPort defines what a Function is requiring
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionInputPort")
@@ -3011,6 +3071,7 @@ class FunctionInputPort(FunctionPort):
 
 class FunctionOutputPort(FunctionPort):
     """
+    Java class: org.polarsys.capella.core.data.fa.FunctionOutputPort
     A FunctionOutputPort defines what a Function is capable of producing
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionOutputPort")
@@ -3042,6 +3103,7 @@ class FunctionOutputPort(FunctionPort):
 
 class FunctionalExchange(AbstractEvent, AbstractExchange):
     """
+    Java class: org.polarsys.capella.core.data.fa.FunctionalExchange
     A functional exchange represents a dependency between a source function and a target one. Exchanges connect Function Ports, which specify what a Function is capable of producing or is requiring.
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalExchange")
@@ -3145,6 +3207,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
 
 class ExchangeCategory(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.fa.ExchangeCategory
     A regroupement of FunctionalExchanges for graphical simplification of diagrams
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ExchangeCategory")
@@ -3164,6 +3227,7 @@ class ExchangeCategory(CapellaElement):
 
 class FunctionalChain(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.fa.FunctionalChain
     Describe the system behaviour in a particular usage context with references towards Functions and Functional Exchanges
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionalChain")
@@ -3295,6 +3359,7 @@ class BehavioralComponent(CapellaElement, AbstractInstance):
 
 class ComponentPort(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.fa.ComponentPort
     A port on a BehavioralComponent defining a logical interaction point
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPort")
@@ -3346,6 +3411,7 @@ class ComponentPort(CapellaElement):
 
 class ComponentExchange(CapellaElement, AbstractExchange):
     """
+    Java class: org.polarsys.capella.core.data.fa.ComponentExchange
     Represent the interactions between Logical / Behavioral&nbsp;Components. Exchanges connects Component Ports.
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchange")
@@ -3415,6 +3481,7 @@ class ComponentExchange(CapellaElement, AbstractExchange):
 
 class ComponentExchangeCategory(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.fa.ComponentExchangeCategory
     A regroupement of ComponentExchanges for graphical simplification of diagrams
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeCategory")
@@ -3434,6 +3501,7 @@ class ComponentExchangeCategory(CapellaElement):
 
 class AbstractCapability(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.interaction.AbstractCapability
     An abstract type to define the generic relations of all capabilities (operational and system)
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/interaction/" + capella_version(), "AbstractCapability")
@@ -3533,6 +3601,7 @@ class AbstractSystemCapability(AbstractCapability):
 
 class DataValue(JavaObject):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.DataValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "DataValue")
     def __init__(self, java_object = None):
@@ -3547,6 +3616,7 @@ class DataValue(JavaObject):
 
 class LiteralBooleanValue(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.LiteralBooleanValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralBooleanValue")
     def __init__(self, java_object = None):
@@ -3561,6 +3631,7 @@ class LiteralBooleanValue(DataValue):
 
 class BooleanReference(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.BooleanReference
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BooleanReference")
     def __init__(self, java_object = None):
@@ -3575,6 +3646,7 @@ class BooleanReference(DataValue):
 
 class EnumerationReference(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.EnumerationReference
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationReference")
     def __init__(self, java_object = None):
@@ -3589,6 +3661,7 @@ class EnumerationReference(DataValue):
 
 class LiteralStringValue(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.LiteralStringValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralStringValue")
     def __init__(self, java_object = None):
@@ -3603,6 +3676,7 @@ class LiteralStringValue(DataValue):
 
 class StringReference(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.StringReference
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "StringReference")
     def __init__(self, java_object = None):
@@ -3617,6 +3691,7 @@ class StringReference(DataValue):
 
 class LiteralNumericValue(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.LiteralNumericValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "LiteralNumericValue")
     def __init__(self, java_object = None):
@@ -3631,6 +3706,7 @@ class LiteralNumericValue(DataValue):
 
 class NumericReference(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.NumericReference
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "NumericReference")
     def __init__(self, java_object = None):
@@ -3645,6 +3721,7 @@ class NumericReference(DataValue):
 
 class ComplexValue(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.ComplexValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValue")
     def __init__(self, java_object = None):
@@ -3659,6 +3736,7 @@ class ComplexValue(DataValue):
 
 class ComplexValueReference(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.ComplexValueReference
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "ComplexValueReference")
     def __init__(self, java_object = None):
@@ -3673,6 +3751,7 @@ class ComplexValueReference(DataValue):
 
 class BinaryExpression(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.BinaryExpression
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "BinaryExpression")
     def __init__(self, java_object = None):
@@ -3687,6 +3766,7 @@ class BinaryExpression(DataValue):
 
 class UnaryExpression(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.UnaryExpression
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "UnaryExpression")
     def __init__(self, java_object = None):
@@ -3701,6 +3781,7 @@ class UnaryExpression(DataValue):
 
 class CollectionValueReference(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.CollectionValueReference
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValueReference")
     def __init__(self, java_object = None):
@@ -3715,6 +3796,7 @@ class CollectionValueReference(DataValue):
 
 class CollectionValue(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.CollectionValue
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionValue")
     def __init__(self, java_object = None):
@@ -3729,6 +3811,7 @@ class CollectionValue(DataValue):
 
 class DataPkg(JavaObject):
     """
+    Java class: org.polarsys.capella.core.data.information.DataPkg
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "DataPkg")
     def __init__(self, java_object = None):
@@ -3751,6 +3834,7 @@ class DataPkg(JavaObject):
 
 class DataType(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.information.datatype.DataType
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "DataType")
     def __init__(self, java_object = None):
@@ -3765,6 +3849,7 @@ class DataType(CapellaElement):
 
 class Class(DataType):
     """
+    Java class: org.polarsys.capella.core.data.information.Class
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Class")
     def __init__(self, java_object = None):
@@ -3825,6 +3910,7 @@ class Class(DataType):
 
 class Collection(DataType):
     """
+    Java class: org.polarsys.capella.core.data.information.Collection
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Collection")
     def __init__(self, java_object = None):
@@ -3961,6 +4047,7 @@ class Collection(DataType):
 
 class Union(DataType):
     """
+    Java class: org.polarsys.capella.core.data.information.Union
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Union")
     def __init__(self, java_object = None):
@@ -4033,6 +4120,7 @@ class Union(DataType):
 
 class Association(JavaObject):
     """
+    Java class: org.polarsys.capella.core.data.information.Association
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Association")
     def __init__(self, java_object = None):
@@ -4047,6 +4135,7 @@ class Association(JavaObject):
 
 class Property(JavaObject):
     """
+    Java class: org.polarsys.capella.core.data.information.Property
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property")
     def __init__(self, java_object = None):
@@ -4065,6 +4154,7 @@ class Property(JavaObject):
 
 class UnionProperty(Property):
     """
+    Java class: org.polarsys.capella.core.data.information.UnionProperty
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "UnionProperty")
     def __init__(self, java_object = None):
@@ -4079,6 +4169,7 @@ class UnionProperty(Property):
 
 class Operation(JavaObject):
     """
+    Java class: org.polarsys.capella.core.data.information.Operation
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Service")
     def __init__(self, java_object = None):
@@ -4121,6 +4212,7 @@ class Operation(JavaObject):
 
 class Parameter(JavaObject):
     """
+    Java class: org.polarsys.capella.core.data.information.Parameter
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Parameter")
     def __init__(self, java_object = None):
@@ -4246,6 +4338,7 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
 
 class Enumeration(PrimitiveDataType):
     """
+    Java class: org.polarsys.capella.core.data.information.datatype.Enumeration
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "Enumeration")
     def __init__(self, java_object = None):
@@ -4358,6 +4451,7 @@ class Enumeration(PrimitiveDataType):
 
 class EnumerationLiteral(DataValue):
     """
+    Java class: org.polarsys.capella.core.data.information.datavalue.EnumerationLiteral
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "EnumerationLiteral")
     def __init__(self, java_object = None):
@@ -4372,6 +4466,7 @@ class EnumerationLiteral(DataValue):
 
 class BooleanType(PrimitiveDataType):
     """
+    Java class: org.polarsys.capella.core.data.information.datatype.BooleanType
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "BooleanType")
     def __init__(self, java_object = None):
@@ -4404,6 +4499,7 @@ class BooleanType(PrimitiveDataType):
 
 class StringType(PrimitiveDataType):
     """
+    Java class: org.polarsys.capella.core.data.information.datatype.StringType
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "StringType")
     def __init__(self, java_object = None):
@@ -4482,6 +4578,7 @@ class StringType(PrimitiveDataType):
 
 class NumericType(PrimitiveDataType):
     """
+    Java class: org.polarsys.capella.core.data.information.datatype.NumericType
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "NumericType")
     def __init__(self, java_object = None):
@@ -4574,6 +4671,7 @@ class NumericType(PrimitiveDataType):
 
 class PhysicalQuantity(NumericType):
     """
+    Java class: org.polarsys.capella.core.data.information.datatype.PhysicalQuantity
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "PhysicalQuantity")
     def __init__(self, java_object = None):
@@ -4602,6 +4700,7 @@ class PhysicalQuantity(NumericType):
 
 class Unit(CapellaElement):
     """
+    Java class: org.polarsys.capella.core.data.information.Unit
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Unit")
     def __init__(self, java_object = None):
@@ -4616,6 +4715,7 @@ class Unit(CapellaElement):
 
 class SystemEngineering(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.capellamodeller.SystemEngineering
     The main element in the definition of a Capella model. Contains the perspectives of the Arcadia methodology
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering")
@@ -4664,6 +4764,7 @@ class SystemEngineering(PropertyValuePkgContainer):
 
 class PropertyValuePkg(PropertyValuePkgContainer):
     """
+    Java class: org.polarsys.capella.core.data.capellacore.PropertyValuePkg
     A package to contain PropertyValues&nbsp;and/or&nbsp;PropertyValueGroups
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "PropertyValuePkg")
@@ -4750,6 +4851,7 @@ class Interaction(AbstractEvent):
 
 class OperationalCapability(AbstractCapability):
     """
+    Java class: org.polarsys.capella.core.data.oa.OperationalCapability
     An operational capability is an ability, expected of one or more operational entities / actors. An operational capability is characterized by a set of operational processes and scenarios
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalCapability")
@@ -4810,6 +4912,7 @@ class OperationalEntity(OperationalActor):
 
 class Capability(AbstractSystemCapability):
     """
+    Java class: org.polarsys.capella.core.data.ctx.Capability
     The ability of the system to supply a service contributing to fulfilling one or more Missions. A Capability represents a system usage context. It is characterized by a set of Functional Chains and Scenarios it references.
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "Capability")
@@ -4923,6 +5026,7 @@ class SystemActor(BehavioralComponent, Node):
 
 class CapabilityRealization(AbstractSystemCapability):
     """
+    Java class: org.polarsys.capella.core.data.la.CapabilityRealization
     The implementation of the system Capabilities in Logical Architecture and Physical Architecture
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "CapabilityRealization")
@@ -4995,6 +5099,7 @@ class LogicalSystem(BehavioralComponent, Node):
 
 class LogicalComponent(BehavioralComponent):
     """
+    Java class: org.polarsys.capella.core.data.la.LogicalComponent
     Logical Components are the artefacts enabling a notional decomposition of the system as a "white box", independently from any technological solutions, but dealing with major system decomposition constraints
     Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)
     """
@@ -5257,6 +5362,7 @@ class PhysicalActor(BehavioralComponent, Node):
 
 class ChangeEvent(AbstractEvent):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.ChangeEvent
     An event defined by WHEN something occurs
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "ChangeEvent")
@@ -5280,6 +5386,7 @@ class ChangeEvent(AbstractEvent):
 
 class TimeEvent(AbstractEvent):
     """
+    Java class: org.polarsys.capella.core.data.capellacommon.TimeEvent
     An event defined by AT a given time, or AFTER a certain time
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEvent")
@@ -5413,6 +5520,7 @@ class Function(AbstractActivityFunction):
 
 class OperationalActivity(AbstractActivityFunction):
     """
+    Java class: org.polarsys.capella.core.data.oa.OperationalActivity
     Process step or action/operation/service performed by an Operational entity / actor&nbsp;and likely to influence the system definition or usage. Implementing operational activities generally produces elements of interactions expected by other activities
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/oa/" + capella_version(), "OperationalActivity")
@@ -5464,6 +5572,7 @@ class OperationalActivity(AbstractActivityFunction):
 
 class SystemFunction(Function):
     """
+    Java class: org.polarsys.capella.core.data.ctx.SystemFunction
     The definition of a Function in the System Analysis
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemFunction")
@@ -5495,6 +5604,7 @@ class SystemFunction(Function):
 
 class LogicalFunction(Function):
     """
+    Java class: org.polarsys.capella.core.data.la.LogicalFunction
     The definition of a Function in the Logical Architecture
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalFunction")
@@ -5526,6 +5636,7 @@ class LogicalFunction(Function):
 
 class PhysicalFunction(Function):
     """
+    Java class: org.polarsys.capella.core.data.pa.PhysicalFunction
     The definition of a Function in the Physical Architecture
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalFunction")
