@@ -12,6 +12,7 @@
     </topic>
     <topic href="doc/user/general/Debug.html" label="Debug a Python for Capella script">
     </topic>
+    <topic href="doc/user/general/RemoveFalseErrors.html" label="Remove False Errors">
     <topic href="doc/user/general/Write.html" label="Write a Python for Capella script">
         <topic href="doc/user/general/Write.html#CreateaPythonproject" label="Create a Python project">
         </topic>

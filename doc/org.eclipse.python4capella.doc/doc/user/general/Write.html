@@ -40,13 +40,15 @@
 			<img alt="New PyDev module template" title="New PyDev module template" border="0" src="Write/New_PyDev_module_template.png"/>
 		</p>
 		<h2 id="Importrequiredscripts">Import required scripts</h2>
-		<p>You will need to import the Capella APIs:</p>
+		<p>You will need to import the Capella APIs (This statement can produce an error, but you can 
+			<a href="RemoveFalseErrors.html">remove</a> it):
+		</p>
 		<pre><code>include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
     from simplified_api.capella import *
 </code></pre>
 		<p>The first line will produce an error because it&#8217;s an EASE instruction that is not understood by PyDev but this will not prevent you from using your script.</p>
-		<p>Note: you can find exising examples in 
+		<p>Note: you can find existing examples in 
 			<a href="https://github.com/labs4capella/python4capella/tree/master/plugins/Python4Capella/sample_scripts/">Python4Capella/sample_scripts</a>.
 		</p>
 		<p>You can also configure your Capella to show the line numbers in the PyDev editor. Use the Window Preferences menu, and type line number in the filter:</p>

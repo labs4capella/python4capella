@@ -170,7 +170,7 @@ You can refere to the plugin documentation for usage reference. The documentatio
 
 # False errors in provided scripts
 
-If you open provided scripts, you will notice some errors in them. Those errors can be ignored. They are related to the use of EASE that allows access to Java objects with the PyDev editor.
+If you open provided scripts, you will notice some errors in them. Those errors can be ignored or even [removed](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/RemoveFalseErrors.textile). They are related to the use of EASE that allows access to Java objects with the PyDev editor.
 
 EASE is a scripting environment for Eclipse.
 It allows to create, maintain and execute script code in the context of the running Eclipse instance. Therefore such scripts may manipulate and extend the IDE itself. 

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Python4Capella
+Bundle-SymbolicName: org.eclipse.python4capella.pydev;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Vendor: Eclipse Modeling Project
+Automatic-Module-Name: org.eclipse.python4capella.pydev
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.python4capella.pydev
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.common,
+ org.eclipse.ui,
+ org.python.pydev.shared_core;bundle-version="8.2.0",
+ com.python.pydev.analysis;bundle-version="8.2.0"
+Bundle-Activator: org.eclipse.python4capella.pydev.Activator$Implementation
+Bundle-ActivationPolicy: lazy

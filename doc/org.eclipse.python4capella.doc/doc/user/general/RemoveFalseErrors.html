@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>RemoveFalseErrors</title>
+		<link type="text/css" rel="stylesheet" href="../../resources/bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="../../resources/custom.css"/>
+	</head>
+	<body>
+		<h1 id="ConfigurePyDevtoremovefalseerrors">Configure PyDev to remove false errors</h1>
+		<p>This section explains how you can configure 
+			<a href="https://www.pydev.org/">PyDev</a> to remove false errors. This will help to 
+			<a href="Write.html">Write</a> your scripts.
+		</p>
+		<p>You will need to configure 
+			<a href="https://www.pydev.org/">PyDev</a> preferences if it&#8217;s not already done:
+			<br/> - select the Window &gt; Preferences menu
+			<br/> - with the filter a the top left corner search for "analysis"
+			<br/> - select the Code Analysis node on the left
+			<br/> - select the Undefined tab and add the following keywords:
+			<br/>   - include,loadModule,argv
+			<br/> - click the Apply and Close button
+		</p>
+		<img alt="Add keywords to PyDev configuration" title="Add keywords to PyDev configuration" border="0" src="RemoveFalseErrors/PyDev_keywords.png"/>
+		<p>When you load an 
+			<a href="https://www.eclipse.org/ease/">EASE</a> module and use specific methods from it, you can first declare the methods before the 
+			<code>loadModule</code> statement:
+		</p>
+		<pre><code>def showInputDialog():
+    pass
+
+loadModule('/System/UI')
+
+componentName = showInputDialog("Enter the component name:", "New Component 1")
+</code></pre>
+		<p>This prevent the call to 
+			<code>showInputDialog</code> to be marked as an error by 
+			<a href="https://www.pydev.org/">PyDev</a>.
+		</p>
+	</body>
+</html>
