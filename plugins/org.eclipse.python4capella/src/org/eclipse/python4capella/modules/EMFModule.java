@@ -13,8 +13,14 @@
 package org.eclipse.python4capella.modules;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.eclipse.ease.modules.WrapToScript;
 import org.eclipse.emf.common.util.Enumerator;
@@ -25,8 +31,11 @@ import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.business.api.session.Session;
 
 /**
  * EASE module for EMF.
@@ -161,6 +170,32 @@ public class EMFModule {
 	}
 
 	/**
+	 * Gets the {@link List} of object referencing the given {@link EObject}.
+	 * 
+	 * @param eObj the {@link EObject}
+	 * @return the {@link List} of object referencing the given {@link EObject}
+	 * 
+	 */
+	@WrapToScript
+	public List<EObject> eInverse(EObject eObj) {
+		return new ArrayList<EObject>(getInverseReferences(eObj, s -> true));
+	}
+
+	/**
+	 * Gets the {@link List} of object referencing the given {@link EObject}
+	 * instances of the given {@link EClassifier}.
+	 * 
+	 * @param eObj        the {@link EObject}
+	 * @param eClassifier the {@link EClassifier}
+	 * @return the {@link List} of object referencing the given {@link EObject}
+	 *         instances of the given {@link EClassifier}
+	 */
+	@WrapToScript
+	public List<EObject> eInverseByType(EObject eObj, EClassifier eClassifier) {
+		return new ArrayList<EObject>(getInverseReferences(eObj, s -> eClassifier.isInstance(s.getEObject())));
+	}
+
+	/**
 	 * Gets the {@link List} of object referencing the given {@link EObject} via an
 	 * {@link EReference} with the given name.
 	 * 
@@ -170,8 +205,40 @@ public class EMFModule {
 	 *         an {@link EReference} with the given name
 	 */
 	@WrapToScript
-	public List<EObject> eInverse(EObject eObj, String referenceName) {
-		return new ArrayList<EObject>(new EObjectQuery(eObj).getInverseReferences(referenceName));
+	public List<EObject> eInverseByName(EObject eObj, String referenceName) {
+		return new ArrayList<EObject>(getInverseReferences(eObj,
+				s -> s.getEStructuralFeature() != null && s.getEStructuralFeature().getName().equals(referenceName)));
+	}
+
+	/**
+	 * Finds all the objects in the session which reference the given EObject
+	 * through a setting matching the specified predicate. The queried EObject must
+	 * be part of an opened Sirius session.
+	 * 
+	 * @param eObj      the {@link EObject}
+	 * @param predicate the predicate to use to match incoming references to this
+	 *                  object.
+	 * @return all the EObjects in the same session as this EObject which point to
+	 *         it through a matching setting.
+	 */
+	private Collection<EObject> getInverseReferences(EObject eObj, Predicate<Setting> predicate) {
+		final Collection<EObject> res;
+		Objects.requireNonNull(predicate);
+		final ECrossReferenceAdapter xref;
+		final Session session = new EObjectQuery(eObj).getSession();
+		if (session != null) {
+			xref = session.getSemanticCrossReferencer();
+			if (xref == null) {
+				res = Collections.emptySet();
+			} else {
+				res = xref.getInverseReferences(eObj).stream().filter(predicate).map(s -> s.getEObject())
+						.collect(Collectors.toCollection(LinkedHashSet::new));
+			}
+		} else {
+			res = Collections.emptySet();
+		}
+
+		return res;
 	}
 
 	@WrapToScript

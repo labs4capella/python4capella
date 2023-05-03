@@ -12,6 +12,10 @@ def getEnumLiteral(ns_uri, enum_name, literal_name): # provider by org.eclipse.p
     pass
 def eInverse(e_obj, reference_name): # provider by org.eclipse.python4capella.modules.EMFModule
     pass
+def eInverseByType(e_obj, e_classifier): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def eInverseByName(e_obj, reference_name): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
 def copy(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
     pass
 def copyAll(e_objs): # provider by org.eclipse.python4capella.modules.EMFModule
@@ -31,8 +35,7 @@ def e_all_contents(e_obj):
 
 def e_all_contents_by_type(e_obj, cls):
     """Gets all elements contained directly and indirectly in the given EObject that are instances of the given cls"""
-    e_object_class = getattr(sys.modules["__main__"], "EObject")
-    return JavaList(eAllContentsByType(e_obj, cls.e_class), e_object_class);
+    return JavaList(eAllContentsByType(e_obj, cls.e_class), cls);
 
 
 def get_e_classifier(ns_uri, eclass_name):
@@ -58,10 +61,19 @@ def get_enum_literal(ns_uri, enum_name, literal_name):
     """Gets the enum literal"""
     return getEnumLiteral(ns_uri, enum_name, literal_name)
 
-def e_inverse(e_obj, reference_name):
+def e_inverse(e_obj, cls):
+    """Gets the List of object referencing the given EObject"""
+    e_object_class = getattr(sys.modules["__main__"], "EObject")
+    return JavaList(eInverse(e_obj), e_object_class);
+
+def e_inverse_by_type(e_obj, cls):
+    """Gets the List of object referencing the given EObject via an EReference with the given type"""
+    return JavaList(eInverseByType(e_obj, cls.e_class), cls);
+
+def e_inverse_by_name(e_obj, reference_name):
     """Gets the List of object referencing the given EObject via an EReference with the given name"""
     e_object_class = getattr(sys.modules["__main__"], "EObject")
-    return JavaList(eInverse(e_obj, reference_name), e_object_class);
+    return JavaList(eInverseByName(e_obj, reference_name), e_object_class);
 
 def copy_e_object(e_obj):
     """Copies the given EObject"""

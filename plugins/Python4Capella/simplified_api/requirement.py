@@ -50,7 +50,7 @@ class RequirementAddOn(JavaObject):
         res = []
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for relation in e_inverse(capellaElement.get_java_object(), "target"):
+        for relation in e_inverse_by_name(capellaElement.get_java_object(), "target"):
             if relation.get_java_object().eClass().getName() == "CapellaIncomingRelation" and relation.get_java_object().eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                 capella_element = relation.get_java_object().getSource()
                 if capella_element is not None:
@@ -272,7 +272,7 @@ class Requirement(EObject):
         res = []
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for relation in e_inverse(self.get_java_object(), "target"):
+        for relation in e_inverse_by_name(self.get_java_object(), "target"):
             if relation.get_java_object().eClass().getName() == "CapellaOutgoingRelation" and relation.get_java_object().eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                 capella_element = relation.get_java_object().getSource()
                 if capella_element is not None:
