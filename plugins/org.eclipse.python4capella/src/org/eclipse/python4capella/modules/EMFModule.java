@@ -34,8 +34,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.business.api.session.Session;
+import org.polarsys.capella.core.model.handler.command.DeleteStructureCommand;
 
 /**
  * EASE module for EMF.
@@ -52,7 +55,25 @@ public class EMFModule {
 	 */
 	@WrapToScript
 	public void delete(EObject eObj) {
-		EcoreUtil.delete(eObj);
+		deleteAll(Collections.singletonList(eObj));
+	}
+
+	/**
+	 * Deletes the given {@link List} of {@link EObject}.
+	 * 
+	 * @param eObj the {@link List} of {@link EObject} to delete
+	 */
+	@WrapToScript
+	public void deleteAll(List<EObject> eObjs) {
+		if (!eObjs.isEmpty()) {
+			final TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(eObjs.get(0));
+			if (editingDomain != null) {
+				final DeleteStructureCommand command = new DeleteStructureCommand(editingDomain, eObjs);
+				editingDomain.getCommandStack().execute(command);
+			} else {
+				EcoreUtil.deleteAll(eObjs, true);
+			}
+		}
 	}
 
 	/**

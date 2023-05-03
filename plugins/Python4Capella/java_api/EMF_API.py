@@ -20,6 +20,10 @@ def copy(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
     pass
 def copyAll(e_objs): # provider by org.eclipse.python4capella.modules.EMFModule
     pass
+def delete(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
+def deleteAll(e_objs): # provider by org.eclipse.python4capella.modules.EMFModule
+    pass
 
 loadModule('/Capella/EMF')
 include('workspace://Python4Capella/java_api/Java_API.py')
@@ -83,3 +87,11 @@ def copy_all_e_objects(e_objs):
     """Copies all given EObject"""
     e_object_class = getattr(sys.modules["__main__"], "EObject")
     return JavaList(copyAll(e_objs), e_object_class);
+
+def delete_e_object(e_obj):
+    """Deletes the given EObject"""
+    return delete(e_obj)
+
+def delete_all_e_objects(e_objs):
+    """Deletes all given EObject"""
+    return deleteAll(e_objs)

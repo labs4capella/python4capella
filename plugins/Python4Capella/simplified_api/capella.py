@@ -188,6 +188,23 @@ class EObject(JavaObject):
         for  element in e_objects:
             e_objs.append(element.get_java_object());
         return copy_all_e_objects(e_objs)
+    @staticmethod
+    def delete_e_object(e_object: EObject):
+        """
+        """
+        """
+        """
+        delete_e_object(e_object.get_java_object())
+    @staticmethod
+    def delete_all_e_objects(e_objects: List[EObject]):
+        """
+        """
+        """
+        """
+        e_objs = []
+        for  element in e_objects:
+            e_objs.append(element.get_java_object());
+        delete_all_e_objects(e_objs)
     def get_owned_diagrams(self) -> List[Diagram]:
         """
         Returns: Diagram[*]
