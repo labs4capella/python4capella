@@ -4047,7 +4047,7 @@
                     value="OK"/>
               </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
-                  id="8ea1607a-89e0-4de5-acd5-00474225eccc" super="#32e7e714-895d-4e05-85d7-fd4f38d664f7"
+                  id="38326a0f-7b94-472a-83bb-d9449402ee09" super="#9dff1e7f-c120-4fe8-bcb5-f3669b2a4a06"
                   sub="#5c76e033-4dbd-4b6e-af58-9802a3766269"/>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="6900af60-3737-46b2-92e8-2152c7d8ee4f" name="containedOperationalActivities"

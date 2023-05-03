@@ -3686,6 +3686,97 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_operational_activities()
         pass
 
+    def test_OperationalActivity_kind_getter(self):
+        tested = OperationalActivity()
+        tested.get_kind()
+        pass
+
+    def test_OperationalActivity_kind_setter(self):
+        tested = OperationalActivity()
+        value = FunctionKind()
+        tested.set_kind(value)
+        pass
+
+    def test_OperationalActivity_condition_getter(self):
+        tested = OperationalActivity()
+        tested.get_condition()
+        pass
+
+    def test_OperationalActivity_condition_setter(self):
+        tested = OperationalActivity()
+        value = "value"
+        tested.set_condition(value)
+        pass
+
+    def test_OperationalActivity_inputs_getter(self):
+        tested = OperationalActivity()
+        tested.get_inputs()
+        pass
+
+    def test_OperationalActivity_outputs_getter(self):
+        tested = OperationalActivity()
+        tested.get_outputs()
+        pass
+
+    def test_OperationalActivity_incoming_getter(self):
+        tested = OperationalActivity()
+        tested.get_incoming()
+        pass
+
+    def test_OperationalActivity_incoming_setter(self):
+        tested = OperationalActivity()
+        value = FunctionalExchange()
+        tested.get_incoming().add(value)
+        pass
+
+    def test_OperationalActivity_outgoing_getter(self):
+        tested = OperationalActivity()
+        tested.get_outgoing()
+        pass
+
+    def test_OperationalActivity_outgoing_setter(self):
+        tested = OperationalActivity()
+        value = FunctionalExchange()
+        tested.get_outgoing().add(value)
+        pass
+
+    def test_OperationalActivity_allocating_component_getter(self):
+        tested = OperationalActivity()
+        tested.get_allocating_component()
+        pass
+
+    def test_OperationalActivity_allocating_component_setter(self):
+        tested = OperationalActivity()
+        value = PhysicalActor()
+        tested.set_allocating_component(value)
+        pass
+
+    def test_OperationalActivity_owned_functional_chains_getter(self):
+        tested = OperationalActivity()
+        tested.get_owned_functional_chains()
+        pass
+
+    def test_OperationalActivity_involving_functional_chains_getter(self):
+        tested = OperationalActivity()
+        tested.get_involving_functional_chains()
+        pass
+
+    def test_OperationalActivity_involving_capabilities_getter(self):
+        tested = OperationalActivity()
+        tested.get_involving_capabilities()
+        pass
+
+    def test_OperationalActivity_involving_capabilities_setter(self):
+        tested = OperationalActivity()
+        value = CapabilityRealization()
+        tested.get_involving_capabilities().add(value)
+        pass
+
+    def test_OperationalActivity_owned_functions_getter(self):
+        tested = OperationalActivity()
+        tested.get_owned_functions()
+        pass
+
     def test_OperationalActivity_available_in_states_getter(self):
         tested = OperationalActivity()
         tested.get_available_in_states()

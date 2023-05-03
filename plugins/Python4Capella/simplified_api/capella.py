@@ -6234,7 +6234,7 @@ class Function(AbstractActivityFunction):
         """
         return create_e_list(self.get_java_object().getOwnedFunctions(), Function)
 
-class OperationalActivity(AbstractActivityFunction):
+class OperationalActivity(Function):
     """
     Java class: org.polarsys.capella.core.data.oa.OperationalActivity
     Process step or action/operation/service performed by an Operational entity / actor&nbsp;and likely to influence the system definition or usage. Implementing operational activities generally produces elements of interactions expected by other activities
