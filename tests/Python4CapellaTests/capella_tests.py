@@ -26312,6 +26312,3451 @@ class capella_tests(unittest.TestCase):
         tested.get_exchanges().add(value)
         pass
 
+    def test_LiteralBooleanValue_abstract_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_abstract()
+        pass
+
+    def test_LiteralBooleanValue_abstract_setter(self):
+        tested = LiteralBooleanValue()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_LiteralBooleanValue_id_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_id()
+        pass
+
+    def test_LiteralBooleanValue_id_setter(self):
+        tested = LiteralBooleanValue()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_LiteralBooleanValue_sid_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_sid()
+        pass
+
+    def test_LiteralBooleanValue_sid_setter(self):
+        tested = LiteralBooleanValue()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_LiteralBooleanValue_name_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_name()
+        pass
+
+    def test_LiteralBooleanValue_name_setter(self):
+        tested = LiteralBooleanValue()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_LiteralBooleanValue_summary_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_summary()
+        pass
+
+    def test_LiteralBooleanValue_summary_setter(self):
+        tested = LiteralBooleanValue()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_LiteralBooleanValue_description_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_description()
+        pass
+
+    def test_LiteralBooleanValue_description_setter(self):
+        tested = LiteralBooleanValue()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_LiteralBooleanValue_status_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_status()
+        pass
+
+    def test_LiteralBooleanValue_status_setter(self):
+        tested = LiteralBooleanValue()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_LiteralBooleanValue_review_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_review()
+        pass
+
+    def test_LiteralBooleanValue_review_setter(self):
+        tested = LiteralBooleanValue()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_LiteralBooleanValue_visible_in_documentation_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_LiteralBooleanValue_visible_in_documentation_setter(self):
+        tested = LiteralBooleanValue()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_LiteralBooleanValue_visible_for_traceability_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_LiteralBooleanValue_visible_for_traceability_setter(self):
+        tested = LiteralBooleanValue()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_LiteralBooleanValue_owned_constraints_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_owned_constraints()
+        pass
+
+    def test_LiteralBooleanValue_constraints_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_constraints()
+        pass
+
+    def test_LiteralBooleanValue_constraints_setter(self):
+        tested = LiteralBooleanValue()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_LiteralBooleanValue_owned_property_values_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_owned_property_values()
+        pass
+
+    def test_LiteralBooleanValue_applied_property_values_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_applied_property_values()
+        pass
+
+    def test_LiteralBooleanValue_applied_property_values_setter(self):
+        tested = LiteralBooleanValue()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_LiteralBooleanValue_owned_property_value_groups_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_LiteralBooleanValue_applied_property_value_groups_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_LiteralBooleanValue_applied_property_value_groups_setter(self):
+        tested = LiteralBooleanValue()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_LiteralBooleanValue_owned_enumeration_property_types_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LiteralBooleanValue_owned_diagrams_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_LiteralBooleanValue_element_of_interest_for_diagrams_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_LiteralBooleanValue_element_of_interest_for_diagrams_setter(self):
+        tested = LiteralBooleanValue()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_LiteralBooleanValue_contextual_element_for_diagrams_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_LiteralBooleanValue_contextual_element_for_diagrams_setter(self):
+        tested = LiteralBooleanValue()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_LiteralBooleanValue_representing_diagrams_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_LiteralBooleanValue__r_e_cs_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get__r_e_cs()
+        pass
+
+    def test_LiteralBooleanValue__r_e_cs_setter(self):
+        tested = LiteralBooleanValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_LiteralBooleanValue__r_p_ls_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get__r_p_ls()
+        pass
+
+    def test_LiteralBooleanValue__r_p_ls_setter(self):
+        tested = LiteralBooleanValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_LiteralBooleanValue_get_label(self):
+        tested = LiteralBooleanValue()
+        tested.get_label()
+        pass
+
+    def test_LiteralBooleanValue_get_element_type(self):
+        tested = LiteralBooleanValue()
+        tested.get_element_type()
+        pass
+
+    def test_LiteralBooleanValue_get_container(self):
+        tested = LiteralBooleanValue()
+        tested.get_container()
+        pass
+
+    def test_LiteralBooleanValue_get_container_by_type(self):
+        tested = LiteralBooleanValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_LiteralBooleanValue_get_contents(self):
+        tested = LiteralBooleanValue()
+        tested.get_contents()
+        pass
+
+    def test_LiteralBooleanValue_get_all_contents(self):
+        tested = LiteralBooleanValue()
+        tested.get_all_contents()
+        pass
+
+    def test_LiteralBooleanValue_get_all_contents_by_type(self):
+        tested = LiteralBooleanValue()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_LiteralBooleanValue_get_available_s_b_queries(self):
+        tested = LiteralBooleanValue()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_LiteralBooleanValue_get_query_result(self):
+        tested = LiteralBooleanValue()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_BooleanReference_abstract_getter(self):
+        tested = BooleanReference()
+        tested.get_abstract()
+        pass
+
+    def test_BooleanReference_abstract_setter(self):
+        tested = BooleanReference()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_BooleanReference_id_getter(self):
+        tested = BooleanReference()
+        tested.get_id()
+        pass
+
+    def test_BooleanReference_id_setter(self):
+        tested = BooleanReference()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_BooleanReference_sid_getter(self):
+        tested = BooleanReference()
+        tested.get_sid()
+        pass
+
+    def test_BooleanReference_sid_setter(self):
+        tested = BooleanReference()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_BooleanReference_name_getter(self):
+        tested = BooleanReference()
+        tested.get_name()
+        pass
+
+    def test_BooleanReference_name_setter(self):
+        tested = BooleanReference()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_BooleanReference_summary_getter(self):
+        tested = BooleanReference()
+        tested.get_summary()
+        pass
+
+    def test_BooleanReference_summary_setter(self):
+        tested = BooleanReference()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_BooleanReference_description_getter(self):
+        tested = BooleanReference()
+        tested.get_description()
+        pass
+
+    def test_BooleanReference_description_setter(self):
+        tested = BooleanReference()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_BooleanReference_status_getter(self):
+        tested = BooleanReference()
+        tested.get_status()
+        pass
+
+    def test_BooleanReference_status_setter(self):
+        tested = BooleanReference()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_BooleanReference_review_getter(self):
+        tested = BooleanReference()
+        tested.get_review()
+        pass
+
+    def test_BooleanReference_review_setter(self):
+        tested = BooleanReference()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_BooleanReference_visible_in_documentation_getter(self):
+        tested = BooleanReference()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_BooleanReference_visible_in_documentation_setter(self):
+        tested = BooleanReference()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_BooleanReference_visible_for_traceability_getter(self):
+        tested = BooleanReference()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_BooleanReference_visible_for_traceability_setter(self):
+        tested = BooleanReference()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_BooleanReference_owned_constraints_getter(self):
+        tested = BooleanReference()
+        tested.get_owned_constraints()
+        pass
+
+    def test_BooleanReference_constraints_getter(self):
+        tested = BooleanReference()
+        tested.get_constraints()
+        pass
+
+    def test_BooleanReference_constraints_setter(self):
+        tested = BooleanReference()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_BooleanReference_owned_property_values_getter(self):
+        tested = BooleanReference()
+        tested.get_owned_property_values()
+        pass
+
+    def test_BooleanReference_applied_property_values_getter(self):
+        tested = BooleanReference()
+        tested.get_applied_property_values()
+        pass
+
+    def test_BooleanReference_applied_property_values_setter(self):
+        tested = BooleanReference()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_BooleanReference_owned_property_value_groups_getter(self):
+        tested = BooleanReference()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_BooleanReference_applied_property_value_groups_getter(self):
+        tested = BooleanReference()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_BooleanReference_applied_property_value_groups_setter(self):
+        tested = BooleanReference()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_BooleanReference_owned_enumeration_property_types_getter(self):
+        tested = BooleanReference()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_BooleanReference_owned_diagrams_getter(self):
+        tested = BooleanReference()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_BooleanReference_element_of_interest_for_diagrams_getter(self):
+        tested = BooleanReference()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_BooleanReference_element_of_interest_for_diagrams_setter(self):
+        tested = BooleanReference()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_BooleanReference_contextual_element_for_diagrams_getter(self):
+        tested = BooleanReference()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_BooleanReference_contextual_element_for_diagrams_setter(self):
+        tested = BooleanReference()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_BooleanReference_representing_diagrams_getter(self):
+        tested = BooleanReference()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_BooleanReference__r_e_cs_getter(self):
+        tested = BooleanReference()
+        tested.get__r_e_cs()
+        pass
+
+    def test_BooleanReference__r_e_cs_setter(self):
+        tested = BooleanReference()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_BooleanReference__r_p_ls_getter(self):
+        tested = BooleanReference()
+        tested.get__r_p_ls()
+        pass
+
+    def test_BooleanReference__r_p_ls_setter(self):
+        tested = BooleanReference()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_BooleanReference_get_label(self):
+        tested = BooleanReference()
+        tested.get_label()
+        pass
+
+    def test_BooleanReference_get_element_type(self):
+        tested = BooleanReference()
+        tested.get_element_type()
+        pass
+
+    def test_BooleanReference_get_container(self):
+        tested = BooleanReference()
+        tested.get_container()
+        pass
+
+    def test_BooleanReference_get_container_by_type(self):
+        tested = BooleanReference()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_BooleanReference_get_contents(self):
+        tested = BooleanReference()
+        tested.get_contents()
+        pass
+
+    def test_BooleanReference_get_all_contents(self):
+        tested = BooleanReference()
+        tested.get_all_contents()
+        pass
+
+    def test_BooleanReference_get_all_contents_by_type(self):
+        tested = BooleanReference()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_BooleanReference_get_available_s_b_queries(self):
+        tested = BooleanReference()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_BooleanReference_get_query_result(self):
+        tested = BooleanReference()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_EnumerationReference_abstract_getter(self):
+        tested = EnumerationReference()
+        tested.get_abstract()
+        pass
+
+    def test_EnumerationReference_abstract_setter(self):
+        tested = EnumerationReference()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_EnumerationReference_id_getter(self):
+        tested = EnumerationReference()
+        tested.get_id()
+        pass
+
+    def test_EnumerationReference_id_setter(self):
+        tested = EnumerationReference()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_EnumerationReference_sid_getter(self):
+        tested = EnumerationReference()
+        tested.get_sid()
+        pass
+
+    def test_EnumerationReference_sid_setter(self):
+        tested = EnumerationReference()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_EnumerationReference_name_getter(self):
+        tested = EnumerationReference()
+        tested.get_name()
+        pass
+
+    def test_EnumerationReference_name_setter(self):
+        tested = EnumerationReference()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_EnumerationReference_summary_getter(self):
+        tested = EnumerationReference()
+        tested.get_summary()
+        pass
+
+    def test_EnumerationReference_summary_setter(self):
+        tested = EnumerationReference()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_EnumerationReference_description_getter(self):
+        tested = EnumerationReference()
+        tested.get_description()
+        pass
+
+    def test_EnumerationReference_description_setter(self):
+        tested = EnumerationReference()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_EnumerationReference_status_getter(self):
+        tested = EnumerationReference()
+        tested.get_status()
+        pass
+
+    def test_EnumerationReference_status_setter(self):
+        tested = EnumerationReference()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_EnumerationReference_review_getter(self):
+        tested = EnumerationReference()
+        tested.get_review()
+        pass
+
+    def test_EnumerationReference_review_setter(self):
+        tested = EnumerationReference()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_EnumerationReference_visible_in_documentation_getter(self):
+        tested = EnumerationReference()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_EnumerationReference_visible_in_documentation_setter(self):
+        tested = EnumerationReference()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_EnumerationReference_visible_for_traceability_getter(self):
+        tested = EnumerationReference()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_EnumerationReference_visible_for_traceability_setter(self):
+        tested = EnumerationReference()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_EnumerationReference_owned_constraints_getter(self):
+        tested = EnumerationReference()
+        tested.get_owned_constraints()
+        pass
+
+    def test_EnumerationReference_constraints_getter(self):
+        tested = EnumerationReference()
+        tested.get_constraints()
+        pass
+
+    def test_EnumerationReference_constraints_setter(self):
+        tested = EnumerationReference()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_EnumerationReference_owned_property_values_getter(self):
+        tested = EnumerationReference()
+        tested.get_owned_property_values()
+        pass
+
+    def test_EnumerationReference_applied_property_values_getter(self):
+        tested = EnumerationReference()
+        tested.get_applied_property_values()
+        pass
+
+    def test_EnumerationReference_applied_property_values_setter(self):
+        tested = EnumerationReference()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_EnumerationReference_owned_property_value_groups_getter(self):
+        tested = EnumerationReference()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_EnumerationReference_applied_property_value_groups_getter(self):
+        tested = EnumerationReference()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_EnumerationReference_applied_property_value_groups_setter(self):
+        tested = EnumerationReference()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_EnumerationReference_owned_enumeration_property_types_getter(self):
+        tested = EnumerationReference()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_EnumerationReference_owned_diagrams_getter(self):
+        tested = EnumerationReference()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_EnumerationReference_element_of_interest_for_diagrams_getter(self):
+        tested = EnumerationReference()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_EnumerationReference_element_of_interest_for_diagrams_setter(self):
+        tested = EnumerationReference()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_EnumerationReference_contextual_element_for_diagrams_getter(self):
+        tested = EnumerationReference()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_EnumerationReference_contextual_element_for_diagrams_setter(self):
+        tested = EnumerationReference()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_EnumerationReference_representing_diagrams_getter(self):
+        tested = EnumerationReference()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_EnumerationReference__r_e_cs_getter(self):
+        tested = EnumerationReference()
+        tested.get__r_e_cs()
+        pass
+
+    def test_EnumerationReference__r_e_cs_setter(self):
+        tested = EnumerationReference()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_EnumerationReference__r_p_ls_getter(self):
+        tested = EnumerationReference()
+        tested.get__r_p_ls()
+        pass
+
+    def test_EnumerationReference__r_p_ls_setter(self):
+        tested = EnumerationReference()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_EnumerationReference_get_label(self):
+        tested = EnumerationReference()
+        tested.get_label()
+        pass
+
+    def test_EnumerationReference_get_element_type(self):
+        tested = EnumerationReference()
+        tested.get_element_type()
+        pass
+
+    def test_EnumerationReference_get_container(self):
+        tested = EnumerationReference()
+        tested.get_container()
+        pass
+
+    def test_EnumerationReference_get_container_by_type(self):
+        tested = EnumerationReference()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_EnumerationReference_get_contents(self):
+        tested = EnumerationReference()
+        tested.get_contents()
+        pass
+
+    def test_EnumerationReference_get_all_contents(self):
+        tested = EnumerationReference()
+        tested.get_all_contents()
+        pass
+
+    def test_EnumerationReference_get_all_contents_by_type(self):
+        tested = EnumerationReference()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_EnumerationReference_get_available_s_b_queries(self):
+        tested = EnumerationReference()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_EnumerationReference_get_query_result(self):
+        tested = EnumerationReference()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_LiteralStringValue_abstract_getter(self):
+        tested = LiteralStringValue()
+        tested.get_abstract()
+        pass
+
+    def test_LiteralStringValue_abstract_setter(self):
+        tested = LiteralStringValue()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_LiteralStringValue_id_getter(self):
+        tested = LiteralStringValue()
+        tested.get_id()
+        pass
+
+    def test_LiteralStringValue_id_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_LiteralStringValue_sid_getter(self):
+        tested = LiteralStringValue()
+        tested.get_sid()
+        pass
+
+    def test_LiteralStringValue_sid_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_LiteralStringValue_name_getter(self):
+        tested = LiteralStringValue()
+        tested.get_name()
+        pass
+
+    def test_LiteralStringValue_name_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_LiteralStringValue_summary_getter(self):
+        tested = LiteralStringValue()
+        tested.get_summary()
+        pass
+
+    def test_LiteralStringValue_summary_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_LiteralStringValue_description_getter(self):
+        tested = LiteralStringValue()
+        tested.get_description()
+        pass
+
+    def test_LiteralStringValue_description_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_LiteralStringValue_status_getter(self):
+        tested = LiteralStringValue()
+        tested.get_status()
+        pass
+
+    def test_LiteralStringValue_status_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_LiteralStringValue_review_getter(self):
+        tested = LiteralStringValue()
+        tested.get_review()
+        pass
+
+    def test_LiteralStringValue_review_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_LiteralStringValue_visible_in_documentation_getter(self):
+        tested = LiteralStringValue()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_LiteralStringValue_visible_in_documentation_setter(self):
+        tested = LiteralStringValue()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_LiteralStringValue_visible_for_traceability_getter(self):
+        tested = LiteralStringValue()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_LiteralStringValue_visible_for_traceability_setter(self):
+        tested = LiteralStringValue()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_LiteralStringValue_owned_constraints_getter(self):
+        tested = LiteralStringValue()
+        tested.get_owned_constraints()
+        pass
+
+    def test_LiteralStringValue_constraints_getter(self):
+        tested = LiteralStringValue()
+        tested.get_constraints()
+        pass
+
+    def test_LiteralStringValue_constraints_setter(self):
+        tested = LiteralStringValue()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_LiteralStringValue_owned_property_values_getter(self):
+        tested = LiteralStringValue()
+        tested.get_owned_property_values()
+        pass
+
+    def test_LiteralStringValue_applied_property_values_getter(self):
+        tested = LiteralStringValue()
+        tested.get_applied_property_values()
+        pass
+
+    def test_LiteralStringValue_applied_property_values_setter(self):
+        tested = LiteralStringValue()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_LiteralStringValue_owned_property_value_groups_getter(self):
+        tested = LiteralStringValue()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_LiteralStringValue_applied_property_value_groups_getter(self):
+        tested = LiteralStringValue()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_LiteralStringValue_applied_property_value_groups_setter(self):
+        tested = LiteralStringValue()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_LiteralStringValue_owned_enumeration_property_types_getter(self):
+        tested = LiteralStringValue()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LiteralStringValue_owned_diagrams_getter(self):
+        tested = LiteralStringValue()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_LiteralStringValue_element_of_interest_for_diagrams_getter(self):
+        tested = LiteralStringValue()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_LiteralStringValue_element_of_interest_for_diagrams_setter(self):
+        tested = LiteralStringValue()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_LiteralStringValue_contextual_element_for_diagrams_getter(self):
+        tested = LiteralStringValue()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_LiteralStringValue_contextual_element_for_diagrams_setter(self):
+        tested = LiteralStringValue()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_LiteralStringValue_representing_diagrams_getter(self):
+        tested = LiteralStringValue()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_LiteralStringValue__r_e_cs_getter(self):
+        tested = LiteralStringValue()
+        tested.get__r_e_cs()
+        pass
+
+    def test_LiteralStringValue__r_e_cs_setter(self):
+        tested = LiteralStringValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_LiteralStringValue__r_p_ls_getter(self):
+        tested = LiteralStringValue()
+        tested.get__r_p_ls()
+        pass
+
+    def test_LiteralStringValue__r_p_ls_setter(self):
+        tested = LiteralStringValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_LiteralStringValue_get_label(self):
+        tested = LiteralStringValue()
+        tested.get_label()
+        pass
+
+    def test_LiteralStringValue_get_element_type(self):
+        tested = LiteralStringValue()
+        tested.get_element_type()
+        pass
+
+    def test_LiteralStringValue_get_container(self):
+        tested = LiteralStringValue()
+        tested.get_container()
+        pass
+
+    def test_LiteralStringValue_get_container_by_type(self):
+        tested = LiteralStringValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_LiteralStringValue_get_contents(self):
+        tested = LiteralStringValue()
+        tested.get_contents()
+        pass
+
+    def test_LiteralStringValue_get_all_contents(self):
+        tested = LiteralStringValue()
+        tested.get_all_contents()
+        pass
+
+    def test_LiteralStringValue_get_all_contents_by_type(self):
+        tested = LiteralStringValue()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_LiteralStringValue_get_available_s_b_queries(self):
+        tested = LiteralStringValue()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_LiteralStringValue_get_query_result(self):
+        tested = LiteralStringValue()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_StringReference_abstract_getter(self):
+        tested = StringReference()
+        tested.get_abstract()
+        pass
+
+    def test_StringReference_abstract_setter(self):
+        tested = StringReference()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_StringReference_id_getter(self):
+        tested = StringReference()
+        tested.get_id()
+        pass
+
+    def test_StringReference_id_setter(self):
+        tested = StringReference()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_StringReference_sid_getter(self):
+        tested = StringReference()
+        tested.get_sid()
+        pass
+
+    def test_StringReference_sid_setter(self):
+        tested = StringReference()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_StringReference_name_getter(self):
+        tested = StringReference()
+        tested.get_name()
+        pass
+
+    def test_StringReference_name_setter(self):
+        tested = StringReference()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_StringReference_summary_getter(self):
+        tested = StringReference()
+        tested.get_summary()
+        pass
+
+    def test_StringReference_summary_setter(self):
+        tested = StringReference()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_StringReference_description_getter(self):
+        tested = StringReference()
+        tested.get_description()
+        pass
+
+    def test_StringReference_description_setter(self):
+        tested = StringReference()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_StringReference_status_getter(self):
+        tested = StringReference()
+        tested.get_status()
+        pass
+
+    def test_StringReference_status_setter(self):
+        tested = StringReference()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_StringReference_review_getter(self):
+        tested = StringReference()
+        tested.get_review()
+        pass
+
+    def test_StringReference_review_setter(self):
+        tested = StringReference()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_StringReference_visible_in_documentation_getter(self):
+        tested = StringReference()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_StringReference_visible_in_documentation_setter(self):
+        tested = StringReference()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_StringReference_visible_for_traceability_getter(self):
+        tested = StringReference()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_StringReference_visible_for_traceability_setter(self):
+        tested = StringReference()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_StringReference_owned_constraints_getter(self):
+        tested = StringReference()
+        tested.get_owned_constraints()
+        pass
+
+    def test_StringReference_constraints_getter(self):
+        tested = StringReference()
+        tested.get_constraints()
+        pass
+
+    def test_StringReference_constraints_setter(self):
+        tested = StringReference()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_StringReference_owned_property_values_getter(self):
+        tested = StringReference()
+        tested.get_owned_property_values()
+        pass
+
+    def test_StringReference_applied_property_values_getter(self):
+        tested = StringReference()
+        tested.get_applied_property_values()
+        pass
+
+    def test_StringReference_applied_property_values_setter(self):
+        tested = StringReference()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_StringReference_owned_property_value_groups_getter(self):
+        tested = StringReference()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_StringReference_applied_property_value_groups_getter(self):
+        tested = StringReference()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_StringReference_applied_property_value_groups_setter(self):
+        tested = StringReference()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_StringReference_owned_enumeration_property_types_getter(self):
+        tested = StringReference()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_StringReference_owned_diagrams_getter(self):
+        tested = StringReference()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_StringReference_element_of_interest_for_diagrams_getter(self):
+        tested = StringReference()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_StringReference_element_of_interest_for_diagrams_setter(self):
+        tested = StringReference()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_StringReference_contextual_element_for_diagrams_getter(self):
+        tested = StringReference()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_StringReference_contextual_element_for_diagrams_setter(self):
+        tested = StringReference()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_StringReference_representing_diagrams_getter(self):
+        tested = StringReference()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_StringReference__r_e_cs_getter(self):
+        tested = StringReference()
+        tested.get__r_e_cs()
+        pass
+
+    def test_StringReference__r_e_cs_setter(self):
+        tested = StringReference()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_StringReference__r_p_ls_getter(self):
+        tested = StringReference()
+        tested.get__r_p_ls()
+        pass
+
+    def test_StringReference__r_p_ls_setter(self):
+        tested = StringReference()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_StringReference_get_label(self):
+        tested = StringReference()
+        tested.get_label()
+        pass
+
+    def test_StringReference_get_element_type(self):
+        tested = StringReference()
+        tested.get_element_type()
+        pass
+
+    def test_StringReference_get_container(self):
+        tested = StringReference()
+        tested.get_container()
+        pass
+
+    def test_StringReference_get_container_by_type(self):
+        tested = StringReference()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_StringReference_get_contents(self):
+        tested = StringReference()
+        tested.get_contents()
+        pass
+
+    def test_StringReference_get_all_contents(self):
+        tested = StringReference()
+        tested.get_all_contents()
+        pass
+
+    def test_StringReference_get_all_contents_by_type(self):
+        tested = StringReference()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_StringReference_get_available_s_b_queries(self):
+        tested = StringReference()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_StringReference_get_query_result(self):
+        tested = StringReference()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_LiteralNumericValue_abstract_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_abstract()
+        pass
+
+    def test_LiteralNumericValue_abstract_setter(self):
+        tested = LiteralNumericValue()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_LiteralNumericValue_id_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_id()
+        pass
+
+    def test_LiteralNumericValue_id_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_LiteralNumericValue_sid_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_sid()
+        pass
+
+    def test_LiteralNumericValue_sid_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_LiteralNumericValue_name_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_name()
+        pass
+
+    def test_LiteralNumericValue_name_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_LiteralNumericValue_summary_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_summary()
+        pass
+
+    def test_LiteralNumericValue_summary_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_LiteralNumericValue_description_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_description()
+        pass
+
+    def test_LiteralNumericValue_description_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_LiteralNumericValue_status_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_status()
+        pass
+
+    def test_LiteralNumericValue_status_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_LiteralNumericValue_review_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_review()
+        pass
+
+    def test_LiteralNumericValue_review_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_LiteralNumericValue_visible_in_documentation_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_LiteralNumericValue_visible_in_documentation_setter(self):
+        tested = LiteralNumericValue()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_LiteralNumericValue_visible_for_traceability_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_LiteralNumericValue_visible_for_traceability_setter(self):
+        tested = LiteralNumericValue()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_LiteralNumericValue_owned_constraints_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_owned_constraints()
+        pass
+
+    def test_LiteralNumericValue_constraints_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_constraints()
+        pass
+
+    def test_LiteralNumericValue_constraints_setter(self):
+        tested = LiteralNumericValue()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_LiteralNumericValue_owned_property_values_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_owned_property_values()
+        pass
+
+    def test_LiteralNumericValue_applied_property_values_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_applied_property_values()
+        pass
+
+    def test_LiteralNumericValue_applied_property_values_setter(self):
+        tested = LiteralNumericValue()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_LiteralNumericValue_owned_property_value_groups_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_LiteralNumericValue_applied_property_value_groups_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_LiteralNumericValue_applied_property_value_groups_setter(self):
+        tested = LiteralNumericValue()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_LiteralNumericValue_owned_enumeration_property_types_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LiteralNumericValue_owned_diagrams_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_LiteralNumericValue_element_of_interest_for_diagrams_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_LiteralNumericValue_element_of_interest_for_diagrams_setter(self):
+        tested = LiteralNumericValue()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_LiteralNumericValue_contextual_element_for_diagrams_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_LiteralNumericValue_contextual_element_for_diagrams_setter(self):
+        tested = LiteralNumericValue()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_LiteralNumericValue_representing_diagrams_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_LiteralNumericValue__r_e_cs_getter(self):
+        tested = LiteralNumericValue()
+        tested.get__r_e_cs()
+        pass
+
+    def test_LiteralNumericValue__r_e_cs_setter(self):
+        tested = LiteralNumericValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_LiteralNumericValue__r_p_ls_getter(self):
+        tested = LiteralNumericValue()
+        tested.get__r_p_ls()
+        pass
+
+    def test_LiteralNumericValue__r_p_ls_setter(self):
+        tested = LiteralNumericValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_LiteralNumericValue_get_label(self):
+        tested = LiteralNumericValue()
+        tested.get_label()
+        pass
+
+    def test_LiteralNumericValue_get_element_type(self):
+        tested = LiteralNumericValue()
+        tested.get_element_type()
+        pass
+
+    def test_LiteralNumericValue_get_container(self):
+        tested = LiteralNumericValue()
+        tested.get_container()
+        pass
+
+    def test_LiteralNumericValue_get_container_by_type(self):
+        tested = LiteralNumericValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_LiteralNumericValue_get_contents(self):
+        tested = LiteralNumericValue()
+        tested.get_contents()
+        pass
+
+    def test_LiteralNumericValue_get_all_contents(self):
+        tested = LiteralNumericValue()
+        tested.get_all_contents()
+        pass
+
+    def test_LiteralNumericValue_get_all_contents_by_type(self):
+        tested = LiteralNumericValue()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_LiteralNumericValue_get_available_s_b_queries(self):
+        tested = LiteralNumericValue()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_LiteralNumericValue_get_query_result(self):
+        tested = LiteralNumericValue()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_NumericReference_abstract_getter(self):
+        tested = NumericReference()
+        tested.get_abstract()
+        pass
+
+    def test_NumericReference_abstract_setter(self):
+        tested = NumericReference()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_NumericReference_id_getter(self):
+        tested = NumericReference()
+        tested.get_id()
+        pass
+
+    def test_NumericReference_id_setter(self):
+        tested = NumericReference()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_NumericReference_sid_getter(self):
+        tested = NumericReference()
+        tested.get_sid()
+        pass
+
+    def test_NumericReference_sid_setter(self):
+        tested = NumericReference()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_NumericReference_name_getter(self):
+        tested = NumericReference()
+        tested.get_name()
+        pass
+
+    def test_NumericReference_name_setter(self):
+        tested = NumericReference()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_NumericReference_summary_getter(self):
+        tested = NumericReference()
+        tested.get_summary()
+        pass
+
+    def test_NumericReference_summary_setter(self):
+        tested = NumericReference()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_NumericReference_description_getter(self):
+        tested = NumericReference()
+        tested.get_description()
+        pass
+
+    def test_NumericReference_description_setter(self):
+        tested = NumericReference()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_NumericReference_status_getter(self):
+        tested = NumericReference()
+        tested.get_status()
+        pass
+
+    def test_NumericReference_status_setter(self):
+        tested = NumericReference()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_NumericReference_review_getter(self):
+        tested = NumericReference()
+        tested.get_review()
+        pass
+
+    def test_NumericReference_review_setter(self):
+        tested = NumericReference()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_NumericReference_visible_in_documentation_getter(self):
+        tested = NumericReference()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_NumericReference_visible_in_documentation_setter(self):
+        tested = NumericReference()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_NumericReference_visible_for_traceability_getter(self):
+        tested = NumericReference()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_NumericReference_visible_for_traceability_setter(self):
+        tested = NumericReference()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_NumericReference_owned_constraints_getter(self):
+        tested = NumericReference()
+        tested.get_owned_constraints()
+        pass
+
+    def test_NumericReference_constraints_getter(self):
+        tested = NumericReference()
+        tested.get_constraints()
+        pass
+
+    def test_NumericReference_constraints_setter(self):
+        tested = NumericReference()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_NumericReference_owned_property_values_getter(self):
+        tested = NumericReference()
+        tested.get_owned_property_values()
+        pass
+
+    def test_NumericReference_applied_property_values_getter(self):
+        tested = NumericReference()
+        tested.get_applied_property_values()
+        pass
+
+    def test_NumericReference_applied_property_values_setter(self):
+        tested = NumericReference()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_NumericReference_owned_property_value_groups_getter(self):
+        tested = NumericReference()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_NumericReference_applied_property_value_groups_getter(self):
+        tested = NumericReference()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_NumericReference_applied_property_value_groups_setter(self):
+        tested = NumericReference()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_NumericReference_owned_enumeration_property_types_getter(self):
+        tested = NumericReference()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_NumericReference_owned_diagrams_getter(self):
+        tested = NumericReference()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_NumericReference_element_of_interest_for_diagrams_getter(self):
+        tested = NumericReference()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_NumericReference_element_of_interest_for_diagrams_setter(self):
+        tested = NumericReference()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_NumericReference_contextual_element_for_diagrams_getter(self):
+        tested = NumericReference()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_NumericReference_contextual_element_for_diagrams_setter(self):
+        tested = NumericReference()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_NumericReference_representing_diagrams_getter(self):
+        tested = NumericReference()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_NumericReference__r_e_cs_getter(self):
+        tested = NumericReference()
+        tested.get__r_e_cs()
+        pass
+
+    def test_NumericReference__r_e_cs_setter(self):
+        tested = NumericReference()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_NumericReference__r_p_ls_getter(self):
+        tested = NumericReference()
+        tested.get__r_p_ls()
+        pass
+
+    def test_NumericReference__r_p_ls_setter(self):
+        tested = NumericReference()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_NumericReference_get_label(self):
+        tested = NumericReference()
+        tested.get_label()
+        pass
+
+    def test_NumericReference_get_element_type(self):
+        tested = NumericReference()
+        tested.get_element_type()
+        pass
+
+    def test_NumericReference_get_container(self):
+        tested = NumericReference()
+        tested.get_container()
+        pass
+
+    def test_NumericReference_get_container_by_type(self):
+        tested = NumericReference()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_NumericReference_get_contents(self):
+        tested = NumericReference()
+        tested.get_contents()
+        pass
+
+    def test_NumericReference_get_all_contents(self):
+        tested = NumericReference()
+        tested.get_all_contents()
+        pass
+
+    def test_NumericReference_get_all_contents_by_type(self):
+        tested = NumericReference()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_NumericReference_get_available_s_b_queries(self):
+        tested = NumericReference()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_NumericReference_get_query_result(self):
+        tested = NumericReference()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_ComplexValue_abstract_getter(self):
+        tested = ComplexValue()
+        tested.get_abstract()
+        pass
+
+    def test_ComplexValue_abstract_setter(self):
+        tested = ComplexValue()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_ComplexValue_id_getter(self):
+        tested = ComplexValue()
+        tested.get_id()
+        pass
+
+    def test_ComplexValue_id_setter(self):
+        tested = ComplexValue()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_ComplexValue_sid_getter(self):
+        tested = ComplexValue()
+        tested.get_sid()
+        pass
+
+    def test_ComplexValue_sid_setter(self):
+        tested = ComplexValue()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_ComplexValue_name_getter(self):
+        tested = ComplexValue()
+        tested.get_name()
+        pass
+
+    def test_ComplexValue_name_setter(self):
+        tested = ComplexValue()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_ComplexValue_summary_getter(self):
+        tested = ComplexValue()
+        tested.get_summary()
+        pass
+
+    def test_ComplexValue_summary_setter(self):
+        tested = ComplexValue()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_ComplexValue_description_getter(self):
+        tested = ComplexValue()
+        tested.get_description()
+        pass
+
+    def test_ComplexValue_description_setter(self):
+        tested = ComplexValue()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_ComplexValue_status_getter(self):
+        tested = ComplexValue()
+        tested.get_status()
+        pass
+
+    def test_ComplexValue_status_setter(self):
+        tested = ComplexValue()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_ComplexValue_review_getter(self):
+        tested = ComplexValue()
+        tested.get_review()
+        pass
+
+    def test_ComplexValue_review_setter(self):
+        tested = ComplexValue()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_ComplexValue_visible_in_documentation_getter(self):
+        tested = ComplexValue()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_ComplexValue_visible_in_documentation_setter(self):
+        tested = ComplexValue()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_ComplexValue_visible_for_traceability_getter(self):
+        tested = ComplexValue()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_ComplexValue_visible_for_traceability_setter(self):
+        tested = ComplexValue()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_ComplexValue_owned_constraints_getter(self):
+        tested = ComplexValue()
+        tested.get_owned_constraints()
+        pass
+
+    def test_ComplexValue_constraints_getter(self):
+        tested = ComplexValue()
+        tested.get_constraints()
+        pass
+
+    def test_ComplexValue_constraints_setter(self):
+        tested = ComplexValue()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_ComplexValue_owned_property_values_getter(self):
+        tested = ComplexValue()
+        tested.get_owned_property_values()
+        pass
+
+    def test_ComplexValue_applied_property_values_getter(self):
+        tested = ComplexValue()
+        tested.get_applied_property_values()
+        pass
+
+    def test_ComplexValue_applied_property_values_setter(self):
+        tested = ComplexValue()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_ComplexValue_owned_property_value_groups_getter(self):
+        tested = ComplexValue()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_ComplexValue_applied_property_value_groups_getter(self):
+        tested = ComplexValue()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_ComplexValue_applied_property_value_groups_setter(self):
+        tested = ComplexValue()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_ComplexValue_owned_enumeration_property_types_getter(self):
+        tested = ComplexValue()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ComplexValue_owned_diagrams_getter(self):
+        tested = ComplexValue()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_ComplexValue_element_of_interest_for_diagrams_getter(self):
+        tested = ComplexValue()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_ComplexValue_element_of_interest_for_diagrams_setter(self):
+        tested = ComplexValue()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_ComplexValue_contextual_element_for_diagrams_getter(self):
+        tested = ComplexValue()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_ComplexValue_contextual_element_for_diagrams_setter(self):
+        tested = ComplexValue()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_ComplexValue_representing_diagrams_getter(self):
+        tested = ComplexValue()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_ComplexValue__r_e_cs_getter(self):
+        tested = ComplexValue()
+        tested.get__r_e_cs()
+        pass
+
+    def test_ComplexValue__r_e_cs_setter(self):
+        tested = ComplexValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_ComplexValue__r_p_ls_getter(self):
+        tested = ComplexValue()
+        tested.get__r_p_ls()
+        pass
+
+    def test_ComplexValue__r_p_ls_setter(self):
+        tested = ComplexValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_ComplexValue_get_label(self):
+        tested = ComplexValue()
+        tested.get_label()
+        pass
+
+    def test_ComplexValue_get_element_type(self):
+        tested = ComplexValue()
+        tested.get_element_type()
+        pass
+
+    def test_ComplexValue_get_container(self):
+        tested = ComplexValue()
+        tested.get_container()
+        pass
+
+    def test_ComplexValue_get_container_by_type(self):
+        tested = ComplexValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_ComplexValue_get_contents(self):
+        tested = ComplexValue()
+        tested.get_contents()
+        pass
+
+    def test_ComplexValue_get_all_contents(self):
+        tested = ComplexValue()
+        tested.get_all_contents()
+        pass
+
+    def test_ComplexValue_get_all_contents_by_type(self):
+        tested = ComplexValue()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_ComplexValue_get_available_s_b_queries(self):
+        tested = ComplexValue()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_ComplexValue_get_query_result(self):
+        tested = ComplexValue()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_ComplexValueReference_abstract_getter(self):
+        tested = ComplexValueReference()
+        tested.get_abstract()
+        pass
+
+    def test_ComplexValueReference_abstract_setter(self):
+        tested = ComplexValueReference()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_ComplexValueReference_id_getter(self):
+        tested = ComplexValueReference()
+        tested.get_id()
+        pass
+
+    def test_ComplexValueReference_id_setter(self):
+        tested = ComplexValueReference()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_ComplexValueReference_sid_getter(self):
+        tested = ComplexValueReference()
+        tested.get_sid()
+        pass
+
+    def test_ComplexValueReference_sid_setter(self):
+        tested = ComplexValueReference()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_ComplexValueReference_name_getter(self):
+        tested = ComplexValueReference()
+        tested.get_name()
+        pass
+
+    def test_ComplexValueReference_name_setter(self):
+        tested = ComplexValueReference()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_ComplexValueReference_summary_getter(self):
+        tested = ComplexValueReference()
+        tested.get_summary()
+        pass
+
+    def test_ComplexValueReference_summary_setter(self):
+        tested = ComplexValueReference()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_ComplexValueReference_description_getter(self):
+        tested = ComplexValueReference()
+        tested.get_description()
+        pass
+
+    def test_ComplexValueReference_description_setter(self):
+        tested = ComplexValueReference()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_ComplexValueReference_status_getter(self):
+        tested = ComplexValueReference()
+        tested.get_status()
+        pass
+
+    def test_ComplexValueReference_status_setter(self):
+        tested = ComplexValueReference()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_ComplexValueReference_review_getter(self):
+        tested = ComplexValueReference()
+        tested.get_review()
+        pass
+
+    def test_ComplexValueReference_review_setter(self):
+        tested = ComplexValueReference()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_ComplexValueReference_visible_in_documentation_getter(self):
+        tested = ComplexValueReference()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_ComplexValueReference_visible_in_documentation_setter(self):
+        tested = ComplexValueReference()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_ComplexValueReference_visible_for_traceability_getter(self):
+        tested = ComplexValueReference()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_ComplexValueReference_visible_for_traceability_setter(self):
+        tested = ComplexValueReference()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_ComplexValueReference_owned_constraints_getter(self):
+        tested = ComplexValueReference()
+        tested.get_owned_constraints()
+        pass
+
+    def test_ComplexValueReference_constraints_getter(self):
+        tested = ComplexValueReference()
+        tested.get_constraints()
+        pass
+
+    def test_ComplexValueReference_constraints_setter(self):
+        tested = ComplexValueReference()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_ComplexValueReference_owned_property_values_getter(self):
+        tested = ComplexValueReference()
+        tested.get_owned_property_values()
+        pass
+
+    def test_ComplexValueReference_applied_property_values_getter(self):
+        tested = ComplexValueReference()
+        tested.get_applied_property_values()
+        pass
+
+    def test_ComplexValueReference_applied_property_values_setter(self):
+        tested = ComplexValueReference()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_ComplexValueReference_owned_property_value_groups_getter(self):
+        tested = ComplexValueReference()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_ComplexValueReference_applied_property_value_groups_getter(self):
+        tested = ComplexValueReference()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_ComplexValueReference_applied_property_value_groups_setter(self):
+        tested = ComplexValueReference()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_ComplexValueReference_owned_enumeration_property_types_getter(self):
+        tested = ComplexValueReference()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ComplexValueReference_owned_diagrams_getter(self):
+        tested = ComplexValueReference()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_ComplexValueReference_element_of_interest_for_diagrams_getter(self):
+        tested = ComplexValueReference()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_ComplexValueReference_element_of_interest_for_diagrams_setter(self):
+        tested = ComplexValueReference()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_ComplexValueReference_contextual_element_for_diagrams_getter(self):
+        tested = ComplexValueReference()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_ComplexValueReference_contextual_element_for_diagrams_setter(self):
+        tested = ComplexValueReference()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_ComplexValueReference_representing_diagrams_getter(self):
+        tested = ComplexValueReference()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_ComplexValueReference__r_e_cs_getter(self):
+        tested = ComplexValueReference()
+        tested.get__r_e_cs()
+        pass
+
+    def test_ComplexValueReference__r_e_cs_setter(self):
+        tested = ComplexValueReference()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_ComplexValueReference__r_p_ls_getter(self):
+        tested = ComplexValueReference()
+        tested.get__r_p_ls()
+        pass
+
+    def test_ComplexValueReference__r_p_ls_setter(self):
+        tested = ComplexValueReference()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_ComplexValueReference_get_label(self):
+        tested = ComplexValueReference()
+        tested.get_label()
+        pass
+
+    def test_ComplexValueReference_get_element_type(self):
+        tested = ComplexValueReference()
+        tested.get_element_type()
+        pass
+
+    def test_ComplexValueReference_get_container(self):
+        tested = ComplexValueReference()
+        tested.get_container()
+        pass
+
+    def test_ComplexValueReference_get_container_by_type(self):
+        tested = ComplexValueReference()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_ComplexValueReference_get_contents(self):
+        tested = ComplexValueReference()
+        tested.get_contents()
+        pass
+
+    def test_ComplexValueReference_get_all_contents(self):
+        tested = ComplexValueReference()
+        tested.get_all_contents()
+        pass
+
+    def test_ComplexValueReference_get_all_contents_by_type(self):
+        tested = ComplexValueReference()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_ComplexValueReference_get_available_s_b_queries(self):
+        tested = ComplexValueReference()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_ComplexValueReference_get_query_result(self):
+        tested = ComplexValueReference()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_BinaryExpression_abstract_getter(self):
+        tested = BinaryExpression()
+        tested.get_abstract()
+        pass
+
+    def test_BinaryExpression_abstract_setter(self):
+        tested = BinaryExpression()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_BinaryExpression_id_getter(self):
+        tested = BinaryExpression()
+        tested.get_id()
+        pass
+
+    def test_BinaryExpression_id_setter(self):
+        tested = BinaryExpression()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_BinaryExpression_sid_getter(self):
+        tested = BinaryExpression()
+        tested.get_sid()
+        pass
+
+    def test_BinaryExpression_sid_setter(self):
+        tested = BinaryExpression()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_BinaryExpression_name_getter(self):
+        tested = BinaryExpression()
+        tested.get_name()
+        pass
+
+    def test_BinaryExpression_name_setter(self):
+        tested = BinaryExpression()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_BinaryExpression_summary_getter(self):
+        tested = BinaryExpression()
+        tested.get_summary()
+        pass
+
+    def test_BinaryExpression_summary_setter(self):
+        tested = BinaryExpression()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_BinaryExpression_description_getter(self):
+        tested = BinaryExpression()
+        tested.get_description()
+        pass
+
+    def test_BinaryExpression_description_setter(self):
+        tested = BinaryExpression()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_BinaryExpression_status_getter(self):
+        tested = BinaryExpression()
+        tested.get_status()
+        pass
+
+    def test_BinaryExpression_status_setter(self):
+        tested = BinaryExpression()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_BinaryExpression_review_getter(self):
+        tested = BinaryExpression()
+        tested.get_review()
+        pass
+
+    def test_BinaryExpression_review_setter(self):
+        tested = BinaryExpression()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_BinaryExpression_visible_in_documentation_getter(self):
+        tested = BinaryExpression()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_BinaryExpression_visible_in_documentation_setter(self):
+        tested = BinaryExpression()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_BinaryExpression_visible_for_traceability_getter(self):
+        tested = BinaryExpression()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_BinaryExpression_visible_for_traceability_setter(self):
+        tested = BinaryExpression()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_BinaryExpression_owned_constraints_getter(self):
+        tested = BinaryExpression()
+        tested.get_owned_constraints()
+        pass
+
+    def test_BinaryExpression_constraints_getter(self):
+        tested = BinaryExpression()
+        tested.get_constraints()
+        pass
+
+    def test_BinaryExpression_constraints_setter(self):
+        tested = BinaryExpression()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_BinaryExpression_owned_property_values_getter(self):
+        tested = BinaryExpression()
+        tested.get_owned_property_values()
+        pass
+
+    def test_BinaryExpression_applied_property_values_getter(self):
+        tested = BinaryExpression()
+        tested.get_applied_property_values()
+        pass
+
+    def test_BinaryExpression_applied_property_values_setter(self):
+        tested = BinaryExpression()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_BinaryExpression_owned_property_value_groups_getter(self):
+        tested = BinaryExpression()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_BinaryExpression_applied_property_value_groups_getter(self):
+        tested = BinaryExpression()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_BinaryExpression_applied_property_value_groups_setter(self):
+        tested = BinaryExpression()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_BinaryExpression_owned_enumeration_property_types_getter(self):
+        tested = BinaryExpression()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_BinaryExpression_owned_diagrams_getter(self):
+        tested = BinaryExpression()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_BinaryExpression_element_of_interest_for_diagrams_getter(self):
+        tested = BinaryExpression()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_BinaryExpression_element_of_interest_for_diagrams_setter(self):
+        tested = BinaryExpression()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_BinaryExpression_contextual_element_for_diagrams_getter(self):
+        tested = BinaryExpression()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_BinaryExpression_contextual_element_for_diagrams_setter(self):
+        tested = BinaryExpression()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_BinaryExpression_representing_diagrams_getter(self):
+        tested = BinaryExpression()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_BinaryExpression__r_e_cs_getter(self):
+        tested = BinaryExpression()
+        tested.get__r_e_cs()
+        pass
+
+    def test_BinaryExpression__r_e_cs_setter(self):
+        tested = BinaryExpression()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_BinaryExpression__r_p_ls_getter(self):
+        tested = BinaryExpression()
+        tested.get__r_p_ls()
+        pass
+
+    def test_BinaryExpression__r_p_ls_setter(self):
+        tested = BinaryExpression()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_BinaryExpression_get_label(self):
+        tested = BinaryExpression()
+        tested.get_label()
+        pass
+
+    def test_BinaryExpression_get_element_type(self):
+        tested = BinaryExpression()
+        tested.get_element_type()
+        pass
+
+    def test_BinaryExpression_get_container(self):
+        tested = BinaryExpression()
+        tested.get_container()
+        pass
+
+    def test_BinaryExpression_get_container_by_type(self):
+        tested = BinaryExpression()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_BinaryExpression_get_contents(self):
+        tested = BinaryExpression()
+        tested.get_contents()
+        pass
+
+    def test_BinaryExpression_get_all_contents(self):
+        tested = BinaryExpression()
+        tested.get_all_contents()
+        pass
+
+    def test_BinaryExpression_get_all_contents_by_type(self):
+        tested = BinaryExpression()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_BinaryExpression_get_available_s_b_queries(self):
+        tested = BinaryExpression()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_BinaryExpression_get_query_result(self):
+        tested = BinaryExpression()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_UnaryExpression_abstract_getter(self):
+        tested = UnaryExpression()
+        tested.get_abstract()
+        pass
+
+    def test_UnaryExpression_abstract_setter(self):
+        tested = UnaryExpression()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_UnaryExpression_id_getter(self):
+        tested = UnaryExpression()
+        tested.get_id()
+        pass
+
+    def test_UnaryExpression_id_setter(self):
+        tested = UnaryExpression()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_UnaryExpression_sid_getter(self):
+        tested = UnaryExpression()
+        tested.get_sid()
+        pass
+
+    def test_UnaryExpression_sid_setter(self):
+        tested = UnaryExpression()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_UnaryExpression_name_getter(self):
+        tested = UnaryExpression()
+        tested.get_name()
+        pass
+
+    def test_UnaryExpression_name_setter(self):
+        tested = UnaryExpression()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_UnaryExpression_summary_getter(self):
+        tested = UnaryExpression()
+        tested.get_summary()
+        pass
+
+    def test_UnaryExpression_summary_setter(self):
+        tested = UnaryExpression()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_UnaryExpression_description_getter(self):
+        tested = UnaryExpression()
+        tested.get_description()
+        pass
+
+    def test_UnaryExpression_description_setter(self):
+        tested = UnaryExpression()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_UnaryExpression_status_getter(self):
+        tested = UnaryExpression()
+        tested.get_status()
+        pass
+
+    def test_UnaryExpression_status_setter(self):
+        tested = UnaryExpression()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_UnaryExpression_review_getter(self):
+        tested = UnaryExpression()
+        tested.get_review()
+        pass
+
+    def test_UnaryExpression_review_setter(self):
+        tested = UnaryExpression()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_UnaryExpression_visible_in_documentation_getter(self):
+        tested = UnaryExpression()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_UnaryExpression_visible_in_documentation_setter(self):
+        tested = UnaryExpression()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_UnaryExpression_visible_for_traceability_getter(self):
+        tested = UnaryExpression()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_UnaryExpression_visible_for_traceability_setter(self):
+        tested = UnaryExpression()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_UnaryExpression_owned_constraints_getter(self):
+        tested = UnaryExpression()
+        tested.get_owned_constraints()
+        pass
+
+    def test_UnaryExpression_constraints_getter(self):
+        tested = UnaryExpression()
+        tested.get_constraints()
+        pass
+
+    def test_UnaryExpression_constraints_setter(self):
+        tested = UnaryExpression()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_UnaryExpression_owned_property_values_getter(self):
+        tested = UnaryExpression()
+        tested.get_owned_property_values()
+        pass
+
+    def test_UnaryExpression_applied_property_values_getter(self):
+        tested = UnaryExpression()
+        tested.get_applied_property_values()
+        pass
+
+    def test_UnaryExpression_applied_property_values_setter(self):
+        tested = UnaryExpression()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_UnaryExpression_owned_property_value_groups_getter(self):
+        tested = UnaryExpression()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_UnaryExpression_applied_property_value_groups_getter(self):
+        tested = UnaryExpression()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_UnaryExpression_applied_property_value_groups_setter(self):
+        tested = UnaryExpression()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_UnaryExpression_owned_enumeration_property_types_getter(self):
+        tested = UnaryExpression()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_UnaryExpression_owned_diagrams_getter(self):
+        tested = UnaryExpression()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_UnaryExpression_element_of_interest_for_diagrams_getter(self):
+        tested = UnaryExpression()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_UnaryExpression_element_of_interest_for_diagrams_setter(self):
+        tested = UnaryExpression()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_UnaryExpression_contextual_element_for_diagrams_getter(self):
+        tested = UnaryExpression()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_UnaryExpression_contextual_element_for_diagrams_setter(self):
+        tested = UnaryExpression()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_UnaryExpression_representing_diagrams_getter(self):
+        tested = UnaryExpression()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_UnaryExpression__r_e_cs_getter(self):
+        tested = UnaryExpression()
+        tested.get__r_e_cs()
+        pass
+
+    def test_UnaryExpression__r_e_cs_setter(self):
+        tested = UnaryExpression()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_UnaryExpression__r_p_ls_getter(self):
+        tested = UnaryExpression()
+        tested.get__r_p_ls()
+        pass
+
+    def test_UnaryExpression__r_p_ls_setter(self):
+        tested = UnaryExpression()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_UnaryExpression_get_label(self):
+        tested = UnaryExpression()
+        tested.get_label()
+        pass
+
+    def test_UnaryExpression_get_element_type(self):
+        tested = UnaryExpression()
+        tested.get_element_type()
+        pass
+
+    def test_UnaryExpression_get_container(self):
+        tested = UnaryExpression()
+        tested.get_container()
+        pass
+
+    def test_UnaryExpression_get_container_by_type(self):
+        tested = UnaryExpression()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_UnaryExpression_get_contents(self):
+        tested = UnaryExpression()
+        tested.get_contents()
+        pass
+
+    def test_UnaryExpression_get_all_contents(self):
+        tested = UnaryExpression()
+        tested.get_all_contents()
+        pass
+
+    def test_UnaryExpression_get_all_contents_by_type(self):
+        tested = UnaryExpression()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_UnaryExpression_get_available_s_b_queries(self):
+        tested = UnaryExpression()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_UnaryExpression_get_query_result(self):
+        tested = UnaryExpression()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_CollectionValueReference_abstract_getter(self):
+        tested = CollectionValueReference()
+        tested.get_abstract()
+        pass
+
+    def test_CollectionValueReference_abstract_setter(self):
+        tested = CollectionValueReference()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_CollectionValueReference_id_getter(self):
+        tested = CollectionValueReference()
+        tested.get_id()
+        pass
+
+    def test_CollectionValueReference_id_setter(self):
+        tested = CollectionValueReference()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_CollectionValueReference_sid_getter(self):
+        tested = CollectionValueReference()
+        tested.get_sid()
+        pass
+
+    def test_CollectionValueReference_sid_setter(self):
+        tested = CollectionValueReference()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_CollectionValueReference_name_getter(self):
+        tested = CollectionValueReference()
+        tested.get_name()
+        pass
+
+    def test_CollectionValueReference_name_setter(self):
+        tested = CollectionValueReference()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_CollectionValueReference_summary_getter(self):
+        tested = CollectionValueReference()
+        tested.get_summary()
+        pass
+
+    def test_CollectionValueReference_summary_setter(self):
+        tested = CollectionValueReference()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_CollectionValueReference_description_getter(self):
+        tested = CollectionValueReference()
+        tested.get_description()
+        pass
+
+    def test_CollectionValueReference_description_setter(self):
+        tested = CollectionValueReference()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_CollectionValueReference_status_getter(self):
+        tested = CollectionValueReference()
+        tested.get_status()
+        pass
+
+    def test_CollectionValueReference_status_setter(self):
+        tested = CollectionValueReference()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_CollectionValueReference_review_getter(self):
+        tested = CollectionValueReference()
+        tested.get_review()
+        pass
+
+    def test_CollectionValueReference_review_setter(self):
+        tested = CollectionValueReference()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_CollectionValueReference_visible_in_documentation_getter(self):
+        tested = CollectionValueReference()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_CollectionValueReference_visible_in_documentation_setter(self):
+        tested = CollectionValueReference()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_CollectionValueReference_visible_for_traceability_getter(self):
+        tested = CollectionValueReference()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_CollectionValueReference_visible_for_traceability_setter(self):
+        tested = CollectionValueReference()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_CollectionValueReference_owned_constraints_getter(self):
+        tested = CollectionValueReference()
+        tested.get_owned_constraints()
+        pass
+
+    def test_CollectionValueReference_constraints_getter(self):
+        tested = CollectionValueReference()
+        tested.get_constraints()
+        pass
+
+    def test_CollectionValueReference_constraints_setter(self):
+        tested = CollectionValueReference()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_CollectionValueReference_owned_property_values_getter(self):
+        tested = CollectionValueReference()
+        tested.get_owned_property_values()
+        pass
+
+    def test_CollectionValueReference_applied_property_values_getter(self):
+        tested = CollectionValueReference()
+        tested.get_applied_property_values()
+        pass
+
+    def test_CollectionValueReference_applied_property_values_setter(self):
+        tested = CollectionValueReference()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_CollectionValueReference_owned_property_value_groups_getter(self):
+        tested = CollectionValueReference()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_CollectionValueReference_applied_property_value_groups_getter(self):
+        tested = CollectionValueReference()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_CollectionValueReference_applied_property_value_groups_setter(self):
+        tested = CollectionValueReference()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_CollectionValueReference_owned_enumeration_property_types_getter(self):
+        tested = CollectionValueReference()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_CollectionValueReference_owned_diagrams_getter(self):
+        tested = CollectionValueReference()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_CollectionValueReference_element_of_interest_for_diagrams_getter(self):
+        tested = CollectionValueReference()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_CollectionValueReference_element_of_interest_for_diagrams_setter(self):
+        tested = CollectionValueReference()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_CollectionValueReference_contextual_element_for_diagrams_getter(self):
+        tested = CollectionValueReference()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_CollectionValueReference_contextual_element_for_diagrams_setter(self):
+        tested = CollectionValueReference()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_CollectionValueReference_representing_diagrams_getter(self):
+        tested = CollectionValueReference()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_CollectionValueReference__r_e_cs_getter(self):
+        tested = CollectionValueReference()
+        tested.get__r_e_cs()
+        pass
+
+    def test_CollectionValueReference__r_e_cs_setter(self):
+        tested = CollectionValueReference()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_CollectionValueReference__r_p_ls_getter(self):
+        tested = CollectionValueReference()
+        tested.get__r_p_ls()
+        pass
+
+    def test_CollectionValueReference__r_p_ls_setter(self):
+        tested = CollectionValueReference()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_CollectionValueReference_get_label(self):
+        tested = CollectionValueReference()
+        tested.get_label()
+        pass
+
+    def test_CollectionValueReference_get_element_type(self):
+        tested = CollectionValueReference()
+        tested.get_element_type()
+        pass
+
+    def test_CollectionValueReference_get_container(self):
+        tested = CollectionValueReference()
+        tested.get_container()
+        pass
+
+    def test_CollectionValueReference_get_container_by_type(self):
+        tested = CollectionValueReference()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_CollectionValueReference_get_contents(self):
+        tested = CollectionValueReference()
+        tested.get_contents()
+        pass
+
+    def test_CollectionValueReference_get_all_contents(self):
+        tested = CollectionValueReference()
+        tested.get_all_contents()
+        pass
+
+    def test_CollectionValueReference_get_all_contents_by_type(self):
+        tested = CollectionValueReference()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_CollectionValueReference_get_available_s_b_queries(self):
+        tested = CollectionValueReference()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_CollectionValueReference_get_query_result(self):
+        tested = CollectionValueReference()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_CollectionValue_abstract_getter(self):
+        tested = CollectionValue()
+        tested.get_abstract()
+        pass
+
+    def test_CollectionValue_abstract_setter(self):
+        tested = CollectionValue()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_CollectionValue_id_getter(self):
+        tested = CollectionValue()
+        tested.get_id()
+        pass
+
+    def test_CollectionValue_id_setter(self):
+        tested = CollectionValue()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_CollectionValue_sid_getter(self):
+        tested = CollectionValue()
+        tested.get_sid()
+        pass
+
+    def test_CollectionValue_sid_setter(self):
+        tested = CollectionValue()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_CollectionValue_name_getter(self):
+        tested = CollectionValue()
+        tested.get_name()
+        pass
+
+    def test_CollectionValue_name_setter(self):
+        tested = CollectionValue()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_CollectionValue_summary_getter(self):
+        tested = CollectionValue()
+        tested.get_summary()
+        pass
+
+    def test_CollectionValue_summary_setter(self):
+        tested = CollectionValue()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_CollectionValue_description_getter(self):
+        tested = CollectionValue()
+        tested.get_description()
+        pass
+
+    def test_CollectionValue_description_setter(self):
+        tested = CollectionValue()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_CollectionValue_status_getter(self):
+        tested = CollectionValue()
+        tested.get_status()
+        pass
+
+    def test_CollectionValue_status_setter(self):
+        tested = CollectionValue()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_CollectionValue_review_getter(self):
+        tested = CollectionValue()
+        tested.get_review()
+        pass
+
+    def test_CollectionValue_review_setter(self):
+        tested = CollectionValue()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_CollectionValue_visible_in_documentation_getter(self):
+        tested = CollectionValue()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_CollectionValue_visible_in_documentation_setter(self):
+        tested = CollectionValue()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_CollectionValue_visible_for_traceability_getter(self):
+        tested = CollectionValue()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_CollectionValue_visible_for_traceability_setter(self):
+        tested = CollectionValue()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_CollectionValue_owned_constraints_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_constraints()
+        pass
+
+    def test_CollectionValue_constraints_getter(self):
+        tested = CollectionValue()
+        tested.get_constraints()
+        pass
+
+    def test_CollectionValue_constraints_setter(self):
+        tested = CollectionValue()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_CollectionValue_owned_property_values_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_property_values()
+        pass
+
+    def test_CollectionValue_applied_property_values_getter(self):
+        tested = CollectionValue()
+        tested.get_applied_property_values()
+        pass
+
+    def test_CollectionValue_applied_property_values_setter(self):
+        tested = CollectionValue()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_CollectionValue_owned_property_value_groups_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_CollectionValue_applied_property_value_groups_getter(self):
+        tested = CollectionValue()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_CollectionValue_applied_property_value_groups_setter(self):
+        tested = CollectionValue()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_CollectionValue_owned_enumeration_property_types_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_CollectionValue_owned_diagrams_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_CollectionValue_element_of_interest_for_diagrams_getter(self):
+        tested = CollectionValue()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_CollectionValue_element_of_interest_for_diagrams_setter(self):
+        tested = CollectionValue()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_CollectionValue_contextual_element_for_diagrams_getter(self):
+        tested = CollectionValue()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_CollectionValue_contextual_element_for_diagrams_setter(self):
+        tested = CollectionValue()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_CollectionValue_representing_diagrams_getter(self):
+        tested = CollectionValue()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_CollectionValue__r_e_cs_getter(self):
+        tested = CollectionValue()
+        tested.get__r_e_cs()
+        pass
+
+    def test_CollectionValue__r_e_cs_setter(self):
+        tested = CollectionValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_CollectionValue__r_p_ls_getter(self):
+        tested = CollectionValue()
+        tested.get__r_p_ls()
+        pass
+
+    def test_CollectionValue__r_p_ls_setter(self):
+        tested = CollectionValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_CollectionValue_get_label(self):
+        tested = CollectionValue()
+        tested.get_label()
+        pass
+
+    def test_CollectionValue_get_element_type(self):
+        tested = CollectionValue()
+        tested.get_element_type()
+        pass
+
+    def test_CollectionValue_get_container(self):
+        tested = CollectionValue()
+        tested.get_container()
+        pass
+
+    def test_CollectionValue_get_container_by_type(self):
+        tested = CollectionValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_CollectionValue_get_contents(self):
+        tested = CollectionValue()
+        tested.get_contents()
+        pass
+
+    def test_CollectionValue_get_all_contents(self):
+        tested = CollectionValue()
+        tested.get_all_contents()
+        pass
+
+    def test_CollectionValue_get_all_contents_by_type(self):
+        tested = CollectionValue()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_CollectionValue_get_available_s_b_queries(self):
+        tested = CollectionValue()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_CollectionValue_get_query_result(self):
+        tested = CollectionValue()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
     def test_DataPkg_id_getter(self):
         tested = DataPkg()
         tested.get_id()
@@ -28379,6 +31824,293 @@ class capella_tests(unittest.TestCase):
         tested = Enumeration()
         value = PhysicalQuantity()
         tested.set_domain_type(value)
+        pass
+
+    def test_EnumerationLiteral_abstract_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_abstract()
+        pass
+
+    def test_EnumerationLiteral_abstract_setter(self):
+        tested = EnumerationLiteral()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_EnumerationLiteral_id_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_id()
+        pass
+
+    def test_EnumerationLiteral_id_setter(self):
+        tested = EnumerationLiteral()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_EnumerationLiteral_sid_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_sid()
+        pass
+
+    def test_EnumerationLiteral_sid_setter(self):
+        tested = EnumerationLiteral()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_EnumerationLiteral_name_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_name()
+        pass
+
+    def test_EnumerationLiteral_name_setter(self):
+        tested = EnumerationLiteral()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_EnumerationLiteral_summary_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_summary()
+        pass
+
+    def test_EnumerationLiteral_summary_setter(self):
+        tested = EnumerationLiteral()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_EnumerationLiteral_description_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_description()
+        pass
+
+    def test_EnumerationLiteral_description_setter(self):
+        tested = EnumerationLiteral()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_EnumerationLiteral_status_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_status()
+        pass
+
+    def test_EnumerationLiteral_status_setter(self):
+        tested = EnumerationLiteral()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_EnumerationLiteral_review_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_review()
+        pass
+
+    def test_EnumerationLiteral_review_setter(self):
+        tested = EnumerationLiteral()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_EnumerationLiteral_visible_in_documentation_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_EnumerationLiteral_visible_in_documentation_setter(self):
+        tested = EnumerationLiteral()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_EnumerationLiteral_visible_for_traceability_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_EnumerationLiteral_visible_for_traceability_setter(self):
+        tested = EnumerationLiteral()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_EnumerationLiteral_owned_constraints_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_owned_constraints()
+        pass
+
+    def test_EnumerationLiteral_constraints_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_constraints()
+        pass
+
+    def test_EnumerationLiteral_constraints_setter(self):
+        tested = EnumerationLiteral()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_EnumerationLiteral_owned_property_values_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_owned_property_values()
+        pass
+
+    def test_EnumerationLiteral_applied_property_values_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_applied_property_values()
+        pass
+
+    def test_EnumerationLiteral_applied_property_values_setter(self):
+        tested = EnumerationLiteral()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_EnumerationLiteral_owned_property_value_groups_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_EnumerationLiteral_applied_property_value_groups_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_EnumerationLiteral_applied_property_value_groups_setter(self):
+        tested = EnumerationLiteral()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_EnumerationLiteral_owned_enumeration_property_types_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_EnumerationLiteral_owned_diagrams_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_EnumerationLiteral_element_of_interest_for_diagrams_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_EnumerationLiteral_element_of_interest_for_diagrams_setter(self):
+        tested = EnumerationLiteral()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_EnumerationLiteral_contextual_element_for_diagrams_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_EnumerationLiteral_contextual_element_for_diagrams_setter(self):
+        tested = EnumerationLiteral()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_EnumerationLiteral_representing_diagrams_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_EnumerationLiteral__r_e_cs_getter(self):
+        tested = EnumerationLiteral()
+        tested.get__r_e_cs()
+        pass
+
+    def test_EnumerationLiteral__r_e_cs_setter(self):
+        tested = EnumerationLiteral()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_EnumerationLiteral__r_p_ls_getter(self):
+        tested = EnumerationLiteral()
+        tested.get__r_p_ls()
+        pass
+
+    def test_EnumerationLiteral__r_p_ls_setter(self):
+        tested = EnumerationLiteral()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_EnumerationLiteral_get_label(self):
+        tested = EnumerationLiteral()
+        tested.get_label()
+        pass
+
+    def test_EnumerationLiteral_get_element_type(self):
+        tested = EnumerationLiteral()
+        tested.get_element_type()
+        pass
+
+    def test_EnumerationLiteral_get_container(self):
+        tested = EnumerationLiteral()
+        tested.get_container()
+        pass
+
+    def test_EnumerationLiteral_get_container_by_type(self):
+        tested = EnumerationLiteral()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_EnumerationLiteral_get_contents(self):
+        tested = EnumerationLiteral()
+        tested.get_contents()
+        pass
+
+    def test_EnumerationLiteral_get_all_contents(self):
+        tested = EnumerationLiteral()
+        tested.get_all_contents()
+        pass
+
+    def test_EnumerationLiteral_get_all_contents_by_type(self):
+        tested = EnumerationLiteral()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_EnumerationLiteral_get_available_s_b_queries(self):
+        tested = EnumerationLiteral()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_EnumerationLiteral_get_query_result(self):
+        tested = EnumerationLiteral()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_EnumerationLiteral_domain_value_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_domain_value()
+        pass
+
+    def test_EnumerationLiteral_domain_value_setter(self):
+        tested = EnumerationLiteral()
+        value = EnumerationLiteral()
+        tested.set_domain_value(value)
+        pass
+
+    def test_EnumerationLiteral_enumeration_type_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_enumeration_type()
+        pass
+
+    def test_EnumerationLiteral_enumeration_type_setter(self):
+        tested = EnumerationLiteral()
+        value = Enumeration()
+        tested.set_enumeration_type(value)
         pass
 
     def test_BooleanType_abstract_getter(self):

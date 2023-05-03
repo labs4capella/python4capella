@@ -4063,7 +4063,7 @@ class AbstractSystemCapability(AbstractCapability):
         """
         return create_e_list(self.get_java_object().getInvolvedAbstractFunctions(), Function)
 
-class DataValue(JavaObject):
+class DataValue(CapellaElement):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.DataValue
     """
@@ -4077,6 +4077,16 @@ class DataValue(JavaObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_abstract(self) -> bool:
+        """
+        Returns: Boolean
+        """
+        return self.get_java_object().isAbstract()
+    def set_abstract(self, value: bool):
+        """
+        Returns: Boolean
+        """
+        self.get_java_object().setAbstract(value)
 
 class LiteralBooleanValue(DataValue):
     """
@@ -5029,6 +5039,27 @@ class EnumerationLiteral(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_domain_value(self):
+        """
+        Returns: DataValue[0..1]
+        """
+        return capella_query_by_name(self, "Domain Value")
+    def get_enumeration_type(self) -> Enumeration:
+        """
+        Returns: Enumeration[0..1]
+        """
+        value =  self.get_java_object().getEnumerationType()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_enumeration_type(self, value: Enumeration):
+        """
+        Returns: Enumeration[0..1]
+        """
+        return self.get_java_object().setEnumerationType(value.get_java_object())
 
 class BooleanType(PrimitiveDataType):
     """

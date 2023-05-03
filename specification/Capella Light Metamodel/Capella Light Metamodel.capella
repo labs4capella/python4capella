@@ -21880,81 +21880,1886 @@
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"
               id="22f5bca3-6a09-4652-b13e-5e9393ea0833" name="datavalue" status="#aac70fd0-5b06-4a73-85a0-e120bc5c7ae8">
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
-                id="2b24dd44-436b-47ae-898d-782f5bd65d08" name="DataValue" abstract="true"/>
+                id="2b24dd44-436b-47ae-898d-782f5bd65d08" name="DataValue" abstract="true">
+              <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
+                  id="65903255-0b6e-4fa2-a7ae-3765fdc7bfa2" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
+                  sub="#2b24dd44-436b-47ae-898d-782f5bd65d08"/>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="57874fc3-de57-46ff-8d41-09af2e5e0aa5" name="abstract" abstractType="#58144e7b-e746-4a45-a846-f6b14d28cd98">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="30fdac14-e0ca-4820-b9fc-6a1f2639ab8a" value="1"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="8f160032-c956-45ff-a11d-bff6214bb3d2" value="1"/>
+              </ownedFeatures>
+            </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="af60f460-418b-4d33-8d9d-e672393487d5" name="LiteralBooleanValue">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="d7a25ce1-36bf-4732-87c1-aa6ab8dd017e" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a4723367-2c6d-4652-bacf-21234a129d47" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b02389a6-7e87-4111-a795-53faf9b51f70" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="836ad432-70b4-437b-a464-ea4ef5ab95e3" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6a29cf2e-27a1-4b57-bc9d-77a5bc5021ab" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1586a5ce-bd0a-49a0-a950-815a37ff41ad" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8cb50287-f54e-4def-849f-f0ee1e1f8499" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d539d618-7bb8-41e2-bccd-04c5dd0420f3" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="58e05af6-c7a0-45ca-8e21-5dcc8cc5a684" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2082cc95-dbea-422b-8b3f-769ebb8d9f53" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="eb297890-7260-4cfb-a964-298a8319fef8" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d8404e58-5238-4509-a8cf-ebc0f13c3075" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8889e002-8dc0-4478-887f-e9d65a423684" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6ff61fff-06dc-4a00-a144-4e84d16db571" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="98436e61-03b8-4de4-ac0e-ca533d8ce207" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e580b788-bbee-4315-ada5-abb0af2f7a73" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7eedf3c7-359a-41d7-a8d3-70710d1e7408" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ab817d73-a58e-499b-b736-43a797943e61" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6ac053e4-d2ec-4b28-a215-d293d0dd5183" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="040dfc5b-3745-4134-aa19-a8df27212491" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0b2e09f3-5e86-48d6-8e8a-0777acc15108" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="561526fc-99c0-4d58-9211-40afab9a32c4" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7d8dfeaf-949a-4737-94ac-bd58a8b84af6" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a10c7e57-4149-48d4-9352-f85bd46d7daa" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b5483436-5938-4fe1-a50a-173f4c14f4db" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="438be76d-b1d9-4974-81f5-1a2c3d5e60fc" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="77be280a-9454-4859-9285-7583dc60744f" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="309d22fa-3975-49da-a365-574155bfb47f" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="53158467-6d23-4629-9495-d7e000b4b6fc" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1cacd26d-6715-4aab-b4d3-57620316525b" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ea568385-8d5f-49dd-bfac-7a8ed2ef2543" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9beee348-fe3c-4012-bcdd-9473a23e8272" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c8e57e9b-83ac-4ec2-9e8b-c1c879ed7bdc" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="92aa2374-2c05-4917-995c-045cf716c59b" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c1007d18-a493-472d-a989-9909ff06a308" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e8201c00-0761-4b45-8ff4-42773e1785b5" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5fc36afe-3510-483a-8879-a57f0faf7496" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="03f65659-56d8-4a45-a6ac-1ccf2a5bd071" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5c0c0569-b618-41e2-b3ba-c79094dba8e1" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e12e962a-d199-45a3-856d-f0d093254af5" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="58c278fe-ad2a-419e-946e-779df30fcd07" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a518f951-85e6-46cc-acf6-c3591c00b32f" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d2b09f75-d39e-4a2e-96ee-39ef6d731cbc" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="21517c50-b0cd-4bf3-9012-1f243b7ffae1" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f024a7bd-ebe4-4edc-b23b-139850314731" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="19e85040-fed7-45b9-af3c-2471dbcb51e6" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c23d6fec-9ffb-4eff-81d9-856621fbe509" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ba3ef45c-43f8-42c5-ae45-c006dd07dffe" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="964ff9af-30a3-4584-a462-0474ec28b701" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ccef5048-f9fe-4bf7-b788-352d056024f9" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="b97fe247-31ee-441f-89a2-0876d6e914a9" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#af60f460-418b-4d33-8d9d-e672393487d5"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="8fb24208-730c-4fa0-a678-a99dad5b4a58" name="BooleanReference">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="ff7f905c-76b1-49f6-a00d-bc209cc32af9" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="548e1756-ef4e-4a1e-ad86-9e2c41795913" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="32dd5958-bc69-4141-bbd6-15fa44cc350b" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="73459bc5-0bb5-4dc6-98a0-bc74649f1d36" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6b2e357e-5d5e-4c07-ae15-49b2546a0fb9" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3d24f6eb-37f7-4cfc-a7c7-478825d6db3d" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7068190d-26e0-4e14-a6e8-db6e0034150d" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f8846f42-dec0-4823-b0c9-e4f7d20b1c3b" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="24b1447b-c0cb-412a-a811-7d30fa8ce63b" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="41478644-a71d-4cca-9740-039bb7497a6d" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c8ce35e0-9795-4c78-a843-5ce77eafbc5d" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="974cbb0c-f1c5-476f-be21-15b2ac955f1b" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7cbafd6f-2ee5-48d2-907a-a7569196dc37" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="15970ecf-b622-4c64-a13a-5e3aba13fe7b" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="32b16d23-4959-4254-92c8-bfbf478fd684" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d8b3465b-424b-4739-8897-cdfb480b7413" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="efe8768e-37d5-4c4e-bcd2-d8a977421d42" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b4f6a9cc-b72b-460c-9606-8ba4f044b414" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="839e32ea-185c-4c03-88e9-a56a90b5c8a1" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="529ca4ec-f811-4b09-90aa-c28298ca902d" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="93aef936-e27a-4f52-8ed2-f263a2db10ac" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8a254bb7-53c1-41f7-ba7d-24b8805fb7a8" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="79dcd2e8-e5ab-4605-8a27-90ef9683439d" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="853beff3-50d8-4bd1-b4c7-b3e3fd82da4c" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6250c83f-8648-4cf4-9ea4-28090b122ff5" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7353f203-4617-46f2-b98f-e2208294f095" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e0398364-4909-4542-8bc4-1e4995fe723b" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ef952404-d0a9-4477-83e2-ee3f6c725f60" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8005f70c-7b60-4dd8-a9df-125ea95d3dca" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bd01f4e6-980a-44f1-8aac-2ec2b8492b6c" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7467c068-6b2e-4647-a737-5a0982b515fe" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="34f06f12-90d6-4693-9a4f-9f12403b7a37" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bf4026fc-23c4-4013-884d-56864b7bc423" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f6f76508-01d7-422f-aef5-2239ccef85d8" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3118296b-67e9-47c4-8cca-8408652578e9" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="521c3942-b771-40b9-a090-46c3af111275" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2f135dbc-6797-4893-9bdf-4f61defad601" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b12cf21d-aa91-4f5d-887f-a3489eaf2589" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2b7cf7de-70e4-41f3-93b5-585242ed6347" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5d4ee587-724f-4c71-b974-88e28d30e790" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6d449b04-b171-4419-9666-abf5c5b4fe4e" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6314c953-f23f-433f-a048-96649c8d570b" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a893d609-fe33-484b-bb0a-8499d3f37572" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3a9d4537-1df6-4bcc-9284-d1862f63aea9" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4c91c60b-da70-4393-9551-3ef17f7637dc" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bfeb2944-23a7-4a43-86d7-52060c3e2de5" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5c7da898-622e-4633-ac9e-3835278ac60b" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="adb411bd-7472-408e-af13-89f96a04c469" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="39ec3a6b-9026-4249-8570-ade2e44f8f4a" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="83be9f9d-d05e-4a28-b35e-64c6e9aef811" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="a29f8b0f-74d3-4e13-9895-4d4166f2ba40" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#8fb24208-730c-4fa0-a678-a99dad5b4a58"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="4fa5bd3c-4cc9-482d-b29e-0476f9069254" name="EnumerationReference">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="4c715fd1-8abf-4427-8b25-76840c0d46b5" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2fc92241-4d4b-4e74-849e-7b6061252eb0" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="88b36d32-0a03-41a0-b8d5-0ad339c53ef7" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d8a6ca8b-fea2-46ce-ac06-ecfccec05365" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8af18206-ba3b-4aa5-8dd7-1c79a73370ec" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ae742ff3-0484-44a8-832d-23e9a697d31f" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ba4da018-a384-4473-a461-8a4bb726d4d0" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1859e99a-5d8f-4783-9fa0-c78c54f66409" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cc46df9d-de9e-4728-b7f1-71610ef95408" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ad9d4b0d-d6e6-4956-add7-790d95932924" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="90f96d0b-ac71-4749-8ec0-a85881987cee" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9322260c-be6c-415b-8c0c-b8cdf418fa0f" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4548d459-9d8e-41a8-b455-86c8a603b75b" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a989edf3-a7c0-4088-9a21-84a096b6b85e" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c6fa0f5f-9b1f-4dc3-ae6c-6f0296ee6310" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="83c771d8-455f-4f4a-81fb-b042edfa603b" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="adf1d4db-d5b6-4117-aac2-3ef114c8095f" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f4063018-9758-4f1d-ba43-ba3fe8788a59" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bb0b52c2-6265-4724-9ca1-54b4558943bc" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="56b75400-f46a-4eb8-83f7-3b1229bf6182" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0fb1e1ec-ae66-407a-af8e-45cc7fcced72" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8a10b545-b15f-4fca-b3ad-be36269781d7" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d9ad2b1c-8cbb-47f3-851e-192f000ed599" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c56eab85-2150-40f2-92c7-e234633a2999" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8129e9d7-ef70-4d87-bd6a-a91217656b6d" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b7dc5bcd-a71b-447e-8bd0-dd34a349265c" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="23d9aa26-aa4b-4319-b8ab-17bdefdcfc73" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9775d5b7-7847-4df2-b176-f660b83c84a1" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="42e88e10-441a-46c7-afe2-e85e9d1f821c" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a4be884d-8a2d-466d-8b46-b804dc2d38a7" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1bf5a43f-753a-4dba-98e3-ac4191d93e32" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="54fedaf4-227d-4bd7-a44d-bfe517a9b3dd" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cac238de-f6dd-4271-873a-7d6ff8ba3417" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c71a2d02-d783-4260-8a62-ca81ff8c88a1" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0e906ef5-e9df-431d-811e-ff09e25fdf57" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="01fc381e-1efd-45aa-b41f-0081b5d43c93" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e19f6855-e546-4f98-8cea-7b92c3e940d6" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="adfb6f96-5ee3-4f14-bcc5-7a076a2a6f5f" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="aaf7027d-bdfe-49da-be6b-99d9307f4671" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="26364f04-7a19-42b4-9ecb-ce8153cb6cb6" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fc52cdac-9124-4897-a3a7-5a123d9fa521" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="35ef65cc-5c81-458b-8253-4824dd089674" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a74c7e49-db62-4786-9926-d558911bffda" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="10b47def-ca7a-496b-8e3f-971192241f25" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6f42a667-935b-4354-b360-720fb80f2673" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1c1cee05-bd8c-4204-8355-f9caaef97908" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c462233f-eb86-49cc-8a8b-636dccece9f8" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3beab03d-9e3d-411c-ad58-4271f4bcf4d2" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="74c64578-3c68-40c1-88fe-aa5ccaeee5c8" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9c2ee6c9-d631-4397-bb41-160c90b15a1d" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="a0dd113c-b226-45e0-af77-2d5131302a4d" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#4fa5bd3c-4cc9-482d-b29e-0476f9069254"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="9d46ed70-d7f5-4828-beb4-041fb3448307" name="LiteralStringValue">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="b0edb6ab-1813-4c83-b6fc-e143b49e701f" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="707ba8a0-e87b-4286-9529-0268ef2b8778" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="320cb37b-fb7a-4f54-8228-d89856d2d47f" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="82a4bc54-2103-417c-95d3-68bb26f30733" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="47cf5118-3907-4220-9312-ae3bdddbfbc0" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c19a233b-5544-412f-8945-0214ace51870" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ada4ead2-fad2-44c3-8c4a-4cac1893fef9" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="80c6a03d-5ef1-497a-8a9f-6b65f71505e2" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="94974b7f-332a-4fd3-b1bb-4c0c8b6890b6" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cb86442b-38e2-4b1e-b339-c5d55ed53d49" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bb318cfe-08ea-4a5b-a204-9f1019d55b85" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e54b1cdc-c3fb-4639-9e3d-44da98e2ab00" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="baa588c6-efbc-4de0-8caf-4a65125c7225" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="32a806c7-540a-46b9-8811-40504a638cb0" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="00ff96d1-3663-415d-abab-902009b3acfd" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dcb573d4-8057-4c77-9910-9b608d5f869e" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b1110072-7615-4d8a-a344-1110fcd55403" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f22c51e0-78c3-4fb1-a15a-98aad9a5d426" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="547a3acb-5a63-4f5e-8a05-03149825a970" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c27728e6-4b76-4e2c-a5fd-1caf5280a3df" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3889b7b1-9182-484f-ba5c-69f4a8abd8e5" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4c10d064-7554-4c98-b4d1-6959447144a8" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="77c67166-e7b3-4bef-9b36-4813a00b1d5e" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f187a23f-0aee-4ac0-b6ee-34d2cb83ec7a" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="21b8f66b-ac77-4d8d-8d77-5cbab55e5f0b" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4aae042d-a4b2-4aa6-820b-501e0a8a57fa" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cf4ff7c7-5d43-45f4-bbbe-56b2ea0eff81" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9ccc5901-28d2-4bf9-9c5c-c3d7fd9a1098" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d6b7c386-7d49-42b2-aeeb-df16ba0b8332" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8c5f365b-d0ed-494c-bd17-a2bf59825306" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5a898a7b-7a90-42af-9e8f-fe33df522c15" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="820562ea-d18b-485e-b838-fd14ee450a54" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a9f93767-c21e-49dc-8ce7-5f7301190857" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="93e74539-1ca1-4857-afb1-02d0ebc6323f" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d632b0b9-aaed-4605-be43-88ef3ee963ef" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e6cda0bb-5b01-46fe-9629-900ec3fbd999" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c311b767-c336-4d9f-85e5-f4e59b9efefd" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ced15774-a228-44f2-ad4d-7e4d4ffc6c2d" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3ea51e32-e6da-4af3-b28b-a8a85ad571b9" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="90b717d9-c95c-4446-bf22-022da1af9dc8" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a7cde219-bb3d-4881-a2be-9cff20ed0ef2" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3730bb1f-6d59-4926-acb6-46a35fa7413d" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bed5b601-22bb-465a-91f9-16e653a9ed1d" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2573f072-b268-4948-974d-d4b7595026c1" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c5d92859-b8cb-415b-ad93-90df30194a1f" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0c464ef4-7c20-46fd-bb5b-5b61a96c135f" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="59832e95-5af4-4798-b77c-f63b17203a1e" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2d9180b3-f9d8-46c7-9a82-f3a9a6eb02f9" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="474c88a6-64b3-42c2-9afd-857265b4ebca" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5121e0fd-6b2a-46c0-a4e3-e3985322336a" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="5bc2c783-ca20-45bf-8b30-44f92d83e4eb" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#9d46ed70-d7f5-4828-beb4-041fb3448307"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="fdf0f41b-343f-4667-b27c-61116ae94ce4" name="StringReference">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="6a7c98cc-7329-43dc-a769-7eaaa65435c4" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="444e7ed8-28f7-4581-8023-848d72ab021f" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b41bada6-e704-4b35-a2a5-b2e57f348fc2" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="906582ae-96d4-4764-ace1-a76f86e70d7a" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="87f31517-1c3b-4cce-9bf9-8b8c320751ed" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9bf33bce-cae9-41aa-8cfd-b339e209f2ea" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4c1e4f4b-d1a2-44d1-9054-f4265090a6ea" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="165282c8-e7a6-41d6-ada3-b7074c90d45b" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4ebe3c09-48c0-4537-a376-d25dd373a9f9" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7e72e917-6168-451f-926d-2e69d2622258" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b8f9877a-ea31-41b7-9577-10002ce5437e" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f8faaa67-7505-47aa-af1f-f01417bc7e1d" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6858a830-24da-4a0c-9767-c7e2399f4af8" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="259af9d9-8144-4a14-a547-1588f698a6ff" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0bf984fd-375b-465d-9773-56b9bd1e2a56" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c8d50d60-3787-433e-ab8c-153965b86041" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5663cffa-de1f-42e5-82aa-1ac2254712c4" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6e008040-43f7-4c02-bec9-b820402a1002" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1c9300d9-e039-443c-8393-9f075276fc14" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0ec0e4d8-6d07-4faf-86cf-ead771779db8" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="936f4e90-4662-4303-9911-861d43dafd5f" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b2ff7eed-0c87-47d6-b77d-caad62cfb65e" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="61364997-a175-4462-a9b4-b15f4441210b" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0d0c5e45-41d3-43e8-a12f-6f1313391026" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7e9c6a23-8df0-4a65-bb47-7f350543668d" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9f145222-9298-4a60-8062-f1a85c496acd" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2a038c99-5f6a-4b22-ab12-0fc508955a42" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c3d8cecb-64e2-4c09-a71d-bbbe5361a6ef" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="97b84db1-f1a1-456f-a443-8c14b76f1e87" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="df8bc238-4268-4c74-8dcc-267bf7d3b8d7" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f98c7fca-b72a-46ea-a969-4e81ba9b044e" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="27f26552-3497-4354-a51b-a7fbb9a5760b" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ca665270-32a8-4708-b2f2-5ed6fb655488" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ac6288cb-cc20-40a5-af93-6e6ac7e0afae" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fa4fd94e-16d8-483a-aafc-d04729c284b1" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dd26f861-8a4d-4f23-968e-7cdc41a59e0a" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4db24a01-e1c0-4718-9fd1-7b70cdac1150" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6d02669f-db00-4928-ba71-9c6e66f51ccc" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4a5e4595-b7e7-48ef-8f45-4ffc29b302f5" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5a47951d-0f54-415b-a335-d3679c3d0b73" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="598c630b-8322-49b4-a652-1c274a1830ae" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="861ca097-f53d-4ee9-9a6b-995285efc56e" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e9d47bf5-f91e-48a2-8015-a0a5c418d57c" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9eea1ff8-7d71-4464-8d20-a37b8936e161" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b69c7db6-7f0e-47aa-85c1-17953297d30a" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="aa87cdbf-6eae-46f9-807e-2263c4a1f269" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bda68640-fd92-4447-a1d2-267e1d3c4ca7" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="187a85b0-6f95-499a-9d7b-8105ab18443b" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="926997f9-c21e-489a-8eab-96c126b8a451" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f9c8e9f5-b827-4c58-a5a7-9577f9b85c50" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="b15fdcd5-357e-4bf1-be50-7574e86871b6" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#fdf0f41b-343f-4667-b27c-61116ae94ce4"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="47edaef6-5ff6-4956-ab7e-5320b51a793a" name="LiteralNumericValue">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="1fe86874-b673-4ca0-9509-11d8302de163" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="783c1617-f2e7-43d7-be69-fab776fb1161" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b90df269-f012-4800-8ed8-244bcf12bb8c" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="96ff1e57-a0e4-4957-8c6f-333f6b4976f9" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a1e27a89-3c4f-4ca4-a210-e514f3cea25c" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="15566444-f9de-41c8-ae98-83bc31a0f313" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a10d3716-3961-4dd3-b880-ebc18c053199" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ce7529eb-ae57-45ff-95d3-82f02ef454a7" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3688676a-24f0-479e-9153-4f4c00054780" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e63ecad7-6650-47c1-bde2-c87a1351f684" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4f24d6bd-95ab-47fc-be9d-449efa13dd98" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4e0c9711-0b8f-428a-92af-6950fd872c77" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ca858b12-086c-48df-a642-caa748fa9905" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="38463c9f-1a2c-4832-8a2f-4c956804d23f" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="514af367-6087-41ef-8bf9-c516413dbff7" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="daccd8c6-8498-4c29-88c2-0fb804ae7d29" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1246e491-bba9-4f16-bd05-26fd43d59f1a" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bd18660c-7a63-4073-bb19-53b00cc74130" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ab80e68d-07f3-4b39-9232-82884e5b7998" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9b1b093d-4118-4972-9480-40b1c5f4dc0c" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a6321605-e7c2-4794-bba9-b181c35f85b5" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f019bebf-d087-49bf-a377-ed25d98ca3db" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fc151e5b-a4e2-4c4a-aa4b-7d56ac3d2fca" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="27f3080b-b374-4787-856e-cf1f1d0dfb73" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8b35ee5e-0232-4524-a8e4-b4504572243d" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e0d73c71-5094-4522-a5d9-72a9166a8fae" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f180ae65-9d77-43d7-9590-af072c9b91e5" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c2e4bc4e-90de-4d2e-af7c-dcdb8f57d922" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bc1726b5-928b-48e5-932d-6d93bd235e2d" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c1b91049-3be7-4d61-8de9-7ca3bb684e14" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0352cb89-1d28-4415-a8f6-df6b9f79e85a" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4b5cc525-b860-4ac2-8b54-88da4115f560" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="87d289f1-36ff-47e6-b69b-aef70e25f451" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9240c509-ea5d-4062-ac59-1ec3c4b93ba4" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1ec6f93b-4610-4258-a13f-7f8b04474051" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a6b1f358-36e3-4f9c-91cc-e0be393c0753" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8798b188-ab72-45ed-beb2-9e8e9c125f03" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e8f304bb-325d-42ba-90f2-97471c5df68d" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="89a86987-d037-4ca7-94bf-598437366742" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7d6f0766-97e2-4728-8a30-341e353b068f" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7ed289e5-e26f-4378-9bc2-c2cb8bba435b" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d7ed86ac-d2cc-4891-a7c8-ce61625eea80" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cffca257-bd32-487f-9dae-5dfd6f1a4a0d" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="09bd7755-4db9-4289-88f4-b7515e80c03b" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="39e89036-626c-4ca5-9ee0-d68e26cdf18c" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dabb872f-c90a-4bda-8be5-2e89d93bd496" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5ecf2767-0ebe-44a6-a098-bc048e642fbd" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="836daaa2-bf78-4aea-8d7a-8e9216fb202b" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4789c0ca-e375-4a19-a1fc-5426818a37c8" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="226b14b2-5f38-4814-a085-63bfcfd04dce" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="79620fd4-bc0f-4765-9d4d-eb8708fcc48f" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#47edaef6-5ff6-4956-ab7e-5320b51a793a"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="3ec35482-7083-4f32-a168-67c95911fcec" name="NumericReference">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="be598078-fd88-4234-9aab-1a82fbff1c13" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="49b7cdd0-95d5-4813-935e-b2bd955ff2f3" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="81f80a47-6069-41f4-bb33-0f93c8e30317" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4fc921e6-ef8f-4c4a-a950-e23ad8d7b096" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e4448994-5e1b-4789-9887-f46ec3757222" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6c704a19-84da-4ccd-9ce0-a83f41d08d07" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0c059806-a982-4475-9877-6c99802dd30a" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bab5d918-edb9-445b-be8b-d8b07e471d76" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7f8e3d3f-4e16-4f17-a36a-d4dbccadcce0" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7d65216d-2c04-4602-a7db-3f319dbfe34e" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1d9127e1-c5d8-4838-8d19-a0cdb4af26f6" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ac2ac5c2-9f97-41d9-9c45-0f9526482c60" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="afe0de5f-0dd3-43b1-87fd-86821ff581c7" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1b79de7b-7c91-4a64-8d78-53810896f1f9" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c31aa81d-3818-401c-bf7d-97b05875aa0b" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2b223fa4-35db-4ea9-9e62-6fbf7ec520ba" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dcbbcbbb-8beb-4ddb-a02d-092e66b1e49a" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ae52f151-2f7b-429e-936a-c5218d14fbcb" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="375f0d63-666d-46cd-a980-249a7451de26" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="37bb668e-b425-49bb-8808-71ad1d22b51f" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="283a23b9-fcbe-43e0-a91d-cb2481299a0c" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d4e14307-136a-4a67-b7cc-6c57aa2cb70b" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fec3436b-5e29-4ed3-b89c-2fc9f6e78c50" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d96d9a48-84ad-4f95-b3df-2116a6e1fff5" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="accc90c1-ee4c-4eaa-b2ed-7f6a6a534212" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cde021dc-d904-4ea1-a6d1-1bad544fc4ec" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="10ec93d5-8e6c-4746-bd99-5ccefcaf17ee" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4d289ef2-c360-4078-9dbf-78e996c9ccd9" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ed37ec3e-6384-4cef-ad17-f3e41df74ceb" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d2d925cf-57b0-40b2-a0ad-be33106fc63d" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6ea746ab-96c0-4d03-967c-8177458d4137" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c8ddb771-b4fd-4fb8-8d15-077f06b07b1c" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6d434e6d-3e35-48e2-b5ef-dafb0ba9a867" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a2c2ffcf-e01d-4460-aa87-b82a68541230" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2e2dd0e7-679c-49a0-a6bd-8474c580ee51" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="06389ec9-bc31-4837-90d0-e8f29129da46" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7a9c7bf8-3b74-4dad-adaf-87a0ed01a7ee" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e89d5e15-5e0f-4bcd-b90a-0724084a1dca" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a11941df-56b9-44d0-a1fb-a866cefdf5f8" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1290e23e-d489-4af2-802a-ec6f625c4917" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fc8b17fc-0c39-480e-8481-819bdaa4bc95" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d4a7a88b-c67d-4c1a-9023-6769a1a61b69" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f63496c9-28a0-4022-8146-f9e22be51340" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="330042db-57d3-4258-83d6-de6c6a65dec6" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4f9e5214-120c-49e5-879c-2a82119a3b35" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="eb86d705-67c9-46b3-bce5-433cad817e51" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="429db9ac-ae09-419d-a11f-5555f1a8da9a" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ff1551b6-59fc-4cf0-90c6-42d1def105b1" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="734d2676-1569-4ab4-82da-33e743a5b827" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d61b11d0-391f-468a-b90b-ca8253af49d2" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="5b50d654-4156-4349-84fb-d838d5a3c273" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#3ec35482-7083-4f32-a168-67c95911fcec"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="5f1ef0ff-f1d9-4cd9-bbbf-28d6ce66fc32" name="ComplexValue">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="7f3814f9-ba72-447b-a853-9c82575238fb" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b4dc7315-1144-4d6d-a4bb-c48a495103be" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e3a67338-9069-4f17-9675-ba322fb1b486" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="29e18cf3-e912-4f13-975c-567383ab532b" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b4e2d3b8-ab9d-4fe4-9c75-439576b09891" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f4b6bd4b-a604-47aa-be0f-0de4705511a1" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="260fee47-7594-40f6-b535-44974fc07180" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="05b3abea-9ba4-43f9-8993-5330d27e0d5e" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a0a93027-3dd8-4016-829d-5b09308f11ca" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="30ef798e-17e5-4087-a70b-b521a612dac4" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2a40f86e-ff14-4bcd-aa5e-5b7ea599ea58" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0bd7443d-9348-4f7b-b507-c506d2756e0b" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="69c2dead-a1ab-42ad-9249-7dc50a4ccd25" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9f0386f5-f993-40a5-84c0-16334d241082" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cfb75a5c-d048-4407-9dc5-4c8762c6e0b2" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="35209ee0-9305-4d56-8281-641eb856f446" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4227cfa5-bbd2-4bab-993a-f800c0fd3669" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="45530759-9ac6-4650-804d-85780c6ca106" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e9328b85-2709-4f38-8852-fa6376ff7a69" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3fdef38c-9b50-4468-a5bf-e4641335abb4" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d1aedc53-fbfe-4533-955b-5e18e95e3783" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e9ea4960-7c69-4856-9713-b6b8e996f968" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="afe62bfb-19d6-4868-ae8e-ab9fc86067f5" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9ca204a4-50c9-4207-9827-fa5448ce2560" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="075048ad-0881-457b-ab75-2e59496d13c5" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6bd120c2-ca21-4e04-a477-1f79759310de" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0b7ad30c-0954-4075-b391-65a77d8d8c19" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b035df7d-33bc-4275-b3e5-d03f36b6b0a9" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5db1453b-bb63-4604-921b-dc2108aad375" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="35710429-08f4-4c91-8266-4dc6f50b2dcf" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d9fc2414-465b-4759-b528-70f0c30fe88a" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="aaf36de0-1ab4-4126-9c2a-abd7163e09c4" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9e74ce9f-139b-4463-817b-dd3ac18c6097" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e98be1aa-ba3e-4161-ab0d-37ed7d381a91" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="13e22c47-ece0-4afa-a494-5737296f26c7" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="334b9cbe-6824-44cb-85a4-18adfdf6d3b5" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b89848c7-4fe6-4414-b616-d37e8657db36" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="449b343c-5205-4df1-ae15-0d8bdbc84cfe" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ef0d27a4-eb28-4109-ba38-6d3979c84016" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d339a065-744a-404f-8253-7893bb5f4261" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ddff2c01-b231-4f06-983f-6b004dab9ebb" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="40a68805-4c80-4ed1-9c9c-68ad31dec7fb" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0cdeab6c-5afe-4197-9d81-b3d47acd97f9" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8a7b89d3-84f4-4de5-9908-21be76dbf8a5" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2e8199cb-fd59-422b-ac6b-f0031e940dad" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1f6912bc-be82-40f9-95be-06bc5ae84a1d" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5e14d972-f954-465e-86fc-66cf4e23538c" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2746423f-4bf9-430c-9d67-a6366f340f40" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="10deed4d-953c-46e7-81f3-5aba729da4f4" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="00ea2124-4bc2-4f8d-abce-087e4afa62b0" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="614cd4d4-fc92-4fff-a3b2-6cb4eb3e9977" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#5f1ef0ff-f1d9-4cd9-bbbf-28d6ce66fc32"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="dabb2daf-3b98-4a7f-ac1d-ac25c385cca6" name="ComplexValueReference">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="33f7f468-19c5-4527-b5c3-f5ca85911736" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="162131f5-340c-46a8-8d2c-0289f12f886e" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="400c04fb-9ea9-4289-96f3-055612af0642" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="db0aa3ac-33ce-4fe9-908d-dfd18db5fe10" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b476b738-153c-472e-ae0f-dbafec5045a7" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cfaf3b62-1a69-4d71-907a-df84c7393643" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="98949e35-f864-4087-a267-f9d9d4a2ccdd" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="22861444-3551-45d4-862e-35d560fe42b0" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1ca5830e-c4dd-4e29-bc18-e4d7d739ee56" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8d2ad422-67ca-4f8a-8eb8-66ad6fb8d132" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a8c78da4-ad3c-4179-82ad-cd13dc907adf" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6a979123-1ae7-4b57-91bc-9085e1c4bacf" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a15a6ac1-08d2-46e2-8220-555c13b2574a" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0cb931b4-c75d-4d7e-b904-dcc3d38a4751" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d20cf70d-f7df-45e4-8412-ffbbd6a10ad5" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="46baf385-9b05-48e6-9cc7-c3f752a377ba" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6d88c6c7-f733-4253-b530-f53e91792cb4" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="569873a6-0a26-4933-92e8-48985c53257e" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d22b21ee-136c-4c6d-be26-6a10d8a94eae" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="27199df5-b74e-452f-b37e-a1a961ec1557" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="40edc9ff-badc-4ef6-b0ac-60c36f353b91" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c714fdff-b2a3-4634-a9ae-ece8497a385a" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9e3b4eeb-be53-4294-8d30-6680b952d719" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dc99c08f-ae18-4b15-9841-aa7ca8396367" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="40439340-57ab-4782-8ce8-f4797248c74d" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="72d1b819-7bb0-452b-80ef-30b92f18d855" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="726e1ffb-5605-446c-929c-8250b8a756b7" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0a79973f-5314-483f-89aa-4a36b76240fd" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3d04b6e4-932c-42c2-9bd4-f08ca1f2be93" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f9dd5d8d-6ba8-4d2a-8312-2008088325bd" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1f036944-9c88-416d-965a-22ade64af390" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="10a85d11-4d38-4a51-8e59-6c88667f8d4e" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="eb47f0af-7b62-4731-8d20-7f14b0dd9d49" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f56da9f6-54b1-413b-ba22-d5598a3fe8c9" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6ab7562b-0c51-4654-8201-b089f396745c" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1b8f224c-7e86-48bf-a44e-44a7c260be74" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="08c2f80f-9db6-4f7a-b5be-f60b8e3544ab" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1edfd54f-b002-49a0-87d7-042620b75e7a" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9daadbb7-266e-49ba-a962-780e4507922f" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8894468c-4943-470c-b947-35253c70b702" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="66d1ed72-b6d3-4d78-b77a-63b1990e9928" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="72f1c873-aaab-43ee-9d26-2a782bda9b68" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f154cf81-8f1b-4e00-a090-127c6b7ef460" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8aff9969-0e0f-4662-a2a1-5cb07a74b341" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1706991a-63f0-43a8-b3da-78dae6a22d1a" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f299a561-4949-49c5-a98e-c7cf1f888ffa" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="94feb77c-e3ce-468c-aa9c-be7a7fbcb714" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dcaa5fd0-5eb7-4257-a358-b9569a775b3c" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c7b6bfcd-f3d4-40ab-a866-d4c2d253906b" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4b5287dd-d9e0-417e-a947-d58161cffaab" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="e0dd7de0-86c8-415f-ab22-0b9595edd638" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#dabb2daf-3b98-4a7f-ac1d-ac25c385cca6"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="8ab0ea6c-8865-40c9-9469-6d0af26059ff" name="BinaryExpression">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="ac8f0f3f-2c77-45ea-a207-08dd1f6bf871" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="54bb4626-2e3e-4248-a06e-f0c8a8d94071" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c8472134-284e-47a9-b3ef-a7deaa8eb772" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a6098989-154a-45b2-8466-84bafeaeb1a4" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5e0df63f-fa59-4889-b8c4-f43659d35193" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="881f6570-826c-470d-8f66-ad3ab0d83477" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5c8b3a0e-94e5-411c-a263-af7ed1a168de" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="610a7ec2-5862-4d39-b63d-d18fc949251f" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f1d43d5b-dd71-4d72-836a-f959cbc79421" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c20ff4ab-e1fa-44ff-b497-d4c0880b3033" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a87c804f-84ab-4b74-988b-ab46791b3544" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0382152a-b711-4aaf-aef7-2645ed3d4823" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4ef0baf2-8e14-4fbf-a89e-6724ddb2bcfd" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f5bd89fd-e163-4f61-a960-96d3c0bf5776" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3db476b7-e8ff-49f1-8ced-e7b0048eeec7" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fe095466-47cd-45fe-bf12-cc566e992c4a" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="95aa6a0b-4a5f-46b7-8ff5-8bfb0215325d" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d5b70907-3854-4f84-b6ec-c5e1d695277e" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="29167fb4-c99d-4d22-ab2f-f5595e302575" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c1fe339c-1486-4cb3-909a-7fff49243e31" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8ca94e83-b20d-4c64-b1c8-98267f7a29fd" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="94665858-feac-41de-8f14-0357369aa194" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cc8bcdff-5c5e-4f15-b7db-0611571c236c" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="06b0f014-fe96-43e2-95c4-2533738b6ed7" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="70834152-f2bf-47d1-ae64-e4123ae0baa2" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5043441e-9616-42ef-b86a-1c363128d3db" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="73e2916c-2420-44aa-a65b-4326650efbb3" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f2de93b1-7ed6-4463-bcc2-560e269c19d1" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e7ea3282-5f75-4636-b90e-857b13a1728d" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d71b950d-49aa-44c6-a47e-088bcfd1ae2c" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dd579660-b5c6-4d25-b418-0ddf29be2de6" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9af8f4e5-da33-4b33-8013-928d13d0a6e1" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cffecb9a-03ed-4402-8058-d2ef5a996502" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="907dc38d-bced-4506-8f98-9fadbebdc2a6" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2876a811-a4b5-4c41-9864-48c130055acf" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c0c90436-8484-4252-bdb5-acebbcca9d21" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="01db9f86-4893-4830-bbaf-01043fc30686" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="327e117d-050f-4738-a564-0f485ea15e30" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cf6fc975-566f-42aa-b59a-a8f0e0425f79" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8e6a06e4-0705-4344-b6e1-a0880db83d19" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4066d801-9855-48c1-8abc-266e3be0ea7a" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fdb37d85-e833-441e-9986-f120985504b4" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="555fe205-2c6e-47a9-9117-29970a3c028a" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dd7e5208-30f5-431d-abaa-a8c6bf543e90" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fa81a25a-5af0-46d9-97db-fced8b07f570" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2dec16b7-5e2e-4d2e-9999-4c0b7c3d3a5c" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="06939c84-b42c-40e7-871b-f2a35231cee2" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="06d3005a-0e07-481b-af85-130d1e852553" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="70abcfd3-557e-41b1-82e4-e35952b50120" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="be1db245-42a4-4f9c-b9de-de0527516a18" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="4d3d2173-83c3-43ba-8f29-b478e42368b3" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#8ab0ea6c-8865-40c9-9469-6d0af26059ff"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="c1cba312-947e-4f73-87eb-7305ebb9ac02" name="UnaryExpression">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="527db5d3-5831-460c-8241-242322c14da4" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="635e521e-d75a-4ad9-9435-6370d0f262e6" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f1687c31-4963-41b9-955b-f5f2063af10e" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="044e2962-fcea-43ad-9c14-fb80eed20cd8" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5cddb626-8edd-4606-bb2c-a7f430595c55" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8e38a98f-97ca-44b4-82cc-b770c58b504c" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3488bcdf-64fe-4287-af12-39e194222cab" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5e926e77-d1dd-4466-ac0d-bf051f3f4d67" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bbc2f838-43e1-4ec7-8505-8a9e2d4dff13" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="418672d4-394b-4e5f-b8bf-1cd4f5aab459" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cab99054-20a7-41ba-be40-d294028d55a8" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c00d13e2-d82c-4940-ba0b-84a012be6626" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="86dec1ef-68e9-4b45-bda7-f622e003f5c3" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="861df2e5-1166-4f0b-a457-3e8f6f1abd97" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="34842c04-e8f3-43db-9491-17f8bc7babdc" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="239361d7-40b8-4fda-9b72-0ba11987db8e" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="57b8ecee-6261-4509-b973-2793d254fd64" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d67accea-f7b9-4407-842d-67f930f3433d" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="80902f40-80c9-4202-97d9-f971eb314e3b" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="61a11b80-e6d6-46ac-a99c-39ecc69a5051" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="53597db9-8ce3-415b-9167-ad4c4785df9f" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b316f212-d19c-4a2b-acfa-bbc00e041562" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7966078a-3993-4305-b6b4-176790bdcddd" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="033b7dca-7e34-492f-9b45-650ca3192353" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c27a3eee-8584-43ae-9d9e-0643cce8f422" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6eda4239-f3eb-428f-8a3f-36e55b309a6d" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d86d6f24-39e9-4496-bb69-d6c3c3190373" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7a94e3cb-ad44-40d2-8ad6-e03ae212d022" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1c6e9714-451d-4287-bebe-a83588154617" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="58a2a5c9-6fc4-483b-a106-53245992f989" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0188fbc7-2d7b-47b4-a44e-6fa223dbfa27" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4e862134-432b-40c4-a3df-ac30bba7fa40" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="73532938-628b-45f1-9706-87d3ce69bcbf" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b6cabc4c-3a0c-416a-aa22-e9745663b86b" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="eecf95fc-892a-45d2-a167-2cfc0a39201d" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="90892715-b5b9-462b-b8b9-a837a6297067" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fa4a17dd-bf63-42c0-8283-32a9aabc3562" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a74a79fe-3273-477c-906f-acfad1bca73e" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="32f4f824-6c05-4ae7-be2e-fee765b2e18c" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="deba2182-6628-4da7-9568-b6cbe8e40a80" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e4e2231b-8f62-4306-bd53-2ce717e06388" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c6c9fffb-4c93-4cc0-9474-5468cddc6e6a" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2297d2e2-58d6-431b-8045-f69f17918058" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9e389f8f-2783-42d0-b283-773499f6b5ca" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f39b5877-e5d5-4199-9618-a066c24fc258" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="43ca2272-ffe4-4b73-8a9c-afef48457870" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c94e3411-eed9-48aa-a1a7-f1afe430214b" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7a8c9e80-c6ab-4880-ab4f-f7dd33c5d7eb" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="710cd6c1-ded7-483c-a2c5-d7882c970f0f" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="22cae8b8-a0b9-4ba8-8f39-d4c26c375dde" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="3050370e-6516-4cd4-a1f9-7052b88d4603" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#c1cba312-947e-4f73-87eb-7305ebb9ac02"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="daa86fc1-ea9b-4d57-b0ce-b7ed4052b4ce" name="CollectionValueReference">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="ff465075-a549-49d5-89cf-e6050f31ad5a" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="33772550-5234-4db6-a104-35019866daf4" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="aa4c17e2-0e33-496f-9837-5612c5b422a4" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="98a83af0-9e56-44c4-b28d-a8460652014e" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1d263662-8c3f-4d4d-858e-5f972d424676" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e34b5300-f118-4265-a34c-9ecbda4ea739" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0baac4dc-8b4f-4e2c-ba2e-06c04c57e54a" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a4e35204-2aad-4281-84aa-8683983551f9" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1e2f5eac-a180-43be-b27f-bba91ebdb981" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c31abb2f-44f3-4120-b767-6cafdc84cae7" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ec4bd33a-7f67-4b43-9a61-2bed2b36fa7a" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="373ac583-36b6-41e9-a69d-60a82da508cf" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="31d139a7-d1da-4dd7-ba18-1b9bb3fb4599" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1e3f0098-7cf3-451e-ab08-1c290ba0035b" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="718b3af3-2e5e-4546-8df8-0d9611140d69" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1663355a-2d2f-4a4b-a8d4-0e8803a359f2" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="739c701b-0afb-4898-81b7-81935d41d217" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3d726194-ab86-4a87-aa82-31a42f525771" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="903490fc-c1d9-4007-a27c-97aa327f006a" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="832a72f9-441f-4105-a304-db529dd22cbe" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e7672199-e334-43fc-af6c-4da128472edf" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8bdbe27d-c65a-46ee-8ee7-54917ae91947" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="41ecb899-3bf0-48d6-8d10-6c33bf227577" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="64eeefe9-cf8a-4e3b-a536-2cf6819ad24f" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c9f8b7ae-8f99-478a-8d93-378d39008bd6" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1d314565-eea8-4703-b873-fefa0e7d46db" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="09a7ca65-7685-4bb7-af6a-8eb3c87117f7" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="524b1dc3-e6af-41fe-beba-d21c61fa4cd6" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ea3edd72-c267-46c5-8749-06e898bbaa68" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dbc3353d-8be5-4b00-95c6-2bc5ee340181" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="43e2680f-a111-4dce-9698-7a180d3587c5" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="73148a20-0211-4813-bc03-16b60cf85897" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3c5b857e-4864-492e-a38d-82231c6dd29a" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="66adfeb3-031a-4308-8f25-d1e16c95b9f4" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3967c432-94ec-4f61-bfc6-afc1f599b35d" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0b05947b-69f7-472e-9cb3-eff6cf87faaf" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="123e7bd9-80aa-4c2c-af7b-f4fdea368245" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="44cd76b3-259b-46b3-af80-217b338dcc17" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="310fd415-c5db-4c43-b751-fa55062e66c3" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e8498b41-91ff-4919-a9d1-1d31d57973a9" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="09f79a29-62c4-4cf7-b09d-e49de9db12ff" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="74146d05-9667-47c7-9929-d8332b2a0c79" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d1d3b15d-b7b0-4bfc-a47b-c7b8fe3d9e5d" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7ffe80c6-7cbc-46d1-b821-093d67608cdc" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="732092f8-a7b4-483c-aa8d-0b8347212a98" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f11e4cf2-2384-4506-a753-52ca4950b3f3" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="17504bca-4730-4008-b46d-dd19675357b2" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="828c73fa-df92-4757-8a06-7ef74aec863f" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b03a4b99-b6ca-4be2-a700-392259078131" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b5a0b01b-b705-46cf-be89-f4fd557d5f50" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="31f8d21c-6cdd-4094-8d9c-693274b432d3" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#daa86fc1-ea9b-4d57-b0ce-b7ed4052b4ce"/>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="051e3a10-125a-4d82-a686-31ec7a16350c" name="CollectionValue">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="c0fa3277-d12a-4f80-bbec-ae7f65616c97" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="205e3635-9f5b-4032-bb80-35ab9b660a0d" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5c6e5146-f558-423c-8cd1-253d0f4e90bd" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0e24e831-f843-48b0-8a47-517ec9f662aa" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="735a758a-1ec3-42f0-bdaa-79e3301a0902" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c31a7444-1506-4076-9a2b-231aead1aa07" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6f3aeae8-c198-4c2e-9916-bef76115a681" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7ef695d3-7cbb-4bad-86a0-6ed7dcf08100" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="15f16728-a2f2-4757-b16c-d92bfd644ffd" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d0f43d26-19a6-4e27-a262-4c4c82ca5c4e" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5730d880-cfca-41d8-8729-7f30f0173f42" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0089198b-c797-44fc-93e4-10e3edfdb15d" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="3f22fd14-a414-4882-b0b7-21c670c337c8" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e71edf10-4b7a-4c05-bd2d-cf0e8e088662" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="59ec27ee-5e62-465c-9280-e9ed626dfb14" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0815c4c3-65a1-41bd-9e2f-cd3416547034" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="75aba6d2-089a-4afc-ad75-19df80489fd5" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1a411820-da36-4a40-8a52-a601e49d31f7" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ec64201b-64e8-4cfa-ad49-e9f09c75ee74" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f4c9c75a-375c-484b-9aa1-5516c715ef68" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="03fb1943-93f9-474a-84e3-9e5c4fe0fa70" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e675192e-5452-4c7c-b18f-d347008d2d34" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5095f674-2fd8-4caa-9538-3fbc2a4a93b9" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a9c3449e-9069-469b-bcc0-edb34352020a" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="185c8642-20e9-4062-99e5-b9444e581767" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0dd993c1-31a2-4457-a471-021de52dc5dd" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7d8e3351-7193-49f9-9f8e-e1d7cf7d2e65" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7d51d47a-19e0-486f-8db4-63dc166ead7c" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f005bd82-fb89-4c9b-9d08-f4075d612634" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="ffc25e55-71ef-4133-bd3a-20d54641872c" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="aa0f6705-05fc-4f1a-bfd5-4a9c27ca5757" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2eb0ef7e-6a06-4647-871b-cf284eee600f" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f7676dfd-40c7-4cad-8dee-ca751cfbc51f" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="de10303c-9449-43ab-aae8-c0bb766f3b33" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="54bbd357-87c6-4108-868c-a3e8fd46b64f" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="09b27a57-e3ee-41d9-8fe0-9debc2ac3548" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4cd0c6bf-2309-4f16-800e-f388d5f0c906" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="af90221f-2fa0-4efb-9c85-7fb1c35f946f" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="003aef11-0022-4e98-84c2-e6ba6912b22e" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="afedd08f-b77d-42fb-845e-19c91b6710ed" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="bfc891a4-8a1b-41d3-a67b-c6e16bd1baf2" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a14bd87a-6749-41eb-9c0e-4a53ef72b323" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c756e23c-ad29-4515-9934-3855dcc72520" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="db2675be-095b-40f6-9b66-c322dc81ef0e" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f55e0db1-4812-4bf9-9135-05af0d95a736" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="079d1f64-e4eb-4643-9d43-41a8a841ac1c" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="35c0e164-1cb4-41c4-a5a0-3ba5a99afb52" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="70565187-3952-4dea-bc98-6db191be419c" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="44a8ba6d-78db-4cd4-8156-93f8f47b1f2c" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="485771a6-7b1f-4d19-9e2b-f57406cc5ac1" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="85323fe6-869f-4d91-8f47-af030a9c7166" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#051e3a10-125a-4d82-a686-31ec7a16350c"/>
@@ -23993,9 +25798,175 @@
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="325be27f-b714-4580-ac0c-69d9948c976a" name="EnumerationLiteral">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="3831d671-0530-4ae7-bfa9-153e7c397835" name="ImplementationStatus">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="592ed919-2577-463e-b439-aabcf32ef4c1" name="RECs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="aacc017b-225f-4110-80a4-f1088a736265" name="RECs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="883086b9-f7df-49bb-9983-b7effdb252ec" name="RPLs_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a9ac6736-6e2f-4dc9-a0f2-7a18d5c21542" name="RPLs_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="86b03b93-5200-4c78-b924-e415e8c80122" name="abstract_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="aad06ff1-d362-4600-a53f-ab6fe0b275bc" name="abstract_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="18a291c3-ba2f-47ed-b25f-3c4178188a63" name="appliedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="034e5aef-ccb4-4841-9ad6-5cca3a843960" name="appliedPropertyValueGroups_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8431edb3-855e-49ca-bc82-ef04cc8608b3" name="appliedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="fd06f17b-7f0f-4c4f-8804-3228ed35af9f" name="appliedPropertyValues_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a2665fa7-28b2-423e-9d33-d1c99fe3a164" name="constraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c78ce7e9-32e7-408c-b99a-6a205dcccfd6" name="constraints_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="91d1dc18-0b15-403d-8174-931f0caba93a" name="contextualElementForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0bc01473-80f2-4b34-a25e-f975daa1b400" name="contextualElementForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="9d39ceb1-ac31-46b5-8f56-1c603b7cf67b" name="description_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="32b7fec0-1acf-43c5-b752-08adc525fb4b" name="description_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f81a18bb-dc3b-4794-bc07-128e63286e6f" name="domainValue_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="21bb6086-b6c5-44bb-875c-e492c288c992" name="domainValue_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8f45b74a-b0cf-4aaf-bd8f-4a56c534196a" name="elementOfInterestForDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="be2e5e20-7d7c-4bca-8c22-4ee39a3ba132" name="elementOfInterestForDiagrams_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="8dd391fd-6cca-4f77-a93c-c46f1cc7541f" name="enumerationType_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="42a613c6-07fa-45b6-9bd8-3b2e0a3c96e1" name="enumerationType_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7ba150b6-af19-4d50-826b-60214680ce31" name="getAllContents"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="33a41030-e4e9-40dc-9245-1c51c51f77ad" name="getAllContentsByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="6e6a04ca-e8a3-44ec-a894-db1f925a9aa1" name="getAvailableSBQueries"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1dd5c942-f8a3-4533-9711-f80cf2d3c8b5" name="getContainer"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="b4657ae7-bdf6-4fc2-9f50-0b85989e5814" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="dd2d12c9-e55b-431d-80a5-0617b9134326" name="getContents" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="895f4b43-5471-4a23-a2ab-880e38c12adf" name="getElementType"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1093084e-2de0-4e8f-b451-780d206fb403" name="getLabel" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="151cfbcc-07c3-43a8-875e-76d23916f572" name="getQueryResult"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="70e7eae6-eafb-49ab-ad6d-115e2aa3a2b1" name="id_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="da72f417-5b9c-4e19-a4b6-fa330392c0b0" name="id_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d5cc9776-485d-4e44-a942-9f3b370eb8cb" name="name_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cbcd4611-25fd-4700-ad5d-375291814533" name="name_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="d9be8030-e347-4f98-bb87-86056b3afd2c" name="ownedConstraints_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="073fd2c8-ddf7-4cb5-946b-530d258cfa2c" name="ownedDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cbb8fa45-5621-4d69-a847-e444f03cb0f1" name="ownedEnumerationPropertyTypes_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="68d0e22b-5d85-498f-b04f-5deec3651719" name="ownedPropertyValueGroups_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="1ed52396-8252-46d4-9d82-696c148af750" name="ownedPropertyValues_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="4b01de52-901b-490c-9675-350746d444c4" name="representingDiagrams_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="18d3d42d-c036-46d3-9656-1c00b2c7da71" name="review_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="c90b5bdf-2e9a-4b85-a551-9f2083297ea2" name="review_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="0ee56f8f-0b0e-48f4-8556-58cd0c3c9fe8" name="sid_getter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="2c7b7bbc-4384-44b9-b184-1cb0d8cc2322" name="sid_setter" value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="300306a8-f542-4875-b4a6-92710af4d83a" name="status_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="95697cc2-85e0-40ea-bc61-3e1e6cda5a50" name="status_setter"
+                    value="KO"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="45fbd6b6-8007-4ec2-bc83-8c7afa1944e7" name="summary_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7929702f-a295-4ceb-b549-71cf7bb4603f" name="summary_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="a2982ac3-b596-4ff4-803b-e8798b6be1da" name="visibleForTraceability_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="cb7c89bb-0450-4fa5-b02b-86e38b572007" name="visibleForTraceability_setter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="59fde60c-e0f4-4736-8eb6-da92b530f858" name="visibleInDocumentation_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="7b67f3f5-933b-4413-9509-a5bb760e56c4" name="visibleInDocumentation_setter"
+                    value="OK"/>
+              </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="f76ae9f7-f8ab-4459-9cca-41f62b8044d5" super="#2b24dd44-436b-47ae-898d-782f5bd65d08"
                   sub="#325be27f-b714-4580-ac0c-69d9948c976a"/>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="45608eae-6f07-4e53-a231-8b96af7af773" name="domainValue" abstractType="#2b24dd44-436b-47ae-898d-782f5bd65d08"
+                  aggregationKind="ASSOCIATION">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="8aadcb3f-71de-4665-8115-47bf4025bf2d" name="" value="0"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="bccba309-a751-46b1-8dea-c7c313889795" name="" value="1"/>
+              </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="bc3c03ab-c73c-421f-9c7a-3ea2f82f21b3" name="enumerationType"
+                  abstractType="#57ac0231-664e-4879-aed4-6f829afd0830" aggregationKind="ASSOCIATION">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="7cada7f3-2862-4885-bfbd-534570f63150" name="" value="0"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="ecf3d059-d1a3-4a63-a79d-d6793e05582a" name="" value="1"/>
+              </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="4858b247-b897-4b63-aff9-93dcbae475f3" name="BooleanType">
