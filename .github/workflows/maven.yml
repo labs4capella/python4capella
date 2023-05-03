@@ -63,7 +63,7 @@ jobs:
     - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml', '**/*.product') }}
+        key: ${{ runner.os }}-maven-${{ matrix.tycho }}-${{ hashFiles('**/pom.xml', '**/*.product') }}
         restore-keys: |
           ${{ runner.os }}-maven-
 
