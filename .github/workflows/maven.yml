@@ -124,7 +124,7 @@ jobs:
       id: maven_build_PyDev8_2_0
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
       run: |
-        run: mvn clean verify -fae -P${{ matrix.profile }}-PyDev8.2.0 "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
+        mvn clean verify -fae -P${{ matrix.profile }}-PyDev8.2.0 "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory for PyDev 8.2.0
       id: prepare_deploy_PyDev8_2_0
