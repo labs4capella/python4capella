@@ -173,7 +173,10 @@ class EObject(JavaObject):
         if res == None and e_object.eClass().getName() == "Exception":
             res = CapellaException
         if res == None and e_object.eClass().getName() in ["StringValueAttribute", "IntegerValueAttribute", "EnumerationValueAttribute", "BooleanValueAttribute", "RealValueAttribute"]:
-            res = getattr(sys.modules["__main__"], "Attribute")
+            if hasattr(sys.modules["__main__"], "Attribute"):
+                res = getattr(sys.modules["__main__"], "Attribute")
+            else:
+                raise AttributeError("you need to import requirement.py to use StringValueAttribute, IntegerValueAttribute, EnumerationValueAttribute, BooleanValueAttribute, RealValueAttribute")
         return res
     @staticmethod
     def copy_e_object(e_object: EObject) -> EObject:
