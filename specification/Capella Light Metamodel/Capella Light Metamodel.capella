@@ -12195,6 +12195,24 @@
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="be0852ad-22f9-466a-8d5f-a17645a740cf" name="" value="*"/>
               </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="a484e89b-0f53-4e5a-8d12-79fca8cfa93a" name="deployedPhysicalComponents"
+                  abstractType="#7a96db90-8bed-4809-ac7f-59789791332d" aggregationKind="COMPOSITION"
+                  isReadOnly="true">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="48ffcdb2-4897-4edd-b7a1-cf0b99b13f99" name="" value="0"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="e8d36343-1cdf-42e3-bce6-3725d4359f8c" name="" value="*"/>
+              </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="fc58bb85-5e0c-42be-ac55-00ae85e85a58" name="allocatedPhysicalFunctions"
+                  abstractType="#52bb8ebf-a672-48bd-ac54-a2209465b046" aggregationKind="COMPOSITION"
+                  isReadOnly="true">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="d5cece6a-70ee-4b22-a660-21937e27810e" name="" value="0"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="00048ff6-f065-4101-a140-36ff76cb1a31" name="" value="*"/>
+              </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="b58e094b-aa71-4bb7-992a-486910f84c80" name="BehaviorPC" description="&lt;p>System component in charge of implementing / realizing some of the functions devoted to the system&lt;/p>&#xA;">
@@ -12423,6 +12441,12 @@
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="12bae2db-66dd-4e78-a402-6bdd8e8d42da" name="getContainerByType"
                     value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e6327393-7d15-461b-a51f-de345fd7cfe6" name="allocatedPhysicalFunctions_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="5f805c37-e45c-490d-9ea3-f66cb44bea35" name="deployedPhysicalComponents_getter"
+                    value="OK"/>
               </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"
                   id="ac7673de-882e-4747-8750-639db41f664b" super="#7a96db90-8bed-4809-ac7f-59789791332d"
@@ -12643,6 +12667,12 @@
                     value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="e549cc63-9001-4cd2-a859-c6e41e636b2f" name="getContainerByType"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="583972c7-2789-417e-9444-1a493be18cc4" name="allocatedPhysicalFunctions_getter"
+                    value="OK"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="e896714d-1737-4c99-b164-be42ab467124" name="deployedPhysicalComponents_getter"
                     value="OK"/>
               </ownedPropertyValueGroups>
               <ownedGeneralizations xsi:type="org.polarsys.capella.core.data.capellacore:Generalization"

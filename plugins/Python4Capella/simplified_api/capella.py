@@ -2102,6 +2102,16 @@ class PhysicalComponent(AbstractPhysicalArtifact):
         Returns: CapabilityRealization[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
+    def get_deployed_physical_components(self):
+        """
+        Returns: PhysicalComponent[*]
+        """
+        return capella_query_by_name(self, "Deployed Physical Components")
+    def get_allocated_physical_functions(self):
+        """
+        Returns: PhysicalFunction[*]
+        """
+        return capella_query_by_name(self, "Allocated Physical Functions")
 
 class EPBSArchitecture(PropertyValuePkgContainer):
     """

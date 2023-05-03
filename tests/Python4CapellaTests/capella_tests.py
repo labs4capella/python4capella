@@ -14558,6 +14558,16 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_capability_realizations().add(value)
         pass
 
+    def test_BehaviorPC_deployed_physical_components_getter(self):
+        tested = BehaviorPC()
+        tested.get_deployed_physical_components()
+        pass
+
+    def test_BehaviorPC_allocated_physical_functions_getter(self):
+        tested = BehaviorPC()
+        tested.get_allocated_physical_functions()
+        pass
+
     def test_BehaviorPC_allocator_configuration_items_getter(self):
         tested = BehaviorPC()
         tested.get_allocator_configuration_items()
@@ -14967,6 +14977,16 @@ class capella_tests(unittest.TestCase):
         tested = NodePC()
         value = CapabilityRealization()
         tested.get_involving_capability_realizations().add(value)
+        pass
+
+    def test_NodePC_deployed_physical_components_getter(self):
+        tested = NodePC()
+        tested.get_deployed_physical_components()
+        pass
+
+    def test_NodePC_allocated_physical_functions_getter(self):
+        tested = NodePC()
+        tested.get_allocated_physical_functions()
         pass
 
     def test_NodePC_allocator_configuration_items_getter(self):
