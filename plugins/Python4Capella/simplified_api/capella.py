@@ -6187,6 +6187,11 @@ class Function(AbstractActivityFunction):
         Returns: AbstractSystemCapability[*]
         """
         return create_e_list(self.get_java_object().getInvolvingCapabilities(), AbstractSystemCapability)
+    def get_owned_functions(self) -> List[Function]:
+        """
+        Returns: Function[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedFunctions(), Function)
 
 class OperationalActivity(AbstractActivityFunction):
     """

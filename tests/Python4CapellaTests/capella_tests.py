@@ -7210,6 +7210,11 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_capabilities().add(value)
         pass
 
+    def test_SystemFunction_owned_functions_getter(self):
+        tested = SystemFunction()
+        tested.get_owned_functions()
+        pass
+
     def test_SystemFunction_available_in_states_getter(self):
         tested = SystemFunction()
         tested.get_available_in_states()
@@ -10485,6 +10490,11 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_capabilities().add(value)
         pass
 
+    def test_LogicalFunction_owned_functions_getter(self):
+        tested = LogicalFunction()
+        tested.get_owned_functions()
+        pass
+
     def test_LogicalFunction_available_in_states_getter(self):
         tested = LogicalFunction()
         tested.get_available_in_states()
@@ -13628,6 +13638,11 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalFunction()
         value = CapabilityRealization()
         tested.get_involving_capabilities().add(value)
+        pass
+
+    def test_PhysicalFunction_owned_functions_getter(self):
+        tested = PhysicalFunction()
+        tested.get_owned_functions()
         pass
 
     def test_PhysicalFunction_available_in_states_getter(self):
