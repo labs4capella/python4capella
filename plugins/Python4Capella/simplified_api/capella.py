@@ -239,6 +239,15 @@ class EObject(JavaObject):
             if specific_cls is not None:
                 return specific_cls(value)
         return None
+    def get_container_by_type(self, cls: type) -> EObject:
+        """
+        Parameters: cls: PythonClass
+        Returns: EObject
+        """
+        value = self.get_container()
+        while value is not None and not isinstance(value, cls):
+            value = value.get_container()
+        return value
     def get_contents(self) -> List[EObject]:
         """
         Returns: EObject[*]
@@ -257,7 +266,7 @@ class EObject(JavaObject):
         return e_all_contents(self.get_java_object())
     def get_all_contents_by_type(self, cls: type) -> List[EObject]:
         """
-        Parameters: type: PythonClass
+        Parameters: cls: PythonClass
         Returns: EObject[*]
         """
         res = []

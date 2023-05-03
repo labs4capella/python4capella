@@ -1,0 +1,6 @@
+    def get_container_by_type(self, cls: type) -> EObject:
+        value = self.get_container()
+        while value is not None and not isinstance(value, cls):
+            value = value.get_container()
+        return value
+
