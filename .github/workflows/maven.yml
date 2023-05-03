@@ -124,10 +124,6 @@ jobs:
       id: maven_build_PyDev8_2_0
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
       run: |
-        /usr/bin/Xvfb :99 -ac -screen 0 1440x900x16&
-        ps auxwww | grep Xvfb
-        export DISPLAY=:99
-        echo DISPLAY $DISPLAY
         run: mvn clean verify -fae -P${{ matrix.profile }}-PyDev8.2.0 "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory for PyDev 8.2.0
