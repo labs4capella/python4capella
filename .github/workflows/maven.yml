@@ -137,7 +137,7 @@ jobs:
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
         chmod a+x ./scripts/prepare-deploy-local-dir.sh
         ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
-        echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
+        echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
 
     - name: Upload Release Asset for PyDev 8.2.0
       id: upload_release_asset-PyDev8.2.0
