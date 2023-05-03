@@ -4250,7 +4250,7 @@ class CollectionValue(DataValue):
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 
-class DataPkg(JavaObject):
+class DataPkg(CapellaElement):
     """
     Java class: org.polarsys.capella.core.data.information.DataPkg
     """
@@ -4604,7 +4604,7 @@ class Union(DataType):
         """
         return create_e_list(self.get_java_object().getContainedOperations(), Operation)
 
-class Association(JavaObject):
+class Association(CapellaElement):
     """
     Java class: org.polarsys.capella.core.data.information.Association
     """

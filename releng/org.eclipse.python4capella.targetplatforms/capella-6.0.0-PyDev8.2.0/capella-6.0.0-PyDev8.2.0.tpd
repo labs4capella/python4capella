@@ -1,0 +1,9 @@
+target "Capella 6.0.0 Target Platform PyDev 8.2.0"
+
+with source requirements
+
+include "../capella-6.0.0/common.tpd"
+
+location PyDev "https://www.pydev.org/update_sites/8.2.0" {
+	org.python.pydev.feature.feature.group lazy
+}

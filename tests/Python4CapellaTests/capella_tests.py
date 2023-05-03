@@ -26277,6 +26277,260 @@ class capella_tests(unittest.TestCase):
         tested.get_exchanges().add(value)
         pass
 
+    def test_DataPkg_id_getter(self):
+        tested = DataPkg()
+        tested.get_id()
+        pass
+
+    def test_DataPkg_id_setter(self):
+        tested = DataPkg()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_DataPkg_sid_getter(self):
+        tested = DataPkg()
+        tested.get_sid()
+        pass
+
+    def test_DataPkg_sid_setter(self):
+        tested = DataPkg()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_DataPkg_name_getter(self):
+        tested = DataPkg()
+        tested.get_name()
+        pass
+
+    def test_DataPkg_name_setter(self):
+        tested = DataPkg()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_DataPkg_summary_getter(self):
+        tested = DataPkg()
+        tested.get_summary()
+        pass
+
+    def test_DataPkg_summary_setter(self):
+        tested = DataPkg()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_DataPkg_description_getter(self):
+        tested = DataPkg()
+        tested.get_description()
+        pass
+
+    def test_DataPkg_description_setter(self):
+        tested = DataPkg()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_DataPkg_status_getter(self):
+        tested = DataPkg()
+        tested.get_status()
+        pass
+
+    def test_DataPkg_status_setter(self):
+        tested = DataPkg()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_DataPkg_review_getter(self):
+        tested = DataPkg()
+        tested.get_review()
+        pass
+
+    def test_DataPkg_review_setter(self):
+        tested = DataPkg()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_DataPkg_visible_in_documentation_getter(self):
+        tested = DataPkg()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_DataPkg_visible_in_documentation_setter(self):
+        tested = DataPkg()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_DataPkg_visible_for_traceability_getter(self):
+        tested = DataPkg()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_DataPkg_visible_for_traceability_setter(self):
+        tested = DataPkg()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_DataPkg_owned_constraints_getter(self):
+        tested = DataPkg()
+        tested.get_owned_constraints()
+        pass
+
+    def test_DataPkg_constraints_getter(self):
+        tested = DataPkg()
+        tested.get_constraints()
+        pass
+
+    def test_DataPkg_constraints_setter(self):
+        tested = DataPkg()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_DataPkg_owned_property_values_getter(self):
+        tested = DataPkg()
+        tested.get_owned_property_values()
+        pass
+
+    def test_DataPkg_applied_property_values_getter(self):
+        tested = DataPkg()
+        tested.get_applied_property_values()
+        pass
+
+    def test_DataPkg_applied_property_values_setter(self):
+        tested = DataPkg()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_DataPkg_owned_property_value_groups_getter(self):
+        tested = DataPkg()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_DataPkg_applied_property_value_groups_getter(self):
+        tested = DataPkg()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_DataPkg_applied_property_value_groups_setter(self):
+        tested = DataPkg()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_DataPkg_owned_enumeration_property_types_getter(self):
+        tested = DataPkg()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_DataPkg_owned_diagrams_getter(self):
+        tested = DataPkg()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_DataPkg_element_of_interest_for_diagrams_getter(self):
+        tested = DataPkg()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_DataPkg_element_of_interest_for_diagrams_setter(self):
+        tested = DataPkg()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_DataPkg_contextual_element_for_diagrams_getter(self):
+        tested = DataPkg()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_DataPkg_contextual_element_for_diagrams_setter(self):
+        tested = DataPkg()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_DataPkg_representing_diagrams_getter(self):
+        tested = DataPkg()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_DataPkg__r_e_cs_getter(self):
+        tested = DataPkg()
+        tested.get__r_e_cs()
+        pass
+
+    def test_DataPkg__r_e_cs_setter(self):
+        tested = DataPkg()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_DataPkg__r_p_ls_getter(self):
+        tested = DataPkg()
+        tested.get__r_p_ls()
+        pass
+
+    def test_DataPkg__r_p_ls_setter(self):
+        tested = DataPkg()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_DataPkg_get_label(self):
+        tested = DataPkg()
+        tested.get_label()
+        pass
+
+    def test_DataPkg_get_element_type(self):
+        tested = DataPkg()
+        tested.get_element_type()
+        pass
+
+    def test_DataPkg_get_container(self):
+        tested = DataPkg()
+        tested.get_container()
+        pass
+
+    def test_DataPkg_get_container_by_type(self):
+        tested = DataPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_DataPkg_get_contents(self):
+        tested = DataPkg()
+        tested.get_contents()
+        pass
+
+    def test_DataPkg_get_all_contents(self):
+        tested = DataPkg()
+        tested.get_all_contents()
+        pass
+
+    def test_DataPkg_get_all_contents_by_type(self):
+        tested = DataPkg()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_DataPkg_get_available_s_b_queries(self):
+        tested = DataPkg()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_DataPkg_get_query_result(self):
+        tested = DataPkg()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
     def test_DataPkg_owned_classes_getter(self):
         tested = DataPkg()
         tested.get_owned_classes()
@@ -27292,6 +27546,260 @@ class capella_tests(unittest.TestCase):
     def test_Union_contained_operations_getter(self):
         tested = Union()
         tested.get_contained_operations()
+        pass
+
+    def test_Association_id_getter(self):
+        tested = Association()
+        tested.get_id()
+        pass
+
+    def test_Association_id_setter(self):
+        tested = Association()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Association_sid_getter(self):
+        tested = Association()
+        tested.get_sid()
+        pass
+
+    def test_Association_sid_setter(self):
+        tested = Association()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_Association_name_getter(self):
+        tested = Association()
+        tested.get_name()
+        pass
+
+    def test_Association_name_setter(self):
+        tested = Association()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_Association_summary_getter(self):
+        tested = Association()
+        tested.get_summary()
+        pass
+
+    def test_Association_summary_setter(self):
+        tested = Association()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_Association_description_getter(self):
+        tested = Association()
+        tested.get_description()
+        pass
+
+    def test_Association_description_setter(self):
+        tested = Association()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_Association_status_getter(self):
+        tested = Association()
+        tested.get_status()
+        pass
+
+    def test_Association_status_setter(self):
+        tested = Association()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_Association_review_getter(self):
+        tested = Association()
+        tested.get_review()
+        pass
+
+    def test_Association_review_setter(self):
+        tested = Association()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_Association_visible_in_documentation_getter(self):
+        tested = Association()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_Association_visible_in_documentation_setter(self):
+        tested = Association()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_Association_visible_for_traceability_getter(self):
+        tested = Association()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_Association_visible_for_traceability_setter(self):
+        tested = Association()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_Association_owned_constraints_getter(self):
+        tested = Association()
+        tested.get_owned_constraints()
+        pass
+
+    def test_Association_constraints_getter(self):
+        tested = Association()
+        tested.get_constraints()
+        pass
+
+    def test_Association_constraints_setter(self):
+        tested = Association()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_Association_owned_property_values_getter(self):
+        tested = Association()
+        tested.get_owned_property_values()
+        pass
+
+    def test_Association_applied_property_values_getter(self):
+        tested = Association()
+        tested.get_applied_property_values()
+        pass
+
+    def test_Association_applied_property_values_setter(self):
+        tested = Association()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_Association_owned_property_value_groups_getter(self):
+        tested = Association()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_Association_applied_property_value_groups_getter(self):
+        tested = Association()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_Association_applied_property_value_groups_setter(self):
+        tested = Association()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_Association_owned_enumeration_property_types_getter(self):
+        tested = Association()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Association_owned_diagrams_getter(self):
+        tested = Association()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_Association_element_of_interest_for_diagrams_getter(self):
+        tested = Association()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_Association_element_of_interest_for_diagrams_setter(self):
+        tested = Association()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_Association_contextual_element_for_diagrams_getter(self):
+        tested = Association()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_Association_contextual_element_for_diagrams_setter(self):
+        tested = Association()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_Association_representing_diagrams_getter(self):
+        tested = Association()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_Association__r_e_cs_getter(self):
+        tested = Association()
+        tested.get__r_e_cs()
+        pass
+
+    def test_Association__r_e_cs_setter(self):
+        tested = Association()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_Association__r_p_ls_getter(self):
+        tested = Association()
+        tested.get__r_p_ls()
+        pass
+
+    def test_Association__r_p_ls_setter(self):
+        tested = Association()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_Association_get_label(self):
+        tested = Association()
+        tested.get_label()
+        pass
+
+    def test_Association_get_element_type(self):
+        tested = Association()
+        tested.get_element_type()
+        pass
+
+    def test_Association_get_container(self):
+        tested = Association()
+        tested.get_container()
+        pass
+
+    def test_Association_get_container_by_type(self):
+        tested = Association()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_Association_get_contents(self):
+        tested = Association()
+        tested.get_contents()
+        pass
+
+    def test_Association_get_all_contents(self):
+        tested = Association()
+        tested.get_all_contents()
+        pass
+
+    def test_Association_get_all_contents_by_type(self):
+        tested = Association()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_Association_get_available_s_b_queries(self):
+        tested = Association()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_Association_get_query_result(self):
+        tested = Association()
+        param1 = "value"
+        tested.get_query_result(param1)
         pass
 
     def test_Property_type_getter(self):
