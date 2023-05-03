@@ -123,10 +123,11 @@ jobs:
     - name: Build with Maven for PyDev 8.2.0 (${{ matrix.profile }})
       id: maven_build_PyDev8_2_0
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      env:
-        MAVEN_OPTS: ${{ matrix.mavenOpt }}
-      uses: GabrielBB/xvfb-action@v1.6
-      with:
+      run: |
+        /usr/bin/Xvfb :99 -ac -screen 0 1440x900x16&
+        ps auxwww | grep Xvfb
+        export DISPLAY=:99
+        echo DISPLAY $DISPLAY
         run: mvn clean verify -fae -P${{ matrix.profile }}-PyDev8.2.0 "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory for PyDev 8.2.0
@@ -142,7 +143,7 @@ jobs:
     - name: Upload Release Asset for PyDev 8.2.0
       id: upload_release_asset_PyDev8_2_0
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/upload-release-asset@v1
+      uses: actions/upload-release-asset@v1.0.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
