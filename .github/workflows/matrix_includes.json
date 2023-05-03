@@ -12,19 +12,19 @@
   {
     "java":"8",
     "profile":"platform-capella-5.1.0,tests,commandline",
-    "tycho":"2.7.5",
+    "tycho":"1.7.0",
     "mavenOpt":"-XX:MaxPermSize=512m -Xmx2048m -Xms1024m"
   },
   {
     "java":"8",
     "profile":"platform-capella-5.0.0,tests,commandline",
-    "tycho":"2.7.5",
+    "tycho":"1.7.0",
     "mavenOpt":"-XX:MaxPermSize=512m -Xmx2048m -Xms1024m"
   },
   {
     "java":"8",
     "profile":"platform-capella-1.4.2,tests,commandline",
-    "tycho":"2.7.5",
+    "tycho":"1.7.0",
     "mavenOpt":"-XX:MaxPermSize=512m -Xmx2048m -Xms1024m"
   }
 ]
