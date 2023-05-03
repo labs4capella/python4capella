@@ -29,7 +29,6 @@ loadModule('/Capella/EMF')
 include('workspace://Python4Capella/java_api/Java_API.py')
 if False:
     from java_api.Java_API import *
-import sys
 
 
 def e_all_contents(e_obj):

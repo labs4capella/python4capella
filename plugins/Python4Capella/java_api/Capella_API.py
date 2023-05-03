@@ -8,16 +8,13 @@ def getCapellaVersion(): # provider by org.eclipse.python4capella.modules.Capell
     pass
 def getLabel(e_obj): # provider by org.eclipse.python4capella.modules.CapellaModule
     pass
-def isSystem(component): # provider by org.eclipse.python4capella.modules.CapellaModule
-    pass
 def getLibraries(system_engineering): # provider by org.eclipse.python4capella.modules.CapellaModule
     pass
 
 loadModule('/Capella/Capella')
-include('workspace://Python4Capella/java_api/Java_API.py')
+include('workspace://Python4Capella/java_api/EMF_API.py')
 if False:
-    from java_api.Java_API import *
-import sys
+    from java_api.EMF_API import *
 
 def capella_query(query_class, e_obj, cls = None):
     """Call a query from the semantic browser from the qualified class name of the query and the EObect to pass as parameter"""
@@ -40,7 +37,18 @@ def get_label(e_obj):
     return getLabel(e_obj.get_java_object())
 
 def is_system(component):
-    return isSystem(component)
+    res = False
+
+    if get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "Component").isInstance(component):
+        if not component.isActor():
+            if get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "ComponentPkg").isInstance(component.eContainer()) and get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "BlockArchitecture").isInstance(component.eContainer().eContainer()):
+                    eGetValue = component.eContainer().eGet(component.eContainingFeature())
+                    if eGetValue.__class__.__name__ == 'JavaList':
+                        for comp in eGetValue:
+                            if not comp.isActor():
+                                res = comp == component
+                                break;
+        return res;
 
 def get_libraries(system_engineering):
     res = []
