@@ -250,7 +250,7 @@
     </profile>
 
     <!-- Capella -->
-    </profile>
+    <profile>
       <id>platform-capella-6.1.0-PyDev8.2.0</id>
       <activation>
         <activeByDefault>false</activeByDefault>
