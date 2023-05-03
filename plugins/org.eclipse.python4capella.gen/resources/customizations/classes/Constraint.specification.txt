@@ -1,0 +1,18 @@
+    def get_specification(self) -> str:
+        value = self.get_java_object().getOwnedSpecification()
+        if get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "OpaqueExpression").isInstance(value):
+            for body in value.getBodies():
+                return body
+            return None
+        else:
+            return None
+    def set_specification(self, value: str):
+        spec = self.get_java_object().getOwnedSpecification()
+        if spec is None:
+            spec = create("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "OpaqueExpression")
+        elif not get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "OpaqueExpression").isInstance(spec):
+            raise AttributeError("can only edit OpaqueExpression")
+        if not spec.getBodies().isEmpty():
+            spec.getBodies().clear()
+        spec.getBodies().add(value)
+

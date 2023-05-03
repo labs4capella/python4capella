@@ -462,12 +462,25 @@ class Constraint(CapellaElement):
         """
         Returns: String
         """
-        return self.get_java_object().getSpecification()
+        value = self.get_java_object().getOwnedSpecification()
+        if get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "OpaqueExpression").isInstance(value):
+            for body in value.getBodies():
+                return body
+            return None
+        else:
+            return None
     def set_specification(self, value: str):
         """
         Returns: String
         """
-        self.get_java_object().setSpecification(value)
+        spec = self.get_java_object().getOwnedSpecification()
+        if spec is None:
+            spec = create("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "OpaqueExpression")
+        elif not get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "OpaqueExpression").isInstance(spec):
+            raise AttributeError("can only edit OpaqueExpression")
+        if not spec.getBodies().isEmpty():
+            spec.getBodies().clear()
+        spec.getBodies().add(value)
     def get_constrained_elements(self):
         """
         Returns: CapellaElement[*]

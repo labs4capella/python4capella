@@ -1257,10 +1257,10 @@
                     id="2ee24780-3665-4c0b-8a24-a685d7f213f9" name="sid_setter" value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="0c1080b0-47b6-490f-bfbe-408c9849163c" name="specification_getter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="114410ae-2ec6-465a-83d9-3aba12f0d779" name="specification_setter"
-                    value="KO"/>
+                    value="OK"/>
                 <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
                     id="88e47b74-135e-40ba-8148-91f368defa2d" name="status_getter"
                     value="OK"/>
