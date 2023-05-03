@@ -1,0 +1,3 @@
+    def get_involving_operational_capabilities(self) -> List[OperationalCapability]:
+        return create_e_list(self.get_java_object().getInvolvingCapabilities(), OperationalCapability)
+

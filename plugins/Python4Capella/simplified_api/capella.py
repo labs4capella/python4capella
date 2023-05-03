@@ -4621,10 +4621,15 @@ class Association(JavaObject):
 
 class Property(JavaObject):
     """
+    Java class: org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Property
+    """
+    """
     Java class: org.polarsys.capella.core.data.information.Property
     """
     e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Property")
     def __init__(self, java_object = None):
+        """
+        """
         if java_object is None:
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Property):
@@ -4633,11 +4638,22 @@ class Property(JavaObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_type(self):
+    def get_type(self) -> DataType:
         """
         Returns: DataType
         """
-        return capella_query_by_name(self, "Type")
+        value =  self.get_java_object().getType()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_type(self, value: DataType):
+        """
+        Returns: DataType
+        """
+        return self.get_java_object().setType(value.get_java_object())
 
 class UnionProperty(Property):
     """
@@ -6213,7 +6229,7 @@ class OperationalActivity(AbstractActivityFunction):
         """
         Returns: OperationalCapability[*]
         """
-        return create_e_list(self.get_java_object().getInvolvingOperationalCapabilities(), OperationalCapability)
+        return create_e_list(self.get_java_object().getInvolvingCapabilities(), OperationalCapability)
     def get_realizing_system_functions(self):
         """
         Returns: SystemFunction[*]

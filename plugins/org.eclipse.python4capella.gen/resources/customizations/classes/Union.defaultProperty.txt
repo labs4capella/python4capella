@@ -1,0 +1,11 @@
+    def get_default_property(self) -> UnionProperty:
+        value =  self.get_java_object().getDefaultProperty()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_default_property(self, value: UnionProperty):
+        return self.get_java_object().setDefaultProperty(value.get_java_object())
+

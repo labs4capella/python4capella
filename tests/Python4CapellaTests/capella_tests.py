@@ -345,6 +345,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_SystemEngineering_get_container_by_type(self):
+        tested = SystemEngineering()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_SystemEngineering_get_contents(self):
         tested = SystemEngineering()
         tested.get_contents()
@@ -623,6 +629,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Constraint_get_container_by_type(self):
+        tested = Constraint()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Constraint_get_contents(self):
         tested = Constraint()
         tested.get_contents()
@@ -891,6 +903,12 @@ class capella_tests(unittest.TestCase):
     def test_PropertyValue_get_container(self):
         tested = PropertyValue()
         tested.get_container()
+        pass
+
+    def test_PropertyValue_get_container_by_type(self):
+        tested = PropertyValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_PropertyValue_get_contents(self):
@@ -1179,6 +1197,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_PropertyValueGroup_get_container_by_type(self):
+        tested = PropertyValueGroup()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_PropertyValueGroup_get_contents(self):
         tested = PropertyValueGroup()
         tested.get_contents()
@@ -1443,6 +1467,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_PropertyValuePkg_get_container_by_type(self):
+        tested = PropertyValuePkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_PropertyValuePkg_get_contents(self):
         tested = PropertyValuePkg()
         tested.get_contents()
@@ -1689,6 +1719,12 @@ class capella_tests(unittest.TestCase):
     def test_EnumerationPropertyType_get_container(self):
         tested = EnumerationPropertyType()
         tested.get_container()
+        pass
+
+    def test_EnumerationPropertyType_get_container_by_type(self):
+        tested = EnumerationPropertyType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_EnumerationPropertyType_get_contents(self):
@@ -1942,6 +1978,12 @@ class capella_tests(unittest.TestCase):
     def test_EnumerationPropertyLiteral_get_container(self):
         tested = EnumerationPropertyLiteral()
         tested.get_container()
+        pass
+
+    def test_EnumerationPropertyLiteral_get_container_by_type(self):
+        tested = EnumerationPropertyLiteral()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_EnumerationPropertyLiteral_get_contents(self):
@@ -2255,6 +2297,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_REC_get_container_by_type(self):
+        tested = REC()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_REC_get_contents(self):
         tested = REC()
         tested.get_contents()
@@ -2450,6 +2498,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_RPL_get_container_by_type(self):
+        tested = RPL()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_RPL_get_contents(self):
         tested = RPL()
         tested.get_contents()
@@ -2623,6 +2677,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_CatalogElementPkg_get_container_by_type(self):
+        tested = CatalogElementPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_CatalogElementPkg_get_contents(self):
         tested = CatalogElementPkg()
         tested.get_contents()
@@ -2771,6 +2831,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_RecCatalog_get_container_by_type(self):
+        tested = RecCatalog()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_RecCatalog_get_contents(self):
         tested = RecCatalog()
         tested.get_contents()
@@ -2894,6 +2960,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_CompliancyDefinitionPkg_get_container_by_type(self):
+        tested = CompliancyDefinitionPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_CompliancyDefinitionPkg_get_contents(self):
         tested = CompliancyDefinitionPkg()
         tested.get_contents()
@@ -3015,6 +3087,12 @@ class capella_tests(unittest.TestCase):
     def test_CompliancyDefinition_get_container(self):
         tested = CompliancyDefinition()
         tested.get_container()
+        pass
+
+    def test_CompliancyDefinition_get_container_by_type(self):
+        tested = CompliancyDefinition()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_CompliancyDefinition_get_contents(self):
@@ -3279,6 +3357,12 @@ class capella_tests(unittest.TestCase):
     def test_OperationalAnalysis_get_container(self):
         tested = OperationalAnalysis()
         tested.get_container()
+        pass
+
+    def test_OperationalAnalysis_get_container_by_type(self):
+        tested = OperationalAnalysis()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_OperationalAnalysis_get_contents(self):
@@ -3559,6 +3643,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_OperationalActivityPkg_get_container_by_type(self):
+        tested = OperationalActivityPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_OperationalActivityPkg_get_contents(self):
         tested = OperationalActivityPkg()
         tested.get_contents()
@@ -3826,6 +3916,12 @@ class capella_tests(unittest.TestCase):
     def test_OperationalActivity_get_container(self):
         tested = OperationalActivity()
         tested.get_container()
+        pass
+
+    def test_OperationalActivity_get_container_by_type(self):
+        tested = OperationalActivity()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_OperationalActivity_get_contents(self):
@@ -4151,6 +4247,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Interaction_get_container_by_type(self):
+        tested = Interaction()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Interaction_get_contents(self):
         tested = Interaction()
         tested.get_contents()
@@ -4457,6 +4559,12 @@ class capella_tests(unittest.TestCase):
     def test_OperationalProcess_get_container(self):
         tested = OperationalProcess()
         tested.get_container()
+        pass
+
+    def test_OperationalProcess_get_container_by_type(self):
+        tested = OperationalProcess()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_OperationalProcess_get_contents(self):
@@ -4780,6 +4888,12 @@ class capella_tests(unittest.TestCase):
     def test_OperationalCapabilityPkg_get_container(self):
         tested = OperationalCapabilityPkg()
         tested.get_container()
+        pass
+
+    def test_OperationalCapabilityPkg_get_container_by_type(self):
+        tested = OperationalCapabilityPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_OperationalCapabilityPkg_get_contents(self):
@@ -5149,6 +5263,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_OperationalCapability_get_container_by_type(self):
+        tested = OperationalCapability()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_OperationalCapability_get_contents(self):
         tested = OperationalCapability()
         tested.get_contents()
@@ -5449,6 +5569,12 @@ class capella_tests(unittest.TestCase):
     def test_EntityPkg_get_container(self):
         tested = EntityPkg()
         tested.get_container()
+        pass
+
+    def test_EntityPkg_get_container_by_type(self):
+        tested = EntityPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_EntityPkg_get_contents(self):
@@ -5769,6 +5895,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_OperationalEntity_get_container_by_type(self):
+        tested = OperationalEntity()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_OperationalEntity_get_contents(self):
         tested = OperationalEntity()
         tested.get_contents()
@@ -6020,6 +6152,12 @@ class capella_tests(unittest.TestCase):
     def test_OperationalActor_get_container(self):
         tested = OperationalActor()
         tested.get_container()
+        pass
+
+    def test_OperationalActor_get_container_by_type(self):
+        tested = OperationalActor()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_OperationalActor_get_contents(self):
@@ -6330,6 +6468,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_CommunicationMean_get_container_by_type(self):
+        tested = CommunicationMean()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_CommunicationMean_get_contents(self):
         tested = CommunicationMean()
         tested.get_contents()
@@ -6638,6 +6782,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_SystemAnalysis_get_container_by_type(self):
+        tested = SystemAnalysis()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_SystemAnalysis_get_contents(self):
         tested = SystemAnalysis()
         tested.get_contents()
@@ -6924,6 +7074,12 @@ class capella_tests(unittest.TestCase):
     def test_SystemFunctionPkg_get_container(self):
         tested = SystemFunctionPkg()
         tested.get_container()
+        pass
+
+    def test_SystemFunctionPkg_get_container_by_type(self):
+        tested = SystemFunctionPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_SystemFunctionPkg_get_contents(self):
@@ -7286,6 +7442,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_SystemFunction_get_container_by_type(self):
+        tested = SystemFunction()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_SystemFunction_get_contents(self):
         tested = SystemFunction()
         tested.get_contents()
@@ -7569,6 +7731,12 @@ class capella_tests(unittest.TestCase):
     def test_CapabilityPkg_get_container(self):
         tested = CapabilityPkg()
         tested.get_container()
+        pass
+
+    def test_CapabilityPkg_get_container_by_type(self):
+        tested = CapabilityPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_CapabilityPkg_get_contents(self):
@@ -7965,6 +8133,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Capability_get_container_by_type(self):
+        tested = Capability()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Capability_get_contents(self):
         tested = Capability()
         tested.get_contents()
@@ -8260,6 +8434,12 @@ class capella_tests(unittest.TestCase):
     def test_SystemComponentPkg_get_container(self):
         tested = SystemComponentPkg()
         tested.get_container()
+        pass
+
+    def test_SystemComponentPkg_get_container_by_type(self):
+        tested = SystemComponentPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_SystemComponentPkg_get_contents(self):
@@ -8614,6 +8794,12 @@ class capella_tests(unittest.TestCase):
     def test_System_get_container(self):
         tested = System()
         tested.get_container()
+        pass
+
+    def test_System_get_container_by_type(self):
+        tested = System()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_System_get_contents(self):
@@ -8976,6 +9162,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_SystemActor_get_container_by_type(self):
+        tested = SystemActor()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_SystemActor_get_contents(self):
         tested = SystemActor()
         tested.get_contents()
@@ -9325,6 +9517,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_MissionPkg_get_container_by_type(self):
+        tested = MissionPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_MissionPkg_get_contents(self):
         tested = MissionPkg()
         tested.get_contents()
@@ -9581,6 +9779,12 @@ class capella_tests(unittest.TestCase):
     def test_Mission_get_container(self):
         tested = Mission()
         tested.get_container()
+        pass
+
+    def test_Mission_get_container_by_type(self):
+        tested = Mission()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Mission_get_contents(self):
@@ -9856,6 +10060,12 @@ class capella_tests(unittest.TestCase):
     def test_LogicalArchitecture_get_container(self):
         tested = LogicalArchitecture()
         tested.get_container()
+        pass
+
+    def test_LogicalArchitecture_get_container_by_type(self):
+        tested = LogicalArchitecture()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_LogicalArchitecture_get_contents(self):
@@ -10139,6 +10349,12 @@ class capella_tests(unittest.TestCase):
     def test_LogicalFunctionPkg_get_container(self):
         tested = LogicalFunctionPkg()
         tested.get_container()
+        pass
+
+    def test_LogicalFunctionPkg_get_container_by_type(self):
+        tested = LogicalFunctionPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_LogicalFunctionPkg_get_contents(self):
@@ -10501,6 +10717,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_LogicalFunction_get_container_by_type(self):
+        tested = LogicalFunction()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_LogicalFunction_get_contents(self):
         tested = LogicalFunction()
         tested.get_contents()
@@ -10784,6 +11006,12 @@ class capella_tests(unittest.TestCase):
     def test_CapabilityRealizationPkg_get_container(self):
         tested = CapabilityRealizationPkg()
         tested.get_container()
+        pass
+
+    def test_CapabilityRealizationPkg_get_container_by_type(self):
+        tested = CapabilityRealizationPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_CapabilityRealizationPkg_get_contents(self):
@@ -11180,6 +11408,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_CapabilityRealization_get_container_by_type(self):
+        tested = CapabilityRealization()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_CapabilityRealization_get_contents(self):
         tested = CapabilityRealization()
         tested.get_contents()
@@ -11508,6 +11742,12 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponentPkg_get_container(self):
         tested = LogicalComponentPkg()
         tested.get_container()
+        pass
+
+    def test_LogicalComponentPkg_get_container_by_type(self):
+        tested = LogicalComponentPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_LogicalComponentPkg_get_contents(self):
@@ -11867,6 +12107,12 @@ class capella_tests(unittest.TestCase):
     def test_LogicalSystem_get_container(self):
         tested = LogicalSystem()
         tested.get_container()
+        pass
+
+    def test_LogicalSystem_get_container_by_type(self):
+        tested = LogicalSystem()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_LogicalSystem_get_contents(self):
@@ -12237,6 +12483,12 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponent_get_container(self):
         tested = LogicalComponent()
         tested.get_container()
+        pass
+
+    def test_LogicalComponent_get_container_by_type(self):
+        tested = LogicalComponent()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_LogicalComponent_get_contents(self):
@@ -12611,6 +12863,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_LogicalActor_get_container_by_type(self):
+        tested = LogicalActor()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_LogicalActor_get_contents(self):
         tested = LogicalActor()
         tested.get_contents()
@@ -12949,6 +13207,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_PhysicalArchitecture_get_container_by_type(self):
+        tested = PhysicalArchitecture()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_PhysicalArchitecture_get_contents(self):
         tested = PhysicalArchitecture()
         tested.get_contents()
@@ -13230,6 +13494,12 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalFunctionPkg_get_container(self):
         tested = PhysicalFunctionPkg()
         tested.get_container()
+        pass
+
+    def test_PhysicalFunctionPkg_get_container_by_type(self):
+        tested = PhysicalFunctionPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_PhysicalFunctionPkg_get_contents(self):
@@ -13592,6 +13862,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_PhysicalFunction_get_container_by_type(self):
+        tested = PhysicalFunction()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_PhysicalFunction_get_contents(self):
         tested = PhysicalFunction()
         tested.get_contents()
@@ -13864,6 +14140,12 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalComponentPkg_get_container(self):
         tested = PhysicalComponentPkg()
         tested.get_container()
+        pass
+
+    def test_PhysicalComponentPkg_get_container_by_type(self):
+        tested = PhysicalComponentPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_PhysicalComponentPkg_get_contents(self):
@@ -14142,6 +14424,12 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalSystem_get_container(self):
         tested = PhysicalSystem()
         tested.get_container()
+        pass
+
+    def test_PhysicalSystem_get_container_by_type(self):
+        tested = PhysicalSystem()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_PhysicalSystem_get_contents(self):
@@ -14485,6 +14773,12 @@ class capella_tests(unittest.TestCase):
     def test_BehaviorPC_get_container(self):
         tested = BehaviorPC()
         tested.get_container()
+        pass
+
+    def test_BehaviorPC_get_container_by_type(self):
+        tested = BehaviorPC()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_BehaviorPC_get_contents(self):
@@ -14892,6 +15186,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_NodePC_get_container_by_type(self):
+        tested = NodePC()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_NodePC_get_contents(self):
         tested = NodePC()
         tested.get_contents()
@@ -15268,6 +15568,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_PhysicalActor_get_container_by_type(self):
+        tested = PhysicalActor()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_PhysicalActor_get_contents(self):
         tested = PhysicalActor()
         tested.get_contents()
@@ -15595,6 +15901,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_EPBSArchitecture_get_container_by_type(self):
+        tested = EPBSArchitecture()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_EPBSArchitecture_get_contents(self):
         tested = EPBSArchitecture()
         tested.get_contents()
@@ -15863,6 +16175,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ConfigurationItemPkg_get_container_by_type(self):
+        tested = ConfigurationItemPkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ConfigurationItemPkg_get_contents(self):
         tested = ConfigurationItemPkg()
         tested.get_contents()
@@ -16119,6 +16437,12 @@ class capella_tests(unittest.TestCase):
     def test_ConfigurationItem_get_container(self):
         tested = ConfigurationItem()
         tested.get_container()
+        pass
+
+    def test_ConfigurationItem_get_container_by_type(self):
+        tested = ConfigurationItem()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_ConfigurationItem_get_contents(self):
@@ -16410,6 +16734,12 @@ class capella_tests(unittest.TestCase):
     def test_StateMachine_get_container(self):
         tested = StateMachine()
         tested.get_container()
+        pass
+
+    def test_StateMachine_get_container_by_type(self):
+        tested = StateMachine()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_StateMachine_get_contents(self):
@@ -16707,6 +17037,12 @@ class capella_tests(unittest.TestCase):
     def test_State_get_container(self):
         tested = State()
         tested.get_container()
+        pass
+
+    def test_State_get_container_by_type(self):
+        tested = State()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_State_get_contents(self):
@@ -17165,6 +17501,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Mode_get_container_by_type(self):
+        tested = Mode()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Mode_get_contents(self):
         tested = Mode()
         tested.get_contents()
@@ -17457,6 +17799,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Pseudostate_get_container_by_type(self):
+        tested = Pseudostate()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Pseudostate_get_contents(self):
         tested = Pseudostate()
         tested.get_contents()
@@ -17710,6 +18058,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Region_get_container_by_type(self):
+        tested = Region()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Region_get_contents(self):
         tested = Region()
         tested.get_contents()
@@ -17961,6 +18315,12 @@ class capella_tests(unittest.TestCase):
     def test_StateTransition_get_container(self):
         tested = StateTransition()
         tested.get_container()
+        pass
+
+    def test_StateTransition_get_container_by_type(self):
+        tested = StateTransition()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_StateTransition_get_contents(self):
@@ -18299,6 +18659,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ChangeEvent_get_container_by_type(self):
+        tested = ChangeEvent()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ChangeEvent_get_contents(self):
         tested = ChangeEvent()
         tested.get_contents()
@@ -18556,6 +18922,12 @@ class capella_tests(unittest.TestCase):
     def test_TimeEvent_get_container(self):
         tested = TimeEvent()
         tested.get_container()
+        pass
+
+    def test_TimeEvent_get_container_by_type(self):
+        tested = TimeEvent()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_TimeEvent_get_contents(self):
@@ -18826,6 +19198,12 @@ class capella_tests(unittest.TestCase):
     def test_Scenario_get_container(self):
         tested = Scenario()
         tested.get_container()
+        pass
+
+    def test_Scenario_get_container_by_type(self):
+        tested = Scenario()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Scenario_get_contents(self):
@@ -19155,6 +19533,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_InstanceRole_get_container_by_type(self):
+        tested = InstanceRole()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_InstanceRole_get_contents(self):
         tested = InstanceRole()
         tested.get_contents()
@@ -19406,6 +19790,12 @@ class capella_tests(unittest.TestCase):
     def test_SequenceMessage_get_container(self):
         tested = SequenceMessage()
         tested.get_container()
+        pass
+
+    def test_SequenceMessage_get_container_by_type(self):
+        tested = SequenceMessage()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_SequenceMessage_get_contents(self):
@@ -19691,6 +20081,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_StateFragment_get_container_by_type(self):
+        tested = StateFragment()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_StateFragment_get_contents(self):
         tested = StateFragment()
         tested.get_contents()
@@ -19954,6 +20350,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_CombinedFragment_get_container_by_type(self):
+        tested = CombinedFragment()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_CombinedFragment_get_contents(self):
         tested = CombinedFragment()
         tested.get_contents()
@@ -20215,6 +20617,12 @@ class capella_tests(unittest.TestCase):
     def test_Operand_get_container(self):
         tested = Operand()
         tested.get_container()
+        pass
+
+    def test_Operand_get_container_by_type(self):
+        tested = Operand()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Operand_get_contents(self):
@@ -20486,6 +20894,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ConstraintDuration_get_container_by_type(self):
+        tested = ConstraintDuration()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ConstraintDuration_get_contents(self):
         tested = ConstraintDuration()
         tested.get_contents()
@@ -20754,6 +21168,12 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPort_get_container(self):
         tested = PhysicalPort()
         tested.get_container()
+        pass
+
+    def test_PhysicalPort_get_container_by_type(self):
+        tested = PhysicalPort()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_PhysicalPort_get_contents(self):
@@ -21057,6 +21477,12 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalLink_get_container(self):
         tested = PhysicalLink()
         tested.get_container()
+        pass
+
+    def test_PhysicalLink_get_container_by_type(self):
+        tested = PhysicalLink()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_PhysicalLink_get_contents(self):
@@ -21378,6 +21804,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_PhysicalLinkCategory_get_container_by_type(self):
+        tested = PhysicalLinkCategory()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_PhysicalLinkCategory_get_contents(self):
         tested = PhysicalLinkCategory()
         tested.get_contents()
@@ -21635,6 +22067,12 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPath_get_container(self):
         tested = PhysicalPath()
         tested.get_container()
+        pass
+
+    def test_PhysicalPath_get_container_by_type(self):
+        tested = PhysicalPath()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_PhysicalPath_get_contents(self):
@@ -21933,6 +22371,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_InterfacePkg_get_container_by_type(self):
+        tested = InterfacePkg()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_InterfacePkg_get_contents(self):
         tested = InterfacePkg()
         tested.get_contents()
@@ -22194,6 +22638,12 @@ class capella_tests(unittest.TestCase):
     def test_Interface_get_container(self):
         tested = Interface()
         tested.get_container()
+        pass
+
+    def test_Interface_get_container_by_type(self):
+        tested = Interface()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Interface_get_contents(self):
@@ -22537,6 +22987,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ExchangeItemAllocation_get_container_by_type(self):
+        tested = ExchangeItemAllocation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ExchangeItemAllocation_get_contents(self):
         tested = ExchangeItemAllocation()
         tested.get_contents()
@@ -22827,6 +23283,12 @@ class capella_tests(unittest.TestCase):
     def test_ExchangeItem_get_container(self):
         tested = ExchangeItem()
         tested.get_container()
+        pass
+
+    def test_ExchangeItem_get_container_by_type(self):
+        tested = ExchangeItem()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_ExchangeItem_get_contents(self):
@@ -23181,6 +23643,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ExchangeItemElement_get_container_by_type(self):
+        tested = ExchangeItemElement()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ExchangeItemElement_get_contents(self):
         tested = ExchangeItemElement()
         tested.get_contents()
@@ -23449,6 +23917,12 @@ class capella_tests(unittest.TestCase):
     def test_FunctionInputPort_get_container(self):
         tested = FunctionInputPort()
         tested.get_container()
+        pass
+
+    def test_FunctionInputPort_get_container_by_type(self):
+        tested = FunctionInputPort()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_FunctionInputPort_get_contents(self):
@@ -23754,6 +24228,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_FunctionOutputPort_get_container_by_type(self):
+        tested = FunctionOutputPort()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_FunctionOutputPort_get_contents(self):
         tested = FunctionOutputPort()
         tested.get_contents()
@@ -24044,6 +24524,12 @@ class capella_tests(unittest.TestCase):
     def test_FunctionalExchange_get_container(self):
         tested = FunctionalExchange()
         tested.get_container()
+        pass
+
+    def test_FunctionalExchange_get_container_by_type(self):
+        tested = FunctionalExchange()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_FunctionalExchange_get_contents(self):
@@ -24414,6 +24900,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ExchangeCategory_get_container_by_type(self):
+        tested = ExchangeCategory()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ExchangeCategory_get_contents(self):
         tested = ExchangeCategory()
         tested.get_contents()
@@ -24671,6 +25163,12 @@ class capella_tests(unittest.TestCase):
     def test_FunctionalChain_get_container(self):
         tested = FunctionalChain()
         tested.get_container()
+        pass
+
+    def test_FunctionalChain_get_container_by_type(self):
+        tested = FunctionalChain()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_FunctionalChain_get_contents(self):
@@ -25013,6 +25511,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ComponentPort_get_container_by_type(self):
+        tested = ComponentPort()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ComponentPort_get_contents(self):
         tested = ComponentPort()
         tested.get_contents()
@@ -25347,6 +25851,12 @@ class capella_tests(unittest.TestCase):
     def test_ComponentExchange_get_container(self):
         tested = ComponentExchange()
         tested.get_container()
+        pass
+
+    def test_ComponentExchange_get_container_by_type(self):
+        tested = ComponentExchange()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_ComponentExchange_get_contents(self):
@@ -25723,6 +26233,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_ComponentExchangeCategory_get_container_by_type(self):
+        tested = ComponentExchangeCategory()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_ComponentExchangeCategory_get_contents(self):
         tested = ComponentExchangeCategory()
         tested.get_contents()
@@ -26002,6 +26518,12 @@ class capella_tests(unittest.TestCase):
     def test_Class_get_container(self):
         tested = Class()
         tested.get_container()
+        pass
+
+    def test_Class_get_container_by_type(self):
+        tested = Class()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Class_get_contents(self):
@@ -26304,6 +26826,12 @@ class capella_tests(unittest.TestCase):
     def test_Collection_get_container(self):
         tested = Collection()
         tested.get_container()
+        pass
+
+    def test_Collection_get_container_by_type(self):
+        tested = Collection()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Collection_get_contents(self):
@@ -26677,6 +27205,12 @@ class capella_tests(unittest.TestCase):
     def test_Union_get_container(self):
         tested = Union()
         tested.get_container()
+        pass
+
+    def test_Union_get_container_by_type(self):
+        tested = Union()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Union_get_contents(self):
@@ -27178,6 +27712,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Enumeration_get_container_by_type(self):
+        tested = Enumeration()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Enumeration_get_contents(self):
         tested = Enumeration()
         tested.get_contents()
@@ -27612,6 +28152,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_BooleanType_get_container_by_type(self):
+        tested = BooleanType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_BooleanType_get_contents(self):
         tested = BooleanType()
         tested.get_contents()
@@ -27967,6 +28513,12 @@ class capella_tests(unittest.TestCase):
     def test_StringType_get_container(self):
         tested = StringType()
         tested.get_container()
+        pass
+
+    def test_StringType_get_container_by_type(self):
+        tested = StringType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_StringType_get_contents(self):
@@ -28361,6 +28913,12 @@ class capella_tests(unittest.TestCase):
     def test_NumericType_get_container(self):
         tested = NumericType()
         tested.get_container()
+        pass
+
+    def test_NumericType_get_container_by_type(self):
+        tested = NumericType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_NumericType_get_contents(self):
@@ -28832,6 +29390,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_PhysicalQuantity_get_container_by_type(self):
+        tested = PhysicalQuantity()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_PhysicalQuantity_get_contents(self):
         tested = PhysicalQuantity()
         tested.get_contents()
@@ -29091,6 +29655,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Unit_get_container_by_type(self):
+        tested = Unit()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Unit_get_contents(self):
         tested = Unit()
         tested.get_contents()
@@ -29231,6 +29801,12 @@ class capella_tests(unittest.TestCase):
     def test_CapellaModule_get_container(self):
         tested = CapellaModule()
         tested.get_container()
+        pass
+
+    def test_CapellaModule_get_container_by_type(self):
+        tested = CapellaModule()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_CapellaModule_get_contents(self):
@@ -29376,6 +29952,12 @@ class capella_tests(unittest.TestCase):
     def test_Requirement_get_container(self):
         tested = Requirement()
         tested.get_container()
+        pass
+
+    def test_Requirement_get_container_by_type(self):
+        tested = Requirement()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Requirement_get_contents(self):
@@ -29704,6 +30286,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_Folder_get_container_by_type(self):
+        tested = Folder()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_Folder_get_contents(self):
         tested = Folder()
         tested.get_contents()
@@ -29803,6 +30391,12 @@ class capella_tests(unittest.TestCase):
     def test_Attribute_get_container(self):
         tested = Attribute()
         tested.get_container()
+        pass
+
+    def test_Attribute_get_container_by_type(self):
+        tested = Attribute()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_Attribute_get_contents(self):
@@ -29921,6 +30515,12 @@ class capella_tests(unittest.TestCase):
     def test_ReqIFElement_get_container(self):
         tested = ReqIFElement()
         tested.get_container()
+        pass
+
+    def test_ReqIFElement_get_container_by_type(self):
+        tested = ReqIFElement()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_ReqIFElement_get_contents(self):
@@ -30085,6 +30685,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_EnumValue_get_container_by_type(self):
+        tested = EnumValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_EnumValue_get_contents(self):
         tested = EnumValue()
         tested.get_contents()
@@ -30212,6 +30818,12 @@ class capella_tests(unittest.TestCase):
     def test_AbstractRelation_get_container(self):
         tested = AbstractRelation()
         tested.get_container()
+        pass
+
+    def test_AbstractRelation_get_container_by_type(self):
+        tested = AbstractRelation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_AbstractRelation_get_contents(self):
@@ -30351,6 +30963,12 @@ class capella_tests(unittest.TestCase):
     def test_CapellaIncomingRelation_get_container(self):
         tested = CapellaIncomingRelation()
         tested.get_container()
+        pass
+
+    def test_CapellaIncomingRelation_get_container_by_type(self):
+        tested = CapellaIncomingRelation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_CapellaIncomingRelation_get_contents(self):
@@ -30497,6 +31115,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_CapellaOutgoingRelation_get_container_by_type(self):
+        tested = CapellaOutgoingRelation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_CapellaOutgoingRelation_get_contents(self):
         tested = CapellaOutgoingRelation()
         tested.get_contents()
@@ -30639,6 +31263,12 @@ class capella_tests(unittest.TestCase):
     def test_InternalRelation_get_container(self):
         tested = InternalRelation()
         tested.get_container()
+        pass
+
+    def test_InternalRelation_get_container_by_type(self):
+        tested = InternalRelation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
         pass
 
     def test_InternalRelation_get_contents(self):
@@ -30899,6 +31529,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_AbstractType_get_container_by_type(self):
+        tested = AbstractType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_AbstractType_get_contents(self):
         tested = AbstractType()
         tested.get_contents()
@@ -31147,6 +31783,12 @@ class capella_tests(unittest.TestCase):
         tested.get_container()
         pass
 
+    def test_RelationType_get_container_by_type(self):
+        tested = RelationType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
     def test_RelationType_get_contents(self):
         tested = RelationType()
         tested.get_contents()
@@ -31192,7 +31834,8 @@ class capella_tests(unittest.TestCase):
 
     def test_RelationType_get_relation_type_by_long_name(self):
         tested = RelationType()
-        tested.get_relation_type_by_long_name()
+        param1 = "value"
+        tested.get_relation_type_by_long_name(param1)
         pass
 
 

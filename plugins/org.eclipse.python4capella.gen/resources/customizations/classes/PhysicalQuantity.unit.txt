@@ -1,0 +1,11 @@
+    def get_unit(self) -> Unit:
+        value =  self.get_java_object().getUnit()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_unit(self, value: Unit):
+        return self.get_java_object().setUnit(value.get_java_object())
+
