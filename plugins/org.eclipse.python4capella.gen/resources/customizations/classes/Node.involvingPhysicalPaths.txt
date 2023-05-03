@@ -1,0 +1,10 @@
+    def get_involving_physical_paths(self) -> List[PhysicalPath]:
+        res = []
+        involvements = self.get_java_object().getInvolvingInvolvements()
+        physical_path_involvement_e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPathInvolvement")
+        physical_path_e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath")
+        for involvement in involvements:
+            if physical_path_involvement_e_class.isInstance(involvement) and physical_path_e_class.isInstance(involvement.getInvolver()):
+                res.append(PhysicalPath(involvement.getInvolver()))
+        return res
+

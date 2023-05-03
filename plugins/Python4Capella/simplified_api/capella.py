@@ -2944,7 +2944,14 @@ class Node(AbstractInstance):
         """
         Returns: PhysicalPath[*]
         """
-        return create_e_list(self.get_java_object().getInvolvingPhysicalPaths(), PhysicalPath)
+        res = []
+        involvements = self.get_java_object().getInvolvingInvolvements()
+        physical_path_involvement_e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPathInvolvement")
+        physical_path_e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath")
+        for involvement in involvements:
+            if physical_path_involvement_e_class.isInstance(involvement) and physical_path_e_class.isInstance(involvement.getInvolver()):
+                res.append(PhysicalPath(involvement.getInvolver()))
+        return res
     def get_owned_physical_link_categories(self) -> List[PhysicalLinkCategory]:
         """
         Returns: PhysicalLinkCategory[*]
@@ -3026,7 +3033,14 @@ class PhysicalLink(AbstractPhysicalArtifact):
         """
         Returns: PhysicalPath[*]
         """
-        return create_e_list(self.get_java_object().getInvolvingPhysicalPaths(), PhysicalPath)
+        res = []
+        involvements = self.get_java_object().getInvolvingInvolvements()
+        physical_path_involvement_e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPathInvolvement")
+        physical_path_e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPath")
+        for involvement in involvements:
+            if physical_path_involvement_e_class.isInstance(involvement) and physical_path_e_class.isInstance(involvement.getInvolver()):
+                res.append(PhysicalPath(involvement.getInvolver()))
+        return res
     def get_connected_components(self) -> Node:
         """
         Returns: Node[2]
