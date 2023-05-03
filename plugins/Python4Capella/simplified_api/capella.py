@@ -471,7 +471,7 @@ class Constraint(CapellaElement):
             return None
     def set_specification(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         spec = self.get_java_object().getOwnedSpecification()
         if spec is None:
@@ -520,7 +520,7 @@ class PropertyValue(CapellaElement):
             return self.get_java_object().getValue()
     def set_value(self, value: Any):
         """
-        Returns: String
+        Parameters: value: String
         """
         self.get_java_object().setValue(value)
     def get_valued_elements(self) -> List[CapellaElement]:
@@ -859,7 +859,7 @@ class REC(AbstractCatalogElement):
             return specific_cls(value)
     def set_default_replica_compliancy(self, value: CompliancyDefinition):
         """
-        Returns: CompliancyDefinition
+        Parameters: value: CompliancyDefinition
         """
         return self.get_java_object().setDefaultReplicaCompliancy(value.get_java_object())
     def get_replicated_elements(self) -> List[RPL]:
@@ -927,7 +927,7 @@ class RPL(AbstractCatalogElement):
             return specific_cls(value)
     def set_origin(self, value: REC):
         """
-        Returns: REC
+        Parameters: value: REC
         """
         return self.get_java_object().setOrigin(value.get_java_object())
     def get_current_compliancy(self) -> CompliancyDefinition:
@@ -943,7 +943,7 @@ class RPL(AbstractCatalogElement):
             return specific_cls(value)
     def set_current_compliancy(self, value: CompliancyDefinition):
         """
-        Returns: CompliancyDefinition
+        Parameters: value: CompliancyDefinition
         """
         return self.get_java_object().setCurrentCompliancy(value.get_java_object())
 
@@ -1208,7 +1208,7 @@ class OperationalProcess(CapellaElement):
             return specific_cls(value)
     def set_pre_condition(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self) -> Constraint:
@@ -1224,7 +1224,7 @@ class OperationalProcess(CapellaElement):
             return specific_cls(value)
     def set_post_condition(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_available_in_states(self) -> List[State]:
@@ -1375,7 +1375,7 @@ class CommunicationMean(CapellaElement):
             return specific_cls(value)
     def set_source_entity(self, value: OperationalActor):
         """
-        Returns: OperationalActor
+        Parameters: value: OperationalActor
         """
         return self.get_java_object().setSourceEntity(value.get_java_object())
     def get_target_entity(self) -> OperationalActor:
@@ -1391,7 +1391,7 @@ class CommunicationMean(CapellaElement):
             return specific_cls(value)
     def set_target_entity(self, value: OperationalActor):
         """
-        Returns: OperationalActor
+        Parameters: value: OperationalActor
         """
         return self.get_java_object().setTargetEntity(value.get_java_object())
     def get_allocated_interactions(self):
@@ -2074,7 +2074,7 @@ class PhysicalComponent(AbstractPhysicalArtifact):
             return value.getName()
     def set_kind(self, value):
         """
-        Returns: String
+        Parameters: value: String
         """
         self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentKind", value))
     def get_owned_physical_components(self) -> List[PhysicalComponent]:
@@ -2227,7 +2227,7 @@ class ConfigurationItem(CapellaElement):
             return specific_cls(value)
     def set_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_owned_configuration_items(self) -> List[ConfigurationItem]:
@@ -2476,7 +2476,7 @@ class StateTransition(CapellaElement):
             return specific_cls(value)
     def set_guard(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setGuard(value.get_java_object())
     def get_effects(self) -> List[AbstractAction]:
@@ -2566,7 +2566,7 @@ class Scenario(CapellaElement):
             return specific_cls(value)
     def set_pre_condition(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self) -> Constraint:
@@ -2582,7 +2582,7 @@ class Scenario(CapellaElement):
             return specific_cls(value)
     def set_post_condition(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_owned_instance_roles(self) -> List[InstanceRole]:
@@ -2879,7 +2879,7 @@ class Operand(CapellaElement):
             return specific_cls(value)
     def set_guard(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setGuard(value.get_java_object())
     def get_referenced_messages(self) -> List[SequenceMessage]:
@@ -3169,7 +3169,7 @@ class Interface(CapellaElement):
             return specific_cls(value)
     def set_visibility(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_owned_exchange_item_allocations(self) -> List[ExchangeItemAllocation]:
@@ -3242,7 +3242,7 @@ class ExchangeItemAllocation(CapellaElement):
             return specific_cls(value)
     def set_transmission_protocol(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setTransmissionProtocol(value.get_java_object())
     def get_acquisition_protocol(self) -> str:
@@ -3258,7 +3258,7 @@ class ExchangeItemAllocation(CapellaElement):
             return specific_cls(value)
     def set_acquisition_protocol(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setAcquisitionProtocol(value.get_java_object())
     def get_allocated_item(self) -> ExchangeItem:
@@ -3274,7 +3274,7 @@ class ExchangeItemAllocation(CapellaElement):
             return specific_cls(value)
     def set_allocated_item(self, value: ExchangeItem):
         """
-        Returns: ExchangeItem
+        Parameters: value: ExchangeItem
         """
         return self.get_java_object().setAllocatedItem(value.get_java_object())
     def get_invoking_sequence_messages(self) -> List[SequenceMessage]:
@@ -3329,7 +3329,7 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
             return value.getName()
     def set_exchange_mechanism(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setExchangeMechanism(get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeMechanism", value))
     def get_owned_elements(self) -> List[ExchangeItemElement]:
@@ -3418,7 +3418,7 @@ class FunctionPort(CapellaElement):
             return specific_cls(value)
     def set_allocator_component_port(self, value: ComponentPort):
         """
-        Returns: ComponentPort[0..1]
+        Parameters: value: ComponentPort[0..1]
         """
         return self.get_java_object().setRepresentedComponentPort(value.get_java_object())
 
@@ -3522,7 +3522,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             return specific_cls(value)
     def set_source_port(self, value: FunctionOutputPort):
         """
-        Returns: FunctionOutputPort
+        Parameters: value: FunctionOutputPort
         """
         return self.get_java_object().setSource(value.get_java_object())
     def get_target_port(self) -> FunctionInputPort:
@@ -3538,7 +3538,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             return specific_cls(value)
     def set_target_port(self, value: FunctionInputPort):
         """
-        Returns: FunctionInputPort
+        Parameters: value: FunctionInputPort
         """
         return self.get_java_object().setTarget(value.get_java_object())
     def get_source_function(self) -> Function:
@@ -3660,7 +3660,7 @@ class FunctionalChain(CapellaElement):
             return specific_cls(value)
     def set_pre_condition(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self) -> Constraint:
@@ -3676,7 +3676,7 @@ class FunctionalChain(CapellaElement):
             return specific_cls(value)
     def set_post_condition(self, value: Constraint):
         """
-        Returns: Constraint[0..1]
+        Parameters: value: Constraint[0..1]
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_involved_functions(self) -> List[Function]:
@@ -3873,7 +3873,7 @@ class ComponentExchange(CapellaElement, AbstractExchange):
             return specific_cls(value)
     def set_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_connected_component_ports(self) -> ComponentPort:
@@ -3976,7 +3976,7 @@ class AbstractCapability(PropertyValuePkgContainer):
             return specific_cls(value)
     def set_pre_condition(self, value: Constraint):
         """
-        Returns: Constraint
+        Parameters: value: Constraint
         """
         return self.get_java_object().setPreCondition(value.get_java_object())
     def get_post_condition(self) -> Constraint:
@@ -3992,7 +3992,7 @@ class AbstractCapability(PropertyValuePkgContainer):
             return specific_cls(value)
     def set_post_condition(self, value: Constraint):
         """
-        Returns: Constraint
+        Parameters: value: Constraint
         """
         return self.get_java_object().setPostCondition(value.get_java_object())
     def get_owned_scenarios(self) -> List[Scenario]:
@@ -4380,7 +4380,7 @@ class Class(DataType):
             return specific_cls(value)
     def set_visibility(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_contained_properties(self) -> List[Property]:
@@ -4491,7 +4491,7 @@ class Collection(DataType):
             return specific_cls(value)
     def set_collection_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setCollectionKind(value.get_java_object())
     def get_aggregation_kind(self) -> str:
@@ -4507,7 +4507,7 @@ class Collection(DataType):
             return specific_cls(value)
     def set_aggregation_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setAggregationKind(value.get_java_object())
     def get_visibility(self) -> str:
@@ -4523,7 +4523,7 @@ class Collection(DataType):
             return specific_cls(value)
     def set_visibility(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_contained_operations(self) -> List[Operation]:
@@ -4596,7 +4596,7 @@ class Union(DataType):
             return specific_cls(value)
     def set_discriminant(self, value: UnionProperty):
         """
-        Returns: UnionProperty[0..1]
+        Parameters: value: UnionProperty[0..1]
         """
         return self.get_java_object().setDiscriminant(value.get_java_object())
     def get_default_property(self) -> UnionProperty:
@@ -4612,7 +4612,7 @@ class Union(DataType):
             return specific_cls(value)
     def set_default_property(self, value: UnionProperty):
         """
-        Returns: UnionProperty[0..1]
+        Parameters: value: UnionProperty[0..1]
         """
         return self.get_java_object().setDefaultProperty(value.get_java_object())
     def get_kind(self) -> str:
@@ -4628,7 +4628,7 @@ class Union(DataType):
             return specific_cls(value)
     def set_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_contained_operations(self) -> List[Operation]:
@@ -4684,7 +4684,7 @@ class Property(JavaObject):
             return specific_cls(value)
     def set_type(self, value: DataType):
         """
-        Returns: DataType
+        Parameters: value: DataType
         """
         return self.get_java_object().setType(value.get_java_object())
 
@@ -4732,7 +4732,7 @@ class Operation(JavaObject):
             return specific_cls(value)
     def set_visibility(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_realized_exchange_items(self) -> List[ExchangeItem]:
@@ -4804,7 +4804,7 @@ class CapellaException(JavaObject):
             return specific_cls(value)
     def set_visibility(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_super(self) -> List[CapellaException]:
@@ -4871,7 +4871,7 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
             return specific_cls(value)
     def set_visibility(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setVisibility(value.get_java_object())
     def get_super(self) -> List[PrimitiveDataType]:
@@ -4957,7 +4957,7 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_default_value(self, value: EnumerationLiteral):
         """
-        Returns: EnumerationLiteral[0..1]
+        Parameters: value: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setDefaultValue(value.get_java_object())
     def get_min_value(self) -> EnumerationLiteral:
@@ -4973,7 +4973,7 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_min_value(self, value: EnumerationLiteral):
         """
-        Returns: EnumerationLiteral[0..1]
+        Parameters: value: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setMinValue(value.get_java_object())
     def get_max_value(self) -> EnumerationLiteral:
@@ -4989,7 +4989,7 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_max_value(self, value: EnumerationLiteral):
         """
-        Returns: EnumerationLiteral[0..1]
+        Parameters: value: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setMaxValue(value.get_java_object())
     def get_null_value(self) -> EnumerationLiteral:
@@ -5005,7 +5005,7 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_null_value(self, value: EnumerationLiteral):
         """
-        Returns: EnumerationLiteral[0..1]
+        Parameters: value: EnumerationLiteral[0..1]
         """
         return self.get_java_object().setNullValue(value.get_java_object())
     def get_domain_type(self) -> PrimitiveDataType:
@@ -5021,7 +5021,7 @@ class Enumeration(PrimitiveDataType):
             return specific_cls(value)
     def set_domain_type(self, value: PrimitiveDataType):
         """
-        Returns: PrimitiveDataType[0..1]
+        Parameters: value: PrimitiveDataType[0..1]
         """
         return self.get_java_object().setDomainType(value.get_java_object())
 
@@ -5057,7 +5057,7 @@ class EnumerationLiteral(DataValue):
             return specific_cls(value)
     def set_enumeration_type(self, value: Enumeration):
         """
-        Returns: Enumeration[0..1]
+        Parameters: value: Enumeration[0..1]
         """
         return self.get_java_object().setEnumerationType(value.get_java_object())
 
@@ -5093,7 +5093,7 @@ class BooleanType(PrimitiveDataType):
             return specific_cls(value)
     def set_default_value(self, value: LiteralBooleanValue):
         """
-        Returns: LiteralBooleanValue[0..1]
+        Parameters: value: LiteralBooleanValue[0..1]
         """
         return self.get_java_object().setDefaultValue(value.get_java_object())
 
@@ -5243,7 +5243,7 @@ class NumericType(PrimitiveDataType):
             return specific_cls(value)
     def set_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_min_value(self) -> LiteralNumericValue:
@@ -5318,7 +5318,7 @@ class PhysicalQuantity(NumericType):
             return specific_cls(value)
     def set_unit(self, value: Unit):
         """
-        Returns: Unit[0..1]
+        Parameters: value: Unit[0..1]
         """
         return self.get_java_object().setUnit(value.get_java_object())
 
@@ -5437,7 +5437,7 @@ class Interaction(AbstractEvent):
             return specific_cls(value)
     def set_source(self, value: OperationalActivity):
         """
-        Returns: OperationalActivity
+        Parameters: value: OperationalActivity
         """
         return self.get_java_object().setSource(value.get_java_object())
     def get_target(self) -> OperationalActivity:
@@ -5453,7 +5453,7 @@ class Interaction(AbstractEvent):
             return specific_cls(value)
     def set_target(self, value: OperationalActivity):
         """
-        Returns: OperationalActivity
+        Parameters: value: OperationalActivity
         """
         return self.get_java_object().setTarget(value.get_java_object())
     def get_allocating_communication_mean(self) -> CommunicationMean:
@@ -5469,7 +5469,7 @@ class Interaction(AbstractEvent):
             return specific_cls(value)
     def set_allocating_communication_mean(self, value: CommunicationMean):
         """
-        Returns: CommunicationMean[0..1]
+        Parameters: value: CommunicationMean[0..1]
         """
         return self.get_java_object().setAllocatingCommunicationMean(value.get_java_object())
     def get_involving_operational_processes(self) -> List[OperationalProcess]:
@@ -5946,7 +5946,7 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
             return specific_cls(value)
     def set_deploying_node_p_c(self, value: NodePC):
         """
-        Returns: NodePC[0..1]
+        Parameters: value: NodePC[0..1]
         """
         return self.get_java_object().setDeployingNodePC(value.get_java_object())
     def get_realized_logical_components(self) -> List[LogicalComponent]:
@@ -6106,7 +6106,7 @@ class TimeEvent(AbstractEvent):
             return specific_cls(value)
     def set_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_expression(self) -> str:
@@ -6161,7 +6161,7 @@ class Function(AbstractActivityFunction):
             return specific_cls(value)
     def set_kind(self, value: str):
         """
-        Returns: String
+        Parameters: value: String
         """
         return self.get_java_object().setKind(value.get_java_object())
     def get_condition(self) -> str:

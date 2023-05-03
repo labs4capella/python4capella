@@ -320,7 +320,11 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 					res.append(padding + "Returns: " + getTypeAndCardinality(returnPrameter) + NL);
 				}
 			} else if (element instanceof Property) {
-				res.append(padding + "Returns: " + getTypeAndCardinality((TypedElement) element) + NL);
+				if (isSetter) {
+					res.append(padding + "Parameters: value: " + getTypeAndCardinality((TypedElement) element) + NL);
+				} else {
+					res.append(padding + "Returns: " + getTypeAndCardinality((TypedElement) element) + NL);
+				}
 			}
 			CapellaElement container = (CapellaElement) element.eContainer();
 			statusFound: for (PropertyValueGroup group : container.getOwnedPropertyValueGroups()) {
