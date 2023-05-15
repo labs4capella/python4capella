@@ -1,6 +1,6 @@
 target "Capella 6.1.0 Target Platform PyDev 8.2.0"
 
-with source requirements
+with requirements
 
 include "../capella-6.1.0/common.tpd"
 

@@ -1,9 +1,8 @@
-target "Capella 6.1.0 Target Platform"
+target "Capella 6.0.0 Target Platform SDK"
 
 with requirements
 
-include "common.tpd"
-
+include "capella-6.0.0.tpd"
 
 location PyDev "https://www.pydev.org/update_sites/9.3.0" {
 	org.python.pydev.feature.feature.group lazy

@@ -1,6 +1,6 @@
 target "Capella 5.1.0 Target Platform"
 
-with source requirements
+with requirements
 
 //include "https://download.eclipse.org/capella/core/updates/releases/5.1.0-R20210615-075512/targets/capella.target-definition.targetplatform"
 

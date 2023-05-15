@@ -1,6 +1,6 @@
 target "Capella 6.0.0 Target Platform"
 
-with source requirements
+with requirements
 
 include "common.tpd"
 

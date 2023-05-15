@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 1.4.2 Target Platform" sequenceNumber="1684152736">
+<target name="Capella 1.4.2 Target Platform SDK" sequenceNumber="1684152735">
   <locations>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
@@ -45,7 +45,7 @@
       <unit id="org.eclipse.uml2.feature.group" version="0.0.0"/>
       <repository id="eclipse" location="https://download.eclipse.org/releases/2019-06"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.diagram.ui" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.diagram.ui.render" version="0.0.0"/>
@@ -53,7 +53,7 @@
       <unit id="org.eclipse.gmf.runtime.notation" version="0.0.0"/>
       <repository location="https://download.eclipse.org/releases/2020-09"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.doc.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.feature.group" version="0.0.0"/>
@@ -74,7 +74,7 @@
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
       <repository id="sirius" location="https://archive.eclipse.org/sirius/updates/releases/6.3.3/2019-06/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.cadence.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.common.feature.feature.group" version="0.0.0"/>
@@ -102,12 +102,12 @@
       <unit id="org.polarsys.kitalpha.transposer.feature.feature.group" version="0.0.0"/>
       <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/releases/runtime/1.4.2/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.doc.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.emde.sdk.feature.feature.group" version="0.0.0"/>
       <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/releases/sdk/1.4.2/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.sirius.feature.feature.group" version="0.0.0"/>
@@ -119,46 +119,46 @@
       <unit id="org.eclipse.emf.diffmerge.egit.feature.source.feature.group" version="0.0.0"/>
       <repository id="diffmerge-core-master" location="https://download.eclipse.org/diffmerge/releases/0.12.0/emf-diffmerge-site"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group" version="0.0.0"/>
       <repository id="diffmerge-patterns-master" location="https://download.eclipse.org/diffmerge/releases/0.12.0/edm-patterns-site"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="1.11.0.201910071427"/>
       <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="1.11.0.201910071427"/>
       <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/releases/1.11.0/capella"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.query.legacy.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.query.legacy.feature.source.feature.group" version="0.0.0"/>
       <repository id="sirius-query-legacy" location="https://download.eclipse.org/sirius/updates/legacy/1.1.0"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>
       <repository id="egf" location="https://download.eclipse.org/egf/updates/1.6.1/2019-06/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>
       <repository id="nebula" location="https://archive.eclipse.org/nebula/releases/1.4.0/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
       <repository id="eclipse-shared-license" location="https://download.eclipse.org/cbi/updates/license"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.apache.log4j" version="1.2.15.v201012070815"/>
       <unit id="org.apache.commons.lang" version="2.4.0.v201005080502"/>
       <unit id="org.apache.commons.net" version="3.2.0.v201305141515"/>
       <repository id="orbit-R20160221192158" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
       <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/1.4.2-R20201014-090868/org.polarsys.capella.rcp.site/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.ease.lang.scriptarchive.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.ui.feature.feature.group" version="0.0.0"/>
@@ -170,15 +170,15 @@
       <unit id="org.eclipse.ease.lang.unittest.feature.feature.group" version="0.0.0"/>
       <repository id="EASE" location="https://download.eclipse.org/ease/release/0.8.0/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.ease.engine.jython.feature.feature.group" version="0.0.0"/>
       <repository id="ease-engines" location="https://eclipse-ease-addons.github.io/org.eclipse.ease.engines.p2/latest"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.py4j.feature.feature.group" version="0.0.0"/>
       <repository id="py4j" location="http://eclipse.py4j.org/"/>
     </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.python.pydev.feature.feature.group" version="0.0.0"/>
       <repository id="PyDev" location="https://www.pydev.org/update_sites/8.2.0"/>
     </location>

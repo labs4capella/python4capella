@@ -1,0 +1,5 @@
+target "Capella 1.4.2 Target Platform SDK"
+
+with source requirements
+
+include "capella-1.4.2.tpd"
