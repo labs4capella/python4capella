@@ -41,6 +41,7 @@
 			<topic href="doc/user/general/TipsAndTricks.html#ViewMenu" label="View Menu"></topic>
 			<topic href="doc/user/general/TipsAndTricks.html#View" label="View"></topic>
 		</topic>
+		<topic href="doc/user/general/TipsAndTricks.html#Runascriptonresourcechange" label="Run a script on resource change"></topic>
 		<topic href="doc/user/general/TipsAndTricks.html#UserInput" label="User Input">
 			<topic href="doc/user/general/TipsAndTricks.html#Scriptparameters" label="Script parameters"></topic>
 			<topic href="doc/user/general/TipsAndTricks.html#GraphicalDialog" label="Graphical Dialog"></topic>

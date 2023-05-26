@@ -238,6 +238,43 @@ if specific_cls is not None:
 		</blockquote>
 		<h3 id="View">View</h3>
 		<p>TODO</p>
+		<h2 id="Runascriptonresourcechange">Run a script on resource change</h2>
+		<p>You can configure a script to be executed whenever a file from your workspace is modified. This can be handy to automate reporting or publication of your Capella model. You need to add the following header to your script:</p>
+		<pre><code># name                 : Trigger on resource change
+# script-type          : Python
+# description          : Trigger on resource change
+# onResourceChange     : *.capella
+</code></pre>
+		<p>You can then use 
+			<code>argv[0]</code> to get the name of the modified resource and 
+			<code>argv[1]</code> to get the change kind.
+		</p>
+		<p>A basic script that open the modified Capella model can look like this:</p>
+		<pre><code># name                 : Trigger on resource change
+# script-type          : Python
+# description          : Trigger on resource change
+# onResourceChange     : *.capella
+
+include('workspace://Python4Capella/simplified_api/capella.py')
+if False:
+    from simplified_api.capella import *
+
+# include needed for utilities
+include('workspace://Python4Capella/utilities/CapellaPlatform.py')
+if False:
+    from utilities.CapellaPlatform import *
+    
+capella_path = argv[0].replace('workspace:/','')
+
+if capella_path[len(capella_path)-8:] == '.capella':
+    aird_path = capella_path[0:len(capella_path)-8] + '.aird'
+
+    print(aird_path)
+
+    model = CapellaModel()
+    model.open(aird_path)
+
+</code></pre>
 		<h2 id="UserInput">User Input</h2>
 		<p>Some time selecting an element from your model or using an external source for your data is not enough and you will need to prompt the user to input some information. This section explains how you can get parameters passed to the script or create and use dialogs.</p>
 		<h3 id="Scriptparameters">Script parameters</h3>
