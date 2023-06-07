@@ -330,7 +330,7 @@ include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
     from simplified_api.capella import *
 
-class ComopnentDialog:
+class ComponentDialog:
     labelName = None
     txtName = None
     labelSummary = None
@@ -349,7 +349,7 @@ class ComopnentDialog:
         print('Component ' + lc.get_name() + ' summary: ' + lc.get_summary())
 
 
-instance = ComopnentDialog()
+instance = ComponentDialog()
 
 javaDialog = createDialog("instance.build()", "Component", "Enter component informations:");
 result = executeUI("javaDialog.open()");
