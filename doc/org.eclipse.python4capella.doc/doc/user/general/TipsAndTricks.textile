@@ -426,6 +426,7 @@ else:
 
 # save the Capella model
 model.save()
+
 bq. Note: This code also works for "Team for Capella":https://www.obeosoft.com/en/team-for-capella projects. You will need to make sure no one else has locked elements you intend to modify though.
 
 h2. Dropins and Update Site
