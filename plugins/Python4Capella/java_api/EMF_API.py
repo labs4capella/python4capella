@@ -1,28 +1,28 @@
-def eAllContents(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
+def eAllContents(e_obj): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def eAllContentsByType(e_obj, e_class): # provider by org.eclipse.python4capella.modules.EMFModule
+def eAllContentsByType(e_obj, e_class): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def getEClassifier(ns_uri, eclass_name): # provider by org.eclipse.python4capella.modules.EMFModule
+def getEClassifier(ns_uri, eclass_name): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def create(ns_uri, eclass_name): # provider by org.eclipse.python4capella.modules.EMFModule
+def create(ns_uri, eclass_name): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def createFromEClassifier(e_class): # provider by org.eclipse.python4capella.modules.EMFModule
+def createFromEClassifier(e_class): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def getEnumLiteral(ns_uri, enum_name, literal_name): # provider by org.eclipse.python4capella.modules.EMFModule
+def getEnumLiteral(ns_uri, enum_name, literal_name): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def eInverse(e_obj, reference_name): # provider by org.eclipse.python4capella.modules.EMFModule
+def eInverse(e_obj, reference_name): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def eInverseByType(e_obj, e_classifier): # provider by org.eclipse.python4capella.modules.EMFModule
+def eInverseByType(e_obj, e_classifier): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def eInverseByName(e_obj, reference_name): # provider by org.eclipse.python4capella.modules.EMFModule
+def eInverseByName(e_obj, reference_name): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def copy(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
+def copy(e_obj): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def copyAll(e_objs): # provider by org.eclipse.python4capella.modules.EMFModule
+def copyAll(e_objs): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def delete(e_obj): # provider by org.eclipse.python4capella.modules.EMFModule
+def delete(e_obj): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def deleteAll(e_objs): # provider by org.eclipse.python4capella.modules.EMFModule
+def deleteAll(e_objs): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
 
 loadModule('/Capella/EMF')

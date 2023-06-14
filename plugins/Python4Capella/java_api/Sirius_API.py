@@ -1,42 +1,42 @@
-def getRepresentationDescriptors(e_obj): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getRepresentationDescriptors(e_obj): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def exportImage(descriptor, file_path): # provider by org.eclipse.python4capella.modules.SiriusModule
+def exportImage(descriptor, file_path): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def loadSiriusSession(aird_path): # provider by org.eclipse.python4capella.modules.SiriusModule
+def loadSiriusSession(aird_path): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getEngineering(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getEngineering(session): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getRepresentedElements(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getRepresentedElements(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def isVisibleInDocumentation(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+def isVisibleInDocumentation(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def isVisibleForTraceability(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+def isVisibleForTraceability(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def isSynchronized(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+def isSynchronized(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getStatus(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getStatus(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getReview(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getReview(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getAllDiagrams(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getAllDiagrams(session): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getDiagrams(session, cls): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getDiagrams(session, cls): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getRepresentingDiagrams(e_object): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getRepresentingDiagrams(e_object): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getContextualElementForDiagrams(e_object): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getContextualElementForDiagrams(e_object): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getSession(e_object): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getSession(e_object): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def startTransaction(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+def startTransaction(session): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def commitTransaction(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+def commitTransaction(session): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def rollbackTransaction(session): # provider by org.eclipse.python4capella.modules.SiriusModule
+def rollbackTransaction(session): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def createProgressMonitor(): # provider by org.eclipse.python4capella.modules.SiriusModule
+def createProgressMonitor(): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
-def getPackage(descriptor): # provider by org.eclipse.python4capella.modules.SiriusModule
+def getPackage(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
 
 loadModule('/Capella/Sirius')

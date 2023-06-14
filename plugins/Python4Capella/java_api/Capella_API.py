@@ -1,14 +1,14 @@
-def callQuery(query_class, e_obj): # provider by org.eclipse.python4capella.modules.CapellaModule
+def callQuery(query_class, e_obj): # provided by org.eclipse.python4capella.modules.CapellaModule
     pass
-def getSBQuery(e_obj, query_name): # provider by org.eclipse.python4capella.modules.CapellaModule
+def getSBQuery(e_obj, query_name): # provided by org.eclipse.python4capella.modules.CapellaModule
     pass
-def getAvailableSBQueries(e_obj): # provider by org.eclipse.python4capella.modules.CapellaModule
+def getAvailableSBQueries(e_obj): # provided by org.eclipse.python4capella.modules.CapellaModule
     pass
-def getCapellaVersion(): # provider by org.eclipse.python4capella.modules.CapellaModule
+def getCapellaVersion(): # provided by org.eclipse.python4capella.modules.CapellaModule
     pass
-def getLabel(e_obj): # provider by org.eclipse.python4capella.modules.CapellaModule
+def getLabel(e_obj): # provided by org.eclipse.python4capella.modules.CapellaModule
     pass
-def getLibraries(system_engineering): # provider by org.eclipse.python4capella.modules.CapellaModule
+def getLibraries(system_engineering): # provided by org.eclipse.python4capella.modules.CapellaModule
     pass
 
 loadModule('/Capella/Capella')

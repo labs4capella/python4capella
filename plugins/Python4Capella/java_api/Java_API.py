@@ -1,7 +1,7 @@
 from typing import TypeVar, Iterator, Any, List
-def iteratorHasNext(iterator): # provider by org.eclipse.python4capella.modules.JavaModule
+def iteratorHasNext(iterator): # provided by org.eclipse.python4capella.modules.JavaModule
     pass
-def iteratorNext(iterator): # provider by org.eclipse.python4capella.modules.JavaModule
+def iteratorNext(iterator): # provided by org.eclipse.python4capella.modules.JavaModule
     pass
 
 loadModule('/Capella/Java')
