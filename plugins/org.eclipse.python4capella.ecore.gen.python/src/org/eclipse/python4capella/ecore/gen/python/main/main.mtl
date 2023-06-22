@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[**
+ *  Copyright (c) 2023 THALES GLOBAL SERVICES
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
+ *
+ *  SPDX-License-Identifier: EPL-2.0
+ *
+ *  Contributors:
+ *       Obeo - Initial API and implementation
+ *]
+[**
+ * Generated Python files for Python4Capella from an Ecore model.
+ * @author ylp
+ * @version 1.0.0
+ * @since 1.0.0
+ */]
+[module main('http://www.eclipse.org/emf/2002/Ecore')/]
+
+[import org::eclipse::python4capella::ecore::gen::python::files::header/]
+[import org::eclipse::python4capella::ecore::gen::python::files::body/]
+
+[**
+ * Generates the different Python files for the given EPackage.
+ * @param pkg the package to generate
+ * @main
+ */]
+[template public generate(pkg : ecore::EPackage)]
+  [pkg.generateHeader()/]
+  [pkg.generateBody()/]
+[/template]

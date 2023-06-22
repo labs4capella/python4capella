@@ -1,0 +1,245 @@
+[comment encoding = UTF-8 /]
+[**
+ *  Copyright (c) 2023 THALES GLOBAL SERVICES
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
+ *
+ *  SPDX-License-Identifier: EPL-2.0
+ *
+ *  Contributors:
+ *       Obeo - Initial API and implementation
+ *]
+[**
+ * The documentation of the module body.
+ * @author ylp
+ * @version 1.0.0
+ * @since 1.0.0
+ */]
+[module body('http://www.eclipse.org/emf/2002/Ecore')/]
+
+[import org::eclipse::python4capella::ecore::gen::python::requests::requests/]
+[import org::eclipse::python4capella::ecore::gen::python::services::PythonServices/]
+[import org::eclipse::emf::ecore::util::EcoreUtil/]
+
+[**
+ * Generates the body Python file.
+ * @param pkg the EPackage to generate
+ */]
+[template public generateBody(pkg : ecore::EPackage)]
+  [file (pkg.name + '.py', overwrite, 'UTF-8')]
+    [protected ('copyright') startTagPrefix('# ') endTagPrefix('# ')]
+    [/protected]
+
+    [protected ('includes') startTagPrefix('# ') endTagPrefix('# ')]
+      [pkg.generateIncludes()/]
+    [/protected]
+    
+    [pkg.eClassifiers.generateClassifier()->sep('\n')/]
+  [/file]
+[/template]
+
+[**
+ * Generates includes for the given EPackage.
+ * @param pkg the EPackage
+ */]
+[template public generateIncludes(pkg : ecore::EPackage)]
+  include('workspace://Python4Capella/simplified_api/capella.py')
+  if False:
+      from simplified_api.capella import *
+  include('workspace://Python4Capella/simplified_api/[pkg.name/]_header.py')
+  if False:
+      from simplified_api.[pkg.name/]_header import *
+  [if (not pkg.eClassifiers->filter(ecore::EEnum)->isEmpty())]
+    from enum import Enum
+  [/if]
+[/template]
+
+[**
+ * Generates the Python class for the given EClassifier.
+ * @param cls the EClassifier
+ */]
+[template public generateClassifier(cls : ecore::EClassifier)]
+  # TODO generateClassifier([cls.eClass().name/])
+[/template]
+
+[**
+ * Generates the Python class for the given EClass.
+ * @param cls the EClass
+ */]
+[template public generateClassifier(cls : ecore::EClass)]
+  [protected ('header_' + cls.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    class [cls.getPythonName()/]([if (not cls.eSuperTypes->isEmpty())][cls.eSuperTypes.getPythonName()->sep(', ')/][else]EObject[/if]):
+        """
+        [let  documentation = cls.getDocumentation()]
+          [if (documentation <> null)]
+            [documentation/]
+          [/if] 
+        [/let]
+        Java class: [cls.getInstanceClassName()/]
+        """
+  [/protected]
+      [cls.generateConstructor()/]
+      [cls.eStructuralFeatures.generateGetterAndSetter()/]
+      [cls.eOperations.generateOperation()/]
+[/template]
+
+[**
+ * Generates the Python class for the given EClass.
+ * @param cls the EClass
+ */]
+[template public generateClassifier(dataType : ecore::EDataType) post(self.trim())]
+  [if (dataType.needPythonClass())]
+    [protected ('header_' + dataType.name) startTagPrefix('# ') endTagPrefix('# ')]
+      class [dataType.name/](JavaObject):
+          """
+          [let  documentation = dataType.getDocumentation()]
+            [if (documentation <> null)]
+              [documentation/]
+            [/if]
+          [/let]
+          Java class: [dataType.instanceTypeName/]
+          """
+    [/protected]
+        [dataType.generateConstructor()/]
+  [/if]
+[/template]
+
+[**
+ * Generates the Python class constructor for the given EDatatype.
+ * @param dataType the EDatatype
+ */]
+[template public generateConstructor(dataType : ecore::EDataType)]
+  [protected ('constructor_' + dataType.name) startTagPrefix('# ') endTagPrefix('# ')]
+    java_class = Class.forName("[dataType.instanceTypeName/]")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            instance = [dataType.instanceTypeName/]()
+            JavaObject.__init__(self, instance)
+        elif isinstance(java_object, [dataType.name/]):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.java_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+  [/protected]
+[/template]
+
+[**
+ * Generates the Python class for the given EEnum.
+ * @param enum the EEnum
+ */]
+[template public generateClassifier(enum : ecore::EEnum)]
+  [protected ('enum_' + enum.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    class [enum.getPythonName()/](Enum):
+        [for (literal | enum.eLiterals)]
+          [literal.name/] = [literal.value/]
+        [/for] 
+  [/protected]
+[/template]
+
+[**
+ * Generates the Python class constructor for the given EClass.
+ * @param cls the EClass
+ */]
+[template public generateConstructor(cls : ecore::EClass)]
+  [protected ('constructor_' + cls.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    e_class = get_e_classifier("[cls.ePackage.nsURI/][cls.ePackage.nsURI/]", "[cls.name/]")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, [cls.getPythonName()/]):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+  [/protected]
+[/template]
+
+[**
+ * Generates the Python getter and setter for the given EStructuralFeature.
+ * @param feature the EStructuralFeature
+ */]
+[template public generateGetterAndSetter(feature : ecore::EStructuralFeature)]
+  [if (not feature.many)]
+    [protected ('getter_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+      def get_[feature.name.getPythonName()/](self) -> [feature.asTypeHint()/]:
+          """
+          [let documentation = feature.getDocumentation()]
+            [if (feature.getDocumentation() <> null)]
+              [feature.getDocumentation()/]
+            [/if]
+          [/let]
+          Returns: [feature.asParameterDocumentationType()/]
+          """
+          [if (feature.eType.oclIsKindOf(ecore::EClass))]
+            value =  self.get_java_object().[feature.getterName()/]()
+            if value is None:
+                return value
+            else:
+                e_object_class = getattr(sys.modules['['/]"__main__"], "EObject")
+                specific_cls = e_object_class.get_class(value)
+                if specific_cls is None:
+                    return None
+                else:
+                    return specific_cls(value)
+          [else]
+            return self.get_java_object().[feature.getterName()/]()
+          [/if]
+    [/protected]
+    [if (feature.changeable and not feature.derived)]
+      [protected ('setter_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+        def set_[feature.name.getPythonName()/](self, value: [feature.eType.getPythonName()/]) -> None:
+            """
+            Parameters:
+              value: [feature.eType.getPythonName()/]
+            Returns: None
+            """
+            [if (feature.eType.oclIsKindOf(ecore::EEnum))]
+              self.get_java_object().[feature.setterName()/]([feature.eType.oclAsType(ecore::EEnum).generateEnumLiteralGetter('value')/])
+            [else]
+              self.get_java_object().[feature.setterName()/](value[if (feature.eType.oclIsKindOf(ecore::EClass))].get_java_object()[/if])
+            [/if]
+      [/protected]
+    [/if]
+  [else]
+    [protected ('getter_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+      def get_[feature.name.getPythonName()/](self) -> List['['/][feature.eType.getPythonName()/]]:
+          """
+          [let documentation = feature.getDocumentation()]
+            [if (documentation <> null)]
+              [documentation/]
+            [/if]
+          [/let]
+          Returns: [feature.asParameterDocumentationType()/]
+          """
+          return create_e_list(self.get_java_object().get[feature.name.toUpperFirst()/](), [feature.eType.getPythonName()/])
+    [/protected]
+  [/if]
+[/template]
+
+[**
+ * Generates the Python method for the given EOperation.
+ * @param operation the EOperation
+ */]
+[template public generateOperation(operation : ecore::EOperation)]
+  [protected ('operation_' + operation.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    def [operation.name.getPythonName()/](self, [operation.eParameters.asParameter()->sep(', ')/]) -> [operation.asTypeHint()/]:
+        """
+        [let documentation = operation.getDocumentation()]
+          [if (documentation <> null)]
+            [documentation/]
+          [/if]
+        [/let]
+        Parameters:
+          [operation.eParameters.asParameterDocumentation()->sep(', ')/]
+        Returns: [if (operation.eType <> null)][operation.asParameterDocumentationType()/][else]None[/if]
+        """
+        [if (operation.eType <> null)]return [/if]self.get_java_object().[operation.name/]([operation.eParameters.generateJavaValueGetter()->sep(', ')/])
+  [/protected]
+[/template]
+
+
+

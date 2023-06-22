@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.python4capella.ecore.gen.python
+Bundle-SymbolicName: org.eclipse.python4capella.ecore.gen.python
+Bundle-Version: 1.2.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore
+Automatic-Module-Name: org.eclipse.python4capella.ecore.gen.python
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: .

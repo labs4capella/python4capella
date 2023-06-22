@@ -1,0 +1,74 @@
+[comment encoding = UTF-8 /]
+[**
+ *  Copyright (c) 2023 THALES GLOBAL SERVICES
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
+ *
+ *  SPDX-License-Identifier: EPL-2.0
+ *
+ *  Contributors:
+ *       Obeo - Initial API and implementation
+ *]
+[**
+ * Utility requests.
+ * @author ylp
+ * @version 1.0.0
+ * @since 1.0.0
+ */]
+[module requests('http://www.eclipse.org/emf/2002/Ecore')/]
+
+[import org::eclipse::python4capella::ecore::gen::python::services::PythonServices/]
+
+[query public getterName(feature : ecore::EStructuralFeature) : String = 
+  if (feature.eType.name = 'EBoolean') then
+    'is' + feature.name.toUpperFirst() 
+  else
+    'get' + feature.name.toUpperFirst() 
+  endif
+/]
+
+[query public setterName(feature : ecore::EStructuralFeature) : String = 
+  'set' + feature.name.toUpperFirst() 
+/]
+
+[query public asParameter(element : ecore::ETypedElement) : String = 
+  element.name.getPythonName() + ': ' + element.asTypeHint()
+/]
+
+[query public asTypeHint(element : ecore::ETypedElement) : String = 
+  if element.eType = null then 
+    'None'
+  else
+    if element.many then
+      'List[' + element.eType.getPythonName() + ']'
+    else
+      element.eType.getPythonName()
+    endif
+  endif
+/]
+
+[query public generateJavaValueGetter(element : ecore::ETypedElement) : String = 
+  if element.eType.oclIsKindOf(ecore::EClass) then
+    element.name.getPythonName() + '.get_java_object()'
+  else
+    if element.eType.oclIsKindOf(ecore::EEnum) then
+      element.eType.oclAsType(ecore::EEnum).generateEnumLiteralGetter(element.name.getPythonName())
+    else
+      element.name.getPythonName()
+    endif
+  endif
+/]
+
+[query public asParameterDocumentation(element : ecore::ETypedElement) : String = 
+  element.name.getPythonName() + ': ' + element.asParameterDocumentationType()
+/]
+
+[query public asParameterDocumentationType(element : ecore::ETypedElement) : String = 
+  element.eType.getPythonName() + '[' + element.lowerBound + '..' + if element.upperBound < 0 then '*' else element.upperBound endif + ']'
+/]
+
+[query public generateEnumLiteralGetter(enum : ecore::EEnum, name : String) : String = 
+  'get_enum_literal("' + enum.ePackage.nsURI + '", "' + enum.name + '", ' + name + '.name)'
+/]

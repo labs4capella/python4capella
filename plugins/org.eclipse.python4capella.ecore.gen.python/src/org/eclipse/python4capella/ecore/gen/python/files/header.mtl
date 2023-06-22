@@ -1,0 +1,82 @@
+[comment encoding = UTF-8 /]
+[**
+ *  Copyright (c) 2023 THALES GLOBAL SERVICES
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
+ *
+ *  SPDX-License-Identifier: EPL-2.0
+ *
+ *  Contributors:
+ *       Obeo - Initial API and implementation
+ *]
+[**
+ * The documentation of the module header.
+ * @author ylp
+ * @version 1.0.0
+ * @since 1.0.0
+ */]
+[module header('http://www.eclipse.org/emf/2002/Ecore')/]
+
+[import org::eclipse::python4capella::ecore::gen::python::requests::requests/]
+[import org::eclipse::python4capella::ecore::gen::python::services::PythonServices/]
+
+[**
+ * Generates the header Python file.
+ * @param pkg the EPackage to generate
+ */]
+[template public generateHeader(pkg : ecore::EPackage)]
+  [file (pkg.name + '_header.py', overwrite, 'UTF-8')]
+    [protected ('copyright') startTagPrefix('# ') endTagPrefix('# ')]
+    [/protected]
+
+    [protected ('includes') startTagPrefix('# ') endTagPrefix('# ')]
+    [/protected]
+
+    [pkg.eClassifiers.generateHeader()->sep('\n')/]
+  [/file]
+[/template]
+
+[**
+ * Generates the Python header for the given EClassifier.
+ * @param cls the EClassifier to generate
+ */]
+[template public generateHeader(cls : ecore::EClassifier)]
+  # TODO generateHeader([cls.eClass().name/])
+[/template]
+
+[**
+ * Generates the Python header for the given EClass.
+ * @param cls the EClass to generate
+ */]
+[template public generateHeader(cls : ecore::EClass)]
+  [protected (cls.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    class [cls.getPythonName()/]:
+        pass
+  [/protected]
+[/template]
+
+[**
+ * Generates the Python header for the given EEnum.
+ * @param enum the EEnum to generate
+ */]
+[template public generateHeader(enum : ecore::EEnum)]
+  [protected (enum.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    class [enum.getPythonName()/]:
+        pass
+  [/protected]
+[/template]
+
+[**
+ * Generates the Python class for the given EClass.
+ * @param cls the class
+ */]
+[template public generateHeader(dataType : ecore::EDataType) post(self.trim())]
+  [if (dataType.needPythonClass())]
+    [protected (dataType.name) startTagPrefix('# ') endTagPrefix('# ')]
+      class [dataType.name/]:
+          pass
+    [/protected]
+  [/if]
+[/template]
