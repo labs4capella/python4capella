@@ -8,7 +8,7 @@ This section explains how the Python layer of Python4Capella and Java layer of C
 
 h3. Compatibilities
 
-* Pyhton4Capella after 1.1.0:
+* Python4Capella after 1.1.0:
 ** Capella 5.x to Capella 6.x included
 *** PyDev 9.3.0
 ** Capella 1.4.x
@@ -16,7 +16,7 @@ h3. Compatibilities
 ** Python 3.10.x and lower (should work with newer version)
 ** Java included with your version of Capella
 
-* Pyhton4Capella before 1.1.0:
+* Python4Capella before 1.1.0:
 ** Capella 1.4.x to Capella 5.x included
 ** PyDev 8.2.0
 ** Python 3.7.x and lower
