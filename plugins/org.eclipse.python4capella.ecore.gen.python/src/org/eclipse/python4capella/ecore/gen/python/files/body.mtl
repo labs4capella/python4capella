@@ -54,6 +54,9 @@
   [if (not pkg.eClassifiers->filter(ecore::EEnum)->isEmpty())]
     from enum import Enum
   [/if]
+  [if (not pkg.eClassifiers->filter(ecore::EClass)->collect(c | c.eStructuralFeatures + c.eOperations)->select(fo | fo.many)->isEmpty())]
+    from typing import List
+  [/if]
 [/template]
 
 [**
