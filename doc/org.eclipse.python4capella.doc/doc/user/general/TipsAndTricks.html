@@ -13,7 +13,7 @@
 		<p>This section explains how the Python layer of Python4Capella and Java layer of Capella work together.</p>
 		<h3 id="Compatibilities">Compatibilities</h3>
 		<ul>
-			<li>Pyhton4Capella after 1.1.0:
+			<li>Python4Capella after 1.1.0:
 				<ul>
 					<li>Capella 5.x to Capella 6.x included
 						<ul>
@@ -31,7 +31,7 @@
 			</li>
 		</ul>
 		<ul>
-			<li>Pyhton4Capella before 1.1.0:
+			<li>Python4Capella before 1.1.0:
 				<ul>
 					<li>Capella 1.4.x to Capella 5.x included</li>
 					<li>PyDev 8.2.0</li>
@@ -240,20 +240,20 @@ if specific_cls is not None:
 		<p>TODO</p>
 		<h2 id="Runascriptonresourcechange">Run a script on resource change</h2>
 		<p>You can configure a script to be executed whenever a file from your workspace is modified. This can be handy to automate reporting or publication of your Capella model. You need to add the following header to your script:</p>
-		<pre><code># name                 : Trigger on resource change
+		<pre><code># onResourceChange     : *.capella
 # script-type          : Python
-# description          : Trigger on resource change
-# onResourceChange     : *.capella
 </code></pre>
 		<p>You can then use 
 			<code>argv[0]</code> to get the name of the modified resource and 
 			<code>argv[1]</code> to get the change kind.
 		</p>
-		<p>A basic script that open the modified Capella model can look like this:</p>
-		<pre><code># name                 : Trigger on resource change
+		<p>You can also use an absolute worspace path:</p>
+		<pre><code># onResourceChange     : workspace://Python4Capella/test.txt
 # script-type          : Python
-# description          : Trigger on resource change
-# onResourceChange     : *.capella
+</code></pre>
+		<p>A basic script that open the modified Capella model can look like this:</p>
+		<pre><code># onResourceChange     : *.capella
+# script-type          : Python
 
 include('workspace://Python4Capella/simplified_api/capella.py')
 if False:
@@ -274,6 +274,13 @@ if capella_path[len(capella_path)-8:] == '.capella':
     model = CapellaModel()
     model.open(aird_path)
 
+</code></pre>
+		<p>if you are only interested in save changes, you can use the 
+			<code>onSave</code> property the same way you use the 
+			<code>onResourceChange</code>:
+		</p>
+		<pre><code># onSave               : *.capella
+# script-type          : Python
 </code></pre>
 		<h2 id="UserInput">User Input</h2>
 		<p>Some time selecting an element from your model or using an external source for your data is not enough and you will need to prompt the user to input some information. This section explains how you can get parameters passed to the script or create and use dialogs.</p>
