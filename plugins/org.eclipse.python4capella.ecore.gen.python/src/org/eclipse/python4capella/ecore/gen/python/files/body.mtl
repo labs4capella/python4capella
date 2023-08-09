@@ -54,7 +54,7 @@
   [if (not pkg.eClassifiers->filter(ecore::EEnum)->isEmpty())]
     from enum import Enum
   [/if]
-  [if (not pkg.eClassifiers->filter(ecore::EClass)->collect(c | c.eStructuralFeatures + c.eOperations)->select(fo | fo.many)->isEmpty())]
+  [if (not pkg.eClassifiers->filter(ecore::EClass)->collect(c | c.eStructuralFeatures + c.eOperations + c.eAllOperations.eParameters)->select(fop | fop.many)->isEmpty())]
     from typing import List
   [/if]
 [/template]
@@ -243,6 +243,3 @@
         [if (operation.eType <> null)]return [/if]self.get_java_object().[operation.name/]([operation.eParameters.generateJavaValueGetter()->sep(', ')/])
   [/protected]
 [/template]
-
-
-
