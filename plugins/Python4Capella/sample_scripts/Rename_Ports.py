@@ -12,18 +12,9 @@ from Tools.scripts.ndiff import fopen
 '''
 
 # To run it:
-#  - enable Developer capabilities if not already done (see documentation in the help menu)
-#  - you can run this script by launching the contextual menu "Run As / EASE Script..." 
-#    on this script. 
-#    - By default, the model selected is IFE sample (aird path of the model written below)
-
-#  - you can also run this script according to a configuration (script selected, arguments) 
-#    and modify the configuration by launching the contextual menu "Run As / Run configurations..." 
-#    on this script. 
-#    - create a new "EASE Script" configuration
-#    - define the name of the configuration: "Rename_Ports.py" (for instance)
-#    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Rename_Ports.py"
-#    - define the path to the aird file as first argument in "Script arguments" area: "/In-Flight Entertainment System/In-Flight Entertainment System.aird" (for instance)
+#  - add this script location in the scripting preferences of not already done during the installation
+#  - select a CapellaElement and right click on it
+#  - select the "Rename Ports" menu
 
 # include needed for the Capella modeller API
 include('workspace://Python4Capella/simplified_api/capella.py')

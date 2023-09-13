@@ -151,7 +151,7 @@ Select the Window > Preferences menu
 
   ![EASE Python interpreter](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/EASE_interpreter.png)
 
-- select the Scripting / Script Locations
+- select the Scripting / Script Locations (needed to [contribute user interfaces](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/TipsAndTricks.textile#contribute-to-capella-user-interface))
   - add /Python4Capella/sample_scripts by clicking the Add Workspace button
 
   ![Select script location](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/EASE_script_location.png)
