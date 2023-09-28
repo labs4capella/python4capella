@@ -62,10 +62,10 @@ try:
             pc = PhysicalComponent()
             #set its name
             print("* Create a new physical component with name " + cell.value)
-            pc.set_name(cell.value)
             #add the new PhysicalComponent
             pc_pkg.get_owned_physical_components().add(pc)
             org.polarsys.capella.core.model.helpers.CapellaElementExt.creationService(pc.get_java_object())
+            pc.set_name(cell.value)
 except:
     # if something went wrong we rollback the transaction
     model.rollback_transaction()
