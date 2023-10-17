@@ -45,6 +45,19 @@ class RequirementAddOn(JavaObject):
                 if extension.eClass().getName() == "CapellaModule" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                     res.append(CapellaModule(extension))
         return res
+    
+    @staticmethod
+    def get_capellaTypes_modules(capellaElement: CapellaElement):
+        """
+        Get the Capella Types module from the given Capella Element.
+        """
+        res = []
+        se = RequirementAddOn.get_system_engineering(capellaElement)
+        for modelArchitecture in se.get_java_object().getOwnedArchitectures():
+            for extension in modelArchitecture.getOwnedExtensions():
+                if extension.eClass().getName() == "CapellaTypesFolder" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                    res.append(CapellaTypesFolder(extension))
+        return res
 
     @staticmethod
     def get_incoming_requirements(capellaElement: CapellaElement) -> List[Requirement]:
@@ -414,11 +427,10 @@ class Attribute(EObject):
         """
         return self.get_java_object().getDefinition()
 
-    def set_definition(self, value: str):
+    def set_definition(self, attrDef: AttributeDefinition):
         """
-        Returns: String
         """
-        self.get_java_object().setDefinition(value)
+        self.get_java_object().setDefinition(attrDef.get_java_object())
 
     def get_value(self) -> Any:
         """

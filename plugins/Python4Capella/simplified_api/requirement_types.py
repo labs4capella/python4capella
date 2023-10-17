@@ -63,6 +63,14 @@ class CapellaTypesFolder(EObject):
         Returns: String
         """
         self.get_java_object().setReqIFName(value)
+    
+    def set_data_type_definition(self, defType):
+        """
+        Set the given Definition Type to the list of Definition Types from the Capella Types Folder
+        from model.
+        :param defType: Definition Type to be added.
+        """
+        self.get_owned_definition_types().add(defType.get_java_object())
 
     
 class AttributeDefinition(EObject):
@@ -129,6 +137,7 @@ class RequirementType(EObject):
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.RequirementType
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "RequirementType")
+
     def __init__(self, java_object=None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))     
@@ -161,6 +170,7 @@ class DataTypeDefinition(EObject):
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.DataTypeDefinition
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "DataTypeDefinition")
+
     def __init__(self, java_object=None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))     
@@ -189,6 +199,7 @@ class EnumerationDataTypeDefinition(EObject):
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.EnumerationDataTypeDefinition
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "EnumerationDataTypeDefinition")
+
     def __init__(self, java_object=None):
         if java_object is None:
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))     
@@ -207,3 +218,13 @@ class EnumerationDataTypeDefinition(EObject):
         
     def get_specified_values(self):
         return self.get_java_object().getSpecifiedValues()
+    
+    def set_values_to_enumeration_data_type_definition(self, value):
+        """
+        Create an enum value, set there the given string value.
+        Then, set this enum to a Enumeration Data Type as value.
+        :param value: string with value.
+        """
+        enum = EnumValue()
+        enum.set_long_name(value)
+        self.get_specified_values().add(enum.get_java_object())
