@@ -357,7 +357,7 @@ class Requirement(EObject):
                         res.append(specific_cls(capella_element))
         return res
     
-    def set_requirement_type_to_requirement(self, reqType):
+    def set_requirement_type(self, reqType):
         """
         Set the given Requirement Type.
         :param reqType: Requirement Type.
