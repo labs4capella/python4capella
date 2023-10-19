@@ -219,7 +219,7 @@ class EnumerationDataTypeDefinition(EObject):
     def get_specified_values(self):
         return self.get_java_object().getSpecifiedValues()
     
-    def set_values_to_enumeration_data_type_definition(self, value): #Revisar este nombre, ponerlo como el de arriba
+    def set_values(self, value):
         """
         Create an enum value, set there the given string value.
         Then, set this enum to a Enumeration Data Type as value.
