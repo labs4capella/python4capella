@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.impl.BasicEObjectImpl;
 
 /**
  * Python utilty class.
@@ -101,39 +102,84 @@ public final class PythonServices {
 
 	private static String getPythonName(EDataType dataType) {
 		final String res;
+
 		final String instanceClassName = dataType.getInstanceClassName();
-		switch (instanceClassName) {
-			case "java.lang.String":
-				res = "str";
-				break;
+		if (instanceClassName != null) {
+			switch (instanceClassName) {
+				case "java.lang.String":
+					res = "str";
+					break;
 
-			case "boolean":
-			case "java.lang.Boolean":
-				res = "bool";
-				break;
+				case "boolean":
+				case "java.lang.Boolean":
+					res = "bool";
+					break;
 
-			case "float":
-			case "java.lang.Float":
-			case "double":
-			case "java.lang.Double":
-				res = "float";
-				break;
+				case "float":
+				case "java.lang.Float":
+				case "double":
+				case "java.lang.Double":
+					res = "float";
+					break;
 
-			case "int":
-			case "java.lang.Integer":
-			case "long":
-			case "java.lang.Long":
-			case "short":
-			case "java.lang.Short":
-			case "char":
-			case "java.lang.Character":
-				res = "int";
-				break;
+				case "int":
+				case "java.lang.Integer":
+				case "long":
+				case "java.lang.Long":
+				case "short":
+				case "java.lang.Short":
+				case "char":
+				case "java.lang.Character":
+					res = "int";
+					break;
 
-			default:
+				default:
+					res = null;
+					break;
+			}
+		} else if (dataType.eIsProxy() && dataType instanceof BasicEObjectImpl) {
+			final String uri = ((BasicEObjectImpl) dataType).eProxyURI().toString();
+			final int index = uri.lastIndexOf("#//");
+			if (index >= 0) {
+				final String type = uri.substring(index + "#//".length());
+				switch (type) {
+					case "EString":
+						res = "str";
+						break;
+
+					case "EBoolean":
+						res = "bool";
+						break;
+
+					case "EFloat":
+					case "EFloatObject":
+					case "EDouble":
+					case "EDoubleObject":
+						res = "float";
+						break;
+
+					case "EInt":
+					case "EIntegerObject":
+					case "ELong":
+					case "ELongObject":
+					case "EShort":
+					case "EShortObject":
+					case "EChar":
+					case "ECharacterObject":
+						res = "int";
+						break;
+
+					default:
+						res = null;
+						break;
+				}
+			} else {
 				res = null;
-				break;
+			}
+		} else {
+			res = null;
 		}
+
 		return res;
 	}
 
