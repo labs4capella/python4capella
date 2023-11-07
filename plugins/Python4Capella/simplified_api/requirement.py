@@ -125,6 +125,19 @@ class CapellaModule(EObject):
         """
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
     
+    def get_owned_folders(self):
+        """
+        Returns a list of owned folders
+        """
+        listOfRequirements = create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
+        listOfFolders = []
+        
+        for element in listOfRequirements:
+            if (isinstance(element, Folder)):
+                listOfFolders.append(element)
+        
+        return listOfFolders
+    
     def add_requirement(self, requirement):
         """
         Add the given requirement into the requirement list of the module.
@@ -393,12 +406,85 @@ class Folder(Requirement):
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 
+    def get_long_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFLongName()
+
+    def set_long_name(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFLongName(value)
+
+    def get_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFName()
+
+    def set_name(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFName(value)
+    
+    def get_chapter_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFChapterName()
+
+    def set_chapter_name(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFChapterName(value)
+    
+    def get_text(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFText()
+
+    def set_text(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFText(value)
+
     def get_owned_requirements(self) -> List[Requirement]:
         """
         Returns: Requirement[*]
         """
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
-
+    
+    def set_requirement(self, requirement):
+        """
+        Set the given requirement into the folder.
+        :param requirement: Requirement to be setted.
+        """
+        self.get_java_object().getOwnedRequirements().add(requirement.get_java_object())
+    
+    def get_owned_folders(self):
+        """
+        Returns a list of owned folders
+        """
+        listOfRequirements = create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
+        listOfFolders = []
+        
+        for element in listOfRequirements:
+            if (isinstance(element, Folder)):
+                listOfFolders.append(element)
+        
+        return listOfFolders
+    
+    def add_element(self, element):
+        """
+        Add the given elemento into the folder.
+        """
+        self.get_java_object().getOwnedRequirements().add(element.get_java_object())
 
 class Attribute(EObject):
     """
@@ -445,6 +531,12 @@ class Attribute(EObject):
         Returns: String
         """
         self.get_java_object().setValue(value)
+    
+    def set_values(self, value):
+        """
+        Returns: String
+        """
+        self.get_java_object().getValues().add(value)
 
 
 class ReqIFElement(EObject):
@@ -515,6 +607,12 @@ class EnumValue(ReqIFElement):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    
+    def get_long_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFLongName()
 
 
 class AbstractRelation(ReqIFElement):

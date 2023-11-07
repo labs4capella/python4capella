@@ -39,6 +39,13 @@ class CapellaTypesFolder(EObject):
 
     def get_owned_types(self):
         return self.get_java_object().getOwnedTypes()
+    
+    def add_owned_type(self, reqType):
+        """
+        This method add a requirement type to the requirement type list.
+        """
+        reqTypesList = self.get_java_object().getOwnedTypes()
+        reqTypesList.add(reqType.get_java_object())
 
     def get_long_name(self) -> str:
         """
@@ -228,3 +235,9 @@ class EnumerationDataTypeDefinition(EObject):
         enum = EnumValue()
         enum.set_long_name(value)
         self.get_specified_values().add(enum.get_java_object())
+    
+    def set_description(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFDescription(value)
