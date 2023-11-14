@@ -528,9 +528,8 @@ class Attribute(EObject):
     
     def get_values(self):
         """
-        Returns: String
         """
-        self.get_java_object().getValues()
+        return self.get_java_object().getValues()
 
     def set_value(self, value):
         """
