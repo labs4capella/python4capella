@@ -4,11 +4,12 @@
 # popup                : enableFor(org.eclipse.sirius.viewpoint.DRepresentationDescriptor)
 
 '''
-This script allows to exxtract content of xAB diagram
+This script allows to extract content of xAB diagram
 It will create a folder result in the selected Capella project with the resulting xlsx file.
 '''
 
 # To run it:
+#  - you need to right click on a DRepresentation Descriptor (diagram) and select the "Extract content of xAB diagram" menu
 #  - enable Developer capabilities if not already done (see documentation in the help menu)
 #  - you can run this script by launching the contextual menu "Run As / EASE Script..." 
 #    on this script. 
