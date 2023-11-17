@@ -390,7 +390,7 @@ class Requirement(EObject):
 
 class Folder(Requirement):
     """
-    Java class: org.polarsys.capella.core.data.capellamodeller.Folder
+    Java class: org.polarsys.kitalpha.vp.requirements.Requirements.Folder
     """
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "Folder")
 
@@ -612,12 +612,6 @@ class EnumValue(ReqIFElement):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    
-    def get_long_name(self) -> str:
-        """
-        Returns: String
-        """
-        return self.get_java_object().getReqIFLongName()
 
 
 class AbstractRelation(ReqIFElement):

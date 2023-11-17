@@ -37,3 +37,24 @@ class AbstractType:
 class RelationType:
     pass
 
+class TypesFolder:
+    pass
+
+class CapellaTypesFolder:
+    pass
+
+class AttributeDefinition:
+    pass
+
+class AttributeDefinitionEnumeration:
+    pass
+
+class RequirementType:
+    pass
+
+class DataTypeDefinition:
+    pass
+
+class EnumerationDataTypeDefinition:
+    pass
+
