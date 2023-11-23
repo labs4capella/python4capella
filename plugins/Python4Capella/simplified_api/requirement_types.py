@@ -24,8 +24,6 @@ class TypesFolder(ReqIFElement):
     e_class = get_e_classifier("http://www.polarsys.org/kitalpha/requirements", "TypesFolder")
 
     def __init__(self, java_object=None):
-        """
-        """
         if java_object is None:
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaTypesFolder):
@@ -48,8 +46,6 @@ class CapellaTypesFolder(TypesFolder, EObject):
     e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaTypesFolder")
 
     def __init__(self, java_object=None):
-        """
-        """
         if java_object is None:
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaTypesFolder):
@@ -60,18 +56,10 @@ class CapellaTypesFolder(TypesFolder, EObject):
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
     
     def add_owned_type(self, reqType):
-        """
-        This method add a requirement type to the requirement type list.
-        """
         reqTypesList = self.get_java_object().getOwnedTypes()
         reqTypesList.add(reqType.get_java_object())
     
     def set_data_type_definition(self, defType):
-        """
-        Set the given Definition Type to the list of Definition Types from the Capella Types Folder
-        from model.
-        :param defType: Definition Type to be added.
-        """
         self.get_owned_definition_types().add(defType.get_java_object())
 
     
@@ -153,10 +141,6 @@ class RequirementType(EObject):
         return self.get_java_object().getOwnedAttributes()
     
     def set_attibute_definition(self, attrDef):
-        """
-        Set the given Attribute Definition.
-        :param attrDef: Attribute definition.
-        """
         self.get_java_object().getOwnedAttributes().add(attrDef.get_java_object())
     
     
@@ -209,11 +193,6 @@ class EnumerationDataTypeDefinition(DataTypeDefinition):
         return self.get_java_object().getSpecifiedValues()
     
     def set_values(self, value):
-        """
-        Create an enum value, set there the given string value.
-        Then, set this enum to a Enumeration Data Type as value.
-        :param value: string with value.
-        """
         enum = EnumValue()
         enum.set_long_name(value)
         self.get_specified_values().add(enum.get_java_object())
