@@ -543,6 +543,18 @@ class Attribute(EObject):
         """
         self.get_java_object().getValues().add(value)
 
+    def remove_all_enumValues(self):
+        enumList = self.get_values()
+        
+        for enum in enumList:
+            enumList.remove(enum)
+    
+    def get_definition_proxy(self):
+        return self.get_java_object().getDefinitionProxy()
+    
+    def set_definition_proxy(self, value):
+        self.get_java_object().setDefinitionProxy(value)
+        
 
 class ReqIFElement(EObject):
     """
