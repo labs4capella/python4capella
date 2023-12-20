@@ -191,6 +191,16 @@ class CapellaModule(EObject):
         Returns: String
         """
         self.get_java_object().setReqIFPrefix(value)
+    
+    def get_module_type(self):
+        """
+        """
+        self.get_java_object().getModuleType()
+    
+    def set_module_type(self, moduleType):
+        """
+        """
+        self.get_java_object().setModuleType(moduleType)
 
 
 class Requirement(EObject):
