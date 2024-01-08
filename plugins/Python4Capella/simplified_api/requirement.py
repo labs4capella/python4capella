@@ -143,6 +143,12 @@ class CapellaModule(EObject):
         Add the given requirement into the requirement list of the module.
         """
         self.get_java_object().getOwnedRequirements().add(requirement.get_java_object())
+    
+    def add_attribute(self, attr):
+        """
+        Add the given attribute into the attribute list of the module.
+        """
+        self.get_java_object().getOwnedAttributes().add(attr.get_java_object())
 
     def get_id(self) -> str:
         """
@@ -556,15 +562,15 @@ class Attribute(EObject):
     def remove_all_enumValues(self):
         enumList = self.get_values()
         
-        for enum in enumList:
-            enumList.remove(enum)
+        while(len(enumList) > 0):
+            enumList.pop()
     
     def get_definition_proxy(self):
         return self.get_java_object().getDefinitionProxy()
     
     def set_definition_proxy(self, value):
         self.get_java_object().setDefinitionProxy(value)
-        
+
 
 class ReqIFElement(EObject):
     """
