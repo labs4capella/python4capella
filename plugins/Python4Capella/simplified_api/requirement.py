@@ -37,7 +37,6 @@ class RequirementAddOn(JavaObject):
         Returns: CapellaModule[*]
         status: KO
         """
-        # : :type capellaElement: CapellaElement
         res = []
         se = RequirementAddOn.get_system_engineering(capellaElement)
         for modelArchitecture in se.get_java_object().getOwnedArchitectures():
@@ -47,9 +46,9 @@ class RequirementAddOn(JavaObject):
         return res
     
     @staticmethod
-    def get_capellaTypes_modules(capellaElement: CapellaElement):
+    def get_capella_TypesFolder(capellaElement: CapellaElement):
         """
-        Get the Capella Types module from the given Capella Element.
+        Get the Capella Types Folder from the given Capella Element.
         """
         res = []
         se = RequirementAddOn.get_system_engineering(capellaElement)
