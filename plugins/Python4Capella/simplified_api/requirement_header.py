@@ -57,4 +57,3 @@ class DataTypeDefinition:
 
 class EnumerationDataTypeDefinition:
     pass
-

@@ -8,11 +8,11 @@ Created on 17 oct 2023
 @see: This python module contains classes to support the CapellaTypesFolder and derived objects
 '''
 
-include('workspace://Python4Capella/simplified_api/capella.py')
+include('../simplified_api/capella.py')
 if False:
     from simplified_api.capella import *
     
-include('workspace://Python4Capella/simplified_api/requirement_header.py')
+include('../simplified_api/requirement_header.py')
 if False:
     from simplified_api.requirement_header import *
 
@@ -61,8 +61,7 @@ class CapellaTypesFolder(TypesFolder, EObject):
     
     def set_data_type_definition(self, defType):
         self.get_owned_definition_types().add(defType.get_java_object())
-
-    
+   
 class AttributeDefinition(EObject):
     """
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.AttributeDefinition
@@ -91,7 +90,6 @@ class AttributeDefinition(EObject):
     def get_data_type_definition(self):
         return self.get_java_object().getDefinitionType()
 
-
 class AttributeDefinitionEnumeration(AttributeDefinition):
     """
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.AttributeDefinitionEnumeration
@@ -113,8 +111,7 @@ class AttributeDefinitionEnumeration(AttributeDefinition):
         
     def get_data_type_definition(self):
         return self.get_java_object().getDefinitionType()
-    
-    
+       
 class RequirementType(EObject):
     """
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.RequirementType
@@ -142,8 +139,7 @@ class RequirementType(EObject):
     
     def set_attibute_definition(self, attrDef):
         self.get_java_object().getOwnedAttributes().add(attrDef.get_java_object())
-    
-    
+      
 class ModuleType(EObject):
     """
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.ModuleType
@@ -171,7 +167,6 @@ class ModuleType(EObject):
     
     def set_attibute_definition(self, attrDef):
         self.get_java_object().getOwnedAttributes().add(attrDef.get_java_object())
-    
     
 class DataTypeDefinition(EObject):
     """
@@ -201,7 +196,6 @@ class DataTypeDefinition(EObject):
     def get_description(self):
         self.get_java_object().getReqIFDescription()
 
-
 class EnumerationDataTypeDefinition(DataTypeDefinition):
     """
     Java class: org.polarsys.kitalpha.vp.requirements.Requirements.EnumerationDataTypeDefinition
@@ -225,4 +219,3 @@ class EnumerationDataTypeDefinition(DataTypeDefinition):
         enum = EnumValue()
         enum.set_long_name(value)
         self.get_specified_values().add(enum.get_java_object())
-        

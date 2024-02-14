@@ -12,19 +12,25 @@ def getLibraries(system_engineering): # provided by org.eclipse.python4capella.m
     pass
 
 loadModule('/Capella/Capella')
-include('workspace://Python4Capella/java_api/EMF_API.py')
+include('EMF_API.py')
 if False:
     from java_api.EMF_API import *
 
 def capella_query(query_class, e_obj, cls = None):
     """Call a query from the semantic browser from the qualified class name of the query and the EObect to pass as parameter"""
     e_object_class = getattr(sys.modules["__main__"], "EObject")
-    return JavaList(callQuery(query_class, e_obj.get_java_object()), e_object_class)
+    if cls is None:
+        return JavaList(callQuery(query_class, e_obj.get_java_object()), e_object_class)
+    else:
+        return JavaList(callQuery(query_class, e_obj.get_java_object()), cls)
 
 def capella_query_by_name(e_obj, query_name, cls = None):
     """Call a query from the semantic browser from the query name and the EObect to pass as parameter"""
     e_object_class = getattr(sys.modules["__main__"], "EObject")
-    return JavaList(getSBQuery(e_obj.get_java_object(), query_name), e_object_class)
+    if cls is None:
+        return JavaList(getSBQuery(e_obj.get_java_object(), query_name), e_object_class)
+    else:
+        return JavaList(getSBQuery(e_obj.get_java_object(), query_name), cls)
 
 def available_query_names(e_obj):
     """List all available query names for the given EObject"""
