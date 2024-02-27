@@ -115,7 +115,7 @@
  */]
 [template public generateConstructor(dataType : ecore::EDataType)]
   [protected ('constructor_' + dataType.name) startTagPrefix('# ') endTagPrefix('# ')]
-    java_class = Class.forName("[dataType.instanceTypeName/]")
+    java_class = java.lang.Class.forName("[dataType.instanceTypeName/]")
     def __init__(self, java_object = None):
         if java_object is None:
             instance = [dataType.instanceTypeName/]()
