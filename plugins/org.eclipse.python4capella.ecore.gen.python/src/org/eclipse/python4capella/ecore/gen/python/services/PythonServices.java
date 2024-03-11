@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.BasicEObjectImpl;
  * Python utilty class.
  * 
  * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
- *
  */
 public final class PythonServices {
 
@@ -33,7 +32,8 @@ public final class PythonServices {
 	/**
 	 * Converts camel case name to Python name.
 	 * 
-	 * @param name the name to convert
+	 * @param name
+	 *            the name to convert
 	 * @return the Python name
 	 */
 	public static String getPythonName(String name) {
@@ -55,7 +55,8 @@ public final class PythonServices {
 	/**
 	 * Gets the instance {@link Class} name for the given {@link EClass}.
 	 * 
-	 * @param eCls the {@link EClass}
+	 * @param eCls
+	 *            the {@link EClass}
 	 * @return the instance {@link Class} name for the given {@link EClass}
 	 */
 	public static String getInstanceClassName(EClass eCls) {
@@ -78,7 +79,8 @@ public final class PythonServices {
 	/**
 	 * Gets the Python type name of the given {@link EClassifier}.
 	 * 
-	 * @param eClassifier the {@link EClassifier}
+	 * @param eClassifier
+	 *            the {@link EClassifier}
 	 * @return the Python type name of the given {@link EClassifier}
 	 */
 	public static String getPythonName(EClassifier eClassifier) {
@@ -87,7 +89,7 @@ public final class PythonServices {
 		if (eClassifier instanceof EEnum) {
 			res = eClassifier.getName();
 		} else if (eClassifier instanceof EDataType) {
-			final String pythonName = getPythonName((EDataType) eClassifier);
+			final String pythonName = getPythonName((EDataType)eClassifier);
 			if (pythonName != null) {
 				res = pythonName;
 			} else {
@@ -138,7 +140,7 @@ public final class PythonServices {
 					break;
 			}
 		} else if (dataType.eIsProxy() && dataType instanceof BasicEObjectImpl) {
-			final String uri = ((BasicEObjectImpl) dataType).eProxyURI().toString();
+			final String uri = ((BasicEObjectImpl)dataType).eProxyURI().toString();
 			final int index = uri.lastIndexOf("#//");
 			if (index >= 0) {
 				final String type = uri.substring(index + "#//".length());
@@ -186,9 +188,10 @@ public final class PythonServices {
 	/**
 	 * Tells if the given {@link EDataType} needs a Python class.
 	 * 
-	 * @param dataType the {@link EDataType}
-	 * @return <code>true</code> if the given {@link EDataType} needs a Python
-	 *         class, <code>false</code> otherwise
+	 * @param dataType
+	 *            the {@link EDataType}
+	 * @return <code>true</code> if the given {@link EDataType} needs a Python class, <code>false</code>
+	 *         otherwise
 	 */
 	public static boolean needPythonClass(EDataType dataType) {
 		return getPythonName(dataType) == null;
