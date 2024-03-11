@@ -167,7 +167,7 @@
  */]
 [template public generateGetterAndSetter(feature : ecore::EStructuralFeature)]
   [if (not feature.many)]
-    [protected ('getter_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    [protected ('getter' + feature.eContainingClass.name.getPythonName() + '_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
       def get_[feature.name.getPythonName()/](self) -> [feature.asTypeHint()/]:
           """
           [let documentation = feature.getDocumentation()]
@@ -193,7 +193,7 @@
           [/if]
     [/protected]
     [if (feature.changeable and not feature.derived)]
-      [protected ('setter_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+      [protected ('setter' + feature.eContainingClass.name.getPythonName() + '_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
         def set_[feature.name.getPythonName()/](self, value: [feature.eType.getPythonName()/]) -> None:
             """
             Parameters:
@@ -208,7 +208,7 @@
       [/protected]
     [/if]
   [else]
-    [protected ('getter_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+    [protected ('getter' + feature.eContainingClass.name.getPythonName() + '_' + feature.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
       def get_[feature.name.getPythonName()/](self) -> List['['/][feature.eType.getPythonName()/]]:
           """
           [let documentation = feature.getDocumentation()]
@@ -228,7 +228,7 @@
  * @param operation the EOperation
  */]
 [template public generateOperation(operation : ecore::EOperation)]
-  [protected ('operation_' + operation.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
+  [protected ('operation' + operation.eContainingClass.name.getPythonName() + '_' + operation.name.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
     def [operation.name.getPythonName()/](self, [operation.eParameters.asParameter()->sep(', ')/]) -> [operation.asTypeHint()/]:
         """
         [let documentation = operation.getDocumentation()]
