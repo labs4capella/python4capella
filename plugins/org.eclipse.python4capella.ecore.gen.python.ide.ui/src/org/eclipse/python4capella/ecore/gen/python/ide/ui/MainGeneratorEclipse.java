@@ -184,7 +184,7 @@ public class MainGeneratorEclipse extends MainGenerator {
 			try {
 				targetWorkspaceContainer.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 			} catch (CoreException e) {
-				Activator.getDefault().log(new Status(IStatus.ERROR, getClass(), "could not refresh "
+				Activator.getDefault().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "could not refresh "
 						+ targetWorkspaceContainer.getFullPath(), e));
 			}
 		}
