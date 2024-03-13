@@ -65,7 +65,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ matrix.tycho }}-${{ hashFiles('**/pom.xml', '**/*.product') }}
         restore-keys: |
-          ${{ runner.os }}-maven-
+          ${{ runner.os }}-maven-${{ matrix.tycho }}-${{ hashFiles('**/pom.xml', '**/*.product') }}
 
     - name: Install metacity and xvfb
       uses: awalsh128/cache-apt-pkgs-action@v1.3.0
