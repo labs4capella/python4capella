@@ -16,7 +16,7 @@ jobs:
     steps:
     # Checking out code as the set-matrix step utilizes a file named matrix_includes.json
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4.1.1
     # This step is explained more in a following section
     - id: set-matrix
       run: |
@@ -43,7 +43,7 @@ jobs:
         echo TYCHO ${{ matrix.tycho }}
 
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4.1.1
 
 
     - name: Check if release is needed
