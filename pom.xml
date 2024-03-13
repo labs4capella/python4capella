@@ -18,14 +18,15 @@
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-5.1.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-5.0.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-1.4.2</module>
-    <module>releng/org.eclipse.python4capella.targetplatforms/capella-1.4.1</module>
+    <!--module>releng/org.eclipse.python4capella.targetplatforms/capella-1.4.1</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-1.4.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-1.3.1</module>
-    <module>releng/org.eclipse.python4capella.targetplatforms/capella-1.3.0</module>
+    <module>releng/org.eclipse.python4capella.targetplatforms/capella-1.3.0</module-->
 
     <module>plugins/org.eclipse.python4capella</module>
     <module>plugins/org.eclipse.python4capella.pydev</module>
     <module>plugins/org.eclipse.python4capella.ecore.gen.python</module>
+    <module>plugins/org.eclipse.python4capella.ecore.gen.python.ide.ui</module>
     <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>

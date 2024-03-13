@@ -19,7 +19,6 @@ package org.eclipse.python4capella.ecore.gen.python.main;
 import java.io.File;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -151,7 +150,7 @@ public class MainGenerator {
 
 		// create the resource set used to load models
 		final Object generationKey = new Object();
-		final ArrayList<Exception> exceptions = new ArrayList<>();
+		final List<Exception> exceptions = new ArrayList<>();
 		final ResourceSet resourceSet = createDefaultResourceSet();
 		final ResourceSet resourceSetForModels = createResourceSetForModel(generationKey, options, exceptions,
 				resourceSet);
@@ -172,14 +171,20 @@ public class MainGenerator {
 		beforeGeneration(evaluator, queryEnvironment, module, resourceSetForModels, strategy, targetURI,
 				logURI);
 		try {
-			final Map<EClass, List<EObject>> valuesCache = new HashMap<>();
+			final Map<EClass, List<EObject>> valuesCache = new LinkedHashMap<>();
 			for (Template template : getTemplates(module)) {
 				final EClassifierTypeLiteral eClassifierTypeLiteral = (EClassifierTypeLiteral)template
 						.getParameters().get(0).getType().getAst();
 				final List<EObject> values = getValues(queryEnvironment, valuesCache, eClassifierTypeLiteral,
 						resourceSetForModels);
-				AcceleoUtil.generate(template, values, evaluator, queryEnvironment, strategy, targetURI,
-						logURI);
+
+				final String parameterName = template.getParameters().get(0).getName();
+				Map<String, Object> variables = new LinkedHashMap<>();
+				for (EObject value : values) {
+					variables.put(parameterName, value);
+					AcceleoUtil.generate(template, variables, evaluator, queryEnvironment, strategy,
+							targetURI, logURI);
+				}
 			}
 		} finally {
 			AQLUtils.cleanResourceSetForModels(generationKey, resourceSetForModels);
@@ -283,9 +288,8 @@ public class MainGenerator {
 	 * @return the created {@link ResourceSet} for models
 	 * @generated
 	 */
-	protected ResourceSet createResourceSetForModel(final Object generationKey,
-			final Map<String, String> options, final ArrayList<Exception> exceptions,
-			final ResourceSet resourceSet) {
+	protected ResourceSet createResourceSetForModel(Object generationKey, Map<String, String> options,
+			List<Exception> exceptions, ResourceSet resourceSet) {
 		final ResourceSet resourceSetForModels = AQLUtils.createResourceSetForModels(exceptions,
 				generationKey, resourceSet, options);
 
@@ -348,8 +352,8 @@ public class MainGenerator {
 	 * @return the created {@link IQualifiedNameQueryEnvironment}
 	 * @generated
 	 */
-	protected IQualifiedNameQueryEnvironment createAcceleoQueryEnvironment(final Map<String, String> options,
-			final IQualifiedNameResolver resolver, final ResourceSet resourceSetForModels) {
+	protected IQualifiedNameQueryEnvironment createAcceleoQueryEnvironment(Map<String, String> options,
+			IQualifiedNameResolver resolver, ResourceSet resourceSetForModels) {
 		final IQualifiedNameQueryEnvironment queryEnvironment = AcceleoUtil.newAcceleoQueryEnvironment(
 				options, resolver, resourceSetForModels, false);
 		for (String nsURI : new ArrayList<String>(EPackage.Registry.INSTANCE.keySet())) {
@@ -369,8 +373,8 @@ public class MainGenerator {
 	 * @return the created {@link AcceleoEvaluator}
 	 * @generated
 	 */
-	protected AcceleoEvaluator createAcceleoEvaluator(final IQualifiedNameResolver resolver,
-			final IQualifiedNameQueryEnvironment queryEnvironment) {
+	protected AcceleoEvaluator createAcceleoEvaluator(IQualifiedNameResolver resolver,
+			IQualifiedNameQueryEnvironment queryEnvironment) {
 		AcceleoEvaluator evaluator = new AcceleoEvaluator(queryEnvironment.getLookupEngine(), System
 				.lineSeparator());
 		resolver.addLoader(new ModuleLoader(new AcceleoParser(), evaluator));

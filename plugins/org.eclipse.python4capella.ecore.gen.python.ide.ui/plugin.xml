@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.python4capella.ecore.gen.python.ide.ui.handlers.MainGeneratorHandler"
+            commandId="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.mainGeneratorCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               id="org.eclipse.python4capella.ecore.gen.python.ide.ui.menus.generators"
+               label="Generators">
+            <command
+                  commandId="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.mainGeneratorCommand"
+                  id="org.eclipse.python4capella.ecore.gen.python.ide.ui.menus.mainGeneratorCommand"
+                  label="org::eclipse::python4capella::ecore::gen::python::main::main">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="and">
+                        <instanceof
+                              value="org.eclipse.emf.ecore.EPackage">
+                        </instanceof>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.generatorsCategory"
+            name="Generators">
+      </category>
+      <command
+            categoryId="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.generatorsCategory"
+            id="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.mainGeneratorCommand"
+            name="org::eclipse::python4capella::ecore::gen::python::main::main">
+      </command>
+   </extension>
+
+</plugin>
