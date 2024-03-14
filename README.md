@@ -105,7 +105,7 @@ If you don't know how to install from an update site you can have a look at our 
 
 ## Python Installation
 
-You will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29).
+You will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). You can use more recent versions of Python but Python4Capella 1.2.0 and before will only run with Python older than version 3.12 (see this [issue](https://github.com/labs4capella/python4capella/issues/216)).
 
 If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
