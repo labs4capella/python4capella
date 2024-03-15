@@ -30,7 +30,7 @@
     <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
-    <module>features/org.eclipse.python4capella.ecore.gen.python.feature</module>
+    <!--module>features/org.eclipse.python4capella.ecore.gen.python.feature</module-->
   </modules>
 
   <properties>
