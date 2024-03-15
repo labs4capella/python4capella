@@ -60,7 +60,7 @@ jobs:
         distribution: 'adopt'
         java-version: ${{ matrix.java }}
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4.0.1
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ matrix.tycho }}-${{ hashFiles('**/pom.xml', '**/*.product') }}
@@ -68,7 +68,7 @@ jobs:
           ${{ runner.os }}-maven-${{ matrix.tycho }}-${{ hashFiles('**/pom.xml', '**/*.product') }}
 
     - name: Install metacity and xvfb
-      uses: awalsh128/cache-apt-pkgs-action@v1.3.0
+      uses: awalsh128/cache-apt-pkgs-action@v1.4.2
       with:
         packages: xvfb metacity
         version: 1.0
