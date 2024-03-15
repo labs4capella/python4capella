@@ -71,7 +71,7 @@ jobs:
       uses: awalsh128/cache-apt-pkgs-action@v1.4.2
       with:
         packages: xvfb metacity
-        version: 1.0
+        version: cache-apt-pkgs-${{ matrix.profile }}
 
     - name: Build with Maven (${{ matrix.profile }})
       id: maven_build
