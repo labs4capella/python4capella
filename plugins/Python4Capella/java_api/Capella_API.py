@@ -12,7 +12,7 @@ def getLibraries(system_engineering): # provided by org.eclipse.python4capella.m
     pass
 
 loadModule('/Capella/Capella')
-include('workspace://Python4Capella/java_api/EMF_API.py')
+include('EMF_API.py')
 if False:
     from java_api.EMF_API import *
 

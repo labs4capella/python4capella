@@ -15,7 +15,7 @@ def getFile(file_name):
 loadModule('/System/UI')
 loadModule('/System/Resources')
 
-include('workspace://Python4Capella/java_api/Sirius_API.py')
+include('../java_api/Sirius_API.py')
 if False:
     from java_api.Sirius_API import *
 
