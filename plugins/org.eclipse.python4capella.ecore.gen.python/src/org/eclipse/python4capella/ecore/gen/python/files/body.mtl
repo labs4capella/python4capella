@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [**
- *  Copyright (c) 2023 THALES GLOBAL SERVICES
+ *  Copyright (c) 2023, 2024 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -36,6 +36,12 @@
       [pkg.generateIncludes()/]
     [/protected]
     
+    [let polarsysConstraints = pkg.getPolarsysExtendedElementAnnotations()]
+      [if (not polarsysConstraints->isEmpty())]
+        [polarsysConstraints->generateAddon()/]
+
+      [/if]
+    [/let]
     [pkg.eClassifiers.generateClassifier()->sep('\n')/]
   [/file]
 [/template]
@@ -242,4 +248,17 @@
         """
         [if (operation.eType <> null)]return [/if]self.get_java_object().[operation.name/]([operation.eParameters.generateJavaValueGetter()->sep(', ')/])
   [/protected]
+[/template]
+
+[**
+ * Generates the Addon Python Class.
+ * @param polarsysConstraints the Seuqence of polarsys ExtendedElement annotations.
+ */]
+[template public generateAddon(polarsysConstraints : Sequence(ecore::EAnnotation))]
+  class [polarsysConstraints->first().eContainer(ecore::EPackage).name/]Addon:
+      [for (annotation | polarsysConstraints)]
+        @staticmethod
+        def [annotation.getAddonGetterName()/](value: [annotation.getAddonExtendedType()/]) -> List['['/][annotation.eContainer(ecore::EClass).getPythonName()/]]:
+            return get_extensions(value, [annotation.eContainer(ecore::EClass).getPythonName()/])
+      [/for]
 [/template]
