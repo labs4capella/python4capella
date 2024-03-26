@@ -1,5 +1,5 @@
 /**
- *   Copyright (c) 2021 THALES GLOBAL SERVICES
+ *   Copyright (c) 2021, 2024 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.ease.modules.WrapToScript;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
@@ -34,6 +35,8 @@ import org.polarsys.capella.core.data.capellamodeller.Project;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
 import org.polarsys.capella.core.libraries.model.CapellaModel;
 import org.polarsys.capella.core.libraries.queries.QueryExt;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
+import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
 /**
  * EASE module for Capella.
@@ -167,6 +170,27 @@ public class CapellaModule {
 		}
 
 		return res.toArray(new SystemEngineering[res.size()]);
+	}
+
+	/**
+	 * Gets the {@link List} of {@link ElementExtension} of the given {@link EClass
+	 * type} for the given {@link ExtensibleElement}.
+	 * 
+	 * @param element the {@link ExtensibleElement}
+	 * @param eCls    the {@link EClass} used to filter
+	 * @return the {@link List} of {@link ElementExtension} of the given
+	 *         {@link EClass type} for the given {@link ExtensibleElement}
+	 */
+	public List<ElementExtension> getExtensions(ExtensibleElement element, EClass eCls) {
+		final List<ElementExtension> res = new ArrayList<>();
+
+		for (ElementExtension extension : element.getOwnedExtensions()) {
+			if (eCls.isInstance(extension)) {
+				res.add(extension);
+			}
+		}
+
+		return res;
 	}
 
 }

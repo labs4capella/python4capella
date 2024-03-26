@@ -10,6 +10,8 @@ def getLabel(e_obj): # provided by org.eclipse.python4capella.modules.CapellaMod
     pass
 def getLibraries(system_engineering): # provided by org.eclipse.python4capella.modules.CapellaModule
     pass
+def getExtensions(e_obj, e_class): # provided by org.eclipse.python4capella.modules.CapellaModule
+    pass
 
 loadModule('/Capella/Capella')
 include('workspace://Python4Capella/java_api/EMF_API.py')
@@ -25,7 +27,7 @@ def capella_query(query_class, e_obj, cls = None):
         return JavaList(callQuery(query_class, e_obj.get_java_object()), cls)
 
 def capella_query_by_name(e_obj, query_name, cls = None):
-    """Call a query from the semantic browser from the query name and the EObect to pass as parameter"""
+    """Call a query from the semantic browser from the query name and the EObject to pass as parameter"""
     e_object_class = getattr(sys.modules["__main__"], "EObject")
     if cls is None:
         return JavaList(getSBQuery(e_obj.get_java_object(), query_name), e_object_class)
@@ -37,9 +39,11 @@ def available_query_names(e_obj):
     return getAvailableSBQueries(e_obj.get_java_object())
 
 def capella_version():
+    """Gets the current Capella version"""
     return getCapellaVersion()
 
 def get_label(e_obj):
+    """Gets the label of the given EObject"""
     return getLabel(e_obj.get_java_object())
 
 def is_system(component):
@@ -57,6 +61,7 @@ def is_system(component):
         return res;
 
 def get_libraries(system_engineering):
+    """Gets the list of libraries for the given system engineering"""
     res = []
     
     if system_engineering is not None:
@@ -67,3 +72,7 @@ def get_libraries(system_engineering):
             res.append(lib)
         
     return res
+
+def get_extensions(e_obj, cls):
+    """Gets the List of extensions with the given type for the given EObject"""
+    return JavaList(getExtensions(e_obj.get_java_object(), cls.e_class), cls);
