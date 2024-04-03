@@ -13,7 +13,7 @@
  *]
 [**
  * Utility requests.
- * @author ylp
+ * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
  * @version 1.0.0
  * @since 1.0.0
  */]
@@ -79,7 +79,15 @@
 /]
 
 [query public getAddonGetterName(annotation : ecore::EAnnotation) : String =
-  'get_' + annotation.eContainer(ecore::EClass).getPythonName() + '_from' + annotation.getAddonExtendedType().getPythonName()
+  'get' + annotation.eContainer(ecore::EClass).name.getPythonName() + '_from' + annotation.getAddonExtendedType().getPythonName()
+/]
+
+[query public getAddonAdderName(annotation : ecore::EAnnotation) : String =
+  'add' + annotation.eContainer(ecore::EClass).name.getPythonName() + '_to' + annotation.getAddonExtendedType().getPythonName()
+/]
+
+[query public getAddonRemoverName(annotation : ecore::EAnnotation) : String =
+  'remove' + annotation.eContainer(ecore::EClass).name.getPythonName() + '_from' + annotation.getAddonExtendedType().getPythonName()
 /]
 
 [query public getAddonExtendedType(annotation : ecore::EAnnotation) : String =

@@ -13,7 +13,7 @@
  *]
 [**
  * The documentation of the module body.
- * @author ylp
+ * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
  * @version 1.0.0
  * @since 1.0.0
  */]
@@ -258,7 +258,13 @@
   class [polarsysConstraints->first().eContainer(ecore::EPackage).name/]Addon:
       [for (annotation | polarsysConstraints)]
         @staticmethod
-        def [annotation.getAddonGetterName()/](value: [annotation.getAddonExtendedType()/]) -> List['['/][annotation.eContainer(ecore::EClass).getPythonName()/]]:
-            return get_extensions(value, [annotation.eContainer(ecore::EClass).getPythonName()/])
+        def [annotation.getAddonGetterName()/](extended: [annotation.getAddonExtendedType()/]) -> List['['/][annotation.eContainer(ecore::EClass).getPythonName()/]]:
+            return get_extensions(extended, [annotation.eContainer(ecore::EClass).getPythonName()/])
+        @staticmethod
+        def [annotation.getAddonAdderName()/](extended: [annotation.getAddonExtendedType()/], value: [annotation.eContainer(ecore::EClass).getPythonName()/]) -> None:
+            extended.get_java_object().getOwnedExtensions().add(value.get_java_object())
+        @staticmethod
+        def [annotation.getAddonRemoverName()/](extended: [annotation.getAddonExtendedType()/], value: [annotation.eContainer(ecore::EClass).getPythonName()/]) -> None:
+            extended.get_java_object().getOwnedExtensions().remove(value.get_java_object())
       [/for]
 [/template]
