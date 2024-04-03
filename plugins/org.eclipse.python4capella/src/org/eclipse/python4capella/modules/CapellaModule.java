@@ -181,6 +181,7 @@ public class CapellaModule {
 	 * @return the {@link List} of {@link ElementExtension} of the given
 	 *         {@link EClass type} for the given {@link ExtensibleElement}
 	 */
+	@WrapToScript
 	public List<ElementExtension> getExtensions(ExtensibleElement element, EClass eCls) {
 		final List<ElementExtension> res = new ArrayList<>();
 
