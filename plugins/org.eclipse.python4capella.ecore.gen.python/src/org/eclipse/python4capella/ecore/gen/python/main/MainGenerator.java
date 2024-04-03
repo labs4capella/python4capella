@@ -17,13 +17,16 @@ package org.eclipse.python4capella.ecore.gen.python.main;
 //Start of user code imports
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.acceleo.Module;
+import org.eclipse.acceleo.OpenModeKind;
 import org.eclipse.acceleo.Template;
 import org.eclipse.acceleo.aql.AcceleoUtil;
 import org.eclipse.acceleo.aql.evaluation.AcceleoEvaluator;
@@ -31,6 +34,7 @@ import org.eclipse.acceleo.aql.evaluation.GenerationResult;
 import org.eclipse.acceleo.aql.evaluation.strategy.DefaultGenerationStrategy;
 import org.eclipse.acceleo.aql.evaluation.strategy.DefaultWriterFactory;
 import org.eclipse.acceleo.aql.evaluation.strategy.IAcceleoGenerationStrategy;
+import org.eclipse.acceleo.aql.evaluation.writer.IAcceleoWriter;
 import org.eclipse.acceleo.aql.parser.AcceleoParser;
 import org.eclipse.acceleo.aql.parser.ModuleLoader;
 import org.eclipse.acceleo.query.AQLUtils;
@@ -383,9 +387,24 @@ public class MainGenerator {
 		return evaluator;
 	}
 
+	/**
+	 * Creates the {@link IAcceleoGenerationStrategy}
+	 * 
+	 * @param resourceSetForModels
+	 *            the {@link ResourceSet} containing loaded models
+	 * @return the created {@link IAcceleoGenerationStrategy}
+	 * @generated
+	 */
 	protected IAcceleoGenerationStrategy createGenerationStrategy(final ResourceSet resourceSetForModels) {
 		final IAcceleoGenerationStrategy strategy = new DefaultGenerationStrategy(resourceSetForModels
-				.getURIConverter(), new DefaultWriterFactory());
+				.getURIConverter(), new DefaultWriterFactory()) {
+			@Override
+			public IAcceleoWriter createWriterFor(URI uri, OpenModeKind openMode, Charset charset,
+					String lineDelimiter) throws IOException {
+				System.out.println(uri.toString());
+				return super.createWriterFor(uri, openMode, charset, lineDelimiter);
+			}
+		};
 
 		return strategy;
 	}
