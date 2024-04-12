@@ -11,6 +11,8 @@
 
   <modules>
     <!-- Capella -->
+    <module>releng/org.eclipse.python4capella.targetplatforms/capella-7.0.0-PyDev8.2.0</module>
+    <module>releng/org.eclipse.python4capella.targetplatforms/capella-7.0.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-6.1.0-PyDev8.2.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-6.1.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-6.0.0-PyDev8.2.0</module>
@@ -25,8 +27,8 @@
 
     <module>plugins/org.eclipse.python4capella</module>
     <module>plugins/org.eclipse.python4capella.pydev</module>
-    <module>plugins/org.eclipse.python4capella.ecore.gen.python</module>
-    <module>plugins/org.eclipse.python4capella.ecore.gen.python.ide.ui</module>
+    <!--module>plugins/org.eclipse.python4capella.ecore.gen.python</module>
+    <module>plugins/org.eclipse.python4capella.ecore.gen.python.ide.ui</module-->
     <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
@@ -254,6 +256,60 @@
 
     <!-- Capella -->
     <profile>
+      <id>platform-capella-7.0.0-PyDev8.2.0</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <property>
+          <name>platform-version-name</name>
+          <value>capella-7.0.0-PyDev8.2.0</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <configuration>
+              <target>
+                <artifact>
+                  <groupId>org.eclipse.python4capella</groupId>
+                  <artifactId>capella-7.0.0-PyDev8.2.0</artifactId>
+                  <version>1.2.0-SNAPSHOT</version>
+                </artifact>
+              </target>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>platform-capella-7.0.0</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <property>
+          <name>platform-version-name</name>
+          <value>capella-7.0.0</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <configuration>
+              <target>
+                <artifact>
+                  <groupId>org.eclipse.python4capella</groupId>
+                  <artifactId>capella-7.0.0</artifactId>
+                  <version>1.2.0-SNAPSHOT</version>
+                </artifact>
+              </target>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
       <id>platform-capella-6.1.0-PyDev8.2.0</id>
       <activation>
         <activeByDefault>false</activeByDefault>
@@ -272,7 +328,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-6.1.0-PyDev8.2.0</artifactId>
-                  <version>1.1.0-SNAPSHOT</version>
+                  <version>1.2.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
