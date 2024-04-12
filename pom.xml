@@ -6,7 +6,7 @@
   </prerequisites>
   <groupId>org.eclipse.python4capella</groupId>
   <artifactId>org.eclipse.python4capella.parent</artifactId>
-  <version>1.2.0-SNAPSHOT</version>
+  <version>1.3.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -274,7 +274,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-7.0.0-PyDev8.2.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -301,7 +301,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-7.0.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -328,7 +328,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-6.1.0-PyDev8.2.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -355,7 +355,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-6.1.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -382,7 +382,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-6.0.0-PyDev8.2.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -409,7 +409,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-6.0.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -436,7 +436,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-5.1.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -463,7 +463,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-5.0.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -490,7 +490,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-1.4.2</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -517,7 +517,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-1.4.1</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -544,7 +544,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-1.4.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -571,7 +571,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-1.3.1</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
@@ -598,7 +598,7 @@
                 <artifact>
                   <groupId>org.eclipse.python4capella</groupId>
                   <artifactId>capella-1.3.0</artifactId>
-                  <version>1.2.0-SNAPSHOT</version>
+                  <version>1.3.0-SNAPSHOT</version>
                 </artifact>
               </target>
             </configuration>
