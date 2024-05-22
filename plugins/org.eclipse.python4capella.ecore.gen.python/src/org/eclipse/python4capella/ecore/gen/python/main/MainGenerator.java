@@ -1,6 +1,6 @@
 //Start of user code copyright
 /**
- *  Copyright (c) 2023 THALES GLOBAL SERVICES
+ *  Copyright (c) 2023, 2024 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -207,7 +207,7 @@ public class MainGenerator {
 	 * @return the {@link List} of {@link Template} to generate for the given {@link Module}
 	 */
 	protected List<Template> getTemplates(Module module) {
-		return AcceleoUtil.getMainTemplate(module);
+		return AcceleoUtil.getMainTemplates(module);
 	}
 
 	/**
