@@ -1,5 +1,5 @@
 from typing import TypeVar, Iterator, Any, List
-def iteratorHasNext(iterator): # provided by org.eclipse.python4capella.modules.JavaModule
+def iteratorHasNext(iterator):  # provided by org.eclipse.python4capella.modules.JavaModule
     pass
 def iteratorNext(iterator): # provided by org.eclipse.python4capella.modules.JavaModule
     pass
@@ -78,10 +78,10 @@ class JavaList(JavaObject, List[T]):
                 return False
         return True
     def index_of(self, obj: Any) -> int:
-        """Gets the first index of hte given Object in this List"""
+        """Gets the first index of the given Object in this List"""
         return self.get_java_object().indexOf(obj.get_java_object())
     def last_index_of(self, obj: Any) -> int:
-        """Gets the last index of hte given Object in this List"""
+        """Gets the last index of the given Object in this List"""
         return self.get_java_object().lastIndexOf(obj.get_java_object())
     def __getitem__(self, items):
         return self.get(items)

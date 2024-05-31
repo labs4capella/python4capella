@@ -40,7 +40,7 @@ def getPackage(descriptor): # provided by org.eclipse.python4capella.modules.Sir
     pass
 
 loadModule('/Capella/Sirius')
-include('workspace://Python4Capella/java_api/Java_API.py')
+include('Java_API.py')
 if False:
     from java_api.Java_API import *
 

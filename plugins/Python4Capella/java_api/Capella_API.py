@@ -14,7 +14,7 @@ def getExtensions(e_obj, e_class): # provided by org.eclipse.python4capella.modu
     pass
 
 loadModule('/Capella/Capella')
-include('workspace://Python4Capella/java_api/EMF_API.py')
+include('EMF_API.py')
 if False:
     from java_api.EMF_API import *
 

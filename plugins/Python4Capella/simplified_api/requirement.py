@@ -1,10 +1,12 @@
-include('workspace://Python4Capella/simplified_api/capella.py')
+include('capella.py')
 if False:
     from simplified_api.capella import *
-include('workspace://Python4Capella/simplified_api/requirement_header.py')
+include('requirement_header.py')
 if False:
     from simplified_api.requirement_header import *
-
+include('requirement_types.py')
+if False:
+    from simplified_api.requirement_types import *
 
 class RequirementAddOn(JavaObject):
     """
@@ -17,7 +19,7 @@ class RequirementAddOn(JavaObject):
     def get_system_engineering(capellaElement: CapellaElement) -> SystemEngineering:
         """
         """
-        container = capellaElement.get_java_object().eContainer()
+        container = capellaElement.get_java_object()
         if container is None:
             return container
         else:
@@ -32,7 +34,6 @@ class RequirementAddOn(JavaObject):
         Returns: CapellaModule[*]
         status: KO
         """
-        #: :type capellaElement: CapellaElement
         res = []
         se = RequirementAddOn.get_system_engineering(capellaElement)
         for modelArchitecture in se.get_java_object().getOwnedArchitectures():
@@ -40,6 +41,20 @@ class RequirementAddOn(JavaObject):
                 if extension.eClass().getName() == "CapellaModule" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
                     res.append(CapellaModule(extension))
         return res
+    
+    @staticmethod
+    def get_capella_TypesFolder(capellaElement: CapellaElement):
+        """
+        Get the Capella Types Folder from the given Capella Element.
+        """
+        res = []
+        se = RequirementAddOn.get_system_engineering(capellaElement)
+        for modelArchitecture in se.get_java_object().getOwnedArchitectures():
+            for extension in modelArchitecture.getOwnedExtensions():
+                if extension.eClass().getName() == "CapellaTypesFolder" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                    res.append(CapellaTypesFolder(extension))
+        return res
+
     @staticmethod
     def get_incoming_requirements(capellaElement: CapellaElement) -> List[Requirement]:
         """
@@ -100,6 +115,32 @@ class CapellaModule(EObject):
         Returns: Requirement[*]
         """
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
+    
+    def get_owned_folders(self):
+        """
+        Returns a list of owned folders
+        """
+        listOfRequirements = create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
+        listOfFolders = []
+        
+        for element in listOfRequirements:
+            if (isinstance(element, Folder)):
+                listOfFolders.append(element)
+        
+        return listOfFolders
+    
+    def add_requirement(self, requirement):
+        """
+        Add the given requirement into the requirement list of the module.
+        """
+        self.get_java_object().getOwnedRequirements().add(requirement.get_java_object())
+    
+    def add_attribute(self, attr):
+        """
+        Add the given attribute into the attribute list of the module.
+        """
+        self.get_java_object().getOwnedAttributes().add(attr.get_java_object())
+
     def get_id(self) -> str:
         """
         Returns: String
@@ -140,6 +181,17 @@ class CapellaModule(EObject):
         Returns: String
         """
         self.get_java_object().setReqIFPrefix(value)
+    
+    def get_module_type(self):
+        """
+        """
+        self.get_java_object().getModuleType()
+    
+    def set_module_type(self, moduleType):
+        """
+        """
+        self.get_java_object().setModuleType(moduleType)
+
 
 class Requirement(EObject):
     """
@@ -258,12 +310,13 @@ class Requirement(EObject):
             if attributeName == attr.get_definition().getReqIFLongName():
                 return attr
         return None
-    def set_attribute(self, attributeName: str, value: str):
+
+    def set_attribute(self, attribute):
         """
         Parameters: attributeName: String, value: String
-        status: KO
+        Set the given attribute into the requirement.
         """
-        raise AttributeError("TODO")
+        self.get_java_object().getOwnedAttributes().add(attribute.get_java_object())
     def get_incoming_linked_elems(self) -> List[EObject]:
         """
         Returns: EObject[*]
@@ -295,7 +348,22 @@ class Requirement(EObject):
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
         return res
-
+    def set_requirement_type(self, reqType):
+        """
+        Set the given Requirement Type.
+        :param reqType: Requirement Type.
+        """
+        self.get_java_object().setRequirementType(reqType.get_java_object())
+    def remove_all_attributes(self):
+        """
+        Remove all attributes from the requirement.
+        :param req: Requirement.
+        """
+        size = self.get_java_object().getOwnedAttributes().size()
+    
+        for _ in range(size):
+            attr = self.get_java_object().getOwnedAttributes().get(0)
+            self.get_java_object().getOwnedAttributes().remove(attr)
 class Folder(Requirement):
     """
     Java class: org.polarsys.capella.core.data.capellamodeller.Folder
@@ -312,11 +380,73 @@ class Folder(Requirement):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_long_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFLongName()
+    def set_long_name(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFLongName(value)
+    def get_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFName()
+    def set_name(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFName(value)
+    def get_chapter_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFChapterName()
+    def set_chapter_name(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFChapterName(value)
+    def get_text(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFText()
+    def set_text(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFText(value)
     def get_owned_requirements(self) -> List[Requirement]:
         """
         Returns: Requirement[*]
         """
         return create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
+    def set_requirement(self, requirement):
+        """
+        Set the given requirement into the folder.
+        :param requirement: Requirement to be setted.
+        """
+        self.get_java_object().getOwnedRequirements().add(requirement.get_java_object())
+    def get_owned_folders(self):
+        """
+        Returns a list of owned folders
+        """
+        listOfRequirements = create_e_list(self.get_java_object().getOwnedRequirements(), Requirement)
+        listOfFolders = []
+        
+        for element in listOfRequirements:
+            if (isinstance(element, Folder)):
+                listOfFolders.append(element)
+        return listOfFolders
+    def add_element(self, element):
+        """
+        Add the given elemento into the folder.
+        """
+        self.get_java_object().getOwnedRequirements().add(element.get_java_object())
 
 class Attribute(EObject):
     """
@@ -345,7 +475,7 @@ class Attribute(EObject):
         """
         Returns: String
         """
-        self.get_java_object().setDefinition(value)
+        self.get_java_object().setDefinition(attrDef.get_java_object())
     def get_value(self) -> Any:
         """
         Returns: String
@@ -354,11 +484,28 @@ class Attribute(EObject):
             return self.get_java_object().isValue()
         else:
             return self.get_java_object().getValue()
+    def get_values(self):
+        """
+        """
+        return self.get_java_object().getValues()
     def set_value(self, value):
         """
         Returns: String
         """
         self.get_java_object().setValue(value)
+    def set_values(self, value):
+        """
+        Returns: String
+        """
+        self.get_java_object().getValues().add(value)
+    def remove_all_enumValues(self):
+        enumList = self.get_values()
+        while(len(enumList) > 0):
+            enumList.pop()
+    def get_definition_proxy(self):
+        return self.get_java_object().getDefinitionProxy()
+    def set_definition_proxy(self, value):
+        self.get_java_object().setDefinitionProxy(value)
 
 class ReqIFElement(EObject):
     """
