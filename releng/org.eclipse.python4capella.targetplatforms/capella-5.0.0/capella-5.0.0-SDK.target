@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 5.0.0 Target Platform SDK" sequenceNumber="1710338420">
+<target name="Capella 5.0.0 Target Platform SDK" sequenceNumber="1722949080">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -152,10 +152,6 @@
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.python.pydev.feature.feature.group" version="0.0.0"/>
       <repository id="PyDev" location="https://www.pydev.org/update_sites/8.2.0"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.acceleo.aql.feature.feature.group" version="0.0.0"/>
-      <repository id="Acceleo4" location="https://download.eclipse.org/acceleo/updates/nightly/latest/"/>
     </location>
   </locations>
 </target>
