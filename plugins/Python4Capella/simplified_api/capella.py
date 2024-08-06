@@ -2451,12 +2451,30 @@ class StateTransition(CapellaElement):
         """
         Returns: AbstractState
         """
-        return capella_query_by_name(self, "Source")
+        value =  self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is None:
+                return None
+            else:
+                return specific_cls(value)
     def get_target(self):
         """
         Returns: AbstractState
         """
-        return capella_query_by_name(self, "Target")
+        value =  self.get_java_object().getTarget()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            if specific_cls is None:
+                return None
+            else:
+                return specific_cls(value)
     def get_triggers(self) -> List[AbstractEvent]:
         """
         Returns: AbstractEvent[*]
