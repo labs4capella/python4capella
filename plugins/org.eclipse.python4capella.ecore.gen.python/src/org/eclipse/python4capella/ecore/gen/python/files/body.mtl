@@ -81,7 +81,7 @@
   [protected ('header_' + cls.getPythonName()) startTagPrefix('# ') endTagPrefix('# ')]
     class [cls.getPythonName()/]([if (not cls.eSuperTypes->isEmpty())][cls.eSuperTypes.getPythonName()->sep(', ')/][else]EObject[/if]):
         """
-        [let  documentation = cls.getDocumentation()]
+        [let documentation = cls.getDocumentation()]
           [if (documentation <> null)]
             [documentation/]
           [/if] 
