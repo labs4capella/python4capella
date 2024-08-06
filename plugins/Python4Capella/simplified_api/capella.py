@@ -57,7 +57,11 @@ class CapellaModel():
         """
         Returns: Diagram[*]
         """
-        return JavaList(Sirius.get_all_diagrams(self.session), Diagram)
+        res = []
+        descriptors = Sirius.get_all_diagrams(self.session)
+        for descriptor in descriptors:
+            res.append(Diagram(descriptor))
+        return res
     def get_diagrams(self, diagram_type: str) -> List[Diagram]:
         """
         Parameters: diagramType: String
