@@ -106,3 +106,14 @@ class JavaList(JavaObject, List[T]):
     def size(self) -> int:
         """Gets the size of this List"""
         return self.get_java_object().size()
+    def __str__(self) -> str:
+        res = "["
+        it = self.__iter__()
+        while iteratorHasNext(it.get_java_object()):
+            res = res + str(it.next())
+            if iteratorHasNext(it.get_java_object()):
+                res = res + ", "
+            
+        return res + "]"
+    def __repr__(self) -> str:
+        return self.__str__()
