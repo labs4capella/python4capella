@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 7.0.0 Target Platform" sequenceNumber="1712909005">
+<target name="Capella 7.0.0 Target Platform" sequenceNumber="1722948547">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -106,7 +106,7 @@
       <unit id="org.eclipse.sirius.aql.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/stable/7.4.1-S20240319-042018/2023-03"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/7.4.1/2023-03/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.source.feature.group" version="0.0.0"/>
@@ -131,12 +131,12 @@
       <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.transposer.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.sirius.rotativeimage.feature.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/stable/runtime/7.0.0.20240319/"/>
+      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/releases/runtime/7.0.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.doc.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.emde.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/stable/sdk/7.0.0.20240319/"/>
+      <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/releases/sdk/7.0.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.source.feature.group" version="0.0.0"/>
@@ -144,11 +144,11 @@
       <unit id="org.eclipse.emf.diffmerge.gmf.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.sdk.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.egit.feature.source.feature.group" version="0.0.0"/>
-      <repository id="diffmerge-core" location="https://download.eclipse.org/diffmerge/stable/0.15.0-S20230504/emf-diffmerge-site/"/>
+      <repository id="diffmerge-core" location="https://download.eclipse.org/diffmerge/releases/0.15.0/emf-diffmerge-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="0.0.0"/>
-      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.14.0-S20230503/capella/"/>
+      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/releases/1.14.0/capella/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.source.feature.group" version="0.0.0"/>
@@ -169,7 +169,7 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
-      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/stable/7.0.0-S20240320/org.polarsys.capella.rcp.site/"/>
+      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/7.0.0/org.polarsys.capella.rcp.site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
