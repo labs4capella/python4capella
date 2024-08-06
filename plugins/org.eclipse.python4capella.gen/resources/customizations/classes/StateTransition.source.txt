@@ -1,7 +1,4 @@
     def get_source(self):
-        """
-        Returns: AbstractState
-        """
         value =  self.get_java_object().getSource()
         if value is None:
             return value

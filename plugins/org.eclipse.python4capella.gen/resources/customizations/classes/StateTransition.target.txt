@@ -1,7 +1,4 @@
     def get_target(self):
-        """
-        Returns: AbstractState
-        """
         value =  self.get_java_object().getTarget()
         if value is None:
             return value
