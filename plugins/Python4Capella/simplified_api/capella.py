@@ -6336,7 +6336,7 @@ class OperationalActivity(Function):
         """
         Returns: OperationalProcess[*]
         """
-        return create_e_list(self.get_java_object().getInvolvingOperationalProcesses(), OperationalProcess)
+        return capella_query_by_name(self, "Operational Processes")
     def get_involving_operational_capabilities(self) -> List[OperationalCapability]:
         """
         Returns: OperationalCapability[*]

@@ -1,0 +1,3 @@
+    def get_involving_operational_processes(self) -> List[OperationalProcess]:
+        return capella_query_by_name(self, "Operational Processes")
+
