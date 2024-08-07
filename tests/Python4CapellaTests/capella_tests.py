@@ -30124,6 +30124,50 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_data_pkgs().add(value)
         pass
 
+    def test_DataPkg_owned_collections_getter(self):
+        tested = DataPkg()
+        tested.get_owned_collections()
+        pass
+
+    def test_DataPkg_owned_collections_setter(self):
+        tested = DataPkg()
+        value = Collection()
+        tested.get_owned_collections().add(value)
+        pass
+
+    def test_DataPkg_owned_data_types_getter(self):
+        tested = DataPkg()
+        tested.get_owned_data_types()
+        pass
+
+    def test_DataPkg_owned_data_types_setter(self):
+        tested = DataPkg()
+        value = PhysicalQuantity()
+        tested.get_owned_data_types().add(value)
+        pass
+
+    def test_DataPkg_owned_exceptions_getter(self):
+        tested = DataPkg()
+        tested.get_owned_exceptions()
+        pass
+
+    def test_DataPkg_owned_exceptions_setter(self):
+        tested = DataPkg()
+        value = CapellaException()
+        tested.get_owned_exceptions().add(value)
+        pass
+
+    def test_DataPkg_owned_units_getter(self):
+        tested = DataPkg()
+        tested.get_owned_units()
+        pass
+
+    def test_DataPkg_owned_units_setter(self):
+        tested = DataPkg()
+        value = Unit()
+        tested.get_owned_units().add(value)
+        pass
+
     def test_Class_id_getter(self):
         tested = Class()
         tested.get_id()

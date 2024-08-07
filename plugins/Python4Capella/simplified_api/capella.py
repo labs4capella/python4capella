@@ -4340,6 +4340,26 @@ class DataPkg(CapellaElement):
         Returns: DataPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedDataPkgs(), DataPkg)
+    def get_owned_collections(self) -> List[Collection]:
+        """
+        Returns: Collection[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedCollections(), Collection)
+    def get_owned_data_types(self) -> List[DataType]:
+        """
+        Returns: DataType[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedDataTypes(), DataType)
+    def get_owned_exceptions(self) -> List[CapellaException]:
+        """
+        Returns: CapellaException[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedExceptions(), CapellaException)
+    def get_owned_units(self) -> List[Unit]:
+        """
+        Returns: Unit[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedUnits(), Unit)
 
 class DataType(CapellaElement):
     """
