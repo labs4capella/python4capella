@@ -1,7 +1,7 @@
-include('workspace://Python4Capella/simplified_api/capella.py')
+include('capella.py')
 if False:
     from simplified_api.capella import *
-include('workspace://Python4Capella/simplified_api/requirement_header.py')
+include('requirement_header.py')
 if False:
     from simplified_api.requirement_header import *
 
@@ -356,7 +356,7 @@ class Attribute(EObject):
             return self.get_java_object().getValue()
     def set_value(self, value):
         """
-        Returns: String
+        Parameters: value: String
         """
         self.get_java_object().setValue(value)
 
@@ -467,7 +467,7 @@ class CapellaIncomingRelation(AbstractRelation):
             return Requirement(value)
     def set_source(self, value: Requirement):
         """
-        Returns: Requirement
+        Parameters: value: Requirement
         """
         self.get_java_object().setSource(value.get_java_object())
     def get_target(self) -> CapellaElement:
@@ -486,7 +486,7 @@ class CapellaIncomingRelation(AbstractRelation):
                 return specific_cls(value)
     def set_target(self, value: CapellaElement):
         """
-        Returns: CapellaElement
+        Parameters: value: CapellaElement
         """
         self.get_java_object().setTarget(value.get_java_object())
 
@@ -522,7 +522,7 @@ class CapellaOutgoingRelation(AbstractRelation):
                 return specific_cls(value)
     def set_source(self, value: CapellaElement):
         """
-        Returns: CapellaElement
+        Parameters: value: CapellaElement
         """
         self.get_java_object().setSource(value.get_java_object())
     def get_target(self) -> Requirement:
@@ -536,7 +536,7 @@ class CapellaOutgoingRelation(AbstractRelation):
             return Requirement(value)
     def set_target(self, value: Requirement):
         """
-        Returns: Requirement
+        Parameters: value: Requirement
         """
         self.get_java_object().setTarget(value.get_java_object())
 
@@ -565,7 +565,7 @@ class InternalRelation(AbstractRelation):
             return Requirement(value)
     def set_source(self, value: Requirement):
         """
-        Returns: Requirement
+        Parameters: value: Requirement
         """
         self.get_java_object().setSource(value.get_java_object())
     def get_target(self) -> Requirement:
@@ -579,7 +579,7 @@ class InternalRelation(AbstractRelation):
             return Requirement(value)
     def set_target(self, value: Requirement):
         """
-        Returns: Requirement
+        Parameters: value: Requirement
         """
         self.get_java_object().setTarget(value.get_java_object())
 

@@ -1,13 +1,13 @@
-include('workspace://Python4Capella/java_api/EMF_API.py')
+include('../java_api/EMF_API.py')
 if False:
     from java_api.EMF_API import *
-include('workspace://Python4Capella/java_api/Capella_API.py')
+include('../java_api/Capella_API.py')
 if False:
     from java_api.Capella_API import *
-include('workspace://Python4Capella/simplified_api/capellacore.py')
+include('capellacore.py')
 if False:
     from simplified_api.capellacore import *
-include('workspace://Python4Capella/simplified_api/pa.py')
+include('pa.py')
 if False:
     from simplified_api.pa import *
 

@@ -1,19 +1,19 @@
-include('workspace://Python4Capella/java_api/EMF_API.py')
+include('../java_api/EMF_API.py')
 if False:
     from java_api.EMF_API import *
-include('workspace://Python4Capella/java_api/Capella_API.py')
+include('../java_api/Capella_API.py')
 if False:
     from java_api.Capella_API import *
-include('workspace://Python4Capella/java_api/Sirius_API.py')
+include('../java_api/Sirius_API.py')
 if False:
     from java_api.Sirius_API import *
-include('workspace://Python4Capella/simplified_api/diagram.py')
+include('diagram.py')
 if False:
     from simplified_api.diagram import *
-include('workspace://Python4Capella/simplified_api/la.py')
+include('la.py')
 if False:
     from simplified_api.la import *
-include('workspace://Python4Capella/simplified_api/pa.py')
+include('pa.py')
 if False:
     from simplified_api.pa import *
 

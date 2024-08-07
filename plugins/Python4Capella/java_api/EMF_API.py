@@ -26,7 +26,7 @@ def deleteAll(e_objs): # provided by org.eclipse.python4capella.modules.EMFModul
     pass
 
 loadModule('/Capella/EMF')
-include('workspace://Python4Capella/java_api/Java_API.py')
+include('Java_API.py')
 if False:
     from java_api.Java_API import *
 

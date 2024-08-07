@@ -1,7 +1,7 @@
-include('workspace://Python4Capella/simplified_api/capella.py')
+include('capella.py')
 if False:
     from simplified_api.capella import *
-include('workspace://Python4Capella/simplified_api/pvmt_header.py')
+include('pvmt_header.py')
 if False:
     from simplified_api.pvmt_header import *
 
