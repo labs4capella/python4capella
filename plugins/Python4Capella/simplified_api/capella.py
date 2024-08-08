@@ -2823,7 +2823,7 @@ class StateFragment(CapellaElement):
         """
         Returns: AbstractActivityFunction[0..1]
         """
-        value =  self.get_java_object().getRelatedActivityFunction()
+        value =  self.get_java_object().getRelatedAbstractFunction()
         if value is None:
             return value
         else:

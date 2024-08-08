@@ -16631,6 +16631,11 @@
                   id="4695ff7b-6a04-4b6f-8ad5-373dc4eba66b" name="relatedActivityFunction"
                   abstractType="#32e7e714-895d-4e05-85d7-fd4f38d664f7" aggregationKind="ASSOCIATION"
                   isReadOnly="true">
+                <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                    id="d29db621-1b24-4a5b-9cb7-38c0d96730e3" name="Technical.Mapping">
+                  <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                      id="b9097575-7ff9-4410-8063-72882c0356cd" name="name" value="relatedAbstractFunction"/>
+                </ownedPropertyValueGroups>
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="3fae6cad-6906-48a4-9750-f5e0ffb85e7f" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
