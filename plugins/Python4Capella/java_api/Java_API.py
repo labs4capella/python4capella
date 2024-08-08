@@ -18,7 +18,10 @@ class JavaObject:
         return self.java_object
     def __eq__(self, other: Any):
         if isinstance(other, JavaObject):
-            return self.java_object == other.java_object
+            if self.java_object:
+                return self.java_object.equals(other.java_object)
+            else:
+                return other.java_object is None
         else:
             return False
 
