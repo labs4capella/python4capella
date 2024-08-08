@@ -680,7 +680,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_constrained_elements_setter(self):
         tested = Constraint()
-        value = RelationType()
+        value = Unit()
         tested.get_constrained_elements().add(value)
         pass
 
@@ -967,7 +967,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_valued_elements_setter(self):
         tested = PropertyValue()
-        value = RelationType()
+        value = Unit()
         tested.get_valued_elements().add(value)
         pass
 
@@ -1237,7 +1237,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_valued_elements_setter(self):
         tested = PropertyValueGroup()
-        value = RelationType()
+        value = Unit()
         tested.get_valued_elements().add(value)
         pass
 
@@ -2140,7 +2140,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Diagram_contextual_elements_setter(self):
         tested = Diagram()
-        value = RelationType()
+        value = EnumerationDataTypeDefinition()
         tested.get_contextual_elements().add(value)
         pass
 
@@ -2151,7 +2151,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Diagram_elements_of_interest_setter(self):
         tested = Diagram()
-        value = RelationType()
+        value = EnumerationDataTypeDefinition()
         tested.get_elements_of_interest().add(value)
         pass
 
@@ -2337,7 +2337,7 @@ class capella_tests(unittest.TestCase):
 
     def test_REC_referenced_elements_setter(self):
         tested = REC()
-        value = RelationType()
+        value = EnumerationDataTypeDefinition()
         tested.get_referenced_elements().add(value)
         pass
 
@@ -2538,7 +2538,7 @@ class capella_tests(unittest.TestCase):
 
     def test_RPL_referenced_elements_setter(self):
         tested = RPL()
-        value = RelationType()
+        value = EnumerationDataTypeDefinition()
         tested.get_referenced_elements().add(value)
         pass
 
@@ -34100,20 +34100,20 @@ class capella_tests(unittest.TestCase):
 
     def test_PVMT_get_p_v_names(self):
         tested = PVMT()
-        param1 = RelationType()
+        param1 = Unit()
         tested.get_p_v_names(param1)
         pass
 
     def test_PVMT_is_p_v_defined(self):
         tested = PVMT()
-        param1 = RelationType()
+        param1 = Unit()
         param2 = "value"
         tested.is_p_v_defined(param1, param2)
         pass
 
     def test_PVMT_get_p_v_value(self):
         tested = PVMT()
-        param1 = RelationType()
+        param1 = Unit()
         param2 = "value"
         tested.get_p_v_value(param1, param2)
         pass
@@ -34127,20 +34127,20 @@ class capella_tests(unittest.TestCase):
 
     def test_RequirementAddOn_get_incoming_requirements(self):
         tested = RequirementAddOn()
-        param1 = RelationType()
+        param1 = Unit()
         tested.get_incoming_requirements(param1)
         pass
 
     def test_RequirementAddOn_get_outgoing_requirements(self):
         tested = RequirementAddOn()
-        param1 = RelationType()
+        param1 = Unit()
         tested.get_outgoing_requirements(param1)
         pass
 
     def test_RequirementAddOn_get_relation_type(self):
         tested = RequirementAddOn()
-        param1 = RelationType()
-        param2 = RelationType()
+        param1 = EnumerationDataTypeDefinition()
+        param2 = EnumerationDataTypeDefinition()
         tested.get_relation_type(param1, param2)
         pass
 
@@ -35729,37 +35729,15 @@ class capella_tests(unittest.TestCase):
         tested.set_id(value)
         pass
 
-    def test_AbstractType_sid_getter(self):
+    def test_AbstractType_long_name_getter(self):
         tested = AbstractType()
-        tested.get_sid()
+        tested.get_long_name()
         pass
 
-    def test_AbstractType_sid_setter(self):
+    def test_AbstractType_long_name_setter(self):
         tested = AbstractType()
         value = "value"
-        tested.set_sid(value)
-        pass
-
-    def test_AbstractType_name_getter(self):
-        tested = AbstractType()
-        tested.get_name()
-        pass
-
-    def test_AbstractType_name_setter(self):
-        tested = AbstractType()
-        value = "value"
-        tested.set_name(value)
-        pass
-
-    def test_AbstractType_summary_getter(self):
-        tested = AbstractType()
-        tested.get_summary()
-        pass
-
-    def test_AbstractType_summary_setter(self):
-        tested = AbstractType()
-        value = "value"
-        tested.set_summary(value)
+        tested.set_long_name(value)
         pass
 
     def test_AbstractType_description_getter(self):
@@ -35771,103 +35749,6 @@ class capella_tests(unittest.TestCase):
         tested = AbstractType()
         value = "value"
         tested.set_description(value)
-        pass
-
-    def test_AbstractType_status_getter(self):
-        tested = AbstractType()
-        tested.get_status()
-        pass
-
-    def test_AbstractType_status_setter(self):
-        tested = AbstractType()
-        value = "value"
-        tested.set_status(value)
-        pass
-
-    def test_AbstractType_review_getter(self):
-        tested = AbstractType()
-        tested.get_review()
-        pass
-
-    def test_AbstractType_review_setter(self):
-        tested = AbstractType()
-        value = "value"
-        tested.set_review(value)
-        pass
-
-    def test_AbstractType_visible_in_documentation_getter(self):
-        tested = AbstractType()
-        tested.get_visible_in_documentation()
-        pass
-
-    def test_AbstractType_visible_in_documentation_setter(self):
-        tested = AbstractType()
-        value = True
-        tested.set_visible_in_documentation(value)
-        pass
-
-    def test_AbstractType_visible_for_traceability_getter(self):
-        tested = AbstractType()
-        tested.get_visible_for_traceability()
-        pass
-
-    def test_AbstractType_visible_for_traceability_setter(self):
-        tested = AbstractType()
-        value = True
-        tested.set_visible_for_traceability(value)
-        pass
-
-    def test_AbstractType_owned_constraints_getter(self):
-        tested = AbstractType()
-        tested.get_owned_constraints()
-        pass
-
-    def test_AbstractType_constraints_getter(self):
-        tested = AbstractType()
-        tested.get_constraints()
-        pass
-
-    def test_AbstractType_constraints_setter(self):
-        tested = AbstractType()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        pass
-
-    def test_AbstractType_owned_property_values_getter(self):
-        tested = AbstractType()
-        tested.get_owned_property_values()
-        pass
-
-    def test_AbstractType_applied_property_values_getter(self):
-        tested = AbstractType()
-        tested.get_applied_property_values()
-        pass
-
-    def test_AbstractType_applied_property_values_setter(self):
-        tested = AbstractType()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        pass
-
-    def test_AbstractType_owned_property_value_groups_getter(self):
-        tested = AbstractType()
-        tested.get_owned_property_value_groups()
-        pass
-
-    def test_AbstractType_applied_property_value_groups_getter(self):
-        tested = AbstractType()
-        tested.get_applied_property_value_groups()
-        pass
-
-    def test_AbstractType_applied_property_value_groups_setter(self):
-        tested = AbstractType()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        pass
-
-    def test_AbstractType_owned_enumeration_property_types_getter(self):
-        tested = AbstractType()
-        tested.get_owned_enumeration_property_types()
         pass
 
     def test_AbstractType_owned_diagrams_getter(self):
@@ -35972,6 +35853,16 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_AbstractType_owned_attributes_getter(self):
+        tested = AbstractType()
+        tested.get_owned_attributes()
+        pass
+
+    def test_RelationType_owned_attributes_getter(self):
+        tested = RelationType()
+        tested.get_owned_attributes()
+        pass
+
     def test_RelationType_id_getter(self):
         tested = RelationType()
         tested.get_id()
@@ -35983,37 +35874,15 @@ class capella_tests(unittest.TestCase):
         tested.set_id(value)
         pass
 
-    def test_RelationType_sid_getter(self):
+    def test_RelationType_long_name_getter(self):
         tested = RelationType()
-        tested.get_sid()
+        tested.get_long_name()
         pass
 
-    def test_RelationType_sid_setter(self):
+    def test_RelationType_long_name_setter(self):
         tested = RelationType()
         value = "value"
-        tested.set_sid(value)
-        pass
-
-    def test_RelationType_name_getter(self):
-        tested = RelationType()
-        tested.get_name()
-        pass
-
-    def test_RelationType_name_setter(self):
-        tested = RelationType()
-        value = "value"
-        tested.set_name(value)
-        pass
-
-    def test_RelationType_summary_getter(self):
-        tested = RelationType()
-        tested.get_summary()
-        pass
-
-    def test_RelationType_summary_setter(self):
-        tested = RelationType()
-        value = "value"
-        tested.set_summary(value)
+        tested.set_long_name(value)
         pass
 
     def test_RelationType_description_getter(self):
@@ -36025,103 +35894,6 @@ class capella_tests(unittest.TestCase):
         tested = RelationType()
         value = "value"
         tested.set_description(value)
-        pass
-
-    def test_RelationType_status_getter(self):
-        tested = RelationType()
-        tested.get_status()
-        pass
-
-    def test_RelationType_status_setter(self):
-        tested = RelationType()
-        value = "value"
-        tested.set_status(value)
-        pass
-
-    def test_RelationType_review_getter(self):
-        tested = RelationType()
-        tested.get_review()
-        pass
-
-    def test_RelationType_review_setter(self):
-        tested = RelationType()
-        value = "value"
-        tested.set_review(value)
-        pass
-
-    def test_RelationType_visible_in_documentation_getter(self):
-        tested = RelationType()
-        tested.get_visible_in_documentation()
-        pass
-
-    def test_RelationType_visible_in_documentation_setter(self):
-        tested = RelationType()
-        value = True
-        tested.set_visible_in_documentation(value)
-        pass
-
-    def test_RelationType_visible_for_traceability_getter(self):
-        tested = RelationType()
-        tested.get_visible_for_traceability()
-        pass
-
-    def test_RelationType_visible_for_traceability_setter(self):
-        tested = RelationType()
-        value = True
-        tested.set_visible_for_traceability(value)
-        pass
-
-    def test_RelationType_owned_constraints_getter(self):
-        tested = RelationType()
-        tested.get_owned_constraints()
-        pass
-
-    def test_RelationType_constraints_getter(self):
-        tested = RelationType()
-        tested.get_constraints()
-        pass
-
-    def test_RelationType_constraints_setter(self):
-        tested = RelationType()
-        value = Constraint()
-        tested.get_constraints().add(value)
-        pass
-
-    def test_RelationType_owned_property_values_getter(self):
-        tested = RelationType()
-        tested.get_owned_property_values()
-        pass
-
-    def test_RelationType_applied_property_values_getter(self):
-        tested = RelationType()
-        tested.get_applied_property_values()
-        pass
-
-    def test_RelationType_applied_property_values_setter(self):
-        tested = RelationType()
-        value = PropertyValue()
-        tested.get_applied_property_values().add(value)
-        pass
-
-    def test_RelationType_owned_property_value_groups_getter(self):
-        tested = RelationType()
-        tested.get_owned_property_value_groups()
-        pass
-
-    def test_RelationType_applied_property_value_groups_getter(self):
-        tested = RelationType()
-        tested.get_applied_property_value_groups()
-        pass
-
-    def test_RelationType_applied_property_value_groups_setter(self):
-        tested = RelationType()
-        value = PropertyValueGroup()
-        tested.get_applied_property_value_groups().add(value)
-        pass
-
-    def test_RelationType_owned_enumeration_property_types_getter(self):
-        tested = RelationType()
-        tested.get_owned_enumeration_property_types()
         pass
 
     def test_RelationType_owned_diagrams_getter(self):
@@ -36226,17 +35998,6 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
-    def test_RelationType_long_name_getter(self):
-        tested = RelationType()
-        tested.get_long_name()
-        pass
-
-    def test_RelationType_long_name_setter(self):
-        tested = RelationType()
-        value = "value"
-        tested.set_long_name(value)
-        pass
-
     def test_RelationType_get_relation_types(self):
         tested = RelationType()
         tested.get_relation_types()
@@ -36246,6 +36007,1176 @@ class capella_tests(unittest.TestCase):
         tested = RelationType()
         param1 = "value"
         tested.get_relation_type_by_long_name(param1)
+        pass
+
+    def test_TypesFolder_id_getter(self):
+        tested = TypesFolder()
+        tested.get_id()
+        pass
+
+    def test_TypesFolder_id_setter(self):
+        tested = TypesFolder()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_TypesFolder_long_name_getter(self):
+        tested = TypesFolder()
+        tested.get_long_name()
+        pass
+
+    def test_TypesFolder_long_name_setter(self):
+        tested = TypesFolder()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_TypesFolder_description_getter(self):
+        tested = TypesFolder()
+        tested.get_description()
+        pass
+
+    def test_TypesFolder_description_setter(self):
+        tested = TypesFolder()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_TypesFolder_owned_diagrams_getter(self):
+        tested = TypesFolder()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_TypesFolder_element_of_interest_for_diagrams_getter(self):
+        tested = TypesFolder()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_TypesFolder_element_of_interest_for_diagrams_setter(self):
+        tested = TypesFolder()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_TypesFolder_contextual_element_for_diagrams_getter(self):
+        tested = TypesFolder()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_TypesFolder_contextual_element_for_diagrams_setter(self):
+        tested = TypesFolder()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_TypesFolder_representing_diagrams_getter(self):
+        tested = TypesFolder()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_TypesFolder__r_e_cs_getter(self):
+        tested = TypesFolder()
+        tested.get__r_e_cs()
+        pass
+
+    def test_TypesFolder__r_e_cs_setter(self):
+        tested = TypesFolder()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_TypesFolder__r_p_ls_getter(self):
+        tested = TypesFolder()
+        tested.get__r_p_ls()
+        pass
+
+    def test_TypesFolder__r_p_ls_setter(self):
+        tested = TypesFolder()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_TypesFolder_get_label(self):
+        tested = TypesFolder()
+        tested.get_label()
+        pass
+
+    def test_TypesFolder_get_element_type(self):
+        tested = TypesFolder()
+        tested.get_element_type()
+        pass
+
+    def test_TypesFolder_get_container(self):
+        tested = TypesFolder()
+        tested.get_container()
+        pass
+
+    def test_TypesFolder_get_container_by_type(self):
+        tested = TypesFolder()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_TypesFolder_get_contents(self):
+        tested = TypesFolder()
+        tested.get_contents()
+        pass
+
+    def test_TypesFolder_get_all_contents(self):
+        tested = TypesFolder()
+        tested.get_all_contents()
+        pass
+
+    def test_TypesFolder_get_all_contents_by_type(self):
+        tested = TypesFolder()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_TypesFolder_get_available_s_b_queries(self):
+        tested = TypesFolder()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_TypesFolder_get_query_result(self):
+        tested = TypesFolder()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_TypesFolder_owned_definition_types_getter(self):
+        tested = TypesFolder()
+        tested.get_owned_definition_types()
+        pass
+
+    def test_TypesFolder_owned_types_getter(self):
+        tested = TypesFolder()
+        tested.get_owned_types()
+        pass
+
+    def test_CapellaTypesFolder_owned_definition_types_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_owned_definition_types()
+        pass
+
+    def test_CapellaTypesFolder_owned_types_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_owned_types()
+        pass
+
+    def test_CapellaTypesFolder_id_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_id()
+        pass
+
+    def test_CapellaTypesFolder_id_setter(self):
+        tested = CapellaTypesFolder()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_CapellaTypesFolder_long_name_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_long_name()
+        pass
+
+    def test_CapellaTypesFolder_long_name_setter(self):
+        tested = CapellaTypesFolder()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_CapellaTypesFolder_description_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_description()
+        pass
+
+    def test_CapellaTypesFolder_description_setter(self):
+        tested = CapellaTypesFolder()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_CapellaTypesFolder_owned_diagrams_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_CapellaTypesFolder_element_of_interest_for_diagrams_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_CapellaTypesFolder_element_of_interest_for_diagrams_setter(self):
+        tested = CapellaTypesFolder()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_CapellaTypesFolder_contextual_element_for_diagrams_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_CapellaTypesFolder_contextual_element_for_diagrams_setter(self):
+        tested = CapellaTypesFolder()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_CapellaTypesFolder_representing_diagrams_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_CapellaTypesFolder__r_e_cs_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get__r_e_cs()
+        pass
+
+    def test_CapellaTypesFolder__r_e_cs_setter(self):
+        tested = CapellaTypesFolder()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_CapellaTypesFolder__r_p_ls_getter(self):
+        tested = CapellaTypesFolder()
+        tested.get__r_p_ls()
+        pass
+
+    def test_CapellaTypesFolder__r_p_ls_setter(self):
+        tested = CapellaTypesFolder()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_CapellaTypesFolder_get_label(self):
+        tested = CapellaTypesFolder()
+        tested.get_label()
+        pass
+
+    def test_CapellaTypesFolder_get_element_type(self):
+        tested = CapellaTypesFolder()
+        tested.get_element_type()
+        pass
+
+    def test_CapellaTypesFolder_get_container(self):
+        tested = CapellaTypesFolder()
+        tested.get_container()
+        pass
+
+    def test_CapellaTypesFolder_get_container_by_type(self):
+        tested = CapellaTypesFolder()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_CapellaTypesFolder_get_contents(self):
+        tested = CapellaTypesFolder()
+        tested.get_contents()
+        pass
+
+    def test_CapellaTypesFolder_get_all_contents(self):
+        tested = CapellaTypesFolder()
+        tested.get_all_contents()
+        pass
+
+    def test_CapellaTypesFolder_get_all_contents_by_type(self):
+        tested = CapellaTypesFolder()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_CapellaTypesFolder_get_available_s_b_queries(self):
+        tested = CapellaTypesFolder()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_CapellaTypesFolder_get_query_result(self):
+        tested = CapellaTypesFolder()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_AttributeDefinition_id_getter(self):
+        tested = AttributeDefinition()
+        tested.get_id()
+        pass
+
+    def test_AttributeDefinition_id_setter(self):
+        tested = AttributeDefinition()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_AttributeDefinition_long_name_getter(self):
+        tested = AttributeDefinition()
+        tested.get_long_name()
+        pass
+
+    def test_AttributeDefinition_long_name_setter(self):
+        tested = AttributeDefinition()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_AttributeDefinition_description_getter(self):
+        tested = AttributeDefinition()
+        tested.get_description()
+        pass
+
+    def test_AttributeDefinition_description_setter(self):
+        tested = AttributeDefinition()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_AttributeDefinition_owned_diagrams_getter(self):
+        tested = AttributeDefinition()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_AttributeDefinition_element_of_interest_for_diagrams_getter(self):
+        tested = AttributeDefinition()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_AttributeDefinition_element_of_interest_for_diagrams_setter(self):
+        tested = AttributeDefinition()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_AttributeDefinition_contextual_element_for_diagrams_getter(self):
+        tested = AttributeDefinition()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_AttributeDefinition_contextual_element_for_diagrams_setter(self):
+        tested = AttributeDefinition()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_AttributeDefinition_representing_diagrams_getter(self):
+        tested = AttributeDefinition()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_AttributeDefinition__r_e_cs_getter(self):
+        tested = AttributeDefinition()
+        tested.get__r_e_cs()
+        pass
+
+    def test_AttributeDefinition__r_e_cs_setter(self):
+        tested = AttributeDefinition()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_AttributeDefinition__r_p_ls_getter(self):
+        tested = AttributeDefinition()
+        tested.get__r_p_ls()
+        pass
+
+    def test_AttributeDefinition__r_p_ls_setter(self):
+        tested = AttributeDefinition()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_AttributeDefinition_get_label(self):
+        tested = AttributeDefinition()
+        tested.get_label()
+        pass
+
+    def test_AttributeDefinition_get_element_type(self):
+        tested = AttributeDefinition()
+        tested.get_element_type()
+        pass
+
+    def test_AttributeDefinition_get_container(self):
+        tested = AttributeDefinition()
+        tested.get_container()
+        pass
+
+    def test_AttributeDefinition_get_container_by_type(self):
+        tested = AttributeDefinition()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_AttributeDefinition_get_contents(self):
+        tested = AttributeDefinition()
+        tested.get_contents()
+        pass
+
+    def test_AttributeDefinition_get_all_contents(self):
+        tested = AttributeDefinition()
+        tested.get_all_contents()
+        pass
+
+    def test_AttributeDefinition_get_all_contents_by_type(self):
+        tested = AttributeDefinition()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_AttributeDefinition_get_available_s_b_queries(self):
+        tested = AttributeDefinition()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_AttributeDefinition_get_query_result(self):
+        tested = AttributeDefinition()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_AttributeDefinition_default_value_getter(self):
+        tested = AttributeDefinition()
+        tested.get_default_value()
+        pass
+
+    def test_AttributeDefinition_default_value_setter(self):
+        tested = AttributeDefinition()
+        value = Attribute()
+        tested.set_default_value(value)
+        pass
+
+    def test_AttributeDefinition_definition_type_getter(self):
+        tested = AttributeDefinition()
+        tested.get_definition_type()
+        pass
+
+    def test_AttributeDefinition_definition_type_setter(self):
+        tested = AttributeDefinition()
+        value = DataTypeDefinition()
+        tested.set_definition_type(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_default_value_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_default_value()
+        pass
+
+    def test_AttributeDefinitionEnumeration_default_value_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = Attribute()
+        tested.set_default_value(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_definition_type_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_definition_type()
+        pass
+
+    def test_AttributeDefinitionEnumeration_definition_type_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = DataTypeDefinition()
+        tested.set_definition_type(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_id_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_id()
+        pass
+
+    def test_AttributeDefinitionEnumeration_id_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_long_name_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_long_name()
+        pass
+
+    def test_AttributeDefinitionEnumeration_long_name_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_description_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_description()
+        pass
+
+    def test_AttributeDefinitionEnumeration_description_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_owned_diagrams_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_AttributeDefinitionEnumeration_element_of_interest_for_diagrams_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_AttributeDefinitionEnumeration_element_of_interest_for_diagrams_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_contextual_element_for_diagrams_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_AttributeDefinitionEnumeration_contextual_element_for_diagrams_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_representing_diagrams_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_AttributeDefinitionEnumeration__r_e_cs_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get__r_e_cs()
+        pass
+
+    def test_AttributeDefinitionEnumeration__r_e_cs_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration__r_p_ls_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get__r_p_ls()
+        pass
+
+    def test_AttributeDefinitionEnumeration__r_p_ls_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_label(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_label()
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_element_type(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_element_type()
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_container(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_container()
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_container_by_type(self):
+        tested = AttributeDefinitionEnumeration()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_contents(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_contents()
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_all_contents(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_all_contents()
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_all_contents_by_type(self):
+        tested = AttributeDefinitionEnumeration()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_available_s_b_queries(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_AttributeDefinitionEnumeration_get_query_result(self):
+        tested = AttributeDefinitionEnumeration()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_AttributeDefinitionEnumeration_multi_valued_getter(self):
+        tested = AttributeDefinitionEnumeration()
+        tested.get_multi_valued()
+        pass
+
+    def test_AttributeDefinitionEnumeration_multi_valued_setter(self):
+        tested = AttributeDefinitionEnumeration()
+        value = True
+        tested.set_multi_valued(value)
+        pass
+
+    def test_RequirementType_owned_attributes_getter(self):
+        tested = RequirementType()
+        tested.get_owned_attributes()
+        pass
+
+    def test_RequirementType_id_getter(self):
+        tested = RequirementType()
+        tested.get_id()
+        pass
+
+    def test_RequirementType_id_setter(self):
+        tested = RequirementType()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_RequirementType_long_name_getter(self):
+        tested = RequirementType()
+        tested.get_long_name()
+        pass
+
+    def test_RequirementType_long_name_setter(self):
+        tested = RequirementType()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_RequirementType_description_getter(self):
+        tested = RequirementType()
+        tested.get_description()
+        pass
+
+    def test_RequirementType_description_setter(self):
+        tested = RequirementType()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_RequirementType_owned_diagrams_getter(self):
+        tested = RequirementType()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_RequirementType_element_of_interest_for_diagrams_getter(self):
+        tested = RequirementType()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_RequirementType_element_of_interest_for_diagrams_setter(self):
+        tested = RequirementType()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_RequirementType_contextual_element_for_diagrams_getter(self):
+        tested = RequirementType()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_RequirementType_contextual_element_for_diagrams_setter(self):
+        tested = RequirementType()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_RequirementType_representing_diagrams_getter(self):
+        tested = RequirementType()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_RequirementType__r_e_cs_getter(self):
+        tested = RequirementType()
+        tested.get__r_e_cs()
+        pass
+
+    def test_RequirementType__r_e_cs_setter(self):
+        tested = RequirementType()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_RequirementType__r_p_ls_getter(self):
+        tested = RequirementType()
+        tested.get__r_p_ls()
+        pass
+
+    def test_RequirementType__r_p_ls_setter(self):
+        tested = RequirementType()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_RequirementType_get_label(self):
+        tested = RequirementType()
+        tested.get_label()
+        pass
+
+    def test_RequirementType_get_element_type(self):
+        tested = RequirementType()
+        tested.get_element_type()
+        pass
+
+    def test_RequirementType_get_container(self):
+        tested = RequirementType()
+        tested.get_container()
+        pass
+
+    def test_RequirementType_get_container_by_type(self):
+        tested = RequirementType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_RequirementType_get_contents(self):
+        tested = RequirementType()
+        tested.get_contents()
+        pass
+
+    def test_RequirementType_get_all_contents(self):
+        tested = RequirementType()
+        tested.get_all_contents()
+        pass
+
+    def test_RequirementType_get_all_contents_by_type(self):
+        tested = RequirementType()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_RequirementType_get_available_s_b_queries(self):
+        tested = RequirementType()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_RequirementType_get_query_result(self):
+        tested = RequirementType()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_ModuleType_owned_attributes_getter(self):
+        tested = ModuleType()
+        tested.get_owned_attributes()
+        pass
+
+    def test_ModuleType_id_getter(self):
+        tested = ModuleType()
+        tested.get_id()
+        pass
+
+    def test_ModuleType_id_setter(self):
+        tested = ModuleType()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_ModuleType_long_name_getter(self):
+        tested = ModuleType()
+        tested.get_long_name()
+        pass
+
+    def test_ModuleType_long_name_setter(self):
+        tested = ModuleType()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_ModuleType_description_getter(self):
+        tested = ModuleType()
+        tested.get_description()
+        pass
+
+    def test_ModuleType_description_setter(self):
+        tested = ModuleType()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_ModuleType_owned_diagrams_getter(self):
+        tested = ModuleType()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_ModuleType_element_of_interest_for_diagrams_getter(self):
+        tested = ModuleType()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_ModuleType_element_of_interest_for_diagrams_setter(self):
+        tested = ModuleType()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_ModuleType_contextual_element_for_diagrams_getter(self):
+        tested = ModuleType()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_ModuleType_contextual_element_for_diagrams_setter(self):
+        tested = ModuleType()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_ModuleType_representing_diagrams_getter(self):
+        tested = ModuleType()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_ModuleType__r_e_cs_getter(self):
+        tested = ModuleType()
+        tested.get__r_e_cs()
+        pass
+
+    def test_ModuleType__r_e_cs_setter(self):
+        tested = ModuleType()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_ModuleType__r_p_ls_getter(self):
+        tested = ModuleType()
+        tested.get__r_p_ls()
+        pass
+
+    def test_ModuleType__r_p_ls_setter(self):
+        tested = ModuleType()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_ModuleType_get_label(self):
+        tested = ModuleType()
+        tested.get_label()
+        pass
+
+    def test_ModuleType_get_element_type(self):
+        tested = ModuleType()
+        tested.get_element_type()
+        pass
+
+    def test_ModuleType_get_container(self):
+        tested = ModuleType()
+        tested.get_container()
+        pass
+
+    def test_ModuleType_get_container_by_type(self):
+        tested = ModuleType()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_ModuleType_get_contents(self):
+        tested = ModuleType()
+        tested.get_contents()
+        pass
+
+    def test_ModuleType_get_all_contents(self):
+        tested = ModuleType()
+        tested.get_all_contents()
+        pass
+
+    def test_ModuleType_get_all_contents_by_type(self):
+        tested = ModuleType()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_ModuleType_get_available_s_b_queries(self):
+        tested = ModuleType()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_ModuleType_get_query_result(self):
+        tested = ModuleType()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_DataTypeDefinition_id_getter(self):
+        tested = DataTypeDefinition()
+        tested.get_id()
+        pass
+
+    def test_DataTypeDefinition_id_setter(self):
+        tested = DataTypeDefinition()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_DataTypeDefinition_long_name_getter(self):
+        tested = DataTypeDefinition()
+        tested.get_long_name()
+        pass
+
+    def test_DataTypeDefinition_long_name_setter(self):
+        tested = DataTypeDefinition()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_DataTypeDefinition_description_getter(self):
+        tested = DataTypeDefinition()
+        tested.get_description()
+        pass
+
+    def test_DataTypeDefinition_description_setter(self):
+        tested = DataTypeDefinition()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_DataTypeDefinition_owned_diagrams_getter(self):
+        tested = DataTypeDefinition()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_DataTypeDefinition_element_of_interest_for_diagrams_getter(self):
+        tested = DataTypeDefinition()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_DataTypeDefinition_element_of_interest_for_diagrams_setter(self):
+        tested = DataTypeDefinition()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_DataTypeDefinition_contextual_element_for_diagrams_getter(self):
+        tested = DataTypeDefinition()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_DataTypeDefinition_contextual_element_for_diagrams_setter(self):
+        tested = DataTypeDefinition()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_DataTypeDefinition_representing_diagrams_getter(self):
+        tested = DataTypeDefinition()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_DataTypeDefinition__r_e_cs_getter(self):
+        tested = DataTypeDefinition()
+        tested.get__r_e_cs()
+        pass
+
+    def test_DataTypeDefinition__r_e_cs_setter(self):
+        tested = DataTypeDefinition()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_DataTypeDefinition__r_p_ls_getter(self):
+        tested = DataTypeDefinition()
+        tested.get__r_p_ls()
+        pass
+
+    def test_DataTypeDefinition__r_p_ls_setter(self):
+        tested = DataTypeDefinition()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_DataTypeDefinition_get_label(self):
+        tested = DataTypeDefinition()
+        tested.get_label()
+        pass
+
+    def test_DataTypeDefinition_get_element_type(self):
+        tested = DataTypeDefinition()
+        tested.get_element_type()
+        pass
+
+    def test_DataTypeDefinition_get_container(self):
+        tested = DataTypeDefinition()
+        tested.get_container()
+        pass
+
+    def test_DataTypeDefinition_get_container_by_type(self):
+        tested = DataTypeDefinition()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_DataTypeDefinition_get_contents(self):
+        tested = DataTypeDefinition()
+        tested.get_contents()
+        pass
+
+    def test_DataTypeDefinition_get_all_contents(self):
+        tested = DataTypeDefinition()
+        tested.get_all_contents()
+        pass
+
+    def test_DataTypeDefinition_get_all_contents_by_type(self):
+        tested = DataTypeDefinition()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_DataTypeDefinition_get_available_s_b_queries(self):
+        tested = DataTypeDefinition()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_DataTypeDefinition_get_query_result(self):
+        tested = DataTypeDefinition()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_EnumerationDataTypeDefinition_id_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_id()
+        pass
+
+    def test_EnumerationDataTypeDefinition_id_setter(self):
+        tested = EnumerationDataTypeDefinition()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_EnumerationDataTypeDefinition_long_name_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_long_name()
+        pass
+
+    def test_EnumerationDataTypeDefinition_long_name_setter(self):
+        tested = EnumerationDataTypeDefinition()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_EnumerationDataTypeDefinition_description_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_description()
+        pass
+
+    def test_EnumerationDataTypeDefinition_description_setter(self):
+        tested = EnumerationDataTypeDefinition()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_EnumerationDataTypeDefinition_owned_diagrams_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_EnumerationDataTypeDefinition_element_of_interest_for_diagrams_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_EnumerationDataTypeDefinition_element_of_interest_for_diagrams_setter(self):
+        tested = EnumerationDataTypeDefinition()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_EnumerationDataTypeDefinition_contextual_element_for_diagrams_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_EnumerationDataTypeDefinition_contextual_element_for_diagrams_setter(self):
+        tested = EnumerationDataTypeDefinition()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_EnumerationDataTypeDefinition_representing_diagrams_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_EnumerationDataTypeDefinition__r_e_cs_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get__r_e_cs()
+        pass
+
+    def test_EnumerationDataTypeDefinition__r_e_cs_setter(self):
+        tested = EnumerationDataTypeDefinition()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_EnumerationDataTypeDefinition__r_p_ls_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get__r_p_ls()
+        pass
+
+    def test_EnumerationDataTypeDefinition__r_p_ls_setter(self):
+        tested = EnumerationDataTypeDefinition()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_label(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_label()
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_element_type(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_element_type()
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_container(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_container()
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_container_by_type(self):
+        tested = EnumerationDataTypeDefinition()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_contents(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_contents()
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_all_contents(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_all_contents()
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_all_contents_by_type(self):
+        tested = EnumerationDataTypeDefinition()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_available_s_b_queries(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_EnumerationDataTypeDefinition_get_query_result(self):
+        tested = EnumerationDataTypeDefinition()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_EnumerationDataTypeDefinition_specified_values_getter(self):
+        tested = EnumerationDataTypeDefinition()
+        tested.get_specified_values()
         pass
 
 
