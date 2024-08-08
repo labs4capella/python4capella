@@ -15099,6 +15099,11 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="fca2fa65-0247-4784-924d-2fe3d7ebbf3b" name="effects" abstractType="#85e6991b-ea3d-479b-a9eb-86490950a89a"
                   aggregationKind="ASSOCIATION">
+                <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                    id="f347c547-c46d-4927-a554-31605904dad1" name="Technical.Mapping">
+                  <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                      id="fe9ed1af-013b-475a-8cec-acbd450a36bd" name="name" value="effect"/>
+                </ownedPropertyValueGroups>
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="0df898ce-288c-4522-be03-9db4751f22b2" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

@@ -2504,7 +2504,7 @@ class StateTransition(CapellaElement):
         """
         Returns: AbstractAction[*]
         """
-        return create_e_list(self.get_java_object().getEffects(), AbstractAction)
+        return create_e_list(self.get_java_object().getEffect(), AbstractAction)
     def get_realized_state_transitions(self) -> List[StateTransition]:
         """
         Returns: StateTransition[*]
