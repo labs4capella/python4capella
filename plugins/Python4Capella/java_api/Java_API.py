@@ -24,6 +24,11 @@ class JavaObject:
                 return other.java_object is None
         else:
             return False
+    def __hash__(self):
+        if self.java_object:
+            return self.java_object.hashCode()
+        else:
+            return 0
 
 class JavaIterator(JavaObject,Iterator[T]):
     """A wrapping class for a Java Iterator"""
