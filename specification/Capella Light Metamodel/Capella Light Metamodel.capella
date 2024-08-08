@@ -12492,12 +12492,13 @@
                   id="819f041f-a2d9-447d-adbe-ea00de9dcdb6" super="#a5c9af0a-2b12-4b80-adff-c9307c2ab9e2"
                   sub="#b58e094b-aa71-4bb7-992a-486910f84c80"/>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
-                  id="7a0bf079-e461-4f47-a961-cafbc3a353c2" name="deployingNodePC"
-                  abstractType="#8b417d78-c0d5-4e16-b757-bf103c0b3d97" aggregationKind="ASSOCIATION">
+                  id="7a0bf079-e461-4f47-a961-cafbc3a353c2" name="deployingNodePCs"
+                  abstractType="#8b417d78-c0d5-4e16-b757-bf103c0b3d97" aggregationKind="ASSOCIATION"
+                  isReadOnly="true">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="77212009-2171-44fc-b9b7-fea8564d4767" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
-                    id="26f44e56-1269-47c7-b99c-f0010aed1292" value="1"/>
+                    id="26f44e56-1269-47c7-b99c-f0010aed1292" value="*"/>
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="86823835-57f9-4e62-904e-8f2b7f0b348e" name="realizedLogicalComponents"

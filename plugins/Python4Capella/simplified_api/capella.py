@@ -5986,22 +5986,11 @@ class BehaviorPC(PhysicalComponent, BehavioralComponent):
                 raise AttributeError("Passed component is an actor.")
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_deploying_node_p_c(self) -> NodePC:
+    def get_deploying_node_p_cs(self) -> List[NodePC]:
         """
-        Returns: NodePC[0..1]
+        Returns: NodePC[*]
         """
-        value =  self.get_java_object().getDeployingNodePC()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
-    def set_deploying_node_p_c(self, value: NodePC):
-        """
-        Parameters: value: NodePC[0..1]
-        """
-        return self.get_java_object().setDeployingNodePC(value.get_java_object())
+        return create_e_list(self.get_java_object().getDeployingPhysicalComponents(), NodePC)
     def get_realized_logical_components(self) -> List[LogicalComponent]:
         """
         Returns: LogicalComponent[*]

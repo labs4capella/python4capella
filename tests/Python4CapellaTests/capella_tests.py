@@ -15005,15 +15005,9 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_component_exchange_categories()
         pass
 
-    def test_BehaviorPC_deploying_node_p_c_getter(self):
+    def test_BehaviorPC_deploying_node_p_cs_getter(self):
         tested = BehaviorPC()
-        tested.get_deploying_node_p_c()
-        pass
-
-    def test_BehaviorPC_deploying_node_p_c_setter(self):
-        tested = BehaviorPC()
-        value = NodePC()
-        tested.set_deploying_node_p_c(value)
+        tested.get_deploying_node_p_cs()
         pass
 
     def test_BehaviorPC_realized_logical_components_getter(self):

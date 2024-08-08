@@ -1,0 +1,3 @@
+    def get_deploying_node_p_cs(self) -> List[NodePC]:
+        return create_e_list(self.get_java_object().getDeployingPhysicalComponents(), NodePC)
+
