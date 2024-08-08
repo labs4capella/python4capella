@@ -1,0 +1,14 @@
+    @staticmethod
+    def get_capella_types_folders(capellaElement: CapellaElement):
+        """
+        Get the Capella Types Folder from the given Capella Element.
+        """
+        res = []
+        se = RequirementAddOn.get_system_engineering(capellaElement)
+        capella_types_folder_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaTypesFolder")
+        for modelArchitecture in se.get_java_object().getOwnedArchitectures():
+            for extension in modelArchitecture.getOwnedExtensions():
+                if capella_types_folder_e_class.isInstance(extension):
+                    res.append(CapellaTypesFolder(extension))
+        return res
+

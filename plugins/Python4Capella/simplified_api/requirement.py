@@ -78,6 +78,23 @@ class RequirementAddOn(JavaObject):
         status: KO
         """
         raise AttributeError("TODO")
+    @staticmethod
+    def get_capella_types_folders(capellaElement: CapellaElement):
+        """
+        Parameters: elem: CapellaElement
+        Returns: CapellaTypesFolder[*]
+        """
+        """
+        Get the Capella Types Folder from the given Capella Element.
+        """
+        res = []
+        se = RequirementAddOn.get_system_engineering(capellaElement)
+        capella_types_folder_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaTypesFolder")
+        for modelArchitecture in se.get_java_object().getOwnedArchitectures():
+            for extension in modelArchitecture.getOwnedExtensions():
+                if capella_types_folder_e_class.isInstance(extension):
+                    res.append(CapellaTypesFolder(extension))
+        return res
 
 class CapellaModule(EObject):
     """
@@ -140,6 +157,27 @@ class CapellaModule(EObject):
         Returns: String
         """
         self.get_java_object().setReqIFPrefix(value)
+    def get_module_type(self) -> ModuleType:
+        """
+        Returns: ModuleType[0..1]
+        """
+        value =  self.get_java_object().getModuleType()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_module_type(self, value: ModuleType):
+        """
+        Parameters: value: ModuleType[0..1]
+        """
+        return self.get_java_object().setModuleType(value.get_java_object())
+    def get_owned_attributes(self) -> List[Attribute]:
+        """
+        Returns: Attribute[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedAttributes(), Attribute)
 
 class Requirement(EObject):
     """
@@ -157,26 +195,6 @@ class Requirement(EObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_id(self) -> str:
-        """
-        Returns: String
-        """
-        return self.get_java_object().getReqIFIdentifier()
-    def set_id(self, value: str):
-        """
-        Returns: String
-        """
-        self.get_java_object().setReqIFIdentifier(value)
-    def get_long_name(self) -> str:
-        """
-        Returns: String
-        """
-        return self.get_java_object().getReqIFLongName()
-    def set_long_name(self, value: str):
-        """
-        Returns: String
-        """
-        self.get_java_object().setReqIFLongName(value)
     def get_name(self) -> str:
         """
         Returns: String
@@ -197,16 +215,6 @@ class Requirement(EObject):
         Returns: String
         """
         self.get_java_object().setReqIFChapterName(value)
-    def get_description(self) -> str:
-        """
-        Returns: String
-        """
-        return self.get_java_object().getReqIFDescription()
-    def set_description(self, value: str):
-        """
-        Returns: String
-        """
-        self.get_java_object().setReqIFDescription(value)
     def get_prefix(self) -> str:
         """
         Returns: String
@@ -295,6 +303,52 @@ class Requirement(EObject):
                     if specific_cls is not None:
                         res.append(specific_cls(capella_element))
         return res
+    def get_requirement_type(self) -> RequirementType:
+        """
+        Returns: RequirementType[0..1]
+        """
+        value =  self.get_java_object().getRequirementType()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_requirement_type(self, value: RequirementType):
+        """
+        Parameters: value: RequirementType[0..1]
+        """
+        return self.get_java_object().setRequirementType(value.get_java_object())
+    def get_id(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFIdentifier()
+    def set_id(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFIdentifier(value)
+    def get_long_name(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFLongName()
+    def set_long_name(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFLongName(value)
+    def get_description(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getReqIFDescription()
+    def set_description(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setReqIFDescription(value)
 
 class Folder(Requirement):
     """
@@ -336,16 +390,22 @@ class Attribute(EObject):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_definition(self) -> str:
+    def get_definition(self) -> AttributeDefinition:
         """
-        Returns: String
+        Returns: AttributeDefinition
         """
-        return self.get_java_object().getDefinition()
-    def set_definition(self, value: str):
+        value =  self.get_java_object().getDefinition()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_definition(self, value: AttributeDefinition):
         """
-        Returns: String
+        Parameters: value: AttributeDefinition
         """
-        self.get_java_object().setDefinition(value)
+        return self.get_java_object().setDefinition(value.get_java_object())
     def get_value(self) -> Any:
         """
         Returns: String

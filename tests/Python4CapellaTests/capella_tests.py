@@ -34144,6 +34144,12 @@ class capella_tests(unittest.TestCase):
         tested.get_relation_type(param1, param2)
         pass
 
+    def test_RequirementAddOn_get_capella_types_folders(self):
+        tested = RequirementAddOn()
+        param1 = Unit()
+        tested.get_capella_types_folders(param1)
+        pass
+
     def test_CapellaModule_owned_diagrams_getter(self):
         tested = CapellaModule()
         tested.get_owned_diagrams()
@@ -34295,6 +34301,22 @@ class capella_tests(unittest.TestCase):
         tested.set_prefix(value)
         pass
 
+    def test_CapellaModule_module_type_getter(self):
+        tested = CapellaModule()
+        tested.get_module_type()
+        pass
+
+    def test_CapellaModule_module_type_setter(self):
+        tested = CapellaModule()
+        value = ModuleType()
+        tested.set_module_type(value)
+        pass
+
+    def test_CapellaModule_owned_attributes_getter(self):
+        tested = CapellaModule()
+        tested.get_owned_attributes()
+        pass
+
     def test_Requirement_owned_diagrams_getter(self):
         tested = Requirement()
         tested.get_owned_diagrams()
@@ -34397,28 +34419,6 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
-    def test_Requirement_id_getter(self):
-        tested = Requirement()
-        tested.get_id()
-        pass
-
-    def test_Requirement_id_setter(self):
-        tested = Requirement()
-        value = "value"
-        tested.set_id(value)
-        pass
-
-    def test_Requirement_long_name_getter(self):
-        tested = Requirement()
-        tested.get_long_name()
-        pass
-
-    def test_Requirement_long_name_setter(self):
-        tested = Requirement()
-        value = "value"
-        tested.set_long_name(value)
-        pass
-
     def test_Requirement_name_getter(self):
         tested = Requirement()
         tested.get_name()
@@ -34439,17 +34439,6 @@ class capella_tests(unittest.TestCase):
         tested = Requirement()
         value = "value"
         tested.set_chapter_name(value)
-        pass
-
-    def test_Requirement_description_getter(self):
-        tested = Requirement()
-        tested.get_description()
-        pass
-
-    def test_Requirement_description_setter(self):
-        tested = Requirement()
-        value = "value"
-        tested.set_description(value)
         pass
 
     def test_Requirement_prefix_getter(self):
@@ -34512,26 +34501,48 @@ class capella_tests(unittest.TestCase):
         tested.get_outgoing_linked_elems()
         pass
 
-    def test_Folder_id_getter(self):
-        tested = Folder()
+    def test_Requirement_requirement_type_getter(self):
+        tested = Requirement()
+        tested.get_requirement_type()
+        pass
+
+    def test_Requirement_requirement_type_setter(self):
+        tested = Requirement()
+        value = RequirementType()
+        tested.set_requirement_type(value)
+        pass
+
+    def test_Requirement_id_getter(self):
+        tested = Requirement()
         tested.get_id()
         pass
 
-    def test_Folder_id_setter(self):
-        tested = Folder()
+    def test_Requirement_id_setter(self):
+        tested = Requirement()
         value = "value"
         tested.set_id(value)
         pass
 
-    def test_Folder_long_name_getter(self):
-        tested = Folder()
+    def test_Requirement_long_name_getter(self):
+        tested = Requirement()
         tested.get_long_name()
         pass
 
-    def test_Folder_long_name_setter(self):
-        tested = Folder()
+    def test_Requirement_long_name_setter(self):
+        tested = Requirement()
         value = "value"
         tested.set_long_name(value)
+        pass
+
+    def test_Requirement_description_getter(self):
+        tested = Requirement()
+        tested.get_description()
+        pass
+
+    def test_Requirement_description_setter(self):
+        tested = Requirement()
+        value = "value"
+        tested.set_description(value)
         pass
 
     def test_Folder_name_getter(self):
@@ -34554,17 +34565,6 @@ class capella_tests(unittest.TestCase):
         tested = Folder()
         value = "value"
         tested.set_chapter_name(value)
-        pass
-
-    def test_Folder_description_getter(self):
-        tested = Folder()
-        tested.get_description()
-        pass
-
-    def test_Folder_description_setter(self):
-        tested = Folder()
-        value = "value"
-        tested.set_description(value)
         pass
 
     def test_Folder_prefix_getter(self):
@@ -34625,6 +34625,50 @@ class capella_tests(unittest.TestCase):
     def test_Folder_get_outgoing_linked_elems(self):
         tested = Folder()
         tested.get_outgoing_linked_elems()
+        pass
+
+    def test_Folder_requirement_type_getter(self):
+        tested = Folder()
+        tested.get_requirement_type()
+        pass
+
+    def test_Folder_requirement_type_setter(self):
+        tested = Folder()
+        value = RequirementType()
+        tested.set_requirement_type(value)
+        pass
+
+    def test_Folder_id_getter(self):
+        tested = Folder()
+        tested.get_id()
+        pass
+
+    def test_Folder_id_setter(self):
+        tested = Folder()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Folder_long_name_getter(self):
+        tested = Folder()
+        tested.get_long_name()
+        pass
+
+    def test_Folder_long_name_setter(self):
+        tested = Folder()
+        value = "value"
+        tested.set_long_name(value)
+        pass
+
+    def test_Folder_description_getter(self):
+        tested = Folder()
+        tested.get_description()
+        pass
+
+    def test_Folder_description_setter(self):
+        tested = Folder()
+        value = "value"
+        tested.set_description(value)
         pass
 
     def test_Folder_owned_diagrams_getter(self):
@@ -34843,7 +34887,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Attribute_definition_setter(self):
         tested = Attribute()
-        value = "value"
+        value = AttributeDefinition()
         tested.set_definition(value)
         pass
 
