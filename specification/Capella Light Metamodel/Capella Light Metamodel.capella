@@ -27272,6 +27272,24 @@
                       id="4f1c0448-cd0e-47ec-90b7-e96b8402acab" value="1"/>
                 </ownedParameters>
               </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Service"
+                  id="cea415f0-1911-4c3a-b5a9-613b16c1b494" name="getPVGroupNames">
+                <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
+                    id="c3e02d67-5043-4c71-90cd-5637926bedd8" name="elem" abstractType="#7bd88617-cd02-494f-b666-d250ff6417d6">
+                  <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="c6c50cd1-6c96-4d80-8c4f-61ebdf0c1461" value="1"/>
+                  <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="68febdef-dc66-4a44-b67f-92a0f59c4677" value="1"/>
+                </ownedParameters>
+                <ownedParameters xsi:type="org.polarsys.capella.core.data.information:Parameter"
+                    id="69d597fc-d4a9-4b4f-acee-b41343eedbef" name="pvs" abstractType="#459bd24b-1c4e-4697-af50-3e4bde4f6dc2"
+                    direction="RETURN">
+                  <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="604d8fde-5e4b-4561-ba1a-d12d690b8588" name="" value="0"/>
+                  <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                      id="190d2d90-b74e-4f0d-8b4d-1e78dae27c63" name="" value="*"/>
+                </ownedParameters>
+              </ownedFeatures>
             </ownedClasses>
           </ownedDataPkgs>
           <ownedDataPkgs xsi:type="org.polarsys.capella.core.data.information:DataPkg"

@@ -592,6 +592,23 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual(1, len(names))
         self.assertEqual("Version", names[0])
 
+    def test_PVMT_get_p_v_group_names(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        tested = None
+        for sf in se.get_all_contents_by_type(SystemFunction):
+            #: :type sf: SystemFunction
+            if sf.get_name() == 'Retrieve VOD Movie Data':
+                tested = sf
+                break
+        names = PVMT.get_p_v_group_names(tested)
+        self.assertEqual(1, len(names))
+        self.assertEqual("Version_Domain.Version_Extension", names[0])
+
     def test_PVMT_is_p_v_defined(self):
         """
         This test need the IFE project to be in the workspace to run

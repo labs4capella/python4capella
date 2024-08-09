@@ -54,5 +54,16 @@ class PVMT(JavaObject):
                     else:
                         return str(pv.getValue())
         return None
+    @staticmethod
+    def get_p_v_group_names(elem: CapellaElement) -> List[str]:
+        """
+        Parameters: elem: CapellaElement
+        Returns: String[*]
+        """
+        #: :type elem: CapellaElement
+        res = []
+        for group in elem.get_java_object().getOwnedPropertyValueGroups():
+            res.append(group.getName())
+        return res
 
 

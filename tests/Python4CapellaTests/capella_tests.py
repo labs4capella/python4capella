@@ -34112,6 +34112,12 @@ class capella_tests(unittest.TestCase):
         tested.get_p_v_value(param1, param2)
         pass
 
+    def test_PVMT_get_p_v_group_names(self):
+        tested = PVMT()
+        param1 = Unit()
+        tested.get_p_v_group_names(param1)
+        pass
+
     def test_RequirementAddOn_get_requirement_modules(self):
         tested = RequirementAddOn()
         param1 = CapellaModel()
