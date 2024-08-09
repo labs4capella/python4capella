@@ -1,5 +1,5 @@
 /**
- *   Copyright (c) 2021, 2023 THALES GLOBAL SERVICES
+ *   Copyright (c) 2021, 2024 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -12,7 +12,9 @@
  */
 package org.eclipse.python4capella.commandline;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -49,17 +51,44 @@ public class Python4CapellaCommandLine extends AbstractWorkbenchCommandLine {
 	public boolean execute(IApplicationContext context) {
 		final Object argObject = context.getArguments().get(IApplicationContext.APPLICATION_ARGS);
 		if (argObject instanceof String[]) {
-			final String scriptPath = ((String[]) argObject)[2];
-			final String[] argv = new String[((String[]) argObject).length - 3];
-			for (int i = 3; i < ((String[]) argObject).length; i++) {
-				argv[i - 3] = ((String[]) argObject)[i];
+			final int scriptPathIndex = getScriptPathIndex((String[]) argObject);
+			if (scriptPathIndex >= 0) {
+				final String scriptPath = ((String[]) argObject)[scriptPathIndex];
+				final List<String> argv = new ArrayList<>();
+				for (int i = scriptPathIndex + 1; i < ((String[]) argObject).length; i++) {
+					final String arg = ((String[]) argObject)[i];
+					if (arg != null) {
+						argv.add(arg);
+					}
+				}
+				return runScript(scriptPath, argv.toArray(new String[argv.size()]));
+			} else {
+				System.err.println("<script name.py> <script parameters>");
 			}
-			return runScript(scriptPath, argv);
 		} else {
-			System.err.println("<script name> <script parameters>");
+			System.err.println("<script name.py> <script parameters>");
 		}
 
 		return false;
+	}
+
+	/**
+	 * Gets the script path index from the given arguments.
+	 * 
+	 * @param args the arguments array
+	 * @return the script path index from the given arguments
+	 */
+	private int getScriptPathIndex(String[] args) {
+		int res = -1;
+
+		for (int i = 0; i < args.length; i++) {
+			if (args[i] != null && args[i].endsWith(".py")) {
+				res = i;
+				break;
+			}
+		}
+
+		return res;
 	}
 
 	private boolean runScript(final String scriptPath, final String[] argv) {
