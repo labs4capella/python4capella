@@ -618,6 +618,23 @@ class PropertyValuePkgContainer(CapellaElement):
         """
         return create_e_list(self.get_java_object().getOwnedPropertyValuePkgs(), PropertyValuePkg)
 
+class ModellingArchitecture(PropertyValuePkgContainer):
+    """
+    Java class: org.polarsys.capella.core.data.capellacore.ModellingArchitecture
+    The element containing all definitions from the Operational Analysis.
+    The Operational Analysis aims at defining what the users of the system need to accomplish
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "ModellingArchitecture")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, ModellingArchitecture):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
 class Diagram(JavaObject):
     """
     A generic Capella diagram
@@ -1058,7 +1075,7 @@ class CompliancyDefinition(AbstractReElement):
         """
         self.get_java_object().setDescription(value)
 
-class OperationalAnalysis(PropertyValuePkgContainer):
+class OperationalAnalysis(ModellingArchitecture):
     """
     Java class: org.polarsys.capella.core.data.oa.OperationalAnalysis
     The element containing all definitions from the Operational Analysis.
@@ -1413,7 +1430,7 @@ class CommunicationMean(CapellaElement):
         """
         return create_e_list(self.get_java_object().getRealizingComponentExchanges(), ComponentExchange)
 
-class SystemAnalysis(PropertyValuePkgContainer):
+class SystemAnalysis(ModellingArchitecture):
     """
     Java class: org.polarsys.capella.core.data.ctx.SystemAnalysis
     The element containing all definitions from the System Analysis.
@@ -1670,7 +1687,7 @@ class Mission(CapellaElement):
                     res.append(specific_cls(system_comp))
         return res
 
-class LogicalArchitecture(PropertyValuePkgContainer):
+class LogicalArchitecture(ModellingArchitecture):
     """
     Java class: org.polarsys.capella.core.data.la.LogicalArchitecture
     The element containing all definitions from the Logical Architecture.
@@ -1862,7 +1879,7 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalLinkCategories(), PhysicalLinkCategory)
 
-class PhysicalArchitecture(PropertyValuePkgContainer):
+class PhysicalArchitecture(ModellingArchitecture):
     """
     Java class: org.polarsys.capella.core.data.pa.PhysicalArchitecture
     The element containing all definitions from the Physical Architecture.
@@ -2116,7 +2133,7 @@ class PhysicalComponent(AbstractPhysicalArtifact):
         """
         return capella_query_by_name(self, "Allocated Physical Functions")
 
-class EPBSArchitecture(PropertyValuePkgContainer):
+class EPBSArchitecture(ModellingArchitecture):
     """
     Java class: org.polarsys.capella.core.data.epbs.EPBSArchitecture
     The element containing all definitions from the End-Product Breakdown Structure.

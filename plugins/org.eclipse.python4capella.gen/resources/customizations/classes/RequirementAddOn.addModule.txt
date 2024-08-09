@@ -1,0 +1,7 @@
+    @staticmethod
+    def add_module(architecture: ModellingArchitecture, module: CapellaModule):
+        """
+        Add the given CapellaModule to the given ModellingArchitecture
+        """
+        architecture.get_java_object().getOwnedExtensions().add(module.get_java_object())
+

@@ -1,0 +1,10 @@
+    @staticmethod
+    def remove_module(architecture: ModellingArchitecture, module: CapellaModule):
+        """
+        Remove the given CapellaModule from the given ModellingArchitecture
+        """
+        try:
+            architecture.get_java_object().getOwnedExtensions().remove(module.get_java_object())
+        except Exception:
+            pass
+

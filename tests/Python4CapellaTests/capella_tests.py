@@ -34150,6 +34150,20 @@ class capella_tests(unittest.TestCase):
         tested.get_capella_types_folders(param1)
         pass
 
+    def test_RequirementAddOn_add_module(self):
+        tested = RequirementAddOn()
+        param1 = EPBSArchitecture()
+        param2 = CapellaModule()
+        tested.add_module(param1, param2)
+        pass
+
+    def test_RequirementAddOn_remove_module(self):
+        tested = RequirementAddOn()
+        param1 = EPBSArchitecture()
+        param2 = CapellaModule()
+        tested.remove_module(param1, param2)
+        pass
+
     def test_CapellaModule_owned_diagrams_getter(self):
         tested = CapellaModule()
         tested.get_owned_diagrams()

@@ -99,6 +99,27 @@ class RequirementAddOn(JavaObject):
                 if capella_types_folder_e_class.isInstance(extension):
                     res.append(CapellaTypesFolder(extension))
         return res
+    @staticmethod
+    def add_module(architecture: ModellingArchitecture, module: CapellaModule):
+        """
+        Parameters: architecture: ModellingArchitecture, module: CapellaModule
+        """
+        """
+        Add the given CapellaModule to the given ModellingArchitecture
+        """
+        architecture.get_java_object().getOwnedExtensions().add(module.get_java_object())
+    @staticmethod
+    def remove_module(architecture: ModellingArchitecture, module: CapellaModule):
+        """
+        Parameters: architecture: ModellingArchitecture, module: CapellaModule
+        """
+        """
+        Remove the given CapellaModule from the given ModellingArchitecture
+        """
+        try:
+            architecture.get_java_object().getOwnedExtensions().remove(module.get_java_object())
+        except Exception:
+            pass
 
 class CapellaModule(EObject):
     """

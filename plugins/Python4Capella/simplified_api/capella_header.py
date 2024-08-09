@@ -28,6 +28,9 @@ class EnumerationPropertyLiteral:
 class PropertyValuePkgContainer:
     pass
 
+class ModellingArchitecture:
+    pass
+
 class Diagram:
     pass
 
