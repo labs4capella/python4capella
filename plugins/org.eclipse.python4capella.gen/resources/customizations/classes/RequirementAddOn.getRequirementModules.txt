@@ -3,9 +3,10 @@
         #: :type capellaElement: CapellaElement
         res = []
         se = RequirementAddOn.get_system_engineering(capellaElement)
+        capella_module_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaModule")
         for modelArchitecture in se.get_java_object().getOwnedArchitectures():
             for extension in modelArchitecture.getOwnedExtensions():
-                if extension.eClass().getName() == "CapellaModule" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                if capella_module_e_class.isInstance(extension):
                     res.append(CapellaModule(extension))
         return res
 

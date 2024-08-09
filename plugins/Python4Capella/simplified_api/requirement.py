@@ -21,7 +21,8 @@ class RequirementAddOn(JavaObject):
         if container is None:
             return container
         else:
-            if container.eClass().getName() == "SystemEngineering" and container.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/core/modeller"):
+            system_engineering_e_class = get_e_classifier("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering")
+            if system_engineering_e_class.isInstance(container):
                 return SystemEngineering(container)
             else:
                 return RequirementAddOn.get_system_engineering(JavaObject(container))
@@ -35,9 +36,10 @@ class RequirementAddOn(JavaObject):
         #: :type capellaElement: CapellaElement
         res = []
         se = RequirementAddOn.get_system_engineering(capellaElement)
+        capella_module_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaModule")
         for modelArchitecture in se.get_java_object().getOwnedArchitectures():
             for extension in modelArchitecture.getOwnedExtensions():
-                if extension.eClass().getName() == "CapellaModule" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+                if capella_module_e_class.isInstance(extension):
                     res.append(CapellaModule(extension))
         return res
     @staticmethod
@@ -50,8 +52,9 @@ class RequirementAddOn(JavaObject):
         res = []
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")
+        capella_incoming_relation_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaIncomingRelation")
         for relation in e_inverse_by_name(capellaElement.get_java_object(), "target"):
-            if relation.get_java_object().eClass().getName() == "CapellaIncomingRelation" and relation.get_java_object().eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+            if capella_incoming_relation_e_class.isInstance(relation.get_java_object()):
                 capella_element = relation.get_java_object().getSource()
                 if capella_element is not None:
                     specific_cls = e_object_class.get_class(capella_element)
@@ -67,8 +70,9 @@ class RequirementAddOn(JavaObject):
         """
         res = []
         #: :type capellaElement: CapellaElement
+        capella_outgoing_relation_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation")
         for extension in capellaElement.get_java_object().getOwnedExtensions():
-            if extension.eClass().getName() == "CapellaOutgoingRelation" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+            if capella_outgoing_relation_e_class.isInstance(extension):
                 res.append(Requirement(extension.getTarget()))
         return res
     def get_relation_type(self, elem1: EObject, elem2: EObject) -> str:
@@ -280,8 +284,9 @@ class Requirement(EObject):
         res = []
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")
+        capella_outgoing_relation_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation")
         for relation in e_inverse_by_name(self.get_java_object(), "target"):
-            if relation.get_java_object().eClass().getName() == "CapellaOutgoingRelation" and relation.get_java_object().eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+            if capella_outgoing_relation_e_class.isInstance(relation.get_java_object()):
                 capella_element = relation.get_java_object().getSource()
                 if capella_element is not None:
                     specific_cls = e_object_class.get_class(capella_element)

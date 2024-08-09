@@ -2,8 +2,9 @@
     def get_outgoing_requirements(capellaElement: CapellaElement) -> List[Requirement]:
         res = []
         #: :type capellaElement: CapellaElement
+        capella_outgoing_relation_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation")
         for extension in capellaElement.get_java_object().getOwnedExtensions():
-            if extension.eClass().getName() == "CapellaOutgoingRelation" and extension.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+            if capella_outgoing_relation_e_class.isInstance(extension):
                 res.append(Requirement(extension.getTarget()))
         return res
 

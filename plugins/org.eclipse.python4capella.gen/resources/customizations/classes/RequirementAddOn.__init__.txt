@@ -6,7 +6,8 @@
         if container is None:
             return container
         else:
-            if container.eClass().getName() == "SystemEngineering" and container.eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/core/modeller"):
+            system_engineering_e_class = get_e_classifier("http://www.polarsys.org/capella/core/modeller/" + capella_version(), "SystemEngineering")
+            if system_engineering_e_class.isInstance(container):
                 return SystemEngineering(container)
             else:
                 return RequirementAddOn.get_system_engineering(JavaObject(container))

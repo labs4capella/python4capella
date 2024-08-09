@@ -5410,8 +5410,9 @@ class SystemEngineering(PropertyValuePkgContainer):
         Returns: RecCatalog[*]
         """
         res = []
+        rec_catalog_e_class = get_e_classifier("http://www.polarsys.org/capella/common/re/" + capella_version(), "RecCatalog")
         for extension in self.get_java_object().getOwnedExtensions():
-            if extension.eClass().getName() == "RecCatalog" and extension.eClass().getEPackage().getNsURI() == "http://www.polarsys.org/capella/common/re/" + capella_version():
+            if rec_catalog_e_class.isInstance(extension):
                 res.append(RecCatalog(extension))
         return res
     def get_operational_analysis(self) -> OperationalAnalysis:

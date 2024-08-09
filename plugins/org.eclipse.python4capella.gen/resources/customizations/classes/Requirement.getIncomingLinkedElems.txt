@@ -2,8 +2,9 @@
         res = []
         #: :type capellaElement: CapellaElement
         e_object_class = getattr(sys.modules["__main__"], "EObject")
+        capella_outgoing_relation_e_class = get_e_classifier("http://www.polarsys.org/capella/requirements", "CapellaOutgoingRelation")
         for relation in e_inverse_by_name(self.get_java_object(), "target"):
-            if relation.get_java_object().eClass().getName() == "CapellaOutgoingRelation" and relation.get_java_object().eClass().getEPackage().getNsURI().startswith("http://www.polarsys.org/capella/requirements"):
+            if capella_outgoing_relation_e_class.isInstance(relation.get_java_object()):
                 capella_element = relation.get_java_object().getSource()
                 if capella_element is not None:
                     specific_cls = e_object_class.get_class(capella_element)
