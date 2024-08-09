@@ -522,6 +522,19 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual(1, len(requirements))
         self.assertEqual("Display of VOD Movies List", requirements[0].get_name())
 
+    def test_RequirementAddOn_get_system_engineering(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        system = RequirementAddOn.get_system_engineering(se)
+        self.assertEqual(se, system)
+        ls = se.get_logical_architecture().get_logical_system()
+        system1 = RequirementAddOn.get_system_engineering(ls)
+        self.assertEqual(se, system1)
+
     def test_RequirementAddOn_get_outgoing_requirements(self):
         """
         This test need the IFE project to be in the workspace to run

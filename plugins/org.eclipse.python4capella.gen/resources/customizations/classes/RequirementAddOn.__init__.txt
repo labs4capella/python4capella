@@ -2,7 +2,7 @@
         JavaObject.__init__(self, java_object)
     @staticmethod
     def get_system_engineering(capellaElement: CapellaElement) -> SystemEngineering:
-        container = capellaElement.get_java_object().eContainer()
+        container = capellaElement.get_java_object()
         if container is None:
             return container
         else:
@@ -10,5 +10,5 @@
             if system_engineering_e_class.isInstance(container):
                 return SystemEngineering(container)
             else:
-                return RequirementAddOn.get_system_engineering(JavaObject(container))
+                return RequirementAddOn.get_system_engineering(JavaObject(container.eContainer()))
 

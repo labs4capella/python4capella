@@ -17,7 +17,7 @@ class RequirementAddOn(JavaObject):
     def get_system_engineering(capellaElement: CapellaElement) -> SystemEngineering:
         """
         """
-        container = capellaElement.get_java_object().eContainer()
+        container = capellaElement.get_java_object()
         if container is None:
             return container
         else:
@@ -25,7 +25,7 @@ class RequirementAddOn(JavaObject):
             if system_engineering_e_class.isInstance(container):
                 return SystemEngineering(container)
             else:
-                return RequirementAddOn.get_system_engineering(JavaObject(container))
+                return RequirementAddOn.get_system_engineering(JavaObject(container.eContainer()))
     @staticmethod
     def get_requirement_modules(capellaElement: CapellaElement) -> List[CapellaModule]:
         """
