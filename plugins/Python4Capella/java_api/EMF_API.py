@@ -43,7 +43,10 @@ def e_all_contents_by_type(e_obj, cls):
 
 def get_e_classifier(ns_uri, eclass_name):
     """Gets the EClassifier for the given namespace URI and eclassifier name"""
-    return getEClassifier(ns_uri, eclass_name)
+    try:
+        return getEClassifier(ns_uri, eclass_name)
+    except Exception:
+        print("No EClass", eclass_name, "found in EPackage", ns_uri + ",", "make sure you installed any related plugins.")
 
 
 def create_e_object(ns_uri, eclass_name):
