@@ -4138,7 +4138,22 @@ class DataValue(CapellaElement):
         """
         self.get_java_object().setAbstract(value)
 
-class LiteralBooleanValue(DataValue):
+class AbstractBooleanValue(DataValue):
+    """
+    Java class: org.polarsys.capella.core.data.information.datavalue.AbstractBooleanValue
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "AbstractBooleanValue")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractBooleanValue):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class LiteralBooleanValue(AbstractBooleanValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.LiteralBooleanValue
     """
@@ -4152,8 +4167,18 @@ class LiteralBooleanValue(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_value(self) -> bool:
+        """
+        Returns: Boolean
+        """
+        return self.get_java_object().isValue()
+    def set_value(self, value: bool):
+        """
+        Returns: Boolean
+        """
+        self.get_java_object().setValue(value)
 
-class BooleanReference(DataValue):
+class BooleanReference(AbstractBooleanValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.BooleanReference
     """
@@ -4167,8 +4192,55 @@ class BooleanReference(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_referenced_value(self) -> AbstractBooleanValue:
+        """
+        Returns: AbstractBooleanValue[0..1]
+        """
+        value =  self.get_java_object().getReferencedValue()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_value(self, value: AbstractBooleanValue):
+        """
+        Parameters: value: AbstractBooleanValue[0..1]
+        """
+        return self.get_java_object().setReferencedValue(value.get_java_object())
+    def get_referenced_property(self) -> Property:
+        """
+        Returns: Property[0..1]
+        """
+        value =  self.get_java_object().getReferencedProperty()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_property(self, value: Property):
+        """
+        Parameters: value: Property[0..1]
+        """
+        return self.get_java_object().setReferencedProperty(value.get_java_object())
 
-class EnumerationReference(DataValue):
+class AbstractEnumerationValue(DataValue):
+    """
+    Java class: org.polarsys.capella.core.data.information.datavalue.AbstractEnumerationValue
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "AbstractEnumerationValue")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractEnumerationValue):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class EnumerationReference(AbstractEnumerationValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.EnumerationReference
     """
@@ -4182,8 +4254,55 @@ class EnumerationReference(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_referenced_value(self) -> AbstractEnumerationValue:
+        """
+        Returns: AbstractEnumerationValue[0..1]
+        """
+        value =  self.get_java_object().getReferencedValue()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_value(self, value: AbstractEnumerationValue):
+        """
+        Parameters: value: AbstractEnumerationValue[0..1]
+        """
+        return self.get_java_object().setReferencedValue(value.get_java_object())
+    def get_referenced_property(self) -> Property:
+        """
+        Returns: Property[0..1]
+        """
+        value =  self.get_java_object().getReferencedProperty()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_property(self, value: Property):
+        """
+        Parameters: value: Property[0..1]
+        """
+        return self.get_java_object().setReferencedProperty(value.get_java_object())
 
-class LiteralStringValue(DataValue):
+class AbstractStringValue(DataValue):
+    """
+    Java class: org.polarsys.capella.core.data.information.datavalue.AbstractStringValue
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "AbstractStringValue")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractStringValue):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class LiteralStringValue(AbstractStringValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.LiteralStringValue
     """
@@ -4197,8 +4316,18 @@ class LiteralStringValue(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_value(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getValue()
+    def set_value(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setValue(value)
 
-class StringReference(DataValue):
+class StringReference(AbstractStringValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.StringReference
     """
@@ -4212,8 +4341,82 @@ class StringReference(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_referenced_value(self) -> AbstractStringValue:
+        """
+        Returns: AbstractStringValue[0..1]
+        """
+        value =  self.get_java_object().getReferencedValue()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_value(self, value: AbstractStringValue):
+        """
+        Parameters: value: AbstractStringValue[0..1]
+        """
+        return self.get_java_object().setReferencedValue(value.get_java_object())
+    def get_referenced_property(self) -> Property:
+        """
+        Returns: Property[0..1]
+        """
+        value =  self.get_java_object().getReferencedProperty()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_property(self, value: Property):
+        """
+        Parameters: value: Property[0..1]
+        """
+        return self.get_java_object().setReferencedProperty(value.get_java_object())
 
-class LiteralNumericValue(DataValue):
+class NumericValue(DataValue):
+    """
+    Java class: org.polarsys.capella.core.data.information.datavalue.NumericValue
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "NumericValue")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, NumericValue):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_unit(self) -> Unit:
+        """
+        Returns: Unit[0..1]
+        """
+        value =  self.get_java_object().getUnit()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_unit(self, value: Unit):
+        """
+        Parameters: value: Unit[0..1]
+        """
+        return self.get_java_object().setUnit(value.get_java_object())
+    def get_numeric_type(self) -> NumericType:
+        """
+        Returns: NumericType[0..1]
+        """
+        value =  self.get_java_object().getNumericType()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+
+class LiteralNumericValue(NumericValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.LiteralNumericValue
     """
@@ -4227,6 +4430,16 @@ class LiteralNumericValue(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_value(self) -> str:
+        """
+        Returns: String
+        """
+        return self.get_java_object().getValue()
+    def set_value(self, value: str):
+        """
+        Returns: String
+        """
+        self.get_java_object().setValue(value)
 
 class NumericReference(DataValue):
     """
@@ -4242,8 +4455,55 @@ class NumericReference(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_referenced_value(self) -> NumericValue:
+        """
+        Returns: NumericValue[0..1]
+        """
+        value =  self.get_java_object().getReferencedValue()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_value(self, value: NumericValue):
+        """
+        Parameters: value: NumericValue[0..1]
+        """
+        return self.get_java_object().setReferencedValue(value.get_java_object())
+    def get_referenced_property(self) -> Property:
+        """
+        Returns: Property[0..1]
+        """
+        value =  self.get_java_object().getReferencedProperty()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_property(self, value: Property):
+        """
+        Parameters: value: Property[0..1]
+        """
+        return self.get_java_object().setReferencedProperty(value.get_java_object())
 
-class ComplexValue(DataValue):
+class AbstractComplexValue(DataValue):
+    """
+    Java class: org.polarsys.capella.core.data.information.datavalue.AbstractComplexValue
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/datavalue/" + capella_version(), "AbstractComplexValue")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractComplexValue):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class ComplexValue(AbstractComplexValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.ComplexValue
     """
@@ -4258,7 +4518,7 @@ class ComplexValue(DataValue):
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 
-class ComplexValueReference(DataValue):
+class ComplexValueReference(AbstractComplexValue):
     """
     Java class: org.polarsys.capella.core.data.information.datavalue.ComplexValueReference
     """
@@ -4272,6 +4532,22 @@ class ComplexValueReference(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_referenced_value(self) -> AbstractComplexValue:
+        """
+        Returns: AbstractComplexValue[0..1]
+        """
+        value =  self.get_java_object().getReferencedValue()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_value(self, value: AbstractComplexValue):
+        """
+        Parameters: value: AbstractComplexValue[0..1]
+        """
+        return self.get_java_object().setReferencedValue(value.get_java_object())
 
 class BinaryExpression(DataValue):
     """
@@ -4303,7 +4579,22 @@ class UnaryExpression(DataValue):
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 
-class CollectionValueReference(DataValue):
+class AbstractCollectionValue(DataValue):
+    """
+    Java class: org.polarsys.capella.core.data.information.AbstractCollectionValue
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "AbstractCollectionValue")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractCollectionValue):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class CollectionValueReference(AbstractCollectionValue):
     """
     Java class: org.polarsys.capella.core.data.information.CollectionValueReference
     """
@@ -4317,8 +4608,40 @@ class CollectionValueReference(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_referenced_value(self) -> AbstractCollectionValue:
+        """
+        Returns: AbstractCollectionValue[0..1]
+        """
+        value =  self.get_java_object().getReferencedValue()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_value(self, value: AbstractCollectionValue):
+        """
+        Parameters: value: AbstractCollectionValue[0..1]
+        """
+        return self.get_java_object().setReferencedValue(value.get_java_object())
+    def get_referenced_property(self) -> Property:
+        """
+        Returns: Property[0..1]
+        """
+        value =  self.get_java_object().getReferencedProperty()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_referenced_property(self, value: Property):
+        """
+        Parameters: value: Property[0..1]
+        """
+        return self.get_java_object().setReferencedProperty(value.get_java_object())
 
-class CollectionValue(DataValue):
+class CollectionValue(AbstractCollectionValue):
     """
     Java class: org.polarsys.capella.core.data.information.CollectionValue
     """
@@ -4332,6 +4655,27 @@ class CollectionValue(DataValue):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_owned_elements(self) -> List[AbstractCollectionValue]:
+        """
+        Returns: AbstractCollectionValue[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedElements(), AbstractCollectionValue)
+    def get_owned_default_element(self) -> AbstractCollectionValue:
+        """
+        Returns: AbstractCollectionValue[0..1]
+        """
+        value =  self.get_java_object().getOwnedDefaultElement()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_owned_default_element(self, value: AbstractCollectionValue):
+        """
+        Parameters: value: AbstractCollectionValue[0..1]
+        """
+        return self.get_java_object().setOwnedDefaultElement(value.get_java_object())
 
 class DataPkg(CapellaElement):
     """

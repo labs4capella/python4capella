@@ -256,13 +256,22 @@ class AbstractSystemCapability:
 class DataValue:
     pass
 
+class AbstractBooleanValue:
+    pass
+
 class LiteralBooleanValue:
     pass
 
 class BooleanReference:
     pass
 
+class AbstractEnumerationValue:
+    pass
+
 class EnumerationReference:
+    pass
+
+class AbstractStringValue:
     pass
 
 class LiteralStringValue:
@@ -271,10 +280,16 @@ class LiteralStringValue:
 class StringReference:
     pass
 
+class NumericValue:
+    pass
+
 class LiteralNumericValue:
     pass
 
 class NumericReference:
+    pass
+
+class AbstractComplexValue:
     pass
 
 class ComplexValue:
@@ -287,6 +302,9 @@ class BinaryExpression:
     pass
 
 class UnaryExpression:
+    pass
+
+class AbstractCollectionValue:
     pass
 
 class CollectionValueReference:

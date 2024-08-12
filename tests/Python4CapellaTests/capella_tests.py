@@ -26662,6 +26662,17 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_LiteralBooleanValue_value_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_value()
+        pass
+
+    def test_LiteralBooleanValue_value_setter(self):
+        tested = LiteralBooleanValue()
+        value = True
+        tested.set_value(value)
+        pass
+
     def test_BooleanReference_abstract_getter(self):
         tested = BooleanReference()
         tested.get_abstract()
@@ -26925,6 +26936,28 @@ class capella_tests(unittest.TestCase):
         tested = BooleanReference()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_BooleanReference_referenced_value_getter(self):
+        tested = BooleanReference()
+        tested.get_referenced_value()
+        pass
+
+    def test_BooleanReference_referenced_value_setter(self):
+        tested = BooleanReference()
+        value = BooleanReference()
+        tested.set_referenced_value(value)
+        pass
+
+    def test_BooleanReference_referenced_property_getter(self):
+        tested = BooleanReference()
+        tested.get_referenced_property()
+        pass
+
+    def test_BooleanReference_referenced_property_setter(self):
+        tested = BooleanReference()
+        value = Property()
+        tested.set_referenced_property(value)
         pass
 
     def test_EnumerationReference_abstract_getter(self):
@@ -27192,6 +27225,28 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_EnumerationReference_referenced_value_getter(self):
+        tested = EnumerationReference()
+        tested.get_referenced_value()
+        pass
+
+    def test_EnumerationReference_referenced_value_setter(self):
+        tested = EnumerationReference()
+        value = EnumerationReference()
+        tested.set_referenced_value(value)
+        pass
+
+    def test_EnumerationReference_referenced_property_getter(self):
+        tested = EnumerationReference()
+        tested.get_referenced_property()
+        pass
+
+    def test_EnumerationReference_referenced_property_setter(self):
+        tested = EnumerationReference()
+        value = Property()
+        tested.set_referenced_property(value)
+        pass
+
     def test_LiteralStringValue_abstract_getter(self):
         tested = LiteralStringValue()
         tested.get_abstract()
@@ -27455,6 +27510,17 @@ class capella_tests(unittest.TestCase):
         tested = LiteralStringValue()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_LiteralStringValue_value_getter(self):
+        tested = LiteralStringValue()
+        tested.get_value()
+        pass
+
+    def test_LiteralStringValue_value_setter(self):
+        tested = LiteralStringValue()
+        value = "value"
+        tested.set_value(value)
         pass
 
     def test_StringReference_abstract_getter(self):
@@ -27722,6 +27788,325 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_StringReference_referenced_value_getter(self):
+        tested = StringReference()
+        tested.get_referenced_value()
+        pass
+
+    def test_StringReference_referenced_value_setter(self):
+        tested = StringReference()
+        value = StringReference()
+        tested.set_referenced_value(value)
+        pass
+
+    def test_StringReference_referenced_property_getter(self):
+        tested = StringReference()
+        tested.get_referenced_property()
+        pass
+
+    def test_StringReference_referenced_property_setter(self):
+        tested = StringReference()
+        value = Property()
+        tested.set_referenced_property(value)
+        pass
+
+    def test_NumericValue_abstract_getter(self):
+        tested = NumericValue()
+        tested.get_abstract()
+        pass
+
+    def test_NumericValue_abstract_setter(self):
+        tested = NumericValue()
+        value = True
+        tested.set_abstract(value)
+        pass
+
+    def test_NumericValue_id_getter(self):
+        tested = NumericValue()
+        tested.get_id()
+        pass
+
+    def test_NumericValue_id_setter(self):
+        tested = NumericValue()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_NumericValue_sid_getter(self):
+        tested = NumericValue()
+        tested.get_sid()
+        pass
+
+    def test_NumericValue_sid_setter(self):
+        tested = NumericValue()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_NumericValue_name_getter(self):
+        tested = NumericValue()
+        tested.get_name()
+        pass
+
+    def test_NumericValue_name_setter(self):
+        tested = NumericValue()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_NumericValue_summary_getter(self):
+        tested = NumericValue()
+        tested.get_summary()
+        pass
+
+    def test_NumericValue_summary_setter(self):
+        tested = NumericValue()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_NumericValue_description_getter(self):
+        tested = NumericValue()
+        tested.get_description()
+        pass
+
+    def test_NumericValue_description_setter(self):
+        tested = NumericValue()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_NumericValue_status_getter(self):
+        tested = NumericValue()
+        tested.get_status()
+        pass
+
+    def test_NumericValue_status_setter(self):
+        tested = NumericValue()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_NumericValue_review_getter(self):
+        tested = NumericValue()
+        tested.get_review()
+        pass
+
+    def test_NumericValue_review_setter(self):
+        tested = NumericValue()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_NumericValue_visible_in_documentation_getter(self):
+        tested = NumericValue()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_NumericValue_visible_in_documentation_setter(self):
+        tested = NumericValue()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_NumericValue_visible_for_traceability_getter(self):
+        tested = NumericValue()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_NumericValue_visible_for_traceability_setter(self):
+        tested = NumericValue()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_NumericValue_owned_constraints_getter(self):
+        tested = NumericValue()
+        tested.get_owned_constraints()
+        pass
+
+    def test_NumericValue_constraints_getter(self):
+        tested = NumericValue()
+        tested.get_constraints()
+        pass
+
+    def test_NumericValue_constraints_setter(self):
+        tested = NumericValue()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_NumericValue_owned_property_values_getter(self):
+        tested = NumericValue()
+        tested.get_owned_property_values()
+        pass
+
+    def test_NumericValue_applied_property_values_getter(self):
+        tested = NumericValue()
+        tested.get_applied_property_values()
+        pass
+
+    def test_NumericValue_applied_property_values_setter(self):
+        tested = NumericValue()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_NumericValue_owned_property_value_groups_getter(self):
+        tested = NumericValue()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_NumericValue_applied_property_value_groups_getter(self):
+        tested = NumericValue()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_NumericValue_applied_property_value_groups_setter(self):
+        tested = NumericValue()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_NumericValue_owned_enumeration_property_types_getter(self):
+        tested = NumericValue()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_NumericValue_owned_diagrams_getter(self):
+        tested = NumericValue()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_NumericValue_element_of_interest_for_diagrams_getter(self):
+        tested = NumericValue()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_NumericValue_element_of_interest_for_diagrams_setter(self):
+        tested = NumericValue()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_NumericValue_contextual_element_for_diagrams_getter(self):
+        tested = NumericValue()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_NumericValue_contextual_element_for_diagrams_setter(self):
+        tested = NumericValue()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_NumericValue_representing_diagrams_getter(self):
+        tested = NumericValue()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_NumericValue__r_e_cs_getter(self):
+        tested = NumericValue()
+        tested.get__r_e_cs()
+        pass
+
+    def test_NumericValue__r_e_cs_setter(self):
+        tested = NumericValue()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_NumericValue__r_p_ls_getter(self):
+        tested = NumericValue()
+        tested.get__r_p_ls()
+        pass
+
+    def test_NumericValue__r_p_ls_setter(self):
+        tested = NumericValue()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_NumericValue_get_label(self):
+        tested = NumericValue()
+        tested.get_label()
+        pass
+
+    def test_NumericValue_get_element_type(self):
+        tested = NumericValue()
+        tested.get_element_type()
+        pass
+
+    def test_NumericValue_get_container(self):
+        tested = NumericValue()
+        tested.get_container()
+        pass
+
+    def test_NumericValue_get_container_by_type(self):
+        tested = NumericValue()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_NumericValue_get_contents(self):
+        tested = NumericValue()
+        tested.get_contents()
+        pass
+
+    def test_NumericValue_get_all_contents(self):
+        tested = NumericValue()
+        tested.get_all_contents()
+        pass
+
+    def test_NumericValue_get_all_contents_by_type(self):
+        tested = NumericValue()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_NumericValue_get_available_s_b_queries(self):
+        tested = NumericValue()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_NumericValue_get_query_result(self):
+        tested = NumericValue()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_NumericValue_unit_getter(self):
+        tested = NumericValue()
+        tested.get_unit()
+        pass
+
+    def test_NumericValue_unit_setter(self):
+        tested = NumericValue()
+        value = Unit()
+        tested.set_unit(value)
+        pass
+
+    def test_NumericValue_numeric_type_getter(self):
+        tested = NumericValue()
+        tested.get_numeric_type()
+        pass
+
+    def test_LiteralNumericValue_unit_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_unit()
+        pass
+
+    def test_LiteralNumericValue_unit_setter(self):
+        tested = LiteralNumericValue()
+        value = Unit()
+        tested.set_unit(value)
+        pass
+
+    def test_LiteralNumericValue_numeric_type_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_numeric_type()
+        pass
+
     def test_LiteralNumericValue_abstract_getter(self):
         tested = LiteralNumericValue()
         tested.get_abstract()
@@ -27987,6 +28372,17 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_LiteralNumericValue_value_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_value()
+        pass
+
+    def test_LiteralNumericValue_value_setter(self):
+        tested = LiteralNumericValue()
+        value = "value"
+        tested.set_value(value)
+        pass
+
     def test_NumericReference_abstract_getter(self):
         tested = NumericReference()
         tested.get_abstract()
@@ -28250,6 +28646,28 @@ class capella_tests(unittest.TestCase):
         tested = NumericReference()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_NumericReference_referenced_value_getter(self):
+        tested = NumericReference()
+        tested.get_referenced_value()
+        pass
+
+    def test_NumericReference_referenced_value_setter(self):
+        tested = NumericReference()
+        value = NumericValue()
+        tested.set_referenced_value(value)
+        pass
+
+    def test_NumericReference_referenced_property_getter(self):
+        tested = NumericReference()
+        tested.get_referenced_property()
+        pass
+
+    def test_NumericReference_referenced_property_setter(self):
+        tested = NumericReference()
+        value = Property()
+        tested.set_referenced_property(value)
         pass
 
     def test_ComplexValue_abstract_getter(self):
@@ -28780,6 +29198,17 @@ class capella_tests(unittest.TestCase):
         tested = ComplexValueReference()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_ComplexValueReference_referenced_value_getter(self):
+        tested = ComplexValueReference()
+        tested.get_referenced_value()
+        pass
+
+    def test_ComplexValueReference_referenced_value_setter(self):
+        tested = ComplexValueReference()
+        value = ComplexValueReference()
+        tested.set_referenced_value(value)
         pass
 
     def test_BinaryExpression_abstract_getter(self):
@@ -29577,6 +30006,28 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_CollectionValueReference_referenced_value_getter(self):
+        tested = CollectionValueReference()
+        tested.get_referenced_value()
+        pass
+
+    def test_CollectionValueReference_referenced_value_setter(self):
+        tested = CollectionValueReference()
+        value = CollectionValue()
+        tested.set_referenced_value(value)
+        pass
+
+    def test_CollectionValueReference_referenced_property_getter(self):
+        tested = CollectionValueReference()
+        tested.get_referenced_property()
+        pass
+
+    def test_CollectionValueReference_referenced_property_setter(self):
+        tested = CollectionValueReference()
+        value = Property()
+        tested.set_referenced_property(value)
+        pass
+
     def test_CollectionValue_abstract_getter(self):
         tested = CollectionValue()
         tested.get_abstract()
@@ -29840,6 +30291,28 @@ class capella_tests(unittest.TestCase):
         tested = CollectionValue()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_CollectionValue_owned_elements_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_elements()
+        pass
+
+    def test_CollectionValue_owned_elements_setter(self):
+        tested = CollectionValue()
+        value = CollectionValue()
+        tested.get_owned_elements().add(value)
+        pass
+
+    def test_CollectionValue_owned_default_element_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_default_element()
+        pass
+
+    def test_CollectionValue_owned_default_element_setter(self):
+        tested = CollectionValue()
+        value = CollectionValue()
+        tested.set_owned_default_element(value)
         pass
 
     def test_DataPkg_id_getter(self):
