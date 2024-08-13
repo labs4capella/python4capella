@@ -1,0 +1,5 @@
+    def get_owned_literal_by_name(self, literalName: str) -> EnumerationPropertyLiteral:
+        for literal in self.get_owned_literals():
+            if literal.get_name() == literalName:
+                return literal
+

@@ -1,0 +1,11 @@
+    @staticmethod
+    def get_enumeration_property_type(systemEngineering: SystemEngineering, propertyValuePackageName: str, typeName: str) -> EnumerationPropertyType:
+        project = systemEngineering.get_java_object().eContainer()
+        for ext_package in project.getOwnedPropertyValuePkgs():
+            if ext_package.getName() == "EXTENSIONS":
+                for pv_package in ext_package.getOwnedPropertyValuePkgs():
+                    if pv_package.getName() == propertyValuePackageName:
+                        for type in pv_package.getOwnedEnumerationPropertyTypes():
+                            if type.getName() == typeName:
+                                return EnumerationPropertyType(type)
+

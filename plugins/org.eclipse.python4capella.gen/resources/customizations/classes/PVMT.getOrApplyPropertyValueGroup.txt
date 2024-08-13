@@ -1,0 +1,22 @@
+    @staticmethod
+    def get_or_apply_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str) -> PropertyValue:
+        systemEngineering = PVMT.get_system_engineering(elem)
+        pvg = PVMT.get_property_value_group(systemEngineering, propertyValuePackageName, propertyValueGroupName)
+        if pvg:
+            for applied_pvg in elem.get_applied_property_value_groups():
+                if applied_pvg.get_applied_property_value_groups().contains(pvg):
+                    return applied_pvg
+            pvg_to_apply = PropertyValueGroup()
+            pvg_to_apply.set_name(propertyValuePackageName + "." + propertyValueGroupName)
+            pvg_to_apply.get_applied_property_value_groups().add(pvg)
+            elem.get_applied_property_value_groups().add(pvg_to_apply)
+            elem.get_owned_property_value_groups().add(pvg_to_apply)
+            for pv in pvg.get_owned_property_values():
+                pv_to_apply = PropertyValue(None, pv.get_java_object().eClass().getName())
+                pv_to_apply.set_name(pv.get_name())
+                pv_to_apply.get_applied_property_values().add(pv)
+                pv_to_apply.set_value(pv.get_value())
+                if pv.get_java_object().eClass().getName() == "EnumerationPropertyValue":
+                    pv_to_apply.get_java_object().setType(pv.get_java_object().getType())
+                pvg_to_apply.get_owned_property_values().add(pv_to_apply)
+

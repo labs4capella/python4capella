@@ -680,4 +680,35 @@ class capella_manual_tests(unittest.TestCase):
     def test_CapellaException_get_class(self):
         e = CapellaException()
         self.assertEqual(CapellaException, EObject.get_class(e.get_java_object()))
-        pass
+
+    def test_CapellaElement_get_applied_property_value_by_name(self):
+        lc = LogicalComponent()
+        self.assertEqual(None, lc.get_applied_property_value_by_name("name"))
+        pv = PropertyValue()
+        pv.set_name("name")
+        lc.get_applied_property_values().add(pv)
+        self.assertEqual(pv, lc.get_applied_property_value_by_name("name"))
+
+    def test_CapellaElement_get_owned_property_value_by_name(self):
+        lc = LogicalComponent()
+        self.assertEqual(None, lc.get_owned_property_value_by_name("name"))
+        pv = PropertyValue()
+        pv.set_name("name")
+        lc.get_owned_property_values().add(pv)
+        self.assertEqual(pv, lc.get_owned_property_value_by_name("name"))
+
+    def test_CapellaElement_get_applied_property_value_group_by_name(self):
+        lc = LogicalComponent()
+        self.assertEqual(None, lc.get_applied_property_value_group_by_name("name"))
+        pvg = PropertyValueGroup()
+        pvg.set_name("name")
+        lc.get_applied_property_value_groups().add(pvg)
+        self.assertEqual(pvg, lc.get_applied_property_value_group_by_name("name"))
+
+    def test_CapellaElement_get_owned_property_value_group_by_name(self):
+        lc = LogicalComponent()
+        self.assertEqual(None, lc.get_owned_property_value_group_by_name("name"))
+        pvg = PropertyValueGroup()
+        pvg.set_name("name")
+        lc.get_owned_property_value_groups().add(pvg)
+        self.assertEqual(pvg, lc.get_owned_property_value_group_by_name("name"))

@@ -445,6 +445,42 @@ class CapellaElement(EObject):
         Returns: EnumerationPropertyType[*]
         """
         return create_e_list(self.get_java_object().getOwnedEnumerationPropertyTypes(), EnumerationPropertyType)
+    def get_owned_property_value_by_name(self, p_v_name: str) -> PropertyValue:
+        """
+        Parameters: PVName: String
+        Returns: PropertyValue
+        """
+        for property_value in self.get_owned_property_values():
+           if property_value.get_name() == p_v_name:
+               return property_value
+        return None
+    def get_applied_property_value_by_name(self, p_v_name: str) -> PropertyValue:
+        """
+        Parameters: PVName: String
+        Returns: PropertyValue
+        """
+        for property_value in self.get_applied_property_values():
+           if property_value.get_name() == p_v_name:
+               return property_value
+        return None
+    def get_owned_property_value_group_by_name(self, p_v_g_name: str) -> PropertyValueGroup:
+        """
+        Parameters: PVGName: String
+        Returns: PropertyValueGroup
+        """
+        for property_value_group in self.get_owned_property_value_groups():
+           if property_value_group.get_name() == p_v_g_name:
+               return property_value_group
+        return None
+    def get_applied_property_value_group_by_name(self, p_v_g_name: str) -> PropertyValueGroup:
+        """
+        Parameters: PVGName: String
+        Returns: PropertyValueGroup
+        """
+        for property_value_group in self.get_applied_property_value_groups():
+           if property_value_group.get_name() == p_v_g_name:
+               return property_value_group
+        return None
 
 class Constraint(CapellaElement):
     """
@@ -519,13 +555,18 @@ class PropertyValue(CapellaElement):
         """
         if self.java_object.eClass().getName() == "BooleanPropertyValue":
             return self.get_java_object().isValue()
+        elif self.java_object.eClass().getName() == "EnumerationPropertyValue":
+            return EnumerationPropertyLiteral(self.get_java_object().getValue())
         else:
             return self.get_java_object().getValue()
     def set_value(self, value: Any):
         """
         Parameters: value: String
         """
-        self.get_java_object().setValue(value)
+        if isinstance(value, JavaObject):
+            self.get_java_object().setValue(value.get_java_object())
+        else:
+            self.get_java_object().setValue(value)
     def get_valued_elements(self) -> List[CapellaElement]:
         """
         Returns: CapellaElement[*]
@@ -584,6 +625,14 @@ class EnumerationPropertyType(CapellaElement):
         Returns: EnumerationPropertyLiteral[*]
         """
         return create_e_list(self.get_java_object().getOwnedLiterals(), EnumerationPropertyLiteral)
+    def get_owned_literal_by_name(self, literalName: str) -> EnumerationPropertyLiteral:
+        """
+        Parameters: PVName: String
+        Returns: EnumerationPropertyLiteral
+        """
+        for literal in self.get_owned_literals():
+            if literal.get_name() == literalName:
+                return literal
 
 class EnumerationPropertyLiteral(CapellaElement):
     """

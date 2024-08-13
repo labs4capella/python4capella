@@ -1,0 +1,12 @@
+    @staticmethod
+    def remove_applied_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str):
+        systemEngineering = PVMT.get_system_engineering(elem)
+        pvg = PVMT.get_property_value_group(systemEngineering, propertyValuePackageName, propertyValueGroupName)
+        if pvg:
+            for applied_pvg in elem.get_applied_property_value_groups():
+                if applied_pvg.get_applied_property_value_groups().contains(pvg):
+                    elem.get_applied_property_value_groups().remove(applied_pvg)
+                    elem.get_owned_property_value_groups().remove(applied_pvg)
+                    EObject.delete_e_object(applied_pvg)
+                    break
+

@@ -276,6 +276,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_SystemEngineering_get_owned_property_value_by_name(self):
+        tested = SystemEngineering()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_SystemEngineering_get_applied_property_value_by_name(self):
+        tested = SystemEngineering()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_SystemEngineering_get_owned_property_value_group_by_name(self):
+        tested = SystemEngineering()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemEngineering_get_applied_property_value_group_by_name(self):
+        tested = SystemEngineering()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_SystemEngineering_owned_diagrams_getter(self):
         tested = SystemEngineering()
         tested.get_owned_diagrams()
@@ -560,6 +584,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Constraint_get_owned_property_value_by_name(self):
+        tested = Constraint()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Constraint_get_applied_property_value_by_name(self):
+        tested = Constraint()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Constraint_get_owned_property_value_group_by_name(self):
+        tested = Constraint()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Constraint_get_applied_property_value_group_by_name(self):
+        tested = Constraint()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Constraint_owned_diagrams_getter(self):
         tested = Constraint()
         tested.get_owned_diagrams()
@@ -834,6 +882,30 @@ class capella_tests(unittest.TestCase):
     def test_PropertyValue_owned_enumeration_property_types_getter(self):
         tested = PropertyValue()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PropertyValue_get_owned_property_value_by_name(self):
+        tested = PropertyValue()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PropertyValue_get_applied_property_value_by_name(self):
+        tested = PropertyValue()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PropertyValue_get_owned_property_value_group_by_name(self):
+        tested = PropertyValue()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PropertyValue_get_applied_property_value_group_by_name(self):
+        tested = PropertyValue()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_PropertyValue_owned_diagrams_getter(self):
@@ -1128,6 +1200,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_PropertyValueGroup_get_owned_property_value_by_name(self):
+        tested = PropertyValueGroup()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PropertyValueGroup_get_applied_property_value_by_name(self):
+        tested = PropertyValueGroup()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PropertyValueGroup_get_owned_property_value_group_by_name(self):
+        tested = PropertyValueGroup()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PropertyValueGroup_get_applied_property_value_group_by_name(self):
+        tested = PropertyValueGroup()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_PropertyValueGroup_owned_diagrams_getter(self):
         tested = PropertyValueGroup()
         tested.get_owned_diagrams()
@@ -1398,6 +1494,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_PropertyValuePkg_get_owned_property_value_by_name(self):
+        tested = PropertyValuePkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PropertyValuePkg_get_applied_property_value_by_name(self):
+        tested = PropertyValuePkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PropertyValuePkg_get_owned_property_value_group_by_name(self):
+        tested = PropertyValuePkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PropertyValuePkg_get_applied_property_value_group_by_name(self):
+        tested = PropertyValuePkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_PropertyValuePkg_owned_diagrams_getter(self):
         tested = PropertyValuePkg()
         tested.get_owned_diagrams()
@@ -1652,6 +1772,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_EnumerationPropertyType_get_owned_property_value_by_name(self):
+        tested = EnumerationPropertyType()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationPropertyType_get_applied_property_value_by_name(self):
+        tested = EnumerationPropertyType()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationPropertyType_get_owned_property_value_group_by_name(self):
+        tested = EnumerationPropertyType()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_EnumerationPropertyType_get_applied_property_value_group_by_name(self):
+        tested = EnumerationPropertyType()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_EnumerationPropertyType_owned_diagrams_getter(self):
         tested = EnumerationPropertyType()
         tested.get_owned_diagrams()
@@ -1757,6 +1901,12 @@ class capella_tests(unittest.TestCase):
     def test_EnumerationPropertyType_owned_literals_getter(self):
         tested = EnumerationPropertyType()
         tested.get_owned_literals()
+        pass
+
+    def test_EnumerationPropertyType_get_owned_literal_by_name(self):
+        tested = EnumerationPropertyType()
+        param1 = "value"
+        tested.get_owned_literal_by_name(param1)
         pass
 
     def test_EnumerationPropertyLiteral_id_getter(self):
@@ -1909,6 +2059,30 @@ class capella_tests(unittest.TestCase):
     def test_EnumerationPropertyLiteral_owned_enumeration_property_types_getter(self):
         tested = EnumerationPropertyLiteral()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_EnumerationPropertyLiteral_get_owned_property_value_by_name(self):
+        tested = EnumerationPropertyLiteral()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationPropertyLiteral_get_applied_property_value_by_name(self):
+        tested = EnumerationPropertyLiteral()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationPropertyLiteral_get_owned_property_value_group_by_name(self):
+        tested = EnumerationPropertyLiteral()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_EnumerationPropertyLiteral_get_applied_property_value_group_by_name(self):
+        tested = EnumerationPropertyLiteral()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_EnumerationPropertyLiteral_owned_diagrams_getter(self):
@@ -3290,6 +3464,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_OperationalAnalysis_get_owned_property_value_by_name(self):
+        tested = OperationalAnalysis()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalAnalysis_get_applied_property_value_by_name(self):
+        tested = OperationalAnalysis()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalAnalysis_get_owned_property_value_group_by_name(self):
+        tested = OperationalAnalysis()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalAnalysis_get_applied_property_value_group_by_name(self):
+        tested = OperationalAnalysis()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_OperationalAnalysis_owned_diagrams_getter(self):
         tested = OperationalAnalysis()
         tested.get_owned_diagrams()
@@ -3572,6 +3770,30 @@ class capella_tests(unittest.TestCase):
     def test_OperationalActivityPkg_owned_enumeration_property_types_getter(self):
         tested = OperationalActivityPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_OperationalActivityPkg_get_owned_property_value_by_name(self):
+        tested = OperationalActivityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalActivityPkg_get_applied_property_value_by_name(self):
+        tested = OperationalActivityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalActivityPkg_get_owned_property_value_group_by_name(self):
+        tested = OperationalActivityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalActivityPkg_get_applied_property_value_group_by_name(self):
+        tested = OperationalActivityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_OperationalActivityPkg_owned_diagrams_getter(self):
@@ -3940,6 +4162,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_OperationalActivity_get_owned_property_value_by_name(self):
+        tested = OperationalActivity()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalActivity_get_applied_property_value_by_name(self):
+        tested = OperationalActivity()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalActivity_get_owned_property_value_group_by_name(self):
+        tested = OperationalActivity()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalActivity_get_applied_property_value_group_by_name(self):
+        tested = OperationalActivity()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_OperationalActivity_owned_diagrams_getter(self):
         tested = OperationalActivity()
         tested.get_owned_diagrams()
@@ -4269,6 +4515,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Interaction_get_owned_property_value_by_name(self):
+        tested = Interaction()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Interaction_get_applied_property_value_by_name(self):
+        tested = Interaction()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Interaction_get_owned_property_value_group_by_name(self):
+        tested = Interaction()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Interaction_get_applied_property_value_group_by_name(self):
+        tested = Interaction()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Interaction_owned_diagrams_getter(self):
         tested = Interaction()
         tested.get_owned_diagrams()
@@ -4581,6 +4851,30 @@ class capella_tests(unittest.TestCase):
     def test_OperationalProcess_owned_enumeration_property_types_getter(self):
         tested = OperationalProcess()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_OperationalProcess_get_owned_property_value_by_name(self):
+        tested = OperationalProcess()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalProcess_get_applied_property_value_by_name(self):
+        tested = OperationalProcess()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalProcess_get_owned_property_value_group_by_name(self):
+        tested = OperationalProcess()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalProcess_get_applied_property_value_group_by_name(self):
+        tested = OperationalProcess()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_OperationalProcess_owned_diagrams_getter(self):
@@ -4910,6 +5204,30 @@ class capella_tests(unittest.TestCase):
     def test_OperationalCapabilityPkg_owned_enumeration_property_types_getter(self):
         tested = OperationalCapabilityPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_OperationalCapabilityPkg_get_owned_property_value_by_name(self):
+        tested = OperationalCapabilityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalCapabilityPkg_get_applied_property_value_by_name(self):
+        tested = OperationalCapabilityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalCapabilityPkg_get_owned_property_value_group_by_name(self):
+        tested = OperationalCapabilityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalCapabilityPkg_get_applied_property_value_group_by_name(self):
+        tested = OperationalCapabilityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_OperationalCapabilityPkg_owned_diagrams_getter(self):
@@ -5285,6 +5603,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_OperationalCapability_get_owned_property_value_by_name(self):
+        tested = OperationalCapability()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalCapability_get_applied_property_value_by_name(self):
+        tested = OperationalCapability()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalCapability_get_owned_property_value_group_by_name(self):
+        tested = OperationalCapability()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalCapability_get_applied_property_value_group_by_name(self):
+        tested = OperationalCapability()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_OperationalCapability_owned_diagrams_getter(self):
         tested = OperationalCapability()
         tested.get_owned_diagrams()
@@ -5591,6 +5933,30 @@ class capella_tests(unittest.TestCase):
     def test_EntityPkg_owned_enumeration_property_types_getter(self):
         tested = EntityPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_EntityPkg_get_owned_property_value_by_name(self):
+        tested = EntityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_EntityPkg_get_applied_property_value_by_name(self):
+        tested = EntityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_EntityPkg_get_owned_property_value_group_by_name(self):
+        tested = EntityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_EntityPkg_get_applied_property_value_group_by_name(self):
+        tested = EntityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_EntityPkg_owned_diagrams_getter(self):
@@ -5917,6 +6283,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_OperationalEntity_get_owned_property_value_by_name(self):
+        tested = OperationalEntity()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalEntity_get_applied_property_value_by_name(self):
+        tested = OperationalEntity()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalEntity_get_owned_property_value_group_by_name(self):
+        tested = OperationalEntity()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalEntity_get_applied_property_value_group_by_name(self):
+        tested = OperationalEntity()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_OperationalEntity_owned_diagrams_getter(self):
         tested = OperationalEntity()
         tested.get_owned_diagrams()
@@ -6174,6 +6564,30 @@ class capella_tests(unittest.TestCase):
     def test_OperationalActor_owned_enumeration_property_types_getter(self):
         tested = OperationalActor()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_OperationalActor_get_owned_property_value_by_name(self):
+        tested = OperationalActor()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_OperationalActor_get_applied_property_value_by_name(self):
+        tested = OperationalActor()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_OperationalActor_get_owned_property_value_group_by_name(self):
+        tested = OperationalActor()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalActor_get_applied_property_value_group_by_name(self):
+        tested = OperationalActor()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_OperationalActor_owned_diagrams_getter(self):
@@ -6490,6 +6904,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_CommunicationMean_get_owned_property_value_by_name(self):
+        tested = CommunicationMean()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_CommunicationMean_get_applied_property_value_by_name(self):
+        tested = CommunicationMean()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_CommunicationMean_get_owned_property_value_group_by_name(self):
+        tested = CommunicationMean()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_CommunicationMean_get_applied_property_value_group_by_name(self):
+        tested = CommunicationMean()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_CommunicationMean_owned_diagrams_getter(self):
         tested = CommunicationMean()
         tested.get_owned_diagrams()
@@ -6804,6 +7242,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_SystemAnalysis_get_owned_property_value_by_name(self):
+        tested = SystemAnalysis()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_SystemAnalysis_get_applied_property_value_by_name(self):
+        tested = SystemAnalysis()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_SystemAnalysis_get_owned_property_value_group_by_name(self):
+        tested = SystemAnalysis()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemAnalysis_get_applied_property_value_group_by_name(self):
+        tested = SystemAnalysis()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_SystemAnalysis_owned_diagrams_getter(self):
         tested = SystemAnalysis()
         tested.get_owned_diagrams()
@@ -7096,6 +7558,30 @@ class capella_tests(unittest.TestCase):
     def test_SystemFunctionPkg_owned_enumeration_property_types_getter(self):
         tested = SystemFunctionPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_SystemFunctionPkg_get_owned_property_value_by_name(self):
+        tested = SystemFunctionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_SystemFunctionPkg_get_applied_property_value_by_name(self):
+        tested = SystemFunctionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_SystemFunctionPkg_get_owned_property_value_group_by_name(self):
+        tested = SystemFunctionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemFunctionPkg_get_applied_property_value_group_by_name(self):
+        tested = SystemFunctionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_SystemFunctionPkg_owned_diagrams_getter(self):
@@ -7469,6 +7955,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_SystemFunction_get_owned_property_value_by_name(self):
+        tested = SystemFunction()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_SystemFunction_get_applied_property_value_by_name(self):
+        tested = SystemFunction()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_SystemFunction_get_owned_property_value_group_by_name(self):
+        tested = SystemFunction()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemFunction_get_applied_property_value_group_by_name(self):
+        tested = SystemFunction()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_SystemFunction_owned_diagrams_getter(self):
         tested = SystemFunction()
         tested.get_owned_diagrams()
@@ -7758,6 +8268,30 @@ class capella_tests(unittest.TestCase):
     def test_CapabilityPkg_owned_enumeration_property_types_getter(self):
         tested = CapabilityPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_CapabilityPkg_get_owned_property_value_by_name(self):
+        tested = CapabilityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_CapabilityPkg_get_applied_property_value_by_name(self):
+        tested = CapabilityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_CapabilityPkg_get_owned_property_value_group_by_name(self):
+        tested = CapabilityPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_CapabilityPkg_get_applied_property_value_group_by_name(self):
+        tested = CapabilityPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_CapabilityPkg_owned_diagrams_getter(self):
@@ -8160,6 +8694,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Capability_get_owned_property_value_by_name(self):
+        tested = Capability()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Capability_get_applied_property_value_by_name(self):
+        tested = Capability()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Capability_get_owned_property_value_group_by_name(self):
+        tested = Capability()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Capability_get_applied_property_value_group_by_name(self):
+        tested = Capability()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Capability_owned_diagrams_getter(self):
         tested = Capability()
         tested.get_owned_diagrams()
@@ -8461,6 +9019,30 @@ class capella_tests(unittest.TestCase):
     def test_SystemComponentPkg_owned_enumeration_property_types_getter(self):
         tested = SystemComponentPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_SystemComponentPkg_get_owned_property_value_by_name(self):
+        tested = SystemComponentPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_SystemComponentPkg_get_applied_property_value_by_name(self):
+        tested = SystemComponentPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_SystemComponentPkg_get_owned_property_value_group_by_name(self):
+        tested = SystemComponentPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemComponentPkg_get_applied_property_value_group_by_name(self):
+        tested = SystemComponentPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_SystemComponentPkg_owned_diagrams_getter(self):
@@ -8821,6 +9403,30 @@ class capella_tests(unittest.TestCase):
     def test_System_owned_enumeration_property_types_getter(self):
         tested = System()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_System_get_owned_property_value_by_name(self):
+        tested = System()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_System_get_applied_property_value_by_name(self):
+        tested = System()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_System_get_owned_property_value_group_by_name(self):
+        tested = System()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_System_get_applied_property_value_group_by_name(self):
+        tested = System()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_System_owned_diagrams_getter(self):
@@ -9189,6 +9795,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_SystemActor_get_owned_property_value_by_name(self):
+        tested = SystemActor()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_SystemActor_get_applied_property_value_by_name(self):
+        tested = SystemActor()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_SystemActor_get_owned_property_value_group_by_name(self):
+        tested = SystemActor()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemActor_get_applied_property_value_group_by_name(self):
+        tested = SystemActor()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_SystemActor_owned_diagrams_getter(self):
         tested = SystemActor()
         tested.get_owned_diagrams()
@@ -9544,6 +10174,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_MissionPkg_get_owned_property_value_by_name(self):
+        tested = MissionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_MissionPkg_get_applied_property_value_by_name(self):
+        tested = MissionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_MissionPkg_get_owned_property_value_group_by_name(self):
+        tested = MissionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_MissionPkg_get_applied_property_value_group_by_name(self):
+        tested = MissionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_MissionPkg_owned_diagrams_getter(self):
         tested = MissionPkg()
         tested.get_owned_diagrams()
@@ -9806,6 +10460,30 @@ class capella_tests(unittest.TestCase):
     def test_Mission_owned_enumeration_property_types_getter(self):
         tested = Mission()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Mission_get_owned_property_value_by_name(self):
+        tested = Mission()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Mission_get_applied_property_value_by_name(self):
+        tested = Mission()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Mission_get_owned_property_value_group_by_name(self):
+        tested = Mission()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Mission_get_applied_property_value_group_by_name(self):
+        tested = Mission()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_Mission_owned_diagrams_getter(self):
@@ -10087,6 +10765,30 @@ class capella_tests(unittest.TestCase):
     def test_LogicalArchitecture_owned_enumeration_property_types_getter(self):
         tested = LogicalArchitecture()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LogicalArchitecture_get_owned_property_value_by_name(self):
+        tested = LogicalArchitecture()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LogicalArchitecture_get_applied_property_value_by_name(self):
+        tested = LogicalArchitecture()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LogicalArchitecture_get_owned_property_value_group_by_name(self):
+        tested = LogicalArchitecture()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalArchitecture_get_applied_property_value_group_by_name(self):
+        tested = LogicalArchitecture()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_LogicalArchitecture_owned_diagrams_getter(self):
@@ -10376,6 +11078,30 @@ class capella_tests(unittest.TestCase):
     def test_LogicalFunctionPkg_owned_enumeration_property_types_getter(self):
         tested = LogicalFunctionPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LogicalFunctionPkg_get_owned_property_value_by_name(self):
+        tested = LogicalFunctionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LogicalFunctionPkg_get_applied_property_value_by_name(self):
+        tested = LogicalFunctionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LogicalFunctionPkg_get_owned_property_value_group_by_name(self):
+        tested = LogicalFunctionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalFunctionPkg_get_applied_property_value_group_by_name(self):
+        tested = LogicalFunctionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_LogicalFunctionPkg_owned_diagrams_getter(self):
@@ -10749,6 +11475,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_LogicalFunction_get_owned_property_value_by_name(self):
+        tested = LogicalFunction()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LogicalFunction_get_applied_property_value_by_name(self):
+        tested = LogicalFunction()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LogicalFunction_get_owned_property_value_group_by_name(self):
+        tested = LogicalFunction()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalFunction_get_applied_property_value_group_by_name(self):
+        tested = LogicalFunction()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_LogicalFunction_owned_diagrams_getter(self):
         tested = LogicalFunction()
         tested.get_owned_diagrams()
@@ -11038,6 +11788,30 @@ class capella_tests(unittest.TestCase):
     def test_CapabilityRealizationPkg_owned_enumeration_property_types_getter(self):
         tested = CapabilityRealizationPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_CapabilityRealizationPkg_get_owned_property_value_by_name(self):
+        tested = CapabilityRealizationPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_CapabilityRealizationPkg_get_applied_property_value_by_name(self):
+        tested = CapabilityRealizationPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_CapabilityRealizationPkg_get_owned_property_value_group_by_name(self):
+        tested = CapabilityRealizationPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_CapabilityRealizationPkg_get_applied_property_value_group_by_name(self):
+        tested = CapabilityRealizationPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_CapabilityRealizationPkg_owned_diagrams_getter(self):
@@ -11440,6 +12214,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_CapabilityRealization_get_owned_property_value_by_name(self):
+        tested = CapabilityRealization()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_CapabilityRealization_get_applied_property_value_by_name(self):
+        tested = CapabilityRealization()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_CapabilityRealization_get_owned_property_value_group_by_name(self):
+        tested = CapabilityRealization()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_CapabilityRealization_get_applied_property_value_group_by_name(self):
+        tested = CapabilityRealization()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_CapabilityRealization_owned_diagrams_getter(self):
         tested = CapabilityRealization()
         tested.get_owned_diagrams()
@@ -11774,6 +12572,30 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponentPkg_owned_enumeration_property_types_getter(self):
         tested = LogicalComponentPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LogicalComponentPkg_get_owned_property_value_by_name(self):
+        tested = LogicalComponentPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LogicalComponentPkg_get_applied_property_value_by_name(self):
+        tested = LogicalComponentPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LogicalComponentPkg_get_owned_property_value_group_by_name(self):
+        tested = LogicalComponentPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalComponentPkg_get_applied_property_value_group_by_name(self):
+        tested = LogicalComponentPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_LogicalComponentPkg_owned_diagrams_getter(self):
@@ -12139,6 +12961,30 @@ class capella_tests(unittest.TestCase):
     def test_LogicalSystem_owned_enumeration_property_types_getter(self):
         tested = LogicalSystem()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LogicalSystem_get_owned_property_value_by_name(self):
+        tested = LogicalSystem()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LogicalSystem_get_applied_property_value_by_name(self):
+        tested = LogicalSystem()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LogicalSystem_get_owned_property_value_group_by_name(self):
+        tested = LogicalSystem()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalSystem_get_applied_property_value_group_by_name(self):
+        tested = LogicalSystem()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_LogicalSystem_owned_diagrams_getter(self):
@@ -12515,6 +13361,30 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponent_owned_enumeration_property_types_getter(self):
         tested = LogicalComponent()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_LogicalComponent_get_owned_property_value_by_name(self):
+        tested = LogicalComponent()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LogicalComponent_get_applied_property_value_by_name(self):
+        tested = LogicalComponent()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LogicalComponent_get_owned_property_value_group_by_name(self):
+        tested = LogicalComponent()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalComponent_get_applied_property_value_group_by_name(self):
+        tested = LogicalComponent()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_LogicalComponent_owned_diagrams_getter(self):
@@ -12895,6 +13765,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_LogicalActor_get_owned_property_value_by_name(self):
+        tested = LogicalActor()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LogicalActor_get_applied_property_value_by_name(self):
+        tested = LogicalActor()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LogicalActor_get_owned_property_value_group_by_name(self):
+        tested = LogicalActor()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalActor_get_applied_property_value_group_by_name(self):
+        tested = LogicalActor()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_LogicalActor_owned_diagrams_getter(self):
         tested = LogicalActor()
         tested.get_owned_diagrams()
@@ -13239,6 +14133,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_PhysicalArchitecture_get_owned_property_value_by_name(self):
+        tested = PhysicalArchitecture()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalArchitecture_get_applied_property_value_by_name(self):
+        tested = PhysicalArchitecture()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalArchitecture_get_owned_property_value_group_by_name(self):
+        tested = PhysicalArchitecture()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalArchitecture_get_applied_property_value_group_by_name(self):
+        tested = PhysicalArchitecture()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_PhysicalArchitecture_owned_diagrams_getter(self):
         tested = PhysicalArchitecture()
         tested.get_owned_diagrams()
@@ -13526,6 +14444,30 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalFunctionPkg_owned_enumeration_property_types_getter(self):
         tested = PhysicalFunctionPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PhysicalFunctionPkg_get_owned_property_value_by_name(self):
+        tested = PhysicalFunctionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalFunctionPkg_get_applied_property_value_by_name(self):
+        tested = PhysicalFunctionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalFunctionPkg_get_owned_property_value_group_by_name(self):
+        tested = PhysicalFunctionPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalFunctionPkg_get_applied_property_value_group_by_name(self):
+        tested = PhysicalFunctionPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_PhysicalFunctionPkg_owned_diagrams_getter(self):
@@ -13899,6 +14841,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_PhysicalFunction_get_owned_property_value_by_name(self):
+        tested = PhysicalFunction()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalFunction_get_applied_property_value_by_name(self):
+        tested = PhysicalFunction()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalFunction_get_owned_property_value_group_by_name(self):
+        tested = PhysicalFunction()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalFunction_get_applied_property_value_group_by_name(self):
+        tested = PhysicalFunction()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_PhysicalFunction_owned_diagrams_getter(self):
         tested = PhysicalFunction()
         tested.get_owned_diagrams()
@@ -14177,6 +15143,30 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalComponentPkg_owned_enumeration_property_types_getter(self):
         tested = PhysicalComponentPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PhysicalComponentPkg_get_owned_property_value_by_name(self):
+        tested = PhysicalComponentPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalComponentPkg_get_applied_property_value_by_name(self):
+        tested = PhysicalComponentPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalComponentPkg_get_owned_property_value_group_by_name(self):
+        tested = PhysicalComponentPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalComponentPkg_get_applied_property_value_group_by_name(self):
+        tested = PhysicalComponentPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_PhysicalComponentPkg_owned_diagrams_getter(self):
@@ -14461,6 +15451,30 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalSystem_owned_enumeration_property_types_getter(self):
         tested = PhysicalSystem()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PhysicalSystem_get_owned_property_value_by_name(self):
+        tested = PhysicalSystem()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalSystem_get_applied_property_value_by_name(self):
+        tested = PhysicalSystem()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalSystem_get_owned_property_value_group_by_name(self):
+        tested = PhysicalSystem()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalSystem_get_applied_property_value_group_by_name(self):
+        tested = PhysicalSystem()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_PhysicalSystem_owned_diagrams_getter(self):
@@ -14820,6 +15834,30 @@ class capella_tests(unittest.TestCase):
     def test_BehaviorPC_owned_enumeration_property_types_getter(self):
         tested = BehaviorPC()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_BehaviorPC_get_owned_property_value_by_name(self):
+        tested = BehaviorPC()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_BehaviorPC_get_applied_property_value_by_name(self):
+        tested = BehaviorPC()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_BehaviorPC_get_owned_property_value_group_by_name(self):
+        tested = BehaviorPC()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_BehaviorPC_get_applied_property_value_group_by_name(self):
+        tested = BehaviorPC()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_BehaviorPC_owned_diagrams_getter(self):
@@ -15237,6 +16275,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_NodePC_get_owned_property_value_by_name(self):
+        tested = NodePC()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_NodePC_get_applied_property_value_by_name(self):
+        tested = NodePC()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_NodePC_get_owned_property_value_group_by_name(self):
+        tested = NodePC()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_NodePC_get_applied_property_value_group_by_name(self):
+        tested = NodePC()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_NodePC_owned_diagrams_getter(self):
         tested = NodePC()
         tested.get_owned_diagrams()
@@ -15619,6 +16681,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_PhysicalActor_get_owned_property_value_by_name(self):
+        tested = PhysicalActor()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalActor_get_applied_property_value_by_name(self):
+        tested = PhysicalActor()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalActor_get_owned_property_value_group_by_name(self):
+        tested = PhysicalActor()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalActor_get_applied_property_value_group_by_name(self):
+        tested = PhysicalActor()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_PhysicalActor_owned_diagrams_getter(self):
         tested = PhysicalActor()
         tested.get_owned_diagrams()
@@ -15952,6 +17038,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_EPBSArchitecture_get_owned_property_value_by_name(self):
+        tested = EPBSArchitecture()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_EPBSArchitecture_get_applied_property_value_by_name(self):
+        tested = EPBSArchitecture()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_EPBSArchitecture_get_owned_property_value_group_by_name(self):
+        tested = EPBSArchitecture()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_EPBSArchitecture_get_applied_property_value_group_by_name(self):
+        tested = EPBSArchitecture()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_EPBSArchitecture_owned_diagrams_getter(self):
         tested = EPBSArchitecture()
         tested.get_owned_diagrams()
@@ -16226,6 +17336,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ConfigurationItemPkg_get_owned_property_value_by_name(self):
+        tested = ConfigurationItemPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ConfigurationItemPkg_get_applied_property_value_by_name(self):
+        tested = ConfigurationItemPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ConfigurationItemPkg_get_owned_property_value_group_by_name(self):
+        tested = ConfigurationItemPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ConfigurationItemPkg_get_applied_property_value_group_by_name(self):
+        tested = ConfigurationItemPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ConfigurationItemPkg_owned_diagrams_getter(self):
         tested = ConfigurationItemPkg()
         tested.get_owned_diagrams()
@@ -16488,6 +17622,30 @@ class capella_tests(unittest.TestCase):
     def test_ConfigurationItem_owned_enumeration_property_types_getter(self):
         tested = ConfigurationItem()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ConfigurationItem_get_owned_property_value_by_name(self):
+        tested = ConfigurationItem()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ConfigurationItem_get_applied_property_value_by_name(self):
+        tested = ConfigurationItem()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ConfigurationItem_get_owned_property_value_group_by_name(self):
+        tested = ConfigurationItem()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ConfigurationItem_get_applied_property_value_group_by_name(self):
+        tested = ConfigurationItem()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_ConfigurationItem_owned_diagrams_getter(self):
@@ -16785,6 +17943,30 @@ class capella_tests(unittest.TestCase):
     def test_StateMachine_owned_enumeration_property_types_getter(self):
         tested = StateMachine()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_StateMachine_get_owned_property_value_by_name(self):
+        tested = StateMachine()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_StateMachine_get_applied_property_value_by_name(self):
+        tested = StateMachine()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_StateMachine_get_owned_property_value_group_by_name(self):
+        tested = StateMachine()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_StateMachine_get_applied_property_value_group_by_name(self):
+        tested = StateMachine()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_StateMachine_owned_diagrams_getter(self):
@@ -17088,6 +18270,30 @@ class capella_tests(unittest.TestCase):
     def test_State_owned_enumeration_property_types_getter(self):
         tested = State()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_State_get_owned_property_value_by_name(self):
+        tested = State()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_State_get_applied_property_value_by_name(self):
+        tested = State()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_State_get_owned_property_value_group_by_name(self):
+        tested = State()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_State_get_applied_property_value_group_by_name(self):
+        tested = State()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_State_owned_diagrams_getter(self):
@@ -17552,6 +18758,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Mode_get_owned_property_value_by_name(self):
+        tested = Mode()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Mode_get_applied_property_value_by_name(self):
+        tested = Mode()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Mode_get_owned_property_value_group_by_name(self):
+        tested = Mode()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Mode_get_applied_property_value_group_by_name(self):
+        tested = Mode()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Mode_owned_diagrams_getter(self):
         tested = Mode()
         tested.get_owned_diagrams()
@@ -17850,6 +19080,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Pseudostate_get_owned_property_value_by_name(self):
+        tested = Pseudostate()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Pseudostate_get_applied_property_value_by_name(self):
+        tested = Pseudostate()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Pseudostate_get_owned_property_value_group_by_name(self):
+        tested = Pseudostate()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Pseudostate_get_applied_property_value_group_by_name(self):
+        tested = Pseudostate()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Pseudostate_owned_diagrams_getter(self):
         tested = Pseudostate()
         tested.get_owned_diagrams()
@@ -18109,6 +19363,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Region_get_owned_property_value_by_name(self):
+        tested = Region()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Region_get_applied_property_value_by_name(self):
+        tested = Region()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Region_get_owned_property_value_group_by_name(self):
+        tested = Region()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Region_get_applied_property_value_group_by_name(self):
+        tested = Region()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Region_owned_diagrams_getter(self):
         tested = Region()
         tested.get_owned_diagrams()
@@ -18366,6 +19644,30 @@ class capella_tests(unittest.TestCase):
     def test_StateTransition_owned_enumeration_property_types_getter(self):
         tested = StateTransition()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_StateTransition_get_owned_property_value_by_name(self):
+        tested = StateTransition()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_StateTransition_get_applied_property_value_by_name(self):
+        tested = StateTransition()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_StateTransition_get_owned_property_value_group_by_name(self):
+        tested = StateTransition()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_StateTransition_get_applied_property_value_group_by_name(self):
+        tested = StateTransition()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_StateTransition_owned_diagrams_getter(self):
@@ -18710,6 +20012,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ChangeEvent_get_owned_property_value_by_name(self):
+        tested = ChangeEvent()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ChangeEvent_get_applied_property_value_by_name(self):
+        tested = ChangeEvent()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ChangeEvent_get_owned_property_value_group_by_name(self):
+        tested = ChangeEvent()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ChangeEvent_get_applied_property_value_group_by_name(self):
+        tested = ChangeEvent()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ChangeEvent_owned_diagrams_getter(self):
         tested = ChangeEvent()
         tested.get_owned_diagrams()
@@ -18973,6 +20299,30 @@ class capella_tests(unittest.TestCase):
     def test_TimeEvent_owned_enumeration_property_types_getter(self):
         tested = TimeEvent()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_TimeEvent_get_owned_property_value_by_name(self):
+        tested = TimeEvent()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_TimeEvent_get_applied_property_value_by_name(self):
+        tested = TimeEvent()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_TimeEvent_get_owned_property_value_group_by_name(self):
+        tested = TimeEvent()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_TimeEvent_get_applied_property_value_group_by_name(self):
+        tested = TimeEvent()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_TimeEvent_owned_diagrams_getter(self):
@@ -19249,6 +20599,30 @@ class capella_tests(unittest.TestCase):
     def test_Scenario_owned_enumeration_property_types_getter(self):
         tested = Scenario()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Scenario_get_owned_property_value_by_name(self):
+        tested = Scenario()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Scenario_get_applied_property_value_by_name(self):
+        tested = Scenario()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Scenario_get_owned_property_value_group_by_name(self):
+        tested = Scenario()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Scenario_get_applied_property_value_group_by_name(self):
+        tested = Scenario()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_Scenario_owned_diagrams_getter(self):
@@ -19584,6 +20958,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_InstanceRole_get_owned_property_value_by_name(self):
+        tested = InstanceRole()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_InstanceRole_get_applied_property_value_by_name(self):
+        tested = InstanceRole()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_InstanceRole_get_owned_property_value_group_by_name(self):
+        tested = InstanceRole()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_InstanceRole_get_applied_property_value_group_by_name(self):
+        tested = InstanceRole()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_InstanceRole_owned_diagrams_getter(self):
         tested = InstanceRole()
         tested.get_owned_diagrams()
@@ -19841,6 +21239,30 @@ class capella_tests(unittest.TestCase):
     def test_SequenceMessage_owned_enumeration_property_types_getter(self):
         tested = SequenceMessage()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_SequenceMessage_get_owned_property_value_by_name(self):
+        tested = SequenceMessage()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_SequenceMessage_get_applied_property_value_by_name(self):
+        tested = SequenceMessage()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_SequenceMessage_get_owned_property_value_group_by_name(self):
+        tested = SequenceMessage()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_SequenceMessage_get_applied_property_value_group_by_name(self):
+        tested = SequenceMessage()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_SequenceMessage_owned_diagrams_getter(self):
@@ -20132,6 +21554,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_StateFragment_get_owned_property_value_by_name(self):
+        tested = StateFragment()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_StateFragment_get_applied_property_value_by_name(self):
+        tested = StateFragment()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_StateFragment_get_owned_property_value_group_by_name(self):
+        tested = StateFragment()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_StateFragment_get_applied_property_value_group_by_name(self):
+        tested = StateFragment()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_StateFragment_owned_diagrams_getter(self):
         tested = StateFragment()
         tested.get_owned_diagrams()
@@ -20401,6 +21847,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_CombinedFragment_get_owned_property_value_by_name(self):
+        tested = CombinedFragment()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_CombinedFragment_get_applied_property_value_by_name(self):
+        tested = CombinedFragment()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_CombinedFragment_get_owned_property_value_group_by_name(self):
+        tested = CombinedFragment()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_CombinedFragment_get_applied_property_value_group_by_name(self):
+        tested = CombinedFragment()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_CombinedFragment_owned_diagrams_getter(self):
         tested = CombinedFragment()
         tested.get_owned_diagrams()
@@ -20668,6 +22138,30 @@ class capella_tests(unittest.TestCase):
     def test_Operand_owned_enumeration_property_types_getter(self):
         tested = Operand()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Operand_get_owned_property_value_by_name(self):
+        tested = Operand()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Operand_get_applied_property_value_by_name(self):
+        tested = Operand()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Operand_get_owned_property_value_group_by_name(self):
+        tested = Operand()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Operand_get_applied_property_value_group_by_name(self):
+        tested = Operand()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_Operand_owned_diagrams_getter(self):
@@ -20945,6 +22439,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ConstraintDuration_get_owned_property_value_by_name(self):
+        tested = ConstraintDuration()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ConstraintDuration_get_applied_property_value_by_name(self):
+        tested = ConstraintDuration()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ConstraintDuration_get_owned_property_value_group_by_name(self):
+        tested = ConstraintDuration()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ConstraintDuration_get_applied_property_value_group_by_name(self):
+        tested = ConstraintDuration()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ConstraintDuration_owned_diagrams_getter(self):
         tested = ConstraintDuration()
         tested.get_owned_diagrams()
@@ -21219,6 +22737,30 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPort_owned_enumeration_property_types_getter(self):
         tested = PhysicalPort()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PhysicalPort_get_owned_property_value_by_name(self):
+        tested = PhysicalPort()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalPort_get_applied_property_value_by_name(self):
+        tested = PhysicalPort()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalPort_get_owned_property_value_group_by_name(self):
+        tested = PhysicalPort()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalPort_get_applied_property_value_group_by_name(self):
+        tested = PhysicalPort()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_PhysicalPort_owned_diagrams_getter(self):
@@ -21528,6 +23070,30 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalLink_owned_enumeration_property_types_getter(self):
         tested = PhysicalLink()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PhysicalLink_get_owned_property_value_by_name(self):
+        tested = PhysicalLink()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalLink_get_applied_property_value_by_name(self):
+        tested = PhysicalLink()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalLink_get_owned_property_value_group_by_name(self):
+        tested = PhysicalLink()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalLink_get_applied_property_value_group_by_name(self):
+        tested = PhysicalLink()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_PhysicalLink_owned_diagrams_getter(self):
@@ -21855,6 +23421,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_PhysicalLinkCategory_get_owned_property_value_by_name(self):
+        tested = PhysicalLinkCategory()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalLinkCategory_get_applied_property_value_by_name(self):
+        tested = PhysicalLinkCategory()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalLinkCategory_get_owned_property_value_group_by_name(self):
+        tested = PhysicalLinkCategory()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalLinkCategory_get_applied_property_value_group_by_name(self):
+        tested = PhysicalLinkCategory()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_PhysicalLinkCategory_owned_diagrams_getter(self):
         tested = PhysicalLinkCategory()
         tested.get_owned_diagrams()
@@ -22118,6 +23708,30 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPath_owned_enumeration_property_types_getter(self):
         tested = PhysicalPath()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PhysicalPath_get_owned_property_value_by_name(self):
+        tested = PhysicalPath()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalPath_get_applied_property_value_by_name(self):
+        tested = PhysicalPath()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalPath_get_owned_property_value_group_by_name(self):
+        tested = PhysicalPath()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalPath_get_applied_property_value_group_by_name(self):
+        tested = PhysicalPath()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_PhysicalPath_owned_diagrams_getter(self):
@@ -22422,6 +24036,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_InterfacePkg_get_owned_property_value_by_name(self):
+        tested = InterfacePkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_InterfacePkg_get_applied_property_value_by_name(self):
+        tested = InterfacePkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_InterfacePkg_get_owned_property_value_group_by_name(self):
+        tested = InterfacePkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_InterfacePkg_get_applied_property_value_group_by_name(self):
+        tested = InterfacePkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_InterfacePkg_owned_diagrams_getter(self):
         tested = InterfacePkg()
         tested.get_owned_diagrams()
@@ -22689,6 +24327,30 @@ class capella_tests(unittest.TestCase):
     def test_Interface_owned_enumeration_property_types_getter(self):
         tested = Interface()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Interface_get_owned_property_value_by_name(self):
+        tested = Interface()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Interface_get_applied_property_value_by_name(self):
+        tested = Interface()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Interface_get_owned_property_value_group_by_name(self):
+        tested = Interface()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Interface_get_applied_property_value_group_by_name(self):
+        tested = Interface()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_Interface_owned_diagrams_getter(self):
@@ -23038,6 +24700,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ExchangeItemAllocation_get_owned_property_value_by_name(self):
+        tested = ExchangeItemAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeItemAllocation_get_applied_property_value_by_name(self):
+        tested = ExchangeItemAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeItemAllocation_get_owned_property_value_group_by_name(self):
+        tested = ExchangeItemAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ExchangeItemAllocation_get_applied_property_value_group_by_name(self):
+        tested = ExchangeItemAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ExchangeItemAllocation_owned_diagrams_getter(self):
         tested = ExchangeItemAllocation()
         tested.get_owned_diagrams()
@@ -23334,6 +25020,30 @@ class capella_tests(unittest.TestCase):
     def test_ExchangeItem_owned_enumeration_property_types_getter(self):
         tested = ExchangeItem()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ExchangeItem_get_owned_property_value_by_name(self):
+        tested = ExchangeItem()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeItem_get_applied_property_value_by_name(self):
+        tested = ExchangeItem()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeItem_get_owned_property_value_group_by_name(self):
+        tested = ExchangeItem()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ExchangeItem_get_applied_property_value_group_by_name(self):
+        tested = ExchangeItem()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_ExchangeItem_owned_diagrams_getter(self):
@@ -23694,6 +25404,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ExchangeItemElement_get_owned_property_value_by_name(self):
+        tested = ExchangeItemElement()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeItemElement_get_applied_property_value_by_name(self):
+        tested = ExchangeItemElement()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeItemElement_get_owned_property_value_group_by_name(self):
+        tested = ExchangeItemElement()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ExchangeItemElement_get_applied_property_value_group_by_name(self):
+        tested = ExchangeItemElement()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ExchangeItemElement_owned_diagrams_getter(self):
         tested = ExchangeItemElement()
         tested.get_owned_diagrams()
@@ -23968,6 +25702,30 @@ class capella_tests(unittest.TestCase):
     def test_FunctionInputPort_owned_enumeration_property_types_getter(self):
         tested = FunctionInputPort()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_FunctionInputPort_get_owned_property_value_by_name(self):
+        tested = FunctionInputPort()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_FunctionInputPort_get_applied_property_value_by_name(self):
+        tested = FunctionInputPort()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_FunctionInputPort_get_owned_property_value_group_by_name(self):
+        tested = FunctionInputPort()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_FunctionInputPort_get_applied_property_value_group_by_name(self):
+        tested = FunctionInputPort()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_FunctionInputPort_owned_diagrams_getter(self):
@@ -24279,6 +26037,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_FunctionOutputPort_get_owned_property_value_by_name(self):
+        tested = FunctionOutputPort()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_FunctionOutputPort_get_applied_property_value_by_name(self):
+        tested = FunctionOutputPort()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_FunctionOutputPort_get_owned_property_value_group_by_name(self):
+        tested = FunctionOutputPort()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_FunctionOutputPort_get_applied_property_value_group_by_name(self):
+        tested = FunctionOutputPort()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_FunctionOutputPort_owned_diagrams_getter(self):
         tested = FunctionOutputPort()
         tested.get_owned_diagrams()
@@ -24575,6 +26357,30 @@ class capella_tests(unittest.TestCase):
     def test_FunctionalExchange_owned_enumeration_property_types_getter(self):
         tested = FunctionalExchange()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_FunctionalExchange_get_owned_property_value_by_name(self):
+        tested = FunctionalExchange()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_FunctionalExchange_get_applied_property_value_by_name(self):
+        tested = FunctionalExchange()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_FunctionalExchange_get_owned_property_value_group_by_name(self):
+        tested = FunctionalExchange()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_FunctionalExchange_get_applied_property_value_group_by_name(self):
+        tested = FunctionalExchange()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_FunctionalExchange_owned_diagrams_getter(self):
@@ -24951,6 +26757,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ExchangeCategory_get_owned_property_value_by_name(self):
+        tested = ExchangeCategory()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeCategory_get_applied_property_value_by_name(self):
+        tested = ExchangeCategory()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ExchangeCategory_get_owned_property_value_group_by_name(self):
+        tested = ExchangeCategory()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ExchangeCategory_get_applied_property_value_group_by_name(self):
+        tested = ExchangeCategory()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ExchangeCategory_owned_diagrams_getter(self):
         tested = ExchangeCategory()
         tested.get_owned_diagrams()
@@ -25214,6 +27044,30 @@ class capella_tests(unittest.TestCase):
     def test_FunctionalChain_owned_enumeration_property_types_getter(self):
         tested = FunctionalChain()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_FunctionalChain_get_owned_property_value_by_name(self):
+        tested = FunctionalChain()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_FunctionalChain_get_applied_property_value_by_name(self):
+        tested = FunctionalChain()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_FunctionalChain_get_owned_property_value_group_by_name(self):
+        tested = FunctionalChain()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_FunctionalChain_get_applied_property_value_group_by_name(self):
+        tested = FunctionalChain()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_FunctionalChain_owned_diagrams_getter(self):
@@ -25562,6 +27416,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ComponentPort_get_owned_property_value_by_name(self):
+        tested = ComponentPort()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ComponentPort_get_applied_property_value_by_name(self):
+        tested = ComponentPort()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ComponentPort_get_owned_property_value_group_by_name(self):
+        tested = ComponentPort()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentPort_get_applied_property_value_group_by_name(self):
+        tested = ComponentPort()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ComponentPort_owned_diagrams_getter(self):
         tested = ComponentPort()
         tested.get_owned_diagrams()
@@ -25902,6 +27780,30 @@ class capella_tests(unittest.TestCase):
     def test_ComponentExchange_owned_enumeration_property_types_getter(self):
         tested = ComponentExchange()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ComponentExchange_get_owned_property_value_by_name(self):
+        tested = ComponentExchange()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ComponentExchange_get_applied_property_value_by_name(self):
+        tested = ComponentExchange()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ComponentExchange_get_owned_property_value_group_by_name(self):
+        tested = ComponentExchange()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentExchange_get_applied_property_value_group_by_name(self):
+        tested = ComponentExchange()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_ComponentExchange_owned_diagrams_getter(self):
@@ -26284,6 +28186,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ComponentExchangeCategory_get_owned_property_value_by_name(self):
+        tested = ComponentExchangeCategory()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ComponentExchangeCategory_get_applied_property_value_by_name(self):
+        tested = ComponentExchangeCategory()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ComponentExchangeCategory_get_owned_property_value_group_by_name(self):
+        tested = ComponentExchangeCategory()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentExchangeCategory_get_applied_property_value_group_by_name(self):
+        tested = ComponentExchangeCategory()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ComponentExchangeCategory_owned_diagrams_getter(self):
         tested = ComponentExchangeCategory()
         tested.get_owned_diagrams()
@@ -26560,6 +28486,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_LiteralBooleanValue_get_owned_property_value_by_name(self):
+        tested = LiteralBooleanValue()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LiteralBooleanValue_get_applied_property_value_by_name(self):
+        tested = LiteralBooleanValue()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LiteralBooleanValue_get_owned_property_value_group_by_name(self):
+        tested = LiteralBooleanValue()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LiteralBooleanValue_get_applied_property_value_group_by_name(self):
+        tested = LiteralBooleanValue()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_LiteralBooleanValue_owned_diagrams_getter(self):
         tested = LiteralBooleanValue()
         tested.get_owned_diagrams()
@@ -26834,6 +28784,30 @@ class capella_tests(unittest.TestCase):
     def test_BooleanReference_owned_enumeration_property_types_getter(self):
         tested = BooleanReference()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_BooleanReference_get_owned_property_value_by_name(self):
+        tested = BooleanReference()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_BooleanReference_get_applied_property_value_by_name(self):
+        tested = BooleanReference()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_BooleanReference_get_owned_property_value_group_by_name(self):
+        tested = BooleanReference()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_BooleanReference_get_applied_property_value_group_by_name(self):
+        tested = BooleanReference()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_BooleanReference_owned_diagrams_getter(self):
@@ -27123,6 +29097,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_EnumerationReference_get_owned_property_value_by_name(self):
+        tested = EnumerationReference()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationReference_get_applied_property_value_by_name(self):
+        tested = EnumerationReference()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationReference_get_owned_property_value_group_by_name(self):
+        tested = EnumerationReference()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_EnumerationReference_get_applied_property_value_group_by_name(self):
+        tested = EnumerationReference()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_EnumerationReference_owned_diagrams_getter(self):
         tested = EnumerationReference()
         tested.get_owned_diagrams()
@@ -27410,6 +29408,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_LiteralStringValue_get_owned_property_value_by_name(self):
+        tested = LiteralStringValue()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LiteralStringValue_get_applied_property_value_by_name(self):
+        tested = LiteralStringValue()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LiteralStringValue_get_owned_property_value_group_by_name(self):
+        tested = LiteralStringValue()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LiteralStringValue_get_applied_property_value_group_by_name(self):
+        tested = LiteralStringValue()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_LiteralStringValue_owned_diagrams_getter(self):
         tested = LiteralStringValue()
         tested.get_owned_diagrams()
@@ -27684,6 +29706,30 @@ class capella_tests(unittest.TestCase):
     def test_StringReference_owned_enumeration_property_types_getter(self):
         tested = StringReference()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_StringReference_get_owned_property_value_by_name(self):
+        tested = StringReference()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_StringReference_get_applied_property_value_by_name(self):
+        tested = StringReference()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_StringReference_get_owned_property_value_group_by_name(self):
+        tested = StringReference()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_StringReference_get_applied_property_value_group_by_name(self):
+        tested = StringReference()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_StringReference_owned_diagrams_getter(self):
@@ -27971,6 +30017,30 @@ class capella_tests(unittest.TestCase):
     def test_NumericValue_owned_enumeration_property_types_getter(self):
         tested = NumericValue()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_NumericValue_get_owned_property_value_by_name(self):
+        tested = NumericValue()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_NumericValue_get_applied_property_value_by_name(self):
+        tested = NumericValue()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_NumericValue_get_owned_property_value_group_by_name(self):
+        tested = NumericValue()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_NumericValue_get_applied_property_value_group_by_name(self):
+        tested = NumericValue()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_NumericValue_owned_diagrams_getter(self):
@@ -28270,6 +30340,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_LiteralNumericValue_get_owned_property_value_by_name(self):
+        tested = LiteralNumericValue()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_LiteralNumericValue_get_applied_property_value_by_name(self):
+        tested = LiteralNumericValue()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_LiteralNumericValue_get_owned_property_value_group_by_name(self):
+        tested = LiteralNumericValue()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_LiteralNumericValue_get_applied_property_value_group_by_name(self):
+        tested = LiteralNumericValue()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_LiteralNumericValue_owned_diagrams_getter(self):
         tested = LiteralNumericValue()
         tested.get_owned_diagrams()
@@ -28544,6 +30638,30 @@ class capella_tests(unittest.TestCase):
     def test_NumericReference_owned_enumeration_property_types_getter(self):
         tested = NumericReference()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_NumericReference_get_owned_property_value_by_name(self):
+        tested = NumericReference()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_NumericReference_get_applied_property_value_by_name(self):
+        tested = NumericReference()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_NumericReference_get_owned_property_value_group_by_name(self):
+        tested = NumericReference()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_NumericReference_get_applied_property_value_group_by_name(self):
+        tested = NumericReference()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_NumericReference_owned_diagrams_getter(self):
@@ -28833,6 +30951,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_ComplexValue_get_owned_property_value_by_name(self):
+        tested = ComplexValue()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ComplexValue_get_applied_property_value_by_name(self):
+        tested = ComplexValue()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ComplexValue_get_owned_property_value_group_by_name(self):
+        tested = ComplexValue()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ComplexValue_get_applied_property_value_group_by_name(self):
+        tested = ComplexValue()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_ComplexValue_owned_diagrams_getter(self):
         tested = ComplexValue()
         tested.get_owned_diagrams()
@@ -29096,6 +31238,30 @@ class capella_tests(unittest.TestCase):
     def test_ComplexValueReference_owned_enumeration_property_types_getter(self):
         tested = ComplexValueReference()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ComplexValueReference_get_owned_property_value_by_name(self):
+        tested = ComplexValueReference()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ComplexValueReference_get_applied_property_value_by_name(self):
+        tested = ComplexValueReference()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ComplexValueReference_get_owned_property_value_group_by_name(self):
+        tested = ComplexValueReference()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ComplexValueReference_get_applied_property_value_group_by_name(self):
+        tested = ComplexValueReference()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_ComplexValueReference_owned_diagrams_getter(self):
@@ -29374,6 +31540,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_BinaryExpression_get_owned_property_value_by_name(self):
+        tested = BinaryExpression()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_BinaryExpression_get_applied_property_value_by_name(self):
+        tested = BinaryExpression()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_BinaryExpression_get_owned_property_value_group_by_name(self):
+        tested = BinaryExpression()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_BinaryExpression_get_applied_property_value_group_by_name(self):
+        tested = BinaryExpression()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_BinaryExpression_owned_diagrams_getter(self):
         tested = BinaryExpression()
         tested.get_owned_diagrams()
@@ -29639,6 +31829,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_UnaryExpression_get_owned_property_value_by_name(self):
+        tested = UnaryExpression()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_UnaryExpression_get_applied_property_value_by_name(self):
+        tested = UnaryExpression()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_UnaryExpression_get_owned_property_value_group_by_name(self):
+        tested = UnaryExpression()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_UnaryExpression_get_applied_property_value_group_by_name(self):
+        tested = UnaryExpression()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_UnaryExpression_owned_diagrams_getter(self):
         tested = UnaryExpression()
         tested.get_owned_diagrams()
@@ -29902,6 +32116,30 @@ class capella_tests(unittest.TestCase):
     def test_CollectionValueReference_owned_enumeration_property_types_getter(self):
         tested = CollectionValueReference()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_CollectionValueReference_get_owned_property_value_by_name(self):
+        tested = CollectionValueReference()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_CollectionValueReference_get_applied_property_value_by_name(self):
+        tested = CollectionValueReference()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_CollectionValueReference_get_owned_property_value_group_by_name(self):
+        tested = CollectionValueReference()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_CollectionValueReference_get_applied_property_value_group_by_name(self):
+        tested = CollectionValueReference()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_CollectionValueReference_owned_diagrams_getter(self):
@@ -30191,6 +32429,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_CollectionValue_get_owned_property_value_by_name(self):
+        tested = CollectionValue()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_CollectionValue_get_applied_property_value_by_name(self):
+        tested = CollectionValue()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_CollectionValue_get_owned_property_value_group_by_name(self):
+        tested = CollectionValue()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_CollectionValue_get_applied_property_value_group_by_name(self):
+        tested = CollectionValue()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_CollectionValue_owned_diagrams_getter(self):
         tested = CollectionValue()
         tested.get_owned_diagrams()
@@ -30465,6 +32727,30 @@ class capella_tests(unittest.TestCase):
     def test_DataPkg_owned_enumeration_property_types_getter(self):
         tested = DataPkg()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_DataPkg_get_owned_property_value_by_name(self):
+        tested = DataPkg()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_DataPkg_get_applied_property_value_by_name(self):
+        tested = DataPkg()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_DataPkg_get_owned_property_value_group_by_name(self):
+        tested = DataPkg()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_DataPkg_get_applied_property_value_group_by_name(self):
+        tested = DataPkg()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_DataPkg_owned_diagrams_getter(self):
@@ -30787,6 +33073,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Class_get_owned_property_value_by_name(self):
+        tested = Class()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Class_get_applied_property_value_by_name(self):
+        tested = Class()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Class_get_owned_property_value_group_by_name(self):
+        tested = Class()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Class_get_applied_property_value_group_by_name(self):
+        tested = Class()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Class_owned_diagrams_getter(self):
         tested = Class()
         tested.get_owned_diagrams()
@@ -31093,6 +33403,30 @@ class capella_tests(unittest.TestCase):
     def test_Collection_owned_enumeration_property_types_getter(self):
         tested = Collection()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Collection_get_owned_property_value_by_name(self):
+        tested = Collection()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Collection_get_applied_property_value_by_name(self):
+        tested = Collection()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Collection_get_owned_property_value_group_by_name(self):
+        tested = Collection()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Collection_get_applied_property_value_group_by_name(self):
+        tested = Collection()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_Collection_owned_diagrams_getter(self):
@@ -31474,6 +33808,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Union_get_owned_property_value_by_name(self):
+        tested = Union()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Union_get_applied_property_value_by_name(self):
+        tested = Union()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Union_get_owned_property_value_group_by_name(self):
+        tested = Union()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Union_get_applied_property_value_group_by_name(self):
+        tested = Union()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Union_owned_diagrams_getter(self):
         tested = Union()
         tested.get_owned_diagrams()
@@ -31780,6 +34138,30 @@ class capella_tests(unittest.TestCase):
     def test_Association_owned_enumeration_property_types_getter(self):
         tested = Association()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Association_get_owned_property_value_by_name(self):
+        tested = Association()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Association_get_applied_property_value_by_name(self):
+        tested = Association()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Association_get_owned_property_value_group_by_name(self):
+        tested = Association()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Association_get_applied_property_value_group_by_name(self):
+        tested = Association()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_Association_owned_diagrams_getter(self):
@@ -32233,6 +34615,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Enumeration_get_owned_property_value_by_name(self):
+        tested = Enumeration()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Enumeration_get_applied_property_value_by_name(self):
+        tested = Enumeration()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Enumeration_get_owned_property_value_group_by_name(self):
+        tested = Enumeration()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Enumeration_get_applied_property_value_group_by_name(self):
+        tested = Enumeration()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Enumeration_owned_diagrams_getter(self):
         tested = Enumeration()
         tested.get_owned_diagrams()
@@ -32589,6 +34995,30 @@ class capella_tests(unittest.TestCase):
     def test_EnumerationLiteral_owned_enumeration_property_types_getter(self):
         tested = EnumerationLiteral()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_EnumerationLiteral_get_owned_property_value_by_name(self):
+        tested = EnumerationLiteral()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationLiteral_get_applied_property_value_by_name(self):
+        tested = EnumerationLiteral()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_EnumerationLiteral_get_owned_property_value_group_by_name(self):
+        tested = EnumerationLiteral()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_EnumerationLiteral_get_applied_property_value_group_by_name(self):
+        tested = EnumerationLiteral()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_EnumerationLiteral_owned_diagrams_getter(self):
@@ -32960,6 +35390,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_BooleanType_get_owned_property_value_by_name(self):
+        tested = BooleanType()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_BooleanType_get_applied_property_value_by_name(self):
+        tested = BooleanType()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_BooleanType_get_owned_property_value_group_by_name(self):
+        tested = BooleanType()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_BooleanType_get_applied_property_value_group_by_name(self):
+        tested = BooleanType()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_BooleanType_owned_diagrams_getter(self):
         tested = BooleanType()
         tested.get_owned_diagrams()
@@ -33321,6 +35775,30 @@ class capella_tests(unittest.TestCase):
     def test_StringType_owned_enumeration_property_types_getter(self):
         tested = StringType()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_StringType_get_owned_property_value_by_name(self):
+        tested = StringType()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_StringType_get_applied_property_value_by_name(self):
+        tested = StringType()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_StringType_get_owned_property_value_group_by_name(self):
+        tested = StringType()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_StringType_get_applied_property_value_group_by_name(self):
+        tested = StringType()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_StringType_owned_diagrams_getter(self):
@@ -33721,6 +36199,30 @@ class capella_tests(unittest.TestCase):
     def test_NumericType_owned_enumeration_property_types_getter(self):
         tested = NumericType()
         tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_NumericType_get_owned_property_value_by_name(self):
+        tested = NumericType()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_NumericType_get_applied_property_value_by_name(self):
+        tested = NumericType()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_NumericType_get_owned_property_value_group_by_name(self):
+        tested = NumericType()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_NumericType_get_applied_property_value_group_by_name(self):
+        tested = NumericType()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
         pass
 
     def test_NumericType_owned_diagrams_getter(self):
@@ -34198,6 +36700,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_PhysicalQuantity_get_owned_property_value_by_name(self):
+        tested = PhysicalQuantity()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalQuantity_get_applied_property_value_by_name(self):
+        tested = PhysicalQuantity()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PhysicalQuantity_get_owned_property_value_group_by_name(self):
+        tested = PhysicalQuantity()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalQuantity_get_applied_property_value_group_by_name(self):
+        tested = PhysicalQuantity()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_PhysicalQuantity_owned_diagrams_getter(self):
         tested = PhysicalQuantity()
         tested.get_owned_diagrams()
@@ -34463,6 +36989,30 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_enumeration_property_types()
         pass
 
+    def test_Unit_get_owned_property_value_by_name(self):
+        tested = Unit()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Unit_get_applied_property_value_by_name(self):
+        tested = Unit()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Unit_get_owned_property_value_group_by_name(self):
+        tested = Unit()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Unit_get_applied_property_value_group_by_name(self):
+        tested = Unit()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
     def test_Unit_owned_diagrams_getter(self):
         tested = Unit()
         tested.get_owned_diagrams()
@@ -34589,6 +37139,56 @@ class capella_tests(unittest.TestCase):
         tested = PVMT()
         param1 = Unit()
         tested.get_p_v_group_names(param1)
+        pass
+
+    def test_PVMT_get_property_value_group(self):
+        tested = PVMT()
+        param1 = SystemEngineering()
+        param2 = "value"
+        param3 = "value"
+        tested.get_property_value_group(param1, param2, param3)
+        pass
+
+    def test_PVMT_get_property_value(self):
+        tested = PVMT()
+        param1 = SystemEngineering()
+        param2 = "value"
+        param3 = "value"
+        param4 = "value"
+        tested.get_property_value(param1, param2, param3, param4)
+        pass
+
+    def test_PVMT_get_enumeration_property_type(self):
+        tested = PVMT()
+        param1 = SystemEngineering()
+        param2 = "value"
+        param3 = "value"
+        tested.get_enumeration_property_type(param1, param2, param3)
+        pass
+
+    def test_PVMT_get_applied_property_value(self):
+        tested = PVMT()
+        param1 = Unit()
+        param2 = "value"
+        param3 = "value"
+        param4 = "value"
+        tested.get_applied_property_value(param1, param2, param3, param4)
+        pass
+
+    def test_PVMT_get_or_apply_property_value_group(self):
+        tested = PVMT()
+        param1 = Unit()
+        param2 = "value"
+        param3 = "value"
+        tested.get_or_apply_property_value_group(param1, param2, param3)
+        pass
+
+    def test_PVMT_remove_applied_property_value_group(self):
+        tested = PVMT()
+        param1 = Unit()
+        param2 = "value"
+        param3 = "value"
+        tested.remove_applied_property_value_group(param1, param2, param3)
         pass
 
     def test_RequirementAddOn_get_requirement_modules(self):

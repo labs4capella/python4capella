@@ -1,0 +1,8 @@
+    @staticmethod
+    def get_property_value(systemEngineering: SystemEngineering, propertyValuePackageName: str, propertyValueGroupName: str, propertyValueName: str) -> PropertyValue:
+        pvg = PVMT.get_property_value_group(systemEngineering, propertyValuePackageName, propertyValueGroupName)
+        if pvg:
+            for pv in pvg.get_owned_property_values():
+                if pv.get_name() == propertyValueName:
+                    return pv
+

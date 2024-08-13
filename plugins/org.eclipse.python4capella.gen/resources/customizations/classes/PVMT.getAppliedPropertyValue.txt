@@ -1,0 +1,16 @@
+    @staticmethod
+    def get_applied_property_value(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, propertyValueName: str) -> PropertyValue:
+        """
+        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String, propertyValueName: String
+        Returns: PropertyValue
+        """
+        systemEngineering = PVMT.get_system_engineering(elem)
+        pv = PVMT.get_property_value(systemEngineering, propertyValuePackageName, propertyValueGroupName, propertyValueName)
+        pvg = PropertyValueGroup(pv.get_java_object().eContainer())
+        if pvg:
+            for applied_pvg in elem.get_applied_property_value_groups():
+                if applied_pvg.get_applied_property_value_groups().contains(pvg):
+                    for owned_pv in applied_pvg.get_owned_property_values():
+                        if owned_pv.get_applied_property_values().contains(pv):
+                            return owned_pv
+

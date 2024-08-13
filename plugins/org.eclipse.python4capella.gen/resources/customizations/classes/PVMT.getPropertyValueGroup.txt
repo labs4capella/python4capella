@@ -1,0 +1,11 @@
+    @staticmethod
+    def get_property_value_group(systemEngineering: SystemEngineering, propertyValuePackageName: str, propertyValueGroupName: str) -> PropertyValueGroup:
+        project = systemEngineering.get_java_object().eContainer()
+        for ext_package in project.getOwnedPropertyValuePkgs():
+            if ext_package.getName() == "EXTENSIONS":
+                for pv_package in ext_package.getOwnedPropertyValuePkgs():
+                    if pv_package.getName() == propertyValuePackageName:
+                        for pv_group in pv_package.getOwnedPropertyValueGroups():
+                            if pv_group.getName() == propertyValueGroupName:
+                                return PropertyValueGroup(pv_group)
+

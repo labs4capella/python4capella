@@ -1,0 +1,6 @@
+    def get_applied_property_value_group_by_name(self, p_v_g_name: str) -> PropertyValueGroup:
+        for property_value_group in self.get_applied_property_value_groups():
+           if property_value_group.get_name() == p_v_g_name:
+               return property_value_group
+        return None
+
