@@ -1,9 +1,0 @@
-    def get_exchange_mechanism(self) -> str:
-        value =  self.get_java_object().getExchangeMechanism()
-        if value is None:
-            return value
-        else:
-            return value.getName()
-    def set_exchange_mechanism(self, value: str):
-        return self.get_java_object().setExchangeMechanism(get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeMechanism", value))
-

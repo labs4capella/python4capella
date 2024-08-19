@@ -22,7 +22,6 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.GeneralizableElement;
 import org.polarsys.capella.core.data.capellacore.TypedElement;
@@ -32,6 +31,7 @@ import org.polarsys.capella.core.data.information.Operation;
 import org.polarsys.capella.core.data.information.Parameter;
 import org.polarsys.capella.core.data.information.ParameterDirection;
 import org.polarsys.capella.core.data.information.Property;
+import org.polarsys.capella.core.data.information.datatype.Enumeration;
 import org.polarsys.capella.core.data.information.datavalue.LiteralNumericValue;
 import org.polarsys.capella.core.data.information.datavalue.NumericValue;
 
@@ -253,8 +253,14 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 								+ NL);
 			}
 			if (isScalar(property)) {
-				res.append("        value = " + getTestValue(cls, property) + NL);
-				res.append("        tested.set_" + pythonName + "(value)" + NL);
+				if (property.getType() instanceof Enumeration) {
+					res.append("        value = \""
+							+ ((Enumeration) property.getType()).getOwnedLiterals().get(0).getName() + "\"" + NL);
+					res.append("        tested.set_" + pythonName + "(value)" + NL);
+				} else {
+					res.append("        value = " + getTestValue(cls, property) + NL);
+					res.append("        tested.set_" + pythonName + "(value)" + NL);
+				}
 			} else {
 				// collection
 				res.append("        value = " + getTestValue(cls, property) + NL);

@@ -586,7 +586,7 @@ class PropertyValue(CapellaElement):
         """
         Returns: EnumerationPropertyType[0..1]
         """
-        value =  self.get_java_object().getType()
+        value = self.get_java_object().getType()
         if value is None:
             return value
         else:
@@ -753,7 +753,7 @@ class AbstractTrace(TraceableElement):
         """
         Returns: TraceableElement
         """
-        value =  self.get_java_object().getSourceElement()
+        value = self.get_java_object().getSourceElement()
         if value is None:
             return value
         else:
@@ -769,7 +769,7 @@ class AbstractTrace(TraceableElement):
         """
         Returns: TraceableElement
         """
-        value =  self.get_java_object().getTargetElement()
+        value = self.get_java_object().getTargetElement()
         if value is None:
             return value
         else:
@@ -800,7 +800,7 @@ class AbstractRelationship(JavaObject):
         """
         Returns: AbstractInformationFlow
         """
-        value =  self.get_java_object().getRealizedFlow()
+        value = self.get_java_object().getRealizedFlow()
         if value is None:
             return value
         else:
@@ -866,7 +866,7 @@ class AbstractInformationFlow(AbstractRelationship, CapellaElement):
         """
         Returns: InformationsExchanger
         """
-        value =  self.get_java_object().getSource()
+        value = self.get_java_object().getSource()
         if value is None:
             return value
         else:
@@ -882,7 +882,7 @@ class AbstractInformationFlow(AbstractRelationship, CapellaElement):
         """
         Returns: InformationsExchanger
         """
-        value =  self.get_java_object().getTarget()
+        value = self.get_java_object().getTarget()
         if value is None:
             return value
         else:
@@ -1039,7 +1039,7 @@ class Diagram(JavaObject):
         """
         Returns: EObject
         """
-        value =  self.get_java_object().getTarget()
+        value = self.get_java_object().getTarget()
         if value is None:
             return value
         else:
@@ -1182,7 +1182,7 @@ class REC(AbstractCatalogElement):
         """
         Returns: CompliancyDefinition
         """
-        value =  self.get_java_object().getDefaultReplicaCompliancy()
+        value = self.get_java_object().getDefaultReplicaCompliancy()
         if value is None:
             return value
         else:
@@ -1250,7 +1250,7 @@ class RPL(AbstractCatalogElement):
         """
         Returns: REC
         """
-        value =  self.get_java_object().getOrigin()
+        value = self.get_java_object().getOrigin()
         if value is None:
             return value
         else:
@@ -1266,7 +1266,7 @@ class RPL(AbstractCatalogElement):
         """
         Returns: CompliancyDefinition
         """
-        value =  self.get_java_object().getCurrentCompliancy()
+        value = self.get_java_object().getCurrentCompliancy()
         if value is None:
             return value
         else:
@@ -1329,7 +1329,7 @@ class RecCatalog(CatalogElementPkg):
         """
         Returns: CompliancyDefinitionPkg
         """
-        value =  self.get_java_object().getOwnedCompliancyDefinitionPkg()
+        value = self.get_java_object().getOwnedCompliancyDefinitionPkg()
         if value is None:
             return value
         else:
@@ -1407,7 +1407,7 @@ class OperationalAnalysis(ModellingArchitecture):
         """
         Returns: OperationalActivityPkg
         """
-        value =  self.get_java_object().getContainedOperationalActivityPkg()
+        value = self.get_java_object().getContainedOperationalActivityPkg()
         if value is None:
             return value
         else:
@@ -1418,7 +1418,7 @@ class OperationalAnalysis(ModellingArchitecture):
         """
         Returns: OperationalCapabilityPkg
         """
-        value =  self.get_java_object().getContainedOperationalCapabilityPkg()
+        value = self.get_java_object().getContainedOperationalCapabilityPkg()
         if value is None:
             return value
         else:
@@ -1429,7 +1429,7 @@ class OperationalAnalysis(ModellingArchitecture):
         """
         Returns: InterfacePkg
         """
-        value =  self.get_java_object().getOwnedInterfacePkg()
+        value = self.get_java_object().getOwnedInterfacePkg()
         if value is None:
             return value
         else:
@@ -1440,7 +1440,7 @@ class OperationalAnalysis(ModellingArchitecture):
         """
         Returns: DataPkg
         """
-        value =  self.get_java_object().getOwnedDataPkg()
+        value = self.get_java_object().getOwnedDataPkg()
         if value is None:
             return value
         else:
@@ -1451,7 +1451,7 @@ class OperationalAnalysis(ModellingArchitecture):
         """
         Returns: EntityPkg
         """
-        value =  self.get_java_object().getOwnedEntityPkg()
+        value = self.get_java_object().getOwnedEntityPkg()
         if value is None:
             return value
         else:
@@ -1531,7 +1531,7 @@ class OperationalProcess(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getPreCondition()
+        value = self.get_java_object().getPreCondition()
         if value is None:
             return value
         else:
@@ -1547,7 +1547,7 @@ class OperationalProcess(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getPostCondition()
+        value = self.get_java_object().getPostCondition()
         if value is None:
             return value
         else:
@@ -1698,7 +1698,7 @@ class CommunicationMean(CapellaElement):
         """
         Returns: OperationalActor
         """
-        value =  self.get_java_object().getSourceEntity()
+        value = self.get_java_object().getSourceEntity()
         if value is None:
             return value
         else:
@@ -1714,7 +1714,7 @@ class CommunicationMean(CapellaElement):
         """
         Returns: OperationalActor
         """
-        value =  self.get_java_object().getTargetEntity()
+        value = self.get_java_object().getTargetEntity()
         if value is None:
             return value
         else:
@@ -1762,7 +1762,7 @@ class SystemAnalysis(ModellingArchitecture):
         """
         Returns: SystemFunctionPkg
         """
-        value =  self.get_java_object().getContainedSystemFunctionPkg()
+        value = self.get_java_object().getContainedSystemFunctionPkg()
         if value is None:
             return value
         else:
@@ -1773,7 +1773,7 @@ class SystemAnalysis(ModellingArchitecture):
         """
         Returns: CapabilityPkg
         """
-        value =  self.get_java_object().getContainedCapabilityPkg()
+        value = self.get_java_object().getContainedCapabilityPkg()
         if value is None:
             return value
         else:
@@ -1784,7 +1784,7 @@ class SystemAnalysis(ModellingArchitecture):
         """
         Returns: InterfacePkg
         """
-        value =  self.get_java_object().getOwnedInterfacePkg()
+        value = self.get_java_object().getOwnedInterfacePkg()
         if value is None:
             return value
         else:
@@ -1795,7 +1795,7 @@ class SystemAnalysis(ModellingArchitecture):
         """
         Returns: DataPkg
         """
-        value =  self.get_java_object().getOwnedDataPkg()
+        value = self.get_java_object().getOwnedDataPkg()
         if value is None:
             return value
         else:
@@ -1806,7 +1806,7 @@ class SystemAnalysis(ModellingArchitecture):
         """
         Returns: SystemComponentPkg
         """
-        value =  self.get_java_object().getOwnedSystemComponentPkg()
+        value = self.get_java_object().getOwnedSystemComponentPkg()
         if value is None:
             return value
         else:
@@ -1817,7 +1817,7 @@ class SystemAnalysis(ModellingArchitecture):
         """
         Returns: MissionPkg
         """
-        value =  self.get_java_object().getOwnedMissionPkg()
+        value = self.get_java_object().getOwnedMissionPkg()
         if value is None:
             return value
         else:
@@ -1828,7 +1828,7 @@ class SystemAnalysis(ModellingArchitecture):
         """
         Returns: System
         """
-        value =  self.get_java_object().getSystem()
+        value = self.get_java_object().getSystem()
         if value is None:
             return value
         else:
@@ -1917,7 +1917,7 @@ class SystemComponentPkg(PropertyValuePkgContainer):
         """
         Returns: System
         """
-        value =  self.get_java_object().getOwnedSystem()
+        value = self.get_java_object().getOwnedSystem()
         if value is None:
             return value
         else:
@@ -2019,7 +2019,7 @@ class LogicalArchitecture(ModellingArchitecture):
         """
         Returns: LogicalFunctionPkg
         """
-        value =  self.get_java_object().getContainedLogicalFunctionPkg()
+        value = self.get_java_object().getContainedLogicalFunctionPkg()
         if value is None:
             return value
         else:
@@ -2030,7 +2030,7 @@ class LogicalArchitecture(ModellingArchitecture):
         """
         Returns: CapabilityRealizationPkg
         """
-        value =  self.get_java_object().getContainedCapabilityRealizationPkg()
+        value = self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
             return value
         else:
@@ -2041,7 +2041,7 @@ class LogicalArchitecture(ModellingArchitecture):
         """
         Returns: InterfacePkg
         """
-        value =  self.get_java_object().getOwnedInterfacePkg()
+        value = self.get_java_object().getOwnedInterfacePkg()
         if value is None:
             return value
         else:
@@ -2052,7 +2052,7 @@ class LogicalArchitecture(ModellingArchitecture):
         """
         Returns: DataPkg
         """
-        value =  self.get_java_object().getOwnedDataPkg()
+        value = self.get_java_object().getOwnedDataPkg()
         if value is None:
             return value
         else:
@@ -2063,7 +2063,7 @@ class LogicalArchitecture(ModellingArchitecture):
         """
         Returns: LogicalComponentPkg
         """
-        value =  self.get_java_object().getOwnedLogicalComponentPkg()
+        value = self.get_java_object().getOwnedLogicalComponentPkg()
         if value is None:
             return value
         else:
@@ -2074,7 +2074,7 @@ class LogicalArchitecture(ModellingArchitecture):
         """
         Returns: LogicalSystem
         """
-        value =  self.get_java_object().getSystem()
+        value = self.get_java_object().getSystem()
         if value is None:
             return value
         else:
@@ -2163,7 +2163,7 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
         """
         Returns: LogicalSystem
         """
-        value =  self.get_java_object().getOwnedLogicalSystem()
+        value = self.get_java_object().getOwnedLogicalSystem()
         if value is None:
             return value
         else:
@@ -2211,7 +2211,7 @@ class PhysicalArchitecture(ModellingArchitecture):
         """
         Returns: PhysicalFunctionPkg
         """
-        value =  self.get_java_object().getContainedPhysicalFunctionPkg()
+        value = self.get_java_object().getContainedPhysicalFunctionPkg()
         if value is None:
             return value
         else:
@@ -2222,7 +2222,7 @@ class PhysicalArchitecture(ModellingArchitecture):
         """
         Returns: CapabilityRealizationPkg
         """
-        value =  self.get_java_object().getContainedCapabilityRealizationPkg()
+        value = self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
             return value
         else:
@@ -2233,7 +2233,7 @@ class PhysicalArchitecture(ModellingArchitecture):
         """
         Returns: InterfacePkg
         """
-        value =  self.get_java_object().getOwnedInterfacePkg()
+        value = self.get_java_object().getOwnedInterfacePkg()
         if value is None:
             return value
         else:
@@ -2244,7 +2244,7 @@ class PhysicalArchitecture(ModellingArchitecture):
         """
         Returns: DataPkg
         """
-        value =  self.get_java_object().getOwnedDataPkg()
+        value = self.get_java_object().getOwnedDataPkg()
         if value is None:
             return value
         else:
@@ -2255,7 +2255,7 @@ class PhysicalArchitecture(ModellingArchitecture):
         """
         Returns: PhysicalComponentPkg
         """
-        value =  self.get_java_object().getOwnedPhysicalComponentPkg()
+        value = self.get_java_object().getOwnedPhysicalComponentPkg()
         if value is None:
             return value
         else:
@@ -2395,20 +2395,23 @@ class PhysicalComponent(AbstractPhysicalArtifact):
                 raise AttributeError("Passed component is an actor.")
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_kind(self):
+    def get_kind(self) -> str:
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
             return value.getName()
-    def set_kind(self, value):
+    def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        self.get_java_object().setKind(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentKind", value))
+        if value not in ["UNSET", "HARDWARE", "HARDWARE_COMPUTER", "SOFTWARE", "SOFTWARE_DEPLOYMENT_UNIT", "SOFTWARE_EXECUTION_UNIT", "SOFTWARE_APPLICATION", "FIRMWARE", "PERSON", "FACILITIES", "DATA", "MATERIALS", "SERVICES", "PROCESSES"]:
+            raise ValueError(value + ' is not a valid PhysicalComponentKind. Valid values are: ["UNSET", "HARDWARE", "HARDWARE_COMPUTER", "SOFTWARE", "SOFTWARE_DEPLOYMENT_UNIT", "SOFTWARE_EXECUTION_UNIT", "SOFTWARE_APPLICATION", "FIRMWARE", "PERSON", "FACILITIES", "DATA", "MATERIALS", "SERVICES", "PROCESSES"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentKind", value)
+        self.get_java_object().setKind(enum_value)
     def get_owned_physical_components(self) -> List[PhysicalComponent]:
         """
         Returns: PhysicalComponent[*]
@@ -2465,7 +2468,7 @@ class EPBSArchitecture(ModellingArchitecture):
         """
         Returns: CapabilityRealizationPkg
         """
-        value =  self.get_java_object().getContainedCapabilityRealizationPkg()
+        value = self.get_java_object().getContainedCapabilityRealizationPkg()
         if value is None:
             return value
         else:
@@ -2476,7 +2479,7 @@ class EPBSArchitecture(ModellingArchitecture):
         """
         Returns: ConfigurationItemPkg
         """
-        value =  self.get_java_object().getOwnedConfigurationItemPkg()
+        value = self.get_java_object().getOwnedConfigurationItemPkg()
         if value is None:
             return value
         else:
@@ -2487,7 +2490,7 @@ class EPBSArchitecture(ModellingArchitecture):
         """
         Returns: DataPkg
         """
-        value =  self.get_java_object().getOwnedDataPkg()
+        value = self.get_java_object().getOwnedDataPkg()
         if value is None:
             return value
         else:
@@ -2550,18 +2553,19 @@ class ConfigurationItem(CapellaElement):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        if value not in ["Unset", "COTSCI", "CSCI", "HWCI", "InterfaceCI", "NDICI", "PrimeItemCI", "SystemCI"]:
+            raise ValueError(value + ' is not a valid ConfigurationItemKind. Valid values are: ["Unset", "COTSCI", "CSCI", "HWCI", "InterfaceCI", "NDICI", "PrimeItemCI", "SystemCI"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/epbs/" + capella_version(), "ConfigurationItemKind", value)
+        self.get_java_object().setKind(enum_value)
     def get_owned_configuration_items(self) -> List[ConfigurationItem]:
         """
         Returns: ConfigurationItem[*]
@@ -2817,7 +2821,7 @@ class StateTransition(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getGuard()
+        value = self.get_java_object().getGuard()
         if value is None:
             return value
         else:
@@ -2896,18 +2900,16 @@ class Scenario(CapellaElement):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def get_pre_condition(self) -> Constraint:
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getPreCondition()
+        value = self.get_java_object().getPreCondition()
         if value is None:
             return value
         else:
@@ -2923,7 +2925,7 @@ class Scenario(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getPostCondition()
+        value = self.get_java_object().getPostCondition()
         if value is None:
             return value
         else:
@@ -3032,13 +3034,11 @@ class SequenceMessage(CapellaElement):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def get_sending_instance_role(self) -> InstanceRole:
         """
         Returns: InstanceRole
@@ -3092,7 +3092,7 @@ class SequenceMessage(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getExchangeContext()
+        value = self.get_java_object().getExchangeContext()
         if value is None:
             return value
         else:
@@ -3136,7 +3136,7 @@ class StateFragment(CapellaElement):
         """
         Returns: InstanceRole
         """
-        value =  self.get_java_object().getCoveredInstanceRole()
+        value = self.get_java_object().getCoveredInstanceRole()
         if value is None:
             return value
         else:
@@ -3152,7 +3152,7 @@ class StateFragment(CapellaElement):
         """
         Returns: AbstractActivityFunction[0..1]
         """
-        value =  self.get_java_object().getRelatedAbstractFunction()
+        value = self.get_java_object().getRelatedAbstractFunction()
         if value is None:
             return value
         else:
@@ -3179,13 +3179,11 @@ class CombinedFragment(CapellaElement):
         """
         Returns: String
         """
-        value =  self.get_java_object().getOperator()
+        value = self.get_java_object().getOperator()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def get_operands(self) -> List[Operand]:
         """
         Returns: Operand[1..*]
@@ -3218,7 +3216,7 @@ class Operand(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getGuard()
+        value = self.get_java_object().getGuard()
         if value is None:
             return value
         else:
@@ -3486,18 +3484,19 @@ class Interface(CapellaElement):
         """
         Returns: String
         """
-        value =  self.get_java_object().getVisibility()
+        value = self.get_java_object().getVisibility()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_visibility(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setVisibility(value.get_java_object())
+        if value not in ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]:
+            raise ValueError(value + ' is not a valid VisibilityKind. Valid values are: ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/core/" + capella_version(), "VisibilityKind", value)
+        self.get_java_object().setVisibility(enum_value)
     def get_owned_exchange_item_allocations(self) -> List[ExchangeItemAllocation]:
         """
         Returns: ExchangeItemAllocation[*]
@@ -3559,39 +3558,41 @@ class ExchangeItemAllocation(CapellaElement):
         """
         Returns: String
         """
-        value =  self.get_java_object().getTransmissionProtocol()
+        value = self.get_java_object().getTransmissionProtocol()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_transmission_protocol(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setTransmissionProtocol(value.get_java_object())
+        if value not in ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]:
+            raise ValueError(value + ' is not a valid CommunicationLinkProtocol. Valid values are: ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "CommunicationLinkProtocol", value)
+        self.get_java_object().setTransmissionProtocol(enum_value)
     def get_acquisition_protocol(self) -> str:
         """
         Returns: String
         """
-        value =  self.get_java_object().getAcquisitionProtocol()
+        value = self.get_java_object().getAcquisitionProtocol()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_acquisition_protocol(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setAcquisitionProtocol(value.get_java_object())
+        if value not in ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]:
+            raise ValueError(value + ' is not a valid CommunicationLinkProtocol. Valid values are: ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "CommunicationLinkProtocol", value)
+        self.get_java_object().setAcquisitionProtocol(enum_value)
     def get_allocated_item(self) -> ExchangeItem:
         """
         Returns: ExchangeItem
         """
-        value =  self.get_java_object().getAllocatedItem()
+        value = self.get_java_object().getAllocatedItem()
         if value is None:
             return value
         else:
@@ -3648,7 +3649,7 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
         """
         Returns: String
         """
-        value =  self.get_java_object().getExchangeMechanism()
+        value = self.get_java_object().getExchangeMechanism()
         if value is None:
             return value
         else:
@@ -3657,7 +3658,10 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setExchangeMechanism(get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeMechanism", value))
+        if value not in ["UNSET", "FLOW", "OPERATION", "EVENT", "SHARED_DATA"]:
+            raise ValueError(value + ' is not a valid ExchangeMechanism. Valid values are: ["UNSET", "FLOW", "OPERATION", "EVENT", "SHARED_DATA"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "ExchangeMechanism", value)
+        self.get_java_object().setExchangeMechanism(enum_value)
     def get_owned_elements(self) -> List[ExchangeItemElement]:
         """
         Returns: ExchangeItemElement[*]
@@ -3760,7 +3764,7 @@ class PortAllocation(CapellaElement):
         """
         Returns: Port
         """
-        value =  self.get_java_object().getAllocatedPort()
+        value = self.get_java_object().getAllocatedPort()
         if value is None:
             return value
         else:
@@ -3776,7 +3780,7 @@ class PortAllocation(CapellaElement):
         """
         Returns: Port
         """
-        value =  self.get_java_object().getAllocatingPort()
+        value = self.get_java_object().getAllocatingPort()
         if value is None:
             return value
         else:
@@ -3809,7 +3813,7 @@ class FunctionPort(Port):
         """
         Returns: ComponentPort[0..1]
         """
-        value =  self.get_java_object().getRepresentedComponentPort()
+        value = self.get_java_object().getRepresentedComponentPort()
         if value is None:
             return value
         else:
@@ -3913,7 +3917,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
         """
         Returns: FunctionOutputPort
         """
-        value =  self.get_java_object().getSource()
+        value = self.get_java_object().getSource()
         if value is None:
             return value
         else:
@@ -3929,7 +3933,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
         """
         Returns: FunctionInputPort
         """
-        value =  self.get_java_object().getTarget()
+        value = self.get_java_object().getTarget()
         if value is None:
             return value
         else:
@@ -4051,7 +4055,7 @@ class FunctionalChain(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getPreCondition()
+        value = self.get_java_object().getPreCondition()
         if value is None:
             return value
         else:
@@ -4067,7 +4071,7 @@ class FunctionalChain(CapellaElement):
         """
         Returns: Constraint[0..1]
         """
-        value =  self.get_java_object().getPostCondition()
+        value = self.get_java_object().getPostCondition()
         if value is None:
             return value
         else:
@@ -4147,11 +4151,19 @@ class ComponentPort(Port, InformationsExchanger):
         """
         Returns: String
         """
-        value =  self.get_java_object().getOrientation()
+        value = self.get_java_object().getOrientation()
         if value is None:
             return value
         else:
             return value.getName()
+    def set_orientation(self, value: str):
+        """
+        Parameters: value: String
+        """
+        if value not in ["UNSET", "IN", "OUT", "INOUT"]:
+            raise ValueError(value + ' is not a valid OrientationPortKind. Valid values are: ["UNSET", "IN", "OUT", "INOUT"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/fa/" + capella_version(), "OrientationPortKind", value)
+        self.get_java_object().setOrientation(enum_value)
     def get_component_exchanges(self) -> List[ComponentExchange]:
         """
         Returns: ComponentExchange[*]
@@ -4191,18 +4203,19 @@ class ComponentPort(Port, InformationsExchanger):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        if value not in ["STANDARD", "FLOW"]:
+            raise ValueError(value + ' is not a valid ComponentPortKind. Valid values are: ["STANDARD", "FLOW"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentPortKind", value)
+        self.get_java_object().setKind(enum_value)
 
 class ComponentExchange(CapellaElement, AbstractExchange):
     """
@@ -4223,18 +4236,19 @@ class ComponentExchange(CapellaElement, AbstractExchange):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        if value not in ["UNSET", "DELEGATION", "ASSEMBLY", "FLOW"]:
+            raise ValueError(value + ' is not a valid ComponentExchangeKind. Valid values are: ["UNSET", "DELEGATION", "ASSEMBLY", "FLOW"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeKind", value)
+        self.get_java_object().setKind(enum_value)
     def get_connected_component_ports(self) -> ComponentPort:
         """
         Returns: ComponentPort[2]
@@ -4289,7 +4303,7 @@ class ComponentExchange(CapellaElement, AbstractExchange):
         """
         Returns: ComponentPort
         """
-        value =  self.get_java_object().getSourcePort()
+        value = self.get_java_object().getSourcePort()
         if value is None:
             return value
         else:
@@ -4300,7 +4314,7 @@ class ComponentExchange(CapellaElement, AbstractExchange):
         """
         Returns: ComponentPort
         """
-        value =  self.get_java_object().getTargetPort()
+        value = self.get_java_object().getTargetPort()
         if value is None:
             return value
         else:
@@ -4353,7 +4367,7 @@ class AbstractCapability(PropertyValuePkgContainer):
         """
         Returns: Constraint
         """
-        value =  self.get_java_object().getPreCondition()
+        value = self.get_java_object().getPreCondition()
         if value is None:
             return value
         else:
@@ -4369,7 +4383,7 @@ class AbstractCapability(PropertyValuePkgContainer):
         """
         Returns: Constraint
         """
-        value =  self.get_java_object().getPostCondition()
+        value = self.get_java_object().getPostCondition()
         if value is None:
             return value
         else:
@@ -4515,7 +4529,7 @@ class ComponentExchangeFunctionalExchangeAllocation(AbstractFunctionAllocation):
         """
         Returns: FunctionalExchange
         """
-        value =  self.get_java_object().getAllocatedFunctionalExchange()
+        value = self.get_java_object().getAllocatedFunctionalExchange()
         if value is None:
             return value
         else:
@@ -4526,7 +4540,7 @@ class ComponentExchangeFunctionalExchangeAllocation(AbstractFunctionAllocation):
         """
         Returns: ComponentExchange
         """
-        value =  self.get_java_object().getAllocatingComponentExchange()
+        value = self.get_java_object().getAllocatingComponentExchange()
         if value is None:
             return value
         else:
@@ -4617,7 +4631,7 @@ class BooleanReference(AbstractBooleanValue):
         """
         Returns: AbstractBooleanValue[0..1]
         """
-        value =  self.get_java_object().getReferencedValue()
+        value = self.get_java_object().getReferencedValue()
         if value is None:
             return value
         else:
@@ -4633,7 +4647,7 @@ class BooleanReference(AbstractBooleanValue):
         """
         Returns: Property[0..1]
         """
-        value =  self.get_java_object().getReferencedProperty()
+        value = self.get_java_object().getReferencedProperty()
         if value is None:
             return value
         else:
@@ -4679,7 +4693,7 @@ class EnumerationReference(AbstractEnumerationValue):
         """
         Returns: AbstractEnumerationValue[0..1]
         """
-        value =  self.get_java_object().getReferencedValue()
+        value = self.get_java_object().getReferencedValue()
         if value is None:
             return value
         else:
@@ -4695,7 +4709,7 @@ class EnumerationReference(AbstractEnumerationValue):
         """
         Returns: Property[0..1]
         """
-        value =  self.get_java_object().getReferencedProperty()
+        value = self.get_java_object().getReferencedProperty()
         if value is None:
             return value
         else:
@@ -4766,7 +4780,7 @@ class StringReference(AbstractStringValue):
         """
         Returns: AbstractStringValue[0..1]
         """
-        value =  self.get_java_object().getReferencedValue()
+        value = self.get_java_object().getReferencedValue()
         if value is None:
             return value
         else:
@@ -4782,7 +4796,7 @@ class StringReference(AbstractStringValue):
         """
         Returns: Property[0..1]
         """
-        value =  self.get_java_object().getReferencedProperty()
+        value = self.get_java_object().getReferencedProperty()
         if value is None:
             return value
         else:
@@ -4829,7 +4843,7 @@ class NumericValue(DataValue):
         """
         Returns: NumericType[0..1]
         """
-        value =  self.get_java_object().getNumericType()
+        value = self.get_java_object().getNumericType()
         if value is None:
             return value
         else:
@@ -4880,7 +4894,7 @@ class NumericReference(DataValue):
         """
         Returns: NumericValue[0..1]
         """
-        value =  self.get_java_object().getReferencedValue()
+        value = self.get_java_object().getReferencedValue()
         if value is None:
             return value
         else:
@@ -4896,7 +4910,7 @@ class NumericReference(DataValue):
         """
         Returns: Property[0..1]
         """
-        value =  self.get_java_object().getReferencedProperty()
+        value = self.get_java_object().getReferencedProperty()
         if value is None:
             return value
         else:
@@ -4957,7 +4971,7 @@ class ComplexValueReference(AbstractComplexValue):
         """
         Returns: AbstractComplexValue[0..1]
         """
-        value =  self.get_java_object().getReferencedValue()
+        value = self.get_java_object().getReferencedValue()
         if value is None:
             return value
         else:
@@ -5033,7 +5047,7 @@ class CollectionValueReference(AbstractCollectionValue):
         """
         Returns: AbstractCollectionValue[0..1]
         """
-        value =  self.get_java_object().getReferencedValue()
+        value = self.get_java_object().getReferencedValue()
         if value is None:
             return value
         else:
@@ -5049,7 +5063,7 @@ class CollectionValueReference(AbstractCollectionValue):
         """
         Returns: Property[0..1]
         """
-        value =  self.get_java_object().getReferencedProperty()
+        value = self.get_java_object().getReferencedProperty()
         if value is None:
             return value
         else:
@@ -5085,7 +5099,7 @@ class CollectionValue(AbstractCollectionValue):
         """
         Returns: AbstractCollectionValue[0..1]
         """
-        value =  self.get_java_object().getOwnedDefaultElement()
+        value = self.get_java_object().getOwnedDefaultElement()
         if value is None:
             return value
         else:
@@ -5206,18 +5220,19 @@ class Class(DataType):
         """
         Returns: String
         """
-        value =  self.get_java_object().getVisibility()
+        value = self.get_java_object().getVisibility()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_visibility(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setVisibility(value.get_java_object())
+        if value not in ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]:
+            raise ValueError(value + ' is not a valid VisibilityKind. Valid values are: ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/core/" + capella_version(), "VisibilityKind", value)
+        self.get_java_object().setVisibility(enum_value)
     def get_contained_properties(self) -> List[Property]:
         """
         Returns: Property[*]
@@ -5317,50 +5332,53 @@ class Collection(DataType):
         """
         Returns: String
         """
-        value =  self.get_java_object().getCollectionKind()
+        value = self.get_java_object().getCollectionKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_collection_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setCollectionKind(value.get_java_object())
+        if value not in ["ARRAY", "SEQUENCE"]:
+            raise ValueError(value + ' is not a valid CollectionKind. Valid values are: ["ARRAY", "SEQUENCE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "CollectionKind", value)
+        self.get_java_object().setCollectionKind(enum_value)
     def get_aggregation_kind(self) -> str:
         """
         Returns: String
         """
-        value =  self.get_java_object().getAggregationKind()
+        value = self.get_java_object().getAggregationKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_aggregation_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setAggregationKind(value.get_java_object())
+        if value not in ["UNSET", "ASSOCIATION", "AGGREGATION", "COMPOSITION"]:
+            raise ValueError(value + ' is not a valid AggregationKind. Valid values are: ["UNSET", "ASSOCIATION", "AGGREGATION", "COMPOSITION"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "AggregationKind", value)
+        self.get_java_object().setAggregationKind(enum_value)
     def get_visibility(self) -> str:
         """
         Returns: String
         """
-        value =  self.get_java_object().getVisibility()
+        value = self.get_java_object().getVisibility()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_visibility(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setVisibility(value.get_java_object())
+        if value not in ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]:
+            raise ValueError(value + ' is not a valid VisibilityKind. Valid values are: ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/core/" + capella_version(), "VisibilityKind", value)
+        self.get_java_object().setVisibility(enum_value)
     def get_contained_operations(self) -> List[Operation]:
         """
         Returns: Operation[*]
@@ -5370,7 +5388,7 @@ class Collection(DataType):
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getMinCard()
+        value = self.get_java_object().getMinCard()
         if value is None:
             return value
         else:
@@ -5381,7 +5399,7 @@ class Collection(DataType):
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getMaxCard()
+        value = self.get_java_object().getMaxCard()
         if value is None:
             return value
         else:
@@ -5454,18 +5472,19 @@ class Union(DataType):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        if value not in ["UNION", "VARIANT"]:
+            raise ValueError(value + ' is not a valid UnionKind. Valid values are: ["UNION", "VARIANT"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/" + capella_version(), "UnionKind", value)
+        self.get_java_object().setKind(enum_value)
     def get_contained_operations(self) -> List[Operation]:
         """
         Returns: Operation[*]
@@ -5510,7 +5529,7 @@ class Property(JavaObject):
         """
         Returns: DataType
         """
-        value =  self.get_java_object().getType()
+        value = self.get_java_object().getType()
         if value is None:
             return value
         else:
@@ -5558,18 +5577,19 @@ class Operation(JavaObject):
         """
         Returns: String
         """
-        value =  self.get_java_object().getVisibility()
+        value = self.get_java_object().getVisibility()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_visibility(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setVisibility(value.get_java_object())
+        if value not in ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]:
+            raise ValueError(value + ' is not a valid VisibilityKind. Valid values are: ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/core/" + capella_version(), "VisibilityKind", value)
+        self.get_java_object().setVisibility(enum_value)
     def get_realized_exchange_items(self) -> List[ExchangeItem]:
         """
         Returns: ExchangeItem[*]
@@ -5630,18 +5650,19 @@ class CapellaException(JavaObject):
         """
         Returns: String
         """
-        value =  self.get_java_object().getVisibility()
+        value = self.get_java_object().getVisibility()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_visibility(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setVisibility(value.get_java_object())
+        if value not in ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]:
+            raise ValueError(value + ' is not a valid VisibilityKind. Valid values are: ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/core/" + capella_version(), "VisibilityKind", value)
+        self.get_java_object().setVisibility(enum_value)
     def get_super(self) -> List[CapellaException]:
         """
         Returns: CapellaException[*]
@@ -5697,18 +5718,19 @@ class PrimitiveDataType(PropertyValuePkgContainer, DataType):
         """
         Returns: String
         """
-        value =  self.get_java_object().getVisibility()
+        value = self.get_java_object().getVisibility()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_visibility(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setVisibility(value.get_java_object())
+        if value not in ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]:
+            raise ValueError(value + ' is not a valid VisibilityKind. Valid values are: ["UNSET", "PUBLIC", "PROTECTED", "PRIVATE", "PACKAGE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/core/" + capella_version(), "VisibilityKind", value)
+        self.get_java_object().setVisibility(enum_value)
     def get_super(self) -> List[PrimitiveDataType]:
         """
         Returns: PrimitiveDataType[*]
@@ -5783,7 +5805,7 @@ class Enumeration(PrimitiveDataType):
         """
         Returns: EnumerationLiteral[0..1]
         """
-        value =  self.get_java_object().getDefaultValue()
+        value = self.get_java_object().getDefaultValue()
         if value is None:
             return value
         else:
@@ -5799,7 +5821,7 @@ class Enumeration(PrimitiveDataType):
         """
         Returns: EnumerationLiteral[0..1]
         """
-        value =  self.get_java_object().getMinValue()
+        value = self.get_java_object().getMinValue()
         if value is None:
             return value
         else:
@@ -5815,7 +5837,7 @@ class Enumeration(PrimitiveDataType):
         """
         Returns: EnumerationLiteral[0..1]
         """
-        value =  self.get_java_object().getMaxValue()
+        value = self.get_java_object().getMaxValue()
         if value is None:
             return value
         else:
@@ -5831,7 +5853,7 @@ class Enumeration(PrimitiveDataType):
         """
         Returns: EnumerationLiteral[0..1]
         """
-        value =  self.get_java_object().getNullValue()
+        value = self.get_java_object().getNullValue()
         if value is None:
             return value
         else:
@@ -5847,7 +5869,7 @@ class Enumeration(PrimitiveDataType):
         """
         Returns: PrimitiveDataType[0..1]
         """
-        value =  self.get_java_object().getDomainType()
+        value = self.get_java_object().getDomainType()
         if value is None:
             return value
         else:
@@ -5883,7 +5905,7 @@ class EnumerationLiteral(DataValue):
         """
         Returns: Enumeration[0..1]
         """
-        value =  self.get_java_object().getEnumerationType()
+        value = self.get_java_object().getEnumerationType()
         if value is None:
             return value
         else:
@@ -5919,7 +5941,7 @@ class BooleanType(PrimitiveDataType):
         """
         Returns: LiteralBooleanValue[0..1]
         """
-        value =  self.get_java_object().getDefaultValue()
+        value = self.get_java_object().getDefaultValue()
         if value is None:
             return value
         else:
@@ -5980,7 +6002,7 @@ class StringType(PrimitiveDataType):
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getMinLength()
+        value = self.get_java_object().getMinLength()
         if value is None:
             return value
         else:
@@ -5991,7 +6013,7 @@ class StringType(PrimitiveDataType):
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getMaxLength()
+        value = self.get_java_object().getMaxLength()
         if value is None:
             return value
         else:
@@ -6002,7 +6024,7 @@ class StringType(PrimitiveDataType):
         """
         Returns: LiteralStringValue[0..1]
         """
-        value =  self.get_java_object().getDefaultValue()
+        value = self.get_java_object().getDefaultValue()
         if value is None:
             return value
         else:
@@ -6013,7 +6035,7 @@ class StringType(PrimitiveDataType):
         """
         Returns: LiteralStringValue[0..1]
         """
-        value =  self.get_java_object().getNullValue()
+        value = self.get_java_object().getNullValue()
         if value is None:
             return value
         else:
@@ -6069,23 +6091,24 @@ class NumericType(PrimitiveDataType):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        if value not in ["INTEGER", "FLOAT"]:
+            raise ValueError(value + ' is not a valid NumericTypeKind. Valid values are: ["INTEGER", "FLOAT"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/datatype/" + capella_version(), "NumericTypeKind", value)
+        self.get_java_object().setKind(enum_value)
     def get_min_value(self) -> LiteralNumericValue:
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getMinValue()
+        value = self.get_java_object().getMinValue()
         if value is None:
             return value
         else:
@@ -6096,7 +6119,7 @@ class NumericType(PrimitiveDataType):
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getMaxValue()
+        value = self.get_java_object().getMaxValue()
         if value is None:
             return value
         else:
@@ -6107,7 +6130,7 @@ class NumericType(PrimitiveDataType):
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getDefaultValue()
+        value = self.get_java_object().getDefaultValue()
         if value is None:
             return value
         else:
@@ -6118,7 +6141,7 @@ class NumericType(PrimitiveDataType):
         """
         Returns: LiteralNumericValue[0..1]
         """
-        value =  self.get_java_object().getNullValue()
+        value = self.get_java_object().getNullValue()
         if value is None:
             return value
         else:
@@ -6277,7 +6300,7 @@ class GenericTrace(Trace):
         """
         Returns: TraceableElement
         """
-        value =  self.get_java_object().getSource()
+        value = self.get_java_object().getSource()
         if value is None:
             return value
         else:
@@ -6288,7 +6311,7 @@ class GenericTrace(Trace):
         """
         Returns: TraceableElement
         """
-        value =  self.get_java_object().getTarget()
+        value = self.get_java_object().getTarget()
         if value is None:
             return value
         else:
@@ -6346,7 +6369,7 @@ class Interaction(AbstractEvent):
         """
         Returns: OperationalActivity
         """
-        value =  self.get_java_object().getSource()
+        value = self.get_java_object().getSource()
         if value is None:
             return value
         else:
@@ -6362,7 +6385,7 @@ class Interaction(AbstractEvent):
         """
         Returns: OperationalActivity
         """
-        value =  self.get_java_object().getTarget()
+        value = self.get_java_object().getTarget()
         if value is None:
             return value
         else:
@@ -6378,7 +6401,7 @@ class Interaction(AbstractEvent):
         """
         Returns: CommunicationMean[0..1]
         """
-        value =  self.get_java_object().getAllocatingCommunicationMean()
+        value = self.get_java_object().getAllocatingCommunicationMean()
         if value is None:
             return value
         else:
@@ -6682,18 +6705,19 @@ class TimeEvent(AbstractEvent):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        if value not in ["AT", "AFTER"]:
+            raise ValueError(value + ' is not a valid TimeEventKind. Valid values are: ["AT", "AFTER"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/common/" + capella_version(), "TimeEventKind", value)
+        self.get_java_object().setKind(enum_value)
     def get_expression(self) -> str:
         """
         Returns: String
@@ -6773,18 +6797,19 @@ class Function(AbstractActivityFunction):
         """
         Returns: String
         """
-        value =  self.get_java_object().getKind()
+        value = self.get_java_object().getKind()
         if value is None:
             return value
         else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
+            return value.getName()
     def set_kind(self, value: str):
         """
         Parameters: value: String
         """
-        return self.get_java_object().setKind(value.get_java_object())
+        if value not in ["FUNCTION", "DUPLICATE", "GATHER", "SELECT", "SPLIT", "ROUTE"]:
+            raise ValueError(value + ' is not a valid FunctionKind. Valid values are: ["FUNCTION", "DUPLICATE", "GATHER", "SELECT", "SPLIT", "ROUTE"]')
+        enum_value = get_enum_literal("http://www.polarsys.org/capella/core/fa/" + capella_version(), "FunctionKind", value)
+        self.get_java_object().setKind(enum_value)
     def get_condition(self) -> str:
         """
         Returns: String
@@ -6951,7 +6976,7 @@ class ComponentFunctionalAllocation(AbstractFunctionAllocation):
         """
         Returns: AbstractFunctionalBlock
         """
-        value =  self.get_java_object().getBlock()
+        value = self.get_java_object().getBlock()
         if value is None:
             return value
         else:
@@ -6962,7 +6987,7 @@ class ComponentFunctionalAllocation(AbstractFunctionAllocation):
         """
         Returns: Function
         """
-        value =  self.get_java_object().getFunction()
+        value = self.get_java_object().getFunction()
         if value is None:
             return value
         else:
@@ -7129,7 +7154,7 @@ class SystemActor(BehavioralComponent, Node):
         """
         Returns: SystemComponentPkg
         """
-        value =  self.get_java_object().getOwnedSystemComponentPkgs()
+        value = self.get_java_object().getOwnedSystemComponentPkgs()
         if value is None:
             return value
         else:

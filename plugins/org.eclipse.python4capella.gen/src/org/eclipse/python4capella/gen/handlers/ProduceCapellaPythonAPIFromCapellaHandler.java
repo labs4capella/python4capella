@@ -25,6 +25,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
@@ -50,6 +51,7 @@ import org.polarsys.capella.core.data.information.Parameter;
 import org.polarsys.capella.core.data.information.ParameterDirection;
 import org.polarsys.capella.core.data.information.Property;
 import org.polarsys.capella.core.data.information.datatype.Enumeration;
+import org.polarsys.capella.core.data.information.datavalue.EnumerationLiteral;
 import org.polarsys.capella.core.data.information.datavalue.LiteralNumericValue;
 import org.polarsys.capella.core.data.information.datavalue.NumericValue;
 import org.polarsys.capella.core.data.information.util.PropertyNamingHelper;
@@ -506,29 +508,33 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 
 			if (isScalar(property)) {
 				if (isAttribute(property)) {
-					res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
-					res.append(getDocumentation(property, false));
-					res.append("        return self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
-					res.append("    def " + setterName + "(self, value: " + getTypeAnnotation(property) + "):" + NL);
-					res.append(getDocumentation(property, false));
-					res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(value)" + NL);
+					res.append(getAttributeGetter(cls, property, getterName));
+					res.append(getAttributeSetter(cls, property, setterName));
 				} else {
-					res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
-					res.append(getDocumentation(property, false));
-					res.append(
-							"        value =  self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
-					res.append("        if value is None:" + NL);
-					res.append("            return value" + NL);
-					res.append("        else:" + NL);
-					res.append("            e_object_class = getattr(sys.modules[\"__main__\"], \"EObject\")" + NL);
-					res.append("            specific_cls = e_object_class.get_class(value)" + NL);
-					res.append("            return specific_cls(value)" + NL);
+					if (property.getType() instanceof Enumeration) {
+						res.append(getEnumerationGetter(cls, property, getterName));
+					} else {
+						res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
+						res.append(getDocumentation(property, false));
+						res.append("        value = self.get_java_object()." + getJavaGetterName(cls, property) + "()"
+								+ NL);
+						res.append("        if value is None:" + NL);
+						res.append("            return value" + NL);
+						res.append("        else:" + NL);
+						res.append("            e_object_class = getattr(sys.modules[\"__main__\"], \"EObject\")" + NL);
+						res.append("            specific_cls = e_object_class.get_class(value)" + NL);
+						res.append("            return specific_cls(value)" + NL);
+					}
 					if (!property.isIsReadOnly() && !property.isIsDerived()) {
-						res.append(
-								"    def " + setterName + "(self, value: " + getTypeAnnotation(property) + "):" + NL);
-						res.append(getDocumentation(property, true));
-						res.append("        return self.get_java_object()." + getJavaSetterName(cls, property)
-								+ "(value.get_java_object())" + NL);
+						if (property.getType() instanceof Enumeration) {
+							res.append(getEnumerationSetter(cls, property, setterName));
+						} else {
+							res.append("    def " + setterName + "(self, value: " + getTypeAnnotation(property) + "):"
+									+ NL);
+							res.append(getDocumentation(property, true));
+							res.append("        return self.get_java_object()." + getJavaSetterName(cls, property)
+									+ "(value.get_java_object())" + NL);
+						}
 					}
 				}
 			} else {
@@ -540,6 +546,73 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 
 		return res.toString();
+	}
+
+	private String getAttributeSetter(Class cls, Property property, final String setterName) {
+		final StringBuilder res = new StringBuilder();
+
+		res.append("    def " + setterName + "(self, value: " + getTypeAnnotation(property) + "):" + NL);
+		res.append(getDocumentation(property, false));
+		res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(value)" + NL);
+
+		return res.toString();
+	}
+
+	private String getEnumerationSetter(Class cls, Property property, final String setterName) {
+		final StringBuilder res = new StringBuilder();
+
+		res.append("    def " + setterName + "(self, value: " + getTypeAnnotation(property) + "):" + NL);
+		res.append(getDocumentation(property, true));
+		final String enumValuesArray = getEnumValuesArray((Enumeration) property.getType());
+		res.append("        if value not in " + enumValuesArray + ":" + NL);
+		res.append("            raise ValueError(value + ' is not a valid " + property.getType().getName()
+				+ ". Valid values are: " + enumValuesArray + "')" + NL);
+		final String nsURIString;
+		final EEnum eEnum = findCorrespondingEEnum((Enumeration) property.getType());
+		if (eEnum.getEPackage().getNsURI().contains("capella")) {
+			nsURIString = "\""
+					+ eEnum.getEPackage().getNsURI().substring(0, eEnum.getEPackage().getNsURI().lastIndexOf("/") + 1)
+					+ "\"" + " + capella_version()";
+		} else {
+			nsURIString = "\"" + eEnum.getEPackage().getNsURI() + "\"";
+		}
+		res.append(
+				"        enum_value = get_enum_literal(" + nsURIString + ", \"" + eEnum.getName() + "\", value)" + NL);
+		res.append("        self.get_java_object()." + getJavaSetterName(cls, property) + "(enum_value)" + NL);
+
+		return res.toString();
+	}
+
+	private String getAttributeGetter(Class cls, Property property, final String getterName) {
+		final StringBuilder res = new StringBuilder();
+
+		res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
+		res.append(getDocumentation(property, false));
+		res.append("        return self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
+
+		return res.toString();
+	}
+
+	private String getEnumerationGetter(Class cls, Property property, final String getterName) {
+		final StringBuilder res = new StringBuilder();
+
+		res.append("    def " + getterName + "(self) -> " + getTypeAnnotation(property) + ":" + NL);
+		res.append(getDocumentation(property, false));
+		res.append("        value = self.get_java_object()." + getJavaGetterName(cls, property) + "()" + NL);
+		res.append("        if value is None:" + NL);
+		res.append("            return value" + NL);
+		res.append("        else:" + NL);
+		res.append("            return value.getName()" + NL);
+
+		return res.toString();
+	}
+
+	private String getEnumValuesArray(Enumeration enumeration) {
+		final StringJoiner joiner = new StringJoiner(", ");
+		for (EnumerationLiteral literal : enumeration.getOwnedLiterals()) {
+			joiner.add("\"" + literal.getName() + "\"");
+		}
+		return "[" + joiner.toString() + "]";
 	}
 
 	private String generateOperation(Operation operation) {
@@ -671,6 +744,19 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		}
 
 		return (EClass) res;
+	}
+
+	private EEnum findCorrespondingEEnum(Enumeration enumeration) {
+		EClassifier res = null;
+
+		for (EPackage ePkg : ePackages) {
+			res = ePkg.getEClassifier(enumeration.getLabel());
+			if (res instanceof EEnum) {
+				break;
+			}
+		}
+
+		return (EEnum) res;
 	}
 
 	private String getClassCustomization(String clsNameAndFeatureName, CapellaElement element) {

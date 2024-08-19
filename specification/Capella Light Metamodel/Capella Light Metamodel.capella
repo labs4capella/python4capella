@@ -1561,7 +1561,8 @@
                   id="37b0a484-0ea6-4ffa-847d-4002d118e699" super="#7bd88617-cd02-494f-b666-d250ff6417d6"
                   sub="#8b69e00f-7379-4d4e-8bb7-d8ff6ab7ea71"/>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
-                  id="c2c62b62-2097-4721-80b1-b3f2c6185aef" name="kind" abstractType="#2d7b4a1a-7fdb-4341-b057-4e2c6c9809ab">
+                  id="c2c62b62-2097-4721-80b1-b3f2c6185aef" name="kind" abstractType="#2d7b4a1a-7fdb-4341-b057-4e2c6c9809ab"
+                  isReadOnly="true">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="e2cc23a4-6ecd-48e7-8275-b3ac81faa322" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

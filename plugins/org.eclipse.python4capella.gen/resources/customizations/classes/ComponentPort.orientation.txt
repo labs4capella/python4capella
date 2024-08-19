@@ -1,7 +1,0 @@
-    def get_orientation(self) -> str:
-        value =  self.get_java_object().getOrientation()
-        if value is None:
-            return value
-        else:
-            return value.getName()
-

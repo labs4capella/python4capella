@@ -1081,12 +1081,6 @@ class capella_tests(unittest.TestCase):
         tested.get_kind()
         pass
 
-    def test_PropertyValue_kind_setter(self):
-        tested = PropertyValue()
-        value = PropertyValueKind()
-        tested.set_kind(value)
-        pass
-
     def test_PropertyValue_value_getter(self):
         tested = PropertyValue()
         tested.get_value()
@@ -6438,7 +6432,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_kind_setter(self):
         tested = OperationalActivity()
-        value = FunctionKind()
+        value = "FUNCTION"
         tested.set_kind(value)
         pass
 
@@ -10494,7 +10488,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_kind_setter(self):
         tested = SystemFunction()
-        value = FunctionKind()
+        value = "FUNCTION"
         tested.set_kind(value)
         pass
 
@@ -14319,7 +14313,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_kind_setter(self):
         tested = LogicalFunction()
-        value = FunctionKind()
+        value = "FUNCTION"
         tested.set_kind(value)
         pass
 
@@ -18020,7 +18014,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_kind_setter(self):
         tested = PhysicalFunction()
-        value = FunctionKind()
+        value = "FUNCTION"
         tested.set_kind(value)
         pass
 
@@ -19140,7 +19134,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_kind_setter(self):
         tested = BehaviorPC()
-        value = "HARDWARE"
+        value = "UNSET"
         tested.set_kind(value)
         pass
 
@@ -21477,7 +21471,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_kind_setter(self):
         tested = ConfigurationItem()
-        value = ConfigurationItemKind()
+        value = "Unset"
         tested.set_kind(value)
         pass
 
@@ -24319,7 +24313,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_kind_setter(self):
         tested = TimeEvent()
-        value = TimeEventKind()
+        value = "AT"
         tested.set_kind(value)
         pass
 
@@ -28670,7 +28664,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_visibility_setter(self):
         tested = Interface()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -29063,7 +29057,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_transmission_protocol_setter(self):
         tested = ExchangeItemAllocation()
-        value = CommunicationLinkProtocol()
+        value = "UNSET"
         tested.set_transmission_protocol(value)
         pass
 
@@ -29074,7 +29068,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_acquisition_protocol_setter(self):
         tested = ExchangeItemAllocation()
-        value = CommunicationLinkProtocol()
+        value = "UNSET"
         tested.set_acquisition_protocol(value)
         pass
 
@@ -29429,7 +29423,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_exchange_mechanism_setter(self):
         tested = ExchangeItem()
-        value = "FLOW"
+        value = "UNSET"
         tested.set_exchange_mechanism(value)
         pass
 
@@ -32358,7 +32352,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_orientation_setter(self):
         tested = ComponentPort()
-        value = OrientationPortKind()
+        value = "UNSET"
         tested.set_orientation(value)
         pass
 
@@ -32446,7 +32440,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_kind_setter(self):
         tested = ComponentPort()
-        value = ComponentPortKind()
+        value = "STANDARD"
         tested.set_kind(value)
         pass
 
@@ -32762,7 +32756,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_kind_setter(self):
         tested = ComponentExchange()
-        value = ComponentExchangeKind()
+        value = "UNSET"
         tested.set_kind(value)
         pass
 
@@ -39182,7 +39176,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Class_visibility_setter(self):
         tested = Class()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -39580,7 +39574,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Collection_collection_kind_setter(self):
         tested = Collection()
-        value = CollectionKind()
+        value = "ARRAY"
         tested.set_collection_kind(value)
         pass
 
@@ -39591,7 +39585,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Collection_aggregation_kind_setter(self):
         tested = Collection()
-        value = AggregationKind()
+        value = "UNSET"
         tested.set_aggregation_kind(value)
         pass
 
@@ -39602,7 +39596,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Collection_visibility_setter(self):
         tested = Collection()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -39966,7 +39960,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Union_kind_setter(self):
         tested = Union()
-        value = UnionKind()
+        value = "UNION"
         tested.set_kind(value)
         pass
 
@@ -40304,7 +40298,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operation_visibility_setter(self):
         tested = Operation()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -40353,7 +40347,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapellaException_visibility_setter(self):
         tested = CapellaException()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -40419,7 +40413,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_visibility_setter(self):
         tested = Enumeration()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -41238,7 +41232,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_visibility_setter(self):
         tested = BooleanType()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -41647,7 +41641,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_visibility_setter(self):
         tested = StringType()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -42093,7 +42087,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_visibility_setter(self):
         tested = NumericType()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
@@ -42486,7 +42480,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_kind_setter(self):
         tested = NumericType()
-        value = NumericTypeKind()
+        value = "INTEGER"
         tested.set_kind(value)
         pass
 
@@ -42550,7 +42544,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_kind_setter(self):
         tested = PhysicalQuantity()
-        value = NumericTypeKind()
+        value = "INTEGER"
         tested.set_kind(value)
         pass
 
@@ -42614,7 +42608,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_visibility_setter(self):
         tested = PhysicalQuantity()
-        value = VisibilityKind()
+        value = "UNSET"
         tested.set_visibility(value)
         pass
 
