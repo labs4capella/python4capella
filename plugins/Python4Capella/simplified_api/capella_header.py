@@ -31,6 +31,33 @@ class PropertyValuePkgContainer:
 class ModellingArchitecture:
     pass
 
+class Feature:
+    pass
+
+class TraceableElement:
+    pass
+
+class AbstractTrace:
+    pass
+
+class AbstractRelationship:
+    pass
+
+class Relationship:
+    pass
+
+class Allocation:
+    pass
+
+class AbstractInformationFlow:
+    pass
+
+class InformationsExchanger:
+    pass
+
+class Classifier:
+    pass
+
 class Diagram:
     pass
 
@@ -190,9 +217,6 @@ class ConstraintDuration:
 class Node:
     pass
 
-class PhysicalPort:
-    pass
-
 class PhysicalLink:
     pass
 
@@ -217,6 +241,12 @@ class ExchangeItem:
 class ExchangeItemElement:
     pass
 
+class Port:
+    pass
+
+class PortAllocation:
+    pass
+
 class FunctionPort:
     pass
 
@@ -235,9 +265,6 @@ class ExchangeCategory:
 class FunctionalChain:
     pass
 
-class BehavioralComponent:
-    pass
-
 class ComponentPort:
     pass
 
@@ -251,6 +278,15 @@ class AbstractCapability:
     pass
 
 class AbstractSystemCapability:
+    pass
+
+class AbstractFunctionalBlock:
+    pass
+
+class AbstractFunctionAllocation:
+    pass
+
+class ComponentExchangeFunctionalExchangeAllocation:
     pass
 
 class DataValue:
@@ -376,6 +412,18 @@ class SystemEngineering:
 class PropertyValuePkg:
     pass
 
+class Trace:
+    pass
+
+class GenericTrace:
+    pass
+
+class TransfoLink:
+    pass
+
+class JustificationLink:
+    pass
+
 class Interaction:
     pass
 
@@ -388,34 +436,13 @@ class OperationalEntity:
 class Capability:
     pass
 
-class System:
-    pass
-
-class SystemActor:
-    pass
-
 class CapabilityRealization:
-    pass
-
-class LogicalSystem:
-    pass
-
-class LogicalComponent:
-    pass
-
-class LogicalActor:
     pass
 
 class PhysicalSystem:
     pass
 
-class BehaviorPC:
-    pass
-
 class NodePC:
-    pass
-
-class PhysicalActor:
     pass
 
 class ChangeEvent:
@@ -427,7 +454,16 @@ class TimeEvent:
 class AbstractActivityFunction:
     pass
 
+class PhysicalPort:
+    pass
+
 class Function:
+    pass
+
+class BehavioralComponent:
+    pass
+
+class ComponentFunctionalAllocation:
     pass
 
 class OperationalActivity:
@@ -436,9 +472,30 @@ class OperationalActivity:
 class SystemFunction:
     pass
 
+class System:
+    pass
+
+class SystemActor:
+    pass
+
 class LogicalFunction:
     pass
 
+class LogicalSystem:
+    pass
+
+class LogicalComponent:
+    pass
+
+class LogicalActor:
+    pass
+
 class PhysicalFunction:
+    pass
+
+class BehaviorPC:
+    pass
+
+class PhysicalActor:
     pass
 

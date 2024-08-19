@@ -300,6 +300,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_SystemEngineering_owned_traces_getter(self):
+        tested = SystemEngineering()
+        tested.get_owned_traces()
+        pass
+
+    def test_SystemEngineering_owned_traces_setter(self):
+        tested = SystemEngineering()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_SystemEngineering_contained_generic_traces_getter(self):
+        tested = SystemEngineering()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_SystemEngineering_contained_generic_traces_setter(self):
+        tested = SystemEngineering()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_SystemEngineering_owned_diagrams_getter(self):
         tested = SystemEngineering()
         tested.get_owned_diagrams()
@@ -608,6 +630,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Constraint_owned_traces_getter(self):
+        tested = Constraint()
+        tested.get_owned_traces()
+        pass
+
+    def test_Constraint_owned_traces_setter(self):
+        tested = Constraint()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Constraint_contained_generic_traces_getter(self):
+        tested = Constraint()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Constraint_contained_generic_traces_setter(self):
+        tested = Constraint()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Constraint_owned_diagrams_getter(self):
         tested = Constraint()
         tested.get_owned_diagrams()
@@ -906,6 +950,28 @@ class capella_tests(unittest.TestCase):
         tested = PropertyValue()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PropertyValue_owned_traces_getter(self):
+        tested = PropertyValue()
+        tested.get_owned_traces()
+        pass
+
+    def test_PropertyValue_owned_traces_setter(self):
+        tested = PropertyValue()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PropertyValue_contained_generic_traces_getter(self):
+        tested = PropertyValue()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PropertyValue_contained_generic_traces_setter(self):
+        tested = PropertyValue()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PropertyValue_owned_diagrams_getter(self):
@@ -1224,6 +1290,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_PropertyValueGroup_owned_traces_getter(self):
+        tested = PropertyValueGroup()
+        tested.get_owned_traces()
+        pass
+
+    def test_PropertyValueGroup_owned_traces_setter(self):
+        tested = PropertyValueGroup()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PropertyValueGroup_contained_generic_traces_getter(self):
+        tested = PropertyValueGroup()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PropertyValueGroup_contained_generic_traces_setter(self):
+        tested = PropertyValueGroup()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_PropertyValueGroup_owned_diagrams_getter(self):
         tested = PropertyValueGroup()
         tested.get_owned_diagrams()
@@ -1518,6 +1606,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_PropertyValuePkg_owned_traces_getter(self):
+        tested = PropertyValuePkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_PropertyValuePkg_owned_traces_setter(self):
+        tested = PropertyValuePkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PropertyValuePkg_contained_generic_traces_getter(self):
+        tested = PropertyValuePkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PropertyValuePkg_contained_generic_traces_setter(self):
+        tested = PropertyValuePkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_PropertyValuePkg_owned_diagrams_getter(self):
         tested = PropertyValuePkg()
         tested.get_owned_diagrams()
@@ -1794,6 +1904,28 @@ class capella_tests(unittest.TestCase):
         tested = EnumerationPropertyType()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_EnumerationPropertyType_owned_traces_getter(self):
+        tested = EnumerationPropertyType()
+        tested.get_owned_traces()
+        pass
+
+    def test_EnumerationPropertyType_owned_traces_setter(self):
+        tested = EnumerationPropertyType()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_EnumerationPropertyType_contained_generic_traces_getter(self):
+        tested = EnumerationPropertyType()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_EnumerationPropertyType_contained_generic_traces_setter(self):
+        tested = EnumerationPropertyType()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_EnumerationPropertyType_owned_diagrams_getter(self):
@@ -2085,6 +2217,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_EnumerationPropertyLiteral_owned_traces_getter(self):
+        tested = EnumerationPropertyLiteral()
+        tested.get_owned_traces()
+        pass
+
+    def test_EnumerationPropertyLiteral_owned_traces_setter(self):
+        tested = EnumerationPropertyLiteral()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_EnumerationPropertyLiteral_contained_generic_traces_getter(self):
+        tested = EnumerationPropertyLiteral()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_EnumerationPropertyLiteral_contained_generic_traces_setter(self):
+        tested = EnumerationPropertyLiteral()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_EnumerationPropertyLiteral_owned_diagrams_getter(self):
         tested = EnumerationPropertyLiteral()
         tested.get_owned_diagrams()
@@ -2185,6 +2339,2331 @@ class capella_tests(unittest.TestCase):
         tested = EnumerationPropertyLiteral()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_Feature_id_getter(self):
+        tested = Feature()
+        tested.get_id()
+        pass
+
+    def test_Feature_id_setter(self):
+        tested = Feature()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Feature_sid_getter(self):
+        tested = Feature()
+        tested.get_sid()
+        pass
+
+    def test_Feature_sid_setter(self):
+        tested = Feature()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_Feature_name_getter(self):
+        tested = Feature()
+        tested.get_name()
+        pass
+
+    def test_Feature_name_setter(self):
+        tested = Feature()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_Feature_summary_getter(self):
+        tested = Feature()
+        tested.get_summary()
+        pass
+
+    def test_Feature_summary_setter(self):
+        tested = Feature()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_Feature_description_getter(self):
+        tested = Feature()
+        tested.get_description()
+        pass
+
+    def test_Feature_description_setter(self):
+        tested = Feature()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_Feature_status_getter(self):
+        tested = Feature()
+        tested.get_status()
+        pass
+
+    def test_Feature_status_setter(self):
+        tested = Feature()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_Feature_review_getter(self):
+        tested = Feature()
+        tested.get_review()
+        pass
+
+    def test_Feature_review_setter(self):
+        tested = Feature()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_Feature_visible_in_documentation_getter(self):
+        tested = Feature()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_Feature_visible_in_documentation_setter(self):
+        tested = Feature()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_Feature_visible_for_traceability_getter(self):
+        tested = Feature()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_Feature_visible_for_traceability_setter(self):
+        tested = Feature()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_Feature_owned_constraints_getter(self):
+        tested = Feature()
+        tested.get_owned_constraints()
+        pass
+
+    def test_Feature_constraints_getter(self):
+        tested = Feature()
+        tested.get_constraints()
+        pass
+
+    def test_Feature_constraints_setter(self):
+        tested = Feature()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_Feature_owned_property_values_getter(self):
+        tested = Feature()
+        tested.get_owned_property_values()
+        pass
+
+    def test_Feature_applied_property_values_getter(self):
+        tested = Feature()
+        tested.get_applied_property_values()
+        pass
+
+    def test_Feature_applied_property_values_setter(self):
+        tested = Feature()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_Feature_owned_property_value_groups_getter(self):
+        tested = Feature()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_Feature_applied_property_value_groups_getter(self):
+        tested = Feature()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_Feature_applied_property_value_groups_setter(self):
+        tested = Feature()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_Feature_owned_enumeration_property_types_getter(self):
+        tested = Feature()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Feature_get_owned_property_value_by_name(self):
+        tested = Feature()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Feature_get_applied_property_value_by_name(self):
+        tested = Feature()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Feature_get_owned_property_value_group_by_name(self):
+        tested = Feature()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Feature_get_applied_property_value_group_by_name(self):
+        tested = Feature()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Feature_owned_traces_getter(self):
+        tested = Feature()
+        tested.get_owned_traces()
+        pass
+
+    def test_Feature_owned_traces_setter(self):
+        tested = Feature()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Feature_contained_generic_traces_getter(self):
+        tested = Feature()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Feature_contained_generic_traces_setter(self):
+        tested = Feature()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_Feature_owned_diagrams_getter(self):
+        tested = Feature()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_Feature_element_of_interest_for_diagrams_getter(self):
+        tested = Feature()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_Feature_element_of_interest_for_diagrams_setter(self):
+        tested = Feature()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_Feature_contextual_element_for_diagrams_getter(self):
+        tested = Feature()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_Feature_contextual_element_for_diagrams_setter(self):
+        tested = Feature()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_Feature_representing_diagrams_getter(self):
+        tested = Feature()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_Feature__r_e_cs_getter(self):
+        tested = Feature()
+        tested.get__r_e_cs()
+        pass
+
+    def test_Feature__r_e_cs_setter(self):
+        tested = Feature()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_Feature__r_p_ls_getter(self):
+        tested = Feature()
+        tested.get__r_p_ls()
+        pass
+
+    def test_Feature__r_p_ls_setter(self):
+        tested = Feature()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_Feature_get_label(self):
+        tested = Feature()
+        tested.get_label()
+        pass
+
+    def test_Feature_get_element_type(self):
+        tested = Feature()
+        tested.get_element_type()
+        pass
+
+    def test_Feature_get_container(self):
+        tested = Feature()
+        tested.get_container()
+        pass
+
+    def test_Feature_get_container_by_type(self):
+        tested = Feature()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_Feature_get_contents(self):
+        tested = Feature()
+        tested.get_contents()
+        pass
+
+    def test_Feature_get_all_contents(self):
+        tested = Feature()
+        tested.get_all_contents()
+        pass
+
+    def test_Feature_get_all_contents_by_type(self):
+        tested = Feature()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_Feature_get_available_s_b_queries(self):
+        tested = Feature()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_Feature_get_query_result(self):
+        tested = Feature()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_GenericTrace_realized_flow_getter(self):
+        tested = GenericTrace()
+        tested.get_realized_flow()
+        pass
+
+    def test_GenericTrace_realized_flow_setter(self):
+        tested = GenericTrace()
+        value = AbstractInformationFlow()
+        tested.set_realized_flow(value)
+        pass
+
+    def test_GenericTrace_id_getter(self):
+        tested = GenericTrace()
+        tested.get_id()
+        pass
+
+    def test_GenericTrace_id_setter(self):
+        tested = GenericTrace()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_GenericTrace_sid_getter(self):
+        tested = GenericTrace()
+        tested.get_sid()
+        pass
+
+    def test_GenericTrace_sid_setter(self):
+        tested = GenericTrace()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_GenericTrace_name_getter(self):
+        tested = GenericTrace()
+        tested.get_name()
+        pass
+
+    def test_GenericTrace_name_setter(self):
+        tested = GenericTrace()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_GenericTrace_summary_getter(self):
+        tested = GenericTrace()
+        tested.get_summary()
+        pass
+
+    def test_GenericTrace_summary_setter(self):
+        tested = GenericTrace()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_GenericTrace_description_getter(self):
+        tested = GenericTrace()
+        tested.get_description()
+        pass
+
+    def test_GenericTrace_description_setter(self):
+        tested = GenericTrace()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_GenericTrace_status_getter(self):
+        tested = GenericTrace()
+        tested.get_status()
+        pass
+
+    def test_GenericTrace_status_setter(self):
+        tested = GenericTrace()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_GenericTrace_review_getter(self):
+        tested = GenericTrace()
+        tested.get_review()
+        pass
+
+    def test_GenericTrace_review_setter(self):
+        tested = GenericTrace()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_GenericTrace_visible_in_documentation_getter(self):
+        tested = GenericTrace()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_GenericTrace_visible_in_documentation_setter(self):
+        tested = GenericTrace()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_GenericTrace_visible_for_traceability_getter(self):
+        tested = GenericTrace()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_GenericTrace_visible_for_traceability_setter(self):
+        tested = GenericTrace()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_GenericTrace_owned_constraints_getter(self):
+        tested = GenericTrace()
+        tested.get_owned_constraints()
+        pass
+
+    def test_GenericTrace_constraints_getter(self):
+        tested = GenericTrace()
+        tested.get_constraints()
+        pass
+
+    def test_GenericTrace_constraints_setter(self):
+        tested = GenericTrace()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_GenericTrace_owned_property_values_getter(self):
+        tested = GenericTrace()
+        tested.get_owned_property_values()
+        pass
+
+    def test_GenericTrace_applied_property_values_getter(self):
+        tested = GenericTrace()
+        tested.get_applied_property_values()
+        pass
+
+    def test_GenericTrace_applied_property_values_setter(self):
+        tested = GenericTrace()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_GenericTrace_owned_property_value_groups_getter(self):
+        tested = GenericTrace()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_GenericTrace_applied_property_value_groups_getter(self):
+        tested = GenericTrace()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_GenericTrace_applied_property_value_groups_setter(self):
+        tested = GenericTrace()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_GenericTrace_owned_enumeration_property_types_getter(self):
+        tested = GenericTrace()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_GenericTrace_get_owned_property_value_by_name(self):
+        tested = GenericTrace()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_GenericTrace_get_applied_property_value_by_name(self):
+        tested = GenericTrace()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_GenericTrace_get_owned_property_value_group_by_name(self):
+        tested = GenericTrace()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_GenericTrace_get_applied_property_value_group_by_name(self):
+        tested = GenericTrace()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_GenericTrace_owned_traces_getter(self):
+        tested = GenericTrace()
+        tested.get_owned_traces()
+        pass
+
+    def test_GenericTrace_owned_traces_setter(self):
+        tested = GenericTrace()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_GenericTrace_contained_generic_traces_getter(self):
+        tested = GenericTrace()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_GenericTrace_contained_generic_traces_setter(self):
+        tested = GenericTrace()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_GenericTrace_owned_diagrams_getter(self):
+        tested = GenericTrace()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_GenericTrace_element_of_interest_for_diagrams_getter(self):
+        tested = GenericTrace()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_GenericTrace_element_of_interest_for_diagrams_setter(self):
+        tested = GenericTrace()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_GenericTrace_contextual_element_for_diagrams_getter(self):
+        tested = GenericTrace()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_GenericTrace_contextual_element_for_diagrams_setter(self):
+        tested = GenericTrace()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_GenericTrace_representing_diagrams_getter(self):
+        tested = GenericTrace()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_GenericTrace__r_e_cs_getter(self):
+        tested = GenericTrace()
+        tested.get__r_e_cs()
+        pass
+
+    def test_GenericTrace__r_e_cs_setter(self):
+        tested = GenericTrace()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_GenericTrace__r_p_ls_getter(self):
+        tested = GenericTrace()
+        tested.get__r_p_ls()
+        pass
+
+    def test_GenericTrace__r_p_ls_setter(self):
+        tested = GenericTrace()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_GenericTrace_get_label(self):
+        tested = GenericTrace()
+        tested.get_label()
+        pass
+
+    def test_GenericTrace_get_element_type(self):
+        tested = GenericTrace()
+        tested.get_element_type()
+        pass
+
+    def test_GenericTrace_get_container(self):
+        tested = GenericTrace()
+        tested.get_container()
+        pass
+
+    def test_GenericTrace_get_container_by_type(self):
+        tested = GenericTrace()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_GenericTrace_get_contents(self):
+        tested = GenericTrace()
+        tested.get_contents()
+        pass
+
+    def test_GenericTrace_get_all_contents(self):
+        tested = GenericTrace()
+        tested.get_all_contents()
+        pass
+
+    def test_GenericTrace_get_all_contents_by_type(self):
+        tested = GenericTrace()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_GenericTrace_get_available_s_b_queries(self):
+        tested = GenericTrace()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_GenericTrace_get_query_result(self):
+        tested = GenericTrace()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_GenericTrace_source_element_getter(self):
+        tested = GenericTrace()
+        tested.get_source_element()
+        pass
+
+    def test_GenericTrace_source_element_setter(self):
+        tested = GenericTrace()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_source_element(value)
+        pass
+
+    def test_GenericTrace_target_element_getter(self):
+        tested = GenericTrace()
+        tested.get_target_element()
+        pass
+
+    def test_GenericTrace_target_element_setter(self):
+        tested = GenericTrace()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_target_element(value)
+        pass
+
+    def test_GenericTrace_incoming_traces_getter(self):
+        tested = GenericTrace()
+        tested.get_incoming_traces()
+        pass
+
+    def test_GenericTrace_outgoing_traces_getter(self):
+        tested = GenericTrace()
+        tested.get_outgoing_traces()
+        pass
+
+    def test_GenericTrace_source_getter(self):
+        tested = GenericTrace()
+        tested.get_source()
+        pass
+
+    def test_GenericTrace_target_getter(self):
+        tested = GenericTrace()
+        tested.get_target()
+        pass
+
+    def test_Relationship_realized_flow_getter(self):
+        tested = Relationship()
+        tested.get_realized_flow()
+        pass
+
+    def test_Relationship_realized_flow_setter(self):
+        tested = Relationship()
+        value = AbstractInformationFlow()
+        tested.set_realized_flow(value)
+        pass
+
+    def test_Relationship_id_getter(self):
+        tested = Relationship()
+        tested.get_id()
+        pass
+
+    def test_Relationship_id_setter(self):
+        tested = Relationship()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Relationship_sid_getter(self):
+        tested = Relationship()
+        tested.get_sid()
+        pass
+
+    def test_Relationship_sid_setter(self):
+        tested = Relationship()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_Relationship_name_getter(self):
+        tested = Relationship()
+        tested.get_name()
+        pass
+
+    def test_Relationship_name_setter(self):
+        tested = Relationship()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_Relationship_summary_getter(self):
+        tested = Relationship()
+        tested.get_summary()
+        pass
+
+    def test_Relationship_summary_setter(self):
+        tested = Relationship()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_Relationship_description_getter(self):
+        tested = Relationship()
+        tested.get_description()
+        pass
+
+    def test_Relationship_description_setter(self):
+        tested = Relationship()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_Relationship_status_getter(self):
+        tested = Relationship()
+        tested.get_status()
+        pass
+
+    def test_Relationship_status_setter(self):
+        tested = Relationship()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_Relationship_review_getter(self):
+        tested = Relationship()
+        tested.get_review()
+        pass
+
+    def test_Relationship_review_setter(self):
+        tested = Relationship()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_Relationship_visible_in_documentation_getter(self):
+        tested = Relationship()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_Relationship_visible_in_documentation_setter(self):
+        tested = Relationship()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_Relationship_visible_for_traceability_getter(self):
+        tested = Relationship()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_Relationship_visible_for_traceability_setter(self):
+        tested = Relationship()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_Relationship_owned_constraints_getter(self):
+        tested = Relationship()
+        tested.get_owned_constraints()
+        pass
+
+    def test_Relationship_constraints_getter(self):
+        tested = Relationship()
+        tested.get_constraints()
+        pass
+
+    def test_Relationship_constraints_setter(self):
+        tested = Relationship()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_Relationship_owned_property_values_getter(self):
+        tested = Relationship()
+        tested.get_owned_property_values()
+        pass
+
+    def test_Relationship_applied_property_values_getter(self):
+        tested = Relationship()
+        tested.get_applied_property_values()
+        pass
+
+    def test_Relationship_applied_property_values_setter(self):
+        tested = Relationship()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_Relationship_owned_property_value_groups_getter(self):
+        tested = Relationship()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_Relationship_applied_property_value_groups_getter(self):
+        tested = Relationship()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_Relationship_applied_property_value_groups_setter(self):
+        tested = Relationship()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_Relationship_owned_enumeration_property_types_getter(self):
+        tested = Relationship()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Relationship_get_owned_property_value_by_name(self):
+        tested = Relationship()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Relationship_get_applied_property_value_by_name(self):
+        tested = Relationship()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Relationship_get_owned_property_value_group_by_name(self):
+        tested = Relationship()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Relationship_get_applied_property_value_group_by_name(self):
+        tested = Relationship()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Relationship_owned_traces_getter(self):
+        tested = Relationship()
+        tested.get_owned_traces()
+        pass
+
+    def test_Relationship_owned_traces_setter(self):
+        tested = Relationship()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Relationship_contained_generic_traces_getter(self):
+        tested = Relationship()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Relationship_contained_generic_traces_setter(self):
+        tested = Relationship()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_Relationship_owned_diagrams_getter(self):
+        tested = Relationship()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_Relationship_element_of_interest_for_diagrams_getter(self):
+        tested = Relationship()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_Relationship_element_of_interest_for_diagrams_setter(self):
+        tested = Relationship()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_Relationship_contextual_element_for_diagrams_getter(self):
+        tested = Relationship()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_Relationship_contextual_element_for_diagrams_setter(self):
+        tested = Relationship()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_Relationship_representing_diagrams_getter(self):
+        tested = Relationship()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_Relationship__r_e_cs_getter(self):
+        tested = Relationship()
+        tested.get__r_e_cs()
+        pass
+
+    def test_Relationship__r_e_cs_setter(self):
+        tested = Relationship()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_Relationship__r_p_ls_getter(self):
+        tested = Relationship()
+        tested.get__r_p_ls()
+        pass
+
+    def test_Relationship__r_p_ls_setter(self):
+        tested = Relationship()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_Relationship_get_label(self):
+        tested = Relationship()
+        tested.get_label()
+        pass
+
+    def test_Relationship_get_element_type(self):
+        tested = Relationship()
+        tested.get_element_type()
+        pass
+
+    def test_Relationship_get_container(self):
+        tested = Relationship()
+        tested.get_container()
+        pass
+
+    def test_Relationship_get_container_by_type(self):
+        tested = Relationship()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_Relationship_get_contents(self):
+        tested = Relationship()
+        tested.get_contents()
+        pass
+
+    def test_Relationship_get_all_contents(self):
+        tested = Relationship()
+        tested.get_all_contents()
+        pass
+
+    def test_Relationship_get_all_contents_by_type(self):
+        tested = Relationship()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_Relationship_get_available_s_b_queries(self):
+        tested = Relationship()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_Relationship_get_query_result(self):
+        tested = Relationship()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_AbstractInformationFlow_realized_flow_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_realized_flow()
+        pass
+
+    def test_AbstractInformationFlow_realized_flow_setter(self):
+        tested = AbstractInformationFlow()
+        value = AbstractInformationFlow()
+        tested.set_realized_flow(value)
+        pass
+
+    def test_AbstractInformationFlow_id_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_id()
+        pass
+
+    def test_AbstractInformationFlow_id_setter(self):
+        tested = AbstractInformationFlow()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_AbstractInformationFlow_sid_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_sid()
+        pass
+
+    def test_AbstractInformationFlow_sid_setter(self):
+        tested = AbstractInformationFlow()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_AbstractInformationFlow_name_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_name()
+        pass
+
+    def test_AbstractInformationFlow_name_setter(self):
+        tested = AbstractInformationFlow()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_AbstractInformationFlow_summary_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_summary()
+        pass
+
+    def test_AbstractInformationFlow_summary_setter(self):
+        tested = AbstractInformationFlow()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_AbstractInformationFlow_description_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_description()
+        pass
+
+    def test_AbstractInformationFlow_description_setter(self):
+        tested = AbstractInformationFlow()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_AbstractInformationFlow_status_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_status()
+        pass
+
+    def test_AbstractInformationFlow_status_setter(self):
+        tested = AbstractInformationFlow()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_AbstractInformationFlow_review_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_review()
+        pass
+
+    def test_AbstractInformationFlow_review_setter(self):
+        tested = AbstractInformationFlow()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_AbstractInformationFlow_visible_in_documentation_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_AbstractInformationFlow_visible_in_documentation_setter(self):
+        tested = AbstractInformationFlow()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_AbstractInformationFlow_visible_for_traceability_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_AbstractInformationFlow_visible_for_traceability_setter(self):
+        tested = AbstractInformationFlow()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_AbstractInformationFlow_owned_constraints_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_owned_constraints()
+        pass
+
+    def test_AbstractInformationFlow_constraints_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_constraints()
+        pass
+
+    def test_AbstractInformationFlow_constraints_setter(self):
+        tested = AbstractInformationFlow()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_AbstractInformationFlow_owned_property_values_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_owned_property_values()
+        pass
+
+    def test_AbstractInformationFlow_applied_property_values_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_applied_property_values()
+        pass
+
+    def test_AbstractInformationFlow_applied_property_values_setter(self):
+        tested = AbstractInformationFlow()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_AbstractInformationFlow_owned_property_value_groups_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_AbstractInformationFlow_applied_property_value_groups_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_AbstractInformationFlow_applied_property_value_groups_setter(self):
+        tested = AbstractInformationFlow()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_AbstractInformationFlow_owned_enumeration_property_types_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_AbstractInformationFlow_get_owned_property_value_by_name(self):
+        tested = AbstractInformationFlow()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_AbstractInformationFlow_get_applied_property_value_by_name(self):
+        tested = AbstractInformationFlow()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_AbstractInformationFlow_get_owned_property_value_group_by_name(self):
+        tested = AbstractInformationFlow()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_AbstractInformationFlow_get_applied_property_value_group_by_name(self):
+        tested = AbstractInformationFlow()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_AbstractInformationFlow_owned_traces_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_owned_traces()
+        pass
+
+    def test_AbstractInformationFlow_owned_traces_setter(self):
+        tested = AbstractInformationFlow()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_AbstractInformationFlow_contained_generic_traces_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_AbstractInformationFlow_contained_generic_traces_setter(self):
+        tested = AbstractInformationFlow()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_AbstractInformationFlow_owned_diagrams_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_AbstractInformationFlow_element_of_interest_for_diagrams_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_AbstractInformationFlow_element_of_interest_for_diagrams_setter(self):
+        tested = AbstractInformationFlow()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_AbstractInformationFlow_contextual_element_for_diagrams_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_AbstractInformationFlow_contextual_element_for_diagrams_setter(self):
+        tested = AbstractInformationFlow()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_AbstractInformationFlow_representing_diagrams_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_AbstractInformationFlow__r_e_cs_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get__r_e_cs()
+        pass
+
+    def test_AbstractInformationFlow__r_e_cs_setter(self):
+        tested = AbstractInformationFlow()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_AbstractInformationFlow__r_p_ls_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get__r_p_ls()
+        pass
+
+    def test_AbstractInformationFlow__r_p_ls_setter(self):
+        tested = AbstractInformationFlow()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_AbstractInformationFlow_get_label(self):
+        tested = AbstractInformationFlow()
+        tested.get_label()
+        pass
+
+    def test_AbstractInformationFlow_get_element_type(self):
+        tested = AbstractInformationFlow()
+        tested.get_element_type()
+        pass
+
+    def test_AbstractInformationFlow_get_container(self):
+        tested = AbstractInformationFlow()
+        tested.get_container()
+        pass
+
+    def test_AbstractInformationFlow_get_container_by_type(self):
+        tested = AbstractInformationFlow()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_AbstractInformationFlow_get_contents(self):
+        tested = AbstractInformationFlow()
+        tested.get_contents()
+        pass
+
+    def test_AbstractInformationFlow_get_all_contents(self):
+        tested = AbstractInformationFlow()
+        tested.get_all_contents()
+        pass
+
+    def test_AbstractInformationFlow_get_all_contents_by_type(self):
+        tested = AbstractInformationFlow()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_AbstractInformationFlow_get_available_s_b_queries(self):
+        tested = AbstractInformationFlow()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_AbstractInformationFlow_get_query_result(self):
+        tested = AbstractInformationFlow()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_AbstractInformationFlow_realizations_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_realizations()
+        pass
+
+    def test_AbstractInformationFlow_realizations_setter(self):
+        tested = AbstractInformationFlow()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_realizations().add(value)
+        pass
+
+    def test_AbstractInformationFlow_source_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_source()
+        pass
+
+    def test_AbstractInformationFlow_source_setter(self):
+        tested = AbstractInformationFlow()
+        value = ComponentPort()
+        tested.set_source(value)
+        pass
+
+    def test_AbstractInformationFlow_target_getter(self):
+        tested = AbstractInformationFlow()
+        tested.get_target()
+        pass
+
+    def test_AbstractInformationFlow_target_setter(self):
+        tested = AbstractInformationFlow()
+        value = ComponentPort()
+        tested.set_target(value)
+        pass
+
+    def test_TransfoLink_source_getter(self):
+        tested = TransfoLink()
+        tested.get_source()
+        pass
+
+    def test_TransfoLink_target_getter(self):
+        tested = TransfoLink()
+        tested.get_target()
+        pass
+
+    def test_TransfoLink_realized_flow_getter(self):
+        tested = TransfoLink()
+        tested.get_realized_flow()
+        pass
+
+    def test_TransfoLink_realized_flow_setter(self):
+        tested = TransfoLink()
+        value = AbstractInformationFlow()
+        tested.set_realized_flow(value)
+        pass
+
+    def test_TransfoLink_id_getter(self):
+        tested = TransfoLink()
+        tested.get_id()
+        pass
+
+    def test_TransfoLink_id_setter(self):
+        tested = TransfoLink()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_TransfoLink_sid_getter(self):
+        tested = TransfoLink()
+        tested.get_sid()
+        pass
+
+    def test_TransfoLink_sid_setter(self):
+        tested = TransfoLink()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_TransfoLink_name_getter(self):
+        tested = TransfoLink()
+        tested.get_name()
+        pass
+
+    def test_TransfoLink_name_setter(self):
+        tested = TransfoLink()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_TransfoLink_summary_getter(self):
+        tested = TransfoLink()
+        tested.get_summary()
+        pass
+
+    def test_TransfoLink_summary_setter(self):
+        tested = TransfoLink()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_TransfoLink_description_getter(self):
+        tested = TransfoLink()
+        tested.get_description()
+        pass
+
+    def test_TransfoLink_description_setter(self):
+        tested = TransfoLink()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_TransfoLink_status_getter(self):
+        tested = TransfoLink()
+        tested.get_status()
+        pass
+
+    def test_TransfoLink_status_setter(self):
+        tested = TransfoLink()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_TransfoLink_review_getter(self):
+        tested = TransfoLink()
+        tested.get_review()
+        pass
+
+    def test_TransfoLink_review_setter(self):
+        tested = TransfoLink()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_TransfoLink_visible_in_documentation_getter(self):
+        tested = TransfoLink()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_TransfoLink_visible_in_documentation_setter(self):
+        tested = TransfoLink()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_TransfoLink_visible_for_traceability_getter(self):
+        tested = TransfoLink()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_TransfoLink_visible_for_traceability_setter(self):
+        tested = TransfoLink()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_TransfoLink_owned_constraints_getter(self):
+        tested = TransfoLink()
+        tested.get_owned_constraints()
+        pass
+
+    def test_TransfoLink_constraints_getter(self):
+        tested = TransfoLink()
+        tested.get_constraints()
+        pass
+
+    def test_TransfoLink_constraints_setter(self):
+        tested = TransfoLink()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_TransfoLink_owned_property_values_getter(self):
+        tested = TransfoLink()
+        tested.get_owned_property_values()
+        pass
+
+    def test_TransfoLink_applied_property_values_getter(self):
+        tested = TransfoLink()
+        tested.get_applied_property_values()
+        pass
+
+    def test_TransfoLink_applied_property_values_setter(self):
+        tested = TransfoLink()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_TransfoLink_owned_property_value_groups_getter(self):
+        tested = TransfoLink()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_TransfoLink_applied_property_value_groups_getter(self):
+        tested = TransfoLink()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_TransfoLink_applied_property_value_groups_setter(self):
+        tested = TransfoLink()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_TransfoLink_owned_enumeration_property_types_getter(self):
+        tested = TransfoLink()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_TransfoLink_get_owned_property_value_by_name(self):
+        tested = TransfoLink()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_TransfoLink_get_applied_property_value_by_name(self):
+        tested = TransfoLink()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_TransfoLink_get_owned_property_value_group_by_name(self):
+        tested = TransfoLink()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_TransfoLink_get_applied_property_value_group_by_name(self):
+        tested = TransfoLink()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_TransfoLink_owned_traces_getter(self):
+        tested = TransfoLink()
+        tested.get_owned_traces()
+        pass
+
+    def test_TransfoLink_owned_traces_setter(self):
+        tested = TransfoLink()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_TransfoLink_contained_generic_traces_getter(self):
+        tested = TransfoLink()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_TransfoLink_contained_generic_traces_setter(self):
+        tested = TransfoLink()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_TransfoLink_owned_diagrams_getter(self):
+        tested = TransfoLink()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_TransfoLink_element_of_interest_for_diagrams_getter(self):
+        tested = TransfoLink()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_TransfoLink_element_of_interest_for_diagrams_setter(self):
+        tested = TransfoLink()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_TransfoLink_contextual_element_for_diagrams_getter(self):
+        tested = TransfoLink()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_TransfoLink_contextual_element_for_diagrams_setter(self):
+        tested = TransfoLink()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_TransfoLink_representing_diagrams_getter(self):
+        tested = TransfoLink()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_TransfoLink__r_e_cs_getter(self):
+        tested = TransfoLink()
+        tested.get__r_e_cs()
+        pass
+
+    def test_TransfoLink__r_e_cs_setter(self):
+        tested = TransfoLink()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_TransfoLink__r_p_ls_getter(self):
+        tested = TransfoLink()
+        tested.get__r_p_ls()
+        pass
+
+    def test_TransfoLink__r_p_ls_setter(self):
+        tested = TransfoLink()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_TransfoLink_get_label(self):
+        tested = TransfoLink()
+        tested.get_label()
+        pass
+
+    def test_TransfoLink_get_element_type(self):
+        tested = TransfoLink()
+        tested.get_element_type()
+        pass
+
+    def test_TransfoLink_get_container(self):
+        tested = TransfoLink()
+        tested.get_container()
+        pass
+
+    def test_TransfoLink_get_container_by_type(self):
+        tested = TransfoLink()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_TransfoLink_get_contents(self):
+        tested = TransfoLink()
+        tested.get_contents()
+        pass
+
+    def test_TransfoLink_get_all_contents(self):
+        tested = TransfoLink()
+        tested.get_all_contents()
+        pass
+
+    def test_TransfoLink_get_all_contents_by_type(self):
+        tested = TransfoLink()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_TransfoLink_get_available_s_b_queries(self):
+        tested = TransfoLink()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_TransfoLink_get_query_result(self):
+        tested = TransfoLink()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_TransfoLink_source_element_getter(self):
+        tested = TransfoLink()
+        tested.get_source_element()
+        pass
+
+    def test_TransfoLink_source_element_setter(self):
+        tested = TransfoLink()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_source_element(value)
+        pass
+
+    def test_TransfoLink_target_element_getter(self):
+        tested = TransfoLink()
+        tested.get_target_element()
+        pass
+
+    def test_TransfoLink_target_element_setter(self):
+        tested = TransfoLink()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_target_element(value)
+        pass
+
+    def test_TransfoLink_incoming_traces_getter(self):
+        tested = TransfoLink()
+        tested.get_incoming_traces()
+        pass
+
+    def test_TransfoLink_outgoing_traces_getter(self):
+        tested = TransfoLink()
+        tested.get_outgoing_traces()
+        pass
+
+    def test_JustificationLink_source_getter(self):
+        tested = JustificationLink()
+        tested.get_source()
+        pass
+
+    def test_JustificationLink_target_getter(self):
+        tested = JustificationLink()
+        tested.get_target()
+        pass
+
+    def test_JustificationLink_realized_flow_getter(self):
+        tested = JustificationLink()
+        tested.get_realized_flow()
+        pass
+
+    def test_JustificationLink_realized_flow_setter(self):
+        tested = JustificationLink()
+        value = AbstractInformationFlow()
+        tested.set_realized_flow(value)
+        pass
+
+    def test_JustificationLink_id_getter(self):
+        tested = JustificationLink()
+        tested.get_id()
+        pass
+
+    def test_JustificationLink_id_setter(self):
+        tested = JustificationLink()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_JustificationLink_sid_getter(self):
+        tested = JustificationLink()
+        tested.get_sid()
+        pass
+
+    def test_JustificationLink_sid_setter(self):
+        tested = JustificationLink()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_JustificationLink_name_getter(self):
+        tested = JustificationLink()
+        tested.get_name()
+        pass
+
+    def test_JustificationLink_name_setter(self):
+        tested = JustificationLink()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_JustificationLink_summary_getter(self):
+        tested = JustificationLink()
+        tested.get_summary()
+        pass
+
+    def test_JustificationLink_summary_setter(self):
+        tested = JustificationLink()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_JustificationLink_description_getter(self):
+        tested = JustificationLink()
+        tested.get_description()
+        pass
+
+    def test_JustificationLink_description_setter(self):
+        tested = JustificationLink()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_JustificationLink_status_getter(self):
+        tested = JustificationLink()
+        tested.get_status()
+        pass
+
+    def test_JustificationLink_status_setter(self):
+        tested = JustificationLink()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_JustificationLink_review_getter(self):
+        tested = JustificationLink()
+        tested.get_review()
+        pass
+
+    def test_JustificationLink_review_setter(self):
+        tested = JustificationLink()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_JustificationLink_visible_in_documentation_getter(self):
+        tested = JustificationLink()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_JustificationLink_visible_in_documentation_setter(self):
+        tested = JustificationLink()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_JustificationLink_visible_for_traceability_getter(self):
+        tested = JustificationLink()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_JustificationLink_visible_for_traceability_setter(self):
+        tested = JustificationLink()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_JustificationLink_owned_constraints_getter(self):
+        tested = JustificationLink()
+        tested.get_owned_constraints()
+        pass
+
+    def test_JustificationLink_constraints_getter(self):
+        tested = JustificationLink()
+        tested.get_constraints()
+        pass
+
+    def test_JustificationLink_constraints_setter(self):
+        tested = JustificationLink()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_JustificationLink_owned_property_values_getter(self):
+        tested = JustificationLink()
+        tested.get_owned_property_values()
+        pass
+
+    def test_JustificationLink_applied_property_values_getter(self):
+        tested = JustificationLink()
+        tested.get_applied_property_values()
+        pass
+
+    def test_JustificationLink_applied_property_values_setter(self):
+        tested = JustificationLink()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_JustificationLink_owned_property_value_groups_getter(self):
+        tested = JustificationLink()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_JustificationLink_applied_property_value_groups_getter(self):
+        tested = JustificationLink()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_JustificationLink_applied_property_value_groups_setter(self):
+        tested = JustificationLink()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_JustificationLink_owned_enumeration_property_types_getter(self):
+        tested = JustificationLink()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_JustificationLink_get_owned_property_value_by_name(self):
+        tested = JustificationLink()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_JustificationLink_get_applied_property_value_by_name(self):
+        tested = JustificationLink()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_JustificationLink_get_owned_property_value_group_by_name(self):
+        tested = JustificationLink()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_JustificationLink_get_applied_property_value_group_by_name(self):
+        tested = JustificationLink()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_JustificationLink_owned_traces_getter(self):
+        tested = JustificationLink()
+        tested.get_owned_traces()
+        pass
+
+    def test_JustificationLink_owned_traces_setter(self):
+        tested = JustificationLink()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_JustificationLink_contained_generic_traces_getter(self):
+        tested = JustificationLink()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_JustificationLink_contained_generic_traces_setter(self):
+        tested = JustificationLink()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_JustificationLink_owned_diagrams_getter(self):
+        tested = JustificationLink()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_JustificationLink_element_of_interest_for_diagrams_getter(self):
+        tested = JustificationLink()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_JustificationLink_element_of_interest_for_diagrams_setter(self):
+        tested = JustificationLink()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_JustificationLink_contextual_element_for_diagrams_getter(self):
+        tested = JustificationLink()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_JustificationLink_contextual_element_for_diagrams_setter(self):
+        tested = JustificationLink()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_JustificationLink_representing_diagrams_getter(self):
+        tested = JustificationLink()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_JustificationLink__r_e_cs_getter(self):
+        tested = JustificationLink()
+        tested.get__r_e_cs()
+        pass
+
+    def test_JustificationLink__r_e_cs_setter(self):
+        tested = JustificationLink()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_JustificationLink__r_p_ls_getter(self):
+        tested = JustificationLink()
+        tested.get__r_p_ls()
+        pass
+
+    def test_JustificationLink__r_p_ls_setter(self):
+        tested = JustificationLink()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_JustificationLink_get_label(self):
+        tested = JustificationLink()
+        tested.get_label()
+        pass
+
+    def test_JustificationLink_get_element_type(self):
+        tested = JustificationLink()
+        tested.get_element_type()
+        pass
+
+    def test_JustificationLink_get_container(self):
+        tested = JustificationLink()
+        tested.get_container()
+        pass
+
+    def test_JustificationLink_get_container_by_type(self):
+        tested = JustificationLink()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_JustificationLink_get_contents(self):
+        tested = JustificationLink()
+        tested.get_contents()
+        pass
+
+    def test_JustificationLink_get_all_contents(self):
+        tested = JustificationLink()
+        tested.get_all_contents()
+        pass
+
+    def test_JustificationLink_get_all_contents_by_type(self):
+        tested = JustificationLink()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_JustificationLink_get_available_s_b_queries(self):
+        tested = JustificationLink()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_JustificationLink_get_query_result(self):
+        tested = JustificationLink()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_JustificationLink_source_element_getter(self):
+        tested = JustificationLink()
+        tested.get_source_element()
+        pass
+
+    def test_JustificationLink_source_element_setter(self):
+        tested = JustificationLink()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_source_element(value)
+        pass
+
+    def test_JustificationLink_target_element_getter(self):
+        tested = JustificationLink()
+        tested.get_target_element()
+        pass
+
+    def test_JustificationLink_target_element_setter(self):
+        tested = JustificationLink()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_target_element(value)
+        pass
+
+    def test_JustificationLink_incoming_traces_getter(self):
+        tested = JustificationLink()
+        tested.get_incoming_traces()
+        pass
+
+    def test_JustificationLink_outgoing_traces_getter(self):
+        tested = JustificationLink()
+        tested.get_outgoing_traces()
+        pass
+
+    def test_Classifier_id_getter(self):
+        tested = Classifier()
+        tested.get_id()
+        pass
+
+    def test_Classifier_id_setter(self):
+        tested = Classifier()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_Classifier_sid_getter(self):
+        tested = Classifier()
+        tested.get_sid()
+        pass
+
+    def test_Classifier_sid_setter(self):
+        tested = Classifier()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_Classifier_name_getter(self):
+        tested = Classifier()
+        tested.get_name()
+        pass
+
+    def test_Classifier_name_setter(self):
+        tested = Classifier()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_Classifier_summary_getter(self):
+        tested = Classifier()
+        tested.get_summary()
+        pass
+
+    def test_Classifier_summary_setter(self):
+        tested = Classifier()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_Classifier_description_getter(self):
+        tested = Classifier()
+        tested.get_description()
+        pass
+
+    def test_Classifier_description_setter(self):
+        tested = Classifier()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_Classifier_status_getter(self):
+        tested = Classifier()
+        tested.get_status()
+        pass
+
+    def test_Classifier_status_setter(self):
+        tested = Classifier()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_Classifier_review_getter(self):
+        tested = Classifier()
+        tested.get_review()
+        pass
+
+    def test_Classifier_review_setter(self):
+        tested = Classifier()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_Classifier_visible_in_documentation_getter(self):
+        tested = Classifier()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_Classifier_visible_in_documentation_setter(self):
+        tested = Classifier()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_Classifier_visible_for_traceability_getter(self):
+        tested = Classifier()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_Classifier_visible_for_traceability_setter(self):
+        tested = Classifier()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_Classifier_owned_constraints_getter(self):
+        tested = Classifier()
+        tested.get_owned_constraints()
+        pass
+
+    def test_Classifier_constraints_getter(self):
+        tested = Classifier()
+        tested.get_constraints()
+        pass
+
+    def test_Classifier_constraints_setter(self):
+        tested = Classifier()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_Classifier_owned_property_values_getter(self):
+        tested = Classifier()
+        tested.get_owned_property_values()
+        pass
+
+    def test_Classifier_applied_property_values_getter(self):
+        tested = Classifier()
+        tested.get_applied_property_values()
+        pass
+
+    def test_Classifier_applied_property_values_setter(self):
+        tested = Classifier()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_Classifier_owned_property_value_groups_getter(self):
+        tested = Classifier()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_Classifier_applied_property_value_groups_getter(self):
+        tested = Classifier()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_Classifier_applied_property_value_groups_setter(self):
+        tested = Classifier()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_Classifier_owned_enumeration_property_types_getter(self):
+        tested = Classifier()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_Classifier_get_owned_property_value_by_name(self):
+        tested = Classifier()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_Classifier_get_applied_property_value_by_name(self):
+        tested = Classifier()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_Classifier_get_owned_property_value_group_by_name(self):
+        tested = Classifier()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_Classifier_get_applied_property_value_group_by_name(self):
+        tested = Classifier()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Classifier_owned_traces_getter(self):
+        tested = Classifier()
+        tested.get_owned_traces()
+        pass
+
+    def test_Classifier_owned_traces_setter(self):
+        tested = Classifier()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Classifier_contained_generic_traces_getter(self):
+        tested = Classifier()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Classifier_contained_generic_traces_setter(self):
+        tested = Classifier()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_Classifier_owned_diagrams_getter(self):
+        tested = Classifier()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_Classifier_element_of_interest_for_diagrams_getter(self):
+        tested = Classifier()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_Classifier_element_of_interest_for_diagrams_setter(self):
+        tested = Classifier()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_Classifier_contextual_element_for_diagrams_getter(self):
+        tested = Classifier()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_Classifier_contextual_element_for_diagrams_setter(self):
+        tested = Classifier()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_Classifier_representing_diagrams_getter(self):
+        tested = Classifier()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_Classifier__r_e_cs_getter(self):
+        tested = Classifier()
+        tested.get__r_e_cs()
+        pass
+
+    def test_Classifier__r_e_cs_setter(self):
+        tested = Classifier()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_Classifier__r_p_ls_getter(self):
+        tested = Classifier()
+        tested.get__r_p_ls()
+        pass
+
+    def test_Classifier__r_p_ls_setter(self):
+        tested = Classifier()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_Classifier_get_label(self):
+        tested = Classifier()
+        tested.get_label()
+        pass
+
+    def test_Classifier_get_element_type(self):
+        tested = Classifier()
+        tested.get_element_type()
+        pass
+
+    def test_Classifier_get_container(self):
+        tested = Classifier()
+        tested.get_container()
+        pass
+
+    def test_Classifier_get_container_by_type(self):
+        tested = Classifier()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_Classifier_get_contents(self):
+        tested = Classifier()
+        tested.get_contents()
+        pass
+
+    def test_Classifier_get_all_contents(self):
+        tested = Classifier()
+        tested.get_all_contents()
+        pass
+
+    def test_Classifier_get_all_contents_by_type(self):
+        tested = Classifier()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_Classifier_get_available_s_b_queries(self):
+        tested = Classifier()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_Classifier_get_query_result(self):
+        tested = Classifier()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_Classifier_owned_features_getter(self):
+        tested = Classifier()
+        tested.get_owned_features()
+        pass
+
+    def test_Classifier_owned_features_setter(self):
+        tested = Classifier()
+        value = Feature()
+        tested.get_owned_features().add(value)
         pass
 
     def test_Diagram_uid_getter(self):
@@ -3488,6 +5967,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_OperationalAnalysis_owned_traces_getter(self):
+        tested = OperationalAnalysis()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalAnalysis_owned_traces_setter(self):
+        tested = OperationalAnalysis()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalAnalysis_contained_generic_traces_getter(self):
+        tested = OperationalAnalysis()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalAnalysis_contained_generic_traces_setter(self):
+        tested = OperationalAnalysis()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_OperationalAnalysis_owned_diagrams_getter(self):
         tested = OperationalAnalysis()
         tested.get_owned_diagrams()
@@ -3796,6 +6297,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_OperationalActivityPkg_owned_traces_getter(self):
+        tested = OperationalActivityPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalActivityPkg_owned_traces_setter(self):
+        tested = OperationalActivityPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalActivityPkg_contained_generic_traces_getter(self):
+        tested = OperationalActivityPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalActivityPkg_contained_generic_traces_setter(self):
+        tested = OperationalActivityPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_OperationalActivityPkg_owned_diagrams_getter(self):
         tested = OperationalActivityPkg()
         tested.get_owned_diagrams()
@@ -3999,6 +6522,27 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_functions()
         pass
 
+    def test_OperationalActivity_allocation_blocks_getter(self):
+        tested = OperationalActivity()
+        tested.get_allocation_blocks()
+        pass
+
+    def test_OperationalActivity_component_functional_allocations_getter(self):
+        tested = OperationalActivity()
+        tested.get_component_functional_allocations()
+        pass
+
+    def test_OperationalActivity_owned_functional_exchanges_getter(self):
+        tested = OperationalActivity()
+        tested.get_owned_functional_exchanges()
+        pass
+
+    def test_OperationalActivity_owned_functional_exchanges_setter(self):
+        tested = OperationalActivity()
+        value = FunctionalExchange()
+        tested.get_owned_functional_exchanges().add(value)
+        pass
+
     def test_OperationalActivity_available_in_states_getter(self):
         tested = OperationalActivity()
         tested.get_available_in_states()
@@ -4184,6 +6728,28 @@ class capella_tests(unittest.TestCase):
         tested = OperationalActivity()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalActivity_owned_traces_getter(self):
+        tested = OperationalActivity()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalActivity_owned_traces_setter(self):
+        tested = OperationalActivity()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalActivity_contained_generic_traces_getter(self):
+        tested = OperationalActivity()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalActivity_contained_generic_traces_setter(self):
+        tested = OperationalActivity()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalActivity_owned_diagrams_getter(self):
@@ -4539,6 +7105,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Interaction_owned_traces_getter(self):
+        tested = Interaction()
+        tested.get_owned_traces()
+        pass
+
+    def test_Interaction_owned_traces_setter(self):
+        tested = Interaction()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Interaction_contained_generic_traces_getter(self):
+        tested = Interaction()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Interaction_contained_generic_traces_setter(self):
+        tested = Interaction()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Interaction_owned_diagrams_getter(self):
         tested = Interaction()
         tested.get_owned_diagrams()
@@ -4875,6 +7463,28 @@ class capella_tests(unittest.TestCase):
         tested = OperationalProcess()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalProcess_owned_traces_getter(self):
+        tested = OperationalProcess()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalProcess_owned_traces_setter(self):
+        tested = OperationalProcess()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalProcess_contained_generic_traces_getter(self):
+        tested = OperationalProcess()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalProcess_contained_generic_traces_setter(self):
+        tested = OperationalProcess()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalProcess_owned_diagrams_getter(self):
@@ -5228,6 +7838,28 @@ class capella_tests(unittest.TestCase):
         tested = OperationalCapabilityPkg()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalCapabilityPkg_owned_traces_getter(self):
+        tested = OperationalCapabilityPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalCapabilityPkg_owned_traces_setter(self):
+        tested = OperationalCapabilityPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalCapabilityPkg_contained_generic_traces_getter(self):
+        tested = OperationalCapabilityPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalCapabilityPkg_contained_generic_traces_setter(self):
+        tested = OperationalCapabilityPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalCapabilityPkg_owned_diagrams_getter(self):
@@ -5627,6 +8259,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_OperationalCapability_owned_traces_getter(self):
+        tested = OperationalCapability()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalCapability_owned_traces_setter(self):
+        tested = OperationalCapability()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalCapability_contained_generic_traces_getter(self):
+        tested = OperationalCapability()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalCapability_contained_generic_traces_setter(self):
+        tested = OperationalCapability()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_OperationalCapability_owned_diagrams_getter(self):
         tested = OperationalCapability()
         tested.get_owned_diagrams()
@@ -5957,6 +8611,28 @@ class capella_tests(unittest.TestCase):
         tested = EntityPkg()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_EntityPkg_owned_traces_getter(self):
+        tested = EntityPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_EntityPkg_owned_traces_setter(self):
+        tested = EntityPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_EntityPkg_contained_generic_traces_getter(self):
+        tested = EntityPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_EntityPkg_contained_generic_traces_setter(self):
+        tested = EntityPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_EntityPkg_owned_diagrams_getter(self):
@@ -6307,6 +8983,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_OperationalEntity_owned_traces_getter(self):
+        tested = OperationalEntity()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalEntity_owned_traces_setter(self):
+        tested = OperationalEntity()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalEntity_contained_generic_traces_getter(self):
+        tested = OperationalEntity()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalEntity_contained_generic_traces_setter(self):
+        tested = OperationalEntity()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_OperationalEntity_owned_diagrams_getter(self):
         tested = OperationalEntity()
         tested.get_owned_diagrams()
@@ -6588,6 +9286,28 @@ class capella_tests(unittest.TestCase):
         tested = OperationalActor()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_OperationalActor_owned_traces_getter(self):
+        tested = OperationalActor()
+        tested.get_owned_traces()
+        pass
+
+    def test_OperationalActor_owned_traces_setter(self):
+        tested = OperationalActor()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_OperationalActor_contained_generic_traces_getter(self):
+        tested = OperationalActor()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_OperationalActor_contained_generic_traces_setter(self):
+        tested = OperationalActor()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalActor_owned_diagrams_getter(self):
@@ -6928,6 +9648,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_CommunicationMean_owned_traces_getter(self):
+        tested = CommunicationMean()
+        tested.get_owned_traces()
+        pass
+
+    def test_CommunicationMean_owned_traces_setter(self):
+        tested = CommunicationMean()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_CommunicationMean_contained_generic_traces_getter(self):
+        tested = CommunicationMean()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_CommunicationMean_contained_generic_traces_setter(self):
+        tested = CommunicationMean()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_CommunicationMean_owned_diagrams_getter(self):
         tested = CommunicationMean()
         tested.get_owned_diagrams()
@@ -7266,6 +10008,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_SystemAnalysis_owned_traces_getter(self):
+        tested = SystemAnalysis()
+        tested.get_owned_traces()
+        pass
+
+    def test_SystemAnalysis_owned_traces_setter(self):
+        tested = SystemAnalysis()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_SystemAnalysis_contained_generic_traces_getter(self):
+        tested = SystemAnalysis()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_SystemAnalysis_contained_generic_traces_setter(self):
+        tested = SystemAnalysis()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_SystemAnalysis_owned_diagrams_getter(self):
         tested = SystemAnalysis()
         tested.get_owned_diagrams()
@@ -7584,6 +10348,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_SystemFunctionPkg_owned_traces_getter(self):
+        tested = SystemFunctionPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_SystemFunctionPkg_owned_traces_setter(self):
+        tested = SystemFunctionPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_SystemFunctionPkg_contained_generic_traces_getter(self):
+        tested = SystemFunctionPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_SystemFunctionPkg_contained_generic_traces_setter(self):
+        tested = SystemFunctionPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_SystemFunctionPkg_owned_diagrams_getter(self):
         tested = SystemFunctionPkg()
         tested.get_owned_diagrams()
@@ -7792,6 +10578,27 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_functions()
         pass
 
+    def test_SystemFunction_allocation_blocks_getter(self):
+        tested = SystemFunction()
+        tested.get_allocation_blocks()
+        pass
+
+    def test_SystemFunction_component_functional_allocations_getter(self):
+        tested = SystemFunction()
+        tested.get_component_functional_allocations()
+        pass
+
+    def test_SystemFunction_owned_functional_exchanges_getter(self):
+        tested = SystemFunction()
+        tested.get_owned_functional_exchanges()
+        pass
+
+    def test_SystemFunction_owned_functional_exchanges_setter(self):
+        tested = SystemFunction()
+        value = FunctionalExchange()
+        tested.get_owned_functional_exchanges().add(value)
+        pass
+
     def test_SystemFunction_available_in_states_getter(self):
         tested = SystemFunction()
         tested.get_available_in_states()
@@ -7977,6 +10784,28 @@ class capella_tests(unittest.TestCase):
         tested = SystemFunction()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemFunction_owned_traces_getter(self):
+        tested = SystemFunction()
+        tested.get_owned_traces()
+        pass
+
+    def test_SystemFunction_owned_traces_setter(self):
+        tested = SystemFunction()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_SystemFunction_contained_generic_traces_getter(self):
+        tested = SystemFunction()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_SystemFunction_contained_generic_traces_setter(self):
+        tested = SystemFunction()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_SystemFunction_owned_diagrams_getter(self):
@@ -8292,6 +11121,28 @@ class capella_tests(unittest.TestCase):
         tested = CapabilityPkg()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_CapabilityPkg_owned_traces_getter(self):
+        tested = CapabilityPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_CapabilityPkg_owned_traces_setter(self):
+        tested = CapabilityPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_CapabilityPkg_contained_generic_traces_getter(self):
+        tested = CapabilityPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_CapabilityPkg_contained_generic_traces_setter(self):
+        tested = CapabilityPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_CapabilityPkg_owned_diagrams_getter(self):
@@ -8718,6 +11569,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Capability_owned_traces_getter(self):
+        tested = Capability()
+        tested.get_owned_traces()
+        pass
+
+    def test_Capability_owned_traces_setter(self):
+        tested = Capability()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Capability_contained_generic_traces_getter(self):
+        tested = Capability()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Capability_contained_generic_traces_setter(self):
+        tested = Capability()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Capability_owned_diagrams_getter(self):
         tested = Capability()
         tested.get_owned_diagrams()
@@ -9045,6 +11918,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_SystemComponentPkg_owned_traces_getter(self):
+        tested = SystemComponentPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_SystemComponentPkg_owned_traces_setter(self):
+        tested = SystemComponentPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_SystemComponentPkg_contained_generic_traces_getter(self):
+        tested = SystemComponentPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_SystemComponentPkg_contained_generic_traces_setter(self):
+        tested = SystemComponentPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_SystemComponentPkg_owned_diagrams_getter(self):
         tested = SystemComponentPkg()
         tested.get_owned_diagrams()
@@ -9253,6 +12148,38 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_component_exchange_categories()
         pass
 
+    def test_System_owned_features_getter(self):
+        tested = System()
+        tested.get_owned_features()
+        pass
+
+    def test_System_owned_features_setter(self):
+        tested = System()
+        value = Feature()
+        tested.get_owned_features().add(value)
+        pass
+
+    def test_System_owned_functional_allocation_getter(self):
+        tested = System()
+        tested.get_owned_functional_allocation()
+        pass
+
+    def test_System_owned_functional_allocation_setter(self):
+        tested = System()
+        value = ComponentFunctionalAllocation()
+        tested.get_owned_functional_allocation().add(value)
+        pass
+
+    def test_System_functional_allocations_getter(self):
+        tested = System()
+        tested.get_functional_allocations()
+        pass
+
+    def test_System_allocated_functions_getter(self):
+        tested = System()
+        tested.get_allocated_functions()
+        pass
+
     def test_System_id_getter(self):
         tested = System()
         tested.get_id()
@@ -9427,6 +12354,28 @@ class capella_tests(unittest.TestCase):
         tested = System()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_System_owned_traces_getter(self):
+        tested = System()
+        tested.get_owned_traces()
+        pass
+
+    def test_System_owned_traces_setter(self):
+        tested = System()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_System_contained_generic_traces_getter(self):
+        tested = System()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_System_contained_generic_traces_setter(self):
+        tested = System()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_System_owned_diagrams_getter(self):
@@ -9643,6 +12592,38 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_component_exchange_categories()
         pass
 
+    def test_SystemActor_owned_features_getter(self):
+        tested = SystemActor()
+        tested.get_owned_features()
+        pass
+
+    def test_SystemActor_owned_features_setter(self):
+        tested = SystemActor()
+        value = Feature()
+        tested.get_owned_features().add(value)
+        pass
+
+    def test_SystemActor_owned_functional_allocation_getter(self):
+        tested = SystemActor()
+        tested.get_owned_functional_allocation()
+        pass
+
+    def test_SystemActor_owned_functional_allocation_setter(self):
+        tested = SystemActor()
+        value = ComponentFunctionalAllocation()
+        tested.get_owned_functional_allocation().add(value)
+        pass
+
+    def test_SystemActor_functional_allocations_getter(self):
+        tested = SystemActor()
+        tested.get_functional_allocations()
+        pass
+
+    def test_SystemActor_allocated_functions_getter(self):
+        tested = SystemActor()
+        tested.get_allocated_functions()
+        pass
+
     def test_SystemActor_id_getter(self):
         tested = SystemActor()
         tested.get_id()
@@ -9817,6 +12798,28 @@ class capella_tests(unittest.TestCase):
         tested = SystemActor()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_SystemActor_owned_traces_getter(self):
+        tested = SystemActor()
+        tested.get_owned_traces()
+        pass
+
+    def test_SystemActor_owned_traces_setter(self):
+        tested = SystemActor()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_SystemActor_contained_generic_traces_getter(self):
+        tested = SystemActor()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_SystemActor_contained_generic_traces_setter(self):
+        tested = SystemActor()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_SystemActor_owned_diagrams_getter(self):
@@ -10198,6 +13201,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_MissionPkg_owned_traces_getter(self):
+        tested = MissionPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_MissionPkg_owned_traces_setter(self):
+        tested = MissionPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_MissionPkg_contained_generic_traces_getter(self):
+        tested = MissionPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_MissionPkg_contained_generic_traces_setter(self):
+        tested = MissionPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_MissionPkg_owned_diagrams_getter(self):
         tested = MissionPkg()
         tested.get_owned_diagrams()
@@ -10484,6 +13509,28 @@ class capella_tests(unittest.TestCase):
         tested = Mission()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Mission_owned_traces_getter(self):
+        tested = Mission()
+        tested.get_owned_traces()
+        pass
+
+    def test_Mission_owned_traces_setter(self):
+        tested = Mission()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Mission_contained_generic_traces_getter(self):
+        tested = Mission()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Mission_contained_generic_traces_setter(self):
+        tested = Mission()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Mission_owned_diagrams_getter(self):
@@ -10789,6 +13836,28 @@ class capella_tests(unittest.TestCase):
         tested = LogicalArchitecture()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalArchitecture_owned_traces_getter(self):
+        tested = LogicalArchitecture()
+        tested.get_owned_traces()
+        pass
+
+    def test_LogicalArchitecture_owned_traces_setter(self):
+        tested = LogicalArchitecture()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LogicalArchitecture_contained_generic_traces_getter(self):
+        tested = LogicalArchitecture()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LogicalArchitecture_contained_generic_traces_setter(self):
+        tested = LogicalArchitecture()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalArchitecture_owned_diagrams_getter(self):
@@ -11104,6 +14173,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_LogicalFunctionPkg_owned_traces_getter(self):
+        tested = LogicalFunctionPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_LogicalFunctionPkg_owned_traces_setter(self):
+        tested = LogicalFunctionPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LogicalFunctionPkg_contained_generic_traces_getter(self):
+        tested = LogicalFunctionPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LogicalFunctionPkg_contained_generic_traces_setter(self):
+        tested = LogicalFunctionPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_LogicalFunctionPkg_owned_diagrams_getter(self):
         tested = LogicalFunctionPkg()
         tested.get_owned_diagrams()
@@ -11312,6 +14403,27 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_functions()
         pass
 
+    def test_LogicalFunction_allocation_blocks_getter(self):
+        tested = LogicalFunction()
+        tested.get_allocation_blocks()
+        pass
+
+    def test_LogicalFunction_component_functional_allocations_getter(self):
+        tested = LogicalFunction()
+        tested.get_component_functional_allocations()
+        pass
+
+    def test_LogicalFunction_owned_functional_exchanges_getter(self):
+        tested = LogicalFunction()
+        tested.get_owned_functional_exchanges()
+        pass
+
+    def test_LogicalFunction_owned_functional_exchanges_setter(self):
+        tested = LogicalFunction()
+        value = FunctionalExchange()
+        tested.get_owned_functional_exchanges().add(value)
+        pass
+
     def test_LogicalFunction_available_in_states_getter(self):
         tested = LogicalFunction()
         tested.get_available_in_states()
@@ -11499,6 +14611,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_LogicalFunction_owned_traces_getter(self):
+        tested = LogicalFunction()
+        tested.get_owned_traces()
+        pass
+
+    def test_LogicalFunction_owned_traces_setter(self):
+        tested = LogicalFunction()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LogicalFunction_contained_generic_traces_getter(self):
+        tested = LogicalFunction()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LogicalFunction_contained_generic_traces_setter(self):
+        tested = LogicalFunction()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_LogicalFunction_owned_diagrams_getter(self):
         tested = LogicalFunction()
         tested.get_owned_diagrams()
@@ -11631,6 +14765,11 @@ class capella_tests(unittest.TestCase):
         tested = LogicalFunction()
         value = PhysicalFunction()
         tested.get_realizing_physical_functions().add(value)
+        pass
+
+    def test_LogicalFunction_children_logical_functions_getter(self):
+        tested = LogicalFunction()
+        tested.get_children_logical_functions()
         pass
 
     def test_CapabilityRealizationPkg_owned_property_value_pkgs_getter(self):
@@ -11812,6 +14951,28 @@ class capella_tests(unittest.TestCase):
         tested = CapabilityRealizationPkg()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_CapabilityRealizationPkg_owned_traces_getter(self):
+        tested = CapabilityRealizationPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_CapabilityRealizationPkg_owned_traces_setter(self):
+        tested = CapabilityRealizationPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_CapabilityRealizationPkg_contained_generic_traces_getter(self):
+        tested = CapabilityRealizationPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_CapabilityRealizationPkg_contained_generic_traces_setter(self):
+        tested = CapabilityRealizationPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_CapabilityRealizationPkg_owned_diagrams_getter(self):
@@ -12238,6 +15399,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_CapabilityRealization_owned_traces_getter(self):
+        tested = CapabilityRealization()
+        tested.get_owned_traces()
+        pass
+
+    def test_CapabilityRealization_owned_traces_setter(self):
+        tested = CapabilityRealization()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_CapabilityRealization_contained_generic_traces_getter(self):
+        tested = CapabilityRealization()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_CapabilityRealization_contained_generic_traces_setter(self):
+        tested = CapabilityRealization()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_CapabilityRealization_owned_diagrams_getter(self):
         tested = CapabilityRealization()
         tested.get_owned_diagrams()
@@ -12598,6 +15781,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_LogicalComponentPkg_owned_traces_getter(self):
+        tested = LogicalComponentPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_LogicalComponentPkg_owned_traces_setter(self):
+        tested = LogicalComponentPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LogicalComponentPkg_contained_generic_traces_getter(self):
+        tested = LogicalComponentPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LogicalComponentPkg_contained_generic_traces_setter(self):
+        tested = LogicalComponentPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_LogicalComponentPkg_owned_diagrams_getter(self):
         tested = LogicalComponentPkg()
         tested.get_owned_diagrams()
@@ -12811,6 +16016,38 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_component_exchange_categories()
         pass
 
+    def test_LogicalSystem_owned_features_getter(self):
+        tested = LogicalSystem()
+        tested.get_owned_features()
+        pass
+
+    def test_LogicalSystem_owned_features_setter(self):
+        tested = LogicalSystem()
+        value = Feature()
+        tested.get_owned_features().add(value)
+        pass
+
+    def test_LogicalSystem_owned_functional_allocation_getter(self):
+        tested = LogicalSystem()
+        tested.get_owned_functional_allocation()
+        pass
+
+    def test_LogicalSystem_owned_functional_allocation_setter(self):
+        tested = LogicalSystem()
+        value = ComponentFunctionalAllocation()
+        tested.get_owned_functional_allocation().add(value)
+        pass
+
+    def test_LogicalSystem_functional_allocations_getter(self):
+        tested = LogicalSystem()
+        tested.get_functional_allocations()
+        pass
+
+    def test_LogicalSystem_allocated_functions_getter(self):
+        tested = LogicalSystem()
+        tested.get_allocated_functions()
+        pass
+
     def test_LogicalSystem_id_getter(self):
         tested = LogicalSystem()
         tested.get_id()
@@ -12985,6 +16222,28 @@ class capella_tests(unittest.TestCase):
         tested = LogicalSystem()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalSystem_owned_traces_getter(self):
+        tested = LogicalSystem()
+        tested.get_owned_traces()
+        pass
+
+    def test_LogicalSystem_owned_traces_setter(self):
+        tested = LogicalSystem()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LogicalSystem_contained_generic_traces_getter(self):
+        tested = LogicalSystem()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LogicalSystem_contained_generic_traces_setter(self):
+        tested = LogicalSystem()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalSystem_owned_diagrams_getter(self):
@@ -13211,6 +16470,38 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_component_exchange_categories()
         pass
 
+    def test_LogicalComponent_owned_features_getter(self):
+        tested = LogicalComponent()
+        tested.get_owned_features()
+        pass
+
+    def test_LogicalComponent_owned_features_setter(self):
+        tested = LogicalComponent()
+        value = Feature()
+        tested.get_owned_features().add(value)
+        pass
+
+    def test_LogicalComponent_owned_functional_allocation_getter(self):
+        tested = LogicalComponent()
+        tested.get_owned_functional_allocation()
+        pass
+
+    def test_LogicalComponent_owned_functional_allocation_setter(self):
+        tested = LogicalComponent()
+        value = ComponentFunctionalAllocation()
+        tested.get_owned_functional_allocation().add(value)
+        pass
+
+    def test_LogicalComponent_functional_allocations_getter(self):
+        tested = LogicalComponent()
+        tested.get_functional_allocations()
+        pass
+
+    def test_LogicalComponent_allocated_functions_getter(self):
+        tested = LogicalComponent()
+        tested.get_allocated_functions()
+        pass
+
     def test_LogicalComponent_id_getter(self):
         tested = LogicalComponent()
         tested.get_id()
@@ -13387,6 +16678,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_LogicalComponent_owned_traces_getter(self):
+        tested = LogicalComponent()
+        tested.get_owned_traces()
+        pass
+
+    def test_LogicalComponent_owned_traces_setter(self):
+        tested = LogicalComponent()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LogicalComponent_contained_generic_traces_getter(self):
+        tested = LogicalComponent()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LogicalComponent_contained_generic_traces_setter(self):
+        tested = LogicalComponent()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_LogicalComponent_owned_diagrams_getter(self):
         tested = LogicalComponent()
         tested.get_owned_diagrams()
@@ -13532,6 +16845,16 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_capability_realizations().add(value)
         pass
 
+    def test_LogicalComponent_allocated_logical_functions_getter(self):
+        tested = LogicalComponent()
+        tested.get_allocated_logical_functions()
+        pass
+
+    def test_LogicalComponent_sub_logical_components_getter(self):
+        tested = LogicalComponent()
+        tested.get_sub_logical_components()
+        pass
+
     def test_LogicalActor_contained_component_ports_getter(self):
         tested = LogicalActor()
         tested.get_contained_component_ports()
@@ -13611,6 +16934,38 @@ class capella_tests(unittest.TestCase):
     def test_LogicalActor_owned_component_exchange_categories_getter(self):
         tested = LogicalActor()
         tested.get_owned_component_exchange_categories()
+        pass
+
+    def test_LogicalActor_owned_features_getter(self):
+        tested = LogicalActor()
+        tested.get_owned_features()
+        pass
+
+    def test_LogicalActor_owned_features_setter(self):
+        tested = LogicalActor()
+        value = Feature()
+        tested.get_owned_features().add(value)
+        pass
+
+    def test_LogicalActor_owned_functional_allocation_getter(self):
+        tested = LogicalActor()
+        tested.get_owned_functional_allocation()
+        pass
+
+    def test_LogicalActor_owned_functional_allocation_setter(self):
+        tested = LogicalActor()
+        value = ComponentFunctionalAllocation()
+        tested.get_owned_functional_allocation().add(value)
+        pass
+
+    def test_LogicalActor_functional_allocations_getter(self):
+        tested = LogicalActor()
+        tested.get_functional_allocations()
+        pass
+
+    def test_LogicalActor_allocated_functions_getter(self):
+        tested = LogicalActor()
+        tested.get_allocated_functions()
         pass
 
     def test_LogicalActor_id_getter(self):
@@ -13787,6 +17142,28 @@ class capella_tests(unittest.TestCase):
         tested = LogicalActor()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_LogicalActor_owned_traces_getter(self):
+        tested = LogicalActor()
+        tested.get_owned_traces()
+        pass
+
+    def test_LogicalActor_owned_traces_setter(self):
+        tested = LogicalActor()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LogicalActor_contained_generic_traces_getter(self):
+        tested = LogicalActor()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LogicalActor_contained_generic_traces_setter(self):
+        tested = LogicalActor()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalActor_owned_diagrams_getter(self):
@@ -13976,6 +17353,11 @@ class capella_tests(unittest.TestCase):
         tested.get_involving_capability_realizations().add(value)
         pass
 
+    def test_LogicalActor_allocated_logical_functions_getter(self):
+        tested = LogicalActor()
+        tested.get_allocated_logical_functions()
+        pass
+
     def test_PhysicalArchitecture_owned_property_value_pkgs_getter(self):
         tested = PhysicalArchitecture()
         tested.get_owned_property_value_pkgs()
@@ -14155,6 +17537,28 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalArchitecture()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalArchitecture_owned_traces_getter(self):
+        tested = PhysicalArchitecture()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalArchitecture_owned_traces_setter(self):
+        tested = PhysicalArchitecture()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalArchitecture_contained_generic_traces_getter(self):
+        tested = PhysicalArchitecture()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalArchitecture_contained_generic_traces_setter(self):
+        tested = PhysicalArchitecture()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalArchitecture_owned_diagrams_getter(self):
@@ -14470,6 +17874,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_PhysicalFunctionPkg_owned_traces_getter(self):
+        tested = PhysicalFunctionPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalFunctionPkg_owned_traces_setter(self):
+        tested = PhysicalFunctionPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalFunctionPkg_contained_generic_traces_getter(self):
+        tested = PhysicalFunctionPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalFunctionPkg_contained_generic_traces_setter(self):
+        tested = PhysicalFunctionPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_PhysicalFunctionPkg_owned_diagrams_getter(self):
         tested = PhysicalFunctionPkg()
         tested.get_owned_diagrams()
@@ -14678,6 +18104,27 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_functions()
         pass
 
+    def test_PhysicalFunction_allocation_blocks_getter(self):
+        tested = PhysicalFunction()
+        tested.get_allocation_blocks()
+        pass
+
+    def test_PhysicalFunction_component_functional_allocations_getter(self):
+        tested = PhysicalFunction()
+        tested.get_component_functional_allocations()
+        pass
+
+    def test_PhysicalFunction_owned_functional_exchanges_getter(self):
+        tested = PhysicalFunction()
+        tested.get_owned_functional_exchanges()
+        pass
+
+    def test_PhysicalFunction_owned_functional_exchanges_setter(self):
+        tested = PhysicalFunction()
+        value = FunctionalExchange()
+        tested.get_owned_functional_exchanges().add(value)
+        pass
+
     def test_PhysicalFunction_available_in_states_getter(self):
         tested = PhysicalFunction()
         tested.get_available_in_states()
@@ -14863,6 +18310,28 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalFunction()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalFunction_owned_traces_getter(self):
+        tested = PhysicalFunction()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalFunction_owned_traces_setter(self):
+        tested = PhysicalFunction()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalFunction_contained_generic_traces_getter(self):
+        tested = PhysicalFunction()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalFunction_contained_generic_traces_setter(self):
+        tested = PhysicalFunction()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalFunction_owned_diagrams_getter(self):
@@ -15167,6 +18636,28 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalComponentPkg()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalComponentPkg_owned_traces_getter(self):
+        tested = PhysicalComponentPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalComponentPkg_owned_traces_setter(self):
+        tested = PhysicalComponentPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalComponentPkg_contained_generic_traces_getter(self):
+        tested = PhysicalComponentPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalComponentPkg_contained_generic_traces_setter(self):
+        tested = PhysicalComponentPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalComponentPkg_owned_diagrams_getter(self):
@@ -15475,6 +18966,28 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalSystem()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalSystem_owned_traces_getter(self):
+        tested = PhysicalSystem()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalSystem_owned_traces_setter(self):
+        tested = PhysicalSystem()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalSystem_contained_generic_traces_getter(self):
+        tested = PhysicalSystem()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalSystem_contained_generic_traces_setter(self):
+        tested = PhysicalSystem()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalSystem_owned_diagrams_getter(self):
@@ -15860,6 +19373,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_BehaviorPC_owned_traces_getter(self):
+        tested = BehaviorPC()
+        tested.get_owned_traces()
+        pass
+
+    def test_BehaviorPC_owned_traces_setter(self):
+        tested = BehaviorPC()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_BehaviorPC_contained_generic_traces_getter(self):
+        tested = BehaviorPC()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_BehaviorPC_contained_generic_traces_setter(self):
+        tested = BehaviorPC()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_BehaviorPC_owned_diagrams_getter(self):
         tested = BehaviorPC()
         tested.get_owned_diagrams()
@@ -16041,6 +19576,38 @@ class capella_tests(unittest.TestCase):
     def test_BehaviorPC_owned_component_exchange_categories_getter(self):
         tested = BehaviorPC()
         tested.get_owned_component_exchange_categories()
+        pass
+
+    def test_BehaviorPC_owned_features_getter(self):
+        tested = BehaviorPC()
+        tested.get_owned_features()
+        pass
+
+    def test_BehaviorPC_owned_features_setter(self):
+        tested = BehaviorPC()
+        value = Feature()
+        tested.get_owned_features().add(value)
+        pass
+
+    def test_BehaviorPC_owned_functional_allocation_getter(self):
+        tested = BehaviorPC()
+        tested.get_owned_functional_allocation()
+        pass
+
+    def test_BehaviorPC_owned_functional_allocation_setter(self):
+        tested = BehaviorPC()
+        value = ComponentFunctionalAllocation()
+        tested.get_owned_functional_allocation().add(value)
+        pass
+
+    def test_BehaviorPC_functional_allocations_getter(self):
+        tested = BehaviorPC()
+        tested.get_functional_allocations()
+        pass
+
+    def test_BehaviorPC_allocated_functions_getter(self):
+        tested = BehaviorPC()
+        tested.get_allocated_functions()
         pass
 
     def test_BehaviorPC_deploying_node_p_cs_getter(self):
@@ -16299,6 +19866,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_NodePC_owned_traces_getter(self):
+        tested = NodePC()
+        tested.get_owned_traces()
+        pass
+
+    def test_NodePC_owned_traces_setter(self):
+        tested = NodePC()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_NodePC_contained_generic_traces_getter(self):
+        tested = NodePC()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_NodePC_contained_generic_traces_setter(self):
+        tested = NodePC()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_NodePC_owned_diagrams_getter(self):
         tested = NodePC()
         tested.get_owned_diagrams()
@@ -16529,6 +20118,38 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_component_exchange_categories()
         pass
 
+    def test_PhysicalActor_owned_features_getter(self):
+        tested = PhysicalActor()
+        tested.get_owned_features()
+        pass
+
+    def test_PhysicalActor_owned_features_setter(self):
+        tested = PhysicalActor()
+        value = Feature()
+        tested.get_owned_features().add(value)
+        pass
+
+    def test_PhysicalActor_owned_functional_allocation_getter(self):
+        tested = PhysicalActor()
+        tested.get_owned_functional_allocation()
+        pass
+
+    def test_PhysicalActor_owned_functional_allocation_setter(self):
+        tested = PhysicalActor()
+        value = ComponentFunctionalAllocation()
+        tested.get_owned_functional_allocation().add(value)
+        pass
+
+    def test_PhysicalActor_functional_allocations_getter(self):
+        tested = PhysicalActor()
+        tested.get_functional_allocations()
+        pass
+
+    def test_PhysicalActor_allocated_functions_getter(self):
+        tested = PhysicalActor()
+        tested.get_allocated_functions()
+        pass
+
     def test_PhysicalActor_id_getter(self):
         tested = PhysicalActor()
         tested.get_id()
@@ -16703,6 +20324,28 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalActor()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalActor_owned_traces_getter(self):
+        tested = PhysicalActor()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalActor_owned_traces_setter(self):
+        tested = PhysicalActor()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalActor_contained_generic_traces_getter(self):
+        tested = PhysicalActor()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalActor_contained_generic_traces_setter(self):
+        tested = PhysicalActor()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalActor_owned_diagrams_getter(self):
@@ -17062,6 +20705,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_EPBSArchitecture_owned_traces_getter(self):
+        tested = EPBSArchitecture()
+        tested.get_owned_traces()
+        pass
+
+    def test_EPBSArchitecture_owned_traces_setter(self):
+        tested = EPBSArchitecture()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_EPBSArchitecture_contained_generic_traces_getter(self):
+        tested = EPBSArchitecture()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_EPBSArchitecture_contained_generic_traces_setter(self):
+        tested = EPBSArchitecture()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_EPBSArchitecture_owned_diagrams_getter(self):
         tested = EPBSArchitecture()
         tested.get_owned_diagrams()
@@ -17360,6 +21025,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ConfigurationItemPkg_owned_traces_getter(self):
+        tested = ConfigurationItemPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_ConfigurationItemPkg_owned_traces_setter(self):
+        tested = ConfigurationItemPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ConfigurationItemPkg_contained_generic_traces_getter(self):
+        tested = ConfigurationItemPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ConfigurationItemPkg_contained_generic_traces_setter(self):
+        tested = ConfigurationItemPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ConfigurationItemPkg_owned_diagrams_getter(self):
         tested = ConfigurationItemPkg()
         tested.get_owned_diagrams()
@@ -17646,6 +21333,28 @@ class capella_tests(unittest.TestCase):
         tested = ConfigurationItem()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_ConfigurationItem_owned_traces_getter(self):
+        tested = ConfigurationItem()
+        tested.get_owned_traces()
+        pass
+
+    def test_ConfigurationItem_owned_traces_setter(self):
+        tested = ConfigurationItem()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ConfigurationItem_contained_generic_traces_getter(self):
+        tested = ConfigurationItem()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ConfigurationItem_contained_generic_traces_setter(self):
+        tested = ConfigurationItem()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ConfigurationItem_owned_diagrams_getter(self):
@@ -17967,6 +21676,28 @@ class capella_tests(unittest.TestCase):
         tested = StateMachine()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_StateMachine_owned_traces_getter(self):
+        tested = StateMachine()
+        tested.get_owned_traces()
+        pass
+
+    def test_StateMachine_owned_traces_setter(self):
+        tested = StateMachine()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_StateMachine_contained_generic_traces_getter(self):
+        tested = StateMachine()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_StateMachine_contained_generic_traces_setter(self):
+        tested = StateMachine()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StateMachine_owned_diagrams_getter(self):
@@ -18294,6 +22025,28 @@ class capella_tests(unittest.TestCase):
         tested = State()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_State_owned_traces_getter(self):
+        tested = State()
+        tested.get_owned_traces()
+        pass
+
+    def test_State_owned_traces_setter(self):
+        tested = State()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_State_contained_generic_traces_getter(self):
+        tested = State()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_State_contained_generic_traces_setter(self):
+        tested = State()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_State_owned_diagrams_getter(self):
@@ -18782,6 +22535,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Mode_owned_traces_getter(self):
+        tested = Mode()
+        tested.get_owned_traces()
+        pass
+
+    def test_Mode_owned_traces_setter(self):
+        tested = Mode()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Mode_contained_generic_traces_getter(self):
+        tested = Mode()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Mode_contained_generic_traces_setter(self):
+        tested = Mode()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Mode_owned_diagrams_getter(self):
         tested = Mode()
         tested.get_owned_diagrams()
@@ -19104,6 +22879,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Pseudostate_owned_traces_getter(self):
+        tested = Pseudostate()
+        tested.get_owned_traces()
+        pass
+
+    def test_Pseudostate_owned_traces_setter(self):
+        tested = Pseudostate()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Pseudostate_contained_generic_traces_getter(self):
+        tested = Pseudostate()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Pseudostate_contained_generic_traces_setter(self):
+        tested = Pseudostate()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Pseudostate_owned_diagrams_getter(self):
         tested = Pseudostate()
         tested.get_owned_diagrams()
@@ -19387,6 +23184,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Region_owned_traces_getter(self):
+        tested = Region()
+        tested.get_owned_traces()
+        pass
+
+    def test_Region_owned_traces_setter(self):
+        tested = Region()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Region_contained_generic_traces_getter(self):
+        tested = Region()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Region_contained_generic_traces_setter(self):
+        tested = Region()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Region_owned_diagrams_getter(self):
         tested = Region()
         tested.get_owned_diagrams()
@@ -19668,6 +23487,28 @@ class capella_tests(unittest.TestCase):
         tested = StateTransition()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_StateTransition_owned_traces_getter(self):
+        tested = StateTransition()
+        tested.get_owned_traces()
+        pass
+
+    def test_StateTransition_owned_traces_setter(self):
+        tested = StateTransition()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_StateTransition_contained_generic_traces_getter(self):
+        tested = StateTransition()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_StateTransition_contained_generic_traces_setter(self):
+        tested = StateTransition()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StateTransition_owned_diagrams_getter(self):
@@ -20036,6 +23877,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ChangeEvent_owned_traces_getter(self):
+        tested = ChangeEvent()
+        tested.get_owned_traces()
+        pass
+
+    def test_ChangeEvent_owned_traces_setter(self):
+        tested = ChangeEvent()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ChangeEvent_contained_generic_traces_getter(self):
+        tested = ChangeEvent()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ChangeEvent_contained_generic_traces_setter(self):
+        tested = ChangeEvent()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ChangeEvent_owned_diagrams_getter(self):
         tested = ChangeEvent()
         tested.get_owned_diagrams()
@@ -20323,6 +24186,28 @@ class capella_tests(unittest.TestCase):
         tested = TimeEvent()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_TimeEvent_owned_traces_getter(self):
+        tested = TimeEvent()
+        tested.get_owned_traces()
+        pass
+
+    def test_TimeEvent_owned_traces_setter(self):
+        tested = TimeEvent()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_TimeEvent_contained_generic_traces_getter(self):
+        tested = TimeEvent()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_TimeEvent_contained_generic_traces_setter(self):
+        tested = TimeEvent()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_TimeEvent_owned_diagrams_getter(self):
@@ -20623,6 +24508,28 @@ class capella_tests(unittest.TestCase):
         tested = Scenario()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Scenario_owned_traces_getter(self):
+        tested = Scenario()
+        tested.get_owned_traces()
+        pass
+
+    def test_Scenario_owned_traces_setter(self):
+        tested = Scenario()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Scenario_contained_generic_traces_getter(self):
+        tested = Scenario()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Scenario_contained_generic_traces_setter(self):
+        tested = Scenario()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Scenario_owned_diagrams_getter(self):
@@ -20982,6 +24889,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_InstanceRole_owned_traces_getter(self):
+        tested = InstanceRole()
+        tested.get_owned_traces()
+        pass
+
+    def test_InstanceRole_owned_traces_setter(self):
+        tested = InstanceRole()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_InstanceRole_contained_generic_traces_getter(self):
+        tested = InstanceRole()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_InstanceRole_contained_generic_traces_setter(self):
+        tested = InstanceRole()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_InstanceRole_owned_diagrams_getter(self):
         tested = InstanceRole()
         tested.get_owned_diagrams()
@@ -21263,6 +25192,28 @@ class capella_tests(unittest.TestCase):
         tested = SequenceMessage()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_SequenceMessage_owned_traces_getter(self):
+        tested = SequenceMessage()
+        tested.get_owned_traces()
+        pass
+
+    def test_SequenceMessage_owned_traces_setter(self):
+        tested = SequenceMessage()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_SequenceMessage_contained_generic_traces_getter(self):
+        tested = SequenceMessage()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_SequenceMessage_contained_generic_traces_setter(self):
+        tested = SequenceMessage()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_SequenceMessage_owned_diagrams_getter(self):
@@ -21578,6 +25529,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_StateFragment_owned_traces_getter(self):
+        tested = StateFragment()
+        tested.get_owned_traces()
+        pass
+
+    def test_StateFragment_owned_traces_setter(self):
+        tested = StateFragment()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_StateFragment_contained_generic_traces_getter(self):
+        tested = StateFragment()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_StateFragment_contained_generic_traces_setter(self):
+        tested = StateFragment()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_StateFragment_owned_diagrams_getter(self):
         tested = StateFragment()
         tested.get_owned_diagrams()
@@ -21871,6 +25844,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_CombinedFragment_owned_traces_getter(self):
+        tested = CombinedFragment()
+        tested.get_owned_traces()
+        pass
+
+    def test_CombinedFragment_owned_traces_setter(self):
+        tested = CombinedFragment()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_CombinedFragment_contained_generic_traces_getter(self):
+        tested = CombinedFragment()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_CombinedFragment_contained_generic_traces_setter(self):
+        tested = CombinedFragment()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_CombinedFragment_owned_diagrams_getter(self):
         tested = CombinedFragment()
         tested.get_owned_diagrams()
@@ -22162,6 +26157,28 @@ class capella_tests(unittest.TestCase):
         tested = Operand()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Operand_owned_traces_getter(self):
+        tested = Operand()
+        tested.get_owned_traces()
+        pass
+
+    def test_Operand_owned_traces_setter(self):
+        tested = Operand()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Operand_contained_generic_traces_getter(self):
+        tested = Operand()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Operand_contained_generic_traces_setter(self):
+        tested = Operand()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Operand_owned_diagrams_getter(self):
@@ -22461,6 +26478,28 @@ class capella_tests(unittest.TestCase):
         tested = ConstraintDuration()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_ConstraintDuration_owned_traces_getter(self):
+        tested = ConstraintDuration()
+        tested.get_owned_traces()
+        pass
+
+    def test_ConstraintDuration_owned_traces_setter(self):
+        tested = ConstraintDuration()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ConstraintDuration_contained_generic_traces_getter(self):
+        tested = ConstraintDuration()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ConstraintDuration_contained_generic_traces_setter(self):
+        tested = ConstraintDuration()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ConstraintDuration_owned_diagrams_getter(self):
@@ -22763,6 +26802,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_PhysicalPort_owned_traces_getter(self):
+        tested = PhysicalPort()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalPort_owned_traces_setter(self):
+        tested = PhysicalPort()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalPort_contained_generic_traces_getter(self):
+        tested = PhysicalPort()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalPort_contained_generic_traces_setter(self):
+        tested = PhysicalPort()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_PhysicalPort_owned_diagrams_getter(self):
         tested = PhysicalPort()
         tested.get_owned_diagrams()
@@ -22863,6 +26924,43 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalPort()
         param1 = "value"
         tested.get_query_result(param1)
+        pass
+
+    def test_PhysicalPort_incoming_port_allocations_getter(self):
+        tested = PhysicalPort()
+        tested.get_incoming_port_allocations()
+        pass
+
+    def test_PhysicalPort_incoming_port_allocations_setter(self):
+        tested = PhysicalPort()
+        value = PortAllocation()
+        tested.get_incoming_port_allocations().add(value)
+        pass
+
+    def test_PhysicalPort_outgoing_port_allocations_getter(self):
+        tested = PhysicalPort()
+        tested.get_outgoing_port_allocations()
+        pass
+
+    def test_PhysicalPort_outgoing_port_allocations_setter(self):
+        tested = PhysicalPort()
+        value = PortAllocation()
+        tested.get_outgoing_port_allocations().add(value)
+        pass
+
+    def test_PhysicalPort_incoming_information_flows_getter(self):
+        tested = PhysicalPort()
+        tested.get_incoming_information_flows()
+        pass
+
+    def test_PhysicalPort_information_flows_getter(self):
+        tested = PhysicalPort()
+        tested.get_information_flows()
+        pass
+
+    def test_PhysicalPort_outgoing_information_flows_getter(self):
+        tested = PhysicalPort()
+        tested.get_outgoing_information_flows()
         pass
 
     def test_PhysicalPort_physical_links_getter(self):
@@ -23094,6 +27192,28 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalLink()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalLink_owned_traces_getter(self):
+        tested = PhysicalLink()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalLink_owned_traces_setter(self):
+        tested = PhysicalLink()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalLink_contained_generic_traces_getter(self):
+        tested = PhysicalLink()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalLink_contained_generic_traces_setter(self):
+        tested = PhysicalLink()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalLink_owned_diagrams_getter(self):
@@ -23445,6 +27565,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_PhysicalLinkCategory_owned_traces_getter(self):
+        tested = PhysicalLinkCategory()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalLinkCategory_owned_traces_setter(self):
+        tested = PhysicalLinkCategory()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalLinkCategory_contained_generic_traces_getter(self):
+        tested = PhysicalLinkCategory()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalLinkCategory_contained_generic_traces_setter(self):
+        tested = PhysicalLinkCategory()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_PhysicalLinkCategory_owned_diagrams_getter(self):
         tested = PhysicalLinkCategory()
         tested.get_owned_diagrams()
@@ -23732,6 +27874,28 @@ class capella_tests(unittest.TestCase):
         tested = PhysicalPath()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PhysicalPath_owned_traces_getter(self):
+        tested = PhysicalPath()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalPath_owned_traces_setter(self):
+        tested = PhysicalPath()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalPath_contained_generic_traces_getter(self):
+        tested = PhysicalPath()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalPath_contained_generic_traces_setter(self):
+        tested = PhysicalPath()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalPath_owned_diagrams_getter(self):
@@ -24060,6 +28224,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_InterfacePkg_owned_traces_getter(self):
+        tested = InterfacePkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_InterfacePkg_owned_traces_setter(self):
+        tested = InterfacePkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_InterfacePkg_contained_generic_traces_getter(self):
+        tested = InterfacePkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_InterfacePkg_contained_generic_traces_setter(self):
+        tested = InterfacePkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_InterfacePkg_owned_diagrams_getter(self):
         tested = InterfacePkg()
         tested.get_owned_diagrams()
@@ -24351,6 +28537,28 @@ class capella_tests(unittest.TestCase):
         tested = Interface()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Interface_owned_traces_getter(self):
+        tested = Interface()
+        tested.get_owned_traces()
+        pass
+
+    def test_Interface_owned_traces_setter(self):
+        tested = Interface()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Interface_contained_generic_traces_getter(self):
+        tested = Interface()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Interface_contained_generic_traces_setter(self):
+        tested = Interface()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Interface_owned_diagrams_getter(self):
@@ -24724,6 +28932,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ExchangeItemAllocation_owned_traces_getter(self):
+        tested = ExchangeItemAllocation()
+        tested.get_owned_traces()
+        pass
+
+    def test_ExchangeItemAllocation_owned_traces_setter(self):
+        tested = ExchangeItemAllocation()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ExchangeItemAllocation_contained_generic_traces_getter(self):
+        tested = ExchangeItemAllocation()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ExchangeItemAllocation_contained_generic_traces_setter(self):
+        tested = ExchangeItemAllocation()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ExchangeItemAllocation_owned_diagrams_getter(self):
         tested = ExchangeItemAllocation()
         tested.get_owned_diagrams()
@@ -25044,6 +29274,28 @@ class capella_tests(unittest.TestCase):
         tested = ExchangeItem()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_ExchangeItem_owned_traces_getter(self):
+        tested = ExchangeItem()
+        tested.get_owned_traces()
+        pass
+
+    def test_ExchangeItem_owned_traces_setter(self):
+        tested = ExchangeItem()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ExchangeItem_contained_generic_traces_getter(self):
+        tested = ExchangeItem()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ExchangeItem_contained_generic_traces_setter(self):
+        tested = ExchangeItem()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ExchangeItem_owned_diagrams_getter(self):
@@ -25428,6 +29680,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ExchangeItemElement_owned_traces_getter(self):
+        tested = ExchangeItemElement()
+        tested.get_owned_traces()
+        pass
+
+    def test_ExchangeItemElement_owned_traces_setter(self):
+        tested = ExchangeItemElement()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ExchangeItemElement_contained_generic_traces_getter(self):
+        tested = ExchangeItemElement()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ExchangeItemElement_contained_generic_traces_setter(self):
+        tested = ExchangeItemElement()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ExchangeItemElement_owned_diagrams_getter(self):
         tested = ExchangeItemElement()
         tested.get_owned_diagrams()
@@ -25541,6 +29815,328 @@ class capella_tests(unittest.TestCase):
         tested.set_type(value)
         pass
 
+    def test_PortAllocation_id_getter(self):
+        tested = PortAllocation()
+        tested.get_id()
+        pass
+
+    def test_PortAllocation_id_setter(self):
+        tested = PortAllocation()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_PortAllocation_sid_getter(self):
+        tested = PortAllocation()
+        tested.get_sid()
+        pass
+
+    def test_PortAllocation_sid_setter(self):
+        tested = PortAllocation()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_PortAllocation_name_getter(self):
+        tested = PortAllocation()
+        tested.get_name()
+        pass
+
+    def test_PortAllocation_name_setter(self):
+        tested = PortAllocation()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_PortAllocation_summary_getter(self):
+        tested = PortAllocation()
+        tested.get_summary()
+        pass
+
+    def test_PortAllocation_summary_setter(self):
+        tested = PortAllocation()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_PortAllocation_description_getter(self):
+        tested = PortAllocation()
+        tested.get_description()
+        pass
+
+    def test_PortAllocation_description_setter(self):
+        tested = PortAllocation()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_PortAllocation_status_getter(self):
+        tested = PortAllocation()
+        tested.get_status()
+        pass
+
+    def test_PortAllocation_status_setter(self):
+        tested = PortAllocation()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_PortAllocation_review_getter(self):
+        tested = PortAllocation()
+        tested.get_review()
+        pass
+
+    def test_PortAllocation_review_setter(self):
+        tested = PortAllocation()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_PortAllocation_visible_in_documentation_getter(self):
+        tested = PortAllocation()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_PortAllocation_visible_in_documentation_setter(self):
+        tested = PortAllocation()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_PortAllocation_visible_for_traceability_getter(self):
+        tested = PortAllocation()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_PortAllocation_visible_for_traceability_setter(self):
+        tested = PortAllocation()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_PortAllocation_owned_constraints_getter(self):
+        tested = PortAllocation()
+        tested.get_owned_constraints()
+        pass
+
+    def test_PortAllocation_constraints_getter(self):
+        tested = PortAllocation()
+        tested.get_constraints()
+        pass
+
+    def test_PortAllocation_constraints_setter(self):
+        tested = PortAllocation()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_PortAllocation_owned_property_values_getter(self):
+        tested = PortAllocation()
+        tested.get_owned_property_values()
+        pass
+
+    def test_PortAllocation_applied_property_values_getter(self):
+        tested = PortAllocation()
+        tested.get_applied_property_values()
+        pass
+
+    def test_PortAllocation_applied_property_values_setter(self):
+        tested = PortAllocation()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_PortAllocation_owned_property_value_groups_getter(self):
+        tested = PortAllocation()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_PortAllocation_applied_property_value_groups_getter(self):
+        tested = PortAllocation()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_PortAllocation_applied_property_value_groups_setter(self):
+        tested = PortAllocation()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_PortAllocation_owned_enumeration_property_types_getter(self):
+        tested = PortAllocation()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_PortAllocation_get_owned_property_value_by_name(self):
+        tested = PortAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_PortAllocation_get_applied_property_value_by_name(self):
+        tested = PortAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_PortAllocation_get_owned_property_value_group_by_name(self):
+        tested = PortAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_PortAllocation_get_applied_property_value_group_by_name(self):
+        tested = PortAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_PortAllocation_owned_traces_getter(self):
+        tested = PortAllocation()
+        tested.get_owned_traces()
+        pass
+
+    def test_PortAllocation_owned_traces_setter(self):
+        tested = PortAllocation()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PortAllocation_contained_generic_traces_getter(self):
+        tested = PortAllocation()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PortAllocation_contained_generic_traces_setter(self):
+        tested = PortAllocation()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_PortAllocation_owned_diagrams_getter(self):
+        tested = PortAllocation()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_PortAllocation_element_of_interest_for_diagrams_getter(self):
+        tested = PortAllocation()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_PortAllocation_element_of_interest_for_diagrams_setter(self):
+        tested = PortAllocation()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_PortAllocation_contextual_element_for_diagrams_getter(self):
+        tested = PortAllocation()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_PortAllocation_contextual_element_for_diagrams_setter(self):
+        tested = PortAllocation()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_PortAllocation_representing_diagrams_getter(self):
+        tested = PortAllocation()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_PortAllocation__r_e_cs_getter(self):
+        tested = PortAllocation()
+        tested.get__r_e_cs()
+        pass
+
+    def test_PortAllocation__r_e_cs_setter(self):
+        tested = PortAllocation()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_PortAllocation__r_p_ls_getter(self):
+        tested = PortAllocation()
+        tested.get__r_p_ls()
+        pass
+
+    def test_PortAllocation__r_p_ls_setter(self):
+        tested = PortAllocation()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_PortAllocation_get_label(self):
+        tested = PortAllocation()
+        tested.get_label()
+        pass
+
+    def test_PortAllocation_get_element_type(self):
+        tested = PortAllocation()
+        tested.get_element_type()
+        pass
+
+    def test_PortAllocation_get_container(self):
+        tested = PortAllocation()
+        tested.get_container()
+        pass
+
+    def test_PortAllocation_get_container_by_type(self):
+        tested = PortAllocation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_PortAllocation_get_contents(self):
+        tested = PortAllocation()
+        tested.get_contents()
+        pass
+
+    def test_PortAllocation_get_all_contents(self):
+        tested = PortAllocation()
+        tested.get_all_contents()
+        pass
+
+    def test_PortAllocation_get_all_contents_by_type(self):
+        tested = PortAllocation()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_PortAllocation_get_available_s_b_queries(self):
+        tested = PortAllocation()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_PortAllocation_get_query_result(self):
+        tested = PortAllocation()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_PortAllocation_allocated_port_getter(self):
+        tested = PortAllocation()
+        tested.get_allocated_port()
+        pass
+
+    def test_PortAllocation_allocated_port_setter(self):
+        tested = PortAllocation()
+        value = ComponentPort()
+        tested.set_allocated_port(value)
+        pass
+
+    def test_PortAllocation_allocating_port_getter(self):
+        tested = PortAllocation()
+        tested.get_allocating_port()
+        pass
+
+    def test_PortAllocation_allocating_port_setter(self):
+        tested = PortAllocation()
+        value = ComponentPort()
+        tested.set_allocating_port(value)
+        pass
+
     def test_FunctionInputPort_allocator_component_port_getter(self):
         tested = FunctionInputPort()
         tested.get_allocator_component_port()
@@ -25550,6 +30146,28 @@ class capella_tests(unittest.TestCase):
         tested = FunctionInputPort()
         value = ComponentPort()
         tested.set_allocator_component_port(value)
+        pass
+
+    def test_FunctionInputPort_incoming_port_allocations_getter(self):
+        tested = FunctionInputPort()
+        tested.get_incoming_port_allocations()
+        pass
+
+    def test_FunctionInputPort_incoming_port_allocations_setter(self):
+        tested = FunctionInputPort()
+        value = PortAllocation()
+        tested.get_incoming_port_allocations().add(value)
+        pass
+
+    def test_FunctionInputPort_outgoing_port_allocations_getter(self):
+        tested = FunctionInputPort()
+        tested.get_outgoing_port_allocations()
+        pass
+
+    def test_FunctionInputPort_outgoing_port_allocations_setter(self):
+        tested = FunctionInputPort()
+        value = PortAllocation()
+        tested.get_outgoing_port_allocations().add(value)
         pass
 
     def test_FunctionInputPort_id_getter(self):
@@ -25728,6 +30346,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_FunctionInputPort_owned_traces_getter(self):
+        tested = FunctionInputPort()
+        tested.get_owned_traces()
+        pass
+
+    def test_FunctionInputPort_owned_traces_setter(self):
+        tested = FunctionInputPort()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_FunctionInputPort_contained_generic_traces_getter(self):
+        tested = FunctionInputPort()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_FunctionInputPort_contained_generic_traces_setter(self):
+        tested = FunctionInputPort()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_FunctionInputPort_owned_diagrams_getter(self):
         tested = FunctionInputPort()
         tested.get_owned_diagrams()
@@ -25883,6 +30523,28 @@ class capella_tests(unittest.TestCase):
         tested = FunctionOutputPort()
         value = ComponentPort()
         tested.set_allocator_component_port(value)
+        pass
+
+    def test_FunctionOutputPort_incoming_port_allocations_getter(self):
+        tested = FunctionOutputPort()
+        tested.get_incoming_port_allocations()
+        pass
+
+    def test_FunctionOutputPort_incoming_port_allocations_setter(self):
+        tested = FunctionOutputPort()
+        value = PortAllocation()
+        tested.get_incoming_port_allocations().add(value)
+        pass
+
+    def test_FunctionOutputPort_outgoing_port_allocations_getter(self):
+        tested = FunctionOutputPort()
+        tested.get_outgoing_port_allocations()
+        pass
+
+    def test_FunctionOutputPort_outgoing_port_allocations_setter(self):
+        tested = FunctionOutputPort()
+        value = PortAllocation()
+        tested.get_outgoing_port_allocations().add(value)
         pass
 
     def test_FunctionOutputPort_id_getter(self):
@@ -26059,6 +30721,28 @@ class capella_tests(unittest.TestCase):
         tested = FunctionOutputPort()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_FunctionOutputPort_owned_traces_getter(self):
+        tested = FunctionOutputPort()
+        tested.get_owned_traces()
+        pass
+
+    def test_FunctionOutputPort_owned_traces_setter(self):
+        tested = FunctionOutputPort()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_FunctionOutputPort_contained_generic_traces_getter(self):
+        tested = FunctionOutputPort()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_FunctionOutputPort_contained_generic_traces_setter(self):
+        tested = FunctionOutputPort()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_FunctionOutputPort_owned_diagrams_getter(self):
@@ -26381,6 +31065,28 @@ class capella_tests(unittest.TestCase):
         tested = FunctionalExchange()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_FunctionalExchange_owned_traces_getter(self):
+        tested = FunctionalExchange()
+        tested.get_owned_traces()
+        pass
+
+    def test_FunctionalExchange_owned_traces_setter(self):
+        tested = FunctionalExchange()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_FunctionalExchange_contained_generic_traces_getter(self):
+        tested = FunctionalExchange()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_FunctionalExchange_contained_generic_traces_setter(self):
+        tested = FunctionalExchange()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_FunctionalExchange_owned_diagrams_getter(self):
@@ -26781,6 +31487,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ExchangeCategory_owned_traces_getter(self):
+        tested = ExchangeCategory()
+        tested.get_owned_traces()
+        pass
+
+    def test_ExchangeCategory_owned_traces_setter(self):
+        tested = ExchangeCategory()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ExchangeCategory_contained_generic_traces_getter(self):
+        tested = ExchangeCategory()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ExchangeCategory_contained_generic_traces_setter(self):
+        tested = ExchangeCategory()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ExchangeCategory_owned_diagrams_getter(self):
         tested = ExchangeCategory()
         tested.get_owned_diagrams()
@@ -27070,6 +31798,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_FunctionalChain_owned_traces_getter(self):
+        tested = FunctionalChain()
+        tested.get_owned_traces()
+        pass
+
+    def test_FunctionalChain_owned_traces_setter(self):
+        tested = FunctionalChain()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_FunctionalChain_contained_generic_traces_getter(self):
+        tested = FunctionalChain()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_FunctionalChain_contained_generic_traces_setter(self):
+        tested = FunctionalChain()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_FunctionalChain_owned_diagrams_getter(self):
         tested = FunctionalChain()
         tested.get_owned_diagrams()
@@ -27264,6 +32014,28 @@ class capella_tests(unittest.TestCase):
         tested.get_realizing_functional_chains().add(value)
         pass
 
+    def test_ComponentPort_incoming_port_allocations_getter(self):
+        tested = ComponentPort()
+        tested.get_incoming_port_allocations()
+        pass
+
+    def test_ComponentPort_incoming_port_allocations_setter(self):
+        tested = ComponentPort()
+        value = PortAllocation()
+        tested.get_incoming_port_allocations().add(value)
+        pass
+
+    def test_ComponentPort_outgoing_port_allocations_getter(self):
+        tested = ComponentPort()
+        tested.get_outgoing_port_allocations()
+        pass
+
+    def test_ComponentPort_outgoing_port_allocations_setter(self):
+        tested = ComponentPort()
+        value = PortAllocation()
+        tested.get_outgoing_port_allocations().add(value)
+        pass
+
     def test_ComponentPort_id_getter(self):
         tested = ComponentPort()
         tested.get_id()
@@ -27440,6 +32212,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ComponentPort_owned_traces_getter(self):
+        tested = ComponentPort()
+        tested.get_owned_traces()
+        pass
+
+    def test_ComponentPort_owned_traces_setter(self):
+        tested = ComponentPort()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ComponentPort_contained_generic_traces_getter(self):
+        tested = ComponentPort()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ComponentPort_contained_generic_traces_setter(self):
+        tested = ComponentPort()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ComponentPort_owned_diagrams_getter(self):
         tested = ComponentPort()
         tested.get_owned_diagrams()
@@ -27542,6 +32336,21 @@ class capella_tests(unittest.TestCase):
         tested.get_query_result(param1)
         pass
 
+    def test_ComponentPort_incoming_information_flows_getter(self):
+        tested = ComponentPort()
+        tested.get_incoming_information_flows()
+        pass
+
+    def test_ComponentPort_information_flows_getter(self):
+        tested = ComponentPort()
+        tested.get_information_flows()
+        pass
+
+    def test_ComponentPort_outgoing_information_flows_getter(self):
+        tested = ComponentPort()
+        tested.get_outgoing_information_flows()
+        pass
+
     def test_ComponentPort_orientation_getter(self):
         tested = ComponentPort()
         tested.get_orientation()
@@ -27628,6 +32437,17 @@ class capella_tests(unittest.TestCase):
         tested = ComponentPort()
         value = ComponentPort()
         tested.get_realizing_component_ports().add(value)
+        pass
+
+    def test_ComponentPort_kind_getter(self):
+        tested = ComponentPort()
+        tested.get_kind()
+        pass
+
+    def test_ComponentPort_kind_setter(self):
+        tested = ComponentPort()
+        value = ComponentPortKind()
+        tested.set_kind(value)
         pass
 
     def test_ComponentExchange_id_getter(self):
@@ -27804,6 +32624,28 @@ class capella_tests(unittest.TestCase):
         tested = ComponentExchange()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentExchange_owned_traces_getter(self):
+        tested = ComponentExchange()
+        tested.get_owned_traces()
+        pass
+
+    def test_ComponentExchange_owned_traces_setter(self):
+        tested = ComponentExchange()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ComponentExchange_contained_generic_traces_getter(self):
+        tested = ComponentExchange()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ComponentExchange_contained_generic_traces_setter(self):
+        tested = ComponentExchange()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ComponentExchange_owned_diagrams_getter(self):
@@ -28034,6 +32876,27 @@ class capella_tests(unittest.TestCase):
         tested.get_realizing_component_exchanges().add(value)
         pass
 
+    def test_ComponentExchange_source_port_getter(self):
+        tested = ComponentExchange()
+        tested.get_source_port()
+        pass
+
+    def test_ComponentExchange_target_port_getter(self):
+        tested = ComponentExchange()
+        tested.get_target_port()
+        pass
+
+    def test_ComponentExchange_owned_component_exchange_functional_exchange_allocations_getter(self):
+        tested = ComponentExchange()
+        tested.get_owned_component_exchange_functional_exchange_allocations()
+        pass
+
+    def test_ComponentExchange_owned_component_exchange_functional_exchange_allocations_setter(self):
+        tested = ComponentExchange()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_owned_component_exchange_functional_exchange_allocations().add(value)
+        pass
+
     def test_ComponentExchangeCategory_id_getter(self):
         tested = ComponentExchangeCategory()
         tested.get_id()
@@ -28210,6 +33073,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ComponentExchangeCategory_owned_traces_getter(self):
+        tested = ComponentExchangeCategory()
+        tested.get_owned_traces()
+        pass
+
+    def test_ComponentExchangeCategory_owned_traces_setter(self):
+        tested = ComponentExchangeCategory()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ComponentExchangeCategory_contained_generic_traces_getter(self):
+        tested = ComponentExchangeCategory()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ComponentExchangeCategory_contained_generic_traces_setter(self):
+        tested = ComponentExchangeCategory()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ComponentExchangeCategory_owned_diagrams_getter(self):
         tested = ComponentExchangeCategory()
         tested.get_owned_diagrams()
@@ -28321,6 +33206,712 @@ class capella_tests(unittest.TestCase):
         tested = ComponentExchangeCategory()
         value = ComponentExchange()
         tested.get_exchanges().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_realized_flow_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_realized_flow()
+        pass
+
+    def test_ComponentFunctionalAllocation_realized_flow_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = AbstractInformationFlow()
+        tested.set_realized_flow(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_id_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_id()
+        pass
+
+    def test_ComponentFunctionalAllocation_id_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_sid_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_sid()
+        pass
+
+    def test_ComponentFunctionalAllocation_sid_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_name_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_name()
+        pass
+
+    def test_ComponentFunctionalAllocation_name_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_summary_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_summary()
+        pass
+
+    def test_ComponentFunctionalAllocation_summary_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_description_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_description()
+        pass
+
+    def test_ComponentFunctionalAllocation_description_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_status_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_status()
+        pass
+
+    def test_ComponentFunctionalAllocation_status_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_review_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_review()
+        pass
+
+    def test_ComponentFunctionalAllocation_review_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_visible_in_documentation_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_ComponentFunctionalAllocation_visible_in_documentation_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_visible_for_traceability_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_ComponentFunctionalAllocation_visible_for_traceability_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_owned_constraints_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_owned_constraints()
+        pass
+
+    def test_ComponentFunctionalAllocation_constraints_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_constraints()
+        pass
+
+    def test_ComponentFunctionalAllocation_constraints_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_owned_property_values_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_owned_property_values()
+        pass
+
+    def test_ComponentFunctionalAllocation_applied_property_values_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_applied_property_values()
+        pass
+
+    def test_ComponentFunctionalAllocation_applied_property_values_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_owned_property_value_groups_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_ComponentFunctionalAllocation_applied_property_value_groups_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_ComponentFunctionalAllocation_applied_property_value_groups_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_owned_enumeration_property_types_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ComponentFunctionalAllocation_get_owned_property_value_by_name(self):
+        tested = ComponentFunctionalAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ComponentFunctionalAllocation_get_applied_property_value_by_name(self):
+        tested = ComponentFunctionalAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ComponentFunctionalAllocation_get_owned_property_value_group_by_name(self):
+        tested = ComponentFunctionalAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentFunctionalAllocation_get_applied_property_value_group_by_name(self):
+        tested = ComponentFunctionalAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentFunctionalAllocation_owned_traces_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_owned_traces()
+        pass
+
+    def test_ComponentFunctionalAllocation_owned_traces_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_contained_generic_traces_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ComponentFunctionalAllocation_contained_generic_traces_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_owned_diagrams_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_ComponentFunctionalAllocation_element_of_interest_for_diagrams_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_ComponentFunctionalAllocation_element_of_interest_for_diagrams_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_contextual_element_for_diagrams_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_ComponentFunctionalAllocation_contextual_element_for_diagrams_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_representing_diagrams_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_ComponentFunctionalAllocation__r_e_cs_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get__r_e_cs()
+        pass
+
+    def test_ComponentFunctionalAllocation__r_e_cs_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation__r_p_ls_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get__r_p_ls()
+        pass
+
+    def test_ComponentFunctionalAllocation__r_p_ls_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_get_label(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_label()
+        pass
+
+    def test_ComponentFunctionalAllocation_get_element_type(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_element_type()
+        pass
+
+    def test_ComponentFunctionalAllocation_get_container(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_container()
+        pass
+
+    def test_ComponentFunctionalAllocation_get_container_by_type(self):
+        tested = ComponentFunctionalAllocation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_ComponentFunctionalAllocation_get_contents(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_contents()
+        pass
+
+    def test_ComponentFunctionalAllocation_get_all_contents(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_all_contents()
+        pass
+
+    def test_ComponentFunctionalAllocation_get_all_contents_by_type(self):
+        tested = ComponentFunctionalAllocation()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_ComponentFunctionalAllocation_get_available_s_b_queries(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_ComponentFunctionalAllocation_get_query_result(self):
+        tested = ComponentFunctionalAllocation()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_ComponentFunctionalAllocation_source_element_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_source_element()
+        pass
+
+    def test_ComponentFunctionalAllocation_source_element_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_source_element(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_target_element_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_target_element()
+        pass
+
+    def test_ComponentFunctionalAllocation_target_element_setter(self):
+        tested = ComponentFunctionalAllocation()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_target_element(value)
+        pass
+
+    def test_ComponentFunctionalAllocation_incoming_traces_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_incoming_traces()
+        pass
+
+    def test_ComponentFunctionalAllocation_outgoing_traces_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_outgoing_traces()
+        pass
+
+    def test_ComponentFunctionalAllocation_block_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_block()
+        pass
+
+    def test_ComponentFunctionalAllocation_function_getter(self):
+        tested = ComponentFunctionalAllocation()
+        tested.get_function()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_realized_flow_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_realized_flow()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_realized_flow_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = AbstractInformationFlow()
+        tested.set_realized_flow(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_id_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_id()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_id_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = "value"
+        tested.set_id(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_sid_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_sid()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_sid_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = "value"
+        tested.set_sid(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_name_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_name()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_name_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = "value"
+        tested.set_name(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_summary_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_summary()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_summary_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = "value"
+        tested.set_summary(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_description_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_description()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_description_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = "value"
+        tested.set_description(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_status_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_status()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_status_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = "value"
+        tested.set_status(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_review_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_review()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_review_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = "value"
+        tested.set_review(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_visible_in_documentation_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_visible_in_documentation()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_visible_in_documentation_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = True
+        tested.set_visible_in_documentation(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_visible_for_traceability_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_visible_for_traceability()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_visible_for_traceability_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = True
+        tested.set_visible_for_traceability(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_owned_constraints_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_owned_constraints()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_constraints_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_constraints()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_constraints_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = Constraint()
+        tested.get_constraints().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_owned_property_values_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_owned_property_values()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_applied_property_values_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_applied_property_values()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_applied_property_values_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = PropertyValue()
+        tested.get_applied_property_values().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_owned_property_value_groups_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_owned_property_value_groups()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_applied_property_value_groups_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_applied_property_value_groups()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_applied_property_value_groups_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = PropertyValueGroup()
+        tested.get_applied_property_value_groups().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_owned_enumeration_property_types_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_owned_enumeration_property_types()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_owned_property_value_by_name(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_by_name(param1)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_applied_property_value_by_name(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_by_name(param1)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_owned_property_value_group_by_name(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        param1 = "value"
+        tested.get_owned_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_applied_property_value_group_by_name(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        param1 = "value"
+        tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_owned_traces_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_owned_traces()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_owned_traces_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_contained_generic_traces_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_contained_generic_traces_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_owned_diagrams_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_owned_diagrams()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_element_of_interest_for_diagrams_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_element_of_interest_for_diagrams()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_element_of_interest_for_diagrams_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = Diagram()
+        tested.get_element_of_interest_for_diagrams().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_contextual_element_for_diagrams_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_contextual_element_for_diagrams()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_contextual_element_for_diagrams_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = Diagram()
+        tested.get_contextual_element_for_diagrams().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_representing_diagrams_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_representing_diagrams()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation__r_e_cs_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get__r_e_cs()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation__r_e_cs_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = REC()
+        tested.get__r_e_cs().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation__r_p_ls_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get__r_p_ls()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation__r_p_ls_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = RPL()
+        tested.get__r_p_ls().add(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_label(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_label()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_element_type(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_element_type()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_container(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_container()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_container_by_type(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        param1 = LogicalComponent
+        tested.get_container_by_type(param1)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_contents(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_contents()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_all_contents(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_all_contents()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_all_contents_by_type(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        param1 = LogicalComponent
+        tested.get_all_contents_by_type(param1)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_available_s_b_queries(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_available_s_b_queries()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_get_query_result(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        param1 = "value"
+        tested.get_query_result(param1)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_source_element_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_source_element()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_source_element_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_source_element(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_target_element_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_target_element()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_target_element_setter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        value = ComponentExchangeFunctionalExchangeAllocation()
+        tested.set_target_element(value)
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_incoming_traces_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_incoming_traces()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_outgoing_traces_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_outgoing_traces()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_allocated_functional_exchange_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_allocated_functional_exchange()
+        pass
+
+    def test_ComponentExchangeFunctionalExchangeAllocation_allocating_component_exchange_getter(self):
+        tested = ComponentExchangeFunctionalExchangeAllocation()
+        tested.get_allocating_component_exchange()
         pass
 
     def test_LiteralBooleanValue_abstract_getter(self):
@@ -28508,6 +34099,28 @@ class capella_tests(unittest.TestCase):
         tested = LiteralBooleanValue()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_LiteralBooleanValue_owned_traces_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_owned_traces()
+        pass
+
+    def test_LiteralBooleanValue_owned_traces_setter(self):
+        tested = LiteralBooleanValue()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LiteralBooleanValue_contained_generic_traces_getter(self):
+        tested = LiteralBooleanValue()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LiteralBooleanValue_contained_generic_traces_setter(self):
+        tested = LiteralBooleanValue()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LiteralBooleanValue_owned_diagrams_getter(self):
@@ -28808,6 +34421,28 @@ class capella_tests(unittest.TestCase):
         tested = BooleanReference()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_BooleanReference_owned_traces_getter(self):
+        tested = BooleanReference()
+        tested.get_owned_traces()
+        pass
+
+    def test_BooleanReference_owned_traces_setter(self):
+        tested = BooleanReference()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_BooleanReference_contained_generic_traces_getter(self):
+        tested = BooleanReference()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_BooleanReference_contained_generic_traces_setter(self):
+        tested = BooleanReference()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_BooleanReference_owned_diagrams_getter(self):
@@ -29121,6 +34756,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_EnumerationReference_owned_traces_getter(self):
+        tested = EnumerationReference()
+        tested.get_owned_traces()
+        pass
+
+    def test_EnumerationReference_owned_traces_setter(self):
+        tested = EnumerationReference()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_EnumerationReference_contained_generic_traces_getter(self):
+        tested = EnumerationReference()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_EnumerationReference_contained_generic_traces_setter(self):
+        tested = EnumerationReference()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_EnumerationReference_owned_diagrams_getter(self):
         tested = EnumerationReference()
         tested.get_owned_diagrams()
@@ -29432,6 +35089,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_LiteralStringValue_owned_traces_getter(self):
+        tested = LiteralStringValue()
+        tested.get_owned_traces()
+        pass
+
+    def test_LiteralStringValue_owned_traces_setter(self):
+        tested = LiteralStringValue()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LiteralStringValue_contained_generic_traces_getter(self):
+        tested = LiteralStringValue()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LiteralStringValue_contained_generic_traces_setter(self):
+        tested = LiteralStringValue()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_LiteralStringValue_owned_diagrams_getter(self):
         tested = LiteralStringValue()
         tested.get_owned_diagrams()
@@ -29730,6 +35409,28 @@ class capella_tests(unittest.TestCase):
         tested = StringReference()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_StringReference_owned_traces_getter(self):
+        tested = StringReference()
+        tested.get_owned_traces()
+        pass
+
+    def test_StringReference_owned_traces_setter(self):
+        tested = StringReference()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_StringReference_contained_generic_traces_getter(self):
+        tested = StringReference()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_StringReference_contained_generic_traces_setter(self):
+        tested = StringReference()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StringReference_owned_diagrams_getter(self):
@@ -30041,6 +35742,28 @@ class capella_tests(unittest.TestCase):
         tested = NumericValue()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_NumericValue_owned_traces_getter(self):
+        tested = NumericValue()
+        tested.get_owned_traces()
+        pass
+
+    def test_NumericValue_owned_traces_setter(self):
+        tested = NumericValue()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_NumericValue_contained_generic_traces_getter(self):
+        tested = NumericValue()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_NumericValue_contained_generic_traces_setter(self):
+        tested = NumericValue()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_NumericValue_owned_diagrams_getter(self):
@@ -30364,6 +36087,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_LiteralNumericValue_owned_traces_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_owned_traces()
+        pass
+
+    def test_LiteralNumericValue_owned_traces_setter(self):
+        tested = LiteralNumericValue()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_LiteralNumericValue_contained_generic_traces_getter(self):
+        tested = LiteralNumericValue()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_LiteralNumericValue_contained_generic_traces_setter(self):
+        tested = LiteralNumericValue()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_LiteralNumericValue_owned_diagrams_getter(self):
         tested = LiteralNumericValue()
         tested.get_owned_diagrams()
@@ -30662,6 +36407,28 @@ class capella_tests(unittest.TestCase):
         tested = NumericReference()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_NumericReference_owned_traces_getter(self):
+        tested = NumericReference()
+        tested.get_owned_traces()
+        pass
+
+    def test_NumericReference_owned_traces_setter(self):
+        tested = NumericReference()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_NumericReference_contained_generic_traces_getter(self):
+        tested = NumericReference()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_NumericReference_contained_generic_traces_setter(self):
+        tested = NumericReference()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_NumericReference_owned_diagrams_getter(self):
@@ -30975,6 +36742,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_ComplexValue_owned_traces_getter(self):
+        tested = ComplexValue()
+        tested.get_owned_traces()
+        pass
+
+    def test_ComplexValue_owned_traces_setter(self):
+        tested = ComplexValue()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ComplexValue_contained_generic_traces_getter(self):
+        tested = ComplexValue()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ComplexValue_contained_generic_traces_setter(self):
+        tested = ComplexValue()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_ComplexValue_owned_diagrams_getter(self):
         tested = ComplexValue()
         tested.get_owned_diagrams()
@@ -31262,6 +37051,28 @@ class capella_tests(unittest.TestCase):
         tested = ComplexValueReference()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_ComplexValueReference_owned_traces_getter(self):
+        tested = ComplexValueReference()
+        tested.get_owned_traces()
+        pass
+
+    def test_ComplexValueReference_owned_traces_setter(self):
+        tested = ComplexValueReference()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_ComplexValueReference_contained_generic_traces_getter(self):
+        tested = ComplexValueReference()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_ComplexValueReference_contained_generic_traces_setter(self):
+        tested = ComplexValueReference()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ComplexValueReference_owned_diagrams_getter(self):
@@ -31564,6 +37375,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_BinaryExpression_owned_traces_getter(self):
+        tested = BinaryExpression()
+        tested.get_owned_traces()
+        pass
+
+    def test_BinaryExpression_owned_traces_setter(self):
+        tested = BinaryExpression()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_BinaryExpression_contained_generic_traces_getter(self):
+        tested = BinaryExpression()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_BinaryExpression_contained_generic_traces_setter(self):
+        tested = BinaryExpression()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_BinaryExpression_owned_diagrams_getter(self):
         tested = BinaryExpression()
         tested.get_owned_diagrams()
@@ -31853,6 +37686,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_UnaryExpression_owned_traces_getter(self):
+        tested = UnaryExpression()
+        tested.get_owned_traces()
+        pass
+
+    def test_UnaryExpression_owned_traces_setter(self):
+        tested = UnaryExpression()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_UnaryExpression_contained_generic_traces_getter(self):
+        tested = UnaryExpression()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_UnaryExpression_contained_generic_traces_setter(self):
+        tested = UnaryExpression()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_UnaryExpression_owned_diagrams_getter(self):
         tested = UnaryExpression()
         tested.get_owned_diagrams()
@@ -32140,6 +37995,28 @@ class capella_tests(unittest.TestCase):
         tested = CollectionValueReference()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_CollectionValueReference_owned_traces_getter(self):
+        tested = CollectionValueReference()
+        tested.get_owned_traces()
+        pass
+
+    def test_CollectionValueReference_owned_traces_setter(self):
+        tested = CollectionValueReference()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_CollectionValueReference_contained_generic_traces_getter(self):
+        tested = CollectionValueReference()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_CollectionValueReference_contained_generic_traces_setter(self):
+        tested = CollectionValueReference()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_CollectionValueReference_owned_diagrams_getter(self):
@@ -32453,6 +38330,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_CollectionValue_owned_traces_getter(self):
+        tested = CollectionValue()
+        tested.get_owned_traces()
+        pass
+
+    def test_CollectionValue_owned_traces_setter(self):
+        tested = CollectionValue()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_CollectionValue_contained_generic_traces_getter(self):
+        tested = CollectionValue()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_CollectionValue_contained_generic_traces_setter(self):
+        tested = CollectionValue()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_CollectionValue_owned_diagrams_getter(self):
         tested = CollectionValue()
         tested.get_owned_diagrams()
@@ -32751,6 +38650,28 @@ class capella_tests(unittest.TestCase):
         tested = DataPkg()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_DataPkg_owned_traces_getter(self):
+        tested = DataPkg()
+        tested.get_owned_traces()
+        pass
+
+    def test_DataPkg_owned_traces_setter(self):
+        tested = DataPkg()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_DataPkg_contained_generic_traces_getter(self):
+        tested = DataPkg()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_DataPkg_contained_generic_traces_setter(self):
+        tested = DataPkg()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_DataPkg_owned_diagrams_getter(self):
@@ -33097,6 +39018,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Class_owned_traces_getter(self):
+        tested = Class()
+        tested.get_owned_traces()
+        pass
+
+    def test_Class_owned_traces_setter(self):
+        tested = Class()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Class_contained_generic_traces_getter(self):
+        tested = Class()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Class_contained_generic_traces_setter(self):
+        tested = Class()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Class_owned_diagrams_getter(self):
         tested = Class()
         tested.get_owned_diagrams()
@@ -33427,6 +39370,28 @@ class capella_tests(unittest.TestCase):
         tested = Collection()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Collection_owned_traces_getter(self):
+        tested = Collection()
+        tested.get_owned_traces()
+        pass
+
+    def test_Collection_owned_traces_setter(self):
+        tested = Collection()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Collection_contained_generic_traces_getter(self):
+        tested = Collection()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Collection_contained_generic_traces_setter(self):
+        tested = Collection()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Collection_owned_diagrams_getter(self):
@@ -33832,6 +39797,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Union_owned_traces_getter(self):
+        tested = Union()
+        tested.get_owned_traces()
+        pass
+
+    def test_Union_owned_traces_setter(self):
+        tested = Union()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Union_contained_generic_traces_getter(self):
+        tested = Union()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Union_contained_generic_traces_setter(self):
+        tested = Union()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Union_owned_diagrams_getter(self):
         tested = Union()
         tested.get_owned_diagrams()
@@ -34162,6 +40149,28 @@ class capella_tests(unittest.TestCase):
         tested = Association()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Association_owned_traces_getter(self):
+        tested = Association()
+        tested.get_owned_traces()
+        pass
+
+    def test_Association_owned_traces_setter(self):
+        tested = Association()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Association_contained_generic_traces_getter(self):
+        tested = Association()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Association_contained_generic_traces_setter(self):
+        tested = Association()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Association_owned_diagrams_getter(self):
@@ -34639,6 +40648,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_Enumeration_owned_traces_getter(self):
+        tested = Enumeration()
+        tested.get_owned_traces()
+        pass
+
+    def test_Enumeration_owned_traces_setter(self):
+        tested = Enumeration()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Enumeration_contained_generic_traces_getter(self):
+        tested = Enumeration()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Enumeration_contained_generic_traces_setter(self):
+        tested = Enumeration()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_Enumeration_owned_diagrams_getter(self):
         tested = Enumeration()
         tested.get_owned_diagrams()
@@ -35019,6 +41050,28 @@ class capella_tests(unittest.TestCase):
         tested = EnumerationLiteral()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_EnumerationLiteral_owned_traces_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_owned_traces()
+        pass
+
+    def test_EnumerationLiteral_owned_traces_setter(self):
+        tested = EnumerationLiteral()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_EnumerationLiteral_contained_generic_traces_getter(self):
+        tested = EnumerationLiteral()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_EnumerationLiteral_contained_generic_traces_setter(self):
+        tested = EnumerationLiteral()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_EnumerationLiteral_owned_diagrams_getter(self):
@@ -35414,6 +41467,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_BooleanType_owned_traces_getter(self):
+        tested = BooleanType()
+        tested.get_owned_traces()
+        pass
+
+    def test_BooleanType_owned_traces_setter(self):
+        tested = BooleanType()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_BooleanType_contained_generic_traces_getter(self):
+        tested = BooleanType()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_BooleanType_contained_generic_traces_setter(self):
+        tested = BooleanType()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_BooleanType_owned_diagrams_getter(self):
         tested = BooleanType()
         tested.get_owned_diagrams()
@@ -35799,6 +41874,28 @@ class capella_tests(unittest.TestCase):
         tested = StringType()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_StringType_owned_traces_getter(self):
+        tested = StringType()
+        tested.get_owned_traces()
+        pass
+
+    def test_StringType_owned_traces_setter(self):
+        tested = StringType()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_StringType_contained_generic_traces_getter(self):
+        tested = StringType()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_StringType_contained_generic_traces_setter(self):
+        tested = StringType()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StringType_owned_diagrams_getter(self):
@@ -36223,6 +42320,28 @@ class capella_tests(unittest.TestCase):
         tested = NumericType()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_NumericType_owned_traces_getter(self):
+        tested = NumericType()
+        tested.get_owned_traces()
+        pass
+
+    def test_NumericType_owned_traces_setter(self):
+        tested = NumericType()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_NumericType_contained_generic_traces_getter(self):
+        tested = NumericType()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_NumericType_contained_generic_traces_setter(self):
+        tested = NumericType()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_NumericType_owned_diagrams_getter(self):
@@ -36724,6 +42843,28 @@ class capella_tests(unittest.TestCase):
         tested.get_applied_property_value_group_by_name(param1)
         pass
 
+    def test_PhysicalQuantity_owned_traces_getter(self):
+        tested = PhysicalQuantity()
+        tested.get_owned_traces()
+        pass
+
+    def test_PhysicalQuantity_owned_traces_setter(self):
+        tested = PhysicalQuantity()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_PhysicalQuantity_contained_generic_traces_getter(self):
+        tested = PhysicalQuantity()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_PhysicalQuantity_contained_generic_traces_setter(self):
+        tested = PhysicalQuantity()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
+        pass
+
     def test_PhysicalQuantity_owned_diagrams_getter(self):
         tested = PhysicalQuantity()
         tested.get_owned_diagrams()
@@ -37011,6 +43152,28 @@ class capella_tests(unittest.TestCase):
         tested = Unit()
         param1 = "value"
         tested.get_applied_property_value_group_by_name(param1)
+        pass
+
+    def test_Unit_owned_traces_getter(self):
+        tested = Unit()
+        tested.get_owned_traces()
+        pass
+
+    def test_Unit_owned_traces_setter(self):
+        tested = Unit()
+        value = JustificationLink()
+        tested.get_owned_traces().add(value)
+        pass
+
+    def test_Unit_contained_generic_traces_getter(self):
+        tested = Unit()
+        tested.get_contained_generic_traces()
+        pass
+
+    def test_Unit_contained_generic_traces_setter(self):
+        tested = Unit()
+        value = GenericTrace()
+        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Unit_owned_diagrams_getter(self):

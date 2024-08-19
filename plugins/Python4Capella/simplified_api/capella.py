@@ -481,6 +481,16 @@ class CapellaElement(EObject):
            if property_value_group.get_name() == p_v_g_name:
                return property_value_group
         return None
+    def get_owned_traces(self) -> List[Trace]:
+        """
+        Returns: Trace[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedTraces(), Trace)
+    def get_contained_generic_traces(self) -> List[GenericTrace]:
+        """
+        Returns: GenericTrace[*]
+        """
+        return create_e_list(self.get_java_object().getContainedGenericTraces(), GenericTrace)
 
 class Constraint(CapellaElement):
     """
@@ -683,6 +693,259 @@ class ModellingArchitecture(PropertyValuePkgContainer):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class Feature(CapellaElement):
+    """
+    Java class: org.polarsys.capella.core.data.capellacore.Feature
+    A generic constraint which can be defined on Capella elements
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Feature")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, Feature):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class TraceableElement(JavaObject):
+    """
+    Java class: org.polarsys.capella.common.data.modellingcore.TraceableElement
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "TraceableElement")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, TraceableElement):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_incoming_traces(self) -> List[AbstractTrace]:
+        """
+        Returns: AbstractTrace[*]
+        """
+        return create_e_list(self.get_java_object().getIncomingTraces(), AbstractTrace)
+    def get_outgoing_traces(self) -> List[AbstractTrace]:
+        """
+        Returns: AbstractTrace[*]
+        """
+        return create_e_list(self.get_java_object().getOutgoingTraces(), AbstractTrace)
+
+class AbstractTrace(TraceableElement):
+    """
+    Java class: org.polarsys.capella.common.data.modellingcore.AbstractTrace
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractTrace")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractTrace):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_source_element(self) -> TraceableElement:
+        """
+        Returns: TraceableElement
+        """
+        value =  self.get_java_object().getSourceElement()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_source_element(self, value: TraceableElement):
+        """
+        Parameters: value: TraceableElement
+        """
+        return self.get_java_object().setSourceElement(value.get_java_object())
+    def get_target_element(self) -> TraceableElement:
+        """
+        Returns: TraceableElement
+        """
+        value =  self.get_java_object().getTargetElement()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_target_element(self, value: TraceableElement):
+        """
+        Parameters: value: TraceableElement
+        """
+        return self.get_java_object().setTargetElement(value.get_java_object())
+
+class AbstractRelationship(JavaObject):
+    """
+    Java class: org.polarsys.capella.common.data.modellingcore.AbstractRelationship
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractRelationship")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractRelationship):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_realized_flow(self) -> AbstractInformationFlow:
+        """
+        Returns: AbstractInformationFlow
+        """
+        value =  self.get_java_object().getRealizedFlow()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_realized_flow(self, value: AbstractInformationFlow):
+        """
+        Parameters: value: AbstractInformationFlow
+        """
+        return self.get_java_object().setRealizedFlow(value.get_java_object())
+
+class Relationship(AbstractRelationship, CapellaElement):
+    """
+    Java class: org.polarsys.capella.core.data.capellacore.Relationship
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Relationship")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, Relationship):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class Allocation(Relationship, AbstractTrace):
+    """
+    Java class: org.polarsys.capella.core.data.capellacore.Allocation
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Allocation")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, Allocation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class AbstractInformationFlow(AbstractRelationship, CapellaElement):
+    """
+    Java class: org.polarsys.capella.common.data.modellingcore.AbstractInformationFlow
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "AbstractInformationFlow")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractInformationFlow):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_realizations(self) -> List[AbstractRelationship]:
+        """
+        Returns: AbstractRelationship[*]
+        """
+        return create_e_list(self.get_java_object().getRealizations(), AbstractRelationship)
+    def get_source(self) -> InformationsExchanger:
+        """
+        Returns: InformationsExchanger
+        """
+        value =  self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_source(self, value: InformationsExchanger):
+        """
+        Parameters: value: InformationsExchanger
+        """
+        return self.get_java_object().setSource(value.get_java_object())
+    def get_target(self) -> InformationsExchanger:
+        """
+        Returns: InformationsExchanger
+        """
+        value =  self.get_java_object().getTarget()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_target(self, value: InformationsExchanger):
+        """
+        Parameters: value: InformationsExchanger
+        """
+        return self.get_java_object().setTarget(value.get_java_object())
+
+class InformationsExchanger(EObject):
+    """
+    Java class: org.polarsys.capella.common.data.modellingcore.InformationsExchanger
+    A generic Capella model Element. Used to define generic attributes and relations inherited by most Capella elements
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/common/core/" + capella_version(), "InformationsExchanger")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, InformationsExchanger):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_incoming_information_flows(self) -> List[AbstractInformationFlow]:
+        """
+        Returns: AbstractInformationFlow[*]
+        """
+        return create_e_list(self.get_java_object().getIncomingInformationFlows(), AbstractInformationFlow)
+    def get_information_flows(self) -> List[AbstractInformationFlow]:
+        """
+        Returns: AbstractInformationFlow[*]
+        """
+        return create_e_list(self.get_java_object().getInformationFlows(), AbstractInformationFlow)
+    def get_outgoing_information_flows(self) -> List[AbstractInformationFlow]:
+        """
+        Returns: AbstractInformationFlow[*]
+        """
+        return create_e_list(self.get_java_object().getOutgoingInformationFlows(), AbstractInformationFlow)
+
+class Classifier(CapellaElement):
+    """
+    Java class: org.polarsys.capella.core.data.capellacore.Classifier
+    A generic constraint which can be defined on Capella elements
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Classifier")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, Classifier):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_owned_features(self) -> List[Feature]:
+        """
+        Returns: Feature[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedFeatures(), Feature)
 
 class Diagram(JavaObject):
     """
@@ -3048,42 +3311,6 @@ class Node(AbstractInstance):
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalPaths(), PhysicalPath)
 
-class PhysicalPort(AbstractPhysicalArtifact):
-    """
-    Java class: org.polarsys.capella.core.data.cs.PhysicalPort
-    A port on a Node component defining a physical interaction point
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort")
-    def __init__(self, java_object = None):
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-        elif isinstance(java_object, PhysicalPort):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_physical_links(self):
-        """
-        Returns: PhysicalLink[*]
-        """
-        return capella_query_by_name(self, "Physical Links")
-    def get_allocated_component_ports(self):
-        """
-        Returns: ComponentPort[*]
-        """
-        return capella_query_by_name(self, "Allocated Component Ports")
-    def get_realized_physical_ports(self) -> List[PhysicalPort]:
-        """
-        Returns: PhysicalPort[*]
-        """
-        return create_e_list(self.get_java_object().getRealizedPhysicalPorts(), PhysicalPort)
-    def get_realizing_physical_ports(self) -> List[PhysicalPort]:
-        """
-        Returns: PhysicalPort[*]
-        """
-        return create_e_list(self.get_java_object().getRealizingPhysicalPorts(), PhysicalPort)
-
 class PhysicalLink(AbstractPhysicalArtifact):
     """
     Java class: org.polarsys.capella.core.data.cs.PhysicalLink
@@ -3488,7 +3715,81 @@ class ExchangeItemElement(CapellaElement):
         """
         return capella_query_by_name(self, "Type")
 
-class FunctionPort(CapellaElement):
+class Port(CapellaElement):
+    """
+    Java class: org.polarsys.capella.core.data.information.Port
+    The definition of ExchangeItems which can be send / received by a ComponentPort
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "Port")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, Port):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_incoming_port_allocations(self) -> List[PortAllocation]:
+        """
+        Returns: PortAllocation[*]
+        """
+        return create_e_list(self.get_java_object().getIncomingPortAllocations(), PortAllocation)
+    def get_outgoing_port_allocations(self) -> List[PortAllocation]:
+        """
+        Returns: PortAllocation[*]
+        """
+        return create_e_list(self.get_java_object().getOutgoingPortAllocations(), PortAllocation)
+
+class PortAllocation(CapellaElement):
+    """
+    Java class: org.polarsys.capella.core.data.information.PortAllocation
+    The definition of ExchangeItems which can be send / received by a ComponentPort
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/information/" + capella_version(), "PortAllocation")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, PortAllocation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_allocated_port(self) -> Port:
+        """
+        Returns: Port
+        """
+        value =  self.get_java_object().getAllocatedPort()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_allocated_port(self, value: Port):
+        """
+        Parameters: value: Port
+        """
+        return self.get_java_object().setAllocatedPort(value.get_java_object())
+    def get_allocating_port(self) -> Port:
+        """
+        Returns: Port
+        """
+        value =  self.get_java_object().getAllocatingPort()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_allocating_port(self, value: Port):
+        """
+        Parameters: value: Port
+        """
+        return self.get_java_object().setAllocatingPort(value.get_java_object())
+
+class FunctionPort(Port):
     """
     Java class: org.polarsys.capella.core.data.fa.FunctionPort
     An generic FunctionPort to define the allocation with ComponentPorts
@@ -3827,64 +4128,7 @@ class FunctionalChain(CapellaElement):
         """
         return capella_query_by_name(self, "Realizing Functional Chains")
 
-class BehavioralComponent(CapellaElement, AbstractInstance):
-    """
-    An abstract type to define the generic relation of behavioral elements
-    """
-    def __init__(self, java_object = None):
-        if java_object is None:
-            raise ValueError("No matching EClass for this type")
-        elif isinstance(java_object, BehavioralComponent):
-            JavaObject.__init__(self, java_object.get_java_object())
-        else:
-            JavaObject.__init__(self, java_object)
-    def get_contained_component_ports(self) -> List[ComponentPort]:
-        """
-        Returns: ComponentPort[*]
-        """
-        return create_e_list(self.get_java_object().getContainedComponentPorts(), ComponentPort)
-    def get_incoming_component_exchanges(self) -> List[ComponentExchange]:
-        """
-        Returns: ComponentExchange[*]
-        """
-        return create_e_list(self.get_java_object().getIncomingComponentExchanges(), ComponentExchange)
-    def get_outgoing_component_exchanges(self) -> List[ComponentExchange]:
-        """
-        Returns: ComponentExchange[*]
-        """
-        return create_e_list(self.get_java_object().getOutgoingComponentExchanges(), ComponentExchange)
-    def get_inout_component_exchanges(self) -> List[ComponentExchange]:
-        """
-        Returns: ComponentExchange[*]
-        """
-        return create_e_list(self.get_java_object().getInoutComponentExchanges(), ComponentExchange)
-    def get_allocated_functions(self) -> List[Function]:
-        """
-        Returns: Function[*]
-        """
-        return create_e_list(self.get_java_object().getAllocatedFunctions(), Function)
-    def get_used_interfaces(self) -> List[Interface]:
-        """
-        Returns: Interface[*]
-        """
-        return create_e_list(self.get_java_object().getUsedInterfaces(), Interface)
-    def get_implemented_interfaces(self) -> List[Interface]:
-        """
-        Returns: Interface[*]
-        """
-        return create_e_list(self.get_java_object().getImplementedInterfaces(), Interface)
-    def get_owned_state_machines(self) -> List[StateMachine]:
-        """
-        Returns: StateMachine[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
-    def get_owned_component_exchange_categories(self) -> List[ComponentExchangeCategory]:
-        """
-        Returns: ComponentExchangeCategory[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
-
-class ComponentPort(CapellaElement):
+class ComponentPort(Port, InformationsExchanger):
     """
     Java class: org.polarsys.capella.core.data.fa.ComponentPort
     A port on a BehavioralComponent defining a logical interaction point
@@ -3943,6 +4187,22 @@ class ComponentPort(CapellaElement):
         Returns: ComponentPort[*]
         """
         return capella_query_by_name(self, "Realizing Component Ports")
+    def get_kind(self) -> str:
+        """
+        Returns: String
+        """
+        value =  self.get_java_object().getKind()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def set_kind(self, value: str):
+        """
+        Parameters: value: String
+        """
+        return self.get_java_object().setKind(value.get_java_object())
 
 class ComponentExchange(CapellaElement, AbstractExchange):
     """
@@ -4025,6 +4285,33 @@ class ComponentExchange(CapellaElement, AbstractExchange):
         Returns: ComponentExchange[*]
         """
         return capella_query_by_name(self, "Realizing Component Exchanges")
+    def get_source_port(self) -> ComponentPort:
+        """
+        Returns: ComponentPort
+        """
+        value =  self.get_java_object().getSourcePort()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def get_target_port(self) -> ComponentPort:
+        """
+        Returns: ComponentPort
+        """
+        value =  self.get_java_object().getTargetPort()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def get_owned_component_exchange_functional_exchange_allocations(self) -> List[ComponentExchangeFunctionalExchangeAllocation]:
+        """
+        Returns: ComponentExchangeFunctionalExchangeAllocation[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedComponentExchangeFunctionalExchangeAllocations(), ComponentExchangeFunctionalExchangeAllocation)
 
 class ComponentExchangeCategory(CapellaElement):
     """
@@ -4161,6 +4448,91 @@ class AbstractSystemCapability(AbstractCapability):
         Returns: Function[*]
         """
         return create_e_list(self.get_java_object().getInvolvedAbstractFunctions(), Function)
+
+class AbstractFunctionalBlock(CapellaElement):
+    """
+    Java class: org.polarsys.capella.core.data.fa.AbstractFunctionalBlock
+    A regroupement of FunctionalExchanges for graphical simplification of diagrams
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "AbstractFunctionalBlock")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractFunctionalBlock):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_owned_functional_allocation(self) -> List[ComponentFunctionalAllocation]:
+        """
+        Returns: ComponentFunctionalAllocation[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedFunctionalAllocation(), ComponentFunctionalAllocation)
+    def get_functional_allocations(self) -> List[ComponentFunctionalAllocation]:
+        """
+        Returns: ComponentFunctionalAllocation[*]
+        """
+        return create_e_list(self.get_java_object().getFunctionalAllocations(), ComponentFunctionalAllocation)
+    def get_allocated_functions(self) -> List[Function]:
+        """
+        Returns: Function[*]
+        """
+        return create_e_list(self.get_java_object().getAllocatedFunctions(), Function)
+
+class AbstractFunctionAllocation(Allocation):
+    """
+    Java class: org.polarsys.capella.core.data.fa.AbstractFunctionAllocation
+    A regroupement of FunctionalExchanges for graphical simplification of diagrams
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "AbstractFunctionAllocation")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, AbstractFunctionAllocation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class ComponentExchangeFunctionalExchangeAllocation(AbstractFunctionAllocation):
+    """
+    Java class: org.polarsys.capella.core.data.fa.ComponentExchangeFunctionalExchangeAllocation
+    A regroupement of FunctionalExchanges for graphical simplification of diagrams
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentExchangeFunctionalExchangeAllocation")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, ComponentExchangeFunctionalExchangeAllocation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_allocated_functional_exchange(self) -> FunctionalExchange:
+        """
+        Returns: FunctionalExchange
+        """
+        value =  self.get_java_object().getAllocatedFunctionalExchange()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def get_allocating_component_exchange(self) -> ComponentExchange:
+        """
+        Returns: ComponentExchange
+        """
+        value =  self.get_java_object().getAllocatingComponentExchange()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
 
 class DataValue(CapellaElement):
     """
@@ -5872,6 +6244,88 @@ class PropertyValuePkg(PropertyValuePkgContainer):
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
 
+class Trace(Relationship, AbstractTrace):
+    """
+    Java class: org.polarsys.capella.core.data.capellacore.Trace
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/core/" + capella_version(), "Trace")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, Trace):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class GenericTrace(Trace):
+    """
+    Java class: org.polarsys.capella.core.data.capellacommon.GenericTrace
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "GenericTrace")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, GenericTrace):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_source(self) -> TraceableElement:
+        """
+        Returns: TraceableElement
+        """
+        value =  self.get_java_object().getSource()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def get_target(self) -> TraceableElement:
+        """
+        Returns: TraceableElement
+        """
+        value =  self.get_java_object().getTarget()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+
+class TransfoLink(GenericTrace):
+    """
+    Java class: org.polarsys.capella.core.data.capellacommon.TransfoLink
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "TransfoLink")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, TransfoLink):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class JustificationLink(GenericTrace):
+    """
+    Java class: org.polarsys.capella.core.data.capellacommon.JustificationLink
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/common/" + capella_version(), "JustificationLink")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, JustificationLink):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
 class Interaction(AbstractEvent):
     """
     Oriented dependency between Operational Activities
@@ -6055,96 +6509,6 @@ class Capability(AbstractSystemCapability):
         """
         return create_e_list(self.get_java_object().getInvolvedSystemActors(), SystemActor)
 
-class System(BehavioralComponent, Node):
-    """
-    Set of elements functioning as a whole, responding to customer and user demand and needs
-    The System defined in the SystemAnalysis is seen as a black box
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent")
-    def __init__(self, java_object = None):
-        """
-        """
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-        elif isinstance(java_object, System):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-            if is_system(java_object):
-                JavaObject.__init__(self, java_object)
-            else:
-                raise AttributeError("Passed component is not a system.")
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-
-class SystemActor(BehavioralComponent, Node):
-    """
-    Entity (human or not) that is external to the System (in term of responsibility), interacting with it, via its interfaces
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent")
-    def __init__(self, java_object = None):
-        """
-        """
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-            self.get_java_object().setActor(True)
-        elif isinstance(java_object, SystemActor):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-            if java_object.isActor():
-                JavaObject.__init__(self, java_object)
-            else:
-                raise AttributeError("Passed component is not an actor.")
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_is_human(self) -> bool:
-        """
-        Returns: Boolean
-        """
-        return self.get_java_object().isHuman()
-    def set_is_human(self, value: bool):
-        """
-        Returns: Boolean
-        """
-        self.get_java_object().setHuman(value)
-    def get_owned_actors(self) -> List[SystemActor]:
-        """
-        Returns: SystemActor[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedActors(), SystemActor)
-    def get_owned_system_component_pkgs(self) -> SystemComponentPkg:
-        """
-        Returns: SystemComponentPkg
-        """
-        value =  self.get_java_object().getOwnedSystemComponentPkgs()
-        if value is None:
-            return value
-        else:
-            e_object_class = getattr(sys.modules["__main__"], "EObject")
-            specific_cls = e_object_class.get_class(value)
-            return specific_cls(value)
-    def get_involving_missions(self) -> List[Mission]:
-        """
-        Returns: Mission[*]
-        """
-        return create_e_list(self.get_java_object().getInvolvingMissions(), Mission)
-    def get_realized_operational_entities(self) -> List[OperationalActor]:
-        """
-        Returns: OperationalActor[*]
-        """
-        return create_e_list(self.get_java_object().getRealizedOperationalEntities(), OperationalActor)
-    def get_involving_capabilities(self) -> List[Capability]:
-        """
-        Returns: Capability[*]
-        """
-        return create_e_list(self.get_java_object().getInvolvingCapabilities(), Capability)
-    def get_realizing_logical_actors(self) -> List[LogicalActor]:
-        """
-        Returns: LogicalActor[*]
-        """
-        return create_e_list(self.get_java_object().getRealizingLogicalActors(), LogicalActor)
-
 class CapabilityRealization(AbstractSystemCapability):
     """
     Java class: org.polarsys.capella.core.data.la.CapabilityRealization
@@ -6196,147 +6560,6 @@ class CapabilityRealization(AbstractSystemCapability):
         """
         return create_e_list(self.get_java_object().getInvolvedPhysicalActors(), PhysicalActor)
 
-class LogicalSystem(BehavioralComponent, Node):
-    """
-    The definition of the system in Logical Architecture
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
-    def __init__(self, java_object = None):
-        """
-        """
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-        elif isinstance(java_object, LogicalSystem):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-            if is_system(java_object):
-                JavaObject.__init__(self, java_object)
-            else:
-                raise AttributeError("Passed component is not a system.")
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_owned_logical_components(self) -> List[LogicalComponent]:
-        """
-        Returns: LogicalComponent[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
-    def get_owned_logical_component_pkgs(self) -> List[LogicalComponentPkg]:
-        """
-        Returns: LogicalComponentPkg[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
-
-class LogicalComponent(BehavioralComponent):
-    """
-    Java class: org.polarsys.capella.core.data.la.LogicalComponent
-    Logical Components are the artefacts enabling a notional decomposition of the system as a "white box", independently from any technological solutions, but dealing with major system decomposition constraints
-    Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
-    def __init__(self, java_object = None):
-        """
-        """
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-        elif isinstance(java_object, LogicalComponent):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-            if not java_object.isActor():
-                JavaObject.__init__(self, java_object)
-            else:
-                raise AttributeError("Passed component is an actor.")
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_owned_logical_components(self) -> List[LogicalComponent]:
-        """
-        Returns: LogicalComponent[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
-    def get_owned_logical_component_pkgs(self) -> List[LogicalComponentPkg]:
-        """
-        Returns: LogicalComponentPkg[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
-    def get_is_human(self) -> bool:
-        """
-        Returns: Boolean
-        """
-        return self.get_java_object().isHuman()
-    def set_is_human(self, value: bool):
-        """
-        Returns: Boolean
-        """
-        self.get_java_object().setHuman(value)
-    def get_realizing_behavior_p_cs(self) -> List[BehaviorPC]:
-        """
-        Returns: BehaviorPC[*]
-        """
-        return create_e_list(self.get_java_object().getRealizingBehaviorPCs(), BehaviorPC)
-    def get_involving_capability_realizations(self) -> List[CapabilityRealization]:
-        """
-        Returns: CapabilityRealization[*]
-        """
-        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
-
-class LogicalActor(BehavioralComponent, Node):
-    """
-    An external Actor defined in the Logical Architecture
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
-    def __init__(self, java_object = None):
-        """
-        """
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-            self.get_java_object().setActor(True)
-        elif isinstance(java_object, LogicalActor):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-            if java_object.isActor():
-                JavaObject.__init__(self, java_object)
-            else:
-                raise AttributeError("Passed component is not an actor.")
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_owned_logical_actors(self) -> List[LogicalActor]:
-        """
-        Returns: LogicalActor[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedLogicalActors(), LogicalActor)
-    def get_owned_logical_component_pkgs(self) -> List[LogicalComponentPkg]:
-        """
-        Returns: LogicalComponentPkg[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
-    def get_realized_system_actors(self) -> List[SystemActor]:
-        """
-        Returns: SystemActor[*]
-        """
-        return create_e_list(self.get_java_object().getRealizedSystemActors(), SystemActor)
-    def get_is_human(self) -> bool:
-        """
-        Returns: Boolean
-        """
-        return self.get_java_object().isHuman()
-    def set_is_human(self, value: bool):
-        """
-        Returns: Boolean
-        """
-        self.get_java_object().setHuman(value)
-    def get_realizing_physical_actors(self) -> List[PhysicalActor]:
-        """
-        Returns: PhysicalActor[*]
-        """
-        return create_e_list(self.get_java_object().getRealizingPhysicalActors(), PhysicalActor)
-    def get_involving_capability_realizations(self) -> List[CapabilityRealization]:
-        """
-        Returns: CapabilityRealization[*]
-        """
-        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
-
 class PhysicalSystem(CapellaElement, Node):
     """
     The definition of the system in Physical Architecture
@@ -6368,45 +6591,6 @@ class PhysicalSystem(CapellaElement, Node):
         Returns: PhysicalComponentPkg[*]
         """
         return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
-
-class BehaviorPC(PhysicalComponent, BehavioralComponent):
-    """
-    System component in charge of implementing / realizing some of the functions devoted to the system
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
-    def __init__(self, java_object = None):
-        """
-        """
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-            self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "BEHAVIOR"))
-        elif isinstance(java_object, BehaviorPC):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-            if not java_object.isActor():
-                if java_object.getNature().getName() == "UNSET":
-                    raise AttributeError("Passed component is a physical component.")
-                elif java_object.getNature().getName() == "BEHAVIOR":
-                    JavaObject.__init__(self, java_object)
-                elif java_object.getNature().getName() == "NODE":
-                    raise AttributeError("Passed component is a node physical component.")
-                else:
-                    raise AttributeError("Passed component has unexpected nature.")
-            else:
-                raise AttributeError("Passed component is an actor.")
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_deploying_node_p_cs(self) -> List[NodePC]:
-        """
-        Returns: NodePC[*]
-        """
-        return create_e_list(self.get_java_object().getDeployingPhysicalComponents(), NodePC)
-    def get_realized_logical_components(self) -> List[LogicalComponent]:
-        """
-        Returns: LogicalComponent[*]
-        """
-        return create_e_list(self.get_java_object().getRealizedLogicalComponents(), LogicalComponent)
 
 class NodePC(PhysicalComponent, Node):
     """
@@ -6452,58 +6636,6 @@ class NodePC(PhysicalComponent, Node):
         Returns: StateMachine[*]
         """
         return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
-
-class PhysicalActor(BehavioralComponent, Node):
-    """
-    An external Actor defined in the Physical Architecture
-    """
-    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
-    def __init__(self, java_object = None):
-        """
-        """
-        if java_object is None:
-            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
-            self.get_java_object().setActor(True)
-        elif isinstance(java_object, PhysicalActor):
-            JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
-            JavaObject.__init__(self, java_object)
-            if java_object.isActor():
-                JavaObject.__init__(self, java_object)
-            else:
-                raise AttributeError("Passed component is not an actor.")
-        else:
-            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_owned_physical_actors(self) -> List[PhysicalActor]:
-        """
-        Returns: PhysicalActor[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedPhysicalActors(), PhysicalActor)
-    def get_owned_physical_component_pkgs(self) -> List[PhysicalComponentPkg]:
-        """
-        Returns: PhysicalComponentPkg[*]
-        """
-        return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
-    def get_realized_logical_actors(self) -> List[LogicalActor]:
-        """
-        Returns: LogicalActor[*]
-        """
-        return create_e_list(self.get_java_object().getRealizedLogicalActors(), LogicalActor)
-    def get_is_human(self) -> bool:
-        """
-        Returns: Boolean
-        """
-        return self.get_java_object().isHuman()
-    def set_is_human(self, value: bool):
-        """
-        Returns: Boolean
-        """
-        self.get_java_object().setHuman(value)
-    def get_involving_capability_realizations(self) -> List[CapabilityRealization]:
-        """
-        Returns: CapabilityRealization[*]
-        """
-        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
 class ChangeEvent(AbstractEvent):
     """
@@ -6589,6 +6721,42 @@ class AbstractActivityFunction(AbstractAction, AbstractEvent, AbstractInstance):
         Returns: State[*]
         """
         return create_e_list(self.get_java_object().getAvailableInStates(), State)
+
+class PhysicalPort(AbstractPhysicalArtifact, Port, InformationsExchanger):
+    """
+    Java class: org.polarsys.capella.core.data.cs.PhysicalPort
+    A port on a Node component defining a physical interaction point
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/cs/" + capella_version(), "PhysicalPort")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, PhysicalPort):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_physical_links(self):
+        """
+        Returns: PhysicalLink[*]
+        """
+        return capella_query_by_name(self, "Physical Links")
+    def get_allocated_component_ports(self):
+        """
+        Returns: ComponentPort[*]
+        """
+        return capella_query_by_name(self, "Allocated Component Ports")
+    def get_realized_physical_ports(self) -> List[PhysicalPort]:
+        """
+        Returns: PhysicalPort[*]
+        """
+        return create_e_list(self.get_java_object().getRealizedPhysicalPorts(), PhysicalPort)
+    def get_realizing_physical_ports(self) -> List[PhysicalPort]:
+        """
+        Returns: PhysicalPort[*]
+        """
+        return create_e_list(self.get_java_object().getRealizingPhysicalPorts(), PhysicalPort)
 
 class Function(AbstractActivityFunction):
     """
@@ -6686,6 +6854,121 @@ class Function(AbstractActivityFunction):
         Returns: Function[*]
         """
         return create_e_list(self.get_java_object().getOwnedFunctions(), Function)
+    def get_allocation_blocks(self) -> List[AbstractFunctionalBlock]:
+        """
+        Returns: AbstractFunctionalBlock[*]
+        """
+        return create_e_list(self.get_java_object().getAllocationBlocks(), AbstractFunctionalBlock)
+    def get_component_functional_allocations(self) -> List[ComponentFunctionalAllocation]:
+        """
+        Returns: ComponentFunctionalAllocation[*]
+        """
+        return create_e_list(self.get_java_object().getComponentFunctionalAllocations(), ComponentFunctionalAllocation)
+    def get_owned_functional_exchanges(self) -> List[FunctionalExchange]:
+        """
+        Returns: FunctionalExchange[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedFunctionalExchanges(), FunctionalExchange)
+
+class BehavioralComponent(AbstractFunctionalBlock, AbstractInstance):
+    """
+    An abstract type to define the generic relation of behavioral elements
+    """
+    def __init__(self, java_object = None):
+        if java_object is None:
+            raise ValueError("No matching EClass for this type")
+        elif isinstance(java_object, BehavioralComponent):
+            JavaObject.__init__(self, java_object.get_java_object())
+        else:
+            JavaObject.__init__(self, java_object)
+    def get_contained_component_ports(self) -> List[ComponentPort]:
+        """
+        Returns: ComponentPort[*]
+        """
+        return create_e_list(self.get_java_object().getContainedComponentPorts(), ComponentPort)
+    def get_incoming_component_exchanges(self) -> List[ComponentExchange]:
+        """
+        Returns: ComponentExchange[*]
+        """
+        return create_e_list(self.get_java_object().getIncomingComponentExchanges(), ComponentExchange)
+    def get_outgoing_component_exchanges(self) -> List[ComponentExchange]:
+        """
+        Returns: ComponentExchange[*]
+        """
+        return create_e_list(self.get_java_object().getOutgoingComponentExchanges(), ComponentExchange)
+    def get_inout_component_exchanges(self) -> List[ComponentExchange]:
+        """
+        Returns: ComponentExchange[*]
+        """
+        return create_e_list(self.get_java_object().getInoutComponentExchanges(), ComponentExchange)
+    def get_allocated_functions(self) -> List[Function]:
+        """
+        Returns: Function[*]
+        """
+        return create_e_list(self.get_java_object().getAllocatedFunctions(), Function)
+    def get_used_interfaces(self) -> List[Interface]:
+        """
+        Returns: Interface[*]
+        """
+        return create_e_list(self.get_java_object().getUsedInterfaces(), Interface)
+    def get_implemented_interfaces(self) -> List[Interface]:
+        """
+        Returns: Interface[*]
+        """
+        return create_e_list(self.get_java_object().getImplementedInterfaces(), Interface)
+    def get_owned_state_machines(self) -> List[StateMachine]:
+        """
+        Returns: StateMachine[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedStateMachines(), StateMachine)
+    def get_owned_component_exchange_categories(self) -> List[ComponentExchangeCategory]:
+        """
+        Returns: ComponentExchangeCategory[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedComponentExchangeCategories(), ComponentExchangeCategory)
+    def get_owned_features(self) -> List[Feature]:
+        """
+        Returns: Feature[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedFeatures(), Feature)
+
+class ComponentFunctionalAllocation(AbstractFunctionAllocation):
+    """
+    Java class: org.polarsys.capella.core.data.fa.ComponentFunctionalAllocation
+    A regroupement of FunctionalExchanges for graphical simplification of diagrams
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/fa/" + capella_version(), "ComponentFunctionalAllocation")
+    def __init__(self, java_object = None):
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, ComponentFunctionalAllocation):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_block(self) -> AbstractFunctionalBlock:
+        """
+        Returns: AbstractFunctionalBlock
+        """
+        value =  self.get_java_object().getBlock()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def get_function(self) -> Function:
+        """
+        Returns: Function
+        """
+        value =  self.get_java_object().getFunction()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
 
 class OperationalActivity(Function):
     """
@@ -6784,6 +7067,96 @@ class SystemFunction(Function):
         """
         return capella_query_by_name(self, "Realizing Logical Functions")
 
+class System(BehavioralComponent, Node):
+    """
+    Set of elements functioning as a whole, responding to customer and user demand and needs
+    The System defined in the SystemAnalysis is seen as a black box
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent")
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, System):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+            if is_system(java_object):
+                JavaObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not a system.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+
+class SystemActor(BehavioralComponent, Node):
+    """
+    Entity (human or not) that is external to the System (in term of responsibility), interacting with it, via its interfaces
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/ctx/" + capella_version(), "SystemComponent")
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+            self.get_java_object().setActor(True)
+        elif isinstance(java_object, SystemActor):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+            if java_object.isActor():
+                JavaObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not an actor.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_is_human(self) -> bool:
+        """
+        Returns: Boolean
+        """
+        return self.get_java_object().isHuman()
+    def set_is_human(self, value: bool):
+        """
+        Returns: Boolean
+        """
+        self.get_java_object().setHuman(value)
+    def get_owned_actors(self) -> List[SystemActor]:
+        """
+        Returns: SystemActor[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedActors(), SystemActor)
+    def get_owned_system_component_pkgs(self) -> SystemComponentPkg:
+        """
+        Returns: SystemComponentPkg
+        """
+        value =  self.get_java_object().getOwnedSystemComponentPkgs()
+        if value is None:
+            return value
+        else:
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
+    def get_involving_missions(self) -> List[Mission]:
+        """
+        Returns: Mission[*]
+        """
+        return create_e_list(self.get_java_object().getInvolvingMissions(), Mission)
+    def get_realized_operational_entities(self) -> List[OperationalActor]:
+        """
+        Returns: OperationalActor[*]
+        """
+        return create_e_list(self.get_java_object().getRealizedOperationalEntities(), OperationalActor)
+    def get_involving_capabilities(self) -> List[Capability]:
+        """
+        Returns: Capability[*]
+        """
+        return create_e_list(self.get_java_object().getInvolvingCapabilities(), Capability)
+    def get_realizing_logical_actors(self) -> List[LogicalActor]:
+        """
+        Returns: LogicalActor[*]
+        """
+        return create_e_list(self.get_java_object().getRealizingLogicalActors(), LogicalActor)
+
 class LogicalFunction(Function):
     """
     Java class: org.polarsys.capella.core.data.la.LogicalFunction
@@ -6819,6 +7192,167 @@ class LogicalFunction(Function):
         Returns: PhysicalFunction[*]
         """
         return capella_query_by_name(self, "Realizing Physical Functions")
+    def get_children_logical_functions(self) -> List[LogicalFunction]:
+        """
+        Returns: LogicalFunction[*]
+        """
+        return create_e_list(self.get_java_object().getChildrenLogicalFunctions(), LogicalFunction)
+
+class LogicalSystem(BehavioralComponent, Node):
+    """
+    The definition of the system in Logical Architecture
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, LogicalSystem):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+            if is_system(java_object):
+                JavaObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not a system.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_owned_logical_components(self) -> List[LogicalComponent]:
+        """
+        Returns: LogicalComponent[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
+    def get_owned_logical_component_pkgs(self) -> List[LogicalComponentPkg]:
+        """
+        Returns: LogicalComponentPkg[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
+
+class LogicalComponent(BehavioralComponent):
+    """
+    Java class: org.polarsys.capella.core.data.la.LogicalComponent
+    Logical Components are the artefacts enabling a notional decomposition of the system as a "white box", independently from any technological solutions, but dealing with major system decomposition constraints
+    Logical components are identified according to logical abstractions (i.e. functional grouping, logical interfaces)
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+        elif isinstance(java_object, LogicalComponent):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+            if not java_object.isActor():
+                JavaObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is an actor.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_owned_logical_components(self) -> List[LogicalComponent]:
+        """
+        Returns: LogicalComponent[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedLogicalComponents(), LogicalComponent)
+    def get_owned_logical_component_pkgs(self) -> List[LogicalComponentPkg]:
+        """
+        Returns: LogicalComponentPkg[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
+    def get_is_human(self) -> bool:
+        """
+        Returns: Boolean
+        """
+        return self.get_java_object().isHuman()
+    def set_is_human(self, value: bool):
+        """
+        Returns: Boolean
+        """
+        self.get_java_object().setHuman(value)
+    def get_realizing_behavior_p_cs(self) -> List[BehaviorPC]:
+        """
+        Returns: BehaviorPC[*]
+        """
+        return create_e_list(self.get_java_object().getRealizingBehaviorPCs(), BehaviorPC)
+    def get_involving_capability_realizations(self) -> List[CapabilityRealization]:
+        """
+        Returns: CapabilityRealization[*]
+        """
+        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
+    def get_allocated_logical_functions(self):
+        """
+        Returns: LogicalFunction[*]
+        """
+        return capella_query_by_name(self, "Allocated Logical Functions")
+    def get_sub_logical_components(self) -> List[LogicalComponent]:
+        """
+        Returns: LogicalComponent[*]
+        """
+        return create_e_list(self.get_java_object().getSubLogicalComponents(), LogicalComponent)
+
+class LogicalActor(BehavioralComponent, Node):
+    """
+    An external Actor defined in the Logical Architecture
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/la/" + capella_version(), "LogicalComponent")
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+            self.get_java_object().setActor(True)
+        elif isinstance(java_object, LogicalActor):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+            if java_object.isActor():
+                JavaObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not an actor.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_owned_logical_actors(self) -> List[LogicalActor]:
+        """
+        Returns: LogicalActor[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedLogicalActors(), LogicalActor)
+    def get_owned_logical_component_pkgs(self) -> List[LogicalComponentPkg]:
+        """
+        Returns: LogicalComponentPkg[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedLogicalComponentPkgs(), LogicalComponentPkg)
+    def get_realized_system_actors(self) -> List[SystemActor]:
+        """
+        Returns: SystemActor[*]
+        """
+        return create_e_list(self.get_java_object().getRealizedSystemActors(), SystemActor)
+    def get_is_human(self) -> bool:
+        """
+        Returns: Boolean
+        """
+        return self.get_java_object().isHuman()
+    def set_is_human(self, value: bool):
+        """
+        Returns: Boolean
+        """
+        self.get_java_object().setHuman(value)
+    def get_realizing_physical_actors(self) -> List[PhysicalActor]:
+        """
+        Returns: PhysicalActor[*]
+        """
+        return create_e_list(self.get_java_object().getRealizingPhysicalActors(), PhysicalActor)
+    def get_involving_capability_realizations(self) -> List[CapabilityRealization]:
+        """
+        Returns: CapabilityRealization[*]
+        """
+        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
+    def get_allocated_logical_functions(self) -> List[LogicalFunction]:
+        """
+        Returns: LogicalFunction[*]
+        """
+        return create_e_list(self.get_java_object().getAllocatedLogicalFunctions(), LogicalFunction)
 
 class PhysicalFunction(Function):
     """
@@ -6850,6 +7384,97 @@ class PhysicalFunction(Function):
         Returns: LogicalFunction[*]
         """
         return capella_query_by_name(self, "Realized Logical Functions")
+
+class BehaviorPC(PhysicalComponent, BehavioralComponent):
+    """
+    System component in charge of implementing / realizing some of the functions devoted to the system
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+            self.get_java_object().setNature(get_enum_literal("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponentNature", "BEHAVIOR"))
+        elif isinstance(java_object, BehaviorPC):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+            if not java_object.isActor():
+                if java_object.getNature().getName() == "UNSET":
+                    raise AttributeError("Passed component is a physical component.")
+                elif java_object.getNature().getName() == "BEHAVIOR":
+                    JavaObject.__init__(self, java_object)
+                elif java_object.getNature().getName() == "NODE":
+                    raise AttributeError("Passed component is a node physical component.")
+                else:
+                    raise AttributeError("Passed component has unexpected nature.")
+            else:
+                raise AttributeError("Passed component is an actor.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_deploying_node_p_cs(self) -> List[NodePC]:
+        """
+        Returns: NodePC[*]
+        """
+        return create_e_list(self.get_java_object().getDeployingPhysicalComponents(), NodePC)
+    def get_realized_logical_components(self) -> List[LogicalComponent]:
+        """
+        Returns: LogicalComponent[*]
+        """
+        return create_e_list(self.get_java_object().getRealizedLogicalComponents(), LogicalComponent)
+
+class PhysicalActor(BehavioralComponent, Node):
+    """
+    An external Actor defined in the Physical Architecture
+    """
+    e_class = get_e_classifier("http://www.polarsys.org/capella/core/pa/" + capella_version(), "PhysicalComponent")
+    def __init__(self, java_object = None):
+        """
+        """
+        if java_object is None:
+            JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
+            self.get_java_object().setActor(True)
+        elif isinstance(java_object, PhysicalActor):
+            JavaObject.__init__(self, java_object.get_java_object())
+        elif self.e_class.isInstance(java_object):
+            JavaObject.__init__(self, java_object)
+            if java_object.isActor():
+                JavaObject.__init__(self, java_object)
+            else:
+                raise AttributeError("Passed component is not an actor.")
+        else:
+            raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
+    def get_owned_physical_actors(self) -> List[PhysicalActor]:
+        """
+        Returns: PhysicalActor[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedPhysicalActors(), PhysicalActor)
+    def get_owned_physical_component_pkgs(self) -> List[PhysicalComponentPkg]:
+        """
+        Returns: PhysicalComponentPkg[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedPhysicalComponentPkgs(), PhysicalComponentPkg)
+    def get_realized_logical_actors(self) -> List[LogicalActor]:
+        """
+        Returns: LogicalActor[*]
+        """
+        return create_e_list(self.get_java_object().getRealizedLogicalActors(), LogicalActor)
+    def get_is_human(self) -> bool:
+        """
+        Returns: Boolean
+        """
+        return self.get_java_object().isHuman()
+    def set_is_human(self, value: bool):
+        """
+        Returns: Boolean
+        """
+        self.get_java_object().setHuman(value)
+    def get_involving_capability_realizations(self) -> List[CapabilityRealization]:
+        """
+        Returns: CapabilityRealization[*]
+        """
+        return create_e_list(self.get_java_object().getInvolvingCapabilityRealizations(), CapabilityRealization)
 
 class Status(EObject):
     def __init__(self, java_object = None):
