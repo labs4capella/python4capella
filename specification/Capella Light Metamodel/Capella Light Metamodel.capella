@@ -1215,7 +1215,8 @@
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="bf8ded99-29f2-41a0-8b1f-5de071e80a44" name="containedGenericTraces"
-                  abstractType="#f1f7c95d-7218-43b1-866f-852670092b78" aggregationKind="ASSOCIATION">
+                  abstractType="#f1f7c95d-7218-43b1-866f-852670092b78" aggregationKind="ASSOCIATION"
+                  isReadOnly="true">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="5a811fe9-c2b6-4064-ba60-1e1aa4231bbc" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

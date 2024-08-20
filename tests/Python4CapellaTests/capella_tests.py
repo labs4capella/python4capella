@@ -316,12 +316,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_SystemEngineering_contained_generic_traces_setter(self):
-        tested = SystemEngineering()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_SystemEngineering_owned_diagrams_getter(self):
         tested = SystemEngineering()
         tested.get_owned_diagrams()
@@ -646,12 +640,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Constraint_contained_generic_traces_setter(self):
-        tested = Constraint()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Constraint_owned_diagrams_getter(self):
         tested = Constraint()
         tested.get_owned_diagrams()
@@ -966,12 +954,6 @@ class capella_tests(unittest.TestCase):
     def test_PropertyValue_contained_generic_traces_getter(self):
         tested = PropertyValue()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_PropertyValue_contained_generic_traces_setter(self):
-        tested = PropertyValue()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PropertyValue_owned_diagrams_getter(self):
@@ -1300,12 +1282,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PropertyValueGroup_contained_generic_traces_setter(self):
-        tested = PropertyValueGroup()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PropertyValueGroup_owned_diagrams_getter(self):
         tested = PropertyValueGroup()
         tested.get_owned_diagrams()
@@ -1616,12 +1592,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PropertyValuePkg_contained_generic_traces_setter(self):
-        tested = PropertyValuePkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PropertyValuePkg_owned_diagrams_getter(self):
         tested = PropertyValuePkg()
         tested.get_owned_diagrams()
@@ -1914,12 +1884,6 @@ class capella_tests(unittest.TestCase):
     def test_EnumerationPropertyType_contained_generic_traces_getter(self):
         tested = EnumerationPropertyType()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_EnumerationPropertyType_contained_generic_traces_setter(self):
-        tested = EnumerationPropertyType()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_EnumerationPropertyType_owned_diagrams_getter(self):
@@ -2227,12 +2191,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_EnumerationPropertyLiteral_contained_generic_traces_setter(self):
-        tested = EnumerationPropertyLiteral()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_EnumerationPropertyLiteral_owned_diagrams_getter(self):
         tested = EnumerationPropertyLiteral()
         tested.get_owned_diagrams()
@@ -2525,12 +2483,6 @@ class capella_tests(unittest.TestCase):
     def test_Feature_contained_generic_traces_getter(self):
         tested = Feature()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Feature_contained_generic_traces_setter(self):
-        tested = Feature()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Feature_owned_diagrams_getter(self):
@@ -2836,12 +2788,6 @@ class capella_tests(unittest.TestCase):
     def test_GenericTrace_contained_generic_traces_getter(self):
         tested = GenericTrace()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_GenericTrace_contained_generic_traces_setter(self):
-        tested = GenericTrace()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_GenericTrace_owned_diagrams_getter(self):
@@ -3191,12 +3137,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Relationship_contained_generic_traces_setter(self):
-        tested = Relationship()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Relationship_owned_diagrams_getter(self):
         tested = Relationship()
         tested.get_owned_diagrams()
@@ -3500,12 +3440,6 @@ class capella_tests(unittest.TestCase):
     def test_AbstractInformationFlow_contained_generic_traces_getter(self):
         tested = AbstractInformationFlow()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_AbstractInformationFlow_contained_generic_traces_setter(self):
-        tested = AbstractInformationFlow()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_AbstractInformationFlow_owned_diagrams_getter(self):
@@ -3856,12 +3790,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_TransfoLink_contained_generic_traces_setter(self):
-        tested = TransfoLink()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_TransfoLink_owned_diagrams_getter(self):
         tested = TransfoLink()
         tested.get_owned_diagrams()
@@ -4209,12 +4137,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_JustificationLink_contained_generic_traces_setter(self):
-        tested = JustificationLink()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_JustificationLink_owned_diagrams_getter(self):
         tested = JustificationLink()
         tested.get_owned_diagrams()
@@ -4539,12 +4461,6 @@ class capella_tests(unittest.TestCase):
     def test_Classifier_contained_generic_traces_getter(self):
         tested = Classifier()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Classifier_contained_generic_traces_setter(self):
-        tested = Classifier()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Classifier_owned_diagrams_getter(self):
@@ -5977,12 +5893,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_OperationalAnalysis_contained_generic_traces_setter(self):
-        tested = OperationalAnalysis()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_OperationalAnalysis_owned_diagrams_getter(self):
         tested = OperationalAnalysis()
         tested.get_owned_diagrams()
@@ -6305,12 +6215,6 @@ class capella_tests(unittest.TestCase):
     def test_OperationalActivityPkg_contained_generic_traces_getter(self):
         tested = OperationalActivityPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_OperationalActivityPkg_contained_generic_traces_setter(self):
-        tested = OperationalActivityPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalActivityPkg_owned_diagrams_getter(self):
@@ -6740,12 +6644,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_OperationalActivity_contained_generic_traces_setter(self):
-        tested = OperationalActivity()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_OperationalActivity_owned_diagrams_getter(self):
         tested = OperationalActivity()
         tested.get_owned_diagrams()
@@ -7115,12 +7013,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Interaction_contained_generic_traces_setter(self):
-        tested = Interaction()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Interaction_owned_diagrams_getter(self):
         tested = Interaction()
         tested.get_owned_diagrams()
@@ -7473,12 +7365,6 @@ class capella_tests(unittest.TestCase):
     def test_OperationalProcess_contained_generic_traces_getter(self):
         tested = OperationalProcess()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_OperationalProcess_contained_generic_traces_setter(self):
-        tested = OperationalProcess()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalProcess_owned_diagrams_getter(self):
@@ -7848,12 +7734,6 @@ class capella_tests(unittest.TestCase):
     def test_OperationalCapabilityPkg_contained_generic_traces_getter(self):
         tested = OperationalCapabilityPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_OperationalCapabilityPkg_contained_generic_traces_setter(self):
-        tested = OperationalCapabilityPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalCapabilityPkg_owned_diagrams_getter(self):
@@ -8269,12 +8149,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_OperationalCapability_contained_generic_traces_setter(self):
-        tested = OperationalCapability()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_OperationalCapability_owned_diagrams_getter(self):
         tested = OperationalCapability()
         tested.get_owned_diagrams()
@@ -8621,12 +8495,6 @@ class capella_tests(unittest.TestCase):
     def test_EntityPkg_contained_generic_traces_getter(self):
         tested = EntityPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_EntityPkg_contained_generic_traces_setter(self):
-        tested = EntityPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_EntityPkg_owned_diagrams_getter(self):
@@ -8993,12 +8861,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_OperationalEntity_contained_generic_traces_setter(self):
-        tested = OperationalEntity()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_OperationalEntity_owned_diagrams_getter(self):
         tested = OperationalEntity()
         tested.get_owned_diagrams()
@@ -9296,12 +9158,6 @@ class capella_tests(unittest.TestCase):
     def test_OperationalActor_contained_generic_traces_getter(self):
         tested = OperationalActor()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_OperationalActor_contained_generic_traces_setter(self):
-        tested = OperationalActor()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_OperationalActor_owned_diagrams_getter(self):
@@ -9658,12 +9514,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_CommunicationMean_contained_generic_traces_setter(self):
-        tested = CommunicationMean()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_CommunicationMean_owned_diagrams_getter(self):
         tested = CommunicationMean()
         tested.get_owned_diagrams()
@@ -10018,12 +9868,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_SystemAnalysis_contained_generic_traces_setter(self):
-        tested = SystemAnalysis()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_SystemAnalysis_owned_diagrams_getter(self):
         tested = SystemAnalysis()
         tested.get_owned_diagrams()
@@ -10356,12 +10200,6 @@ class capella_tests(unittest.TestCase):
     def test_SystemFunctionPkg_contained_generic_traces_getter(self):
         tested = SystemFunctionPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_SystemFunctionPkg_contained_generic_traces_setter(self):
-        tested = SystemFunctionPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_SystemFunctionPkg_owned_diagrams_getter(self):
@@ -10796,12 +10634,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_SystemFunction_contained_generic_traces_setter(self):
-        tested = SystemFunction()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_SystemFunction_owned_diagrams_getter(self):
         tested = SystemFunction()
         tested.get_owned_diagrams()
@@ -11131,12 +10963,6 @@ class capella_tests(unittest.TestCase):
     def test_CapabilityPkg_contained_generic_traces_getter(self):
         tested = CapabilityPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_CapabilityPkg_contained_generic_traces_setter(self):
-        tested = CapabilityPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_CapabilityPkg_owned_diagrams_getter(self):
@@ -11579,12 +11405,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Capability_contained_generic_traces_setter(self):
-        tested = Capability()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Capability_owned_diagrams_getter(self):
         tested = Capability()
         tested.get_owned_diagrams()
@@ -11926,12 +11746,6 @@ class capella_tests(unittest.TestCase):
     def test_SystemComponentPkg_contained_generic_traces_getter(self):
         tested = SystemComponentPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_SystemComponentPkg_contained_generic_traces_setter(self):
-        tested = SystemComponentPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_SystemComponentPkg_owned_diagrams_getter(self):
@@ -12364,12 +12178,6 @@ class capella_tests(unittest.TestCase):
     def test_System_contained_generic_traces_getter(self):
         tested = System()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_System_contained_generic_traces_setter(self):
-        tested = System()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_System_owned_diagrams_getter(self):
@@ -12810,12 +12618,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_SystemActor_contained_generic_traces_setter(self):
-        tested = SystemActor()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_SystemActor_owned_diagrams_getter(self):
         tested = SystemActor()
         tested.get_owned_diagrams()
@@ -13211,12 +13013,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_MissionPkg_contained_generic_traces_setter(self):
-        tested = MissionPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_MissionPkg_owned_diagrams_getter(self):
         tested = MissionPkg()
         tested.get_owned_diagrams()
@@ -13519,12 +13315,6 @@ class capella_tests(unittest.TestCase):
     def test_Mission_contained_generic_traces_getter(self):
         tested = Mission()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Mission_contained_generic_traces_setter(self):
-        tested = Mission()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Mission_owned_diagrams_getter(self):
@@ -13846,12 +13636,6 @@ class capella_tests(unittest.TestCase):
     def test_LogicalArchitecture_contained_generic_traces_getter(self):
         tested = LogicalArchitecture()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_LogicalArchitecture_contained_generic_traces_setter(self):
-        tested = LogicalArchitecture()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalArchitecture_owned_diagrams_getter(self):
@@ -14181,12 +13965,6 @@ class capella_tests(unittest.TestCase):
     def test_LogicalFunctionPkg_contained_generic_traces_getter(self):
         tested = LogicalFunctionPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_LogicalFunctionPkg_contained_generic_traces_setter(self):
-        tested = LogicalFunctionPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalFunctionPkg_owned_diagrams_getter(self):
@@ -14621,12 +14399,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_LogicalFunction_contained_generic_traces_setter(self):
-        tested = LogicalFunction()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_LogicalFunction_owned_diagrams_getter(self):
         tested = LogicalFunction()
         tested.get_owned_diagrams()
@@ -14961,12 +14733,6 @@ class capella_tests(unittest.TestCase):
     def test_CapabilityRealizationPkg_contained_generic_traces_getter(self):
         tested = CapabilityRealizationPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_CapabilityRealizationPkg_contained_generic_traces_setter(self):
-        tested = CapabilityRealizationPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_CapabilityRealizationPkg_owned_diagrams_getter(self):
@@ -15409,12 +15175,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_CapabilityRealization_contained_generic_traces_setter(self):
-        tested = CapabilityRealization()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_CapabilityRealization_owned_diagrams_getter(self):
         tested = CapabilityRealization()
         tested.get_owned_diagrams()
@@ -15789,12 +15549,6 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponentPkg_contained_generic_traces_getter(self):
         tested = LogicalComponentPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_LogicalComponentPkg_contained_generic_traces_setter(self):
-        tested = LogicalComponentPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalComponentPkg_owned_diagrams_getter(self):
@@ -16232,12 +15986,6 @@ class capella_tests(unittest.TestCase):
     def test_LogicalSystem_contained_generic_traces_getter(self):
         tested = LogicalSystem()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_LogicalSystem_contained_generic_traces_setter(self):
-        tested = LogicalSystem()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalSystem_owned_diagrams_getter(self):
@@ -16686,12 +16434,6 @@ class capella_tests(unittest.TestCase):
     def test_LogicalComponent_contained_generic_traces_getter(self):
         tested = LogicalComponent()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_LogicalComponent_contained_generic_traces_setter(self):
-        tested = LogicalComponent()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_LogicalComponent_owned_diagrams_getter(self):
@@ -17154,12 +16896,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_LogicalActor_contained_generic_traces_setter(self):
-        tested = LogicalActor()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_LogicalActor_owned_diagrams_getter(self):
         tested = LogicalActor()
         tested.get_owned_diagrams()
@@ -17549,12 +17285,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PhysicalArchitecture_contained_generic_traces_setter(self):
-        tested = PhysicalArchitecture()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PhysicalArchitecture_owned_diagrams_getter(self):
         tested = PhysicalArchitecture()
         tested.get_owned_diagrams()
@@ -17882,12 +17612,6 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalFunctionPkg_contained_generic_traces_getter(self):
         tested = PhysicalFunctionPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_PhysicalFunctionPkg_contained_generic_traces_setter(self):
-        tested = PhysicalFunctionPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalFunctionPkg_owned_diagrams_getter(self):
@@ -18322,12 +18046,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PhysicalFunction_contained_generic_traces_setter(self):
-        tested = PhysicalFunction()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PhysicalFunction_owned_diagrams_getter(self):
         tested = PhysicalFunction()
         tested.get_owned_diagrams()
@@ -18646,12 +18364,6 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalComponentPkg_contained_generic_traces_getter(self):
         tested = PhysicalComponentPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_PhysicalComponentPkg_contained_generic_traces_setter(self):
-        tested = PhysicalComponentPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalComponentPkg_owned_diagrams_getter(self):
@@ -18976,12 +18688,6 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalSystem_contained_generic_traces_getter(self):
         tested = PhysicalSystem()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_PhysicalSystem_contained_generic_traces_setter(self):
-        tested = PhysicalSystem()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalSystem_owned_diagrams_getter(self):
@@ -19381,12 +19087,6 @@ class capella_tests(unittest.TestCase):
     def test_BehaviorPC_contained_generic_traces_getter(self):
         tested = BehaviorPC()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_BehaviorPC_contained_generic_traces_setter(self):
-        tested = BehaviorPC()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_BehaviorPC_owned_diagrams_getter(self):
@@ -19876,12 +19576,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_NodePC_contained_generic_traces_setter(self):
-        tested = NodePC()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_NodePC_owned_diagrams_getter(self):
         tested = NodePC()
         tested.get_owned_diagrams()
@@ -20336,12 +20030,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PhysicalActor_contained_generic_traces_setter(self):
-        tested = PhysicalActor()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PhysicalActor_owned_diagrams_getter(self):
         tested = PhysicalActor()
         tested.get_owned_diagrams()
@@ -20715,12 +20403,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_EPBSArchitecture_contained_generic_traces_setter(self):
-        tested = EPBSArchitecture()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_EPBSArchitecture_owned_diagrams_getter(self):
         tested = EPBSArchitecture()
         tested.get_owned_diagrams()
@@ -21035,12 +20717,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ConfigurationItemPkg_contained_generic_traces_setter(self):
-        tested = ConfigurationItemPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ConfigurationItemPkg_owned_diagrams_getter(self):
         tested = ConfigurationItemPkg()
         tested.get_owned_diagrams()
@@ -21343,12 +21019,6 @@ class capella_tests(unittest.TestCase):
     def test_ConfigurationItem_contained_generic_traces_getter(self):
         tested = ConfigurationItem()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_ConfigurationItem_contained_generic_traces_setter(self):
-        tested = ConfigurationItem()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ConfigurationItem_owned_diagrams_getter(self):
@@ -21686,12 +21356,6 @@ class capella_tests(unittest.TestCase):
     def test_StateMachine_contained_generic_traces_getter(self):
         tested = StateMachine()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_StateMachine_contained_generic_traces_setter(self):
-        tested = StateMachine()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StateMachine_owned_diagrams_getter(self):
@@ -22035,12 +21699,6 @@ class capella_tests(unittest.TestCase):
     def test_State_contained_generic_traces_getter(self):
         tested = State()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_State_contained_generic_traces_setter(self):
-        tested = State()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_State_owned_diagrams_getter(self):
@@ -22545,12 +22203,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Mode_contained_generic_traces_setter(self):
-        tested = Mode()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Mode_owned_diagrams_getter(self):
         tested = Mode()
         tested.get_owned_diagrams()
@@ -22889,12 +22541,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Pseudostate_contained_generic_traces_setter(self):
-        tested = Pseudostate()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Pseudostate_owned_diagrams_getter(self):
         tested = Pseudostate()
         tested.get_owned_diagrams()
@@ -23194,12 +22840,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Region_contained_generic_traces_setter(self):
-        tested = Region()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Region_owned_diagrams_getter(self):
         tested = Region()
         tested.get_owned_diagrams()
@@ -23497,12 +23137,6 @@ class capella_tests(unittest.TestCase):
     def test_StateTransition_contained_generic_traces_getter(self):
         tested = StateTransition()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_StateTransition_contained_generic_traces_setter(self):
-        tested = StateTransition()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StateTransition_owned_diagrams_getter(self):
@@ -23887,12 +23521,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ChangeEvent_contained_generic_traces_setter(self):
-        tested = ChangeEvent()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ChangeEvent_owned_diagrams_getter(self):
         tested = ChangeEvent()
         tested.get_owned_diagrams()
@@ -24196,12 +23824,6 @@ class capella_tests(unittest.TestCase):
     def test_TimeEvent_contained_generic_traces_getter(self):
         tested = TimeEvent()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_TimeEvent_contained_generic_traces_setter(self):
-        tested = TimeEvent()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_TimeEvent_owned_diagrams_getter(self):
@@ -24518,12 +24140,6 @@ class capella_tests(unittest.TestCase):
     def test_Scenario_contained_generic_traces_getter(self):
         tested = Scenario()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Scenario_contained_generic_traces_setter(self):
-        tested = Scenario()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Scenario_owned_diagrams_getter(self):
@@ -24899,12 +24515,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_InstanceRole_contained_generic_traces_setter(self):
-        tested = InstanceRole()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_InstanceRole_owned_diagrams_getter(self):
         tested = InstanceRole()
         tested.get_owned_diagrams()
@@ -25202,12 +24812,6 @@ class capella_tests(unittest.TestCase):
     def test_SequenceMessage_contained_generic_traces_getter(self):
         tested = SequenceMessage()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_SequenceMessage_contained_generic_traces_setter(self):
-        tested = SequenceMessage()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_SequenceMessage_owned_diagrams_getter(self):
@@ -25539,12 +25143,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_StateFragment_contained_generic_traces_setter(self):
-        tested = StateFragment()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_StateFragment_owned_diagrams_getter(self):
         tested = StateFragment()
         tested.get_owned_diagrams()
@@ -25854,12 +25452,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_CombinedFragment_contained_generic_traces_setter(self):
-        tested = CombinedFragment()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_CombinedFragment_owned_diagrams_getter(self):
         tested = CombinedFragment()
         tested.get_owned_diagrams()
@@ -26167,12 +25759,6 @@ class capella_tests(unittest.TestCase):
     def test_Operand_contained_generic_traces_getter(self):
         tested = Operand()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Operand_contained_generic_traces_setter(self):
-        tested = Operand()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Operand_owned_diagrams_getter(self):
@@ -26490,12 +26076,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ConstraintDuration_contained_generic_traces_setter(self):
-        tested = ConstraintDuration()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ConstraintDuration_owned_diagrams_getter(self):
         tested = ConstraintDuration()
         tested.get_owned_diagrams()
@@ -26810,12 +26390,6 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPort_contained_generic_traces_getter(self):
         tested = PhysicalPort()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_PhysicalPort_contained_generic_traces_setter(self):
-        tested = PhysicalPort()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalPort_owned_diagrams_getter(self):
@@ -27204,12 +26778,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PhysicalLink_contained_generic_traces_setter(self):
-        tested = PhysicalLink()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PhysicalLink_owned_diagrams_getter(self):
         tested = PhysicalLink()
         tested.get_owned_diagrams()
@@ -27575,12 +27143,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PhysicalLinkCategory_contained_generic_traces_setter(self):
-        tested = PhysicalLinkCategory()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PhysicalLinkCategory_owned_diagrams_getter(self):
         tested = PhysicalLinkCategory()
         tested.get_owned_diagrams()
@@ -27884,12 +27446,6 @@ class capella_tests(unittest.TestCase):
     def test_PhysicalPath_contained_generic_traces_getter(self):
         tested = PhysicalPath()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_PhysicalPath_contained_generic_traces_setter(self):
-        tested = PhysicalPath()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PhysicalPath_owned_diagrams_getter(self):
@@ -28234,12 +27790,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_InterfacePkg_contained_generic_traces_setter(self):
-        tested = InterfacePkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_InterfacePkg_owned_diagrams_getter(self):
         tested = InterfacePkg()
         tested.get_owned_diagrams()
@@ -28547,12 +28097,6 @@ class capella_tests(unittest.TestCase):
     def test_Interface_contained_generic_traces_getter(self):
         tested = Interface()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Interface_contained_generic_traces_setter(self):
-        tested = Interface()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Interface_owned_diagrams_getter(self):
@@ -28942,12 +28486,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ExchangeItemAllocation_contained_generic_traces_setter(self):
-        tested = ExchangeItemAllocation()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ExchangeItemAllocation_owned_diagrams_getter(self):
         tested = ExchangeItemAllocation()
         tested.get_owned_diagrams()
@@ -29284,12 +28822,6 @@ class capella_tests(unittest.TestCase):
     def test_ExchangeItem_contained_generic_traces_getter(self):
         tested = ExchangeItem()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_ExchangeItem_contained_generic_traces_setter(self):
-        tested = ExchangeItem()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ExchangeItem_owned_diagrams_getter(self):
@@ -29690,12 +29222,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ExchangeItemElement_contained_generic_traces_setter(self):
-        tested = ExchangeItemElement()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ExchangeItemElement_owned_diagrams_getter(self):
         tested = ExchangeItemElement()
         tested.get_owned_diagrams()
@@ -29999,12 +29525,6 @@ class capella_tests(unittest.TestCase):
     def test_PortAllocation_contained_generic_traces_getter(self):
         tested = PortAllocation()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_PortAllocation_contained_generic_traces_setter(self):
-        tested = PortAllocation()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_PortAllocation_owned_diagrams_getter(self):
@@ -30354,12 +29874,6 @@ class capella_tests(unittest.TestCase):
     def test_FunctionInputPort_contained_generic_traces_getter(self):
         tested = FunctionInputPort()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_FunctionInputPort_contained_generic_traces_setter(self):
-        tested = FunctionInputPort()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_FunctionInputPort_owned_diagrams_getter(self):
@@ -30733,12 +30247,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_FunctionOutputPort_contained_generic_traces_setter(self):
-        tested = FunctionOutputPort()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_FunctionOutputPort_owned_diagrams_getter(self):
         tested = FunctionOutputPort()
         tested.get_owned_diagrams()
@@ -31075,12 +30583,6 @@ class capella_tests(unittest.TestCase):
     def test_FunctionalExchange_contained_generic_traces_getter(self):
         tested = FunctionalExchange()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_FunctionalExchange_contained_generic_traces_setter(self):
-        tested = FunctionalExchange()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_FunctionalExchange_owned_diagrams_getter(self):
@@ -31497,12 +30999,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ExchangeCategory_contained_generic_traces_setter(self):
-        tested = ExchangeCategory()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ExchangeCategory_owned_diagrams_getter(self):
         tested = ExchangeCategory()
         tested.get_owned_diagrams()
@@ -31806,12 +31302,6 @@ class capella_tests(unittest.TestCase):
     def test_FunctionalChain_contained_generic_traces_getter(self):
         tested = FunctionalChain()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_FunctionalChain_contained_generic_traces_setter(self):
-        tested = FunctionalChain()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_FunctionalChain_owned_diagrams_getter(self):
@@ -32222,12 +31712,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ComponentPort_contained_generic_traces_setter(self):
-        tested = ComponentPort()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ComponentPort_owned_diagrams_getter(self):
         tested = ComponentPort()
         tested.get_owned_diagrams()
@@ -32634,12 +32118,6 @@ class capella_tests(unittest.TestCase):
     def test_ComponentExchange_contained_generic_traces_getter(self):
         tested = ComponentExchange()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_ComponentExchange_contained_generic_traces_setter(self):
-        tested = ComponentExchange()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ComponentExchange_owned_diagrams_getter(self):
@@ -33083,12 +32561,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ComponentExchangeCategory_contained_generic_traces_setter(self):
-        tested = ComponentExchangeCategory()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ComponentExchangeCategory_owned_diagrams_getter(self):
         tested = ComponentExchangeCategory()
         tested.get_owned_diagrams()
@@ -33403,12 +32875,6 @@ class capella_tests(unittest.TestCase):
     def test_ComponentFunctionalAllocation_contained_generic_traces_getter(self):
         tested = ComponentFunctionalAllocation()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_ComponentFunctionalAllocation_contained_generic_traces_setter(self):
-        tested = ComponentFunctionalAllocation()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ComponentFunctionalAllocation_owned_diagrams_getter(self):
@@ -33758,12 +33224,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ComponentExchangeFunctionalExchangeAllocation_contained_generic_traces_setter(self):
-        tested = ComponentExchangeFunctionalExchangeAllocation()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ComponentExchangeFunctionalExchangeAllocation_owned_diagrams_getter(self):
         tested = ComponentExchangeFunctionalExchangeAllocation()
         tested.get_owned_diagrams()
@@ -34111,12 +33571,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_LiteralBooleanValue_contained_generic_traces_setter(self):
-        tested = LiteralBooleanValue()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_LiteralBooleanValue_owned_diagrams_getter(self):
         tested = LiteralBooleanValue()
         tested.get_owned_diagrams()
@@ -34431,12 +33885,6 @@ class capella_tests(unittest.TestCase):
     def test_BooleanReference_contained_generic_traces_getter(self):
         tested = BooleanReference()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_BooleanReference_contained_generic_traces_setter(self):
-        tested = BooleanReference()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_BooleanReference_owned_diagrams_getter(self):
@@ -34766,12 +34214,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_EnumerationReference_contained_generic_traces_setter(self):
-        tested = EnumerationReference()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_EnumerationReference_owned_diagrams_getter(self):
         tested = EnumerationReference()
         tested.get_owned_diagrams()
@@ -35099,12 +34541,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_LiteralStringValue_contained_generic_traces_setter(self):
-        tested = LiteralStringValue()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_LiteralStringValue_owned_diagrams_getter(self):
         tested = LiteralStringValue()
         tested.get_owned_diagrams()
@@ -35419,12 +34855,6 @@ class capella_tests(unittest.TestCase):
     def test_StringReference_contained_generic_traces_getter(self):
         tested = StringReference()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_StringReference_contained_generic_traces_setter(self):
-        tested = StringReference()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StringReference_owned_diagrams_getter(self):
@@ -35752,12 +35182,6 @@ class capella_tests(unittest.TestCase):
     def test_NumericValue_contained_generic_traces_getter(self):
         tested = NumericValue()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_NumericValue_contained_generic_traces_setter(self):
-        tested = NumericValue()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_NumericValue_owned_diagrams_getter(self):
@@ -36097,12 +35521,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_LiteralNumericValue_contained_generic_traces_setter(self):
-        tested = LiteralNumericValue()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_LiteralNumericValue_owned_diagrams_getter(self):
         tested = LiteralNumericValue()
         tested.get_owned_diagrams()
@@ -36417,12 +35835,6 @@ class capella_tests(unittest.TestCase):
     def test_NumericReference_contained_generic_traces_getter(self):
         tested = NumericReference()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_NumericReference_contained_generic_traces_setter(self):
-        tested = NumericReference()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_NumericReference_owned_diagrams_getter(self):
@@ -36752,12 +36164,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_ComplexValue_contained_generic_traces_setter(self):
-        tested = ComplexValue()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_ComplexValue_owned_diagrams_getter(self):
         tested = ComplexValue()
         tested.get_owned_diagrams()
@@ -37061,12 +36467,6 @@ class capella_tests(unittest.TestCase):
     def test_ComplexValueReference_contained_generic_traces_getter(self):
         tested = ComplexValueReference()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_ComplexValueReference_contained_generic_traces_setter(self):
-        tested = ComplexValueReference()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_ComplexValueReference_owned_diagrams_getter(self):
@@ -37385,12 +36785,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_BinaryExpression_contained_generic_traces_setter(self):
-        tested = BinaryExpression()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_BinaryExpression_owned_diagrams_getter(self):
         tested = BinaryExpression()
         tested.get_owned_diagrams()
@@ -37696,12 +37090,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_UnaryExpression_contained_generic_traces_setter(self):
-        tested = UnaryExpression()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_UnaryExpression_owned_diagrams_getter(self):
         tested = UnaryExpression()
         tested.get_owned_diagrams()
@@ -38005,12 +37393,6 @@ class capella_tests(unittest.TestCase):
     def test_CollectionValueReference_contained_generic_traces_getter(self):
         tested = CollectionValueReference()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_CollectionValueReference_contained_generic_traces_setter(self):
-        tested = CollectionValueReference()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_CollectionValueReference_owned_diagrams_getter(self):
@@ -38340,12 +37722,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_CollectionValue_contained_generic_traces_setter(self):
-        tested = CollectionValue()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_CollectionValue_owned_diagrams_getter(self):
         tested = CollectionValue()
         tested.get_owned_diagrams()
@@ -38660,12 +38036,6 @@ class capella_tests(unittest.TestCase):
     def test_DataPkg_contained_generic_traces_getter(self):
         tested = DataPkg()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_DataPkg_contained_generic_traces_setter(self):
-        tested = DataPkg()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_DataPkg_owned_diagrams_getter(self):
@@ -39028,12 +38398,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Class_contained_generic_traces_setter(self):
-        tested = Class()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Class_owned_diagrams_getter(self):
         tested = Class()
         tested.get_owned_diagrams()
@@ -39380,12 +38744,6 @@ class capella_tests(unittest.TestCase):
     def test_Collection_contained_generic_traces_getter(self):
         tested = Collection()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Collection_contained_generic_traces_setter(self):
-        tested = Collection()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Collection_owned_diagrams_getter(self):
@@ -39807,12 +39165,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Union_contained_generic_traces_setter(self):
-        tested = Union()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Union_owned_diagrams_getter(self):
         tested = Union()
         tested.get_owned_diagrams()
@@ -40159,12 +39511,6 @@ class capella_tests(unittest.TestCase):
     def test_Association_contained_generic_traces_getter(self):
         tested = Association()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Association_contained_generic_traces_setter(self):
-        tested = Association()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Association_owned_diagrams_getter(self):
@@ -40658,12 +40004,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_Enumeration_contained_generic_traces_setter(self):
-        tested = Enumeration()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_Enumeration_owned_diagrams_getter(self):
         tested = Enumeration()
         tested.get_owned_diagrams()
@@ -41060,12 +40400,6 @@ class capella_tests(unittest.TestCase):
     def test_EnumerationLiteral_contained_generic_traces_getter(self):
         tested = EnumerationLiteral()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_EnumerationLiteral_contained_generic_traces_setter(self):
-        tested = EnumerationLiteral()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_EnumerationLiteral_owned_diagrams_getter(self):
@@ -41477,12 +40811,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_BooleanType_contained_generic_traces_setter(self):
-        tested = BooleanType()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_BooleanType_owned_diagrams_getter(self):
         tested = BooleanType()
         tested.get_owned_diagrams()
@@ -41884,12 +41212,6 @@ class capella_tests(unittest.TestCase):
     def test_StringType_contained_generic_traces_getter(self):
         tested = StringType()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_StringType_contained_generic_traces_setter(self):
-        tested = StringType()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_StringType_owned_diagrams_getter(self):
@@ -42330,12 +41652,6 @@ class capella_tests(unittest.TestCase):
     def test_NumericType_contained_generic_traces_getter(self):
         tested = NumericType()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_NumericType_contained_generic_traces_setter(self):
-        tested = NumericType()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_NumericType_owned_diagrams_getter(self):
@@ -42853,12 +42169,6 @@ class capella_tests(unittest.TestCase):
         tested.get_contained_generic_traces()
         pass
 
-    def test_PhysicalQuantity_contained_generic_traces_setter(self):
-        tested = PhysicalQuantity()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
-        pass
-
     def test_PhysicalQuantity_owned_diagrams_getter(self):
         tested = PhysicalQuantity()
         tested.get_owned_diagrams()
@@ -43162,12 +42472,6 @@ class capella_tests(unittest.TestCase):
     def test_Unit_contained_generic_traces_getter(self):
         tested = Unit()
         tested.get_contained_generic_traces()
-        pass
-
-    def test_Unit_contained_generic_traces_setter(self):
-        tested = Unit()
-        value = GenericTrace()
-        tested.get_contained_generic_traces().add(value)
         pass
 
     def test_Unit_owned_diagrams_getter(self):
