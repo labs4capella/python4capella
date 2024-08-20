@@ -1,6 +1,6 @@
     def get_attribute(self, attributeName: str) -> Attribute:
         for attr in self.get_all_attributes():
-            if attributeName == attr.get_definition().getReqIFLongName():
+            if attributeName == attr.get_definition().get_long_name():
                 return attr
         return None
 

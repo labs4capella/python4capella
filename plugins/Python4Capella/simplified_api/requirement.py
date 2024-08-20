@@ -186,7 +186,7 @@ class CapellaModule(EObject):
         """
         Returns: ModuleType[0..1]
         """
-        value =  self.get_java_object().getModuleType()
+        value = self.get_java_object().getModuleType()
         if value is None:
             return value
         else:
@@ -288,7 +288,7 @@ class Requirement(EObject):
         status: OK
         """
         for attr in self.get_all_attributes():
-            if attributeName == attr.get_definition().getReqIFLongName():
+            if attributeName == attr.get_definition().get_long_name():
                 return attr
         return None
     def set_attribute(self, attributeName: str, value: str):
@@ -333,7 +333,7 @@ class Requirement(EObject):
         """
         Returns: RequirementType[0..1]
         """
-        value =  self.get_java_object().getRequirementType()
+        value = self.get_java_object().getRequirementType()
         if value is None:
             return value
         else:
@@ -420,7 +420,7 @@ class Attribute(EObject):
         """
         Returns: AttributeDefinition
         """
-        value =  self.get_java_object().getDefinition()
+        value = self.get_java_object().getDefinition()
         if value is None:
             return value
         else:
@@ -788,7 +788,7 @@ class AttributeDefinition(ReqIFElement):
         """
         Returns: Attribute[0..1]
         """
-        value =  self.get_java_object().getDefaultValue()
+        value = self.get_java_object().getDefaultValue()
         if value is None:
             return value
         else:
@@ -804,7 +804,7 @@ class AttributeDefinition(ReqIFElement):
         """
         Returns: DataTypeDefinition[0..1]
         """
-        value =  self.get_java_object().getDefinitionType()
+        value = self.get_java_object().getDefinitionType()
         if value is None:
             return value
         else:
