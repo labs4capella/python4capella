@@ -186,7 +186,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemEngineering_status_setter(self):
         tested = SystemEngineering()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -510,7 +510,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Constraint_status_setter(self):
         tested = Constraint()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -826,7 +826,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValue_status_setter(self):
         tested = PropertyValue()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -1152,7 +1152,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValueGroup_status_setter(self):
         tested = PropertyValueGroup()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -1462,7 +1462,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PropertyValuePkg_status_setter(self):
         tested = PropertyValuePkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -1756,7 +1756,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyType_status_setter(self):
         tested = EnumerationPropertyType()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -2061,7 +2061,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationPropertyLiteral_status_setter(self):
         tested = EnumerationPropertyLiteral()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -2355,7 +2355,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Feature_status_setter(self):
         tested = Feature()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -2660,7 +2660,7 @@ class capella_tests(unittest.TestCase):
 
     def test_GenericTrace_status_setter(self):
         tested = GenericTrace()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -3007,7 +3007,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Relationship_status_setter(self):
         tested = Relationship()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -3312,7 +3312,7 @@ class capella_tests(unittest.TestCase):
 
     def test_AbstractInformationFlow_status_setter(self):
         tested = AbstractInformationFlow()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -3660,7 +3660,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TransfoLink_status_setter(self):
         tested = TransfoLink()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -4007,7 +4007,7 @@ class capella_tests(unittest.TestCase):
 
     def test_JustificationLink_status_setter(self):
         tested = JustificationLink()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -4333,7 +4333,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Classifier_status_setter(self):
         tested = Classifier()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -4638,7 +4638,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Diagram_status_setter(self):
         tested = Diagram()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -5763,7 +5763,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalAnalysis_status_setter(self):
         tested = OperationalAnalysis()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -6087,7 +6087,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivityPkg_status_setter(self):
         tested = OperationalActivityPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -6514,7 +6514,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActivity_status_setter(self):
         tested = OperationalActivity()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -6883,7 +6883,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interaction_status_setter(self):
         tested = Interaction()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -7237,7 +7237,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalProcess_status_setter(self):
         tested = OperationalProcess()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -7606,7 +7606,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapabilityPkg_status_setter(self):
         tested = OperationalCapabilityPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -8019,7 +8019,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalCapability_status_setter(self):
         tested = OperationalCapability()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -8367,7 +8367,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EntityPkg_status_setter(self):
         tested = EntityPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -8731,7 +8731,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalEntity_status_setter(self):
         tested = OperationalEntity()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -9030,7 +9030,7 @@ class capella_tests(unittest.TestCase):
 
     def test_OperationalActor_status_setter(self):
         tested = OperationalActor()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -9384,7 +9384,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CommunicationMean_status_setter(self):
         tested = CommunicationMean()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -9738,7 +9738,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemAnalysis_status_setter(self):
         tested = SystemAnalysis()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -10072,7 +10072,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunctionPkg_status_setter(self):
         tested = SystemFunctionPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -10504,7 +10504,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemFunction_status_setter(self):
         tested = SystemFunction()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -10835,7 +10835,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityPkg_status_setter(self):
         tested = CapabilityPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -11275,7 +11275,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Capability_status_setter(self):
         tested = Capability()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -11618,7 +11618,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemComponentPkg_status_setter(self):
         tested = SystemComponentPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -12050,7 +12050,7 @@ class capella_tests(unittest.TestCase):
 
     def test_System_status_setter(self):
         tested = System()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -12488,7 +12488,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SystemActor_status_setter(self):
         tested = SystemActor()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -12883,7 +12883,7 @@ class capella_tests(unittest.TestCase):
 
     def test_MissionPkg_status_setter(self):
         tested = MissionPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -13187,7 +13187,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mission_status_setter(self):
         tested = Mission()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -13508,7 +13508,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalArchitecture_status_setter(self):
         tested = LogicalArchitecture()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -13837,7 +13837,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunctionPkg_status_setter(self):
         tested = LogicalFunctionPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -14269,7 +14269,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalFunction_status_setter(self):
         tested = LogicalFunction()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -14605,7 +14605,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealizationPkg_status_setter(self):
         tested = CapabilityRealizationPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -15045,7 +15045,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CapabilityRealization_status_setter(self):
         tested = CapabilityRealization()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -15421,7 +15421,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponentPkg_status_setter(self):
         tested = LogicalComponentPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -15858,7 +15858,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalSystem_status_setter(self):
         tested = LogicalSystem()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -16306,7 +16306,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalComponent_status_setter(self):
         tested = LogicalComponent()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -16766,7 +16766,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LogicalActor_status_setter(self):
         tested = LogicalActor()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -17155,7 +17155,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalArchitecture_status_setter(self):
         tested = PhysicalArchitecture()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -17484,7 +17484,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunctionPkg_status_setter(self):
         tested = PhysicalFunctionPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -17916,7 +17916,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalFunction_status_setter(self):
         tested = PhysicalFunction()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -18236,7 +18236,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalComponentPkg_status_setter(self):
         tested = PhysicalComponentPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -18560,7 +18560,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalSystem_status_setter(self):
         tested = PhysicalSystem()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -18959,7 +18959,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BehaviorPC_status_setter(self):
         tested = BehaviorPC()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -19446,7 +19446,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NodePC_status_setter(self):
         tested = NodePC()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -19900,7 +19900,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalActor_status_setter(self):
         tested = PhysicalActor()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -20273,7 +20273,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EPBSArchitecture_status_setter(self):
         tested = EPBSArchitecture()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -20587,7 +20587,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItemPkg_status_setter(self):
         tested = ConfigurationItemPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -20891,7 +20891,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConfigurationItem_status_setter(self):
         tested = ConfigurationItem()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -21228,7 +21228,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateMachine_status_setter(self):
         tested = StateMachine()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -21571,7 +21571,7 @@ class capella_tests(unittest.TestCase):
 
     def test_State_status_setter(self):
         tested = State()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -22073,7 +22073,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Mode_status_setter(self):
         tested = Mode()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -22411,7 +22411,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Pseudostate_status_setter(self):
         tested = Pseudostate()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -22710,7 +22710,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Region_status_setter(self):
         tested = Region()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -23009,7 +23009,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateTransition_status_setter(self):
         tested = StateTransition()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -23391,7 +23391,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ChangeEvent_status_setter(self):
         tested = ChangeEvent()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -23696,7 +23696,7 @@ class capella_tests(unittest.TestCase):
 
     def test_TimeEvent_status_setter(self):
         tested = TimeEvent()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -24012,7 +24012,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Scenario_status_setter(self):
         tested = Scenario()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -24385,7 +24385,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InstanceRole_status_setter(self):
         tested = InstanceRole()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -24684,7 +24684,7 @@ class capella_tests(unittest.TestCase):
 
     def test_SequenceMessage_status_setter(self):
         tested = SequenceMessage()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -25013,7 +25013,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StateFragment_status_setter(self):
         tested = StateFragment()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -25322,7 +25322,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CombinedFragment_status_setter(self):
         tested = CombinedFragment()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -25631,7 +25631,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Operand_status_setter(self):
         tested = Operand()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -25946,7 +25946,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ConstraintDuration_status_setter(self):
         tested = ConstraintDuration()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -26262,7 +26262,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPort_status_setter(self):
         tested = PhysicalPort()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -26648,7 +26648,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLink_status_setter(self):
         tested = PhysicalLink()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -27013,7 +27013,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalLinkCategory_status_setter(self):
         tested = PhysicalLinkCategory()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -27318,7 +27318,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalPath_status_setter(self):
         tested = PhysicalPath()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -27660,7 +27660,7 @@ class capella_tests(unittest.TestCase):
 
     def test_InterfacePkg_status_setter(self):
         tested = InterfacePkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -27969,7 +27969,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Interface_status_setter(self):
         tested = Interface()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -28356,7 +28356,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemAllocation_status_setter(self):
         tested = ExchangeItemAllocation()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -28694,7 +28694,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItem_status_setter(self):
         tested = ExchangeItem()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -29092,7 +29092,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeItemElement_status_setter(self):
         tested = ExchangeItemElement()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -29397,7 +29397,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PortAllocation_status_setter(self):
         tested = PortAllocation()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -29746,7 +29746,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionInputPort_status_setter(self):
         tested = FunctionInputPort()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -30117,7 +30117,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionOutputPort_status_setter(self):
         tested = FunctionOutputPort()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -30455,7 +30455,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalExchange_status_setter(self):
         tested = FunctionalExchange()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -30869,7 +30869,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ExchangeCategory_status_setter(self):
         tested = ExchangeCategory()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -31174,7 +31174,7 @@ class capella_tests(unittest.TestCase):
 
     def test_FunctionalChain_status_setter(self):
         tested = FunctionalChain()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -31582,7 +31582,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentPort_status_setter(self):
         tested = ComponentPort()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -31990,7 +31990,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchange_status_setter(self):
         tested = ComponentExchange()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -32431,7 +32431,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeCategory_status_setter(self):
         tested = ComponentExchangeCategory()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -32747,7 +32747,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentFunctionalAllocation_status_setter(self):
         tested = ComponentFunctionalAllocation()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -33094,7 +33094,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComponentExchangeFunctionalExchangeAllocation_status_setter(self):
         tested = ComponentExchangeFunctionalExchangeAllocation()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -33441,7 +33441,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LiteralBooleanValue_status_setter(self):
         tested = LiteralBooleanValue()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -33757,7 +33757,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanReference_status_setter(self):
         tested = BooleanReference()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -34084,7 +34084,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationReference_status_setter(self):
         tested = EnumerationReference()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -34411,7 +34411,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LiteralStringValue_status_setter(self):
         tested = LiteralStringValue()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -34727,7 +34727,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringReference_status_setter(self):
         tested = StringReference()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -35054,7 +35054,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericValue_status_setter(self):
         tested = NumericValue()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -35391,7 +35391,7 @@ class capella_tests(unittest.TestCase):
 
     def test_LiteralNumericValue_status_setter(self):
         tested = LiteralNumericValue()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -35707,7 +35707,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericReference_status_setter(self):
         tested = NumericReference()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -36034,7 +36034,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComplexValue_status_setter(self):
         tested = ComplexValue()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -36339,7 +36339,7 @@ class capella_tests(unittest.TestCase):
 
     def test_ComplexValueReference_status_setter(self):
         tested = ComplexValueReference()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -36655,7 +36655,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BinaryExpression_status_setter(self):
         tested = BinaryExpression()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -36960,7 +36960,7 @@ class capella_tests(unittest.TestCase):
 
     def test_UnaryExpression_status_setter(self):
         tested = UnaryExpression()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -37265,7 +37265,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CollectionValueReference_status_setter(self):
         tested = CollectionValueReference()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -37592,7 +37592,7 @@ class capella_tests(unittest.TestCase):
 
     def test_CollectionValue_status_setter(self):
         tested = CollectionValue()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -37908,7 +37908,7 @@ class capella_tests(unittest.TestCase):
 
     def test_DataPkg_status_setter(self):
         tested = DataPkg()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -38268,7 +38268,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Class_status_setter(self):
         tested = Class()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -38616,7 +38616,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Collection_status_setter(self):
         tested = Collection()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -39035,7 +39035,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Union_status_setter(self):
         tested = Union()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -39383,7 +39383,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Association_status_setter(self):
         tested = Association()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -39874,7 +39874,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Enumeration_status_setter(self):
         tested = Enumeration()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -40272,7 +40272,7 @@ class capella_tests(unittest.TestCase):
 
     def test_EnumerationLiteral_status_setter(self):
         tested = EnumerationLiteral()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -40681,7 +40681,7 @@ class capella_tests(unittest.TestCase):
 
     def test_BooleanType_status_setter(self):
         tested = BooleanType()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -41084,7 +41084,7 @@ class capella_tests(unittest.TestCase):
 
     def test_StringType_status_setter(self):
         tested = StringType()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -41524,7 +41524,7 @@ class capella_tests(unittest.TestCase):
 
     def test_NumericType_status_setter(self):
         tested = NumericType()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -42039,7 +42039,7 @@ class capella_tests(unittest.TestCase):
 
     def test_PhysicalQuantity_status_setter(self):
         tested = PhysicalQuantity()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -42344,7 +42344,7 @@ class capella_tests(unittest.TestCase):
 
     def test_Unit_status_setter(self):
         tested = Unit()
-        value = "value"
+        value = "DRAFT"
         tested.set_status(value)
         pass
 
@@ -45770,5 +45770,4 @@ class capella_tests(unittest.TestCase):
         tested = EnumerationDataTypeDefinition()
         tested.get_specified_values()
         pass
-
 

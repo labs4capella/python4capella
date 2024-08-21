@@ -283,7 +283,11 @@ public class ProduceCapellaPythonTestsFromCapellaHandler extends AbstractHandler
 		} else if ("Integer".equals(typedElement.getType().getLabel())) {
 			res = "42";
 		} else if ("String".equals(typedElement.getType().getLabel())) {
+			if ("status".equals(typedElement.getName())) {
+				res = "\"DRAFT\"";
+			}else {
 			res = "\"value\"";
+			}
 		} else if ("PhysicalComponentKind".equals(typedElement.getType().getLabel())) {
 			res = "\"HARDWARE\"";
 		} else if ("ExchangeMechanism".equals(typedElement.getType().getLabel())) {

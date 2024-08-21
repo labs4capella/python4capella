@@ -380,6 +380,30 @@ class CapellaElement(EObject):
             return value
         else:
             return value.getName()
+    def set_status(self, value: str):
+        """
+        Parameters: value: String
+        """
+        project = self.get_java_object()
+        while project.eContainer() is not None:
+            project = project.eContainer()
+            if project.eClass().getName() == "Project":
+                break
+        if project.eClass().getName() != "Project":
+            raise AttributeError("The current object is not attached to a Capella model.")
+        valid_status = []
+        for property_type in project.getOwnedEnumerationPropertyTypes():
+            if property_type.getName() == "ProgressStatus":
+                for literal in property_type.getOwnedLiterals():
+                    valid_status.append(literal)
+                break
+        valid_status_names = [status.getName() for status in valid_status]
+        if value not in valid_status_names:
+            raise AttributeError("Valid status are: " + str(valid_status_names))
+        for status in valid_status:
+            if status.getName() == value:
+                self.get_java_object().setStatus(status)
+                break
     def get_review(self) -> str:
         """
         Returns: String
@@ -639,6 +663,7 @@ class EnumerationPropertyType(CapellaElement):
         """
         Parameters: PVName: String
         Returns: EnumerationPropertyLiteral
+        status: OK
         """
         for literal in self.get_owned_literals():
             if literal.get_name() == literalName:
