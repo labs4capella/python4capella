@@ -1,3 +1,4 @@
+//Start of user code copyright
 /*******************************************************************************
  *  Copyright (c) 2024 Obeo. 
  *  All rights reserved. This program and the accompanying materials
@@ -9,7 +10,11 @@
  *       Obeo - initial API and implementation
  *  
  *******************************************************************************/
+//End of user code
+
 package org.eclipse.python4capella.ecore.gen.python.ide.ui.handlers;
+
+//Start of user code imports
 
 import java.util.Iterator;
 
@@ -17,17 +22,24 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.python4capella.ecore.gen.python.ide.ui.MainGeneratorEclipse;
 import org.eclipse.ui.handlers.HandlerUtil;
+
+//End of user code
 
 /**
  * Command handler for org::eclipse::python4capella::ecore::gen::python::main::main.
  * 
  * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
+ * @generated
  */
 public class MainGeneratorHandler extends AbstractHandler {
 
+	/**
+	 * @generated
+	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final IStructuredSelection selection = HandlerUtil.getCurrentStructuredSelection(event);
@@ -35,8 +47,12 @@ public class MainGeneratorHandler extends AbstractHandler {
 		final Iterator<?> it = selection.iterator();
 		while (it.hasNext()) {
 			final Object selected = it.next();
+			final MainGeneratorEclipse generator;
 			if (selected instanceof EPackage) {
-				final MainGeneratorEclipse generator = new MainGeneratorEclipse((EPackage)selected);
+				generator = new MainGeneratorEclipse((EPackage)selected);
+				generator.generate();
+			} else if (selected instanceof IFile) {
+				generator = new MainGeneratorEclipse((IFile) selected);
 				generator.generate();
 			}
 		}

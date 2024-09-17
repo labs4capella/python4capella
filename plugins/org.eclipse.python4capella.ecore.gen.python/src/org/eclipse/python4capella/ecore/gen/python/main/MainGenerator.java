@@ -30,6 +30,7 @@ import org.eclipse.acceleo.OpenModeKind;
 import org.eclipse.acceleo.Template;
 import org.eclipse.acceleo.aql.AcceleoUtil;
 import org.eclipse.acceleo.aql.evaluation.AcceleoEvaluator;
+import org.eclipse.acceleo.aql.evaluation.AcceleoProfilerEvaluator;
 import org.eclipse.acceleo.aql.evaluation.GenerationResult;
 import org.eclipse.acceleo.aql.evaluation.strategy.DefaultGenerationStrategy;
 import org.eclipse.acceleo.aql.evaluation.strategy.DefaultWriterFactory;
@@ -37,7 +38,10 @@ import org.eclipse.acceleo.aql.evaluation.strategy.IAcceleoGenerationStrategy;
 import org.eclipse.acceleo.aql.evaluation.writer.IAcceleoWriter;
 import org.eclipse.acceleo.aql.parser.AcceleoParser;
 import org.eclipse.acceleo.aql.parser.ModuleLoader;
+import org.eclipse.acceleo.aql.profiler.IProfiler;
+import org.eclipse.acceleo.aql.profiler.ProfileResource;
 import org.eclipse.acceleo.query.AQLUtils;
+import org.eclipse.acceleo.query.ast.ASTNode;
 import org.eclipse.acceleo.query.ast.EClassifierTypeLiteral;
 import org.eclipse.acceleo.query.ast.TypeLiteral;
 import org.eclipse.acceleo.query.runtime.impl.namespace.ClassLoaderQualifiedNameResolver;
@@ -45,11 +49,11 @@ import org.eclipse.acceleo.query.runtime.impl.namespace.JavaLoader;
 import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameQueryEnvironment;
 import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameResolver;
 import org.eclipse.acceleo.query.services.ResourceServices;
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -99,6 +103,7 @@ public class MainGenerator {
 	 * 
 	 * @param args
 	 *            resources separated by a comma, target folder
+	 * @generated
 	 */
 	public static void main(String[] args) {
 		if (args.length == 2) {
@@ -123,22 +128,6 @@ public class MainGenerator {
 	private static void printUsage() {
 		System.out.println("Usage: <resources> <target>");
 		System.out.println("Example: model1.xmi,model2.xmi src-gen/");
-	}
-
-	/**
-	 * Registers the given {@link EPackage} in the given {@link IQualifiedNameQueryEnvironment} recursively.
-	 * 
-	 * @param environment
-	 *            the {@link IQualifiedNameQueryEnvironment}
-	 * @param ePackage
-	 *            the {@link EPackage}
-	 * @generated
-	 */
-	private static void registerEPackage(IQualifiedNameQueryEnvironment environment, EPackage ePackage) {
-		environment.registerEPackage(ePackage);
-		for (EPackage child : ePackage.getESubpackages()) {
-			registerEPackage(environment, child);
-		}
 	}
 
 	/**
@@ -167,10 +156,11 @@ public class MainGenerator {
 		final IQualifiedNameResolver resolver = createResolver();
 		final IQualifiedNameQueryEnvironment queryEnvironment = createAcceleoQueryEnvironment(options,
 				resolver, resourceSetForModels);
-		AcceleoEvaluator evaluator = createAcceleoEvaluator(resolver, queryEnvironment);
+		AcceleoEvaluator evaluator = createAcceleoEvaluator(targetURI, resolver, queryEnvironment);
 		final IAcceleoGenerationStrategy strategy = createGenerationStrategy(resourceSetForModels);
 
 		final Module module = (Module)resolver.resolve(moduleQualifiedName);
+		AcceleoUtil.registerEPackage(queryEnvironment, resolver, module);
 		final URI logURI = AcceleoUtil.getlogURI(targetURI, options.get(AcceleoUtil.LOG_URI_OPTION));
 		beforeGeneration(evaluator, queryEnvironment, module, resourceSetForModels, strategy, targetURI,
 				logURI);
@@ -191,6 +181,18 @@ public class MainGenerator {
 				}
 			}
 		} finally {
+			if (evaluator instanceof AcceleoProfilerEvaluator) {
+				IProfiler profiler = ((AcceleoProfilerEvaluator)evaluator).getProfiler();
+				ProfileResource profileResource = profiler.getResource();
+				profileResource.setStartResource(resolver.getSourceURI(moduleQualifiedName).toString());
+				try {
+					profiler.save(URI.createURI(targetURI.toString() + "/" + module.getName() + ".mtlp"));
+				} catch (IOException e) {
+					final Diagnostic diagnostic = new BasicDiagnostic(Diagnostic.ERROR, getClass()
+							.getCanonicalName(), 0, e.getMessage(), new Object[] {e });
+					evaluator.getGenerationResult().addDiagnostic(diagnostic);
+				}
+			}
 			AQLUtils.cleanResourceSetForModels(generationKey, resourceSetForModels);
 			AcceleoUtil.cleanServices(queryEnvironment, resourceSetForModels);
 			printDiagnostics(evaluator.getGenerationResult());
@@ -205,6 +207,7 @@ public class MainGenerator {
 	 * @param module
 	 *            the {@link Module}
 	 * @return the {@link List} of {@link Template} to generate for the given {@link Module}
+	 * @generated
 	 */
 	protected List<Template> getTemplates(Module module) {
 		return AcceleoUtil.getMainTemplates(module);
@@ -222,6 +225,7 @@ public class MainGenerator {
 	 * @param resourceSetForModels
 	 *            the {@link ResourceServices} for models
 	 * @return the {@link List} of {@link EObject} values to use
+	 * @generated
 	 */
 	protected List<EObject> getValues(IQualifiedNameQueryEnvironment queryEnvironment,
 			final Map<EClass, List<EObject>> valuesCache, TypeLiteral type,
@@ -360,9 +364,6 @@ public class MainGenerator {
 			IQualifiedNameResolver resolver, ResourceSet resourceSetForModels) {
 		final IQualifiedNameQueryEnvironment queryEnvironment = AcceleoUtil.newAcceleoQueryEnvironment(
 				options, resolver, resourceSetForModels, false);
-		for (String nsURI : new ArrayList<String>(EPackage.Registry.INSTANCE.keySet())) {
-			registerEPackage(queryEnvironment, EPackage.Registry.INSTANCE.getEPackage(nsURI));
-		}
 
 		return queryEnvironment;
 	}
@@ -370,6 +371,8 @@ public class MainGenerator {
 	/**
 	 * Creates the {@link AcceleoEvaluator}
 	 * 
+	 * @param targetURI
+	 *            the target {@link URI}
 	 * @param resolver
 	 *            the {@link IQualifiedNameResolver}
 	 * @param queryEnvironment
@@ -377,10 +380,18 @@ public class MainGenerator {
 	 * @return the created {@link AcceleoEvaluator}
 	 * @generated
 	 */
-	protected AcceleoEvaluator createAcceleoEvaluator(IQualifiedNameResolver resolver,
+	protected AcceleoEvaluator createAcceleoEvaluator(URI targetURI, IQualifiedNameResolver resolver,
 			IQualifiedNameQueryEnvironment queryEnvironment) {
 		AcceleoEvaluator evaluator = new AcceleoEvaluator(queryEnvironment.getLookupEngine(), System
 				.lineSeparator());
+
+		// final Representation profilerModelRepresentation = Representation.TREE;
+		// final IProfiler profiler = ProfilerUtils.getProfiler(getModuleQualifiedName(),
+		// profilerModelRepresentation, ProfilerPackage.eINSTANCE.getProfilerFactory());
+		// AcceleoEvaluator evaluator = new AcceleoProfilerEvaluator(queryEnvironment.getLookupEngine(),
+		// System
+		// .lineSeparator(), profiler);
+
 		resolver.addLoader(new ModuleLoader(new AcceleoParser(), evaluator));
 		resolver.addLoader(new JavaLoader(AcceleoParser.QUALIFIER_SEPARATOR, false));
 
@@ -395,7 +406,7 @@ public class MainGenerator {
 	 * @return the created {@link IAcceleoGenerationStrategy}
 	 * @generated
 	 */
-	protected IAcceleoGenerationStrategy createGenerationStrategy(final ResourceSet resourceSetForModels) {
+	protected IAcceleoGenerationStrategy createGenerationStrategy(ResourceSet resourceSetForModels) {
 		final IAcceleoGenerationStrategy strategy = new DefaultGenerationStrategy(resourceSetForModels
 				.getURIConverter(), new DefaultWriterFactory()) {
 			@Override
@@ -425,7 +436,7 @@ public class MainGenerator {
 	 * @param destination
 	 *            destination {@link URI}
 	 * @param logURI
-	 *            the {@link URI} for logging if nay, <code>null</code> otherwise
+	 *            the {@link URI} for logging if any, <code>null</code> otherwise
 	 * @generated
 	 */
 	protected void beforeGeneration(AcceleoEvaluator evaluator,
@@ -459,6 +470,47 @@ public class MainGenerator {
 			}
 			printDiagnostic(stream, generationResult.getDiagnostic(), "");
 		}
+		printSummary(System.out, generationResult);
+	}
+
+	/**
+	 * Prints the generation summary.
+	 * 
+	 * @param stream
+	 *            the {@link PrintStream}
+	 * @param result
+	 *            the {@link GenerationResult}
+	 * @generated
+	 */
+	private void printSummary(PrintStream stream, GenerationResult result) {
+		int nbErrors = 0;
+		int nbWarnings = 0;
+		int nbInfos = 0;
+		for (Diagnostic diagnostic : result.getDiagnostic().getChildren()) {
+			switch (diagnostic.getSeverity()) {
+				case Diagnostic.ERROR:
+					nbErrors++;
+					break;
+
+				case Diagnostic.WARNING:
+					nbWarnings++;
+					break;
+
+				case Diagnostic.INFO:
+					nbInfos++;
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		stream.print("Files: " + result.getGeneratedFiles().size());
+		stream.print(", Lost Files: " + result.getLostFiles().size());
+		stream.print(", Errors: " + nbErrors);
+		stream.print(", Warnings: " + nbWarnings);
+		stream.print(", Infos: " + nbInfos);
+		stream.println(".");
 	}
 
 	/**
@@ -470,6 +522,7 @@ public class MainGenerator {
 	 *            the {@link Diagnostic}
 	 * @param indentation
 	 *            the current indentation
+	 * @generated
 	 */
 	protected void printDiagnostic(PrintStream stream, Diagnostic diagnostic, String indentation) {
 		String nextIndentation = indentation;
@@ -477,18 +530,21 @@ public class MainGenerator {
 			stream.print(indentation);
 			switch (diagnostic.getSeverity()) {
 				case Diagnostic.INFO:
-					stream.print("INFO: ");
+					stream.print("INFO ");
 					break;
 
 				case Diagnostic.WARNING:
-					stream.print("WARNING: ");
+					stream.print("WARNING ");
 					break;
 
 				case Diagnostic.ERROR:
-					stream.print("ERROR: ");
+					stream.print("ERROR ");
 					break;
 			}
-			stream.println(diagnostic.getMessage());
+			if (!diagnostic.getData().isEmpty() && diagnostic.getData().get(0) instanceof ASTNode) {
+				stream.print(AcceleoUtil.getLocation((ASTNode)diagnostic.getData().get(0)));
+			}
+			stream.println(": " + diagnostic.getMessage());
 			nextIndentation += "\t";
 		}
 		for (Diagnostic child : diagnostic.getChildren()) {
