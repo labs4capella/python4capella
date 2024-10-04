@@ -156,7 +156,7 @@ public class MainGenerator {
 		final IQualifiedNameResolver resolver = createResolver();
 		final IQualifiedNameQueryEnvironment queryEnvironment = createAcceleoQueryEnvironment(options,
 				resolver, resourceSetForModels);
-		AcceleoEvaluator evaluator = createAcceleoEvaluator(targetURI, resolver, queryEnvironment);
+		final AcceleoEvaluator evaluator = createAcceleoEvaluator(targetURI, resolver, queryEnvironment);
 		final IAcceleoGenerationStrategy strategy = createGenerationStrategy(resourceSetForModels);
 
 		final Module module = (Module)resolver.resolve(moduleQualifiedName);
