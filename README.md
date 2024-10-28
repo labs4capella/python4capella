@@ -164,9 +164,13 @@ When you will open your fist Python file, you will be prompted by PyDev to defin
 
 You can validate the dialog by clicking the OK button.
 
+Before you [run a Python script](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Run.textile), you will also need to [enable developer capabilities](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/EnableDevelopmentCapabilities.textile).
+
 # Documentation
 
 You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from Capella, then on the right tree, you can select Python4Capella. To get started, you can have a look at the [writing script documentation](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Write.textile). You can also read the [run a Python script](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Run.textile) page to run one of the provided sample script.
+
+You can also check the [tips and tricks](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/TipsAndTricks.textile) page. 
 
 # False errors in provided scripts
 
