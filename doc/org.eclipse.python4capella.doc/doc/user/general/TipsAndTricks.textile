@@ -208,7 +208,63 @@ bq.. Note: You script need to be in the script location of "EASE":https://www.ec
 
 h3. View
 
-TODO
+A script can also be used to contribute a new view to Capella.
+
+bc..import json
+
+def createView(param0):
+    pass
+def createLabel(param0, param1):
+    pass
+def createText(param0):
+    pass
+def createComboViewer(param0, null, param2):
+    pass
+def createSeparator(true, param1):
+    pass
+def createButton(param0, saveAddress, param2):
+    pass
+
+loadModule("/System/UI Builder");
+loadModule("/System/UI");
+loadModule('/System/Resources');
+
+createView("Create Contact");
+
+createLabel("First Name:", "1/1 >x");
+
+txtFirstName = createText("2-4/1 o!");
+createLabel("Last Name:", "1/2 >x");
+txtLastName = createText("2-4/2 o!");
+
+createLabel("Phone:", "1/3 >x");
+txtPhone = createText("2-4/3 o!");
+
+createLabel("ZIP Code:", "1/4 >x");
+txtZipCode = createText("2/4 o");
+
+createLabel("Country:", "3/4 >x");
+
+cmbCountry = createComboViewer([ "Austria", "Germany", "India", "USA" ])
+
+createSeparator(True, "1-4/5 o")
+
+def save_address():
+    address = {
+        "lastName": txtLastName.getText(),
+        "firstName": txtFirstName.getText(),
+        "phone": txtPhone.getText(),
+        "zipCode": txtZipCode.getText(),
+        "country": cmbCountry.getSelection().getFirstElement()
+    }
+    data = json.dumps(address)
+    print(data)
+
+createButton("Save", "save_address()", "4/6 >")
+
+p. This dialog allows to input contact information and serialize them in the console when the save button is pressed.
+
+!TipsAndTricks/View.png(View contribution)!
 
 h2. Run a script on resource change
 
@@ -252,6 +308,7 @@ p. if you are only interested in save changes, you can use the @onSave@ property
 
 bc.. # onSave               : *.capella
 # script-type          : Python
+
 h2. User Input
 
 Some time selecting an element from your model or using an external source for your data is not enough and you will need to prompt the user to input some information. This section explains how you can get parameters passed to the script or create and use dialogs.
@@ -282,6 +339,7 @@ bc.. def showInputDialog():
 loadModule('/System/UI')
 
 componentName = showInputDialog("Enter the component name:", "New Component 1")
+
 p. We first load the module and define method we will use from this module to prevent "PyDev":https://www.pydev.org/ errors, this can be done once at the beginning of your script. Then open the input dialog with a default value. If the cancel button is pressed, the returned value is @None@.
 
 With the UI Builder module provided by "EASE":https://www.eclipse.org/ease/, you can also build more complex dialogs. A short example:
@@ -330,6 +388,7 @@ if result == 0:
     instance.evaluate(javaDialog)
 else:
     print("Dialog cancelled")
+
 p. This script create a dialog with two labels and text fields. One of each for the name and one of each for the summary. When the dialog is validated, the method @ComponentDialog.evaluate()@ is executed. Here we simply create a @LogicalComponent@ and set its name and summary. Then we display the component in the console.
 
 The dialog looks like this:

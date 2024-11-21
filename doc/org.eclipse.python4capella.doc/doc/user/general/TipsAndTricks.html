@@ -2,9 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>TipsAndTricks</title>
-		<link type="text/css" rel="stylesheet" href="../../resources/bootstrap.css"/>
-		<link type="text/css" rel="stylesheet" href="../../resources/custom.css"/>
 	</head>
 	<body>
 		<h1 id="TipsandTricks">Tips and Tricks</h1>
@@ -237,7 +234,56 @@ if specific_cls is not None:
 			</p>
 		</blockquote>
 		<h3 id="View">View</h3>
-		<p>TODO</p>
+		<p>A script can also be used to contribute a new view to Capella.</p>
+		<p>bc..import json</p>
+		<p>def createView(param0):
+			<br/>    pass
+			<br/>def createLabel(param0, param1):
+			<br/>    pass
+			<br/>def createText(param0):
+			<br/>    pass
+			<br/>def createComboViewer(param0, null, param2):
+			<br/>    pass
+			<br/>def createSeparator(true, param1):
+			<br/>    pass
+			<br/>def createButton(param0, saveAddress, param2):
+			<br/>    pass
+		</p>
+		<p>loadModule(&#171;/System/UI Builder&#187;);
+			<br/>loadModule(&#171;/System/UI&#187;);
+			<br/>loadModule(&#8249;/System/Resources&#8250;);
+		</p>
+		<p>createView(&#171;Create Contact&#187;);</p>
+		<p>createLabel(&#171;First Name:&#187;, &#171;1/1 &gt;x&#187;);</p>
+		<p>txtFirstName = createText(&#171;2-4/1 o!&#187;);
+			<br/>createLabel(&#171;Last Name:&#187;, &#171;1/2 &gt;x&#187;);
+			<br/>txtLastName = createText(&#171;2-4/2 o!&#187;);
+		</p>
+		<p>createLabel(&#171;Phone:&#187;, &#171;1/3 &gt;x&#187;);
+			<br/>txtPhone = createText(&#171;2-4/3 o!&#187;);
+		</p>
+		<p>createLabel(&#171;ZIP Code:&#187;, &#171;1/4 &gt;x&#187;);
+			<br/>txtZipCode = createText(&#171;2/4 o&#187;);
+		</p>
+		<p>createLabel(&#171;Country:&#187;, &#171;3/4 &gt;x&#187;);</p>
+		<p>cmbCountry = createComboViewer([ &#171;Austria&#187;, &#171;Germany&#187;, &#171;India&#187;, &#171;USA&#187; ])</p>
+		<p>createSeparator(True, &#171;1-4/5 o&#187;)</p>
+		<p>def save_address():
+			<br/>    address = {
+			<br/>        &#171;lastName&#187;: txtLastName.getText(),
+			<br/>        &#171;firstName&#187;: txtFirstName.getText(),
+			<br/>        &#171;phone&#187;: txtPhone.getText(),
+			<br/>        &#171;zipCode&#187;: txtZipCode.getText(),
+			<br/>        &#171;country&#187;: cmbCountry.getSelection().getFirstElement()
+			<br/>    }
+			<br/>    data = json.dumps(address)
+			<br/>    print(data)
+		</p>
+		<p>createButton(&#171;Save&#187;, &#171;save_address()&#187;, &#171;4/6 &gt;&#187;)</p>
+		<p>This dialog allows to input contact information and serialize them in the console when the save button is pressed.</p>
+		<p>
+			<img alt="View contribution" title="View contribution" border="0" src="TipsAndTricks/View.png"/>
+		</p>
 		<h2 id="Runascriptonresourcechange">Run a script on resource change</h2>
 		<p>You can configure a script to be executed whenever a file from your workspace is modified. This can be handy to automate reporting or publication of your Capella model. You need to add the following header to your script:</p>
 		<pre><code># onResourceChange     : *.capella
@@ -281,6 +327,7 @@ if capella_path[len(capella_path)-8:] == '.capella':
 		</p>
 		<pre><code># onSave               : *.capella
 # script-type          : Python
+
 </code></pre>
 		<h2 id="UserInput">User Input</h2>
 		<p>Some time selecting an element from your model or using an external source for your data is not enough and you will need to prompt the user to input some information. This section explains how you can get parameters passed to the script or create and use dialogs.</p>
@@ -312,6 +359,7 @@ else:
 loadModule('/System/UI')
 
 componentName = showInputDialog("Enter the component name:", "New Component 1")
+
 </code></pre>
 		<p>We first load the module and define method we will use from this module to prevent 
 			<a href="https://www.pydev.org/">PyDev</a> errors, this can be done once at the beginning of your script. Then open the input dialog with a default value. If the cancel button is pressed, the returned value is 
@@ -364,6 +412,7 @@ if result == 0:
     instance.evaluate(javaDialog)
 else:
     print("Dialog cancelled")
+
 </code></pre>
 		<p>This script create a dialog with two labels and text fields. One of each for the name and one of each for the summary. When the dialog is validated, the method 
 			<code>ComponentDialog.evaluate()</code> is executed. Here we simply create a 
@@ -423,7 +472,7 @@ wb = load_workbook(xlsx_file_name)
 		<pre><code>ws.cell["A1"] = "Some Text"
 </code></pre>
 		<blockquote>
-			<p>Note: you can also set formula, for instance &#8220;=A2 + A3&#8221;.</p>
+			<p>Note: you can also set formula, for instance &#171;=A2 + A3&#187;.</p>
 		</blockquote>
 		<p>It you made some changes to the 
 			<code>Workbook</code> you will need to save it:

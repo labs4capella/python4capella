@@ -20,4 +20,5 @@ bc.. def showInputDialog():
 loadModule('/System/UI')
 
 componentName = showInputDialog("Enter the component name:", "New Component 1")
+
 p. This prevent the call to @showInputDialog@ to be marked as an error by "PyDev":https://www.pydev.org/.

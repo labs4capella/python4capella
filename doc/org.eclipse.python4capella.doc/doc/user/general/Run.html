@@ -2,9 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>Run</title>
-		<link type="text/css" rel="stylesheet" href="../../resources/bootstrap.css"/>
-		<link type="text/css" rel="stylesheet" href="../../resources/custom.css"/>
 	</head>
 	<body>
 		<h1 id="RunaPythonscript">Run a Python script</h1>
@@ -83,7 +80,7 @@
 </code></pre>
 		<blockquote>
 			<p>Note: To execute a script through command line, on a remote project created with 
-				<b>Team for Capella</b>, first you need to log to the remote project using a Team for Capella client and check the &#8220;Remember me&#8221; checkbox. This will save your credentials. This way, the command line will be able to connect to the remote repository.
+				<b>Team for Capella</b>, first you need to log to the remote project using a Team for Capella client and check the &#171;Remember me&#187; checkbox. This will save your credentials. This way, the command line will be able to connect to the remote repository.
 			</p>
 			<p>
 				<img alt="The &quot;Remember me&quot; checkbox" title="The &quot;Remember me&quot; checkbox" border="0" src="Run/Team.for.Capella.png"/>
@@ -97,7 +94,7 @@
 		<p>
 			<img alt="Add a build step" title="Add a build step" border="0" src="Run/Jenkins_addBuildStep.png"/>
 		</p>
-		<p>If you are using Windows select the &#8220;Execute Windows batch command&#8221; menu, if you are using Linux or Mac OS X select the &#8220;Execute shell&#8221; menu.</p>
+		<p>If you are using Windows select the &#171;Execute Windows batch command&#187; menu, if you are using Linux or Mac OS X select the &#171;Execute shell&#187; menu.</p>
 		<p>Then for Windows and Capella below version 5.x set the command to:</p>
 		<pre><code>pushd *path to your Capella installation*
 eclipsec.exe -nosplash -consolelog -application org.polarsys.capella.core.commandline.core -appid org.eclipse.python4capella.commandline -data .\workspace workspace:/Python4Capella/sample_scripts/my_script.py *arguments*
