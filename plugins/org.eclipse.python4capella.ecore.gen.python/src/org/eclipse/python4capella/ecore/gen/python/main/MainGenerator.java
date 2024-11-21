@@ -19,14 +19,12 @@ package org.eclipse.python4capella.ecore.gen.python.main;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.acceleo.Module;
-import org.eclipse.acceleo.OpenModeKind;
 import org.eclipse.acceleo.Template;
 import org.eclipse.acceleo.aql.AcceleoUtil;
 import org.eclipse.acceleo.aql.evaluation.AcceleoEvaluator;
@@ -35,7 +33,6 @@ import org.eclipse.acceleo.aql.evaluation.GenerationResult;
 import org.eclipse.acceleo.aql.evaluation.strategy.DefaultGenerationStrategy;
 import org.eclipse.acceleo.aql.evaluation.strategy.DefaultWriterFactory;
 import org.eclipse.acceleo.aql.evaluation.strategy.IAcceleoGenerationStrategy;
-import org.eclipse.acceleo.aql.evaluation.writer.IAcceleoWriter;
 import org.eclipse.acceleo.aql.parser.AcceleoParser;
 import org.eclipse.acceleo.aql.parser.ModuleLoader;
 import org.eclipse.acceleo.aql.profiler.IProfiler;
@@ -50,7 +47,9 @@ import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameQueryEnvironmen
 import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameResolver;
 import org.eclipse.acceleo.query.services.ResourceServices;
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.BasicMonitor.Printing;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -113,7 +112,7 @@ public class MainGenerator {
 			}
 			final String target = args[1];
 			final MainGenerator generator = new MainGenerator(resources, target);
-			generator.generate();
+			generator.generate(getMonitor());
 		} else {
 			printUsage();
 		}
@@ -131,11 +130,23 @@ public class MainGenerator {
 	}
 
 	/**
-	 * Generates.
+	 * Gets the progress {@link Monitor}.
 	 * 
+	 * @return the progress {@link Monitor}
 	 * @generated
 	 */
-	public void generate() {
+	private static Monitor getMonitor() {
+		return new Printing(new PrintStream(System.out));
+	}
+
+	/**
+	 * Generates.
+	 * 
+	 * @param monitor
+	 *            the progress {@link Monitor}
+	 * @generated
+	 */
+	public void generate(Monitor monitor) {
 		// inputs
 		final String moduleQualifiedName = getModuleQualifiedName();
 		final URI targetURI = getTargetURI(target);
@@ -148,9 +159,7 @@ public class MainGenerator {
 		final ResourceSet resourceSetForModels = createResourceSetForModel(generationKey, options, exceptions,
 				resourceSet);
 
-		// load models
 		standaloneInitialization(resourceSetForModels);
-		loadResources(resourceSetForModels, resources);
 
 		// prepare Acceleo environment
 		final IQualifiedNameResolver resolver = createResolver();
@@ -162,22 +171,37 @@ public class MainGenerator {
 		final Module module = (Module)resolver.resolve(moduleQualifiedName);
 		AcceleoUtil.registerEPackage(queryEnvironment, resolver, module);
 		final URI logURI = AcceleoUtil.getlogURI(targetURI, options.get(AcceleoUtil.LOG_URI_OPTION));
+		final List<Template> mainTemplates = getTemplates(module);
+
+		monitor.beginTask("Generating", resources.size() + 1 + mainTemplates.size() * resources.size() + 1);
+		// load models
+		loadResources(resourceSetForModels, resources, monitor);
+
+		monitor.subTask("Before generation");
 		beforeGeneration(evaluator, queryEnvironment, module, resourceSetForModels, strategy, targetURI,
 				logURI);
+		monitor.worked(1);
 		try {
 			final Map<EClass, List<EObject>> valuesCache = new LinkedHashMap<>();
-			for (Template template : getTemplates(module)) {
+			for (Template template : mainTemplates) {
 				final EClassifierTypeLiteral eClassifierTypeLiteral = (EClassifierTypeLiteral)template
 						.getParameters().get(0).getType().getAst();
 				final List<EObject> values = getValues(queryEnvironment, valuesCache, eClassifierTypeLiteral,
-						resourceSetForModels);
+						resourceSetForModels, monitor);
 
 				final String parameterName = template.getParameters().get(0).getName();
 				Map<String, Object> variables = new LinkedHashMap<>();
 				for (EObject value : values) {
 					variables.put(parameterName, value);
 					AcceleoUtil.generate(template, variables, evaluator, queryEnvironment, strategy,
-							targetURI, logURI);
+							targetURI, logURI, monitor);
+					if (monitor.isCanceled()) {
+						return;
+					}
+				}
+				monitor.worked(1);
+				if (monitor.isCanceled()) {
+					return;
 				}
 			}
 		} finally {
@@ -196,7 +220,9 @@ public class MainGenerator {
 			AQLUtils.cleanResourceSetForModels(generationKey, resourceSetForModels);
 			AcceleoUtil.cleanServices(queryEnvironment, resourceSetForModels);
 			printDiagnostics(evaluator.getGenerationResult());
+			monitor.subTask("After generation");
 			afterGeneration(evaluator.getGenerationResult());
+			monitor.worked(1);
 		}
 
 	}
@@ -224,14 +250,16 @@ public class MainGenerator {
 	 *            the {@link TypeLiteral}
 	 * @param resourceSetForModels
 	 *            the {@link ResourceServices} for models
+	 * @param monitor
+	 *            the progress {@link Monitor}, it must consumes the resources.size()
 	 * @return the {@link List} of {@link EObject} values to use
 	 * @generated
 	 */
 	protected List<EObject> getValues(IQualifiedNameQueryEnvironment queryEnvironment,
-			final Map<EClass, List<EObject>> valuesCache, TypeLiteral type,
-			ResourceSet resourceSetForModels) {
+			final Map<EClass, List<EObject>> valuesCache, TypeLiteral type, ResourceSet resourceSetForModels,
+			Monitor monitor) {
 		final List<EObject> values = AcceleoUtil.getValues(type, queryEnvironment, resourceSetForModels
-				.getResources(), valuesCache);
+				.getResources(), valuesCache, monitor);
 		return values;
 	}
 
@@ -327,11 +355,18 @@ public class MainGenerator {
 	 *            the {@link ResourceSet} for models
 	 * @param resources
 	 *            the {@link List} of resource names to load
+	 * @param monitor
+	 *            the progress {@link Monitor}, it must consumes the number of resources
 	 * @generated
 	 */
-	protected void loadResources(ResourceSet resourceSetForModels, List<String> resources) {
+	protected void loadResources(ResourceSet resourceSetForModels, List<String> resources, Monitor monitor) {
 		for (String resource : resources) {
+			monitor.subTask("Loading " + resource);
 			resourceSetForModels.getResource(URI.createURI(resource, true), true);
+			monitor.worked(1);
+			if (monitor.isCanceled()) {
+				break;
+			}
 		}
 	}
 
@@ -408,14 +443,7 @@ public class MainGenerator {
 	 */
 	protected IAcceleoGenerationStrategy createGenerationStrategy(ResourceSet resourceSetForModels) {
 		final IAcceleoGenerationStrategy strategy = new DefaultGenerationStrategy(resourceSetForModels
-				.getURIConverter(), new DefaultWriterFactory()) {
-			@Override
-			public IAcceleoWriter createWriterFor(URI uri, OpenModeKind openMode, Charset charset,
-					String lineDelimiter) throws IOException {
-				System.out.println(uri.toString());
-				return super.createWriterFor(uri, openMode, charset, lineDelimiter);
-			}
-		};
+				.getURIConverter(), new DefaultWriterFactory());
 
 		return strategy;
 	}

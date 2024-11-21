@@ -44,7 +44,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -100,27 +100,17 @@ public class MainGeneratorEclipse extends MainGenerator {
 	 */
 	@Override
 	protected List<EObject> getValues(IQualifiedNameQueryEnvironment queryEnvironment,
-			Map<EClass, List<EObject>> valuesCache, TypeLiteral type, ResourceSet resourceSetForModels) {
+			Map<EClass, List<EObject>> valuesCache, TypeLiteral type, ResourceSet resourceSetForModels,
+			Monitor monitor) {
 		final List<EObject> res;
 
 		if (values != null) {
 			res = values;
 		} else {
-			res = super.getValues(queryEnvironment, valuesCache, type, resourceSetForModels);
+			res = super.getValues(queryEnvironment, valuesCache, type, resourceSetForModels, monitor);
 		}
 
 		return res;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void loadResources(ResourceSet resourceSetForModels, List<String> resources) {
-		for (String resource : resources) {
-			resourceSetForModels.getResource(URI.createFileURI(resource), true);
-		}
 	}
 
 	/**
@@ -179,9 +169,9 @@ public class MainGeneratorEclipse extends MainGenerator {
 	 * @generated
 	 */
 	@Override
-	public void generate() {
+	public void generate(Monitor monitor) {
 		if (target != null) {
-			super.generate();
+			super.generate(monitor);
 		}
 	}
 

@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.acceleo.aql;bundle-version="[4.0.1,5.0.0)",
  org.eclipse.acceleo.aql.profiler;bundle-version="[4.0.1,5.0.0)",
  org.eclipse.acceleo.query;bundle-version="[8.0.2,9.0.0)",
- org.antlr.runtime;bundle-version="[4.10.1,4.10.2)"
+ org.antlr.runtime;bundle-version="[4.10.1,4.10.2)",
+ org.eclipse.emf.common
 Automatic-Module-Name: org.eclipse.python4capella.ecore.gen.python
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .
