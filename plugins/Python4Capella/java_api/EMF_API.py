@@ -10,7 +10,7 @@ def createFromEClassifier(e_class): # provided by org.eclipse.python4capella.mod
     pass
 def getEnumLiteral(ns_uri, enum_name, literal_name): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
-def eInverse(e_obj, reference_name): # provided by org.eclipse.python4capella.modules.EMFModule
+def eInverse(e_obj): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
 def eInverseByType(e_obj, e_classifier): # provided by org.eclipse.python4capella.modules.EMFModule
     pass
