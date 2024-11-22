@@ -235,55 +235,72 @@ if specific_cls is not None:
 		</blockquote>
 		<h3 id="View">View</h3>
 		<p>A script can also be used to contribute a new view to Capella.</p>
-		<p>bc..import json</p>
-		<p>def createView(param0):
-			<br/>    pass
-			<br/>def createLabel(param0, param1):
-			<br/>    pass
-			<br/>def createText(param0):
-			<br/>    pass
-			<br/>def createComboViewer(param0, null, param2):
-			<br/>    pass
-			<br/>def createSeparator(true, param1):
-			<br/>    pass
-			<br/>def createButton(param0, saveAddress, param2):
-			<br/>    pass
-		</p>
-		<p>loadModule(&#171;/System/UI Builder&#187;);
-			<br/>loadModule(&#171;/System/UI&#187;);
-			<br/>loadModule(&#8249;/System/Resources&#8250;);
-		</p>
-		<p>createView(&#171;Create Contact&#187;);</p>
-		<p>createLabel(&#171;First Name:&#187;, &#171;1/1 &gt;x&#187;);</p>
-		<p>txtFirstName = createText(&#171;2-4/1 o!&#187;);
-			<br/>createLabel(&#171;Last Name:&#187;, &#171;1/2 &gt;x&#187;);
-			<br/>txtLastName = createText(&#171;2-4/2 o!&#187;);
-		</p>
-		<p>createLabel(&#171;Phone:&#187;, &#171;1/3 &gt;x&#187;);
-			<br/>txtPhone = createText(&#171;2-4/3 o!&#187;);
-		</p>
-		<p>createLabel(&#171;ZIP Code:&#187;, &#171;1/4 &gt;x&#187;);
-			<br/>txtZipCode = createText(&#171;2/4 o&#187;);
-		</p>
-		<p>createLabel(&#171;Country:&#187;, &#171;3/4 &gt;x&#187;);</p>
-		<p>cmbCountry = createComboViewer([ &#171;Austria&#187;, &#171;Germany&#187;, &#171;India&#187;, &#171;USA&#187; ])</p>
-		<p>createSeparator(True, &#171;1-4/5 o&#187;)</p>
-		<p>def save_address():
-			<br/>    address = {
-			<br/>        &#171;lastName&#187;: txtLastName.getText(),
-			<br/>        &#171;firstName&#187;: txtFirstName.getText(),
-			<br/>        &#171;phone&#187;: txtPhone.getText(),
-			<br/>        &#171;zipCode&#187;: txtZipCode.getText(),
-			<br/>        &#171;country&#187;: cmbCountry.getSelection().getFirstElement()
-			<br/>    }
-			<br/>    data = json.dumps(address)
-			<br/>    print(data)
-		</p>
-		<p>createButton(&#171;Save&#187;, &#171;save_address()&#187;, &#171;4/6 &gt;&#187;)</p>
+		<pre><code>import json
+
+def createView(param0):
+    pass
+def createLabel(param0, param1):
+    pass
+def createText(param0):
+    pass
+def createComboViewer(param0, null, param2):
+    pass
+def createSeparator(true, param1):
+    pass
+def createButton(param0, saveAddress, param2):
+    pass
+
+loadModule("/System/UI Builder");
+loadModule("/System/UI");
+loadModule('/System/Resources');
+
+createView("Create Contact");
+
+createLabel("First Name:", "1/1 &gt;x");
+
+txtFirstName = createText("2-4/1 o!");
+createLabel("Last Name:", "1/2 &gt;x");
+txtLastName = createText("2-4/2 o!");
+
+createLabel("Phone:", "1/3 &gt;x");
+txtPhone = createText("2-4/3 o!");
+
+createLabel("ZIP Code:", "1/4 &gt;x");
+txtZipCode = createText("2/4 o");
+
+createLabel("Country:", "3/4 &gt;x");
+
+cmbCountry = createComboViewer([ "Austria", "Germany", "India", "USA" ])
+
+createSeparator(True, "1-4/5 o")
+
+def save_address():
+    address = {
+        "lastName": txtLastName.getText(),
+        "firstName": txtFirstName.getText(),
+        "phone": txtPhone.getText(),
+        "zipCode": txtZipCode.getText(),
+        "country": cmbCountry.getSelection().getFirstElement()
+    }
+    data = json.dumps(address)
+    print(data)
+
+createButton("Save", "save_address()", "4/6 &gt;")
+
+</code></pre>
 		<p>This dialog allows to input contact information and serialize them in the console when the save button is pressed.</p>
 		<p>
 			<img alt="View contribution" title="View contribution" border="0" src="TipsAndTricks/View.png"/>
 		</p>
+		<p>The script will run while the View is opened. If you want to stop the script on a given action form the user you can use the following code:</p>
+		<pre><code>part = createView("Create Contact");
+</code></pre>
+		<pre><code>bundle = org.eclipse.core.runtime.Platform.getBundle("org.eclipse.e4.ui.workbench")
+bundleContext = bundle.getBundleContext()
+eclipseCtx = org.eclipse.e4.core.contexts.EclipseContextFactory.getServiceContext(bundleContext)
+partService = eclipseCtx.get("org.eclipse.e4.ui.workbench.modeling.EPartService")
+partService.hidePart(part, True)
+</code></pre>
 		<h2 id="Runascriptonresourcechange">Run a script on resource change</h2>
 		<p>You can configure a script to be executed whenever a file from your workspace is modified. This can be handy to automate reporting or publication of your Capella model. You need to add the following header to your script:</p>
 		<pre><code># onResourceChange     : *.capella

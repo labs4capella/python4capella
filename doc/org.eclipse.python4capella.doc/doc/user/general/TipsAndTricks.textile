@@ -210,7 +210,7 @@ h3. View
 
 A script can also be used to contribute a new view to Capella.
 
-bc..import json
+bc.. import json
 
 def createView(param0):
     pass
@@ -265,6 +265,17 @@ createButton("Save", "save_address()", "4/6 >")
 p. This dialog allows to input contact information and serialize them in the console when the save button is pressed.
 
 !TipsAndTricks/View.png(View contribution)!
+
+The script will run while the View is opened. If you want to stop the script on a given action form the user you can use the following code:
+
+bc. part = createView("Create Contact");
+
+bc. bundle = org.eclipse.core.runtime.Platform.getBundle("org.eclipse.e4.ui.workbench")
+bundleContext = bundle.getBundleContext()
+eclipseCtx = org.eclipse.e4.core.contexts.EclipseContextFactory.getServiceContext(bundleContext)
+partService = eclipseCtx.get("org.eclipse.e4.ui.workbench.modeling.EPartService")
+partService.hidePart(part, True)
+
 
 h2. Run a script on resource change
 
