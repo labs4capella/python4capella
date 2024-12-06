@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 1.4.2 Target Platform" sequenceNumber="1663582482">
+<target name="Capella 1.4.2 Target Platform" sequenceNumber="1733496356">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -24,7 +24,6 @@
       <unit id="org.eclipse.mylyn.team_feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.mylyn.ide_feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.mylyn.help.ui" version="0.0.0"/>
-      <unit id="org.objectweb.asm" version="0.0.0"/>
       <unit id="org.eclipse.platform.sdk" version="0.0.0"/>
       <unit id="org.eclipse.equinox.core.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.core.runtime" version="0.0.0"/>
@@ -43,6 +42,7 @@
       <unit id="org.eclipse.mylyn.wikitext.tracwiki" version="3.0.29.20181217192207"/>
       <unit id="org.eclipse.mylyn.wikitext.twiki" version="3.0.29.20181217192207"/>
       <unit id="org.eclipse.uml2.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.pde.feature.group" version="0.0.0"/>
       <repository id="eclipse" location="https://download.eclipse.org/releases/2019-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -72,7 +72,7 @@
       <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://archive.eclipse.org/sirius/updates/releases/6.3.3/2019-06/"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/6.3.3/2019-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="0.0.0"/>
@@ -127,9 +127,9 @@
       <repository id="diffmerge-patterns-master" location="https://download.eclipse.org/diffmerge/releases/0.12.0/edm-patterns-site"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="1.11.0.201910071427"/>
-      <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="1.11.0.201910071427"/>
-      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/releases/1.11.0/capella"/>
+      <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="0.0.0"/>
+      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/releases/1.11.0/capella/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.query.legacy.feature.feature.group" version="0.0.0"/>
@@ -157,6 +157,29 @@
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
       <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/1.4.2-R20201014-090868/org.polarsys.capella.rcp.site/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
+      <unit id="org.jsoup" version="1.8.3.v20181012-1713"/>
+      <unit id="javax.servlet" version="3.1.0.v201410161800"/>
+      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190827152740/repository/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="com.google.guava" version="15.0.0.v201403281430"/>
+      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20180905201904/repository/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.apache.poi.feature.feature.group" version="0.0.0"/>
+      <repository id="ObeoNetworkBits" location="https://obeo-networkaggregation-releases.s3.eu-west-1.amazonaws.com/bits/master/thirdparties"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.cdo.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.net4j.feature.group" version="0.0.0"/>
+      <repository id="CDO" location="https://download.eclipse.org/modeling/emf/cdo/updates/releases/4.7/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.xtext.sdk.feature.group" version="2.16.0.v20181203-1555"/>
+      <repository id="XText" location="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.16.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.ease.lang.scriptarchive.feature.feature.group" version="0.0.0"/>
