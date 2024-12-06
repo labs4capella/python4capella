@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 5.1.0 Target Platform" sequenceNumber="1663665998">
+<target name="Capella 5.1.0 Target Platform" sequenceNumber="1733494881">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -29,7 +29,6 @@
       <unit id="org.apache.log4j" version="0.0.0"/>
       <unit id="org.apache.commons.lang" version="0.0.0"/>
       <unit id="com.google.guava" version="0.0.0"/>
-      <unit id="org.objectweb.asm" version="7.2.0.v20191010-1910"/>
       <unit id="org.eclipse.platform.sdk" version="0.0.0"/>
       <unit id="org.eclipse.equinox.core.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.core.runtime" version="0.0.0"/>
@@ -62,7 +61,7 @@
       <unit id="org.eclipse.sirius.aql.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://archive.eclipse.org/sirius/updates/releases/6.5.1/2020-06/"/>
+      <repository id="sirius" location="https://archive.eclipse.org/sirius/updates/releases/6.5.1/2020-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.source.feature.group" version="0.0.0"/>
@@ -120,6 +119,25 @@
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
       <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/5.1.0-R20210615-075512/org.polarsys.capella.rcp.site/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
+      <unit id="org.jsoup" version="1.8.3.v20181012-1713"/>
+      <unit id="javax.servlet" version="3.1.0.v201410161800"/>
+      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190827152740/repository/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.apache.poi.feature.feature.group" version="0.0.0"/>
+      <repository id="ObeoNetworkBits" location="https://obeo-networkaggregation-releases.s3.eu-west-1.amazonaws.com/bits/master/thirdparties"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.cdo.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.net4j.feature.group" version="0.0.0"/>
+      <repository id="CDO" location="https://download.eclipse.org/modeling/emf/cdo/updates/releases/4.7/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.xtext.sdk.feature.group" version="2.22.0.v20200602-1533"/>
+      <repository id="XText" location="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.22.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.ease.lang.scriptarchive.feature.feature.group" version="0.0.0"/>
