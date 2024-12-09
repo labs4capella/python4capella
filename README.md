@@ -1,6 +1,6 @@
-# Python4Capella
+# Python for Capella
 
-Python4Capella allows you to interact with your Capella model using Python. You will be able to create Python scripts to read and write from/to your Capella model.
+*Python for Capella* allows you to interact with your Capella model using Python. You will be able to create Python scripts to read and write from/to your Capella model.
 
 # Introduction to the need
 
@@ -14,7 +14,7 @@ The idea of this initiative is to provide Python API so that users will be able 
 
 Scripts will be able to support export / import of data in excel in a generic way, but also at the end could support many more use cases.
 
-# Python4Capella solution
+# *Python for Capella* solution
 
 The proposed solution is an add-on for Capella allowing to develop and execute scripts in Capella.
 
@@ -57,9 +57,9 @@ More in details, the solution supports:
 - **wide compatibility with Capella versions** (the goal is to support at least Capella 1.3.x to Capella 5.x)
 - **support of Capella and Team for Capella**
 
-# Capella simplified metamodel for Python4Capella
+# Capella simplified metamodel of *Python for Capella*
 
-Python4Capella relies on a simplified metamodel in order to ease the definition of scripts by end-users.
+*Python for Capella* relies on a simplified metamodel in order to ease the definition of scripts by end-users.
 
 **What are the concepts of interest and their relations ? To which elements from which types can I access from a given element ?**
 
@@ -89,7 +89,7 @@ This conceptual metamodel is used to generate
 
 # Installation
 
-You can install Python4Capella in your Capella thanks to an update site.
+You can install *Python for Capella* in your Capella thanks to an update site.
 Then you will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python see the [Python Installation](#python-installation) section.
 
 1) You need to download the zip file from the available releases [here](https://github.com/labs4capella/python4capella/releases). You don’t need to decompress it
@@ -98,14 +98,14 @@ Then you will need to setup Python 3.7 in your environment for release before [2
 ![Select the org.eclipse.python4capella.update.zip archive](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install1.png)
 4) Select Python4Capella feature.
 ![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install2.png)
-   * If you are installing Python4Capella [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) or above on Capella 1.4.x, you will need to install PyDev 8.2.0 instead of the version provided in the update site. You can get PyDev 8.2.0 by using this update site: https://www.pydev.org/update_sites/8.2.0.
+   * If you are installing *Python for Capella* [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) or above on Capella 1.4.x, you will need to install PyDev 8.2.0 instead of the version provided in the update site. You can get PyDev 8.2.0 by using this update site: https://www.pydev.org/update_sites/8.2.0.
 4) Click the next button and complete the installation by clicking the finish button.
 
 If you don't know how to install from an update site you can have a look at our [video](https://www.youtube.com/watch?v=qYTrO7THer0).
 
 ## Python Installation
 
-You will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). You can use more recent versions of Python but Python4Capella 1.2.0 and before will only run with Python older than version 3.12 (see this [issue](https://github.com/labs4capella/python4capella/issues/216)).
+You will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). You can use more recent versions of Python but *Python for Capella* 1.2.0 and before will only run with Python older than version 3.12 (see this [issue](https://github.com/labs4capella/python4capella/issues/216)).
 
 If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
@@ -113,15 +113,15 @@ If you are running Windows, you can download the following zip file and unzip it
 
 If you are running Linux or MacOS X, please check your distribution documentation to install Python 3.7 on your system. For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python. In order to run provided sample scripts, you will also need to install [openpyxl](https://openpyxl.readthedocs.io/en/stable/). You can check the [Install new Python package](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/developer/python/InstallNewPythonPackage.textile) page for more details or directly use your Python interpreter documentation.
 
-# Python4Capella configuration
+# *Python for Capella* configuration
 
-You need to import the Python4Capella project that contains the Python API needed to interact with Capella and store your own Python scripts.
+You need to import the *Python4Capella* project that contains the Python API needed to interact with Capella and store your own Python scripts.
 
 Right click in the project explorer and select New > Other menu:
 
 ![Right click in the project explorer and select New > Other](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-01.png)
 
-In the New dialog, select the Python4Capella project under the Python4Capella category:
+In the New dialog, select the *Python4Capella* project under the *Python4Capella* category:
 
 ![Select the Python4Capella project](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-02.png)
 
@@ -131,7 +131,7 @@ At this point you will be prompted to configure your python environment, you can
 
 ![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-03.png)
 
-You now have the following Python4Capella project in your workspace:
+You now have the following *Python4Capella* project in your workspace:
 
 ![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-04.png)
 
@@ -168,7 +168,7 @@ Before you [run a Python script](https://github.com/labs4capella/python4capella/
 
 # Documentation
 
-You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from Capella, then on the right tree, you can select Python4Capella. To get started, you can have a look at the [writing script documentation](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Write.textile). You can also read the [run a Python script](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Run.textile) page to run one of the provided sample script.
+You can refere to the plugin documentation for usage reference. The documentation is accessible by using the Help > Help contents menu from Capella, then on the right tree, you can select *Python4Capella*. To get started, you can have a look at the [writing script documentation](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Write.textile). You can also read the [run a Python script](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Run.textile) page to run one of the provided sample script.
 
 You can also check the [tips and tricks](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/TipsAndTricks.textile) page. 
 
