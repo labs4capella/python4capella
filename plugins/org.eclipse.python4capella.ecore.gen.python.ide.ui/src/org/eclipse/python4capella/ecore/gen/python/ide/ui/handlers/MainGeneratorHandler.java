@@ -18,7 +18,6 @@ package org.eclipse.python4capella.ecore.gen.python.ide.ui.handlers;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -91,7 +90,8 @@ public class MainGeneratorHandler extends AbstractHandler {
 		try {
 			PlatformUI.getWorkbench().getProgressService().run(true, true, generateRunnable);
 		} catch (InvocationTargetException e) {
-			Activator.getDefault().log(new Status(IStatus.ERROR, getClass(), "Couldn't generate.", e));
+			Activator.getDefault().log(new Status(IStatus.ERROR, getClass(), "Couldn't generate.", e
+					.getTargetException()));
 		} catch (InterruptedException e) {
 			Activator.getDefault().log(new Status(IStatus.ERROR, getClass(), "Couldn't generate.", e));
 		}

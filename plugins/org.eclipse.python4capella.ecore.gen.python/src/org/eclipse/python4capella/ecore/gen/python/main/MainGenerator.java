@@ -45,7 +45,6 @@ import org.eclipse.acceleo.query.runtime.impl.namespace.ClassLoaderQualifiedName
 import org.eclipse.acceleo.query.runtime.impl.namespace.JavaLoader;
 import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameQueryEnvironment;
 import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameResolver;
-import org.eclipse.acceleo.query.services.ResourceServices;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicMonitor.Printing;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -175,7 +174,7 @@ public class MainGenerator {
 
 		monitor.beginTask("Generating", resources.size() + 1 + mainTemplates.size() * resources.size() + 1);
 		// load models
-		loadResources(resourceSetForModels, resources, monitor);
+		final List<Resource> modelResources = loadResources(resourceSetForModels, resources, monitor);
 
 		monitor.subTask("Before generation");
 		beforeGeneration(evaluator, queryEnvironment, module, resourceSetForModels, strategy, targetURI,
@@ -187,7 +186,7 @@ public class MainGenerator {
 				final EClassifierTypeLiteral eClassifierTypeLiteral = (EClassifierTypeLiteral)template
 						.getParameters().get(0).getType().getAst();
 				final List<EObject> values = getValues(queryEnvironment, valuesCache, eClassifierTypeLiteral,
-						resourceSetForModels, monitor);
+						resourceSetForModels, modelResources, monitor);
 
 				final String parameterName = template.getParameters().get(0).getName();
 				Map<String, Object> variables = new LinkedHashMap<>();
@@ -249,17 +248,19 @@ public class MainGenerator {
 	 * @param type
 	 *            the {@link TypeLiteral}
 	 * @param resourceSetForModels
-	 *            the {@link ResourceServices} for models
+	 *            the {@link ResourceSet} for models
+	 * @param modelResources
+	 *            the {@link List} of loaded {@link Resource}
 	 * @param monitor
 	 *            the progress {@link Monitor}, it must consumes the resources.size()
 	 * @return the {@link List} of {@link EObject} values to use
 	 * @generated
 	 */
 	protected List<EObject> getValues(IQualifiedNameQueryEnvironment queryEnvironment,
-			final Map<EClass, List<EObject>> valuesCache, TypeLiteral type, ResourceSet resourceSetForModels,
-			Monitor monitor) {
-		final List<EObject> values = AcceleoUtil.getValues(type, queryEnvironment, resourceSetForModels
-				.getResources(), valuesCache, monitor);
+			Map<EClass, List<EObject>> valuesCache, TypeLiteral type, ResourceSet resourceSetForModels,
+			List<Resource> modelResources, Monitor monitor) {
+		final List<EObject> values = AcceleoUtil.getValues(type, queryEnvironment, modelResources,
+				valuesCache, monitor);
 		return values;
 	}
 
@@ -296,6 +297,7 @@ public class MainGenerator {
 
 		res.put(AcceleoUtil.LOG_URI_OPTION, "acceleo.log");
 		res.put(AcceleoUtil.NEW_LINE_OPTION, System.lineSeparator());
+		// res.put(AQLUtils.PROPERTIES_URIS_OPTION, "file1.properties,file2.properties");
 
 		return res;
 	}
@@ -359,15 +361,23 @@ public class MainGenerator {
 	 *            the progress {@link Monitor}, it must consumes the number of resources
 	 * @generated
 	 */
-	protected void loadResources(ResourceSet resourceSetForModels, List<String> resources, Monitor monitor) {
+	protected List<Resource> loadResources(ResourceSet resourceSetForModels, List<String> resources,
+			Monitor monitor) {
+		final List<Resource> res = new ArrayList<>();
+
 		for (String resource : resources) {
 			monitor.subTask("Loading " + resource);
-			resourceSetForModels.getResource(URI.createURI(resource, true), true);
+			final Resource loaded = resourceSetForModels.getResource(URI.createURI(resource, true), true);
+			if (loaded != null) {
+				res.add(loaded);
+			}
 			monitor.worked(1);
 			if (monitor.isCanceled()) {
 				break;
 			}
 		}
+
+		return res;
 	}
 
 	/**
@@ -417,13 +427,13 @@ public class MainGenerator {
 	 */
 	protected AcceleoEvaluator createAcceleoEvaluator(URI targetURI, IQualifiedNameResolver resolver,
 			IQualifiedNameQueryEnvironment queryEnvironment) {
-		AcceleoEvaluator evaluator = new AcceleoEvaluator(queryEnvironment.getLookupEngine(), System
+		final AcceleoEvaluator evaluator = new AcceleoEvaluator(queryEnvironment.getLookupEngine(), System
 				.lineSeparator());
 
 		// final Representation profilerModelRepresentation = Representation.TREE;
 		// final IProfiler profiler = ProfilerUtils.getProfiler(getModuleQualifiedName(),
 		// profilerModelRepresentation, ProfilerPackage.eINSTANCE.getProfilerFactory());
-		// AcceleoEvaluator evaluator = new AcceleoProfilerEvaluator(queryEnvironment.getLookupEngine(),
+		// final AcceleoEvaluator evaluator = new AcceleoProfilerEvaluator(queryEnvironment.getLookupEngine(),
 		// System
 		// .lineSeparator(), profiler);
 
@@ -572,7 +582,7 @@ public class MainGenerator {
 			if (!diagnostic.getData().isEmpty() && diagnostic.getData().get(0) instanceof ASTNode) {
 				stream.print(AcceleoUtil.getLocation((ASTNode)diagnostic.getData().get(0)));
 			}
-			stream.println(": " + diagnostic.getMessage());
+			stream.println(": " + diagnostic.getMessage().replaceAll("\n", "\n" + nextIndentation));
 			nextIndentation += "\t";
 		}
 		for (Diagnostic child : diagnostic.getChildren()) {

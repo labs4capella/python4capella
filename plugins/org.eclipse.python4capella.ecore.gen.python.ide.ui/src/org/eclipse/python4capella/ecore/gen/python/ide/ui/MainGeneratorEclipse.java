@@ -45,12 +45,15 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.Monitor;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.python4capella.ecore.gen.python.main.MainGenerator;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.Bundle;
 
@@ -63,6 +66,47 @@ import org.osgi.framework.Bundle;
  * @generated
  */
 public class MainGeneratorEclipse extends MainGenerator {
+
+	/**
+	 * Opens the dialog to select the target folder.
+	 */
+	private static final class SelectTargetRunnable implements Runnable {
+
+		/**
+		 * The target folder.
+		 */
+		private String target;
+
+		@Override
+		public void run() {
+			final AbstractResourceSelectionDialog dialog = new FolderSelectionDialog(PlatformUI.getWorkbench()
+					.getActiveWorkbenchWindow().getShell(), "Select the destination folder", "");
+			final int dialogResult = dialog.open();
+			if ((dialogResult == IDialogConstants.OK_ID) && dialog.getFileName() != null && !dialog
+					.getFileName().isEmpty()) {
+				final Path location = new Path(dialog.getFileName());
+				IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+				if (location.segmentCount() == 1) {
+					target = workspaceRoot.getProject(location.segment(0)).getLocation().toFile()
+							.getAbsolutePath();
+				} else {
+					target = workspaceRoot.getFolder(location).getLocation().toFile().getAbsolutePath();
+				}
+			} else {
+				target = null;
+			}
+		}
+
+		/**
+		 * Gets the target folder.
+		 * 
+		 * @return the target folder
+		 */
+		public String getTarget() {
+			return target;
+		}
+
+	}
 
 	/**
 	 * The selected value.
@@ -79,7 +123,8 @@ public class MainGeneratorEclipse extends MainGenerator {
 	 * @generated
 	 */
 	public MainGeneratorEclipse(IFile selected) {
-		super(Collections.singletonList(selected.getLocation().toString()), getTarget(selected));
+		super(Collections.singletonList(URI.createFileURI(selected.getLocation().toString()).toString()),
+				getTarget(selected));
 		this.values = null;
 	}
 
@@ -101,13 +146,14 @@ public class MainGeneratorEclipse extends MainGenerator {
 	@Override
 	protected List<EObject> getValues(IQualifiedNameQueryEnvironment queryEnvironment,
 			Map<EClass, List<EObject>> valuesCache, TypeLiteral type, ResourceSet resourceSetForModels,
-			Monitor monitor) {
+			List<Resource> modelResources, Monitor monitor) {
 		final List<EObject> res;
 
 		if (values != null) {
 			res = values;
 		} else {
-			res = super.getValues(queryEnvironment, valuesCache, type, resourceSetForModels, monitor);
+			res = super.getValues(queryEnvironment, valuesCache, type, resourceSetForModels, modelResources,
+					monitor);
 		}
 
 		return res;
@@ -144,25 +190,10 @@ public class MainGeneratorEclipse extends MainGenerator {
 	 * @generated
 	 */
 	private static String getTarget(Object selected) {
-		final String res;
+		final SelectTargetRunnable runnable = new SelectTargetRunnable();
+		Display.getDefault().syncExec(runnable);
 
-		final AbstractResourceSelectionDialog dialog = new FolderSelectionDialog(PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getShell(), "Select the destination folder", "");
-		final int dialogResult = dialog.open();
-		if ((dialogResult == IDialogConstants.OK_ID) && dialog.getFileName() != null && !dialog.getFileName()
-				.isEmpty()) {
-			final Path location = new Path(dialog.getFileName());
-			IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-			if (location.segmentCount() == 1) {
-				res = workspaceRoot.getProject(location.segment(0)).getLocation().toFile().getAbsolutePath();
-			} else {
-				res = workspaceRoot.getFolder(location).getLocation().toFile().getAbsolutePath();
-			}
-		} else {
-			res = null;
-		}
-
-		return res;
+		return runnable.getTarget();
 	}
 
 	/**
