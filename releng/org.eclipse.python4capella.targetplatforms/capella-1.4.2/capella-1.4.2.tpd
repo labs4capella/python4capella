@@ -138,7 +138,7 @@ location amalgam "https://download.eclipse.org/modeling/amalgam/updates/releases
 	org.eclipse.amalgam.explorer.activity.source.feature.group
 }
 
-location sirius-query-legacy "https://download.eclipse.org/sirius/updates/legacy/1.1.0" {
+location sirius-query-legacy "https://archive.eclipse.org/sirius/updates/legacy/1.1.0/" {
 	org.eclipse.sirius.query.legacy.feature.feature.group lazy
 	org.eclipse.sirius.query.legacy.feature.source.feature.group lazy
 }

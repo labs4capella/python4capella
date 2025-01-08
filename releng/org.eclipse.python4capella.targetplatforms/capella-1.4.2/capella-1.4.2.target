@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 1.4.2 Target Platform" sequenceNumber="1722949054">
+<target name="Capella 1.4.2 Target Platform" sequenceNumber="1736356721">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -134,7 +134,7 @@
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.query.legacy.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.query.legacy.feature.source.feature.group" version="0.0.0"/>
-      <repository id="sirius-query-legacy" location="https://download.eclipse.org/sirius/updates/legacy/1.1.0"/>
+      <repository id="sirius-query-legacy" location="https://archive.eclipse.org/sirius/updates/legacy/1.1.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>
