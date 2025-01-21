@@ -131,7 +131,7 @@ To list all available "EASE":https://www.eclipse.org/ease/ module and see what t
 
 h2. Contribute to Capella user interface
 
-If you want to use your scripts in an interactive way opposed to batch mode, you will need to contribute to the Capella user interface. This section will provides example of integrations with menu, toolbar and mutch more. Each example comes with a sample code. 
+If you want to use your scripts in an interactive way opposed to batch mode, you will need to contribute to the Capella user interface. This section will provides example of integrations with menu, toolbar and mutch more. Each example comes with a sample code.
 
 h3. Popup Menu
 
@@ -276,6 +276,7 @@ eclipseCtx = org.eclipse.e4.core.contexts.EclipseContextFactory.getServiceContex
 partService = eclipseCtx.get("org.eclipse.e4.ui.workbench.modeling.EPartService")
 partService.hidePart(part, True)
 
+p. For more EASE code example with Python you can check the "EASE-Python-Examples":https://github.com/jonahgraham/EASE-Python-Examples.
 
 h2. Run a script on resource change
 
@@ -319,6 +320,8 @@ p. if you are only interested in save changes, you can use the @onSave@ property
 
 bc.. # onSave               : *.capella
 # script-type          : Python
+
+p. For more EASE code example with Python you can check the "EASE-Python-Examples":https://github.com/jonahgraham/EASE-Python-Examples.
 
 h2. User Input
 
@@ -409,6 +412,8 @@ The dialog looks like this:
 bq. Note: to run this script you will need to allow scripts to run code in UI thread:
 * menu Window / Preferences
 !TipsAndTricks/Preferences _AllowUIScripts.png(allow scripts to run code in UI thread)!
+
+p. For more EASE code example with Python you can check the "EASE-Python-Examples":https://github.com/jonahgraham/EASE-Python-Examples.
 
 h2. How to use openpyxl
 
