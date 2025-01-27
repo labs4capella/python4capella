@@ -21,6 +21,10 @@
 
 [import org::eclipse::python4capella::ecore::gen::python::services::PythonServices/]
 
+[**
+ * Gets the getter name.
+ * @param feature the EStructuralFeature
+ */]
 [query public getterName(feature : ecore::EStructuralFeature) : String = 
   if (feature.eType.name = 'EBoolean') then
     'is' + feature.name.toUpperFirst() 
@@ -29,14 +33,26 @@
   endif
 /]
 
+[**
+ * Gets the setter name.
+ * @param feature the EStructuralFeature
+ */]
 [query public setterName(feature : ecore::EStructuralFeature) : String = 
   'set' + feature.name.toUpperFirst() 
 /]
 
+[**
+ * Gets the parameter declaration.
+ * @param element the ETypedElement
+ */]
 [query public asParameter(element : ecore::ETypedElement) : String = 
   element.name.getPythonName() + ': ' + element.asTypeHint()
 /]
 
+[**
+ * Gets the type hint.
+ * @param element the ETypedElement
+ */]
 [query public asTypeHint(element : ecore::ETypedElement) : String = 
   if element.eType = null then 
     'None'
@@ -49,6 +65,10 @@
   endif
 /]
 
+[**
+ * Gets the Java value getter.
+ * @param element the ETypedElement
+ */]
 [query public generateJavaValueGetter(element : ecore::ETypedElement) : String = 
   if element.eType.oclIsKindOf(ecore::EClass) then
     element.name.getPythonName() + '.get_java_object()'
@@ -61,35 +81,68 @@
   endif
 /]
 
+[**
+ * Gets the parameter documentation.
+ * @param element the ETypedElement
+ */]
 [query public asParameterDocumentation(element : ecore::ETypedElement) : String = 
   element.name.getPythonName() + ': ' + element.asParameterDocumentationType()
 /]
 
+[**
+ * Gets the parameter documentation type.
+ * @param element the ETypedElement
+ */]
 [query public asParameterDocumentationType(element : ecore::ETypedElement) : String = 
   element.eType.getPythonName() + '[' + element.lowerBound + '..' + if element.upperBound < 0 then '*' else element.upperBound endif + ']'
 /]
 
+[**
+ * Gets the enum literal getter.
+ * @param enum the EEnum
+ * @param name the variable name
+ */]
 [query public generateEnumLiteralGetter(enum : ecore::EEnum, name : String) : String = 
   'get_enum_literal("' + enum.ePackage.nsURI + '", "' + enum.name + '", ' + name + '.name)'
 /]
 
+[**
+ * Gets the Sequence of Polarsys extended element annotations.
+ * @param element the EPackage
+ */]
 [query public getPolarsysExtendedElementAnnotations(pkg : ecore::EPackage) : Sequence(ecore::EAnnotation) =
   pkg.eAllContents(ecore::EAnnotation)->select(a | a.source = 'http://www.polarsys.org/kitalpha/emde/1.0.0/constraint'
   and not a.details->select(d | d.key = 'ExtendedElement')->isEmpty())
 /]
 
+[**
+ * Gets the addon getter name.
+ * @param annotation the Polarsys EAnnotation
+ */]
 [query public getAddonGetterName(annotation : ecore::EAnnotation) : String =
   'get' + annotation.eContainer(ecore::EClass).name.getPythonName() + '_from' + annotation.getAddonExtendedType().getPythonName()
 /]
 
+[**
+ * Gets the addon adder name.
+ * @param annotation the Polarsys EAnnotation
+ */]
 [query public getAddonAdderName(annotation : ecore::EAnnotation) : String =
   'add' + annotation.eContainer(ecore::EClass).name.getPythonName() + '_to' + annotation.getAddonExtendedType().getPythonName()
 /]
 
+[**
+ * Gets the addon remover name.
+ * @param annotation the Polarsys EAnnotation
+ */]
 [query public getAddonRemoverName(annotation : ecore::EAnnotation) : String =
   'remove' + annotation.eContainer(ecore::EClass).name.getPythonName() + '_from' + annotation.getAddonExtendedType().getPythonName()
 /]
 
+[**
+ * Gets the annotation extended type.
+ * @param annotation the Polarsys EAnnotation
+ */]
 [query public getAddonExtendedType(annotation : ecore::EAnnotation) : String =
   annotation.details->any(d | d.key = 'ExtendedElement').value.tokenize('//')->last()
 /]
