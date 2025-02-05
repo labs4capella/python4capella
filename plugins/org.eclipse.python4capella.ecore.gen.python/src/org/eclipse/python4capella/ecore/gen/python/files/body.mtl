@@ -255,7 +255,7 @@
  * @param polarsysConstraints the Seuqence of polarsys ExtendedElement annotations.
  */]
 [template public generateAddon(polarsysConstraints : Sequence(ecore::EAnnotation))]
-  class [polarsysConstraints->first().eContainer(ecore::EPackage).name/]Addon:
+  class [polarsysConstraints->first().eContainer(ecore::EPackage).name.toUpperFirst()/]Addon:
       [for (annotation | polarsysConstraints)]
         @staticmethod
         def [annotation.getAddonGetterName()/](extended: [annotation.getAddonExtendedType()/]) -> List['['/][annotation.eContainer(ecore::EClass).getPythonName()/]]:

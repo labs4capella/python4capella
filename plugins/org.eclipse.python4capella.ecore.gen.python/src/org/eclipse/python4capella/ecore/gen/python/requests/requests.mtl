@@ -111,8 +111,10 @@
  * @param element the EPackage
  */]
 [query public getPolarsysExtendedElementAnnotations(pkg : ecore::EPackage) : Sequence(ecore::EAnnotation) =
-  pkg.eAllContents(ecore::EAnnotation)->select(a | a.source = 'http://www.polarsys.org/kitalpha/emde/1.0.0/constraint'
-  and not a.details->select(d | d.key = 'ExtendedElement')->isEmpty())
+  pkg.eAllContents(ecore::EAnnotation)->select(
+	a | a.source = 'http://www.polarsys.org/kitalpha/emde/1.0.0/constraint'
+    and not a.details->select(d | d.key = 'ExtendedElement')->isEmpty()
+  )
 /]
 
 [**
