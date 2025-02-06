@@ -97,26 +97,21 @@ jobs:
     - name: Create Release ${{ github.ref }}
       id: create_release
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/create-release@v1.1.4
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v2.2.1
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        name: Release ${{ github.ref }}
         draft: false
         prerelease: false
 
     - name: Upload Release Asset
       id: upload_release_asset 
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/upload-release-asset@v1.1.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v2.2.1
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} 
-        asset_path: ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
-        asset_name: org.eclipse.python4capella.update.zip
-        asset_content_type: application/zip
+        files: | 
+          ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
 
 # For PyDev 8.2.0
 
@@ -134,17 +129,14 @@ jobs:
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
         chmod a+x ./scripts/prepare-deploy-local-dir.sh
         ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
+        mv $TAG_OR_BRANCH/repository/org.eclipse.python4capella.update.zip $TAG_OR_BRANCH/repository/org.eclipse.python4capella.update-Capella-1.4.zip
         echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
 
     - name: Upload Release Asset for PyDev 8.2.0
       id: upload_release_asset_PyDev8_2_0
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/upload-release-asset@v1.1.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v2.2.1
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} 
-        asset_path: ${{ steps.prepare_deploy_PyDev8_2_0.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
-        asset_name: org.eclipse.python4capella.update-Capella-1.4.zip
-        asset_content_type: application/zip
+        files: | 
+          ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update-Capella-1.4.zip
 
