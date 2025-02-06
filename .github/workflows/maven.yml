@@ -109,7 +109,7 @@ jobs:
     - name: Upload Release Asset
       id: upload_release_asset 
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/upload-release-asset@v1.0.2
+      uses: actions/upload-release-asset@v1.1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -139,7 +139,7 @@ jobs:
     - name: Upload Release Asset for PyDev 8.2.0
       id: upload_release_asset_PyDev8_2_0
       if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/upload-release-asset@v1.0.2
+      uses: actions/upload-release-asset@v1.1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
