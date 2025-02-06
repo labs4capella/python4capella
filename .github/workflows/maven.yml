@@ -68,7 +68,7 @@ jobs:
           ${{ runner.os }}-maven-${{ matrix.tycho }}-${{ hashFiles('**/pom.xml', '**/*.product') }}
 
     - name: Install metacity and xvfb
-      uses: awalsh128/cache-apt-pkgs-action@v1.4.2
+      uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with:
         packages: xvfb metacity
         version: cache-apt-pkgs-${{ matrix.profile }}
@@ -94,6 +94,30 @@ jobs:
         ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
         echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
 
+    - name: Create Release ${{ github.ref }}
+      id: create_release
+      if: ${{ steps.release_check.outputs.IS_RELEASE }}
+      uses: actions/create-release@v1.1.4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload_release_asset 
+      if: ${{ steps.release_check.outputs.IS_RELEASE }}
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        asset_path: ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
+        asset_name: org.eclipse.python4capella.update.zip
+        asset_content_type: application/zip
+
 # For PyDev 8.2.0
 
     - name: Build with Maven for PyDev 8.2.0 (${{ matrix.profile }})
@@ -110,6 +134,17 @@ jobs:
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
         chmod a+x ./scripts/prepare-deploy-local-dir.sh
         ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
-        mv $TAG_OR_BRANCH/repository/org.eclipse.python4capella.update.zip $TAG_OR_BRANCH/repository/org.eclipse.python4capella.update-Capella-1.4.zip
         echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
+
+    - name: Upload Release Asset for PyDev 8.2.0
+      id: upload_release_asset_PyDev8_2_0
+      if: ${{ steps.release_check.outputs.IS_RELEASE }}
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        asset_path: ${{ steps.prepare_deploy_PyDev8_2_0.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
+        asset_name: org.eclipse.python4capella.update-Capella-1.4.zip
+        asset_content_type: application/zip
 
