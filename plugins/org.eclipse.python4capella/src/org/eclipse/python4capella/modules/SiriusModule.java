@@ -103,8 +103,20 @@ public class SiriusModule {
 	/**
 	 * The {@link ExportFormat}.
 	 */
-	private static final ExportFormat FORMAT = new ExportFormat(ExportFormat.ExportDocumentFormat.NONE,
+	private static final ExportFormat FORMAT_DEFAULT = new ExportFormat(ExportFormat.ExportDocumentFormat.NONE,
 			ImageFileFormat.JPG);
+
+	private static final ExportFormat FORMAT_SVG = new ExportFormat(ExportFormat.ExportDocumentFormat.NONE,
+			ImageFileFormat.SVG);
+
+	private static final ExportFormat FORMAT_BMP = new ExportFormat(ExportFormat.ExportDocumentFormat.NONE,
+			ImageFileFormat.BMP);
+
+	private static final ExportFormat FORMAT_GIF = new ExportFormat(ExportFormat.ExportDocumentFormat.NONE,
+			ImageFileFormat.GIF);
+
+	private static final ExportFormat FORMAT_PNG = new ExportFormat(ExportFormat.ExportDocumentFormat.NONE,
+			ImageFileFormat.PNG);
 
 	/**
 	 * Gets the {@link DRepresentationDescriptor} for a given {@link EObject}.
@@ -152,9 +164,28 @@ public class SiriusModule {
 			@Override
 			public void run() {
 				try {
-					DialectUIManager.INSTANCE.export(repDesc.getRepresentation(),
-							new EObjectQuery(repDesc).getSession(), new Path(filePath), FORMAT,
-							new NullProgressMonitor());
+					if (filePath.toUpperCase().endsWith("." + ImageFileFormat.PNG.getName())) {
+						DialectUIManager.INSTANCE.export(repDesc.getRepresentation(),
+								new EObjectQuery(repDesc).getSession(), new Path(filePath), FORMAT_PNG,
+								new NullProgressMonitor());
+					} else if (filePath.toUpperCase().endsWith("." + ImageFileFormat.SVG.getName())) {
+						DialectUIManager.INSTANCE.export(repDesc.getRepresentation(),
+								new EObjectQuery(repDesc).getSession(), new Path(filePath), FORMAT_SVG,
+								new NullProgressMonitor());
+					} else if (filePath.toUpperCase().endsWith("." + ImageFileFormat.GIF.getName())) {
+						DialectUIManager.INSTANCE.export(repDesc.getRepresentation(),
+								new EObjectQuery(repDesc).getSession(), new Path(filePath), FORMAT_GIF,
+								new NullProgressMonitor());
+					} else if (filePath.toUpperCase().endsWith("." + ImageFileFormat.BMP.getName())) {
+						DialectUIManager.INSTANCE.export(repDesc.getRepresentation(),
+								new EObjectQuery(repDesc).getSession(), new Path(filePath), FORMAT_BMP,
+								new NullProgressMonitor());
+					} else {
+						DialectUIManager.INSTANCE.export(repDesc.getRepresentation(),
+								new EObjectQuery(repDesc).getSession(), new Path(filePath), FORMAT_DEFAULT,
+								new NullProgressMonitor());
+					}
+
 				} catch (SizeTooLargeException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
