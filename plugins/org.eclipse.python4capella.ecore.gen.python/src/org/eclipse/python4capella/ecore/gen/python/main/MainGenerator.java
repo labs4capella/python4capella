@@ -1,6 +1,6 @@
 //Start of user code copyright
 /**
- *  Copyright (c) 2023, 2024 THALES GLOBAL SERVICES
+ *  Copyright (c) 2023, 2025 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -297,6 +297,7 @@ public class MainGenerator {
 
 		res.put(AcceleoUtil.LOG_URI_OPTION, "acceleo.log");
 		res.put(AcceleoUtil.NEW_LINE_OPTION, System.lineSeparator());
+		// res.put(AQLUtils.INSTALL_CROSS_REFERENCE_ADAPTER_OPTION, Boolean.TRUE.toString());
 		// res.put(AQLUtils.PROPERTIES_URIS_OPTION, "file1.properties,file2.properties");
 
 		return res;
@@ -359,6 +360,7 @@ public class MainGenerator {
 	 *            the {@link List} of resource names to load
 	 * @param monitor
 	 *            the progress {@link Monitor}, it must consumes the number of resources
+	 * @return the {@link List} of loaded {@link Resource}
 	 * @generated
 	 */
 	protected List<Resource> loadResources(ResourceSet resourceSetForModels, List<String> resources,
