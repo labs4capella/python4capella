@@ -90,7 +90,7 @@ This conceptual metamodel is used to generate
 # Installation
 
 You can install *Python for Capella* in your Capella thanks to an update site.
-Then you will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python see the [Python Installation](#python-installation) section.
+Then you will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python up to 3.11 see the [Python Installation](#python-installation) section.
 
 1) You need to download the zip file from the available releases [here](https://github.com/labs4capella/python4capella/releases). You don’t need to decompress it
 2) On the installation dialog, click the “Add…” button at the top to add an update site.
@@ -105,13 +105,13 @@ If you don't know how to install from an update site you can have a look at our 
 
 ## Python Installation
 
-You will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). You can use more recent versions of Python but *Python for Capella* 1.2.0 and before will only run with Python older than version 3.12 (see this [issue](https://github.com/labs4capella/python4capella/issues/216)).
+You will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). *Python for Capella* support Python up to version 3.11 (see this [issue](https://github.com/labs4capella/python4capella/issues/216)).
 
 If you are running Windows, you can download the following zip file and unzip it in your Capella installation directory, or any other location:
 
 [https://github.com/labs4capella/python4capella/releases/download/2021-07-16/Python37.zip](https://github.com/labs4capella/python4capella/releases/download/2021-07-16/Python37.zip)
 
-If you are running Linux or MacOS X, please check your distribution documentation to install Python 3.7 on your system. For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python. In order to run provided sample scripts, you will also need to install [openpyxl](https://openpyxl.readthedocs.io/en/stable/). You can check the [Install new Python package](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/developer/python/InstallNewPythonPackage.textile) page for more details or directly use your Python interpreter documentation.
+If you are running Linux or MacOS X, please check your distribution documentation to install Python 3.7 on your system. For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python up to 3.11. In order to run provided sample scripts, you will also need to install [openpyxl](https://openpyxl.readthedocs.io/en/stable/). You can check the [Install new Python package](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/developer/python/InstallNewPythonPackage.textile) page for more details or directly use your Python interpreter documentation.
 
 # *Python for Capella* configuration
 
@@ -135,7 +135,7 @@ You now have the following *Python4Capella* project in your workspace:
 
 ![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-04.png)
 
-Now you need to reference your Python 3.7 interpreter:
+Now you need to reference your Python interpreter:
 
 Select the Window > Preferences menu
 
