@@ -54,8 +54,8 @@ More in details, the solution supports:
   - **libraries for common add-ons** (Requirement, PVMT)
   - **utilities** to support excel import / exports and possibly others
   - **examples** of high level scripts
-- **wide compatibility with Capella versions** (the goal is to support at least Capella 1.3.x to Capella 5.x)
-- **support of Capella and Team for Capella**
+- **wide compatibility with Capella versions** (the goal is to support at least Capella 1.4.2 to Capella 7.x)
+- **support of [Capella](https://mbse-capella.org/) and [Team for Capella](https://www.obeosoft.com/en/team-for-capella)**
 
 # Capella simplified metamodel of *Python for Capella*
 
@@ -66,7 +66,7 @@ More in details, the solution supports:
 Data packages with classes (for instance 'LogicalArchitecture') and their relations are defined. 
 Class Diagram Blanks can be displayed : [CDB] LogicalArchitecture to have information with concepts/classes related for example to the class 'Logical Architecture'.
 
-This simplified metamodel is defined in a Capella model (**using Capella 5.0.0**).
+This simplified metamodel is defined in a Capella model (**using Capella 6.0.0**).
 
 Please have a look in the documentation tab of the model to know more about its content.
 
