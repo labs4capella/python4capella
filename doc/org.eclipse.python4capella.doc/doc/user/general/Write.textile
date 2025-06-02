@@ -40,6 +40,8 @@ You can click next, select a name for your script and click finish, you will be 
 
 !Write/New_PyDev_module_template.png(New PyDev module template)!
 
+You can choose one of the Pythonfor Capella templates to create a script containing needed imports.
+
 h2. Import required scripts
 
 You will need to import the Capella APIs (This statement can produce an error, but you can ignore or "remove":RemoveFalseErrors.html it):
