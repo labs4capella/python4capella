@@ -93,15 +93,16 @@ You can install *Python for Capella* in your Capella thanks to an update site.
 Then you will need to setup Python 3.7 in your environment for release before [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29). For realeases after [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) you can install more recent versions of Python up to 3.11 see the [Python Installation](#python-installation) section.
 
 1) You need to download the zip file from the available releases [here](https://github.com/labs4capella/python4capella/releases). You don’t need to decompress it
-2) On the installation dialog, click the “Add…” button at the top to add an update site.
-3) Select the “Archive…” button and select the zip file: ‘org.eclipse.python4capella.update.zip’.
+2) menu Help > Install New Software...
+3) On the installation dialog, click the “Add…” button at the top to add an update site.
+4) Select the “Archive…” button and select the zip file: ‘org.eclipse.python4capella.update.zip’.
 ![Select the org.eclipse.python4capella.update.zip archive](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install1.png)
-4) Select Python4Capella feature.
+5) Select Python4Capella feature.
 ![Select the Python4Capella feature](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/Install2.png)
    * If you are installing *Python for Capella* [2022-08-29](https://github.com/labs4capella/python4capella/releases/tag/2022-08-29) or above on Capella 1.4.x, you will need to install PyDev 8.2.0 instead of the version provided in the update site. You can get PyDev 8.2.0 by using this update site: https://www.pydev.org/update_sites/8.2.0.
-4) Click the next button and complete the installation by clicking the finish button.
+6) Click the next button and complete the installation by clicking the finish button.
 
-If you don't know how to install from an update site you can have a look at our [video](https://www.youtube.com/watch?v=qYTrO7THer0).
+If you don't know how to install from an update site you can have a look at our [video](https://www.youtube.com/watch?v=qYTrO7THer0) or check the Eclipse [documentation](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Ftasks%2Ftasks-127.htm).
 
 ## Python Installation
 
