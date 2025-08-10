@@ -71,18 +71,20 @@ class CapellaModel():
         return Sirius.get_diagrams(self.session, diagram_type)
     def open(self, obj: Any):
         """
-        Parameters: path: String
+        Parameters: obj (str | EObject): The model source, either a workspace path to the .aird file (e.g., 'workspace://...') or an EObject.
         status: KO
         """
         # obj can be a path to the .aird file or an EObject
         if isinstance(obj, str) or isinstance(obj, unicode):
-            if CapellaPlatform.getWorkspaceFile(obj) is None:
-                raise AttributeError("the .aird file doesn't exist: " + obj)
+            ### Commented out due to CapellaPlatform.getWorkspaceFile(obj) always returning None
+            #if CapellaPlatform.getWorkspaceFile(obj) is None:
+                #raise AttributeError("the .aird file doesn't exist: " + obj)
+            ###
             self.session = Sirius.load_session(obj)
         elif isinstance(obj, EObject):
             self.session = Sirius.get_session(obj.get_java_object())
         else:
-            raise AttributeError("You can pass a path to the .aird file or an EObject.")
+            raise AttributeError("You can pass a workspace-relative path (i.e. 'workspace://...') to the .aird file or an EObject.")
     def create(self, path: str):
         """
         Parameters: path: String
