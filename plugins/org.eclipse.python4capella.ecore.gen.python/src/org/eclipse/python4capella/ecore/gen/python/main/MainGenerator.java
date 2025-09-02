@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.acceleo.Module;
 import org.eclipse.acceleo.Template;
@@ -52,6 +53,7 @@ import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -168,7 +170,8 @@ public class MainGenerator {
 		final IAcceleoGenerationStrategy strategy = createGenerationStrategy(resourceSetForModels);
 
 		final Module module = (Module)resolver.resolve(moduleQualifiedName);
-		AcceleoUtil.registerEPackage(queryEnvironment, resolver, module);
+		final Set<String> nsURIs = AQLUtils.getAllNeededEPackages(resolver, moduleQualifiedName);
+		AQLUtils.registerEPackages(queryEnvironment, EPackage.Registry.INSTANCE, nsURIs);
 		final URI logURI = AcceleoUtil.getlogURI(targetURI, options.get(AcceleoUtil.LOG_URI_OPTION));
 		final List<Template> mainTemplates = getTemplates(module);
 
