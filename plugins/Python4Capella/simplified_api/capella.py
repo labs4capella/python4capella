@@ -4114,9 +4114,9 @@ class FunctionalChain(CapellaElement):
         """
         res = []
         e_object_class = getattr(sys.modules["__main__"], "EObject")
-        for involvment in self.get_java_object().getOwnedFunctionalChainInvolvements():
-            if involvment.eClass().getName() == 'FunctionalChainInvolvementFunction':
-                involvedElement = involvment.getInvolvedElement()
+        for involvement in self.get_java_object().getOwnedFunctionalChainInvolvements():
+            if involvement.eClass().getName() == 'FunctionalChainInvolvementFunction':
+                involvedElement = involvement.getInvolvedElement()
                 if involvedElement is not None:
                     specific_cls = e_object_class.get_class(involvedElement)
                     res.append(specific_cls(involvedElement))
@@ -4126,11 +4126,19 @@ class FunctionalChain(CapellaElement):
         Returns: FunctionalExchange[*]
         """
         return create_e_list(self.get_java_object().getInvolvedFunctionalExchanges(), FunctionalExchange)
-    def get_involved_functional_chains(self):
+    def get_involved_functional_chains(self) -> List[FunctionalChain]:
         """
         Returns: FunctionalChain[*]
         """
-        return capella_query_by_name(self, "Involved Functional Chains")
+        res = []
+        e_object_class = getattr(sys.modules["__main__"], "EObject")
+        for involvement in self.get_java_object().getOwnedFunctionalChainInvolvements():
+            if involvement.eClass().getName() == 'FunctionalChainReference':
+                involvedElement = involvement.getInvolvedElement()
+                if involvedElement is not None:
+                    specific_cls = e_object_class.get_class(involvedElement)
+                    res.append(specific_cls(involvedElement))
+        return res
     def get_involving_capabilities(self):
         """
         Returns: AbstractSystemCapability[*]

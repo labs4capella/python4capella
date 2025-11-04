@@ -4,6 +4,7 @@
             return value
         else:
             return value.getName()
+    def set_status(self, value: str):
         project = self.get_java_object()
         while project.eContainer() is not None:
             project = project.eContainer()
