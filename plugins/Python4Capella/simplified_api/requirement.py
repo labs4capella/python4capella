@@ -528,11 +528,11 @@ class AbstractRelation(ReqIFElement):
         Returns: RelationType
         """
         return self.get_java_object().getRelationType()
-    def set_relation_type(self, value):
+    def set_relation_type(self, value: RelationType):
         """
         Parameters: value: RelationType
         """
-        self.get_java_object().setRelationType(value: RelationType)
+        self.get_java_object().setRelationType(value)
 
 class CapellaIncomingRelation(AbstractRelation):
     """

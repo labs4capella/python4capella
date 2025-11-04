@@ -29169,6 +29169,14 @@
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="a31d82e5-d002-4995-acd6-960611f80493" name="" value="*"/>
               </ownedFeatures>
+              <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
+                  id="5023a88b-3d50-44ff-876a-e4c268440955" name="ownedExchangeItems"
+                  abstractType="#4c0b5f05-02be-42e4-b12c-d8f8f9372dda" aggregationKind="COMPOSITION">
+                <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="435246a3-6fbf-4dc0-a3b3-3aecf98557a4" name="" value="0"/>
+                <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
+                    id="406105b5-9a08-491e-90ff-58ab356df9dc" name="" value="*"/>
+              </ownedFeatures>
             </ownedClasses>
             <ownedClasses xsi:type="org.polarsys.capella.core.data.information:Class"
                 id="d28e6b9f-65e2-45f2-a52c-b6a860047e71" name="DataType" abstract="true">

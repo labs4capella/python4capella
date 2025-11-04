@@ -38206,6 +38206,17 @@ class capella_tests(unittest.TestCase):
         tested.get_owned_units().add(value)
         pass
 
+    def test_DataPkg_owned_exchange_items_getter(self):
+        tested = DataPkg()
+        tested.get_owned_exchange_items()
+        pass
+
+    def test_DataPkg_owned_exchange_items_setter(self):
+        tested = DataPkg()
+        value = ExchangeItem()
+        tested.get_owned_exchange_items().add(value)
+        pass
+
     def test_Class_id_getter(self):
         tested = Class()
         tested.get_id()
@@ -43860,9 +43871,21 @@ class capella_tests(unittest.TestCase):
         tested.get_relation_type()
         pass
 
+    def test_AbstractRelation_relation_type_setter(self):
+        tested = AbstractRelation()
+        value = RelationType()
+        tested.set_relation_type(value)
+        pass
+
     def test_CapellaIncomingRelation_relation_type_getter(self):
         tested = CapellaIncomingRelation()
         tested.get_relation_type()
+        pass
+
+    def test_CapellaIncomingRelation_relation_type_setter(self):
+        tested = CapellaIncomingRelation()
+        value = RelationType()
+        tested.set_relation_type(value)
         pass
 
     def test_CapellaIncomingRelation_id_getter(self):
@@ -44015,6 +44038,12 @@ class capella_tests(unittest.TestCase):
         tested.get_relation_type()
         pass
 
+    def test_CapellaOutgoingRelation_relation_type_setter(self):
+        tested = CapellaOutgoingRelation()
+        value = RelationType()
+        tested.set_relation_type(value)
+        pass
+
     def test_CapellaOutgoingRelation_id_getter(self):
         tested = CapellaOutgoingRelation()
         tested.get_id()
@@ -44163,6 +44192,12 @@ class capella_tests(unittest.TestCase):
     def test_InternalRelation_relation_type_getter(self):
         tested = InternalRelation()
         tested.get_relation_type()
+        pass
+
+    def test_InternalRelation_relation_type_setter(self):
+        tested = InternalRelation()
+        value = RelationType()
+        tested.set_relation_type(value)
         pass
 
     def test_InternalRelation_id_getter(self):
@@ -45770,4 +45805,5 @@ class capella_tests(unittest.TestCase):
         tested = EnumerationDataTypeDefinition()
         tested.get_specified_values()
         pass
+
 

@@ -5189,6 +5189,11 @@ class DataPkg(CapellaElement):
         Returns: Unit[*]
         """
         return create_e_list(self.get_java_object().getOwnedUnits(), Unit)
+    def get_owned_exchange_items(self) -> List[ExchangeItem]:
+        """
+        Returns: ExchangeItem[*]
+        """
+        return create_e_list(self.get_java_object().getOwnedExchangeItems(), ExchangeItem)
 
 class DataType(CapellaElement):
     """

@@ -1,5 +1,5 @@
     def get_relation_type(self) -> RelationType:
         return self.get_java_object().getRelationType()
-    def set_relation_type(self, value):
-        self.get_java_object().setRelationType(value: RelationType)
+    def set_relation_type(self, value: RelationType):
+        self.get_java_object().setRelationType(value)
 
