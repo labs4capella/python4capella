@@ -33930,7 +33930,7 @@
                   sub="#e4d84484-dc8c-41d0-9b1d-e8c233e065ba"/>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="6ca12b30-9bb3-4d13-bae5-2e2f1a328986" name="relationType" abstractType="#3b5dfb0b-21f0-485e-af3b-923082e2a573"
-                  aggregationKind="COMPOSITION" isReadOnly="true">
+                  aggregationKind="COMPOSITION">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="25c6a0dd-bf22-4a55-a221-ed81c0c3639c" name="" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

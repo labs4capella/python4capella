@@ -66,7 +66,7 @@ class RequirementAddOn(JavaObject):
         """
         Parameters: elem: CapellaElement
         Returns: Requirement[*]
-        status: KO
+        status: OK
         """
         res = []
         #: :type capellaElement: CapellaElement
@@ -87,6 +87,7 @@ class RequirementAddOn(JavaObject):
         """
         Parameters: elem: CapellaElement
         Returns: CapellaTypesFolder[*]
+        status: KO
         """
         """
         Get the Capella Types Folder from the given Capella Element.
@@ -103,6 +104,7 @@ class RequirementAddOn(JavaObject):
     def add_module(architecture: ModellingArchitecture, module: CapellaModule):
         """
         Parameters: architecture: ModellingArchitecture, module: CapellaModule
+        status: OK
         """
         """
         Add the given CapellaModule to the given ModellingArchitecture
@@ -112,6 +114,7 @@ class RequirementAddOn(JavaObject):
     def remove_module(architecture: ModellingArchitecture, module: CapellaModule):
         """
         Parameters: architecture: ModellingArchitecture, module: CapellaModule
+        status: OK
         """
         """
         Remove the given CapellaModule from the given ModellingArchitecture
@@ -520,11 +523,16 @@ class AbstractRelation(ReqIFElement):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
-    def get_relation_type(self):
+    def get_relation_type(self) -> RelationType:
         """
         Returns: RelationType
         """
-        return capella_query_by_name(self, "Relation Type")
+        return self.get_java_object().getRelationType()
+    def set_relation_type(self, value):
+        """
+        Parameters: value: RelationType
+        """
+        self.get_java_object().setRelationType(value: RelationType)
 
 class CapellaIncomingRelation(AbstractRelation):
     """
