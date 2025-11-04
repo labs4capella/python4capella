@@ -42,7 +42,10 @@ class JavaIterator(JavaObject,Iterator[T]):
             nxt = iteratorNext(self.get_java_object())
             specific_cls = self.e_object_class.get_class(nxt)
             if specific_cls is not None:
-                return specific_cls(nxt)
+                if hasattr(self.cls, 'e_class') and hasattr(specific_cls, 'e_class') and specific_cls.e_class.isSuperTypeOf(self.cls.e_class):
+                    return self.cls(nxt)
+                else:
+                    return specific_cls(nxt)
             else:
                 return self.cls(nxt)
         else:
@@ -101,7 +104,10 @@ class JavaList(JavaObject, List[T]):
         else:
             specific_cls = self.e_object_class.get_class(value)
             if specific_cls is not None:
-                return specific_cls(value)
+                if hasattr(self.cls, 'e_class') and hasattr(specific_cls, 'e_class') and specific_cls.e_class.isSuperTypeOf(self.cls.e_class):
+                    return self.cls(value)
+                else:
+                    return specific_cls(value)
             else:
                 return self.cls(value)
     def clear(self) -> bool:

@@ -712,3 +712,15 @@ class capella_manual_tests(unittest.TestCase):
         pvg.set_name("name")
         lc.get_owned_property_value_groups().add(pvg)
         self.assertEqual(pvg, lc.get_owned_property_value_group_by_name("name"))
+
+    def test_OperationalActivity_incoming_getter(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        oa = se.get_all_contents_by_type(OperationalActivity)[3]
+        self.assertEqual(Interaction, type(oa.get_incoming()[0]))
+        for elem in oa.get_incoming():
+            self.assertEqual(Interaction, type(elem))
