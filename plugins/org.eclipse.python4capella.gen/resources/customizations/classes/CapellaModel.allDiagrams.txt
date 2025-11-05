@@ -1,7 +1,3 @@
     def get_all_diagrams(self) -> List[Diagram]:
-        res = []
-        descriptors = Sirius.get_all_diagrams(self.session)
-        for descriptor in descriptors:
-            res.append(Diagram(descriptor))
-        return res
+        return JavaList(Sirius.get_all_diagrams(self.session), Diagram)
 
