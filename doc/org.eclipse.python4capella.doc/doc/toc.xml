@@ -25,6 +25,8 @@
         </topic>
         <topic href="doc/user/general/Write.html#InstalledlibrariesintheWindowsPythondistribution" label="Installed libraries in the Windows Python distribution">
         </topic>
+        <topic href="doc/user/general/Write.html#GeneratePythonforCapellaAPIsforyourCapellaaddon" label="Generate Python for Capella APIs for your Capella addon">
+        </topic>
     </topic>
 	<topic href="doc/user/general/TipsAndTricks.html" label="Tips and Tricks">
 		<topic href="doc/user/general/TipsAndTricks.html#PythonandJava" label="Python and Java">
