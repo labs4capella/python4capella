@@ -93,3 +93,24 @@ bq. Note: all classes of the Capella metamodel are not present in the simplified
 bq.. Note: You script need to be in the script location of "EASE":https://www.eclipse.org/ease/.
 - open preferences: menu Window / Preferences
 - select Scripting / String location on the right tree and add the path of your script if not already done.
+
+h2. Generate Python for Capella APIs for your Capella addon
+
+You can generate Python APIs compatible with Python for Capella from any metamodel (`*.ecore` file). If the file has been generated via "Capella Studio":https://github.com/eclipse-capella/capella-studio a class with your addon name suffixed by `Addon` will be generated to get/add/remove elements provided by the addon from/to Capella model elements.
+
+To generate the API:
+
+- you can open the Ecore file and select the root package
+- then right click on it and select the menu Generators > Generate Python for Capella API
+
+!Write/Generate_API_menu.png(The Generate Python for Capella API menu)!
+
+- then you will be prompted to select an output folder. Note that the generated code is written to sit in the `simplified_api` folder but can be changed to be stored anywhere
+
+!Write/Genereate_API_Select_the_destination_folder_dialog.png(Select the output folder dialog)!
+
+Generated Python API are generated in the selected output folder:
+
+!Write/Generated_API_output_folder.png(Generated Python API files in the selected output folder)!
+
+

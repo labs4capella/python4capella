@@ -31,7 +31,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.safety.Whitelist;
+import org.jsoup.safety.Safelist;
 import org.polarsys.capella.common.data.modellingcore.AbstractNamedElement;
 import org.polarsys.capella.common.helpers.query.IQuery;
 import org.polarsys.capella.common.ui.toolkit.browser.category.CategoryRegistry;
@@ -360,7 +360,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 			document.select("p").prepend("\\n");
 			document.select("li").prepend("\\n");
 			final String htmlString = document.html().replaceAll("\\\\n", "\n");
-			final String text = Jsoup.clean(htmlString, "", Whitelist.none(),
+			final String text = Jsoup.clean(htmlString, "", Safelist.none(),
 					new Document.OutputSettings().prettyPrint(false));
 			try (Scanner scanner = new Scanner(text)) {
 				while (scanner.hasNextLine()) {

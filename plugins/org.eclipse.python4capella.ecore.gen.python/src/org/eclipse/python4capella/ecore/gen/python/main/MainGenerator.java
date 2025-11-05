@@ -393,7 +393,7 @@ public class MainGenerator {
 	 */
 	protected IQualifiedNameResolver createResolver() {
 		final IQualifiedNameResolver resolver = new ClassLoaderQualifiedNameResolver(this.getClass()
-				.getClassLoader(), AcceleoParser.QUALIFIER_SEPARATOR);
+				.getClassLoader(), EPackage.Registry.INSTANCE, AcceleoParser.QUALIFIER_SEPARATOR);
 
 		return resolver;
 	}

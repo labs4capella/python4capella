@@ -98,5 +98,24 @@ if specific_cls is not None:
 				<br/>- select Scripting / String location on the right tree and add the path of your script if not already done.
 			</p>
 		</blockquote>
+		<h2 id="GeneratePythonforCapellaAPIsforyourCapellaaddon">Generate Python for Capella APIs for your Capella addon</h2>
+		<p>You can generate Python APIs compatible with Python for Capella from any metamodel (`*.ecore` file). If the file has been generated via 
+			<a href="https://github.com/eclipse-capella/capella-studio">Capella Studio</a> a class with your addon name suffixed by `Addon` will be generated to get/add/remove elements provided by the addon from/to Capella model elements.
+		</p>
+		<p>To generate the API:</p>
+		<p>- you can open the Ecore file and select the root package
+			<br/>- then right click on it and select the menu Generators &gt; Generate Python for Capella API
+		</p>
+		<p>
+			<img alt="The Generate Python for Capella API menu" title="The Generate Python for Capella API menu" border="0" src="Write/Generate_API_menu.png"/>
+		</p>
+		<p>- then you will be prompted to select an output folder. Note that the generated code is written to sit in the `simplified_api` folder but can be changed to be stored anywhere</p>
+		<p>
+			<img alt="Select the output folder dialog" title="Select the output folder dialog" border="0" src="Write/Genereate_API_Select_the_destination_folder_dialog.png"/>
+		</p>
+		<p>Generated Python API are generated in the selected output folder:</p>
+		<p>
+			<img alt="Generated Python API files in the selected output folder" title="Generated Python API files in the selected output folder" border="0" src="Write/Generated_API_output_folder.png"/>
+		</p>
 	</body>
 </html>

@@ -301,6 +301,9 @@ eclipseCtx = org.eclipse.e4.core.contexts.EclipseContextFactory.getServiceContex
 partService = eclipseCtx.get("org.eclipse.e4.ui.workbench.modeling.EPartService")
 partService.hidePart(part, True)
 </code></pre>
+		<p>For more EASE code example with Python you can check the 
+			<a href="https://github.com/jonahgraham/EASE-Python-Examples">EASE-Python-Examples</a>.
+		</p>
 		<h2 id="Runascriptonresourcechange">Run a script on resource change</h2>
 		<p>You can configure a script to be executed whenever a file from your workspace is modified. This can be handy to automate reporting or publication of your Capella model. You need to add the following header to your script:</p>
 		<pre><code># onResourceChange     : *.capella
@@ -346,6 +349,9 @@ if capella_path[len(capella_path)-8:] == '.capella':
 # script-type          : Python
 
 </code></pre>
+		<p>For more EASE code example with Python you can check the 
+			<a href="https://github.com/jonahgraham/EASE-Python-Examples">EASE-Python-Examples</a>.
+		</p>
 		<h2 id="UserInput">User Input</h2>
 		<p>Some time selecting an element from your model or using an external source for your data is not enough and you will need to prompt the user to input some information. This section explains how you can get parameters passed to the script or create and use dialogs.</p>
 		<h3 id="Scriptparameters">Script parameters</h3>
@@ -446,6 +452,9 @@ else:
 				<img alt="allow scripts to run code in UI thread" title="allow scripts to run code in UI thread" border="0" src="TipsAndTricks/Preferences _AllowUIScripts.png"/>
 			</p>
 		</blockquote>
+		<p>For more EASE code example with Python you can check the 
+			<a href="https://github.com/jonahgraham/EASE-Python-Examples">EASE-Python-Examples</a>.
+		</p>
 		<h2 id="Howtouseopenpyxl">How to use openpyxl</h2>
 		<p>Some of our sample scripts use the 
 			<a href="https://openpyxl.readthedocs.io/en/stable/">openpyxl</a> library. This library allows to read and write MS Excel documents (.xlsx files).

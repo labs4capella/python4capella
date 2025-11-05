@@ -27,12 +27,12 @@
 
     <module>plugins/org.eclipse.python4capella</module>
     <module>plugins/org.eclipse.python4capella.pydev</module>
-    <!--module>plugins/org.eclipse.python4capella.ecore.gen.python</module>
-    <module>plugins/org.eclipse.python4capella.ecore.gen.python.ide.ui</module-->
+    <module>plugins/org.eclipse.python4capella.ecore.gen.python</module>
+    <module>plugins/org.eclipse.python4capella.ecore.gen.python.ide.ui</module>
     <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
-    <!--module>features/org.eclipse.python4capella.ecore.gen.python.feature</module-->
+    <module>features/org.eclipse.python4capella.ecore.gen.python.feature</module>
   </modules>
 
   <properties>

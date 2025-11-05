@@ -24,3 +24,13 @@ location "https://eclipse-ease-addons.github.io/org.eclipse.ease.engines.p2/late
 location py4j "http://eclipse.py4j.org/" {
 	org.py4j.feature.feature.group lazy
 }
+
+location Acceleo "https://download.eclipse.org/acceleo/updates/releases/4.2/R202510230846/" {
+	org.eclipse.acceleo.aql.feature.feature.group lazy
+	org.eclipse.acceleo.aql.feature.source.feature.group lazy
+	org.eclipse.acceleo.query.source [8.1.0,8.1.0]
+}
+
+location ObeoNetworkBits "https://obeo-networkaggregation-releases.s3.eu-west-1.amazonaws.com/bits/master/thirdparties" {
+	org.antlr.runtime lazy
+}

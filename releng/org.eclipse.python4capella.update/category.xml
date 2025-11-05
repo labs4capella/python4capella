@@ -3,9 +3,9 @@
    <feature id="org.eclipse.python4capella.feature" version="0.0.0">
       <category name="org.eclipse.python4capella.category"/>
    </feature>
-   <!--feature id="org.eclipse.python4capella.ecore.gen.python.feature" version="0.0.0">
+   <feature id="org.eclipse.python4capella.ecore.gen.python.feature" version="0.0.0">
       <category name="org.eclipse.python4capella.category"/>
-   </feature-->
+   </feature>
    <feature id="org.eclipse.python4capella.commandline.feature" version="0.0.0">
       <category name="org.eclipse.python4capella.category"/>
    </feature>
@@ -24,7 +24,12 @@
    <feature id="org.python.pydev.feature" version="0.0.0"/>
    <feature id="org.py4j.feature" version="0.0.0"/>
 
+   <feature id="org.eclipse.acceleo.aql.feature" version="0.0.0"/>
+
    <bundle id="org.objectweb.asm" version="0.0.0"/>
+   <!-- fix for old ANTLR packaging -->
+   <bundle id="org.antlr.runtime" version="4.7.2.v20221112-9999"/>
+   <bundle id="org.antlr.runtime" version="4.10.1.v20230210-9999"/>
 
    <category-def name="org.eclipse.python4capella.category" label="Python4Capella">
       <description>

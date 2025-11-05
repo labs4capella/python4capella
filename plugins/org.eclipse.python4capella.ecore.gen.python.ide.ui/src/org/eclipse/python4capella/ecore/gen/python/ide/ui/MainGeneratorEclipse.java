@@ -29,7 +29,6 @@ import org.eclipse.acceleo.aql.ide.ui.dialog.FolderSelectionDialog;
 import org.eclipse.acceleo.aql.parser.AcceleoParser;
 import org.eclipse.acceleo.query.ast.ASTNode;
 import org.eclipse.acceleo.query.ast.TypeLiteral;
-import org.eclipse.acceleo.query.ide.runtime.impl.namespace.OSGiQualifiedNameResolver;
 import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameQueryEnvironment;
 import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameResolver;
 import org.eclipse.core.resources.IContainer;
@@ -178,7 +177,8 @@ public class MainGeneratorEclipse extends MainGenerator {
 			Activator.getDefault().log(new Status(IStatus.ERROR, getClass(), "The Bundle " + bundleIdentifier
 					+ " must be available in the target platform."));
 		}
-		return new OSGiQualifiedNameResolver(bundle, AcceleoParser.QUALIFIER_SEPARATOR);
+		return new OSGiQualifiedNameResolver(bundle, EPackage.Registry.INSTANCE,
+				AcceleoParser.QUALIFIER_SEPARATOR);
 	}
 
 	/**

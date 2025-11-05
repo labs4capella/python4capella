@@ -18,7 +18,7 @@
             <command
                   commandId="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.mainGeneratorCommand"
                   id="org.eclipse.python4capella.ecore.gen.python.ide.ui.menus.mainGeneratorCommand"
-                  label="org::eclipse::python4capella::ecore::gen::python::main::main">
+                  label="Generate Python for Capella API">
                <visibleWhen
                      checkEnabled="false">
                   <with
@@ -45,7 +45,7 @@
       <command
             categoryId="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.generatorsCategory"
             id="org.eclipse.python4capella.ecore.gen.python.ide.ui.commands.mainGeneratorCommand"
-            name="org::eclipse::python4capella::ecore::gen::python::main::main">
+            name="Generate Python for Capella API">
       </command>
    </extension>
 
