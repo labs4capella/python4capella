@@ -160,13 +160,3 @@ location py4j "http://eclipse.py4j.org/" {
 location PyDev "https://www.pydev.org/update_sites/8.2.0" {
 	org.python.pydev.feature.feature.group lazy
 }
-
-location Acceleo "https://download.eclipse.org/acceleo/updates/releases/4.2/R202510230846/" {
-	org.eclipse.acceleo.aql.feature.feature.group lazy
-	org.eclipse.acceleo.aql.feature.source.feature.group lazy
-	org.eclipse.acceleo.query.source [8.1.0,8.1.0]
-}
-
-location ObeoNetworkBits "https://obeo-networkaggregation-releases.s3.eu-west-1.amazonaws.com/bits/master/thirdparties" {
-	org.antlr.runtime lazy
-}

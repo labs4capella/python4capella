@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 5.1.0 Target Platform" sequenceNumber="1762359459">
+<target name="Capella 5.1.0 Target Platform" sequenceNumber="1762417636">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -144,16 +144,6 @@
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.python.pydev.feature.feature.group" version="0.0.0"/>
       <repository id="PyDev" location="https://www.pydev.org/update_sites/8.2.0"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.acceleo.aql.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.aql.feature.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.query.source" version="8.1.0"/>
-      <repository id="Acceleo" location="https://download.eclipse.org/acceleo/updates/releases/4.2/R202510230846/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.antlr.runtime" version="0.0.0"/>
-      <repository id="ObeoNetworkBits" location="https://obeo-networkaggregation-releases.s3.eu-west-1.amazonaws.com/bits/master/thirdparties"/>
     </location>
   </locations>
 </target>
