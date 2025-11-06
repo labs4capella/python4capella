@@ -915,6 +915,6 @@ class EnumerationDataTypeDefinition(ReqIFElement):
         """
         Returns: EnumValue[*]
         """
-        return capella_query_by_name(self, "Specified Values")
+        return create_e_list(self.get_java_object().getSpecifiedValues(), EnumValue)
 
 
