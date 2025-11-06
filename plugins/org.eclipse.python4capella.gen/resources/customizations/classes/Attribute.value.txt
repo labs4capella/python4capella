@@ -1,6 +1,8 @@
     def get_value(self) -> Any:
         if self.get_java_object().eClass().getName() == "BooleanValueAttribute":
             return self.get_java_object().isValue()
+        elif self.get_java_object().eClass().getName() == "EnumerationValueAttribute":
+            return create_e_list(self.get_java_object().getValues(), EnumValue)
         else:
             return self.get_java_object().getValue()
     def set_value(self, value):
