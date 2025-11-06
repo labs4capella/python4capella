@@ -66,9 +66,10 @@ def get_libraries(system_engineering):
     
     if system_engineering is not None:
         lib_cls = getattr(sys.modules["__main__"], "CapellaLibrary")
+        e_object_cls = getattr(sys.modules["__main__"], "EObject")
         for value in getLibraries(system_engineering.get_java_object()):
             lib = lib_cls()
-            lib.open(value)
+            lib.open(e_object_cls(value))
             res.append(lib)
         
     return res
