@@ -1,0 +1,8 @@
+    def get_inout_component_exchanges(self) -> List[ComponentExchange]:
+        res = []
+        for exchange in self.get_incoming_component_exchanges():
+            res.append(exchange)
+        for exchange in  self.get_outgoing_component_exchanges():
+            res.append(exchange)
+        return res
+

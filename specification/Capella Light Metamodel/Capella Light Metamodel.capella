@@ -24578,7 +24578,8 @@
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="4318b01f-71be-48dc-b5e9-321508bfae3e" name="incomingComponentExchanges"
-                  abstractType="#db7ac793-fed3-408c-92fd-8c08316efaaf" aggregationKind="ASSOCIATION">
+                  abstractType="#db7ac793-fed3-408c-92fd-8c08316efaaf" aggregationKind="ASSOCIATION"
+                  isDerived="true" isReadOnly="true">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="79359096-0ec2-4d8b-84c2-6ee233775d75" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -24586,7 +24587,8 @@
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="43b91891-80b5-4329-81a5-39dc6494c625" name="outgoingComponentExchanges"
-                  abstractType="#db7ac793-fed3-408c-92fd-8c08316efaaf" aggregationKind="ASSOCIATION">
+                  abstractType="#db7ac793-fed3-408c-92fd-8c08316efaaf" aggregationKind="ASSOCIATION"
+                  isDerived="true" isReadOnly="true">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="c17c34ce-6dc6-4da5-843c-e81c3afcda4b" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -24594,7 +24596,8 @@
               </ownedFeatures>
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="395637a1-bdb3-4080-b67f-2c44bbb5a0c5" name="inoutComponentExchanges"
-                  abstractType="#db7ac793-fed3-408c-92fd-8c08316efaaf" aggregationKind="ASSOCIATION">
+                  abstractType="#db7ac793-fed3-408c-92fd-8c08316efaaf" aggregationKind="ASSOCIATION"
+                  isDerived="true" isReadOnly="true">
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="93aced7a-6acb-496e-bd91-95e59f538e0c" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

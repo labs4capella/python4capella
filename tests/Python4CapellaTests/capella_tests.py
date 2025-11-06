@@ -11885,32 +11885,14 @@ class capella_tests(unittest.TestCase):
         tested.get_incoming_component_exchanges()
         pass
 
-    def test_System_incoming_component_exchanges_setter(self):
-        tested = System()
-        value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        pass
-
     def test_System_outgoing_component_exchanges_getter(self):
         tested = System()
         tested.get_outgoing_component_exchanges()
         pass
 
-    def test_System_outgoing_component_exchanges_setter(self):
-        tested = System()
-        value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        pass
-
     def test_System_inout_component_exchanges_getter(self):
         tested = System()
         tested.get_inout_component_exchanges()
-        pass
-
-    def test_System_inout_component_exchanges_setter(self):
-        tested = System()
-        value = ComponentExchange()
-        tested.get_inout_component_exchanges().add(value)
         pass
 
     def test_System_allocated_functions_getter(self):
@@ -12323,32 +12305,14 @@ class capella_tests(unittest.TestCase):
         tested.get_incoming_component_exchanges()
         pass
 
-    def test_SystemActor_incoming_component_exchanges_setter(self):
-        tested = SystemActor()
-        value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        pass
-
     def test_SystemActor_outgoing_component_exchanges_getter(self):
         tested = SystemActor()
         tested.get_outgoing_component_exchanges()
         pass
 
-    def test_SystemActor_outgoing_component_exchanges_setter(self):
-        tested = SystemActor()
-        value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        pass
-
     def test_SystemActor_inout_component_exchanges_getter(self):
         tested = SystemActor()
         tested.get_inout_component_exchanges()
-        pass
-
-    def test_SystemActor_inout_component_exchanges_setter(self):
-        tested = SystemActor()
-        value = ComponentExchange()
-        tested.get_inout_component_exchanges().add(value)
         pass
 
     def test_SystemActor_allocated_functions_getter(self):
@@ -15693,32 +15657,14 @@ class capella_tests(unittest.TestCase):
         tested.get_incoming_component_exchanges()
         pass
 
-    def test_LogicalSystem_incoming_component_exchanges_setter(self):
-        tested = LogicalSystem()
-        value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        pass
-
     def test_LogicalSystem_outgoing_component_exchanges_getter(self):
         tested = LogicalSystem()
         tested.get_outgoing_component_exchanges()
         pass
 
-    def test_LogicalSystem_outgoing_component_exchanges_setter(self):
-        tested = LogicalSystem()
-        value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        pass
-
     def test_LogicalSystem_inout_component_exchanges_getter(self):
         tested = LogicalSystem()
         tested.get_inout_component_exchanges()
-        pass
-
-    def test_LogicalSystem_inout_component_exchanges_setter(self):
-        tested = LogicalSystem()
-        value = ComponentExchange()
-        tested.get_inout_component_exchanges().add(value)
         pass
 
     def test_LogicalSystem_allocated_functions_getter(self):
@@ -16141,32 +16087,14 @@ class capella_tests(unittest.TestCase):
         tested.get_incoming_component_exchanges()
         pass
 
-    def test_LogicalComponent_incoming_component_exchanges_setter(self):
-        tested = LogicalComponent()
-        value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        pass
-
     def test_LogicalComponent_outgoing_component_exchanges_getter(self):
         tested = LogicalComponent()
         tested.get_outgoing_component_exchanges()
         pass
 
-    def test_LogicalComponent_outgoing_component_exchanges_setter(self):
-        tested = LogicalComponent()
-        value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        pass
-
     def test_LogicalComponent_inout_component_exchanges_getter(self):
         tested = LogicalComponent()
         tested.get_inout_component_exchanges()
-        pass
-
-    def test_LogicalComponent_inout_component_exchanges_setter(self):
-        tested = LogicalComponent()
-        value = ComponentExchange()
-        tested.get_inout_component_exchanges().add(value)
         pass
 
     def test_LogicalComponent_allocated_functions_getter(self):
@@ -16601,32 +16529,14 @@ class capella_tests(unittest.TestCase):
         tested.get_incoming_component_exchanges()
         pass
 
-    def test_LogicalActor_incoming_component_exchanges_setter(self):
-        tested = LogicalActor()
-        value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        pass
-
     def test_LogicalActor_outgoing_component_exchanges_getter(self):
         tested = LogicalActor()
         tested.get_outgoing_component_exchanges()
         pass
 
-    def test_LogicalActor_outgoing_component_exchanges_setter(self):
-        tested = LogicalActor()
-        value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        pass
-
     def test_LogicalActor_inout_component_exchanges_getter(self):
         tested = LogicalActor()
         tested.get_inout_component_exchanges()
-        pass
-
-    def test_LogicalActor_inout_component_exchanges_setter(self):
-        tested = LogicalActor()
-        value = ComponentExchange()
-        tested.get_inout_component_exchanges().add(value)
         pass
 
     def test_LogicalActor_allocated_functions_getter(self):
@@ -19201,32 +19111,14 @@ class capella_tests(unittest.TestCase):
         tested.get_incoming_component_exchanges()
         pass
 
-    def test_BehaviorPC_incoming_component_exchanges_setter(self):
-        tested = BehaviorPC()
-        value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        pass
-
     def test_BehaviorPC_outgoing_component_exchanges_getter(self):
         tested = BehaviorPC()
         tested.get_outgoing_component_exchanges()
         pass
 
-    def test_BehaviorPC_outgoing_component_exchanges_setter(self):
-        tested = BehaviorPC()
-        value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        pass
-
     def test_BehaviorPC_inout_component_exchanges_getter(self):
         tested = BehaviorPC()
         tested.get_inout_component_exchanges()
-        pass
-
-    def test_BehaviorPC_inout_component_exchanges_setter(self):
-        tested = BehaviorPC()
-        value = ComponentExchange()
-        tested.get_inout_component_exchanges().add(value)
         pass
 
     def test_BehaviorPC_allocated_functions_getter(self):
@@ -19735,32 +19627,14 @@ class capella_tests(unittest.TestCase):
         tested.get_incoming_component_exchanges()
         pass
 
-    def test_PhysicalActor_incoming_component_exchanges_setter(self):
-        tested = PhysicalActor()
-        value = ComponentExchange()
-        tested.get_incoming_component_exchanges().add(value)
-        pass
-
     def test_PhysicalActor_outgoing_component_exchanges_getter(self):
         tested = PhysicalActor()
         tested.get_outgoing_component_exchanges()
         pass
 
-    def test_PhysicalActor_outgoing_component_exchanges_setter(self):
-        tested = PhysicalActor()
-        value = ComponentExchange()
-        tested.get_outgoing_component_exchanges().add(value)
-        pass
-
     def test_PhysicalActor_inout_component_exchanges_getter(self):
         tested = PhysicalActor()
         tested.get_inout_component_exchanges()
-        pass
-
-    def test_PhysicalActor_inout_component_exchanges_setter(self):
-        tested = PhysicalActor()
-        value = ComponentExchange()
-        tested.get_inout_component_exchanges().add(value)
         pass
 
     def test_PhysicalActor_allocated_functions_getter(self):

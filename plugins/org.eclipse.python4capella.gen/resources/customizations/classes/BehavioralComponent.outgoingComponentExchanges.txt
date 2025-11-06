@@ -1,0 +1,3 @@
+    def get_outgoing_component_exchanges(self) -> List[ComponentExchange]:
+        return capella_query_by_name(self, "Internal Outgoing Component Exchanges (computed)")
+

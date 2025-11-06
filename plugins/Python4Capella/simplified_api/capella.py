@@ -6951,17 +6951,22 @@ class BehavioralComponent(AbstractFunctionalBlock, AbstractInstance):
         """
         Returns: ComponentExchange[*]
         """
-        return create_e_list(self.get_java_object().getIncomingComponentExchanges(), ComponentExchange)
+        return capella_query_by_name(self, "Internal Incoming Component Exchanges (computed)")
     def get_outgoing_component_exchanges(self) -> List[ComponentExchange]:
         """
         Returns: ComponentExchange[*]
         """
-        return create_e_list(self.get_java_object().getOutgoingComponentExchanges(), ComponentExchange)
+        return capella_query_by_name(self, "Internal Outgoing Component Exchanges (computed)")
     def get_inout_component_exchanges(self) -> List[ComponentExchange]:
         """
         Returns: ComponentExchange[*]
         """
-        return create_e_list(self.get_java_object().getInoutComponentExchanges(), ComponentExchange)
+        res = []
+        for exchange in self.get_incoming_component_exchanges():
+            res.append(exchange)
+        for exchange in  self.get_outgoing_component_exchanges():
+            res.append(exchange)
+        return res
     def get_allocated_functions(self) -> List[Function]:
         """
         Returns: Function[*]
