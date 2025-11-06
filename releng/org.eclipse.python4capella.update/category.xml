@@ -37,7 +37,7 @@
          plug-ins for the Python4Capella technology
       </description>
    </category-def>
-   <category-def name="org.eclipse.python4capella.category.notincapella" label="Don't install in Capella">
+   <category-def name="org.eclipse.python4capella.category.notincapella" label="Python4Capella (don't install in Capella)">
       <description>
          Features that can be useful for Python for Capella but needs to be installed in an other Eclipse than Capella.
       </description>
