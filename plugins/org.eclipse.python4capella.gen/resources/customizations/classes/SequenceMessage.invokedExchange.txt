@@ -1,7 +1,0 @@
-    def get_invoked_exchange(self) -> AbstractExchange:
-        exchanges = capella_query_by_name(self, 'Invoked Interaction', AbstractExchange)
-        if not exchanges:
-            return None
-        else:
-            return exchanges[0]
-

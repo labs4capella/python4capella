@@ -19364,6 +19364,11 @@
                   id="841d6993-f0ca-4ee6-b9cb-f2c5668e9af3" name="invokedExchange"
                   abstractType="#683398b4-e382-435a-bb00-92090a87dc2b" aggregationKind="ASSOCIATION"
                   isReadOnly="true">
+                <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                    id="caa27f97-4376-4292-ad1c-b0008047bc32" name="Technical.Mapping">
+                  <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                      id="65a1b25f-637e-4e98-a880-a23729a23607" name="name" value="invokedOperation"/>
+                </ownedPropertyValueGroups>
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="b81a48ae-801a-4648-8ec4-e873c39dbb2c" name="" value="0"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

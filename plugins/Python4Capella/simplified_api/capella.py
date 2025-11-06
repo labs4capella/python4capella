@@ -3094,11 +3094,13 @@ class SequenceMessage(CapellaElement):
         """
         Returns: AbstractExchange[0..1]
         """
-        exchanges = capella_query_by_name(self, 'Invoked Interaction', AbstractExchange)
-        if not exchanges:
-            return None
+        value = self.get_java_object().getInvokedOperation()
+        if value is None:
+            return value
         else:
-            return exchanges[0]
+            e_object_class = getattr(sys.modules["__main__"], "EObject")
+            specific_cls = e_object_class.get_class(value)
+            return specific_cls(value)
     def get_exchanged_items(self) -> List[ExchangeItem]:
         """
         Returns: ExchangeItem[*]
