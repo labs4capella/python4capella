@@ -1,0 +1,7 @@
+    def get_connected_component_ports(self) -> ComponentPort:
+        res = []
+        if self.get_source_port() is not None:
+            res.append(self.get_source_port())
+        if self.get_target_port() is not None:
+            res.append(self.get_target_port())
+        return res

@@ -4284,7 +4284,12 @@ class ComponentExchange(CapellaElement, AbstractExchange):
         """
         Returns: ComponentPort[2]
         """
-        return create_e_list(self.get_java_object().getConnectedComponentPorts(), ComponentPort)
+        res = []
+        if self.get_source_port() is not None:
+            res.append(self.get_source_port())
+        if self.get_target_port() is not None:
+            res.append(self.get_target_port())
+        return res
     def get_connected_components(self):
         """
         Returns: BehavioralComponent[2]
