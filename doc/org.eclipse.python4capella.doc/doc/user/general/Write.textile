@@ -96,6 +96,8 @@ bq.. Note: You script need to be in the script location of "EASE":https://www.ec
 
 h2. Generate Python for Capella APIs for your Capella addon
 
+bq. Important: This feature need to be installed in an other Eclipse to generate the Python APIs and then copy them in your Capella.
+
 You can generate Python APIs compatible with Python for Capella from any metamodel (`*.ecore` file). If the file has been generated via "Capella Studio":https://github.com/eclipse-capella/capella-studio a class with your addon name suffixed by `Addon` will be generated to get/add/remove elements provided by the addon from/to Capella model elements.
 
 To generate the API:

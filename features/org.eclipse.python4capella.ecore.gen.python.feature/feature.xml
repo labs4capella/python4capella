@@ -8,11 +8,17 @@
       license-feature-version="2.0.2">
 
    <description url="https://github.com/labs4capella/python4capella">
-      Python Scripting for Capella
+      This feature is not intended to be installed inside of Capella nor Capella Studio.
+
+This feature can be installed in an other Eclipse where you can import your *.ecore files.
+
+This feature allows you to generate new Python APIs to use with Python for Capella form any *.ecore files. This can be used to generate the API for an addon you are using or developing.
+
+Documentation: https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/Write.textile#generate-python-for-capella-apis-for-your-capella-addon
    </description>
 
    <copyright url="http://www.obeo.fr/legal.php?lang=en">
-Copyright (c) 2021, 2022 THALES GLOBAL SERVICES
+      Copyright (c) 2021, 2022 THALES GLOBAL SERVICES
 This program and the accompanying materials
 are made available under the terms of the Eclipse Public License 2.0
 which accompanies this distribution, and is available at
@@ -26,22 +32,32 @@ Contributors:
 
    <plugin
          id="org.eclipse.python4capella.ecore.gen.python"
+         download-size="0"
+         install-size="0"
          version="0.0.0"/>
 
    <plugin
          id="org.eclipse.python4capella.ecore.gen.python.ide.ui"
+         download-size="0"
+         install-size="0"
          version="0.0.0"/>
 
    <plugin
          id="org.eclipse.acceleo.aql"
+         download-size="0"
+         install-size="0"
          version="0.0.0"/>
 
    <plugin
          id="org.eclipse.acceleo.aql.ide.ui"
+         download-size="0"
+         install-size="0"
          version="0.0.0"/>
 
    <plugin
          id="org.eclipse.acceleo.query"
+         download-size="0"
+         install-size="0"
          version="0.0.0"/>
 
 </feature>

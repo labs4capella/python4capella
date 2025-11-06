@@ -3,11 +3,12 @@
    <feature id="org.eclipse.python4capella.feature" version="0.0.0">
       <category name="org.eclipse.python4capella.category"/>
    </feature>
-   <feature id="org.eclipse.python4capella.ecore.gen.python.feature" version="0.0.0">
-      <category name="org.eclipse.python4capella.category"/>
-   </feature>
    <feature id="org.eclipse.python4capella.commandline.feature" version="0.0.0">
       <category name="org.eclipse.python4capella.category"/>
+   </feature>
+
+   <feature id="org.eclipse.python4capella.ecore.gen.python.feature" version="0.0.0">
+      <category name="org.eclipse.python4capella.category.notincapella"/>
    </feature>
 
    <feature id="org.eclipse.ease.lang.scriptarchive.feature" version="0.0.0"/>
@@ -34,6 +35,11 @@
    <category-def name="org.eclipse.python4capella.category" label="Python4Capella">
       <description>
          plug-ins for the Python4Capella technology
+      </description>
+   </category-def>
+   <category-def name="org.eclipse.python4capella.category.notincapella" label="Don't install in Capella">
+      <description>
+         Features that can be useful for Python for Capella but needs to be installed in an other Eclipse than Capella.
       </description>
    </category-def>
 </site>

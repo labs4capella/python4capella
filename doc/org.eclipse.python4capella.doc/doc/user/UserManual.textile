@@ -7,5 +7,5 @@ You will find the following sections:
 * "*Run a script*":general/Run.html Describes how you can run your Python scripts (Within Capella, from the command line).
 * "*Debug a script*":general/Debug.html Describes how you can run your Python scripts.
 * "*Remove false errors*":general/RemoveFalseErrors.html Describes how you can configure PyDev to remove false errors.
-* "*Write a script*":general/Write.html Describes how you can write your Python scripts.
+* "*Write a script*":general/Write.html Describes how you can write your Python scripts. And generate new Python APIs for your addon.
 
