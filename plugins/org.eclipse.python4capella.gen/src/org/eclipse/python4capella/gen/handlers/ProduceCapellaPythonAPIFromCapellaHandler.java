@@ -472,7 +472,7 @@ public class ProduceCapellaPythonAPIFromCapellaHandler extends AbstractHandler {
 		res.append("        elif isinstance(java_object, " + cls.getName() + "):" + NL);
 		res.append("            JavaObject.__init__(self, java_object.get_java_object())" + NL);
 		if (eCls != null) {
-			res.append("        elif self.e_class.isInstance(java_object):" + NL);
+			res.append("        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):" + NL);
 			res.append("            JavaObject.__init__(self, java_object)" + NL);
 			res.append("        else:" + NL);
 			res.append(

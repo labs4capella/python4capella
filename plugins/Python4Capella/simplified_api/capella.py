@@ -313,7 +313,7 @@ class CapellaElement(EObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapellaElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -523,7 +523,7 @@ class Constraint(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Constraint):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -625,7 +625,7 @@ class PropertyValueGroup(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PropertyValueGroup):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -646,7 +646,7 @@ class EnumerationPropertyType(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationPropertyType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -676,7 +676,7 @@ class EnumerationPropertyLiteral(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationPropertyLiteral):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -710,7 +710,7 @@ class ModellingArchitecture(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ModellingArchitecture):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -726,7 +726,7 @@ class Feature(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Feature):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -741,7 +741,7 @@ class TraceableElement(JavaObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, TraceableElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -766,7 +766,7 @@ class AbstractTrace(TraceableElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractTrace):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -813,7 +813,7 @@ class AbstractRelationship(JavaObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractRelationship):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -844,7 +844,7 @@ class Relationship(AbstractRelationship, CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Relationship):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -859,7 +859,7 @@ class Allocation(Relationship, AbstractTrace):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Allocation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -874,7 +874,7 @@ class AbstractInformationFlow(AbstractRelationship, CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractInformationFlow):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -927,7 +927,7 @@ class InformationsExchanger(EObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, InformationsExchanger):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -958,7 +958,7 @@ class Classifier(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Classifier):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1311,7 +1311,7 @@ class CatalogElementPkg(AbstractReElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CatalogElementPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1342,7 +1342,7 @@ class RecCatalog(CatalogElementPkg):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, RecCatalog):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1369,7 +1369,7 @@ class CompliancyDefinitionPkg(AbstractReElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CompliancyDefinitionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1393,7 +1393,7 @@ class CompliancyDefinition(AbstractReElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CompliancyDefinition):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1420,7 +1420,7 @@ class OperationalAnalysis(ModellingArchitecture):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalAnalysis):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1491,7 +1491,7 @@ class OperationalActivityPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalActivityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1517,7 +1517,7 @@ class OperationalProcess(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalProcess):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1607,7 +1607,7 @@ class OperationalCapabilityPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalCapabilityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1633,7 +1633,7 @@ class EntityPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EntityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1711,7 +1711,7 @@ class CommunicationMean(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CommunicationMean):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1775,7 +1775,7 @@ class SystemAnalysis(ModellingArchitecture):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemAnalysis):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1868,7 +1868,7 @@ class SystemFunctionPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemFunctionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1899,7 +1899,7 @@ class CapabilityPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapabilityPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1925,7 +1925,7 @@ class SystemComponentPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemComponentPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1972,7 +1972,7 @@ class MissionPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, MissionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -1998,7 +1998,7 @@ class Mission(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Mission):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2032,7 +2032,7 @@ class LogicalArchitecture(ModellingArchitecture):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalArchitecture):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2114,7 +2114,7 @@ class LogicalFunctionPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalFunctionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2145,7 +2145,7 @@ class CapabilityRealizationPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapabilityRealizationPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2171,7 +2171,7 @@ class LogicalComponentPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalComponentPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2224,7 +2224,7 @@ class PhysicalArchitecture(ModellingArchitecture):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalArchitecture):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2300,7 +2300,7 @@ class PhysicalFunctionPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalFunctionPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2331,7 +2331,7 @@ class PhysicalComponentPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalComponentPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2380,7 +2380,7 @@ class AbstractPhysicalArtifact(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractPhysicalArtifact):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2481,7 +2481,7 @@ class EPBSArchitecture(ModellingArchitecture):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EPBSArchitecture):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2530,7 +2530,7 @@ class ConfigurationItemPkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ConfigurationItemPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2556,7 +2556,7 @@ class ConfigurationItem(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ConfigurationItem):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2614,7 +2614,7 @@ class StateMachine(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StateMachine):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2635,7 +2635,7 @@ class AbstractState(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractState):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2671,7 +2671,7 @@ class State(AbstractState):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, State):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2727,7 +2727,7 @@ class Mode(State):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Mode):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2770,7 +2770,7 @@ class Region(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Region):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2791,7 +2791,7 @@ class StateTransition(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StateTransition):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2881,7 +2881,7 @@ class AbstractAction(JavaObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractAction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2897,7 +2897,7 @@ class AbstractEvent(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractEvent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -2913,7 +2913,7 @@ class Scenario(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Scenario):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3010,7 +3010,7 @@ class InstanceRole(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, InstanceRole):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3031,7 +3031,7 @@ class AbstractInstance(JavaObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractInstance):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3047,7 +3047,7 @@ class SequenceMessage(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SequenceMessage):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3151,7 +3151,7 @@ class StateFragment(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StateFragment):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3194,7 +3194,7 @@ class CombinedFragment(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CombinedFragment):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3273,7 +3273,7 @@ class ConstraintDuration(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ConstraintDuration):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3343,7 +3343,7 @@ class PhysicalLink(AbstractPhysicalArtifact):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalLink):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3406,7 +3406,7 @@ class PhysicalLinkCategory(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalLinkCategory):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3427,7 +3427,7 @@ class PhysicalPath(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalPath):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3468,7 +3468,7 @@ class InterfacePkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, InterfacePkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3499,7 +3499,7 @@ class Interface(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Interface):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3573,7 +3573,7 @@ class ExchangeItemAllocation(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeItemAllocation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3644,7 +3644,7 @@ class ExchangeItem(AbstractAction, AbstractEvent, AbstractInstance):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeItem):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3732,7 +3732,7 @@ class ExchangeItemElement(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeItemElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3753,7 +3753,7 @@ class Port(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Port):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3779,7 +3779,7 @@ class PortAllocation(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PortAllocation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3828,7 +3828,7 @@ class FunctionPort(Port):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3860,7 +3860,7 @@ class FunctionInputPort(FunctionPort):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionInputPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3896,7 +3896,7 @@ class FunctionOutputPort(FunctionPort):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionOutputPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -3932,7 +3932,7 @@ class FunctionalExchange(AbstractEvent, AbstractExchange):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionalExchange):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4049,7 +4049,7 @@ class ExchangeCategory(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ExchangeCategory):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4070,7 +4070,7 @@ class FunctionalChain(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, FunctionalChain):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4174,7 +4174,7 @@ class ComponentPort(Port, InformationsExchanger):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4259,7 +4259,7 @@ class ComponentExchange(CapellaElement, AbstractExchange):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentExchange):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4374,7 +4374,7 @@ class ComponentExchangeCategory(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentExchangeCategory):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4395,7 +4395,7 @@ class AbstractCapability(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractCapability):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4510,7 +4510,7 @@ class AbstractFunctionalBlock(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractFunctionalBlock):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4541,7 +4541,7 @@ class AbstractFunctionAllocation(Allocation):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractFunctionAllocation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4557,7 +4557,7 @@ class ComponentExchangeFunctionalExchangeAllocation(AbstractFunctionAllocation):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentExchangeFunctionalExchangeAllocation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4594,7 +4594,7 @@ class DataValue(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, DataValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4619,7 +4619,7 @@ class AbstractBooleanValue(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractBooleanValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4634,7 +4634,7 @@ class LiteralBooleanValue(AbstractBooleanValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LiteralBooleanValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4659,7 +4659,7 @@ class BooleanReference(AbstractBooleanValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, BooleanReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4706,7 +4706,7 @@ class AbstractEnumerationValue(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractEnumerationValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4721,7 +4721,7 @@ class EnumerationReference(AbstractEnumerationValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4768,7 +4768,7 @@ class AbstractStringValue(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractStringValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4783,7 +4783,7 @@ class LiteralStringValue(AbstractStringValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LiteralStringValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4808,7 +4808,7 @@ class StringReference(AbstractStringValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StringReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4855,7 +4855,7 @@ class NumericValue(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, NumericValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4897,7 +4897,7 @@ class LiteralNumericValue(NumericValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LiteralNumericValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4922,7 +4922,7 @@ class NumericReference(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, NumericReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4969,7 +4969,7 @@ class AbstractComplexValue(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractComplexValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4984,7 +4984,7 @@ class ComplexValue(AbstractComplexValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComplexValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -4999,7 +4999,7 @@ class ComplexValueReference(AbstractComplexValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComplexValueReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5030,7 +5030,7 @@ class BinaryExpression(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, BinaryExpression):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5045,7 +5045,7 @@ class UnaryExpression(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, UnaryExpression):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5060,7 +5060,7 @@ class AbstractCollectionValue(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractCollectionValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5075,7 +5075,7 @@ class CollectionValueReference(AbstractCollectionValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CollectionValueReference):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5122,7 +5122,7 @@ class CollectionValue(AbstractCollectionValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CollectionValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5158,7 +5158,7 @@ class DataPkg(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, DataPkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5208,7 +5208,7 @@ class DataType(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, DataType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5223,7 +5223,7 @@ class Class(DataType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Class):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5295,7 +5295,7 @@ class Collection(DataType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Collection):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5458,7 +5458,7 @@ class Union(DataType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Union):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5542,7 +5542,7 @@ class Association(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Association):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5593,7 +5593,7 @@ class UnionProperty(Property):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, UnionProperty):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5657,7 +5657,7 @@ class Parameter(JavaObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Parameter):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5803,7 +5803,7 @@ class Enumeration(PrimitiveDataType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Enumeration):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5933,7 +5933,7 @@ class EnumerationLiteral(DataValue):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationLiteral):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -5969,7 +5969,7 @@ class BooleanType(PrimitiveDataType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, BooleanType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6005,7 +6005,7 @@ class StringType(PrimitiveDataType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, StringType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6094,7 +6094,7 @@ class NumericType(PrimitiveDataType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, NumericType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6200,7 +6200,7 @@ class PhysicalQuantity(NumericType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalQuantity):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6231,7 +6231,7 @@ class Unit(CapellaElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Unit):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6247,7 +6247,7 @@ class SystemEngineering(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemEngineering):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6303,7 +6303,7 @@ class PropertyValuePkg(PropertyValuePkgContainer):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PropertyValuePkg):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6318,7 +6318,7 @@ class Trace(Relationship, AbstractTrace):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Trace):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6333,7 +6333,7 @@ class GenericTrace(Trace):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, GenericTrace):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6370,7 +6370,7 @@ class TransfoLink(GenericTrace):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, TransfoLink):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6385,7 +6385,7 @@ class JustificationLink(GenericTrace):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, JustificationLink):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6481,7 +6481,7 @@ class OperationalCapability(AbstractCapability):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalCapability):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6548,7 +6548,7 @@ class Capability(AbstractSystemCapability):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, Capability):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6584,7 +6584,7 @@ class CapabilityRealization(AbstractSystemCapability):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, CapabilityRealization):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6712,7 +6712,7 @@ class ChangeEvent(AbstractEvent):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ChangeEvent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6738,7 +6738,7 @@ class TimeEvent(AbstractEvent):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, TimeEvent):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -6798,7 +6798,7 @@ class PhysicalPort(AbstractPhysicalArtifact, Port, InformationsExchanger):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalPort):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -7014,7 +7014,7 @@ class ComponentFunctionalAllocation(AbstractFunctionAllocation):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ComponentFunctionalAllocation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -7052,7 +7052,7 @@ class OperationalActivity(Function):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, OperationalActivity):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -7113,7 +7113,7 @@ class SystemFunction(Function):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, SystemFunction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -7239,7 +7239,7 @@ class LogicalFunction(Function):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, LogicalFunction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -7436,7 +7436,7 @@ class PhysicalFunction(Function):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, PhysicalFunction):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))

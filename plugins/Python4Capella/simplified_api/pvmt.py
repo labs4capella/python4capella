@@ -167,7 +167,7 @@ class PVMT(JavaObject):
     @staticmethod
     def remove_applied_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, se: SystemEngineering = None):
         """
-        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName, se: SystemEngineering[0..1]: String
+        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String, se: SystemEngineering[0..1]
         """
         systemEngineering = PVMT.get_system_engineering(elem)
         if systemEngineering is None and se is not None:

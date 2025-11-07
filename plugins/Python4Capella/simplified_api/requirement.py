@@ -461,7 +461,7 @@ class ReqIFElement(EObject):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ReqIFElement):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -506,7 +506,7 @@ class EnumValue(ReqIFElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumValue):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -521,7 +521,7 @@ class AbstractRelation(ReqIFElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractRelation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -646,7 +646,7 @@ class InternalRelation(AbstractRelation):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, InternalRelation):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -689,7 +689,7 @@ class AbstractType(ReqIFElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AbstractType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -709,7 +709,7 @@ class RelationType(AbstractType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, RelationType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -748,7 +748,7 @@ class TypesFolder(ReqIFElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, TypesFolder):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -790,7 +790,7 @@ class AttributeDefinition(ReqIFElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AttributeDefinition):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -837,7 +837,7 @@ class AttributeDefinitionEnumeration(AttributeDefinition):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, AttributeDefinitionEnumeration):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -862,7 +862,7 @@ class RequirementType(AbstractType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, RequirementType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -877,7 +877,7 @@ class ModuleType(AbstractType):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, ModuleType):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -892,7 +892,7 @@ class DataTypeDefinition(ReqIFElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, DataTypeDefinition):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
@@ -907,7 +907,7 @@ class EnumerationDataTypeDefinition(ReqIFElement):
             JavaObject.__init__(self, create_e_object_from_e_classifier(self.e_class))
         elif isinstance(java_object, EnumerationDataTypeDefinition):
             JavaObject.__init__(self, java_object.get_java_object())
-        elif self.e_class.isInstance(java_object):
+        elif hasattr(java_object, '_get_object_id') and self.e_class.isInstance(java_object):
             JavaObject.__init__(self, java_object)
         else:
             raise AttributeError("Passed object is not compatible with " + self.__class__.__name__ + ": " + str(java_object))
