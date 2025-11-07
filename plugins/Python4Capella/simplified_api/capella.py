@@ -1088,6 +1088,14 @@ class Diagram(JavaObject):
         status: KO
         """
         Sirius.export_image(self.get_java_object(), file_path)
+    def copy(self, name: str) -> Diagram:
+        """
+        Parameters: name: String
+        Returns: Diagram
+        """
+        session = getSession(self.get_java_object())
+        copy = org.eclipse.sirius.business.api.dialect.DialectManager.INSTANCE.copyRepresentation(self.get_java_object(), name, session, None)
+        return e_inverse_by_type(copy, Diagram).get(0)
 
 class AbstractReElement(EObject):
     """

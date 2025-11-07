@@ -17,9 +17,10 @@
                 pv_to_apply = PropertyValue(None, pv.get_java_object().eClass().getName())
                 pv_to_apply.set_name(pv.get_name())
                 pv_to_apply.get_applied_property_values().add(pv)
-                pv_to_apply.set_value(pv.get_value())
                 if pv.get_java_object().eClass().getName() == "EnumerationPropertyValue":
                     pv_to_apply.get_java_object().setType(pv.get_java_object().getType())
+                else:
+                    pv_to_apply.set_value(pv.get_value())
                 pvg_to_apply.get_owned_property_values().add(pv_to_apply)
             return pvg_to_apply
 

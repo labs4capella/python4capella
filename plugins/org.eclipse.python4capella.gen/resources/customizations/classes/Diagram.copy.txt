@@ -1,0 +1,5 @@
+    def copy(self, name: str) -> Diagram:
+        session = getSession(self.get_java_object())
+        copy = org.eclipse.sirius.business.api.dialect.DialectManager.INSTANCE.copyRepresentation(self.get_java_object(), name, session, None)
+        return e_inverse_by_type(copy, Diagram).get(0)
+
