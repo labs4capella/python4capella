@@ -1,10 +1,8 @@
     @staticmethod
-    def get_applied_property_value(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, propertyValueName: str) -> PropertyValue:
-        """
-        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String, propertyValueName: String
-        Returns: PropertyValue
-        """
+    def get_applied_property_value(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, propertyValueName: str, se: SystemEngineering = None) -> PropertyValue:
         systemEngineering = PVMT.get_system_engineering(elem)
+        if systemEngineering is None and se is not None:
+            systemEngineering = se
         pv = PVMT.get_property_value(systemEngineering, propertyValuePackageName, propertyValueGroupName, propertyValueName)
         pvg = PropertyValueGroup(pv.get_java_object().eContainer())
         if pvg:

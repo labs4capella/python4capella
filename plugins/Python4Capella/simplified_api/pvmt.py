@@ -120,16 +120,14 @@ class PVMT(JavaObject):
                             if type.getName() == typeName:
                                 return EnumerationPropertyType(type)
     @staticmethod
-    def get_applied_property_value(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, propertyValueName: str) -> PropertyValue:
+    def get_applied_property_value(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, propertyValueName: str, se: SystemEngineering = None) -> PropertyValue:
         """
-        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String, propertyValueName: String
-        Returns: PropertyValue
-        """
-        """
-        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String, propertyValueName: String
+        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String, propertyValueName: String, se: SystemEngineering[0..1]
         Returns: PropertyValue
         """
         systemEngineering = PVMT.get_system_engineering(elem)
+        if systemEngineering is None and se is not None:
+            systemEngineering = se
         pv = PVMT.get_property_value(systemEngineering, propertyValuePackageName, propertyValueGroupName, propertyValueName)
         pvg = PropertyValueGroup(pv.get_java_object().eContainer())
         if pvg:
@@ -139,12 +137,14 @@ class PVMT(JavaObject):
                         if owned_pv.get_applied_property_values().contains(pv):
                             return owned_pv
     @staticmethod
-    def get_or_apply_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str) -> PropertyValue:
+    def get_or_apply_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, se: SystemEngineering = None) -> PropertyValue:
         """
-        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String
+        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String, se: SystemEngineering[0..1]
         Returns: PropertyValue
         """
         systemEngineering = PVMT.get_system_engineering(elem)
+        if systemEngineering is None and se is not None:
+            systemEngineering = se
         pvg = PVMT.get_property_value_group(systemEngineering, propertyValuePackageName, propertyValueGroupName)
         if pvg:
             for applied_pvg in elem.get_applied_property_value_groups():
@@ -163,12 +163,15 @@ class PVMT(JavaObject):
                 if pv.get_java_object().eClass().getName() == "EnumerationPropertyValue":
                     pv_to_apply.get_java_object().setType(pv.get_java_object().getType())
                 pvg_to_apply.get_owned_property_values().add(pv_to_apply)
+            return pvg_to_apply
     @staticmethod
-    def remove_applied_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str):
+    def remove_applied_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, se: SystemEngineering = None):
         """
-        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName: String
+        Parameters: elem: CapellaElement, propertyValuePackageName: String, propertyValueGroupName, se: SystemEngineering[0..1]: String
         """
         systemEngineering = PVMT.get_system_engineering(elem)
+        if systemEngineering is None and se is not None:
+            systemEngineering = se
         pvg = PVMT.get_property_value_group(systemEngineering, propertyValuePackageName, propertyValueGroupName)
         if pvg:
             for applied_pvg in elem.get_applied_property_value_groups():

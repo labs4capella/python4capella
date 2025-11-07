@@ -1,6 +1,8 @@
     @staticmethod
-    def get_or_apply_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str) -> PropertyValue:
+    def get_or_apply_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, se: SystemEngineering = None) -> PropertyValue:
         systemEngineering = PVMT.get_system_engineering(elem)
+        if systemEngineering is None and se is not None:
+            systemEngineering = se
         pvg = PVMT.get_property_value_group(systemEngineering, propertyValuePackageName, propertyValueGroupName)
         if pvg:
             for applied_pvg in elem.get_applied_property_value_groups():
@@ -19,4 +21,5 @@
                 if pv.get_java_object().eClass().getName() == "EnumerationPropertyValue":
                     pv_to_apply.get_java_object().setType(pv.get_java_object().getType())
                 pvg_to_apply.get_owned_property_values().add(pv_to_apply)
+            return pvg_to_apply
 

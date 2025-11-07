@@ -1,6 +1,8 @@
     @staticmethod
-    def remove_applied_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str):
+    def remove_applied_property_value_group(elem: CapellaElement, propertyValuePackageName: str, propertyValueGroupName: str, se: SystemEngineering = None):
         systemEngineering = PVMT.get_system_engineering(elem)
+        if systemEngineering is None and se is not None:
+            systemEngineering = se
         pvg = PVMT.get_property_value_group(systemEngineering, propertyValuePackageName, propertyValueGroupName)
         if pvg:
             for applied_pvg in elem.get_applied_property_value_groups():
