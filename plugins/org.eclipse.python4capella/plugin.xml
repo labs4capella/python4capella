@@ -122,6 +122,20 @@ if False:
     from simplified_api.pvmt import *
          </pattern>
       </template>
+      <template
+            autoinsert="false"
+            contextTypeId="org.python.pydev.editor.templates.python"
+            description="Add import for simplified_api.diagram"
+            icon="platform:/plugin/org.python.pydev.shared_ui/icons/template.gif"
+            id="org.eclipse.python4capella.template.import.simplified_api.diagram"
+            name="import simplified_api.diagram (Python4Capella)">
+         <pattern>
+            # include needed for the Capella modeller API
+include(&apos;workspace://Python4Capella/simplified_api/diagram.py&apos;)
+if False:
+    from simplified_api.diagram import *
+         </pattern>
+      </template>
       <template 
             autoinsert="true"
             contextTypeId="org.python.pydev.editor.templates.python"
