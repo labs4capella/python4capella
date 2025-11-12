@@ -34,7 +34,7 @@
         <version>${antrun-version}</version>
         <executions>
           <execution>
-            <id>package-Python4Cpaella</id>
+            <id>package-Python4Capella</id>
             <phase>process-sources</phase>
             <goals>
               <goal>run</goal>
@@ -43,6 +43,29 @@
               <target>
                 <zip destfile="${basedir}/zips/Python4Capella.zip">
                   <fileset dir="${basedir}/../Python4Capella/">
+                    <include name="**"/>
+                  </fileset>
+                </zip>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>package-Python4CapellaSampleScripts</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <zip destfile="${basedir}/zips/Python4CapellaSampleScripts.zip">
+                  <fileset dir="${basedir}/../Python4CapellaSampleScripts/">
+                    <include name="**"/>
+                  </fileset>
+                </zip>
+              </target>
+              <target>
+                <zip destfile="${basedir}/zips/Python4CapellaSampleScripts.zip">
+                  <fileset dir="${basedir}/../Python4CapellaSampleScripts/">
                     <include name="**"/>
                   </fileset>
                 </zip>

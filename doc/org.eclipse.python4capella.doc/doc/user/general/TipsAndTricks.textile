@@ -469,7 +469,7 @@ It you made some changes to the @Workbook@ you will need to save it:
 
 bc. wb.save(xlsx_file_name)
 
-This is a quick introduction to the openpyxl library. You can check the "project page":https://openpyxl.readthedocs.io/en/stable/ or provided examples to "read from an xlsx file":https://github.com/labs4capella/python4capella/blob/master/plugins/Python4Capella/sample_scripts/Import_breakdown_Node_PCs_from_xlsx.py or to "write to an xlsx file":https://github.com/labs4capella/python4capella/blob/master/plugins/Python4Capella/sample_scripts/Import_breakdown_Node_PCs_from_xlsx.py for more details.
+This is a quick introduction to the openpyxl library. You can check the "project page":https://openpyxl.readthedocs.io/en/stable/ or provided examples to "read from an xlsx file":https://github.com/labs4capella/python4capella/blob/master/plugins/Python4CapellaSampleScripts/sample_scripts/Import_breakdown_Node_PCs_from_xlsx.py or to "write to an xlsx file":https://github.com/labs4capella/python4capella/blob/master/plugins/Python4CapellaSampleScripts/sample_scripts/Import_breakdown_Node_PCs_from_xlsx.py for more details.
 
 h2. Modify your Capella Model
 

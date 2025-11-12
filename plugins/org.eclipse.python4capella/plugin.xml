@@ -60,7 +60,13 @@
             wizardID="org.eclipse.python4capella.wizard">
          <projectDescriptor
                contentURI="zips/Python4Capella.zip"
+               description="Python for Capella APIs"
                name="Python4Capella">
+         </projectDescriptor>
+         <projectDescriptor
+               contentURI="zips/Python4CapellaSampleScripts.zip"
+               description="Python for Capella sample scripts"
+               name="Python4CapellaSampleScripts">
          </projectDescriptor>
       </example>
    </extension>

@@ -6,7 +6,6 @@ h2. README
 
 The README.md contains the markdown displayed as the front page of the repository, all files needed are stored in the README directory.
 
-h2. .github folder
 
 This folder contains scripts needed by "github action":https://github.com/features/actions for the build. It also contains the JSON definition of the build matrix.
 
@@ -30,7 +29,8 @@ This folder contains all plugin projects:
 * the command line plugin
 * the main plugin for Python for Capella
 * the plugin that generates the Python API and tests (for developers)
-* the Python4Capella project that will be zipped in the org.eclipse.python4capella plugin during build
+* the Python4Capella project that contains Python APIs and that will be zipped in the org.eclipse.python4capella plugin during build
+* the Python4CapellaSampleScripts project that contains sample scipts and that will be zipped in the org.eclipse.python4capella plugin during build
 
 h2. releng folder
 

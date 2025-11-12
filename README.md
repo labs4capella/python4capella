@@ -132,9 +132,9 @@ At this point you will be prompted to configure your python environment, you can
 
 ![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-03.png)
 
-You now have the following *Python4Capella* project in your workspace:
+You now have the following *Python4Capella* projects in your workspace:
 
-![Python4Capella project content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-04.png)
+![Python4Capella projects content](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/import-Python4Capella-04.png)
 
 Now you need to reference your Python interpreter:
 
@@ -153,7 +153,7 @@ Select the Window > Preferences menu
   ![EASE Python interpreter](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/EASE_interpreter.png)
 
 - select the Scripting / Script Locations (needed to [contribute user interfaces](https://github.com/labs4capella/python4capella/blob/master/doc/org.eclipse.python4capella.doc/doc/user/general/TipsAndTricks.textile#contribute-to-capella-user-interface))
-  - add /Python4Capella/sample_scripts by clicking the Add Workspace button
+  - add /Python4CapellaSampleScripts/sample_scripts by clicking the Add Workspace button
 
   ![Select script location](https://raw.githubusercontent.com/labs4capella/python4capella/master/README/EASE_script_location.png)
 

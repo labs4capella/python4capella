@@ -25,7 +25,9 @@
    <feature id="org.python.pydev.feature" version="0.0.0"/>
    <feature id="org.py4j.feature" version="0.0.0"/>
 
-   <feature id="org.eclipse.acceleo.aql.feature" version="0.0.0"/>
+   <feature id="org.eclipse.acceleo.aql.feature" version="0.0.0">
+      <category name="org.eclipse.python4capella.category.notincapella"/>
+   </feature>
 
    <bundle id="org.objectweb.asm" version="0.0.0"/>
    <!-- fix for old ANTLR packaging -->
