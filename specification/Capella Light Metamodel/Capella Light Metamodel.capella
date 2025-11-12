@@ -22056,6 +22056,11 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="37815fab-5d56-44d1-82a7-5a5c0c6ccbd6" name="transmissionProtocol"
                   abstractType="#fbe909ae-854c-48c6-b50e-d110732e26bd">
+                <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                    id="c951b775-4621-4d9c-b59f-00edc44fae80" name="Technical.Mapping">
+                  <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                      id="afb082ad-ce33-4c7f-9c64-8118c3911d84" name="name" value="sendProtocol"/>
+                </ownedPropertyValueGroups>
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="4ac90846-76ef-4b4c-8a55-0619524ee2ef" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
@@ -22064,6 +22069,11 @@
               <ownedFeatures xsi:type="org.polarsys.capella.core.data.information:Property"
                   id="09657d67-93b6-4be6-8fbb-ca8abcea458e" name="acquisitionProtocol"
                   abstractType="#fbe909ae-854c-48c6-b50e-d110732e26bd">
+                <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                    id="0bf7c81e-39a7-4054-b97d-861c73295579" name="Technical.Mapping">
+                  <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                      id="92c94196-c30b-4055-8c30-d246133c24ce" name="name" value="receiveProtocol"/>
+                </ownedPropertyValueGroups>
                 <ownedMinCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"
                     id="1fd4606b-bd56-4231-985f-35d870cea4c6" value="1"/>
                 <ownedMaxCard xsi:type="org.polarsys.capella.core.data.information.datavalue:LiteralNumericValue"

@@ -3589,7 +3589,7 @@ class ExchangeItemAllocation(CapellaElement):
         """
         Returns: String
         """
-        value = self.get_java_object().getTransmissionProtocol()
+        value = self.get_java_object().getSendProtocol()
         if value is None:
             return value
         else:
@@ -3601,12 +3601,12 @@ class ExchangeItemAllocation(CapellaElement):
         if value not in ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]:
             raise ValueError(value + ' is not a valid CommunicationLinkProtocol. Valid values are: ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]')
         enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "CommunicationLinkProtocol", value)
-        self.get_java_object().setTransmissionProtocol(enum_value)
+        self.get_java_object().setSendProtocol(enum_value)
     def get_acquisition_protocol(self) -> str:
         """
         Returns: String
         """
-        value = self.get_java_object().getAcquisitionProtocol()
+        value = self.get_java_object().getReceiveProtocol()
         if value is None:
             return value
         else:
@@ -3618,7 +3618,7 @@ class ExchangeItemAllocation(CapellaElement):
         if value not in ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]:
             raise ValueError(value + ' is not a valid CommunicationLinkProtocol. Valid values are: ["UNSET", "UNICAST", "MULTICAST", "BROADCAST", "SYNCHRONOUS", "ASYNCHRONOUS", "READ", "ACCEPT"]')
         enum_value = get_enum_literal("http://www.polarsys.org/capella/core/information/communication/" + capella_version(), "CommunicationLinkProtocol", value)
-        self.get_java_object().setAcquisitionProtocol(enum_value)
+        self.get_java_object().setReceiveProtocol(enum_value)
     def get_allocated_item(self) -> ExchangeItem:
         """
         Returns: ExchangeItem
