@@ -6,13 +6,13 @@
   <parent>
 	<groupId>org.eclipse.python4capella</groupId>
 	<artifactId>org.eclipse.python4capella.parent</artifactId>
-	<version>1.3.0-SNAPSHOT</version>
+	<version>1.4.0-SNAPSHOT</version>
     <relativePath>../../..</relativePath>
   </parent>
 
   <groupId>org.eclipse.python4capella</groupId>
   <artifactId>capella-1.4.2</artifactId>
-  <version>1.3.0-SNAPSHOT</version>
+  <version>1.4.0-SNAPSHOT</version>
   <packaging>eclipse-target-definition</packaging>
 
 </project>

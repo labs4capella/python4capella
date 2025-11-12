@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.python4capella.ecore.gen.python
 Bundle-SymbolicName: org.eclipse.python4capella.ecore.gen.python
-Bundle-Version: 1.3.0.qualifier
+Bundle-Version: 1.4.0.qualifier
 Export-Package: org.eclipse.python4capella.ecore.gen.python.files,
  org.eclipse.python4capella.ecore.gen.python.main,
  org.eclipse.python4capella.ecore.gen.python.requests,
