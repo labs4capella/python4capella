@@ -62,6 +62,7 @@ edgeStyleEClass = get_e_classifier("http://www.eclipse.org/sirius/diagram/1.1.0"
 # GMF Notation EClasses
 nodeEClass = get_e_classifier("http://www.eclipse.org/gmf/runtime/1.0.3/notation", "Node")
 edgeEClass = get_e_classifier("http://www.eclipse.org/gmf/runtime/1.0.3/notation", "Edge")
+relativeBendpointsEClass = get_e_classifier("http://www.eclipse.org/gmf/runtime/1.0.3/notation", "RelativeBendpoints")
 
 boundsEClass = get_e_classifier("http://www.eclipse.org/gmf/runtime/1.0.3/notation", "Bounds")
 
@@ -198,13 +199,16 @@ def customize_style(style, customizations: Dict[str, Any]):
 def get_bounds(diagramElement) -> List[int]:
     nodes = eInverseByType(diagramElement, nodeEClass)
     if len(nodes) > 0:
-        res = []
         bounds = nodes[0].getLayoutConstraint()
-        res.append(bounds.getX())
-        res.append(bounds.getY())
-        res.append(bounds.getWidth())
-        res.append(bounds.getHeight())
-        return res
+        if bounds:
+            res = []
+            res.append(bounds.getX())
+            res.append(bounds.getY())
+            res.append(bounds.getWidth())
+            res.append(bounds.getHeight())
+            return res
+        else:
+            return None
     else:
         raise ValueError("the given diagram element has no GMF node.")
     
@@ -215,6 +219,8 @@ def set_bounds(diagramElement, dimensions: List[int]):
     nodes = eInverseByType(diagramElement, nodeEClass)
     if len(nodes) > 0:
         bounds = nodes[0].getLayoutConstraint()
+        if not bounds:
+            bounds = nodes[0].createLayoutConstraint(boundsEClass)
         bounds.setX(dimensions[0])
         bounds.setY(dimensions[1])
         bounds.setWidth(dimensions[2])
@@ -238,3 +244,18 @@ def set_workspace_image(diagramElement, image_path):
     style = diagramElement.getOwnedStyle()
     helper = org.eclipse.sirius.diagram.ui.business.api.image.WorkspaceImageHelper()
     helper.updateStyle(style, image_path)
+
+
+# gets the absolute position of the given diagram element on the diagram [x, y]
+# you can get diagram elements using myDiagram.get_java_obect().getRepresentation().getRepresentationElements()
+def get_absolute_position(diagramElement):
+    bounds = get_bounds(diagramElement)
+    res = [bounds[0], bounds[1]]
+    container = diagramElement.eContainer()
+    while dNodeContainerEClass.isInstance(container):
+        container_bounds = get_bounds(container)
+        res[0] = res[0] + container_bounds[0]
+        res[1] = res[1] + container_bounds[1]
+        container = container.eContainer()
+    
+    return res
