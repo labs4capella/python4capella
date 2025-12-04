@@ -38,6 +38,8 @@ def createProgressMonitor(): # provided by org.eclipse.python4capella.modules.Si
     pass
 def getPackage(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
     pass
+def openRepresentation(descriptor): # provided by org.eclipse.python4capella.modules.SiriusModule
+    pass
 
 loadModule('/Capella/Sirius')
 include('Java_API.py')
@@ -134,3 +136,7 @@ class Sirius:
     @staticmethod
     def get_package(descriptor):
         return getPackage(descriptor)
+
+    @staticmethod
+    def open_representation(descriptor):
+        return openRepresentation(descriptor)

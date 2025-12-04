@@ -51,6 +51,7 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.polarsys.capella.core.data.capellacore.EnumerationPropertyLiteral;
@@ -91,6 +92,50 @@ public class SiriusModule {
 
 			});
 		}
+	}
+
+	/**
+	 * Opens a {@link DRepresentation}
+	 * 
+	 * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
+	 *
+	 */
+	private static class RepresentationOpener implements Runnable {
+
+		/**
+		 * The opended {@link IEditorPart}.
+		 */
+		private IEditorPart editor;
+
+		/**
+		 * The {@link Session}.
+		 */
+		private Session session;
+
+		/**
+		 * The {@link DRepresentation} to open.
+		 */
+		private DRepresentation representation;
+
+		public RepresentationOpener(Session session, DRepresentation representation) {
+			this.session = session;
+			this.representation = representation;
+		}
+
+		@Override
+		public void run() {
+			editor = DialectUIManager.INSTANCE.openEditor(session, representation, new NullProgressMonitor());
+		}
+
+		/**
+		 * Gets the opened {@link IEditorPart}.
+		 * 
+		 * @return the opened {@link IEditorPart}
+		 */
+		public IEditorPart getEditor() {
+			return editor;
+		}
+
 	}
 
 	private final CapellaModule capellaModule = new CapellaModule();
@@ -559,4 +604,16 @@ public class SiriusModule {
 	public String getPackage(DRepresentationDescriptor descriptor) {
 		return DiagramHelper.getService().getPackageName(descriptor);
 	}
+
+	@WrapToScript
+	public IEditorPart openRepresentation(DRepresentationDescriptor representation) {
+
+		final Session session = new EObjectQuery(representation).getSession();
+		RepresentationOpener opener = new RepresentationOpener(session, representation.getRepresentation());
+
+		Display.getDefault().syncExec(opener);
+
+		return opener.getEditor();
+	}
+
 }
