@@ -30,12 +30,6 @@
     <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
-    
-    <!-- EASE patches -->
-    <module>releng/patches/org.eclipse.ease.lang.python.feature_0.8.0.I202104099999</module>
-    <module>releng/patches/org.eclipse.ease.lang.python.py4j.feature_0.8.0.I202104099999</module>
-    <module>releng/patches/org.eclipse.ease.lang.python.py4j_0.8.0.I202104099999</module>
-    <module>releng/patches/org.eclipse.ease.lang.python_0.8.0.I202104099999</module>
   </modules>
 
   <properties>
@@ -66,36 +60,6 @@
         </configuration>
       </plugin>
       <!-- enable source bundle generation -->
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-source-plugin</artifactId>
-        <version>${tycho-version}</version>
-        <configuration>
-          <archive>
-            <addMavenDescriptor>false</addMavenDescriptor>
-          </archive>
-          <excludes>
-            <plugin id="org.eclipse.ease.lang.python.py4j"/>
-            <plugin id="org.eclipse.ease.lang.python"/>
-            <feature id="org.eclipse.ease.lang.python.feature"/>
-            <feature id="org.eclipse.ease.lang.python.py4j.feature"/>
-          </excludes>
-        </configuration>
-        <executions>
-          <execution>
-            <id>plugin-source</id>
-            <goals>
-              <goal>plugin-source</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>feature-source</id>
-            <goals>
-              <goal>feature-source</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>
@@ -232,7 +196,47 @@
         <module>plugins/org.eclipse.python4capella.ecore.gen.python</module>
         <module>plugins/org.eclipse.python4capella.ecore.gen.python.ide.ui</module>
         <module>features/org.eclipse.python4capella.ecore.gen.python.feature</module>
+
+        <!-- EASE patches -->
+        <module>releng/patches/org.eclipse.ease.lang.python.feature_0.8.0.I202104099999</module>
+        <module>releng/patches/org.eclipse.ease.lang.python.py4j.feature_0.8.0.I202104099999</module>
+        <module>releng/patches/org.eclipse.ease.lang.python.py4j_0.8.0.I202104099999</module>
+        <module>releng/patches/org.eclipse.ease.lang.python_0.8.0.I202104099999</module>
       </modules>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-source-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+              <archive>
+                <addMavenDescriptor>false</addMavenDescriptor>
+              </archive>
+              <excludes>
+                <plugin id="org.eclipse.ease.lang.python.py4j"/>
+                <plugin id="org.eclipse.ease.lang.python"/>
+                <feature id="org.eclipse.ease.lang.python.feature"/>
+                <feature id="org.eclipse.ease.lang.python.py4j.feature"/>
+              </excludes>
+            </configuration>
+            <executions>
+              <execution>
+                <id>plugin-source</id>
+                <goals>
+                  <goal>plugin-source</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>feature-source</id>
+                <goals>
+                  <goal>feature-source</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
     <profile>
       <id>tests</id>
