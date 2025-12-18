@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ease.lang.python.feature"
+      label="EASE Python Support (Incubation)"
+      version="0.8.0.I202104099999"
+      provider-name="Eclipse.org"
+      plugin="org.eclipse.ease">
+
+   <description>
+      EASE component used to handle python language.
+WARNING: This feature do not contain any Python Engine you will
+need to install it independently.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2013 Christian Pontesegger and Arthur Daussy
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v2.0
+which accompanies this distribution, and is available at
+https://www.eclipse.org/legal/epl-2.0/
+
+Contributors:
+    Christian Pontesegger - initial API and implementation
+    Arthur Daussy - initial API and implementation
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="org.eclipse.ease.lang.python"
+         download-size="62"
+         install-size="125"
+         version="0.8.0.I202104099999"/>
+
+</feature>

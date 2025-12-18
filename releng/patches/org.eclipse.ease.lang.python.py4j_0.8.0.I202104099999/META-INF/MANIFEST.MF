@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.5.0
+Build-Jdk-Spec: 15
+Bundle-ManifestVersion: 2
+Bundle-Name: EASE Py4J Interpreter (Incubation)
+Bundle-SymbolicName: org.eclipse.ease.lang.python.py4j;singleton:=true
+Bundle-Version: 0.8.0.I202104099999
+Bundle-Vendor: Eclipse.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui;bundle-version="[3.7.0,4.0.0)",org.eclips
+ e.core.runtime;bundle-version="[3.7.0,4.0.0)",org.eclipse.core.variable
+ s;bundle-version="[3.2.800,4.0.0)",org.eclipse.debug.ui;bundle-version=
+ "[3.7.102,4.0.0)",py4j-java;bundle-version="[0.10.4,0.11.0)",py4j-pytho
+ n;bundle-version="[0.10.4,0.11.0)",org.eclipse.ease,org.eclipse.ease.la
+ ng.python,org.eclipse.core.resources;bundle-version="[3.7.101,4.0.0)",o
+ rg.eclipse.debug.core;bundle-version="[3.7.1,4.0.0)",org.eclipse.help
+Export-Package: org.eclipse.ease.lang.python.py4j.internal;x-internal:=t
+ rue,org.eclipse.ease.lang.python.py4j.internal.ui;x-internal:=true
+Bundle-Activator: org.eclipse.ease.lang.python.py4j.internal.Activator
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Eclipse-BundleShape: dir
+Automatic-Module-Name: org.eclipse.ease.lang.python.py4j
+

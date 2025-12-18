@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            default-charset="ISO-8859-1"
+            file-extensions="py"
+            id="org.eclipse.ease.engine.python.content-type"
+            name="Python Source File"
+            priority="low">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.ease.scriptType">
+      <scriptType
+            codeFactory="org.eclipse.ease.lang.python.PythonCodeFactory"
+            codeParser="org.eclipse.ease.lang.python.PythonCodeParser"
+            defaultExtension="py"
+            headerParser="org.eclipse.ease.lang.python.PythonHeaderParser"
+            name="Python">
+         <binding
+               contentType="org.python.pydev.pythonfile">
+         </binding>
+         <binding
+               contentType="org.eclipse.ease.engine.python.content-type">
+         </binding>
+      </scriptType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.debugModelPresentations">
+      <debugModelPresentation
+            class="org.eclipse.ease.lang.python.debugger.model.PythonDebugModelPresentation"
+            id="org.eclipse.ease.debugModelPresentation.python">
+      </debugModelPresentation>
+   </extension>
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="variableViewActions"
+            targetID="org.eclipse.debug.ui.VariableView">
+         <menu
+               id="org.eclipse.ease.debug.ui.variableview.menu"
+               label="EASE">
+            <groupMarker
+                  name="ease">
+            </groupMarker>
+         </menu>
+         <action
+               class="org.eclipse.ease.lang.python.debugger.actions.FrameworkFilterAction"
+               id="org.eclipse.ease.ui.variableview.show.framework"
+               label="Hide Python Framework Variables"
+               menubarPath="org.eclipse.ease.debug.ui.variableview.menu/ease"
+               state="true"
+               style="toggle">
+         </action>
+         <action
+               class="org.eclipse.ease.lang.python.debugger.actions.MagicFilterAction"
+               id="org.eclipse.ease.ui.variableview.show.magic"
+               label="Hide Python Magic Variables"
+               menubarPath="org.eclipse.ease.debug.ui.variableview.menu/ease"
+               state="true"
+               style="toggle">
+         </action>
+      </viewContribution>
+   </extension>
+   <extension
+         id="org.eclipse.ease.lang.python.PythonCompletionProvider"
+         name="Python CompletionProvider"
+         point="org.eclipse.ease.ui.codeCompletionProvider">
+      <codeCompletionProvider
+            class="org.eclipse.ease.lang.python.ui.completion.PythonCompletionProviderWrapper"
+            scriptType="Python">
+      </codeCompletionProvider>
+   </extension>
+
+</plugin>

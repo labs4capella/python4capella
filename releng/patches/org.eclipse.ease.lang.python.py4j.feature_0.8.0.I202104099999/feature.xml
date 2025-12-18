@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ease.lang.python.py4j.feature"
+      label="EASE Py4J Support (Incubation)"
+      version="0.8.0.I202104099999"
+      provider-name="Eclipse.org"
+      plugin="org.eclipse.ease">
+
+   <description url="https://www.eclipse.org/ease">
+      Python (using Py4J) integration into EASE as Python Engine. Needs an external python interpreter for script execution.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2016 Kichwa Coders and others.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v2.0
+  which accompanies this distribution, and is available at
+  https://www.eclipse.org/legal/epl-2.0/
+
+  Contributors:
+      Jonah Graham - initial API and implementation
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.ease.lang.python.feature" version="0.8.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.ease.lang.python.py4j"
+         download-size="43"
+         install-size="90"
+         version="0.8.0.I202104099999"
+         unpack="false"/>
+
+</feature>

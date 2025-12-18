@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python via Py4J</title>
+</head>
+<body>
+	<h2>Python via Py4J</h2>
+	
+	<p><a href="https://www.py4j.org/">Py4J</a> is a library that provides a bridge between a Java runtime and an external python interpreter.
+	</p>
+	
+	<h3>Python Compatibility</h3>
+	
+	<p>As Py4J connects to an external python interpreter, you may freely choose your engine and therefore can select your compatibility level on your own. Typically you will run  Py4J on <a href="https://github.com/python/cpython">CPython</a>.
+	</p>
+	
+	<h3>Special language features</h3>
+	
+	<h4>Java / Python interaction</h4>
+	
+	<p>As your python interpreter does not run as part of the Java runtime, both active processes need to serialize any data they share and communicate with each other. This causes a quite large overhead which you may see whenever you switch between the python and the Java world.
+	The general advice is to keep calls between the languages to a minimum to keep the performance penalty low.
+	</p>
+	
+	<p>Memory management is also quite tricky as both processes cannot inform each other in all cases when shared objects are no longer needed. This will prevent the Java runtime to correctly garbage collect such objects.
+	The Java memory will only be cleaned up correctly when the Py4J script engine gets terminated.</p>
+	
+	<p>Py4J is a good choice when you need to use libraries not supported by <a href="jython.html">Jython</a> or you need to execute Python 3.x code. It is not recommended to be used for <a href="../conceptes/user_scripts.html">UI extensions</a> or similar tasks with heavy interaction with your Eclipse application.</p>
+	
+</body>
+</html>

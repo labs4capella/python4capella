@@ -30,6 +30,12 @@
     <module>doc/org.eclipse.python4capella.doc</module>
 
     <module>features/org.eclipse.python4capella.feature</module>
+    
+    <!-- EASE patches -->
+    <module>releng/patches/org.eclipse.ease.lang.python.feature_0.8.0.I202104099999</module>
+    <module>releng/patches/org.eclipse.ease.lang.python.py4j.feature_0.8.0.I202104099999</module>
+    <module>releng/patches/org.eclipse.ease.lang.python.py4j_0.8.0.I202104099999</module>
+    <module>releng/patches/org.eclipse.ease.lang.python_0.8.0.I202104099999</module>
   </modules>
 
   <properties>
@@ -68,6 +74,12 @@
           <archive>
             <addMavenDescriptor>false</addMavenDescriptor>
           </archive>
+          <excludes>
+            <plugin id="org.eclipse.ease.lang.python.py4j"/>
+            <plugin id="org.eclipse.ease.lang.python"/>
+            <feature id="org.eclipse.ease.lang.python.feature"/>
+            <feature id="org.eclipse.ease.lang.python.py4j.feature"/>
+          </excludes>
         </configuration>
         <executions>
           <execution>
@@ -76,23 +88,10 @@
               <goal>plugin-source</goal>
             </goals>
           </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>tycho-source-feature-plugin</artifactId>
-        <version>${tycho-extras-version}</version>
-        <configuration>
-          <archive>
-            <addMavenDescriptor>false</addMavenDescriptor>
-          </archive>
-        </configuration>
-        <executions>
           <execution>
-            <id>source-feature</id>
-            <phase>package</phase>
+            <id>feature-source</id>
             <goals>
-              <goal>source-feature</goal>
+              <goal>feature-source</goal>
             </goals>
           </execution>
         </executions>

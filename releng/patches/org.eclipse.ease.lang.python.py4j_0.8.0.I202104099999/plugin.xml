@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ease.language">
+      <engine
+            class="org.eclipse.ease.lang.python.py4j.internal.Py4jScriptEngine"
+            id="org.eclipse.ease.lang.python.py4j.engine"
+            name="Python (Py4J)"
+            priority="50">
+         <binding
+               scriptType="Python">
+         </binding>
+      </engine>
+      <launchExtension
+            class="org.eclipse.ease.lang.python.py4j.internal.Py4JBootstrap"
+            engineID="org.eclipse.ease.lang.python.py4j.engine">
+      </launchExtension>
+      <launchExtension
+            class="org.eclipse.ease.lang.python.Pep302ModuleImporter"
+            engineID="org.eclipse.ease.lang.python.py4j.engine">
+      </launchExtension>
+      <engine
+            class="org.eclipse.ease.lang.python.py4j.internal.Py4jDebuggerEngine"
+            id="org.eclipse.ease.lang.python.py4j.debugger.engine"
+            name="Python (Py4J Debugger)"
+            priority="1">
+         <binding
+               scriptType="Python">
+         </binding>
+      </engine>
+      <launchExtension
+            class="org.eclipse.ease.lang.python.py4j.internal.Py4JBootstrap"
+            engineID="org.eclipse.ease.lang.python.py4j.debugger.engine">
+      </launchExtension>
+      <launchExtension
+            class="org.eclipse.ease.lang.python.Pep302ModuleImporter"
+            engineID="org.eclipse.ease.lang.python.py4j.debugger.engine">
+      </launchExtension>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.ease.preferences.root"
+            class="org.eclipse.ease.lang.python.py4j.internal.ui.Py4JPreferencePage"
+            id="org.eclipse.ease.lang.python.py4j.ui.preferences.Py4JPreferencePage"
+            name="Python Scripting (using Py4J)">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.eclipse.ease.lang.python.py4j.internal.ui.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="help/engines.xml"
+            primary="false">
+      </toc>
+   </extension>
+
+</plugin>

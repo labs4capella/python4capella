@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.5.0
+Build-Jdk-Spec: 15
+Bundle-ManifestVersion: 2
+Bundle-Name: EASE Python Language (Incubation)
+Bundle-SymbolicName: org.eclipse.ease.lang.python;singleton:=true
+Bundle-Version: 0.8.0.I202104099999
+Bundle-Vendor: Eclipse.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ease,org.eclipse.ease.ui,org.eclipse.ui;bund
+ le-version="[3.7.0,4.0.0)",org.eclipse.text;bundle-version="[3.5.300,4.
+ 0.0)",org.eclipse.debug.core;bundle-version="[3.7.1,4.0.0)",org.eclipse
+ .debug.ui;bundle-version="[3.7.102,4.0.0)",org.eclipse.ui.editors;bundl
+ e-version="[3.7.0,4.0.0)",org.eclipse.ui.ide;bundle-version="[3.7.0,4.0
+ .0)"
+Bundle-Activator: org.eclipse.ease.lang.python.Activator
+Bundle-ActivationPolicy: lazy
+Eclipse-BuddyPolicy: global
+Export-Package: org.eclipse.ease.lang.python,org.eclipse.ease.lang.pytho
+ n.debug,org.eclipse.ease.lang.python.debugger,org.eclipse.ease.lang.pyt
+ hon.debugger.actions,org.eclipse.ease.lang.python.debugger.model,org.ec
+ lipse.ease.lang.python.preferences,org.eclipse.ease.lang.python.ui.comp
+ letion
+Bundle-ClassPath: .
+Eclipse-BundleShape: dir
+Automatic-Module-Name: org.eclipse.ease.lang.python
+
