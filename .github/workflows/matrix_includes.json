@@ -1,7 +1,7 @@
 [
   {
     "java":"17",
-    "profile":"platform-capella-7.0.0,tests,commandline,updatesite",
+    "profile":"platform-capella-7.0.1,tests,commandline,updatesite",
     "tycho":"2.7.5"
   },
   {
