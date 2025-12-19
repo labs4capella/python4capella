@@ -724,3 +724,14 @@ class capella_manual_tests(unittest.TestCase):
         self.assertEqual(Interaction, type(oa.get_incoming()[0]))
         for elem in oa.get_incoming():
             self.assertEqual(Interaction, type(elem))
+
+    def test_LogicalComponentPkg_owned_logical_components(self):
+        """
+        This test need the IFE project to be in the workspace to run
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        se = model.get_system_engineering()
+        for lc in se.get_logical_architecture().get_logical_component_pkg().get_owned_logical_components():
+            #: :type lc: LogicalComponent
+            lc.get_name()
