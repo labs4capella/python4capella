@@ -6,7 +6,7 @@
 #    - create a new "EASE Script" configuration
 #    - define the name of the configuration: "Import_physical_components_from_xlsx.py" (for instance)
 #    - define the Script Source path: "workspace://Python4Capella/sample_scripts/Import_physical_components_from_xlsx.py"
-#    - define the path to the aird file as first argument and the xlsx file as second argument in "Script arguments" area: "/In-Flight Entertainment System/In-Flight Entertainment System.aird" "/Python4Capella/resources/physical_components.xlsx" (for instance)
+#    - define the path to the aird file as first argument and the xlsx file as second argument in "Script arguments" area: "/In-Flight Entertainment System/In-Flight Entertainment System.aird" "/Python4CapellaSampleScripts/resources/physical_components.xlsx" (for instance)
 
 # include needed for the Capella modeller API
 include('workspace://Python4Capella/simplified_api/capella.py')
@@ -25,7 +25,7 @@ from openpyxl import *
 if len(argv) != 2:
     # use IFE default values
     aird_path = "/In-Flight Entertainment System/In-Flight Entertainment System.aird"
-    xlsx_path = "/Python4Capella/resources/physical_components.xlsx"
+    xlsx_path = "/Python4CapellaSampleScripts/resources/physical_components.xlsx"
 else:
     # Load the Capella model from the first argument of the script
     aird_path = argv[0]
