@@ -386,9 +386,10 @@ def _pyease_watchdog(engine):
 
     # Allow some time for the shutdown to be clean, but
     # fallback to a hard exit if that fails
-    timer = _pyease_threading.Timer(10.0, _pyease_os._exit, (1,))
-    timer.daemon = True
-    timer.start()
+    # see https://github.com/labs4capella/python4capella/issues/112
+    #timer = _pyease_threading.Timer(10.0, _pyease_os._exit, (1,))
+    #timer.daemon = True
+    #timer.start()
 
 
 def _pyease_main(argv):
@@ -410,9 +411,10 @@ def _pyease_main(argv):
     gateway.entry_point.pythonStartupComplete(python_port, engine)
 
     # start a watchdog on stdin to make sure we terminate
-    thread = _pyease_threading.Thread(target=_pyease_watchdog, args=(engine,))
-    thread.daemon = True
-    thread.start()
+    # see https://github.com/labs4capella/python4capella/issues/112
+    #thread = _pyease_threading.Thread(target=_pyease_watchdog, args=(engine,))
+    #thread.daemon = True
+    #thread.start()
 
     # now wait until we have a request for shutdown
     engine.wait_on_shutdown()
