@@ -3,7 +3,7 @@
 # description          : List logical functions in console
 # popup                : enableFor(org.polarsys.capella.core.data.capellacore.CapellaElement)
 #
-# This script loads the Capella model passed as first argument and list its root LogicalFunction.
+# This script use the selected element and list root LogicalFunction from its model.
 # To run it:
 #  - add this script location in the scripting preferences of not already done during the installation
 #  - select a CapellaElement and right click on it
