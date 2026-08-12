@@ -84,7 +84,7 @@
         [let documentation = cls.getDocumentation()]
           [if (documentation <> null)]
             [documentation/]
-          [/if] 
+          [/if]
         [/let]
         Java class: [cls.getInstanceClassName()/]
         """
