@@ -1,9 +1,8 @@
 target "Capella 6.0.0 Target Platform"
 
+environment JavaSE-17
 with requirements
 
-include "common.tpd"
 
-location PyDev "https://www.pydev.org/update_sites/9.3.0" {
-	org.python.pydev.feature.feature.group lazy
-}
+include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/master/releng/org.obeonetwork.m2doc.targetplatforms/capella-6.0.0/m2doc-capella-6.0.0.tpd"
+include "../common/common.tpd"

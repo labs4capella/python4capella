@@ -1,5 +1,5 @@
 /**
- *   Copyright (c) 2022 THALES GLOBAL SERVICES
+ *   Copyright (c) 2022, 2026 THALES GLOBAL SERVICES
  *  This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License 2.0
  *  which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 import com.python.pydev.analysis.AnalysisPreferenceInitializer;
 import com.python.pydev.analysis.AnalysisPreferences;
+import com.python.pydev.analysis.PyAnalysisScopedPreferences;
 
 /**
  * Checks Pydev analysis preferences for EASE keywords.
@@ -73,7 +74,7 @@ public class Startup implements IStartup {
 		if (!isAlreadyVerified()) {
 			final AnalysisPreferences preferences = new AnalysisPreferences(null);
 			final ScopedPreferenceStore analysisPreferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE,
-					AnalysisPreferenceInitializer.DEFAULT_SCOPE);
+					PyAnalysisScopedPreferences.ANALYSIS_SCOPE);
 			final Set<String> keywords = preferences.getTokensAlwaysInGlobals();
 
 			if (keywords != null) {

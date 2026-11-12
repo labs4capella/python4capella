@@ -45,6 +45,10 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v7.0.1
 
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v5.1
+      with:
+        maven-version: 3.9.11
 
     - name: Check if release is needed
       id: release_check
@@ -55,7 +59,7 @@ jobs:
         echo "IS_RELEASE=${IS_RELEASE}" >> $GITHUB_OUTPUT
 
     - name: Set up JDK ${{ matrix.java }}
-      uses: actions/setup-java@v5.7.0
+      uses: actions/setup-java@v6.2.0
       with:
         distribution: 'temurin'
         java-version: ${{ matrix.java }}
@@ -68,7 +72,7 @@ jobs:
           ${{ runner.os }}-maven-${{ matrix.tycho }}-${{ hashFiles('**/pom.xml', '**/*.product') }}
 
     - name: Install metacity and xvfb
-      uses: awalsh128/cache-apt-pkgs-action@v1.4.3
+      uses: awalsh128/cache-apt-pkgs-action@v1.6.3
       with:
         packages: xvfb metacity
         version: cache-apt-pkgs-${{ matrix.profile }}
@@ -116,35 +120,5 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }} 
         asset_path: ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
         asset_name: org.eclipse.python4capella.update.zip
-        asset_content_type: application/zip
-
-# For PyDev 8.2.0
-
-    - name: Build with Maven for PyDev 8.2.0 (${{ matrix.profile }})
-      id: maven_build_PyDev8_2_0
-      if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      run: |
-        mvn clean verify -fae -P${{ matrix.profile }}-PyDev8.2.0 "-Dtycho=${{ matrix.tycho }}" -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
-
-    - name: Prepare deploy local directory for PyDev 8.2.0
-      id: prepare_deploy_PyDev8_2_0
-      if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      run: |
-        export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)/nightly"
-        if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
-        chmod a+x ./scripts/prepare-deploy-local-dir.sh
-        ./scripts/prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
-        echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
-
-    - name: Upload Release Asset for PyDev 8.2.0
-      id: upload_release_asset_PyDev8_2_0
-      if: ${{ steps.release_check.outputs.IS_RELEASE }}
-      uses: actions/upload-release-asset@v1.0.2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} 
-        asset_path: ${{ steps.prepare_deploy_PyDev8_2_0.outputs.TAG_OR_BRANCH }}/repository/org.eclipse.python4capella.update.zip
-        asset_name: org.eclipse.python4capella.update-Capella-1.4.zip
         asset_content_type: application/zip
 

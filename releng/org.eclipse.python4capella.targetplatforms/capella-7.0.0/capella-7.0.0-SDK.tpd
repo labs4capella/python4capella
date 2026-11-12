@@ -1,5 +1,6 @@
 target "Capella 7.0.0 Target Platform SDK"
 
+environment JavaSE-17
 with source requirements
 
 include "capella-7.0.0.tpd"

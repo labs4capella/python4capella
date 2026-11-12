@@ -1,10 +1,13 @@
 target "Capella 7.0.0 Target Platform"
 
+environment JavaSE-17
 with requirements
 
-include "common.tpd"
+include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/master/releng/org.obeonetwork.m2doc.targetplatforms/capella-7.0.0/m2doc-capella-7.0.0.tpd"
+include "../common/common.tpd"
 
-
-location PyDev "https://www.pydev.org/update_sites/9.3.0" {
-	org.python.pydev.feature.feature.group lazy
+location Acceleo "https://download.eclipse.org/acceleo/updates/releases/4.2/R202610061311/" {
+	org.eclipse.acceleo.aql.feature.feature.group lazy
+	org.eclipse.acceleo.aql.feature.source.feature.group lazy
+	org.eclipse.acceleo.query.source lazy
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 6.1.0 Target Platform SDK" sequenceNumber="1762417727">
+<target name="Capella 6.1.0 Target Platform SDK" sequenceNumber="1794477482">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -197,7 +197,7 @@
       <unit id="org.eclipse.ease.lang.jvm.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.modules.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.ease.lang.unittest.feature.feature.group" version="0.0.0"/>
-      <repository id="EASE" location="https://download.eclipse.org/ease/release/0.8.0/"/>
+      <repository id="EASE" location="https://download.eclipse.org/ease/integration/nightly/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.ease.engine.jython.feature.feature.group" version="0.0.0"/>
@@ -209,7 +209,8 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.python.pydev.feature.feature.group" version="0.0.0"/>
-      <repository id="PyDev" location="https://www.pydev.org/update_sites/9.3.0"/>
+      <repository id="PyDev" location="https://www.pydev.org/update_sites/13.1.0"/>
     </location>
   </locations>
+  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>
 </target>

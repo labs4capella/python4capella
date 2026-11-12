@@ -5,12 +5,12 @@ Bundle-SymbolicName: org.eclipse.python4capella.pydev;singleton:=true
 Bundle-Version: 1.4.1.qualifier
 Bundle-Vendor: Eclipse Modeling Project
 Automatic-Module-Name: org.eclipse.python4capella.pydev
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.python4capella.pydev
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.common,
  org.eclipse.ui,
- org.python.pydev.shared_core;bundle-version="8.2.0",
- com.python.pydev.analysis;bundle-version="8.2.0"
+ org.python.pydev.shared_core;bundle-version="10.1.0",
+ com.python.pydev.analysis;bundle-version="10.1.0"
 Bundle-Activator: org.eclipse.python4capella.pydev.Activator$Implementation
 Bundle-ActivationPolicy: lazy

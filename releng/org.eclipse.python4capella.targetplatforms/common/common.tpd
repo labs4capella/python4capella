@@ -2,9 +2,7 @@ target "Common Target Platform common"
 
 with requirements
 
-include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/master/releng/org.obeonetwork.m2doc.targetplatforms/capella-7.0.1/m2doc-capella-7.0.1.tpd"
-
-location EASE "https://download.eclipse.org/ease/release/0.8.0/" {
+location EASE "https://download.eclipse.org/ease/integration/nightly/" {
 	org.eclipse.ease.lang.scriptarchive.feature.feature.group lazy
 	org.eclipse.ease.feature.feature.group lazy
 	org.eclipse.ease.ui.feature.feature.group lazy
@@ -25,12 +23,6 @@ location py4j "http://eclipse.py4j.org/" {
 	org.py4j.feature.feature.group lazy
 }
 
-location Acceleo "https://download.eclipse.org/acceleo/updates/releases/4.2/R202510230846/" {
-	org.eclipse.acceleo.aql.feature.feature.group lazy
-	org.eclipse.acceleo.aql.feature.source.feature.group lazy
-	org.eclipse.acceleo.query.source [8.1.0,8.1.0]
-}
-
-location ObeoNetworkBits "https://obeo-networkaggregation-releases.s3.eu-west-1.amazonaws.com/bits/master/thirdparties" {
-	org.antlr.runtime lazy
+location PyDev "https://www.pydev.org/update_sites/13.1.0" {
+	org.python.pydev.feature.feature.group lazy
 }

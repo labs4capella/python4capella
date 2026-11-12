@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-SymbolicName: org.eclipse.python4capella.doc;singleton:=true
 Bundle-Version: 1.4.1.qualifier
 Bundle-Vendor: %providerName

@@ -14,5 +14,5 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.antlr.antlr4-runtime;bundle-version="[4.13.2,4.13.2]",
  org.eclipse.emf.common
 Automatic-Module-Name: org.eclipse.python4capella.ecore.gen.python
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ClassPath: .
