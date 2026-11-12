@@ -29,15 +29,15 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>tycho-eclipserun-plugin</artifactId>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-eclipse-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
         <repositories>
             <repository>
-              <id>2021-06</id>
+              <id>2026-09</id>
               <layout>p2</layout>
-              <url>http://download.eclipse.org/releases/2021-06</url>
+              <url>http://download.eclipse.org/releases/2026-09</url>
             </repository>
           </repositories>
           <jvmArgs>

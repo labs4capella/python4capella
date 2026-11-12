@@ -1,0 +1,17 @@
+target "Capella 2026.9.0 Target Platform"
+
+environment JavaSE-21
+with requirements
+
+include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/master/releng/org.obeonetwork.m2doc.targetplatforms/capella-2026.9.0/m2doc-capella-2026.9.0.tpd"
+include "../common/common.tpd"
+
+location Acceleo_4.2.3_AQL_8.1.3 "https://download.eclipse.org/acceleo/updates/releases/4.2/R202610061311/" {
+	org.eclipse.acceleo.aql.feature.feature.group lazy
+	org.eclipse.acceleo.aql.feature.source.feature.group lazy
+	org.eclipse.acceleo.query.source lazy
+}
+
+location ObeoNetworkBits-0.14.0 "https://obeo-networkaggregation-releases.s3.eu-west-1.amazonaws.com/bits/0.14.0/thirdparties" {
+	org.antlr.runtime lazy
+}

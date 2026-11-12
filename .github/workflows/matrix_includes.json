@@ -1,22 +1,27 @@
 [
   {
-    "java":"17",
+    "java":"21",
+    "profile":"platform-capella-2026.9.0,tests,commandline",
+    "tycho":"5.0.4"
+  },
+  {
+    "java":"21",
     "profile":"platform-capella-7.1.0,tests,commandline,updatesite",
-    "tycho":"4.0.13"
+    "tycho":"5.0.4"
   },
   {
-    "java":"17",
+    "java":"21",
     "profile":"platform-capella-7.0.1,tests,commandline",
-    "tycho":"4.0.13"
+    "tycho":"5.0.4"
   },
   {
-    "java":"17",
+    "java":"21",
     "profile":"platform-capella-6.1.0,tests,commandline",
-    "tycho":"4.0.13"
+    "tycho":"5.0.4"
   },
   {
-    "java":"17",
+    "java":"21",
     "profile":"platform-capella-6.0.0,tests,commandline",
-    "tycho":"4.0.13"
+    "tycho":"5.0.4"
   }
 ]

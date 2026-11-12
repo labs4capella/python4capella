@@ -11,6 +11,7 @@
 
   <modules>
     <!-- Capella -->
+    <module>releng/org.eclipse.python4capella.targetplatforms/capella-2026.9.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-7.1.0</module>
     <module>releng/org.eclipse.python4capella.targetplatforms/capella-7.0.1</module>
     <!--module>releng/org.eclipse.python4capella.targetplatforms/capella-7.0.0</module-->
@@ -256,6 +257,33 @@
     </profile>
 
     <!-- Capella -->
+    <profile>
+      <id>platform-capella-2026.9.0</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <property>
+          <name>platform-version-name</name>
+          <value>capella-2026.9.0</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <configuration>
+              <target>
+                <artifact>
+                  <groupId>org.eclipse.python4capella</groupId>
+                  <artifactId>capella-2026.9.0</artifactId>
+                  <version>1.4.1-SNAPSHOT</version>
+                </artifact>
+              </target>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>platform-capella-7.1.0</id>
       <activation>

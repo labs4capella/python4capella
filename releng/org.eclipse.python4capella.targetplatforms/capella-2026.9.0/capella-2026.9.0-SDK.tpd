@@ -1,0 +1,6 @@
+target "Capella 2026.9.0 Target Platform SDK"
+
+environment JavaSE-21
+with source requirements
+
+include "capella-2026.9.0.tpd"
