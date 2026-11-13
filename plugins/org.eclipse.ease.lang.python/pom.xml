@@ -17,6 +17,7 @@
   <!--
     Replacement bundle for org.eclipse.python4capella.ease.python.patch.
     Sources: eclipse-ease/ease, commit 2642d78bc55584bda2824136881af9c4fae23a81.
+    pysrc/pep302.py uses types.ModuleType instead of imp.new_module.
     PyDevPathImporter supports both old and new PyDev path APIs.
     Keep the bundle symbolic name so the feature patch can replace the
     original EASE bundle.

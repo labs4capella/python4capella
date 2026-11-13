@@ -14,7 +14,7 @@ import sys as _pyease_sys
 import warnings as _pyease_warnings
 with _pyease_warnings.catch_warnings():
     _pyease_warnings.simplefilter("ignore")
-    import imp as _pyease_imp
+    import types as _pyease_types
  
 class _pyease_EASEImporter(object):
     """EASE module loader.
@@ -24,7 +24,33 @@ class _pyease_EASEImporter(object):
     .. _PEP 302:
         https://www.python.org/dev/peps/pep-0302/#specification-part-1-the-importer-protocol
     """
-            
+    def find_spec(self, fullname, path=None, target=None):
+        """Find EASE modules using the import protocol required by Python 3.12."""
+        if self.find_module(fullname, path) is None:
+            return None
+
+        is_package = self.is_module_path(fullname)
+        if not is_package and not self.is_module(fullname):
+            return None
+
+        from importlib.util import spec_from_loader
+        return spec_from_loader(fullname, self, is_package=is_package)
+
+    def create_module(self, spec):
+        """Let Python create and initialize the module from its spec."""
+        return None
+
+    def exec_module(self, module):
+        """Populate a module that Python has already registered in sys.modules."""
+        fullname = module.__spec__.name
+        module.__file__ = "<%s>" % self.__class__.__name__
+        if self.is_module_path(fullname):
+            return
+        if self.is_module(fullname):
+            exec(self.get_code(fullname), module.__dict__)
+            return
+        raise ImportError("No EASE module named '" + fullname + "'")
+
     def find_module(self, fullname, path=None):
         """PEP 302 import finder.
 
@@ -62,7 +88,7 @@ class _pyease_EASEImporter(object):
         """
         
         if (self.is_module_path(fullname)):
-            mod = _pyease_sys.modules.setdefault(fullname, _pyease_imp.new_module(fullname))
+            mod = _pyease_sys.modules.setdefault(fullname, _pyease_types.ModuleType(fullname))
             mod.__file__ = "<%s>" % self.__class__.__name__
             mod.__loader__ = self
             mod.__path__ = []
@@ -71,7 +97,7 @@ class _pyease_EASEImporter(object):
        
         elif (self.is_module(fullname)):
             code = self.get_code(fullname)
-            mod = _pyease_sys.modules.setdefault(fullname, _pyease_imp.new_module(fullname))
+            mod = _pyease_sys.modules.setdefault(fullname, _pyease_types.ModuleType(fullname))
             mod.__file__ = "<%s>" % self.__class__.__name__
             mod.__loader__ = self
             mod.__package__ = fullname.rpartition('.')[0]

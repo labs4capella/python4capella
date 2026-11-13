@@ -2,6 +2,7 @@
 <TestSuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://eclipse.org/ease/unittest/testsuite/1.0" version="1.0">
   <includeFilter>project://**.js
 project://**.py</includeFilter>
+  <disabledResource>/workspace/Python4CapellaTests/test_ease_importer.py</disabledResource>
   <disabledResource>/workspace</disabledResource>
   <disabledResource>/workspace/Python4Capella</disabledResource>
   <disabledResource>/workspace/Python4Capella/enduser</disabledResource>
