@@ -46,5 +46,5 @@ Export-Package: org.eclipse.ease.ui.scripts,
  org.eclipse.ease.ui.scripts.preferences,
  org.eclipse.ease.ui.scripts.repository,
  org.eclipse.ease.ui.scripts.ui
-Import-Package: org.osgi.service.event;version="[1.4.1,2.0.0)";resolution:=optional
+Import-Package: org.osgi.service.event;version="[1.4.0,2.0.0)";resolution:=optional
 Automatic-Module-Name: org.eclipse.ease.ui.scripts
