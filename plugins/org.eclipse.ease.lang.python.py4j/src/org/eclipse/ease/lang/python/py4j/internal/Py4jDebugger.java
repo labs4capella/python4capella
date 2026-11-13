@@ -24,7 +24,6 @@ import org.eclipse.ease.Script;
 import org.eclipse.ease.ScriptEngineCancellationException;
 import org.eclipse.ease.debugging.ScriptStackTrace;
 import org.eclipse.ease.debugging.events.debugger.IDebuggerEvent;
-import org.eclipse.ease.lang.python.debugger.IPyFrame;
 import org.eclipse.ease.lang.python.debugger.IPythonScriptRegistry;
 import org.eclipse.ease.lang.python.debugger.PythonBreakpoint;
 import org.eclipse.ease.lang.python.debugger.PythonDebugger;
@@ -168,23 +167,12 @@ public class Py4jDebugger extends PythonDebugger {
 
 	@Override
 	public ScriptStackTrace getStacktrace() {
-		return toStackTrace(fPythonDebuggerStub.getCurrentFrame());
+		// Match the tracked frames saved by traceDispatch when comparing stepping depths.
+		return getStacktrace(fPythonDebuggerStub.getCurrentFrame());
 	}
 
 	@Override
 	public ScriptStackTrace getExceptionStacktrace() {
-		return toStackTrace(fPythonDebuggerStub.getExceptionFrame());
-	}
-
-	private ScriptStackTrace toStackTrace(IPyFrame frame) {
-		final ScriptStackTrace trace = new ScriptStackTrace();
-
-		while (frame != null) {
-			trace.add(new PythonDebugFrame(frame));
-
-			frame = frame.getParent();
-		}
-
-		return trace;
+		return getStacktrace(fPythonDebuggerStub.getExceptionFrame());
 	}
 }
