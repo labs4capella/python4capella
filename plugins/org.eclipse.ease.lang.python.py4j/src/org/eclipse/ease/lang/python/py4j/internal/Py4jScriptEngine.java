@@ -220,6 +220,11 @@ public class Py4jScriptEngine extends AbstractReplScriptEngine {
 
 	@Override
 	protected Object execute(final Script script, final String fileName, final boolean uiThread) throws Throwable {
+		// Debugger setup calls internalExecute before buffered variables reach Python.
+		// Synchronize arguments here, for both normal and debug script execution.
+		if (internalHasVariable("argv"))
+			fPythonSideEngine.executeScript("import sys\nsys.argv = argv\n", "<dynamic>");
+
 		if (uiThread) {
 			// run in UI thread
 			final RunnableWithResult<Object> runnable = new RunnableWithResult<>() {
@@ -239,9 +244,6 @@ public class Py4jScriptEngine extends AbstractReplScriptEngine {
 	}
 
 	protected Object internalExecute(final Script script, final String fileName) throws Throwable {
-
-		if (hasVariable("argv"))
-			fPythonSideEngine.executeScript("import sys\nsys.argv = argv\n", "<dynamic>");
 
 		IInteractiveReturn interactiveReturn;
 		if (script.isShellMode()) {

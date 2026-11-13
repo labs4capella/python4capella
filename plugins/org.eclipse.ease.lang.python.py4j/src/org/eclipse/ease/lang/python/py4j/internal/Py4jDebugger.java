@@ -14,7 +14,6 @@
 package org.eclipse.ease.lang.python.py4j.internal;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
@@ -56,13 +55,14 @@ public class Py4jDebugger extends PythonDebugger {
 	}
 
 	/**
-	 * Returns list of all breakpoints in given file.
+	 * Returns an array of all breakpoints in the given file.
+	 * Arrays avoid exposing JDK collection iterators through Py4J on Java 17 and later.
 	 *
 	 * @param filename
 	 *            Filename to get all breakpoints for.
-	 * @return List of breakpoints in given file.
+	 * @return Array of breakpoints in the given file.
 	 */
-	public List<PythonBreakpoint> getBreakpoints(String filename) {
+	public PythonBreakpoint[] getBreakpoints(String filename) {
 		final IPythonScriptRegistry registry = getScriptRegistry();
 		if (registry != null) {
 
@@ -77,12 +77,12 @@ public class Py4jDebugger extends PythonDebugger {
 						pythonBreakpoints.add(new PythonBreakpoint(filename, lineNumber));
 					}
 
-					return pythonBreakpoints;
+					return pythonBreakpoints.toArray(new PythonBreakpoint[0]);
 				}
 			}
 		}
 
-		return Collections.emptyList();
+		return new PythonBreakpoint[0];
 	}
 
 	@Override
