@@ -22,7 +22,7 @@ This will open the launch configuration for your script and you can edit it to a
 
 !Debug/Debug_Configurations.png(Debug Configurations with parameter)!
 
-If you have errors launching your script in debug mode you can try to change the execution engine to "Python (Jython Debugger)".
+Select "Python (Py4J Debugger)" as the execution engine for debugging, with a Python 3 interpreter configured in the Py4J scripting preferences.
 
 When the debugger stops on the breakpoint, you will be prompted to change the perspective to the debug perspective.
 
