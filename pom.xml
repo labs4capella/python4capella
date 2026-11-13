@@ -183,6 +183,10 @@
       <modules>
         <module>plugins/org.eclipse.ease.lang.python</module>
         <module>features/org.eclipse.python4capella.ease.python.patch</module>
+        <module>plugins/org.eclipse.ease.ui.scripts</module>
+        <module>features/org.eclipse.python4capella.ease.ui.patch</module>
+        <module>plugins/org.eclipse.ease.modules.platform</module>
+        <module>features/org.eclipse.python4capella.ease.modules.patch</module>
         <module>releng/org.eclipse.python4capella.update</module>
 
         <module>plugins/org.eclipse.python4capella.commandline</module>
@@ -205,6 +209,10 @@
               <excludes>
                 <plugin id="org.eclipse.ease.lang.python.py4j"/>
                 <plugin id="org.eclipse.ease.lang.python"/>
+                <plugin id="org.eclipse.ease.ui.scripts"/>
+                <feature id="org.eclipse.python4capella.ease.ui.patch"/>
+                <plugin id="org.eclipse.ease.modules.platform"/>
+                <feature id="org.eclipse.python4capella.ease.modules.patch"/>
                 <feature id="org.eclipse.python4capella.ease.python.patch"/>
                 <feature id="org.eclipse.ease.lang.python.feature"/>
                 <feature id="org.eclipse.ease.lang.python.py4j.feature"/>

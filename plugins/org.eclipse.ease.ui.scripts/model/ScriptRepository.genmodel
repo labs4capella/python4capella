@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2013 Christian Pontesegger and others.&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v2.0&#xA;which accompanies this distribution, and is available at&#xA;https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA;Contributors:&#xA;    Christian Pontesegger - initial API and implementation"
+    modelDirectory="/org.eclipse.ease.ui.scripts/src-gen" modelPluginID="org.eclipse.ease.ui.scripts"
+    modelName="ScriptRepository" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    interfaceNamePattern="I{0}" operationReflection="true" importOrganizing="true">
+  <foreignModel>ScriptRepository.ecore</foreignModel>
+  <genPackages prefix="Repository" basePackage="org.eclipse.ease.ui.scripts" resource="XML"
+      disposableProviderFactory="true" ecorePackage="ScriptRepository.ecore#/">
+    <genDataTypes ecoreDataType="ScriptRepository.ecore#//Path"/>
+    <genDataTypes ecoreDataType="ScriptRepository.ecore#//InputStream"/>
+    <genClasses ecoreClass="ScriptRepository.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScriptRepository.ecore#//Script/timestamp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ScriptRepository.ecore#//Script/entry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScriptRepository.ecore#//Script/scriptParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScriptRepository.ecore#//Script/userParameters"/>
+      <genOperations ecoreOperation="ScriptRepository.ecore#//Script/run"/>
+      <genOperations ecoreOperation="ScriptRepository.ecore#//Script/getName"/>
+      <genOperations ecoreOperation="ScriptRepository.ecore#//Script/getPath"/>
+    </genClasses>
+    <genClasses ecoreClass="ScriptRepository.ecore#//RawLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScriptRepository.ecore#//RawLocation/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScriptRepository.ecore#//RawLocation/updatePending"/>
+      <genOperations ecoreOperation="ScriptRepository.ecore#//RawLocation/getResource"/>
+      <genOperations ecoreOperation="ScriptRepository.ecore#//RawLocation/getInputStream"/>
+    </genClasses>
+    <genClasses ecoreClass="ScriptRepository.ecore#//Storage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScriptRepository.ecore#//Storage/entries"/>
+    </genClasses>
+    <genClasses ecoreClass="ScriptRepository.ecore#//ScriptLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScriptRepository.ecore#//ScriptLocation/recursive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScriptRepository.ecore#//ScriptLocation/default"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScriptRepository.ecore#//ScriptLocation/scripts"/>
+    </genClasses>
+    <genClasses ecoreClass="ScriptRepository.ecore#//ParameterMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScriptRepository.ecore#//ParameterMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScriptRepository.ecore#//ParameterMap/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

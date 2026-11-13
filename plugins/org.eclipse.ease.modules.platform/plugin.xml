@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension point="org.eclipse.ease.modules">
+      <module category="org.eclipse.ease.category.system" class="org.eclipse.ease.modules.platform.UIModule" id="org.eclipse.ease.modules.platform.ui" name="UI" visible="true">
+      </module>
+      <module category="org.eclipse.ease.category.system" class="org.eclipse.ease.modules.platform.resources.ResourcesModule" id="org.eclipse.ease.modules.platform.resources" name="Resources" visible="true">
+      </module>
+      <module category="org.eclipse.ease.category.system" class="org.eclipse.ease.modules.platform.ScriptingModule" id="org.eclipse.ease.modules.platform.scripting" name="Scripting" visible="true">
+      </module>
+      <module category="org.eclipse.ease.category.system" class="org.eclipse.ease.modules.platform.PlatformModule" id="org.eclipse.ease.modules.platform.platform" name="Platform" visible="true">
+      </module>
+      <module
+            category="org.eclipse.ease.category.system"
+            class="org.eclipse.ease.modules.platform.P2Module"
+            id="org.eclipse.ease.modules.platform.p2"
+            name="P2"
+            visible="true">
+      </module>
+      <module
+            category="org.eclipse.ease.category.system"
+            class="org.eclipse.ease.modules.platform.OsgiModule"
+            id="org.eclipse.ease.modules.platform.osgi"
+            name="OSGI"
+            visible="true">
+      </module>
+      <module
+            category="org.eclipse.ease.category.system"
+            class="org.eclipse.ease.modules.platform.build.BuildModule"
+            id="org.eclipse.ease.modules.platform.build"
+            name="Build"
+            visible="true">
+      </module>
+      <module
+            category="org.eclipse.ease.category.system"
+            class="org.eclipse.ease.modules.platform.uibuilder.UIBuilderModule"
+            id="org.eclipse.ease.modules.platform.uibuilder"
+            name="UI Builder"
+            visible="true">
+      </module>
+      <module
+            category="org.eclipse.ease.category.system"
+            class="org.eclipse.ease.modules.platform.debug.LaunchModule"
+            id="org.eclipse.ease.modules.debug.launch"
+            name="Launch"
+            visible="true">
+      </module>
+   </extension>
+   <extension
+         point="org.eclipse.ease.ui.shell">
+      <dropHandler
+            class="org.eclipse.ease.modules.platform.dnd.ForkDropHandler"
+            priority="5">
+      </dropHandler>
+   </extension>
+   <extension
+         point="org.eclipse.ease.ui.codeCompletionProvider">
+      <codeCompletionProvider
+            class="org.eclipse.ease.modules.platform.completion.ResourcesCompletionProvider">
+      </codeCompletionProvider>
+      <codeCompletionProvider
+            class="org.eclipse.ease.modules.platform.completion.LaunchModuleCompletionProvider">
+      </codeCompletionProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ease.ui.scripts.keyword">
+      <handler
+            class="org.eclipse.ease.modules.platform.keywords.RegisterView"
+            description="Allows to register a script that populates a scripted view that uses the UI Builder module. Your script needs to call &apos;pushComposite(view.getComposite())&apos;"
+            id="org.eclipse.ease.modules.platform.registerViewHandler"
+            keywords="view"
+            name="view">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="org.eclipse.ease.modules.platform.scriptedViewsCategory"
+            name="Scripted Views">
+      </category>
+   </extension>
+
+</plugin>

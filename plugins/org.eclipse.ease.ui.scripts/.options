@@ -1,0 +1,10 @@
+# trace options for org.eclipse.ease.ui.scripts
+
+# global trace flag for this plugin
+org.eclipse.ease.ui.scripts/debug=false
+
+# trace enablement for repository service
+org.eclipse.ease.ui.scripts/debug/repositoryService=false
+
+# trace enablement for script UI integration
+org.eclipse.ease.ui.scripts/debug/UIIntegration=false

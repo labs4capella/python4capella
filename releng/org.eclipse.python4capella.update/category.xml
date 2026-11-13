@@ -14,6 +14,7 @@
    <feature id="org.eclipse.ease.lang.scriptarchive.feature" version="0.0.0"/>
    <feature id="org.eclipse.ease.feature" version="0.0.0"/>
    <feature id="org.eclipse.ease.ui.feature" version="0.0.0"/>
+   <feature id="org.eclipse.python4capella.ease.ui.patch" version="0.0.0"/>
    <feature id="org.eclipse.ease.lang.python.feature" version="0.0.0"/>
    <feature id="org.eclipse.python4capella.ease.python.patch" version="0.0.0"/>
    <feature id="org.eclipse.ease.lang.python.py4j.feature" version="0.0.0"/>
@@ -21,6 +22,7 @@
    <feature id="org.eclipse.ease.engine.jython.feature" version="0.0.0"/>
    <feature id="org.eclipse.ease.lang.jvm.feature" version="0.0.0"/>
    <feature id="org.eclipse.ease.modules.feature" version="0.0.0"/>
+   <feature id="org.eclipse.python4capella.ease.modules.patch" version="0.0.0"/>
    <feature id="org.eclipse.ease.lang.unittest.feature" version="0.0.0"/>
 
    <feature id="org.python.pydev.feature" version="0.0.0"/>
