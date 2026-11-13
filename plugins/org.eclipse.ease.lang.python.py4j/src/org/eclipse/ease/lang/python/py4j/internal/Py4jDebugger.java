@@ -17,13 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IMarker;
-import org.eclipse.debug.core.DebugEvent;
 import org.eclipse.debug.core.model.IBreakpoint;
 import org.eclipse.ease.IDebugEngine;
 import org.eclipse.ease.Script;
 import org.eclipse.ease.ScriptEngineCancellationException;
 import org.eclipse.ease.debugging.ScriptStackTrace;
 import org.eclipse.ease.debugging.events.debugger.IDebuggerEvent;
+import org.eclipse.ease.lang.python.debugger.IPyFrame;
 import org.eclipse.ease.lang.python.debugger.IPythonScriptRegistry;
 import org.eclipse.ease.lang.python.debugger.PythonBreakpoint;
 import org.eclipse.ease.lang.python.debugger.PythonDebugger;
@@ -38,6 +38,9 @@ public class Py4jDebugger extends PythonDebugger {
 	 * Extended code tracer doing pre-filtering.
 	 */
 	private ICodeTraceFilter fPythonDebuggerStub;
+
+	// Trace callbacks and script execution may run on different Py4J threads.
+	private volatile ScriptEngineCancellationException fCancellation;
 
 	public Py4jDebugger(IDebugEngine engine, boolean showDynamicCode) {
 		super(engine, showDynamicCode);
@@ -99,7 +102,18 @@ public class Py4jDebugger extends PythonDebugger {
 	}
 
 	@Override
+	public void traceDispatch(IPyFrame frame, String type) {
+		try {
+			super.traceDispatch(frame, type);
+		} catch (ScriptEngineCancellationException e) {
+			fCancellation = e;
+			throw e;
+		}
+	}
+
+	@Override
 	public Object execute(Script script) {
+		fCancellation = null;
 		try {
 			String reference = script.getTitle();
 			final IPythonScriptRegistry registry = getScriptRegistry();
@@ -111,16 +125,10 @@ public class Py4jDebugger extends PythonDebugger {
 			return fPythonDebuggerStub.run(script, reference);
 
 		} catch (final Exception e) {
-			/*
-			 * When terminating, #handleEvent sets resume type to STEP_END, which causes #traceDispatch to raise an ExitException. The ExitException is
-			 * propagated back to python, and eventually ends up back here at Exit method. However Py4J does not support propogating the same type of exception
-			 * across the Python/Java barrier, so what ends up being thrown is a Py4JException instead.
-			 *
-			 * Therefore we catch that case and re-raise the expected ExitException()
-			 */
-			if (getThreadState(getThread()).fResumeType == DebugEvent.STEP_END) {
-				throw new ScriptEngineCancellationException();
-			}
+			// Py4J wraps cancellation from traceDispatch on its round trip through Python.
+			final ScriptEngineCancellationException cancellation = fCancellation;
+			if ((e instanceof Py4JException) && (cancellation != null))
+				throw cancellation;
 
 			if (e instanceof Py4JException)
 				throw new Py4JException(beautifyExceptionMessage(e.getMessage()));
