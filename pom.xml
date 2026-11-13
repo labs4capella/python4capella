@@ -181,6 +181,8 @@
         <activeByDefault>false</activeByDefault>
       </activation>
       <modules>
+        <module>plugins/org.eclipse.ease.lang.python</module>
+        <module>features/org.eclipse.python4capella.ease.python.patch</module>
         <module>releng/org.eclipse.python4capella.update</module>
 
         <module>plugins/org.eclipse.python4capella.commandline</module>
@@ -203,6 +205,7 @@
               <excludes>
                 <plugin id="org.eclipse.ease.lang.python.py4j"/>
                 <plugin id="org.eclipse.ease.lang.python"/>
+                <feature id="org.eclipse.python4capella.ease.python.patch"/>
                 <feature id="org.eclipse.ease.lang.python.feature"/>
                 <feature id="org.eclipse.ease.lang.python.py4j.feature"/>
               </excludes>
