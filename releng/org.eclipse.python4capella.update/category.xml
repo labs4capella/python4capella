@@ -18,6 +18,7 @@
    <feature id="org.eclipse.ease.lang.python.feature" version="0.0.0"/>
    <feature id="org.eclipse.python4capella.ease.python.patch" version="0.0.0"/>
    <feature id="org.eclipse.ease.lang.python.py4j.feature" version="0.0.0"/>
+   <feature id="org.eclipse.python4capella.ease.python.py4j.patch" version="0.0.0"/>
    <feature id="org.eclipse.ease.python.jython.feature" version="0.0.0"/>
    <feature id="org.eclipse.ease.engine.jython.feature" version="0.0.0"/>
    <feature id="org.eclipse.ease.lang.jvm.feature" version="0.0.0"/>
