@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.python4capella.ease.python.patch"
       label="Python for Capella EASE Python patch"
-      version="1.4.1.qualifier"
+      version="1.5.0.qualifier"
       provider-name="Obeo"
       license-feature="org.eclipse.license"
       license-feature-version="2.0.2">
