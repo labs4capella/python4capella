@@ -13,6 +13,7 @@
 package org.eclipse.python4capella.modules;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.ease.modules.WrapToScript;
 
@@ -23,6 +24,30 @@ import org.eclipse.ease.modules.WrapToScript;
  *
  */
 public class JavaModule {
+
+	/**
+	 * Removes an element by index without ambiguity with {@link List#remove(Object)}.
+	 *
+	 * @param list the backing list
+	 * @param index the index to remove
+	 * @return the removed element
+	 */
+	@WrapToScript
+	public Object listRemoveAt(List<?> list, int index) {
+		return list.remove(index);
+	}
+
+	/**
+	 * Removes a value while preserving the Java boolean result across script bridges.
+	 *
+	 * @param list the backing list
+	 * @param value the value to remove
+	 * @return whether the list changed
+	 */
+	@WrapToScript
+	public boolean listRemove(List<?> list, Object value) {
+		return list.remove(value);
+	}
 
 	/**
 	 * Calls {@link Iterator#hasNext()}.

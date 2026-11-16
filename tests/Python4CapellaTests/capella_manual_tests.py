@@ -14,6 +14,48 @@ import unittest
 
 class capella_manual_tests(unittest.TestCase):
 
+    def test_JavaList_append_and_membership_update_model(self):
+        package = LogicalComponentPkg()
+        component = LogicalComponent()
+        components = package.get_owned_logical_components()
+
+        self.assertNotIn(component, components)
+        components.append(component)
+
+        self.assertIn(component, components)
+        self.assertTrue(components.contains(component))
+        self.assertEqual([component], list(components))
+        self.assertEqual(1, package.get_java_object().getOwnedLogicalComponents().size())
+        self.assertEqual(package.get_java_object(), component.get_java_object().eContainer())
+
+        # A fresh wrapper must observe the same model contents.
+        self.assertIn(component, package.get_owned_logical_components())
+        self.assertEqual(component, components.pop())
+        self.assertEqual(0, package.get_java_object().getOwnedLogicalComponents().size())
+        self.assertIsNone(component.get_java_object().eContainer())
+
+        self.assertTrue(components.add(component))
+        self.assertTrue(components.remove(component))
+        self.assertFalse(components.remove(component))
+        self.assertEqual(0, package.get_java_object().getOwnedLogicalComponents().size())
+
+    def test_JavaList_index_operations_update_model(self):
+        package = LogicalComponentPkg()
+        first = LogicalComponent()
+        second = LogicalComponent()
+        replacement = LogicalComponent()
+        components = package.get_owned_logical_components()
+
+        components.append(first)
+        components.insert(0, second)
+        components[-1] = replacement
+        self.assertEqual([second, replacement], list(package.get_owned_logical_components()))
+        self.assertIsNone(first.get_java_object().eContainer())
+
+        del components[0]
+        self.assertEqual([replacement], list(package.get_owned_logical_components()))
+        self.assertIsNone(second.get_java_object().eContainer())
+
     def test_CapellaModel_open_eobject(self):
         """
         This test needs the IFE project to be in the workspace to run.

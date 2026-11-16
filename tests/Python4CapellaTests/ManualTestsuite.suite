@@ -19,4 +19,5 @@ project://**.py</includeFilter>
   <disabledResource>/workspace/Python4Capella/enduser/enduser2.py</disabledResource>
   <disabledResource>/workspace/Python4Capella/tests</disabledResource>
   <disabledResource>/workspace/Python4CapellaTests/capella_tests.py</disabledResource>
+  <disabledResource>/workspace/Python4CapellaTests/test_java_list.py</disabledResource>
 </TestSuite>
