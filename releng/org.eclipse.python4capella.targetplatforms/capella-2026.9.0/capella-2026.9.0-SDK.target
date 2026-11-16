@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella 2026.9.0 Target Platform SDK" sequenceNumber="1794498748">
+<target name="Capella 2026.9.0 Target Platform SDK" sequenceNumber="1794835555">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -114,10 +114,10 @@
       <repository id="Orbit-2026-06" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2026-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="bcprov" version="1.86.0"/>
-      <unit id="bcpg" version="1.86.0"/>
-      <unit id="bcpkix" version="1.86.0"/>
-      <unit id="bcutil" version="1.86.0"/>
+      <unit id="bcprov" version="1.87.0"/>
+      <unit id="bcpg" version="1.87.0"/>
+      <unit id="bcpkix" version="1.87.0"/>
+      <unit id="bcutil" version="1.87.0"/>
       <repository id="Orbit-2026-12" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2026-12"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
