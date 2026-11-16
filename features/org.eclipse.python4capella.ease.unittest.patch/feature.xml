@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.python4capella.ease.unittest.patch"
+      label="Python for Capella EASE Unittest patch"
+      version="1.4.1.qualifier"
+      provider-name="Obeo"
+      license-feature="org.eclipse.license"
+      license-feature-version="2.0.2">
+
+   <description>
+      Provide an EASE Unittest replacement bundle for compatibility with Capella.
+   </description>
+
+   <copyright>
+      Copyright (c) 2026 Obeo
+      This program and the accompanying materials are made available under
+      the terms of the Eclipse Public License 2.0 which is available at
+      https://www.eclipse.org/legal/epl-2.0/
+      SPDX-License-Identifier: EPL-2.0
+   </copyright>
+
+   <requires>
+      <import feature="org.eclipse.ease.lang.unittest.feature" version="0.10.0.I202312050748" patch="true"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.ease.lang.unittest"
+         version="0.0.0"
+         unpack="true"/>
+
+</feature>

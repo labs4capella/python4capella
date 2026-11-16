@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="reporter" name="Reporter" schema="schema/reporter.exsd"/>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            file-extensions="suite"
+            id="org.eclipse.ease.lang.unittest.content-type.suite"
+            name="Script Testsuite"
+            priority="low">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.ease.scriptType">
+      <scriptType
+            defaultExtension="suite"
+            name="Script Unittest Suite">
+      </scriptType>
+   </extension>
+   <extension
+         point="org.eclipse.ease.language">
+      <engine
+            class="org.eclipse.ease.lang.unittest.TestSuiteScriptEngine"
+            id="org.eclipse.ease.lang.unittest.engine"
+            name="Script Testsuite"
+            priority="0">
+         <binding
+               scriptType="Script Unittest Suite">
+         </binding>
+      </engine>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestRuntime -->
+      <package
+            uri="http://eclipse.org/ease/unittest/runtime"
+            class="org.eclipse.ease.lang.unittest.runtime.IRuntimePackage"
+            genModel="model/TestRuntime.genmodel"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.ease.modules">
+      <module
+            class="org.eclipse.ease.lang.unittest.UnitTestModule"
+            id="org.eclipse.ease.lang.unittest"
+            name="Unittest"
+            visible="true">
+      </module>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TestDefinition -->
+      <package
+            uri="http://eclipse.org/ease/unittest/testsuite/1.0"
+            class="org.eclipse.ease.lang.unittest.definition.IDefinitionPackage"
+            genModel="model/TestDefinition.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated TestDefinition -->
+      <parser
+            type="suite"
+            class="org.eclipse.ease.lang.unittest.definition.util.DefinitionResourceFactory"/>
+   </extension>
+   <extension
+         id="scriptassertion"
+         name="UnitTest Error"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="false">
+      </persistent>
+   </extension>
+   <extension
+         point="org.eclipse.ease.lang.unittest.reporter">
+      <generator
+            class="org.eclipse.ease.lang.unittest.reporters.JUnitReportGenerator"
+            name="JUnit">
+      </generator>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.ease.lang.unittest.runtime.ITestSuite"
+            class="org.eclipse.ease.lang.unittest.adapters.HeadlessResultAdapter">
+         <adapter
+               type="java.lang.Integer">
+         </adapter>
+      </factory>
+   </extension>
+
+</plugin>

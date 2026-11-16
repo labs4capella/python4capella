@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.ease.lang.unittest/src-gen" modelPluginID="org.eclipse.ease.lang.unittest"
+    modelName="TestRuntime" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    interfaceNamePattern="I{0}" classNamePattern="{0}" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>TestRuntime.ecore</foreignModel>
+  <genPackages prefix="Runtime" basePackage="org.eclipse.ease.lang.unittest" disposableProviderFactory="true"
+      ecorePackage="TestRuntime.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestRuntime.ecore#//TestStatus">
+      <genEnumLiterals ecoreEnumLiteral="TestRuntime.ecore#//TestStatus/NOT_RUN"/>
+      <genEnumLiterals ecoreEnumLiteral="TestRuntime.ecore#//TestStatus/FINISHED"/>
+      <genEnumLiterals ecoreEnumLiteral="TestRuntime.ecore#//TestStatus/DISABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="TestRuntime.ecore#//TestStatus/PASS"/>
+      <genEnumLiterals ecoreEnumLiteral="TestRuntime.ecore#//TestStatus/FAILURE"/>
+      <genEnumLiterals ecoreEnumLiteral="TestRuntime.ecore#//TestStatus/ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="TestRuntime.ecore#//TestStatus/RUNNING"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="TestRuntime.ecore#//ScriptEngine"/>
+    <genDataTypes ecoreDataType="TestRuntime.ecore#//Throwable"/>
+    <genDataTypes ecoreDataType="TestRuntime.ecore#//ScriptStackTrace"/>
+    <genDataTypes ecoreDataType="TestRuntime.ecore#//TestExecutionStrategy"/>
+    <genDataTypes ecoreDataType="TestRuntime.ecore#//Path"/>
+    <genClasses image="false" ecoreClass="TestRuntime.ecore#//TestEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/entityStatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/endTimestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/startTimestamp"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TestRuntime.ecore#//TestEntity/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestRuntime.ecore#//TestEntity/metadata"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/duration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestRuntime.ecore#//TestEntity/results"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/estimatedDuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestEntity/terminated"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/getStatus"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/getRoot"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/hasError"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/getTestSuite"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/getResource"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/reset"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/run">
+        <genParameters ecoreParameter="TestRuntime.ecore#//TestEntity/run/strategy"/>
+      </genOperations>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/getWorstResult"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/addError">
+        <genParameters ecoreParameter="TestRuntime.ecore#//TestEntity/addError/message"/>
+        <genParameters ecoreParameter="TestRuntime.ecore#//TestEntity/addError/stackTrace"/>
+      </genOperations>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/getResults">
+        <genParameters ecoreParameter="TestRuntime.ecore#//TestEntity/getResults/status"/>
+      </genOperations>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/getFullPath"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/setDisabled">
+        <genParameters ecoreParameter="TestRuntime.ecore#//TestEntity/setDisabled/message"/>
+      </genOperations>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestEntity/isDisabled"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TestRuntime.ecore#//TestContainer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestRuntime.ecore#//TestContainer/children"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestContainer/resource"/>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestContainer/getTest">
+        <genParameters ecoreParameter="TestRuntime.ecore#//TestContainer/getTest/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="TestRuntime.ecore#//TestContainer/getChildContainers"/>
+    </genClasses>
+    <genClasses ecoreClass="TestRuntime.ecore#//Test">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//Test/durationLimit"/>
+    </genClasses>
+    <genClasses ecoreClass="TestRuntime.ecore#//TestSuite">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestRuntime.ecore#//TestSuite/activeTests"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestRuntime.ecore#//TestSuite/definition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestSuite/masterEngine"/>
+    </genClasses>
+    <genClasses ecoreClass="TestRuntime.ecore#//TestFolder"/>
+    <genClasses ecoreClass="TestRuntime.ecore#//TestClass"/>
+    <genClasses ecoreClass="TestRuntime.ecore#//TestResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestResult/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestResult/message"/>
+    </genClasses>
+    <genClasses ecoreClass="TestRuntime.ecore#//TestFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//TestFile/insertionOrder"/>
+    </genClasses>
+    <genClasses ecoreClass="TestRuntime.ecore#//StackTraceContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//StackTraceContainer/stackTrace"/>
+    </genClasses>
+    <genClasses ecoreClass="TestRuntime.ecore#//Metadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//Metadata/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestRuntime.ecore#//Metadata/value"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Definition" basePackage="org.eclipse.ease.lang.unittest" ecorePackage="TestDefinition.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestDefinition.ecore#//Flag">
+      <genEnumLiterals ecoreEnumLiteral="TestDefinition.ecore#//Flag/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="TestDefinition.ecore#//Flag/THREAD_COUNT"/>
+      <genEnumLiterals ecoreEnumLiteral="TestDefinition.ecore#//Flag/PROMOTE_FAILURE_TO_ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="TestDefinition.ecore#//Flag/STOP_SUITE_ON_ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="TestDefinition.ecore#//Flag/RUN_TEARDOWN_ON_ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="TestDefinition.ecore#//Flag/PREFERRED_ENGINE_ID"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="TestDefinition.ecore#//Path"/>
+    <genClasses ecoreClass="TestDefinition.ecore#//TestSuiteDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//TestSuiteDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//TestSuiteDefinition/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//TestSuiteDefinition/includeFilter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//TestSuiteDefinition/excludeFilter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//TestSuiteDefinition/disabledResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestDefinition.ecore#//TestSuiteDefinition/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestDefinition.ecore#//TestSuiteDefinition/customCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestDefinition.ecore#//TestSuiteDefinition/flags"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//TestSuiteDefinition/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//TestSuiteDefinition/resource"/>
+      <genOperations ecoreOperation="TestDefinition.ecore#//TestSuiteDefinition/getCustomCode">
+        <genParameters ecoreParameter="TestDefinition.ecore#//TestSuiteDefinition/getCustomCode/location"/>
+      </genOperations>
+      <genOperations ecoreOperation="TestDefinition.ecore#//TestSuiteDefinition/getVariable">
+        <genParameters ecoreParameter="TestDefinition.ecore#//TestSuiteDefinition/getVariable/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="TestDefinition.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//Variable/fullName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//Variable/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//Variable/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//Variable/enumProviderID"/>
+      <genOperations ecoreOperation="TestDefinition.ecore#//Variable/getName"/>
+      <genOperations ecoreOperation="TestDefinition.ecore#//Variable/getPath"/>
+    </genClasses>
+    <genClasses ecoreClass="TestDefinition.ecore#//FlagToStringMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//FlagToStringMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//FlagToStringMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TestDefinition.ecore#//Code">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//Code/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestDefinition.ecore#//Code/content"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

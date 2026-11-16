@@ -23,6 +23,7 @@
    <feature id="org.eclipse.ease.modules.feature" version="0.0.0"/>
    <feature id="org.eclipse.python4capella.ease.modules.patch" version="0.0.0"/>
    <feature id="org.eclipse.ease.lang.unittest.feature" version="0.0.0"/>
+   <feature id="org.eclipse.python4capella.ease.unittest.patch" version="0.0.0"/>
 
    <feature id="org.python.pydev.feature" version="0.0.0"/>
    <feature id="org.py4j.feature" version="0.0.0"/>

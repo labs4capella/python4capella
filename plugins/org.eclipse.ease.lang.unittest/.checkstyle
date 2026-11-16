@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fileset-config file-format-version="1.2.0" simple-config="false" sync-formatter="false">
+  <local-check-config name="EASE Checkstyle" location="/org.eclipse.ease.releng/checkstyle/checkstyle_rules.xml" type="project" description="">
+    <additional-data name="protect-config-file" value="false"/>
+  </local-check-config>
+  <fileset name="All files" enabled="true" check-config-name="EASE Checkstyle" local="true">
+    <file-match-pattern match-pattern=".java$" include-pattern="true"/>
+    <file-match-pattern match-pattern="org.eclipse.ease.lang.unittest.definition.*$" include-pattern="false"/>
+    <file-match-pattern match-pattern="org.eclipse.ease.lang.unittest.runtime.*$" include-pattern="false"/>
+  </fileset>
+</fileset-config>

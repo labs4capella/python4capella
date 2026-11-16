@@ -189,6 +189,8 @@
         <module>features/org.eclipse.python4capella.ease.ui.patch</module>
         <module>plugins/org.eclipse.ease.modules.platform</module>
         <module>features/org.eclipse.python4capella.ease.modules.patch</module>
+        <module>plugins/org.eclipse.ease.lang.unittest</module>
+        <module>features/org.eclipse.python4capella.ease.unittest.patch</module>
         <module>releng/org.eclipse.python4capella.update</module>
 
         <module>plugins/org.eclipse.python4capella.commandline</module>
@@ -209,6 +211,8 @@
                 <addMavenDescriptor>false</addMavenDescriptor>
               </archive>
               <excludes>
+                <plugin id="org.eclipse.ease.lang.unittest"/>
+                <feature id="org.eclipse.python4capella.ease.unittest.patch"/>
                 <plugin id="org.eclipse.ease.lang.python.py4j"/>
                 <plugin id="org.eclipse.ease.lang.python"/>
                 <plugin id="org.eclipse.ease.ui.scripts"/>
