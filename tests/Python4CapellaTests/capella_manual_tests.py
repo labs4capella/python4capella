@@ -14,6 +14,28 @@ import unittest
 
 class capella_manual_tests(unittest.TestCase):
 
+    def test_CapellaModel_open_eobject(self):
+        """
+        This test needs the IFE project to be in the workspace to run.
+        """
+        model = CapellaModel()
+        model.open("/In-Flight Entertainment System/In-Flight Entertainment System.aird")
+        system_engineering = model.get_system_engineering()
+        self.assertIsNotNone(system_engineering)
+
+        reopened_model = CapellaModel()
+        reopened_model.open(system_engineering)
+
+        self.assertEqual(model.session, reopened_model.session)
+        self.assertEqual(system_engineering, reopened_model.get_system_engineering())
+
+    def test_CapellaModel_open_invalid_object(self):
+        for obj in (None, 42, object()):
+            with self.subTest(obj=obj):
+                with self.assertRaises(AttributeError) as context:
+                    CapellaModel().open(obj)
+                self.assertEqual("You can pass a path to the .aird file or an EObject.", str(context.exception))
+
     def test_new_LogicalComponent(self):
         lc = LogicalComponent()
         self.assertEqual(False, lc.get_java_object().isActor())

@@ -71,7 +71,7 @@ class CapellaModel():
         status: KO
         """
         # obj can be a path to the .aird file or an EObject
-        if isinstance(obj, str) or isinstance(obj, unicode):
+        if isinstance(obj, str):
             if CapellaPlatform.getWorkspaceFile(obj) is None:
                 raise AttributeError("the .aird file doesn't exist: " + obj)
             self.session = Sirius.load_session(obj)
